@@ -108,7 +108,7 @@ class SYMLOGPlot:
         log('ref',self.ref,pre=pre)
         log('opp',self.opp,pre=pre)
         
-    def draw(self,filename=None):
+    def draw(self,filename=None,names=False):
         """
         (draw) -> None: This function is intended to draw out what the current state of the plot is
         """
@@ -121,8 +121,9 @@ class SYMLOGPlot:
         z = [(x+18)*size_coefficient for x in self.personalities['u_d'].values]
         plt.scatter(x,y,s=z)
         # label the points
-        for i,name in enumerate(names):
-            plt.annotate(s=name,xy=(x[i],y[i]))
+        if names:
+            for i,name in enumerate(names):
+                plt.annotate(s=name,xy=(x[i],y[i]))
         plt.xlabel('p_n')
         plt.ylabel('f_b')
         plt.axis('scaled')
@@ -265,8 +266,8 @@ class SYMLOGPlot:
                 comparisons_corrs.append(corr0)
 
         avg = sum(comparisons_corrs)/3
-        avg1 = sum([getCorr(x,y) for x,y in [(U,P),(U,F),(P,F)]])/3
-        avg2 = sum([getCorr(x,y) for x,y in [(P,U),(F,U),(F,P)]])/3
+        # avg1 = sum([getCorr(x,y) for x,y in [(U,P),(U,F),(P,F)]])/3
+        # avg2 = sum([getCorr(x,y) for x,y in [(P,U),(F,U),(F,P)]])/3
         # code.interact(local=dict(globals(),**locals()))
         return avg
 
