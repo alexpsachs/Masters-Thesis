@@ -4,13 +4,16 @@ The purpose of this script is to combine the relelant data in tables:
     ./ESEM - Dataset.ods
 so that there can be one datasource for the analysis
 """
+import code
 import sys
 import os
-LIB = '/home/a2sachs/Documents/Library'
+LIB = os.path.abspath(os.path.join(__file__,'../../Library'))
+print('LIB',LIB)
+code.interact(local=locals())
+
 sys.path.append(LIB)
 import logger
 from pyexcel_ods3 import save_data, read_data
-import code
 from collections import OrderedDict
 
 def log(*args,pre=None):
@@ -21,9 +24,12 @@ SYMLOG_metrics_path = '/home/a2sachs/Documents/Experiment2.2/Analysis/SYMLOG_met
 ESEM_path = '/home/a2sachs/Documents/Experiment2.2/Analysis/ESEM - Dataset.ods'
 out_path = '/home/a2sachs/Documents/Experiment2.2/Analysis/experiment_data.ods'
 
+# functions
+
 if __name__ == '__main__':
     logger.deleteLogs()
     pre='experiment_data.py'
+    # aggregate data for experiments
 
     # congregate the SYMLOG metrics
     symlog_data = read_data(SYMLOG_metrics_path)['SYMLOG']
