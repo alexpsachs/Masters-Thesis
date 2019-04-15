@@ -7,9 +7,13 @@ import pandas
 import code
 from sklearn import preprocessing
 import statsmodels.api as sm
+import os
 
-in_path = '/home/a2sachs/Documents/Experiment2.2/Analysis/experiment_data.ods'
+INDIR = os.path.abspath('./experiment_data')
 
+# functions
+def analyzeExperiment(exp_name,pre=''):
+    pass
 # read in the data
 ods_data = read_data(in_path)['Data']
 headers = ods_data[0]
@@ -54,7 +58,3 @@ p('dissidence')
 p('upf_corr')
 p('rot_regret')
 p('opp_corr')
-
-
-code.interact(local=locals())
-

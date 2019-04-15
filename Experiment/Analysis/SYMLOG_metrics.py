@@ -64,17 +64,17 @@ def calcSymMetrics(filename,reorient=False):
             }
     return metrics
 
-def plotPersonas(filename,outpath):
+def plotPersonas(filename,outpath,reorient=False):
     personalities = json.load(open(filename,'r'))
     symPlot = SYMLOG.SYMLOGPlot(personalities,compassMethod='regression')
-    symPlot.reorientCompass()
+    if reorient:
+        symPlot.reorientCompass()
     symPlot.draw(outpath)
 
 def run(exp_name,reorient=False,num_threads=4):
     pre='run'
     log('running',exp_name,pre=pre)
     filenames = os.listdir(INDIR)
-    # filename = '1N3__Sn1per.json'
     data = {} # {reponame:{metric_name: metric_value}}
     ods_dir = os.path.join(OUTDIR,exp_name)
     if not os.path.exists(ods_dir):
@@ -84,23 +84,19 @@ def run(exp_name,reorient=False,num_threads=4):
         os.mkdir(plots_dir)
     # allocate the inputs for multithreading
     filenames_lsts = []
-    i = 0
-    for filename in filenames:
-        if i == len(filenames_lsts):
+    for i,filename in enumerate(filenames):
+        index = i % num_threads
+        if index == len(filenames_lsts):
             filenames_lsts.append([])
-        filenames_lsts[i].append(filename)
-        i += 1
-        if i == num_threads:
-            i = 0
+        filenames_lsts[index].append(filename)
     inputs = [[lst,i,plots_dir,ods_dir,reorient] for i,lst in enumerate(filenames_lsts)]
     # run the multithreadable function
-    # pool = Pool(processes=num_threads)
-    # pool.map(run_helper,inputs)
+    pool = Pool(processes=num_threads)
+    pool.map(run_helper,inputs)
 
     # aggregate the data together
     filepaths = [os.path.join(ods_dir,'SYMLOG_metrics_{0}.ods'.format(i)) for i in range(num_threads)]
     all_data = get_data(filepaths[0])
-    code.interact(local=locals())
     key = list(all_data.keys())[0]
     for filepath in filepaths[1:]:
         new_data = get_data(filepath)
@@ -115,16 +111,19 @@ def run_helper(args):
     lst,thread,plots_dir,ods_dir,reorient = args
     pre = 'run'+str(thread)
     data = {}
+    drop_count = 0
     for filename in lst:
         log('Processing',filename,pre=pre)
         reponame = filename[:-5]
         inpath = os.path.join(INDIR,filename)
-        # json_outpath = os.path.join(OUTDIR,filename)
         png_outpath = os.path.join(plots_dir,reponame+'.png')
         metrics = calcSymMetrics(inpath,reorient)
         if metrics != None: # None indicates an empty group (or a group with ony 1 person)
             data[reponame] = metrics
-            plotPersonas(inpath,png_outpath)
+            plotPersonas(inpath,png_outpath,reorient=reorient)
+        else:
+            log('Dropped',filename,pre=pre)
+            drop_count += 1
     # output the aggregated metrics
     metric_labels = list(list(data.values())[0].keys())
     symlog_header = ['repository']+metric_labels
@@ -135,6 +134,7 @@ def run_helper(args):
     out_data = OrderedDict()
     out_data.update({"SYMLOG": [symlog_header, *symlog_data]})
     save_data(os.path.join(ods_dir,'SYMLOG_metrics_{0}.ods'.format(thread)), out_data)
+    log(drop_count,'repositories were dropped',pre=pre)
 
 # Main script
 if __name__ == '__main__':
@@ -143,4 +143,4 @@ if __name__ == '__main__':
     if not os.path.exists(OUTDIR):
         os.mkdir(OUTDIR)
     run('old',num_threads=3)
-    # run('reorient',reorient=True,num_threads=3)
+    run('reorient',reorient=True,num_threads=3)

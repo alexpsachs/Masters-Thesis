@@ -1,16 +1,15 @@
 """
 The purpose of this script is to combine the relelant data in tables:
-    ./SYMLOG_metrics.ods
+    ./SYMLOG_metrics/<experiment>/SYMLOG_metrics.ods
     ./ESEM - Dataset.ods
-so that there can be one datasource for the analysis
+so that there can be one datasource for the analysis into
+    ./experiment_data/<experiment>/experiment_data.ods
 """
 import code
 import sys
 import os
-LIB = os.path.abspath(os.path.join(__file__,'../../Library'))
-print('LIB',LIB)
-code.interact(local=locals())
-
+TOP = os.path.abspath(os.path.join(__file__,'../../../'))
+LIB = os.path.join(TOP,'Library')
 sys.path.append(LIB)
 import logger
 from pyexcel_ods3 import save_data, read_data
@@ -20,18 +19,18 @@ def log(*args,pre=None):
     logger.log(*args,pre='experiment_data.py' if pre==None else 'experiment_data.py.'+pre)
 
 # constants
-SYMLOG_metrics_path = '/home/a2sachs/Documents/Experiment2.2/Analysis/SYMLOG_metrics.ods'
-ESEM_path = '/home/a2sachs/Documents/Experiment2.2/Analysis/ESEM - Dataset.ods'
-out_path = '/home/a2sachs/Documents/Experiment2.2/Analysis/experiment_data.ods'
+SYMLOG_METRICS_DIR = os.path.join(TOP,'Experiment','Analysis','SYMLOG_metrics')
+ESEM_path = os.path.join(TOP,'Experiment','Analysis','ESEM - Dataset.ods')
+OUT_DIR = os.path.join(TOP,'Experiment','Analysis','experiment_data')
+if not os.path.exists(OUT_DIR):
+    os.mkdir(OUT_DIR)
 
 # functions
-
-if __name__ == '__main__':
-    logger.deleteLogs()
-    pre='experiment_data.py'
-    # aggregate data for experiments
-
+def aggregateData(exp_name,pre=''):
+    pre = pre + '.aggregateData'
+    log('started',pre=pre)
     # congregate the SYMLOG metrics
+    SYMLOG_metrics_path = os.path.join(SYMLOG_METRICS_DIR,exp_name,'SYMLOG_metrics.ods')
     symlog_data = read_data(SYMLOG_metrics_path)['SYMLOG']
     headers = symlog_data[0]
     metrics = symlog_data[0][1:]
@@ -66,6 +65,9 @@ if __name__ == '__main__':
             symlog_only.append(key)
     print(len(symlog_only),'repos not in symlog_dict')
     out_data = OrderedDict()
+    out_path = os.path.join(OUT_DIR,exp_name,'experiment_data.ods')
+    if not os.path.exists(os.path.join(OUT_DIR,exp_name)):
+        os.mkdir(os.path.join(OUT_DIR,exp_name))
     symlog_metrics = list(list(symlog_dict.values())[0].keys())
     header = ['reponame','esem_status',*symlog_metrics]
     data = []
@@ -78,5 +80,13 @@ if __name__ == '__main__':
     out_data.update({'Data':[header,*data]})
     save_data(out_path, out_data)
 
-    print('done')
+    print('done',exp_name)
+
+if __name__ == '__main__':
+    logger.deleteLogs()
+    pre='experiment_data.py'
+    # aggregate data for experiments
+    aggregateData('old',pre=pre)
+    aggregateData('reorient',pre=pre)
+
 

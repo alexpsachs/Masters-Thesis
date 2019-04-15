@@ -5,6 +5,10 @@ This module is respnsible for all of the SYMLOG calculations.
 import math
 import json
 import os
+import sys
+TOP = os.path.abspath(os.path.join(__file__,'../..'))
+LIB = os.path.join(TOP,'Library')
+sys.path.append(LIB)
 import pandas as pd
 import statsmodels.api as sm
 import sklearn
@@ -14,7 +18,6 @@ import matplotlib.pyplot as plt
 import logger
 def log(*args,pre=None):
     logger.log(*args,pre=('SYMLOG.py' if pre==None else 'SYMLOG.py.'+pre))
-LIB = '/home/a2sachs/Documents/Library'
 
 #Constants
 file_path = os.path.abspath(__file__)
@@ -115,14 +118,14 @@ class SYMLOGPlot:
         size_coefficient = 15
         # plt.plot(self.personalities['p_n'],self.personalities['f_b'],'ro',
         #         s=[(x+18)*5 for x in self.personalities['u_d'].values])
-        names = list(self.personalities['Person'].values)
+        name_lst = list(self.personalities['Person'].values)
         x = list(self.personalities['p_n'].values)
         y = list(self.personalities['f_b'].values)
         z = [(x+18)*size_coefficient for x in self.personalities['u_d'].values]
         plt.scatter(x,y,s=z)
         # label the points
         if names:
-            for i,name in enumerate(names):
+            for i,name in enumerate(name_lst):
                 plt.annotate(s=name,xy=(x[i],y[i]))
         plt.xlabel('p_n')
         plt.ylabel('f_b')
