@@ -6,11 +6,13 @@ from pyexcel_ods3 import read_data
 import pandas
 import code
 from sklearn import preprocessing
+from sklearn import svm
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
 import os
 import sys
 import code
+import xgboost as xgb
 
 TOP = os.path.abspath(os.path.join(__file__,'../../../'))
 LIB = os.path.join(TOP,'Library')
@@ -84,30 +86,53 @@ def analyzeExperiment(exp_name,pre=''):
     p('opp_prop',pre=pre)
 
     # do the anlaysis
+    # linear regression
     log('doing linear regression for',exp_name,pre=pre)
-    out_txt = doLinearRegression(df,'esem_status').__repr__()
-    out_path = os.path.join(OUTDIR,exp_name,'linear_regression.txt')
-    with open(out_path,'w') as f:
+    out_txt,predictions = doLinearRegression(df,'esem_status')
+    out_txt_path = os.path.join(OUTDIR,exp_name,'linear_regression.txt')
+    plotBestFit(df['esem_status'],predictions)
+    out_plot_path = os.path.join(OUTDIR,exp_name,'linear_regression.png')
+    plt.savefig(out_plot_path)
+    plt.close()
+    with open(out_txt_path,'w') as f:
         f.write(out_txt)
+    # logistic regression
     log('doing logistic regression for',exp_name,pre=pre)
-    out_txt = doLogisticRegression(df,'esem_status',pre=pre).__repr__()
-    out_path = os.path.join(OUTDIR,exp_name,'logistic_regression.txt')
-    with open(out_path,'w') as f:
+    out_txt,predictions = doLogisticRegression(df,'esem_status')
+    out_txt_path = os.path.join(OUTDIR,exp_name,'logistic_regression.txt')
+    plotBestFit(df['esem_status'],predictions)
+    out_plot_path = os.path.join(OUTDIR,exp_name,'logistic_regression.png')
+    plt.savefig(out_plot_path)
+    plt.close()
+    with open(out_txt_path,'w') as f:
         f.write(out_txt)
+    # svm
+    log('doing an arbitrary svm',exp_name,pre=pre)
+    out_txt,predictions = doSVM(df,'esem_status')
+    out_txt += '   blah'
+    out_txt_path = os.path.join(OUTDIR,exp_name,'svm.txt')
+    plotBestFit(df['esem_status'],predictions)
+    out_plot_path = os.path.join(OUTDIR,exp_name,'svm.png')
+    plt.savefig(out_plot_path)
+    plt.close()
+    with open(out_txt_path,'w') as f:
+        f.write(out_txt)
+    # xgboost stuff
+    doXgboost(df,'esem_status')
 
 def doLinearRegression(df,y_label):
     # do multiple linear regression
     new_df = df.copy()
-    X = new_df.drop(columns=['esem_status'])
-    Y = new_df['esem_status']
+    X = new_df.drop(columns=[y_label])
+    Y = new_df[y_label]
     X = sm.add_constant(X)
     model = sm.OLS(Y,X).fit()
-    return model.summary()
+    return model.summary().__repr__(), model.predict(X)
 
-def doLogisticRegression(df,y_label,pre=None):
-    pre = pre+'.doLogisticRegression'
-    log('started',pre=pre)
-    X = df.drop(columns=['esem_status'])
+def doLogisticRegression(df,y_label):
+    pre = '.doLogisticRegression'
+    log('starts',pre=pre)
+    X = df.drop(columns=[y_label])
     # check if any columns have a single value only (if they do, drop them and print out a warning)
     to_drop = []
     for column in X.columns:
@@ -129,11 +154,57 @@ def doLogisticRegression(df,y_label,pre=None):
     log('X and Y allocated',pre=pre)
     logit_model=sm.Logit(Y,X)
     log('logit_model created',pre=pre)
-    # if debug:
-    #     code.interact(local=dict(globals(),**locals()))
-    result=logit_model.fit()
+    model=logit_model.fit()
     log('finished',pre=pre)
-    return result.summary2()
+    ans = model.summary2().__repr__(), model.predict(X)
+    log('ans',ans,pre=pre)
+    return ans
+
+def doSVM(df,y_label):
+    # do multiple linear regression
+    X = df.drop(columns=[y_label])
+    Y = df[y_label]
+    # X = sm.add_constant(X)
+    clf = svm.SVC(kernel='rbf') # radial basis function (i.e. gaussian)
+    clf.fit(X,Y)
+    predictions = clf.predict(X)
+    r2 = clf.score(X.values,Y)
+    return 'R^2: '+r2.__repr__(), predictions
+
+def doXgboost(df,y_label):
+    # # do multiple linear regression
+    X = df.drop(columns=[y_label])
+    Y = df[y_label]
+    # # X = sm.add_constant(X)
+    # clf = svm.SVC(kernel='rbf') # radial basis function (i.e. gaussian)
+    # clf.fit(X,Y)
+    # predictions = clf.predict(X)
+    # r2 = clf.score(X.values,Y)
+    # return 'R^2: '+r2.__repr__(), predictions
+
+    # read in data
+    dtrain = xgb.DMatrix(X.values,Y.values)
+    # dtest = xgb.DMatrix('demo/data/agaricus.txt.test')
+    # specify parameters via map
+    param = {'max_depth':5, 'eta':1, 'silent':0, 'objective':'binary:logistic' }
+    num_round = 10
+    bst = xgb.train(param, dtrain, num_round)
+    # make prediction
+    preds = bst.predict(dtrain)
+    code.interact(local=dict(globals(),**locals()))
+
+
+def plotBestFit(actual, predictions):
+    pre = 'plotBestFit'
+    log('start',pre=pre)
+    log('actual',actual.values,pre=pre)
+    log('predictions',predictions,pre=pre)
+    ordered = [(item[0],item[1]) for item in zip(actual.values,predictions)]
+    ordered.sort()
+    log('ordered',ordered,pre=pre)
+    plt.plot([i for i,item in enumerate(ordered)],[item[0] for i,item in enumerate(ordered)],'b-',alpha=0.5) # actual values
+    plt.plot([i for i,item in enumerate(ordered)],[item[1] for i,item in enumerate(ordered)],'r-',alpha=0.5) # predicted values
+    log('end',pre=pre)
 
 if __name__ == '__main__':
     logger.deleteLogs()
