@@ -120,14 +120,6 @@ def analyzeExperiment(exp_name,pre=''):
     # xgboost stuff
     doXgboost(df,'esem_status')
 
-def doLinearRegression(df,y_label):
-    # do multiple linear regression
-    new_df = df.copy()
-    X = new_df.drop(columns=[y_label])
-    Y = new_df[y_label]
-    X = sm.add_constant(X)
-    model = sm.OLS(Y,X).fit()
-    return model.summary().__repr__(), model.predict(X)
 
 def doLogisticRegression(df,y_label):
     pre = '.doLogisticRegression'
@@ -194,17 +186,6 @@ def doXgboost(df,y_label):
     code.interact(local=dict(globals(),**locals()))
 
 
-def plotBestFit(actual, predictions):
-    pre = 'plotBestFit'
-    log('start',pre=pre)
-    log('actual',actual.values,pre=pre)
-    log('predictions',predictions,pre=pre)
-    ordered = [(item[0],item[1]) for item in zip(actual.values,predictions)]
-    ordered.sort()
-    log('ordered',ordered,pre=pre)
-    plt.plot([i for i,item in enumerate(ordered)],[item[0] for i,item in enumerate(ordered)],'b-',alpha=0.5) # actual values
-    plt.plot([i for i,item in enumerate(ordered)],[item[1] for i,item in enumerate(ordered)],'r-',alpha=0.5) # predicted values
-    log('end',pre=pre)
 
 if __name__ == '__main__':
     logger.deleteLogs()
