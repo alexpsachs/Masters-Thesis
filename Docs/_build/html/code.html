@@ -36,20 +36,20 @@
 <p>The purpose of this module is to centralze of the the stats and plotting
 functionality for reusability</p>
 <dl class="function">
-<dt id="analyzer.doLinearRegression">
-<code class="descclassname">analyzer.</code><code class="descname">doLinearRegression</code><span class="sig-paren">(</span><em>df</em>, <em>y_label</em>, <em>plot_prediction=None</em>, <em>plot_prediction_filepath=None</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.doLinearRegression" title="Permalink to this definition">¶</a></dt>
+<dt id="analyzer.doRegression">
+<code class="descclassname">analyzer.</code><code class="descname">doRegression</code><span class="sig-paren">(</span><em>df</em>, <em>y_label</em>, <em>model_type='Linear'</em>, <em>prediction_padding=0</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.doRegression" title="Permalink to this definition">¶</a></dt>
 <dd><p>(doLinearRegression DataFrame str) This function takes in a dataframe of all the data, takes out
 the column addressed as y_label and then does a linear regression to use the x values to predict
 y_label and returns the stats (dict) and the predictions (list)</p>
 <div class="line-block">
 <div class="line">kargs:</div>
-<div class="line">plot_prediction: This string determines the x-axis of the prediction plot</div>
-<div class="line">plot_prediction_filepath: Determines where this plot will be saved (will show if empty)</div>
+<div class="line">model_type:   (anyof ‘Linear’ ‘Logistic’) this determines which model will be used to assess the datapoints</div>
+<div class="line">prediction_padding: (int) this determines how many iterations of ‘filler’ predictions will be invluded in the output (to smooth the prediction curve for plotting)</div>
 </div>
 <div class="line-block">
 <div class="line">ex.</div>
 <div class="line">df_test = pd.DataFrame(data={‘x’:[1,2,3,4],’y’:[2,4,6,7]})</div>
-<div class="line">doLinearRegression(df_test,’y’) -&gt; {‘R^2’: 0.9796610169491525}</div>
+<div class="line">doRegression(df_test,’y’,model_type=’Linear’) -&gt; {‘R^2’: 0.9796610169491525}, [[1, 2.2000000000000006], [2, 3.9000000000000004], [3, 5.6000000000000005], [4, 7.3]]</div>
 </div>
 </dd></dl>
 
