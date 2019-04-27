@@ -13,10 +13,12 @@ import os
 import sys
 import code
 import xgboost as xgb
+import json
 
 TOP = os.path.abspath(os.path.join(__file__,'../../../'))
 LIB = os.path.join(TOP,'Library')
 sys.path.append(LIB)
+import analyzer
 import logger
 def log(*args,pre=None):
     logger.log(*args,pre='analysis.py' if pre==None else 'analysis.py'+pre)
@@ -27,6 +29,10 @@ OUTDIR = os.path.join(TOP,'Experiment','Analysis','analysis')
 
 # functions
 def analyzeExperiment(exp_name,pre=''):
+    # make sure the folder is there, if not create it
+    directory = os.path.join(OUTDIR,exp_name)
+    if not os.path.exists(directory):
+        os.mkdir(directory)
     global debug
     pre = pre + '.analyzeExperiment'
     # read in the data
@@ -88,69 +94,67 @@ def analyzeExperiment(exp_name,pre=''):
     # do the anlaysis
     # linear regression
     log('doing linear regression for',exp_name,pre=pre)
-    out_txt,predictions = doLinearRegression(df,'esem_status')
-    out_txt_path = os.path.join(OUTDIR,exp_name,'linear_regression.txt')
-    plotBestFit(df['esem_status'],predictions)
-    out_plot_path = os.path.join(OUTDIR,exp_name,'linear_regression.png')
-    plt.savefig(out_plot_path)
-    plt.close()
+    out_dict,predictions = analyzer.assess(df,'esem_status',model_type='Linear')
+    out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_linear_regression.json')
+    # plotBestFit(df['esem_status'],predictions)
+    # out_plot_path = os.path.join(OUTDIR,exp_name,'linear_regression.png')
+    # plt.savefig(out_plot_path)
+    # plt.close()
     with open(out_txt_path,'w') as f:
-        f.write(out_txt)
+        json.dump(out_dict,f,indent=4)
     # logistic regression
     log('doing logistic regression for',exp_name,pre=pre)
-    out_txt,predictions = doLogisticRegression(df,'esem_status')
-    out_txt_path = os.path.join(OUTDIR,exp_name,'logistic_regression.txt')
-    plotBestFit(df['esem_status'],predictions)
-    out_plot_path = os.path.join(OUTDIR,exp_name,'logistic_regression.png')
-    plt.savefig(out_plot_path)
-    plt.close()
+    out_dict,predictions = analyzer.assess(df,'esem_status',model_type='Logistic')
+    out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_logistic_regression.json')
     with open(out_txt_path,'w') as f:
-        f.write(out_txt)
+        json.dump(out_dict,f,indent=4)
     # svm
-    log('doing an arbitrary svm',exp_name,pre=pre)
-    out_txt,predictions = doSVM(df,'esem_status')
-    out_txt += '   blah'
-    out_txt_path = os.path.join(OUTDIR,exp_name,'svm.txt')
-    plotBestFit(df['esem_status'],predictions)
-    out_plot_path = os.path.join(OUTDIR,exp_name,'svm.png')
-    plt.savefig(out_plot_path)
-    plt.close()
-    with open(out_txt_path,'w') as f:
-        f.write(out_txt)
+    # log('doing an arbitrary svm',exp_name,pre=pre)
+    # out_txt,predictions = doSVM(df,'esem_status')
+    # out_txt_path = os.path.join(OUTDIR,exp_name,'svm.txt')
+    # plotBestFit(df['esem_status'],predictions)
+    # out_plot_path = os.path.join(OUTDIR,exp_name,'svm.png')
+    # plt.savefig(out_plot_path)
+    # plt.close()
+    # with open(out_txt_path,'w') as f:
+    #     f.write(out_txt)
     # xgboost stuff
-    doXgboost(df,'esem_status')
+    log('doing xgboost for',exp_name,pre=pre)
+    out_dict,predictions = analyzer.assess(df,'esem_status',model_type='Xgboost')
+    out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_xgboost.json')
+    with open(out_txt_path,'w') as f:
+        json.dump(out_dict,f,indent=4)
 
-
-def doLogisticRegression(df,y_label):
-    pre = '.doLogisticRegression'
-    log('starts',pre=pre)
-    X = df.drop(columns=[y_label])
-    # check if any columns have a single value only (if they do, drop them and print out a warning)
-    to_drop = []
-    for column in X.columns:
-        val_lst = X[column].values
-        all_same = True
-        for i,val in enumerate(val_lst):
-            if i == 0:
-                continue
-            else:
-                if val != val_lst[i-1]:
-                    all_same = False
-                    break
-        if all_same:
-            print('logistic regression dropping column',column,'because all the values are the same')
-            log('drop column',column,pre=pre)
-            to_drop.append(column)
-    X = X.drop(columns = to_drop)
-    Y = df['esem_status']
-    log('X and Y allocated',pre=pre)
-    logit_model=sm.Logit(Y,X)
-    log('logit_model created',pre=pre)
-    model=logit_model.fit()
-    log('finished',pre=pre)
-    ans = model.summary2().__repr__(), model.predict(X)
-    log('ans',ans,pre=pre)
-    return ans
+# def doLogisticRegression(df,y_label):
+#     pre = '.doLogisticRegression'
+#     log('starts',pre=pre)
+#     X = df.drop(columns=[y_label])
+#     # check if any columns have a single value only (if they do, drop them and print out a warning)
+#     to_drop = []
+#     for column in X.columns:
+#         val_lst = X[column].values
+#         all_same = True
+#         for i,val in enumerate(val_lst):
+#             if i == 0:
+#                 continue
+#             else:
+#                 if val != val_lst[i-1]:
+#                     all_same = False
+#                     break
+#         if all_same:
+#             print('logistic regression dropping column',column,'because all the values are the same')
+#             log('drop column',column,pre=pre)
+#             to_drop.append(column)
+#     X = X.drop(columns = to_drop)
+#     Y = df['esem_status']
+#     log('X and Y allocated',pre=pre)
+#     logit_model=sm.Logit(Y,X)
+#     log('logit_model created',pre=pre)
+#     model=logit_model.fit()
+#     log('finished',pre=pre)
+#     ans = model.summary2().__repr__(), model.predict(X)
+#     log('ans',ans,pre=pre)
+#     return ans
 
 def doSVM(df,y_label):
     # do multiple linear regression
@@ -197,3 +201,4 @@ if __name__ == '__main__':
         if experiment == 'reorient':
             debug = True
         analyzeExperiment(experiment)
+    print('analysis complete')
