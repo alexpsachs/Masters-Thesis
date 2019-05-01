@@ -94,102 +94,28 @@ def analyzeExperiment(exp_name,pre=''):
     # do the anlaysis
     # linear regression
     log('doing linear regression for',exp_name,pre=pre)
-    out_dict,predictions = analyzer.assess(df,'esem_status',model_type='Linear')
+    out_dict = analyzer.assess(df,'esem_status',model_type='Linear')
     out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_linear_regression.json')
-    # plotBestFit(df['esem_status'],predictions)
-    # out_plot_path = os.path.join(OUTDIR,exp_name,'linear_regression.png')
-    # plt.savefig(out_plot_path)
-    # plt.close()
     with open(out_txt_path,'w') as f:
         json.dump(out_dict,f,indent=4)
     # logistic regression
     log('doing logistic regression for',exp_name,pre=pre)
-    out_dict,predictions = analyzer.assess(df,'esem_status',model_type='Logistic')
+    out_dict = analyzer.assess(df,'esem_status',model_type='Logistic')
     out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_logistic_regression.json')
     with open(out_txt_path,'w') as f:
         json.dump(out_dict,f,indent=4)
-    # svm
-    # log('doing an arbitrary svm',exp_name,pre=pre)
-    # out_txt,predictions = doSVM(df,'esem_status')
-    # out_txt_path = os.path.join(OUTDIR,exp_name,'svm.txt')
-    # plotBestFit(df['esem_status'],predictions)
-    # out_plot_path = os.path.join(OUTDIR,exp_name,'svm.png')
-    # plt.savefig(out_plot_path)
-    # plt.close()
-    # with open(out_txt_path,'w') as f:
-    #     f.write(out_txt)
     # xgboost stuff
     log('doing xgboost for',exp_name,pre=pre)
-    out_dict,predictions = analyzer.assess(df,'esem_status',model_type='Xgboost')
+    out_dict = analyzer.assess(df,'esem_status',model_type='Xgboost')
     out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_xgboost.json')
     with open(out_txt_path,'w') as f:
         json.dump(out_dict,f,indent=4)
-
-# def doLogisticRegression(df,y_label):
-#     pre = '.doLogisticRegression'
-#     log('starts',pre=pre)
-#     X = df.drop(columns=[y_label])
-#     # check if any columns have a single value only (if they do, drop them and print out a warning)
-#     to_drop = []
-#     for column in X.columns:
-#         val_lst = X[column].values
-#         all_same = True
-#         for i,val in enumerate(val_lst):
-#             if i == 0:
-#                 continue
-#             else:
-#                 if val != val_lst[i-1]:
-#                     all_same = False
-#                     break
-#         if all_same:
-#             print('logistic regression dropping column',column,'because all the values are the same')
-#             log('drop column',column,pre=pre)
-#             to_drop.append(column)
-#     X = X.drop(columns = to_drop)
-#     Y = df['esem_status']
-#     log('X and Y allocated',pre=pre)
-#     logit_model=sm.Logit(Y,X)
-#     log('logit_model created',pre=pre)
-#     model=logit_model.fit()
-#     log('finished',pre=pre)
-#     ans = model.summary2().__repr__(), model.predict(X)
-#     log('ans',ans,pre=pre)
-#     return ans
-
-def doSVM(df,y_label):
-    # do multiple linear regression
-    X = df.drop(columns=[y_label])
-    Y = df[y_label]
-    # X = sm.add_constant(X)
-    clf = svm.SVC(kernel='rbf') # radial basis function (i.e. gaussian)
-    clf.fit(X,Y)
-    predictions = clf.predict(X)
-    r2 = clf.score(X.values,Y)
-    return 'R^2: '+r2.__repr__(), predictions
-
-def doXgboost(df,y_label):
-    # # do multiple linear regression
-    X = df.drop(columns=[y_label])
-    Y = df[y_label]
-    # # X = sm.add_constant(X)
-    # clf = svm.SVC(kernel='rbf') # radial basis function (i.e. gaussian)
-    # clf.fit(X,Y)
-    # predictions = clf.predict(X)
-    # r2 = clf.score(X.values,Y)
-    # return 'R^2: '+r2.__repr__(), predictions
-
-    # read in data
-    dtrain = xgb.DMatrix(X.values,Y.values)
-    # dtest = xgb.DMatrix('demo/data/agaricus.txt.test')
-    # specify parameters via map
-    param = {'max_depth':5, 'eta':1, 'silent':0, 'objective':'binary:logistic' }
-    num_round = 10
-    bst = xgb.train(param, dtrain, num_round)
-    # make prediction
-    preds = bst.predict(dtrain)
-    code.interact(local=dict(globals(),**locals()))
-
-
+    # svm stuff
+    log('doing svm for',exp_name,pre=pre)
+    out_dict = analyzer.assess(df,'esem_status',model_type='SVM')
+    out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_SVM.json')
+    with open(out_txt_path,'w') as f:
+        json.dump(out_dict,f,indent=4)
 
 if __name__ == '__main__':
     logger.deleteLogs()
