@@ -92,30 +92,60 @@ def analyzeExperiment(exp_name,pre=''):
     p('opp_prop',pre=pre)
 
     # do the anlaysis
+    all_precision,all_recall,all_labels = [],[],[]
     # linear regression
     log('doing linear regression for',exp_name,pre=pre)
-    out_dict = analyzer.assess(df,'esem_status',model_type='Linear')
+    out_dict,data = analyzer.assess(df,'esem_status',model_type='Linear')
     out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_linear_regression.json')
     with open(out_txt_path,'w') as f:
         json.dump(out_dict,f,indent=4)
+    roc_path = os.path.join(OUTDIR,exp_name,'analysis_linear_regression_roc.png')
+    all_precision.append(data['precision'])
+    all_recall.append(data['recall'])
+    all_labels.append('linear')
     # logistic regression
     log('doing logistic regression for',exp_name,pre=pre)
-    out_dict = analyzer.assess(df,'esem_status',model_type='Logistic')
+    out_dict,data = analyzer.assess(df,'esem_status',model_type='Logistic')
     out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_logistic_regression.json')
     with open(out_txt_path,'w') as f:
         json.dump(out_dict,f,indent=4)
+    roc_path = os.path.join(OUTDIR,exp_name,'analysis_logistic_regression_roc.png')
+    all_precision.append(data['precision'])
+    all_recall.append(data['recall'])
+    all_labels.append('logistic')
     # xgboost stuff
     log('doing xgboost for',exp_name,pre=pre)
-    out_dict = analyzer.assess(df,'esem_status',model_type='Xgboost')
+    out_dict,data = analyzer.assess(df,'esem_status',model_type='Xgboost')
     out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_xgboost.json')
     with open(out_txt_path,'w') as f:
         json.dump(out_dict,f,indent=4)
+    roc_path = os.path.join(OUTDIR,exp_name,'analysis_xgboost_roc.png')
+    all_precision.append(data['precision'])
+    all_recall.append(data['recall'])
+    all_labels.append('xgboost')
     # svm stuff
     log('doing svm for',exp_name,pre=pre)
-    out_dict = analyzer.assess(df,'esem_status',model_type='SVM')
+    out_dict,data = analyzer.assess(df,'esem_status',model_type='SVM')
     out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_SVM.json')
     with open(out_txt_path,'w') as f:
         json.dump(out_dict,f,indent=4)
+    roc_path = os.path.join(OUTDIR,exp_name,'analysis_SVM_roc.png')
+    all_precision.append(data['precision'])
+    all_recall.append(data['recall'])
+    all_labels.append('SVM')
+    # neural stuff
+    log('doing neural for',exp_name,pre=pre)
+    out_dict,data = analyzer.assess(df,'esem_status',model_type='Neural')
+    out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_Neural.json')
+    with open(out_txt_path,'w') as f:
+        json.dump(out_dict,f,indent=4)
+    all_precision.append(data['precision'])
+    all_recall.append(data['recall'])
+    all_labels.append('Neural')
+    
+    # draw the roc curves
+    precision_recall_path = os.path.join(OUTDIR,exp_name,'analysis_prc.png')
+    analyzer.plotPRC(all_precision,all_recall,all_labels,precision_recall_path)
 
 if __name__ == '__main__':
     logger.deleteLogs()
@@ -128,3 +158,4 @@ if __name__ == '__main__':
             debug = True
         analyzeExperiment(experiment)
     print('analysis complete')
+    code.interact(local=dict(globals(),**locals()))
