@@ -36,6 +36,27 @@
 <p>The purpose of this module is to centralze of the the stats and plotting
 functionality for reusability</p>
 <dl class="class">
+<dt id="analyzer.Neural_wrapper">
+<em class="property">class </em><code class="descclassname">analyzer.</code><code class="descname">Neural_wrapper</code><a class="headerlink" href="#analyzer.Neural_wrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for the neural network model</p>
+<dl class="method">
+<dt id="analyzer.Neural_wrapper.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>Y</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.Neural_wrapper.fit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="analyzer.Neural_wrapper.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>X_test</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.Neural_wrapper.predict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="analyzer.Neural_wrapper.predict_proba">
+<code class="descname">predict_proba</code><span class="sig-paren">(</span><em>X_test</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.Neural_wrapper.predict_proba" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="analyzer.Xgboost_wrapper">
 <em class="property">class </em><code class="descclassname">analyzer.</code><code class="descname">Xgboost_wrapper</code><a class="headerlink" href="#analyzer.Xgboost_wrapper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrapper for the xgboost model</p>
@@ -49,18 +70,23 @@ functionality for reusability</p>
 <code class="descname">predict</code><span class="sig-paren">(</span><em>X_test</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.Xgboost_wrapper.predict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="method">
+<dt id="analyzer.Xgboost_wrapper.predict_proba">
+<code class="descname">predict_proba</code><span class="sig-paren">(</span><em>X_test</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.Xgboost_wrapper.predict_proba" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="function">
 <dt id="analyzer.assess">
-<code class="descclassname">analyzer.</code><code class="descname">assess</code><span class="sig-paren">(</span><em>df</em>, <em>y_label</em>, <em>model_type='Linear'</em>, <em>test_data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.assess" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">analyzer.</code><code class="descname">assess</code><span class="sig-paren">(</span><em>df</em>, <em>y_label</em>, <em>model_type='Linear'</em>, <em>ranges=None</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.assess" title="Permalink to this definition">¶</a></dt>
 <dd><p>(assess DataFrame str) This function takes in a dataframe of all the data, takes out
 the column addressed as y_label and then does a linear regression to use the x values to predict
 y_label and returns the stats (dict) and the predictions (list)</p>
 <div class="line-block">
 <div class="line">kargs:</div>
-<div class="line">model_type:   (anyof ‘Linear’ ‘Logistic’ ‘Xgboost’) this determines which model will be used to assess the datapoints</div>
-<div class="line">test_data: DataFrame:     This determines what data the predictions will be for, if None then the df will be used</div>
+<div class="line">model_type:   (anyof ‘Linear’ ‘Logistic’ ‘Xgboost’ ‘SVM’ ‘Neural’) this determines which model will be used to assess the datapoints</div>
+<div class="line">ranges: (dictof col_name: (lstof min max)): This determines the full range of values that each column to take (used to normalize the data)</div>
 </div>
 <div class="line-block">
 <div class="line">ex.</div>
@@ -68,6 +94,23 @@ y_label and returns the stats (dict) and the predictions (list)</p>
 <div class="line">doRegression(df_test,’y’,model_type=’Linear’) -&gt; {‘R^2’: 0.9796610169491525}, [[1, 2.2000000000000006], [2, 3.9000000000000004], [3, 5.6000000000000005], [4, 7.3]]</div>
 </div>
 <p>Note: Logistic defaults to one vs all classification</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="analyzer.bestThreshold">
+<code class="descclassname">analyzer.</code><code class="descname">bestThreshold</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>thresholds</em>, <em>opt</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.bestThreshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>(bestThreshold x y thresholds opt) The purpose of this function is to determine the best thresold based on a set of values for the x-axis, the y-axis, and the thresholds used for each as well as an optimal point (opt) to evaluate the distance to (shortest distanct to the optimal is the ‘best’)</p>
+<p>bestThreshold: (listof num) (listof num) (listof num) (point) -&gt; num &lt;- the ‘best’ threshold
+ex.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="analyzer.f1">
+<code class="descclassname">analyzer.</code><code class="descname">f1</code><span class="sig-paren">(</span><em>confusion_matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.f1" title="Permalink to this definition">¶</a></dt>
+<dd><p>(f1 confusion_matrix) The purpose of this function is to calculate the f1 score of a confusion_matrix
+ex.</p>
+<p>data = [[1,2],[3,4]] # C_{i,j} where i is the true value and j is the predicted value
+f1(data) -&gt; 0.6153846153846153</p>
 </dd></dl>
 
 <dl class="function">
@@ -83,6 +126,58 @@ filename: Saves the fig to this file</p>
 <div class="line">predictions = [[1,2.2],[2,3.9],[3,5.6],[4,7.3]]</div>
 <div class="line">plotBestFit(actual, predictions, filename=’./test.png’) -&gt; A plt that shows a line of best fit and is saved to ./test.png</div>
 </div>
+</dd></dl>
+
+<dl class="function">
+<dt id="analyzer.plotPRC">
+<code class="descclassname">analyzer.</code><code class="descname">plotPRC</code><span class="sig-paren">(</span><em>prec</em>, <em>rec</em>, <em>labels</em>, <em>filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.plotPRC" title="Permalink to this definition">¶</a></dt>
+<dd><p>(plotROC fpr tpr filepath) The purpose of this function is to create a plot depicting the ROC curve given the false positive rates (fpr), the true positive rates (tpr), and saving it to the filepath provided.
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn import metrics
+&gt;&gt;&gt; y = np.array([1, 1, 2, 2])
+&gt;&gt;&gt; scores = np.array([0.1, 0.4, 0.35, 0.8])
+&gt;&gt;&gt; fpr, tpr, thresholds = metrics.roc_curve(y, scores, pos_label=2)
+&gt;&gt;&gt; fpr
+array([0. , 0. , 0.5, 0.5, 1. ])
+&gt;&gt;&gt; tpr
+array([0. , 0.5, 0.5, 1. , 1. ])
+&gt;&gt;&gt; thresholds
+array([1.8 , 0.8 , 0.4 , 0.35, 0.1 ])</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="analyzer.plotPRC_helper">
+<code class="descclassname">analyzer.</code><code class="descname">plotPRC_helper</code><span class="sig-paren">(</span><em>prec</em>, <em>rec</em>, <em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.plotPRC_helper" title="Permalink to this definition">¶</a></dt>
+<dd><p>(plotROC prec rec label) The purpose of this function is to create a plot depicting the ROC curve given the false positive rates (fpr), the true positive rates (tpr), and saving it to the filepath provided.
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; from sklearn import metrics
+&gt;&gt;&gt; y = np.array([1, 1, 2, 2])
+&gt;&gt;&gt; scores = np.array([0.1, 0.4, 0.35, 0.8])
+&gt;&gt;&gt; fpr, tpr, thresholds = metrics.roc_curve(y, scores, pos_label=2)
+&gt;&gt;&gt; fpr
+array([0. , 0. , 0.5, 0.5, 1. ])
+&gt;&gt;&gt; tpr
+array([0. , 0.5, 0.5, 1. , 1. ])
+&gt;&gt;&gt; thresholds
+array([1.8 , 0.8 , 0.4 , 0.35, 0.1 ])</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="analyzer.precision">
+<code class="descclassname">analyzer.</code><code class="descname">precision</code><span class="sig-paren">(</span><em>confusion_matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.precision" title="Permalink to this definition">¶</a></dt>
+<dd><p>(precision confusion_matrix) The purpose of this function is to calculate the precision given a confusion matrix</p>
+<p>ex.
+data = [[1,2],[3,4]] # C_{i,j} where i is the true value and j is the predicted value
+precision(data) -&gt; 0.6666666666666666</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="analyzer.recall">
+<code class="descclassname">analyzer.</code><code class="descname">recall</code><span class="sig-paren">(</span><em>confusion_matrix</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.recall" title="Permalink to this definition">¶</a></dt>
+<dd><p>(recall confusion_matrix) The purpose of this function is to calculate the recall given a confusion matrix</p>
+<p>ex.
+data = [[1,2],[3,4]] # C_{i,j} where i is the true value and j is the predicted value
+recall(data) -&gt; 0.5714285714285714</p>
 </dd></dl>
 
 </div>
