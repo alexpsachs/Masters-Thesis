@@ -1,5 +1,5 @@
 """
-The purpose of this script is to combine the relelant data in tables:
+The purpose of this script is to combine the relevant data in tables:
     ./SYMLOG_metrics/<experiment>/SYMLOG_metrics.ods
     ./ESEM - Dataset.ods
 so that there can be one datasource for the analysis into

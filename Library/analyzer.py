@@ -538,7 +538,7 @@ def plotPRC_helper(prec,rec,thresholds,label):
     # put the best threshold point
     best_threshold = bestThreshold(rec,prec,thresholds,(1.0,1.0))
     point = [(rec[i],prec[i]) for i,threshold in enumerate(thresholds) if float(threshold) == best_threshold][0]
-    plt.annotate('x',point)
+    plt.annotate('|_',point)
 
 def precision(confusion_matrix):
     """
