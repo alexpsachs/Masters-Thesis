@@ -1,0 +1,100 @@
+[
+    {
+        "url": "https://api.github.com/repos/topcoat/topcoat/pulls/comments/5168304",
+        "pull_request_review_id": null,
+        "id": 5168304,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUxNjgzMDQ=",
+        "diff_hunk": "@@ -0,0 +1,52 @@\n+'use strict';\n+\n+var grunt = require('grunt');\n+\n+/*\n+  ======== A Handy Little Nodeunit Reference ========\n+  https://github.com/caolan/nodeunit\n+\n+  Test methods:\n+    test.expect(numAssertions)\n+    test.done()\n+  Test assertions:\n+    test.ok(value, [message])\n+    test.equal(actual, expected, [message])\n+    test.notEqual(actual, expected, [message])\n+    test.deepEqual(actual, expected, [message])\n+    test.notDeepEqual(actual, expected, [message])\n+    test.strictEqual(actual, expected, [message])\n+    test.notStrictEqual(actual, expected, [message])\n+    test.throws(block, [error], [message])\n+    test.doesNotThrow(block, [error], [message])\n+    test.ifError(value)\n+*/\n+\n+exports.variableTest = {\n+  setUp: function(done) {\n+    // setup here if necessary\n+    done();\n+  },\n+  stylus: function(test) {\n+\n+    var files = grunt.file.expand('css/topcoat-*.min.css'),\n+        l = files.length\n+    ;\n+\n+    test.expect(l);\n+\n+    files.forEach(function (file) {\n+      var actual = grunt.file.read(file);\n+      var match = actual.match(/var-[a-z-]*[a-z]+/g);\n+\n+      if (match) console.log('\\nMissing ' + match.join(', ') + ' in ' + file);\n+      test.equal(match, null, 'should not have missing vars');\n+\n+      if (--l == 0) {",
+        "path": "dev/test/topcoat.test.js",
+        "position": null,
+        "original_position": 45,
+        "commit_id": "2d15211e964ce761b4bf5e313b67cf463df3ddfa",
+        "original_commit_id": "2768f5b983c01cef1c6de3b073006973b38815b1",
+        "user": {
+            "login": "brianleroux",
+            "id": 990,
+            "node_id": "MDQ6VXNlcjk5MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/990?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/brianleroux",
+            "html_url": "https://github.com/brianleroux",
+            "followers_url": "https://api.github.com/users/brianleroux/followers",
+            "following_url": "https://api.github.com/users/brianleroux/following{/other_user}",
+            "gists_url": "https://api.github.com/users/brianleroux/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/brianleroux/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/brianleroux/subscriptions",
+            "organizations_url": "https://api.github.com/users/brianleroux/orgs",
+            "repos_url": "https://api.github.com/users/brianleroux/repos",
+            "events_url": "https://api.github.com/users/brianleroux/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/brianleroux/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "wat\n",
+        "created_at": "2013-07-12T16:03:06Z",
+        "updated_at": "2013-07-15T08:08:19Z",
+        "html_url": "https://github.com/topcoat/topcoat/pull/305#discussion_r5168304",
+        "pull_request_url": "https://api.github.com/repos/topcoat/topcoat/pulls/305",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/topcoat/topcoat/pulls/comments/5168304"
+            },
+            "html": {
+                "href": "https://github.com/topcoat/topcoat/pull/305#discussion_r5168304"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/topcoat/topcoat/pulls/305"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/topcoat/topcoat/pulls/comments/5178738",
+        "pull_request_review_id": null,
+        "id": 5178738,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUxNzg3Mzg=",
+        "diff_hunk": "@@ -0,0 +1,52 @@\n+'use strict';\n+\n+var grunt = require('grunt');\n+\n+/*\n+  ======== A Handy Little Nodeunit Reference ========\n+  https://github.com/caolan/nodeunit\n+\n+  Test methods:\n+    test.expect(numAssertions)\n+    test.done()\n+  Test assertions:\n+    test.ok(value, [message])\n+    test.equal(actual, expected, [message])\n+    test.notEqual(actual, expected, [message])\n+    test.deepEqual(actual, expected, [message])\n+    test.notDeepEqual(actual, expected, [message])\n+    test.strictEqual(actual, expected, [message])\n+    test.notStrictEqual(actual, expected, [message])\n+    test.throws(block, [error], [message])\n+    test.doesNotThrow(block, [error], [message])\n+    test.ifError(value)\n+*/\n+\n+exports.variableTest = {\n+  setUp: function(done) {\n+    // setup here if necessary\n+    done();\n+  },\n+  stylus: function(test) {\n+\n+    var files = grunt.file.expand('css/topcoat-*.min.css'),\n+        l = files.length\n+    ;\n+\n+    test.expect(l);\n+\n+    files.forEach(function (file) {\n+      var actual = grunt.file.read(file);\n+      var match = actual.match(/var-[a-z-]*[a-z]+/g);\n+\n+      if (match) console.log('\\nMissing ' + match.join(', ') + ' in ' + file);\n+      test.equal(match, null, 'should not have missing vars');\n+\n+      if (--l == 0) {",
+        "path": "dev/test/topcoat.test.js",
+        "position": null,
+        "original_position": 45,
+        "commit_id": "2d15211e964ce761b4bf5e313b67cf463df3ddfa",
+        "original_commit_id": "2768f5b983c01cef1c6de3b073006973b38815b1",
+        "user": {
+            "login": "piatra",
+            "id": 810040,
+            "node_id": "MDQ6VXNlcjgxMDA0MA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/810040?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/piatra",
+            "html_url": "https://github.com/piatra",
+            "followers_url": "https://api.github.com/users/piatra/followers",
+            "following_url": "https://api.github.com/users/piatra/following{/other_user}",
+            "gists_url": "https://api.github.com/users/piatra/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/piatra/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/piatra/subscriptions",
+            "organizations_url": "https://api.github.com/users/piatra/orgs",
+            "repos_url": "https://api.github.com/users/piatra/repos",
+            "events_url": "https://api.github.com/users/piatra/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/piatra/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What's the problem ?\n\nOn 7/12/13, Brian LeRoux notifications@github.com wrote:\n\n> > -  stylus: function(test) {\n> >   +\n> > -    var files = grunt.file.expand('css/topcoat-*.min.css'),\n> > -        l = files.length\n> > -    ;\n> >   +\n> > -    test.expect(l);\n> >   +\n> > -    files.forEach(function (file) {\n> > -      var actual = grunt.file.read(file);\n> > -      var match = actual.match(/var-[a-z-]*[a-z]+/g);\n> >   +\n> > -      if (match) console.log('\\nMissing ' + match.join(', ') + ' in ' +\n> >   file);\n> > -      test.equal(match, null, 'should not have missing vars');\n> >   +\n> > -      if (--l == 0) {\n> \n> wat\n> \n> ---\n> \n> Reply to this email directly or view it on GitHub:\n> https://github.com/topcoat/topcoat/pull/305/files#r5168304\n\n## \n\nAndrei Oprea\n",
+        "created_at": "2013-07-13T07:14:36Z",
+        "updated_at": "2013-07-15T08:08:19Z",
+        "html_url": "https://github.com/topcoat/topcoat/pull/305#discussion_r5178738",
+        "pull_request_url": "https://api.github.com/repos/topcoat/topcoat/pulls/305",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/topcoat/topcoat/pulls/comments/5178738"
+            },
+            "html": {
+                "href": "https://github.com/topcoat/topcoat/pull/305#discussion_r5178738"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/topcoat/topcoat/pulls/305"
+            }
+        }
+    }
+]

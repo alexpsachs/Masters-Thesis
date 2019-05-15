@@ -1,0 +1,443 @@
+[
+    {
+        "url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/56484",
+        "pull_request_review_id": null,
+        "id": 56484,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU2NDg0",
+        "diff_hunk": "@@ -182,7 +182,8 @@\n             'access'\n           ],\n           callbacks  : {\n-            search : function(query) {\n+            search : function(query, queryObj) {\n+              window.console && console.log(queryObj);",
+        "path": "index.html",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "0cea62bf4dc5bc2e2c56b5762e5159c6f673985a",
+        "original_commit_id": "bf3132bb1e3463aeab2eb5db906248758cd2cb6f",
+        "user": {
+            "login": "tswicegood",
+            "id": 4328,
+            "node_id": "MDQ6VXNlcjQzMjg=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/4328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tswicegood",
+            "html_url": "https://github.com/tswicegood",
+            "followers_url": "https://api.github.com/users/tswicegood/followers",
+            "following_url": "https://api.github.com/users/tswicegood/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tswicegood/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tswicegood/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tswicegood/subscriptions",
+            "organizations_url": "https://api.github.com/users/tswicegood/orgs",
+            "repos_url": "https://api.github.com/users/tswicegood/repos",
+            "events_url": "https://api.github.com/users/tswicegood/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tswicegood/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Generally not a good idea to `console.log` stuff by default. :-)\n",
+        "created_at": "2011-07-01T20:53:47Z",
+        "updated_at": "2011-07-14T02:34:15Z",
+        "html_url": "https://github.com/documentcloud/visualsearch/pull/6#discussion_r56484",
+        "pull_request_url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/6",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/56484"
+            },
+            "html": {
+                "href": "https://github.com/documentcloud/visualsearch/pull/6#discussion_r56484"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/6"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/56497",
+        "pull_request_review_id": null,
+        "id": 56497,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU2NDk3",
+        "diff_hunk": "@@ -182,7 +182,8 @@\n             'access'\n           ],\n           callbacks  : {\n-            search : function(query) {\n+            search : function(query, queryObj) {\n+              window.console && console.log(queryObj);",
+        "path": "index.html",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "0cea62bf4dc5bc2e2c56b5762e5159c6f673985a",
+        "original_commit_id": "bf3132bb1e3463aeab2eb5db906248758cd2cb6f",
+        "user": {
+            "login": "delambo",
+            "id": 522900,
+            "node_id": "MDQ6VXNlcjUyMjkwMA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/522900?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/delambo",
+            "html_url": "https://github.com/delambo",
+            "followers_url": "https://api.github.com/users/delambo/followers",
+            "following_url": "https://api.github.com/users/delambo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/delambo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/delambo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/delambo/subscriptions",
+            "organizations_url": "https://api.github.com/users/delambo/orgs",
+            "repos_url": "https://api.github.com/users/delambo/repos",
+            "events_url": "https://api.github.com/users/delambo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/delambo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yeah, I mostly agree, but since it was a demo page, I wanted to give anyone driving the demo a chance to see what the queryObj looked like in their console.\n\nI would really like to see this pull request merged, and I will remove it in an instant if the consensus is to get rid of it...\n\nIs Armstrong done yet? :-)\n",
+        "created_at": "2011-07-01T21:05:26Z",
+        "updated_at": "2011-07-14T02:34:15Z",
+        "html_url": "https://github.com/documentcloud/visualsearch/pull/6#discussion_r56497",
+        "pull_request_url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/6",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/56497"
+            },
+            "html": {
+                "href": "https://github.com/documentcloud/visualsearch/pull/6#discussion_r56497"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/6"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/75460",
+        "pull_request_review_id": null,
+        "id": 75460,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1NDYw",
+        "diff_hunk": "@@ -184,10 +184,11 @@ VS.ui.SearchFacet = Backbone.View.extend({\n     }\n \n     this.flags.canClose = false;\n-    VS.app.searchBox.disableFacets(this);\n-    VS.app.searchBox.addFocus();\n+    this.options.app.searchBox.disableFacets(this);\n+    this.options.app.searchBox.addFocus();\n+    var self = this;",
+        "path": "lib/js/views/search_facet.js",
+        "position": null,
+        "original_position": 29,
+        "commit_id": "d8b1ab757905180e393d9961bee9a2eb42c9cdf9",
+        "original_commit_id": "68676d0c3480584b5820cb4a48322d42217999a2",
+        "user": {
+            "login": "tswicegood",
+            "id": 4328,
+            "node_id": "MDQ6VXNlcjQzMjg=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/4328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tswicegood",
+            "html_url": "https://github.com/tswicegood",
+            "followers_url": "https://api.github.com/users/tswicegood/followers",
+            "following_url": "https://api.github.com/users/tswicegood/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tswicegood/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tswicegood/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tswicegood/subscriptions",
+            "organizations_url": "https://api.github.com/users/tswicegood/orgs",
+            "repos_url": "https://api.github.com/users/tswicegood/repos",
+            "events_url": "https://api.github.com/users/tswicegood/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tswicegood/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "There's an Underscore way to do this, right?  I was looking for a quick fix when I put this in.\n",
+        "created_at": "2011-07-27T17:50:44Z",
+        "updated_at": "2011-07-27T18:35:35Z",
+        "html_url": "https://github.com/documentcloud/visualsearch/pull/20#discussion_r75460",
+        "pull_request_url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/20",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/75460"
+            },
+            "html": {
+                "href": "https://github.com/documentcloud/visualsearch/pull/20#discussion_r75460"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/20"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/81475",
+        "pull_request_review_id": null,
+        "id": 81475,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgxNDc1",
+        "diff_hunk": "@@ -157,11 +157,24 @@ VS.ui.SearchBox = Backbone.View.extend({\n   // # Modifying Facets #\n \n   // Clears out the search box. Command+A + delete can trigger this, as can a cancel button.\n+  //\n+  // If a `clearSearch` callback was provided, the callback is invoked and\n+  // provided with a function performs the actual removal of the data.  This\n+  // allows third-party developers to either clear data asynchronously, or\n+  // prior to performing their custom \"clear\" logic.\n   clearSearch : function(e) {\n-    this.disableFacets();\n-    this.value('');\n-    this.flags.allSelected = false;\n-    this.focusSearch(e);\n+    var actualClearSearch = _.bind(function() {",
+        "path": "lib/js/views/search_box.js",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "88ca98a4783c3d1c44f5188c81504f4e0fae6cfc",
+        "original_commit_id": "88ca98a4783c3d1c44f5188c81504f4e0fae6cfc",
+        "user": {
+            "login": "tswicegood",
+            "id": 4328,
+            "node_id": "MDQ6VXNlcjQzMjg=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/4328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tswicegood",
+            "html_url": "https://github.com/tswicegood",
+            "followers_url": "https://api.github.com/users/tswicegood/followers",
+            "following_url": "https://api.github.com/users/tswicegood/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tswicegood/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tswicegood/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tswicegood/subscriptions",
+            "organizations_url": "https://api.github.com/users/tswicegood/orgs",
+            "repos_url": "https://api.github.com/users/tswicegood/repos",
+            "events_url": "https://api.github.com/users/tswicegood/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tswicegood/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Any thoughts on a name here?  The thought to make it `inner` crossed my mind, but that's more a Python convention.\n",
+        "created_at": "2011-08-03T16:24:14Z",
+        "updated_at": "2011-08-03T16:24:14Z",
+        "html_url": "https://github.com/documentcloud/visualsearch/pull/22#discussion_r81475",
+        "pull_request_url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/22",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/81475"
+            },
+            "html": {
+                "href": "https://github.com/documentcloud/visualsearch/pull/22#discussion_r81475"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/22"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/61753",
+        "pull_request_review_id": null,
+        "id": 61753,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYxNzUz",
+        "diff_hunk": "@@ -39,6 +53,14 @@ VS.ui.SearchFacet = Backbone.View.extend({\n     this.box.val(this.model.get('value'));\n     this.box.bind('blur', this.deferDisableEdit);\n     this.setupAutocomplete();\n+\tif(this.options.DatePicker){\n+\t  if(this.options.DatePicker.showOn && this.options.DatePicker.showOn == 'both')\n+\t\tthis.options.DatePicker.showOn = 'button';\n+\t  else\n+\t\tthis.options.DatePicker.showOn = 'none';",
+        "path": "lib/js/views/search_facet.js",
+        "position": 29,
+        "original_position": 29,
+        "commit_id": "b16c6ef0953177107409b287fc579b6784f36ab4",
+        "original_commit_id": "45f7db5231cf569952154ec0e7ce589a3024042c",
+        "user": {
+            "login": "alex-caelus",
+            "id": 902555,
+            "node_id": "MDQ6VXNlcjkwMjU1NQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/902555?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/alex-caelus",
+            "html_url": "https://github.com/alex-caelus",
+            "followers_url": "https://api.github.com/users/alex-caelus/followers",
+            "following_url": "https://api.github.com/users/alex-caelus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/alex-caelus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/alex-caelus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/alex-caelus/subscriptions",
+            "organizations_url": "https://api.github.com/users/alex-caelus/orgs",
+            "repos_url": "https://api.github.com/users/alex-caelus/repos",
+            "events_url": "https://api.github.com/users/alex-caelus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/alex-caelus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I had to disable Datepickers automatic showOnFocus otherwise the picker will appear twice.\n",
+        "created_at": "2011-07-11T11:09:24Z",
+        "updated_at": "2011-08-08T08:53:29Z",
+        "html_url": "https://github.com/documentcloud/visualsearch/pull/12#discussion_r61753",
+        "pull_request_url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/12",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/61753"
+            },
+            "html": {
+                "href": "https://github.com/documentcloud/visualsearch/pull/12#discussion_r61753"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/12"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/61754",
+        "pull_request_review_id": null,
+        "id": 61754,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYxNzU0",
+        "diff_hunk": "@@ -181,6 +203,9 @@ VS.ui.SearchFacet = Backbone.View.extend({\n       if (this.box.val() == '') {\n         this.box.val(this.model.get('value'));\n       }\n+\t  if(this.options.DatePicker){\n+\t\t$(this.box).datepicker(\"show\");\n+\t  }",
+        "path": "lib/js/views/search_facet.js",
+        "position": 63,
+        "original_position": 42,
+        "commit_id": "b16c6ef0953177107409b287fc579b6784f36ab4",
+        "original_commit_id": "45f7db5231cf569952154ec0e7ce589a3024042c",
+        "user": {
+            "login": "alex-caelus",
+            "id": 902555,
+            "node_id": "MDQ6VXNlcjkwMjU1NQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/902555?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/alex-caelus",
+            "html_url": "https://github.com/alex-caelus",
+            "followers_url": "https://api.github.com/users/alex-caelus/followers",
+            "following_url": "https://api.github.com/users/alex-caelus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/alex-caelus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/alex-caelus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/alex-caelus/subscriptions",
+            "organizations_url": "https://api.github.com/users/alex-caelus/orgs",
+            "repos_url": "https://api.github.com/users/alex-caelus/repos",
+            "events_url": "https://api.github.com/users/alex-caelus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/alex-caelus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Se previous comment\n",
+        "created_at": "2011-07-11T11:09:50Z",
+        "updated_at": "2011-08-08T08:53:29Z",
+        "html_url": "https://github.com/documentcloud/visualsearch/pull/12#discussion_r61754",
+        "pull_request_url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/12",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/61754"
+            },
+            "html": {
+                "href": "https://github.com/documentcloud/visualsearch/pull/12#discussion_r61754"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/12"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/543091",
+        "pull_request_review_id": null,
+        "id": 543091,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU0MzA5MQ==",
+        "diff_hunk": "@@ -112,6 +119,17 @@ VS.ui.SearchBox = Backbone.View.extend({\n     });\n   },\n \n+  changedFacet: function () {\n+    this.renderFacets();\n+  },\n+\n+  // Re-renders facets and selects the nearest input field from the removed facet\n+  removedFacet : function (facet, query, options) {\n+    var facetView = this.facetViews[options.index];",
+        "path": "lib/js/views/search_box.js",
+        "position": 44,
+        "original_position": 44,
+        "commit_id": "75bdef984d02c49be3f341f14c99a59331f80c03",
+        "original_commit_id": "75bdef984d02c49be3f341f14c99a59331f80c03",
+        "user": {
+            "login": "samuelclay",
+            "id": 44229,
+            "node_id": "MDQ6VXNlcjQ0MjI5",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/44229?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/samuelclay",
+            "html_url": "https://github.com/samuelclay",
+            "followers_url": "https://api.github.com/users/samuelclay/followers",
+            "following_url": "https://api.github.com/users/samuelclay/following{/other_user}",
+            "gists_url": "https://api.github.com/users/samuelclay/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/samuelclay/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/samuelclay/subscriptions",
+            "organizations_url": "https://api.github.com/users/samuelclay/orgs",
+            "repos_url": "https://api.github.com/users/samuelclay/repos",
+            "events_url": "https://api.github.com/users/samuelclay/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/samuelclay/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I just moved the logic back to the original view's remove method.\n",
+        "created_at": "2012-03-11T01:21:55Z",
+        "updated_at": "2012-03-11T01:21:55Z",
+        "html_url": "https://github.com/documentcloud/visualsearch/pull/49#discussion_r543091",
+        "pull_request_url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/49",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/543091"
+            },
+            "html": {
+                "href": "https://github.com/documentcloud/visualsearch/pull/49#discussion_r543091"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/49"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/543090",
+        "pull_request_review_id": null,
+        "id": 543090,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU0MzA5MA==",
+        "diff_hunk": "@@ -112,6 +119,17 @@ VS.ui.SearchBox = Backbone.View.extend({\n     });\n   },\n \n+  changedFacet: function () {\n+    this.renderFacets();\n+  },\n+\n+  // Re-renders facets and selects the nearest input field from the removed facet\n+  removedFacet : function (facet, query, options) {\n+    var facetView = this.facetViews[options.index];",
+        "path": "lib/js/views/search_box.js",
+        "position": 44,
+        "original_position": 44,
+        "commit_id": "75bdef984d02c49be3f341f14c99a59331f80c03",
+        "original_commit_id": "75bdef984d02c49be3f341f14c99a59331f80c03",
+        "user": {
+            "login": "samuelclay",
+            "id": 44229,
+            "node_id": "MDQ6VXNlcjQ0MjI5",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/44229?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/samuelclay",
+            "html_url": "https://github.com/samuelclay",
+            "followers_url": "https://api.github.com/users/samuelclay/followers",
+            "following_url": "https://api.github.com/users/samuelclay/following{/other_user}",
+            "gists_url": "https://api.github.com/users/samuelclay/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/samuelclay/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/samuelclay/subscriptions",
+            "organizations_url": "https://api.github.com/users/samuelclay/orgs",
+            "repos_url": "https://api.github.com/users/samuelclay/repos",
+            "events_url": "https://api.github.com/users/samuelclay/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/samuelclay/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Unfortunately, this doesn't work. By the time you get here, the facets are already re-rendered and the position is lost. So when you remove a facet, you no longer are automatically moved to the adjacent remaining facet.\n",
+        "created_at": "2012-03-11T01:20:44Z",
+        "updated_at": "2012-03-11T01:22:16Z",
+        "html_url": "https://github.com/documentcloud/visualsearch/pull/49#discussion_r543090",
+        "pull_request_url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/49",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/543090"
+            },
+            "html": {
+                "href": "https://github.com/documentcloud/visualsearch/pull/49#discussion_r543090"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/49"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/1323788",
+        "pull_request_review_id": null,
+        "id": 1323788,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjM3ODg=",
+        "diff_hunk": "@@ -56,11 +56,17 @@ VS.model.SearchQuery = Backbone.Collection.extend({\n   },\n \n   // Used to temporarily hide a specific category and serialize the search query.\n-  withoutCategory : function(category) {\n+  withoutCategories : function() {\n+    var categories = _.map(_.toArray(arguments), function(cat) { return cat.toLowerCase(); });\n     return this.map(function(facet) {\n-      if (facet.get('category').toLowerCase() != category.toLowerCase()) return facet.serialize();\n+      if (!_.include(categories, facet.get('category').toLowerCase())) { \n+        return facet.serialize();\n+      };\n     }).join(' ');\n-  }\n+  },\n+\n+  // Proxies to the plural method above.\n+  withoutCategory : function() { return this.withoutCategories(arguments); }",
+        "path": "lib/js/models/search_query.js",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "6130c3e32c9d4e0447fc6b8297cf2d0e6a09e120",
+        "original_commit_id": "1d096d21d3007b94fab2bd1b757579239beeb4dd",
+        "user": {
+            "login": "samuelclay",
+            "id": 44229,
+            "node_id": "MDQ6VXNlcjQ0MjI5",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/44229?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/samuelclay",
+            "html_url": "https://github.com/samuelclay",
+            "followers_url": "https://api.github.com/users/samuelclay/followers",
+            "following_url": "https://api.github.com/users/samuelclay/following{/other_user}",
+            "gists_url": "https://api.github.com/users/samuelclay/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/samuelclay/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/samuelclay/subscriptions",
+            "organizations_url": "https://api.github.com/users/samuelclay/orgs",
+            "repos_url": "https://api.github.com/users/samuelclay/repos",
+            "events_url": "https://api.github.com/users/samuelclay/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/samuelclay/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If I'm not mistaken, you'll want to use `this.withoutCategories.apply(this, arguments)` to properly splat out the `arguments`.\n",
+        "created_at": "2012-08-07T17:15:20Z",
+        "updated_at": "2012-08-08T12:13:27Z",
+        "html_url": "https://github.com/documentcloud/visualsearch/pull/72#discussion_r1323788",
+        "pull_request_url": "https://api.github.com/repos/documentcloud/visualsearch/pulls/72",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/comments/1323788"
+            },
+            "html": {
+                "href": "https://github.com/documentcloud/visualsearch/pull/72#discussion_r1323788"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/documentcloud/visualsearch/pulls/72"
+            }
+        }
+    }
+]

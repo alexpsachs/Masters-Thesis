@@ -1,0 +1,100 @@
+[
+    {
+        "url": "https://api.github.com/repos/jdesboeufs/connect-mongo/pulls/comments/22298775",
+        "pull_request_review_id": null,
+        "id": 22298775,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMjk4Nzc1",
+        "diff_hunk": "@@ -248,6 +248,8 @@ module.exports = function(connect) {\n           } else {\n             self.destroy(sid, callback);\n           }\n+        } else {\n+          callback();",
+        "path": "lib/connect-mongo.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "9f16d7add461ddea45161eff5a04c46142526cce",
+        "original_commit_id": "9f16d7add461ddea45161eff5a04c46142526cce",
+        "user": {
+            "login": "ilanbiala",
+            "id": 3695164,
+            "node_id": "MDQ6VXNlcjM2OTUxNjQ=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/3695164?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ilanbiala",
+            "html_url": "https://github.com/ilanbiala",
+            "followers_url": "https://api.github.com/users/ilanbiala/followers",
+            "following_url": "https://api.github.com/users/ilanbiala/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ilanbiala/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ilanbiala/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ilanbiala/subscriptions",
+            "organizations_url": "https://api.github.com/users/ilanbiala/orgs",
+            "repos_url": "https://api.github.com/users/ilanbiala/repos",
+            "events_url": "https://api.github.com/users/ilanbiala/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ilanbiala/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No parameters need to be passed here? maybe `callback(null, null)` because the session doesn't exist?\n",
+        "created_at": "2014-12-28T16:31:31Z",
+        "updated_at": "2014-12-28T16:31:31Z",
+        "html_url": "https://github.com/jdesboeufs/connect-mongo/pull/143#discussion_r22298775",
+        "pull_request_url": "https://api.github.com/repos/jdesboeufs/connect-mongo/pulls/143",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jdesboeufs/connect-mongo/pulls/comments/22298775"
+            },
+            "html": {
+                "href": "https://github.com/jdesboeufs/connect-mongo/pull/143#discussion_r22298775"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jdesboeufs/connect-mongo/pulls/143"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jdesboeufs/connect-mongo/pulls/comments/22298824",
+        "pull_request_review_id": null,
+        "id": 22298824,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMjk4ODI0",
+        "diff_hunk": "@@ -248,6 +248,8 @@ module.exports = function(connect) {\n           } else {\n             self.destroy(sid, callback);\n           }\n+        } else {\n+          callback();",
+        "path": "lib/connect-mongo.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "9f16d7add461ddea45161eff5a04c46142526cce",
+        "original_commit_id": "9f16d7add461ddea45161eff5a04c46142526cce",
+        "user": {
+            "login": "jdesboeufs",
+            "id": 1231232,
+            "node_id": "MDQ6VXNlcjEyMzEyMzI=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1231232?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jdesboeufs",
+            "html_url": "https://github.com/jdesboeufs",
+            "followers_url": "https://api.github.com/users/jdesboeufs/followers",
+            "following_url": "https://api.github.com/users/jdesboeufs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jdesboeufs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jdesboeufs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jdesboeufs/subscriptions",
+            "organizations_url": "https://api.github.com/users/jdesboeufs/orgs",
+            "repos_url": "https://api.github.com/users/jdesboeufs/repos",
+            "events_url": "https://api.github.com/users/jdesboeufs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jdesboeufs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "In `connect-redis`, they use the convention `callback()`.\nIt's ok for me.\n",
+        "created_at": "2014-12-28T16:39:36Z",
+        "updated_at": "2014-12-28T16:39:36Z",
+        "html_url": "https://github.com/jdesboeufs/connect-mongo/pull/143#discussion_r22298824",
+        "pull_request_url": "https://api.github.com/repos/jdesboeufs/connect-mongo/pulls/143",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jdesboeufs/connect-mongo/pulls/comments/22298824"
+            },
+            "html": {
+                "href": "https://github.com/jdesboeufs/connect-mongo/pull/143#discussion_r22298824"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jdesboeufs/connect-mongo/pulls/143"
+            }
+        }
+    }
+]

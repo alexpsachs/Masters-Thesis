@@ -1,0 +1,1769 @@
+[
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/2871534",
+        "pull_request_review_id": null,
+        "id": 2871534,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NzE1MzQ=",
+        "diff_hunk": "@@ -357,7 +357,9 @@ Glob.prototype._process = function (pattern, depth, index, cb_) {\n   var read\n   if (prefix === null) read = \".\"\n   else if (isAbsolute(prefix) || isAbsolute(pattern.join(\"/\"))) {\n-    read = prefix = path.resolve(path.join(\"/\", prefix))\n+    if (process.platform !== \"win32\")",
+        "path": "glob.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "e9acc3ddc4b8d3b9145a739306e3aa3a70229ed2",
+        "original_commit_id": "e9acc3ddc4b8d3b9145a739306e3aa3a70229ed2",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think this should be `if (!isAbsolute(prefix)) prefix = path.join(\"/\", prefix);`  Otherwise, a prefix like `../../foo` will now be handled differently.\n",
+        "created_at": "2013-02-03T20:02:56Z",
+        "updated_at": "2013-02-03T20:02:56Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/52#discussion_r2871534",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/52",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/2871534"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/52#discussion_r2871534"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/52"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/2871550",
+        "pull_request_review_id": null,
+        "id": 2871550,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NzE1NTA=",
+        "diff_hunk": "@@ -357,7 +357,9 @@ Glob.prototype._process = function (pattern, depth, index, cb_) {\n   var read\n   if (prefix === null) read = \".\"\n   else if (isAbsolute(prefix) || isAbsolute(pattern.join(\"/\"))) {\n-    read = prefix = path.resolve(path.join(\"/\", prefix))\n+    if (process.platform !== \"win32\")",
+        "path": "glob.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "e9acc3ddc4b8d3b9145a739306e3aa3a70229ed2",
+        "original_commit_id": "e9acc3ddc4b8d3b9145a739306e3aa3a70229ed2",
+        "user": {
+            "login": "kimjoar",
+            "id": 5259,
+            "node_id": "MDQ6VXNlcjUyNTk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/5259?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kimjoar",
+            "html_url": "https://github.com/kimjoar",
+            "followers_url": "https://api.github.com/users/kimjoar/followers",
+            "following_url": "https://api.github.com/users/kimjoar/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kimjoar/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kimjoar/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kimjoar/subscriptions",
+            "organizations_url": "https://api.github.com/users/kimjoar/orgs",
+            "repos_url": "https://api.github.com/users/kimjoar/repos",
+            "events_url": "https://api.github.com/users/kimjoar/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kimjoar/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm not able to test this on Windows until tomorrow. Should I update the PR now or wait until I'm able to verify that it still works?\n",
+        "created_at": "2013-02-03T20:08:07Z",
+        "updated_at": "2013-02-03T20:08:07Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/52#discussion_r2871550",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/52",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/2871550"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/52#discussion_r2871550"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/52"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/2871569",
+        "pull_request_review_id": null,
+        "id": 2871569,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NzE1Njk=",
+        "diff_hunk": "@@ -357,7 +357,9 @@ Glob.prototype._process = function (pattern, depth, index, cb_) {\n   var read\n   if (prefix === null) read = \".\"\n   else if (isAbsolute(prefix) || isAbsolute(pattern.join(\"/\"))) {\n-    read = prefix = path.resolve(path.join(\"/\", prefix))\n+    if (process.platform !== \"win32\")",
+        "path": "glob.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "e9acc3ddc4b8d3b9145a739306e3aa3a70229ed2",
+        "original_commit_id": "e9acc3ddc4b8d3b9145a739306e3aa3a70229ed2",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'll look into it.  No worries :)\n",
+        "created_at": "2013-02-03T20:16:27Z",
+        "updated_at": "2013-02-03T20:16:27Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/52#discussion_r2871569",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/52",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/2871569"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/52#discussion_r2871569"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/52"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/4443894",
+        "pull_request_review_id": null,
+        "id": 4443894,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NDM4OTQ=",
+        "diff_hunk": "@@ -376,9 +376,9 @@ Glob.prototype._process = function (pattern, depth, index, cb_) {\n   if (prefix === null) read = \".\"\n   else if (isAbsolute(prefix) || isAbsolute(pattern.join(\"/\"))) {\n     if (!prefix || !isAbsolute(prefix)) {\n-      prefix = path.join(\"/\", prefix)\n+\t\tprefix = [\"/\", prefix].join('/')",
+        "path": "glob.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "43c2e8482c5d251d5dac5ada0c0ba1ae6f88c9d1",
+        "original_commit_id": "9ffe5b25aba27ea7f494aa6baf335e22f3a12491",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why not just `prefix = '/' + prefix`, then?\n\nAlso, indentation.\n",
+        "created_at": "2013-05-29T20:12:17Z",
+        "updated_at": "2013-05-30T10:25:55Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/68#discussion_r4443894",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/68",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/4443894"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/68#discussion_r4443894"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/8747821",
+        "pull_request_review_id": null,
+        "id": 8747821,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg3NDc4MjE=",
+        "diff_hunk": "@@ -295,7 +297,10 @@ Glob.prototype._processEmitQueue = function (m) {\n     }\n \n     this.log('emit!', m === this.EOF ? \"end\" : \"match\")\n-\n+    if(m !== this.EOF && this.mark) {\n+      m = markMap.call(this, m)",
+        "path": "glob.js",
+        "position": 48,
+        "original_position": 48,
+        "commit_id": "fc3fa09d6eed6845798f145118d0689c8a2f929f",
+        "original_commit_id": "fc3fa09d6eed6845798f145118d0689c8a2f929f",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If you're doing it here, do you still need to do it at the end?  (ie, line 233)\n",
+        "created_at": "2014-01-09T05:23:13Z",
+        "updated_at": "2014-01-09T05:23:13Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/82#discussion_r8747821",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/82",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/8747821"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/82#discussion_r8747821"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/82"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/12838968",
+        "pull_request_review_id": null,
+        "id": 12838968,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM4OTY4",
+        "diff_hunk": "@@ -13,7 +13,7 @@\n   },\n   \"dependencies\": {\n     \"inherits\": \"2\",\n-    \"minimatch\": \"^0.3.0\"\n+    \"minimatch\": \"~0.3.0\"",
+        "path": "package.json",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "0fb8ab6af1ab5b77319222db5d5f77f8d3bdfe39",
+        "original_commit_id": "0fb8ab6af1ab5b77319222db5d5f77f8d3bdfe39",
+        "user": {
+            "login": "dougwilson",
+            "id": 67512,
+            "node_id": "MDQ6VXNlcjY3NTEy",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/67512?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dougwilson",
+            "html_url": "https://github.com/dougwilson",
+            "followers_url": "https://api.github.com/users/dougwilson/followers",
+            "following_url": "https://api.github.com/users/dougwilson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dougwilson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dougwilson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dougwilson/subscriptions",
+            "organizations_url": "https://api.github.com/users/dougwilson/orgs",
+            "repos_url": "https://api.github.com/users/dougwilson/repos",
+            "events_url": "https://api.github.com/users/dougwilson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dougwilson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The correct version spec would be `\">= 0.3.0 < 4\"`\n",
+        "created_at": "2014-05-20T11:34:11Z",
+        "updated_at": "2014-05-20T11:34:20Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/96#discussion_r12838968",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/96",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/12838968"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/96#discussion_r12838968"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/96"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/12839823",
+        "pull_request_review_id": null,
+        "id": 12839823,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM5ODIz",
+        "diff_hunk": "@@ -13,7 +13,7 @@\n   },\n   \"dependencies\": {\n     \"inherits\": \"2\",\n-    \"minimatch\": \"^0.3.0\"\n+    \"minimatch\": \"~0.3.0\"",
+        "path": "package.json",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "0fb8ab6af1ab5b77319222db5d5f77f8d3bdfe39",
+        "original_commit_id": "0fb8ab6af1ab5b77319222db5d5f77f8d3bdfe39",
+        "user": {
+            "login": "abtris",
+            "id": 100356,
+            "node_id": "MDQ6VXNlcjEwMDM1Ng==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/100356?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/abtris",
+            "html_url": "https://github.com/abtris",
+            "followers_url": "https://api.github.com/users/abtris/followers",
+            "following_url": "https://api.github.com/users/abtris/following{/other_user}",
+            "gists_url": "https://api.github.com/users/abtris/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/abtris/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/abtris/subscriptions",
+            "organizations_url": "https://api.github.com/users/abtris/orgs",
+            "repos_url": "https://api.github.com/users/abtris/repos",
+            "events_url": "https://api.github.com/users/abtris/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/abtris/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is the some.\n",
+        "created_at": "2014-05-20T12:00:50Z",
+        "updated_at": "2014-05-20T12:00:50Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/96#discussion_r12839823",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/96",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/12839823"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/96#discussion_r12839823"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/96"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/12839883",
+        "pull_request_review_id": null,
+        "id": 12839883,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM5ODgz",
+        "diff_hunk": "@@ -13,7 +13,7 @@\n   },\n   \"dependencies\": {\n     \"inherits\": \"2\",\n-    \"minimatch\": \"^0.3.0\"\n+    \"minimatch\": \"~0.3.0\"",
+        "path": "package.json",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "0fb8ab6af1ab5b77319222db5d5f77f8d3bdfe39",
+        "original_commit_id": "0fb8ab6af1ab5b77319222db5d5f77f8d3bdfe39",
+        "user": {
+            "login": "dougwilson",
+            "id": 67512,
+            "node_id": "MDQ6VXNlcjY3NTEy",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/67512?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dougwilson",
+            "html_url": "https://github.com/dougwilson",
+            "followers_url": "https://api.github.com/users/dougwilson/followers",
+            "following_url": "https://api.github.com/users/dougwilson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dougwilson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dougwilson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dougwilson/subscriptions",
+            "organizations_url": "https://api.github.com/users/dougwilson/orgs",
+            "repos_url": "https://api.github.com/users/dougwilson/repos",
+            "events_url": "https://api.github.com/users/dougwilson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dougwilson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`~0.3.0` is only equivalent to `>= 0.3.0 < 0.4.0`, which is not the same.\n",
+        "created_at": "2014-05-20T12:02:39Z",
+        "updated_at": "2014-05-20T12:02:39Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/96#discussion_r12839883",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/96",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/12839883"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/96#discussion_r12839883"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/96"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763823",
+        "pull_request_review_id": null,
+        "id": 22763823,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzYzODIz",
+        "diff_hunk": "@@ -74,6 +75,27 @@ function setopts (self, pattern, options) {\n   self.statCache = options.statCache || Object.create(null)\n   self.symlinks = options.symlinks || Object.create(null)\n \n+  self.ignore = options.ignore || []\n+\n+  if(!Array.isArray(self.ignore)) {",
+        "path": "common.js",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "9f2958a2a2b4c7e74ff3affcecd32ce166cbdbba",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please add space to match the style in the rest of the file.\n",
+        "created_at": "2015-01-11T02:48:57Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763823",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763823"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763823"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763826",
+        "pull_request_review_id": null,
+        "id": 22763826,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzYzODI2",
+        "diff_hunk": "@@ -74,6 +75,27 @@ function setopts (self, pattern, options) {\n   self.statCache = options.statCache || Object.create(null)\n   self.symlinks = options.symlinks || Object.create(null)\n \n+  self.ignore = options.ignore || []\n+\n+  if(!Array.isArray(self.ignore)) {\n+    self.ignore = [self.ignore]\n+  }\n+  if(self.ignore.length) {\n+    self.ignore = self.ignore.map(function(pattern) {",
+        "path": "common.js",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "9f2958a2a2b4c7e74ff3affcecd32ce166cbdbba",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This function should be abstracted out to `common.ignoreMap` or something.\n",
+        "created_at": "2015-01-11T02:49:28Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763826",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763826"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763826"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763829",
+        "pull_request_review_id": null,
+        "id": 22763829,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzYzODI5",
+        "diff_hunk": "@@ -74,6 +75,27 @@ function setopts (self, pattern, options) {\n   self.statCache = options.statCache || Object.create(null)\n   self.symlinks = options.symlinks || Object.create(null)\n \n+  self.ignore = options.ignore || []\n+\n+  if(!Array.isArray(self.ignore)) {\n+    self.ignore = [self.ignore]\n+  }\n+  if(self.ignore.length) {\n+    self.ignore = self.ignore.map(function(pattern) {\n+      var endsWithGlobStar = pattern.slice(-3) === '/**',\n+          endsWithStar = pattern.slice(-2) === '/*'",
+        "path": "common.js",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "9f2958a2a2b4c7e74ff3affcecd32ce166cbdbba",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Style: New var each line.\n",
+        "created_at": "2015-01-11T02:49:41Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763829",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763829"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763829"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763838",
+        "pull_request_review_id": null,
+        "id": 22763838,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzYzODM4",
+        "diff_hunk": "@@ -74,6 +75,27 @@ function setopts (self, pattern, options) {\n   self.statCache = options.statCache || Object.create(null)\n   self.symlinks = options.symlinks || Object.create(null)\n \n+  self.ignore = options.ignore || []\n+\n+  if(!Array.isArray(self.ignore)) {\n+    self.ignore = [self.ignore]\n+  }\n+  if(self.ignore.length) {\n+    self.ignore = self.ignore.map(function(pattern) {\n+      var endsWithGlobStar = pattern.slice(-3) === '/**',\n+          endsWithStar = pattern.slice(-2) === '/*'\n+          m = { matcher: new Minimatch(pattern) };\n+\n+      if(endsWithGlobStar)\n+        m.gmatcher = new Minimatch(pattern.slice(0, -3));\n+\n+      if(endsWithStar)\n+        m.smatcher = new Minimatch(pattern.slice(0, -2));",
+        "path": "common.js",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "9f2958a2a2b4c7e74ff3affcecd32ce166cbdbba",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What if the pattern ends with multiple `/**` parts?  Eg, `foo/**/**/**` is functionally equivalent to `foo/**`\n",
+        "created_at": "2015-01-11T02:51:53Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763838",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763838"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763838"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763842",
+        "pull_request_review_id": null,
+        "id": 22763842,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzYzODQy",
+        "diff_hunk": "@@ -74,6 +75,27 @@ function setopts (self, pattern, options) {\n   self.statCache = options.statCache || Object.create(null)\n   self.symlinks = options.symlinks || Object.create(null)\n \n+  self.ignore = options.ignore || []\n+\n+  if(!Array.isArray(self.ignore)) {\n+    self.ignore = [self.ignore]\n+  }\n+  if(self.ignore.length) {\n+    self.ignore = self.ignore.map(function(pattern) {",
+        "path": "common.js",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "9f2958a2a2b4c7e74ff3affcecd32ce166cbdbba",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Oh, I see, this is already in common.  In that case, it can just be a module-private named function, if it's not needed externally.\n",
+        "created_at": "2015-01-11T02:52:44Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763842",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763842"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763842"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763848",
+        "pull_request_review_id": null,
+        "id": 22763848,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzYzODQ4",
+        "diff_hunk": "@@ -64,7 +65,7 @@ function glob (pattern, options, cb) {\n \n   if (options.sync) {\n     if (cb)\n-      throw new TypeError('callback provided to sync glob')\n+      throw new TypeError(\"callback provided to sync glob\")",
+        "path": "glob.js",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "9f2958a2a2b4c7e74ff3affcecd32ce166cbdbba",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please don't change the quote styles.\n",
+        "created_at": "2015-01-11T02:54:11Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763848",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763848"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763848"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763854",
+        "pull_request_review_id": null,
+        "id": 22763854,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzYzODU0",
+        "diff_hunk": "@@ -126,7 +127,9 @@ function Glob (pattern, options, cb) {\n     cb = once(cb)\n     this.on('error', cb)\n     this.on('end', function (matches) {\n-      cb(null, matches)\n+      setImmediate(function() {",
+        "path": "glob.js",
+        "position": null,
+        "original_position": 40,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "9f2958a2a2b4c7e74ff3affcecd32ce166cbdbba",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can you explain why this is added?  The `end` event should never happen synchronously.\n",
+        "created_at": "2015-01-11T02:54:51Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763854",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763854"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763854"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763860",
+        "pull_request_review_id": null,
+        "id": 22763860,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzYzODYw",
+        "diff_hunk": "@@ -269,14 +272,23 @@ Glob.prototype._process = function (pattern, index, inGlobStar, cb) {\n \n   var abs = this._makeAbs(read)\n \n-  var isGlobStar = remain[0] === minimatch.GLOBSTAR\n-  if (isGlobStar)\n-    this._processGlobStar(prefix, read, abs, remain, index, inGlobStar, cb)\n-  else\n-    this._processReaddir(prefix, read, abs, remain, index, inGlobStar, cb)\n+  //if ignored, skip _processing\n+  if (isIgnored(this, abs)) {\n+    return setImmediate(function() {\n+      return cb();\n+    });\n+  }\n+  else {\n+    var isGlobStar = remain[0] === minimatch.GLOBSTAR\n+    if (isGlobStar) {",
+        "path": "glob.js",
+        "position": null,
+        "original_position": 96,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "9f2958a2a2b4c7e74ff3affcecd32ce166cbdbba",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "do not add `{` and `}` for one-line if/else.\n",
+        "created_at": "2015-01-11T02:57:03Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763860",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763860"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763860"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763902",
+        "pull_request_review_id": null,
+        "id": 22763902,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzYzOTAy",
+        "diff_hunk": "@@ -312,12 +325,14 @@ Glob.prototype._processReaddir2 = function (prefix, read, abs, remain, index, in\n     }\n   }\n \n-  //console.error('prd2', prefix, entries, remain[0]._glob, matchedEntries)\n+  //console.error(\"prd2\", prefix, entries, remain[0]._glob, matchedEntries)\n \n   var len = matchedEntries.length\n   // If there are no matched entries, then nothing matches.\n   if (len === 0)\n-    return cb()\n+    return setImmediate(function() {",
+        "path": "glob.js",
+        "position": null,
+        "original_position": 145,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "9f2958a2a2b4c7e74ff3affcecd32ce166cbdbba",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "unnecessary.\n",
+        "created_at": "2015-01-11T03:06:22Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763902",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763902"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763902"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763907",
+        "pull_request_review_id": null,
+        "id": 22763907,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzYzOTA3",
+        "diff_hunk": "@@ -97,13 +98,19 @@ GlobSync.prototype._process = function (pattern, index, inGlobStar) {\n \n   var abs = this._makeAbs(read)\n \n-  var isGlobStar = remain[0] === minimatch.GLOBSTAR\n-  if (isGlobStar)\n-    this._processGlobStar(prefix, read, abs, remain, index, inGlobStar)\n-  else\n-    this._processReaddir(prefix, read, abs, remain, index, inGlobStar)\n+  //if ignored, skip processing\n+  if(isIgnored(this, abs)) {\n+    return\n+  } else {",
+        "path": "sync.js",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "9f2958a2a2b4c7e74ff3affcecd32ce166cbdbba",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No need to wrap this in an else, because of the return.\n",
+        "created_at": "2015-01-11T03:07:10Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763907",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763907"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763907"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763915",
+        "pull_request_review_id": null,
+        "id": 22763915,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzYzOTE1",
+        "diff_hunk": "@@ -44,7 +44,9 @@ test('shuffle fs.readdir', function (t) {\n \n   // make sure it works\n   var d = __dirname + '/a'\n-  t.notSame(fs.readdirSync(d), fs.readdirSync(d).sort())\n+  process.nextTick(function() {",
+        "path": "test/readdir-order.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "9f2958a2a2b4c7e74ff3affcecd32ce166cbdbba",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Not relevant to this change.\n",
+        "created_at": "2015-01-11T03:08:52Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763915",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22763915"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22763915"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22769290",
+        "pull_request_review_id": null,
+        "id": 22769290,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzY5Mjkw",
+        "diff_hunk": "@@ -41,6 +42,29 @@ function alphasort (a, b) {\n   return a.localeCompare(b)\n }\n \n+function ignoreMap (self, options) {\n+  self.ignore = options.ignore || []\n+\n+  if (!Array.isArray(self.ignore))\n+    self.ignore = [self.ignore]\n+\n+  if (self.ignore.length) {\n+    self.ignore = self.ignore.map(function (pattern) {\n+      var endsWithGlobStar = pattern.slice(-3) === '/**'\n+      var endsWithStar = pattern.slice(-2) === '/*'\n+      var m = { matcher: new Minimatch(pattern) }\n+\n+      //Using indexOf to match 'a' in case of patterns like a/**/**\n+      if (endsWithGlobStar)\n+        m.gmatcher = new Minimatch(pattern.slice(0, pattern.indexOf('/**')))",
+        "path": "common.js",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "a87a3c13aaa5d7a4439a975ce62649521f51479f",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This will be incorrect in the case of `a/**/b/**` where you want it to end up with `a/**/b`, and instead, it'll be `a`.\n",
+        "created_at": "2015-01-11T19:36:53Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22769290",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22769290"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22769290"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22769293",
+        "pull_request_review_id": null,
+        "id": 22769293,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzY5Mjkz",
+        "diff_hunk": "@@ -41,6 +42,29 @@ function alphasort (a, b) {\n   return a.localeCompare(b)\n }\n \n+function ignoreMap (self, options) {\n+  self.ignore = options.ignore || []\n+\n+  if (!Array.isArray(self.ignore))\n+    self.ignore = [self.ignore]\n+\n+  if (self.ignore.length) {\n+    self.ignore = self.ignore.map(function (pattern) {\n+      var endsWithGlobStar = pattern.slice(-3) === '/**'\n+      var endsWithStar = pattern.slice(-2) === '/*'\n+      var m = { matcher: new Minimatch(pattern) }\n+\n+      //Using indexOf to match 'a' in case of patterns like a/**/**\n+      if (endsWithGlobStar)\n+        m.gmatcher = new Minimatch(pattern.slice(0, pattern.indexOf('/**')))",
+        "path": "common.js",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "19fa2e991a1910fa8f6acb7ec59d458d08b53b4f",
+        "original_commit_id": "a87a3c13aaa5d7a4439a975ce62649521f51479f",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Also, it'll get caught up with `a/**b**/c/**`\n",
+        "created_at": "2015-01-11T19:37:16Z",
+        "updated_at": "2015-01-22T06:24:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/151#discussion_r22769293",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/151",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/22769293"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/151#discussion_r22769293"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/55115262",
+        "pull_request_review_id": null,
+        "id": 55115262,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1MTE1MjYy",
+        "diff_hunk": "@@ -11,7 +11,7 @@ var expect = [\n ]\n \n if (process.platform !== 'win32')\n-  expect.push('a/symlink/a', 'a/symlink/a/b/c/a')\n+  expect.push('a/symlink/a')",
+        "path": "test/match-base.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "4c973e6f8e59938949a60c25df73ed63d42b5a7e",
+        "original_commit_id": "4c973e6f8e59938949a60c25df73ed63d42b5a7e",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is a breaking change, and a deviation from Bash 4.3.\n\n```\n$ cd test/fixtures/\n\n$ echo **/a*\na a/abcdef a/abcfed a/symlink/a a/symlink/a/b/c/a\n\n$ echo $BASH_VERSION\n4.3.30(6)-release\n```\n\nThe `**` should be followed through to `a/symlink/a/b/c/a`, but then it should refuse to go any further subdirectories _past_ the symlink.\n",
+        "created_at": "2016-03-05T04:17:12Z",
+        "updated_at": "2016-03-05T04:17:12Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/242#discussion_r55115262",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/242",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/55115262"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/242#discussion_r55115262"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/242"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/65845787",
+        "pull_request_review_id": null,
+        "id": 65845787,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY1ODQ1Nzg3",
+        "diff_hunk": "@@ -62,6 +62,8 @@ GlobSync.prototype._finish = function () {\n         } catch (er) {\n           if (er.syscall === 'stat')\n             set[self._makeAbs(p)] = true\n+          else if (er.code === 'ELOOP')\n+            if (real) set[real] = true\n           else",
+        "path": "sync.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "7c5655eaad76815a7a073231d5d102147314843d",
+        "original_commit_id": "bdf89d1a0c59f98b52b67f844e3c30f8dcc2f058",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What is the intent of this bit?  The indentation is incorrect, making it look like any error that isn't a `stat` or `ELOOP` will get thrown, but in fact, the only error that'll get thrown is an `ELOOP` when `real` is falsey.\n",
+        "created_at": "2016-06-06T07:24:09Z",
+        "updated_at": "2016-06-06T20:49:27Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/259#discussion_r65845787",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/259",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/65845787"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/259#discussion_r65845787"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/259"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/65845958",
+        "pull_request_review_id": null,
+        "id": 65845958,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY1ODQ1OTU4",
+        "diff_hunk": "@@ -62,6 +62,8 @@ GlobSync.prototype._finish = function () {\n         } catch (er) {\n           if (er.syscall === 'stat')\n             set[self._makeAbs(p)] = true\n+          else if (er.code === 'ELOOP')\n+            if (real) set[real] = true\n           else",
+        "path": "sync.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "7c5655eaad76815a7a073231d5d102147314843d",
+        "original_commit_id": "bdf89d1a0c59f98b52b67f844e3c30f8dcc2f058",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "For example:\n\n``` javascript\nif (false)\n  console.log(1)\nelse if (false)\n  if (true) console.log(2)\nelse\n  console.log(3)\n```\n\nis actually\n\n``` js\nif (false)\n  console.log(1)\nelse if (false)\n  if (true)\n    console.log(2)\n  else\n    console.log(3)\n```\n",
+        "created_at": "2016-06-06T07:25:54Z",
+        "updated_at": "2016-06-06T20:49:27Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/259#discussion_r65845958",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/259",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/65845958"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/259#discussion_r65845958"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/259"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/65846455",
+        "pull_request_review_id": null,
+        "id": 65846455,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY1ODQ2NDU1",
+        "diff_hunk": "@@ -62,6 +62,8 @@ GlobSync.prototype._finish = function () {\n         } catch (er) {\n           if (er.syscall === 'stat')\n             set[self._makeAbs(p)] = true\n+          else if (er.code === 'ELOOP')\n+            if (real) set[real] = true\n           else",
+        "path": "sync.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "7c5655eaad76815a7a073231d5d102147314843d",
+        "original_commit_id": "bdf89d1a0c59f98b52b67f844e3c30f8dcc2f058",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Also, how can `real` be set if an error occurred?  Does `fs.realpath` ever return a value if it raises an error?  That seems really strange. \n",
+        "created_at": "2016-06-06T07:32:09Z",
+        "updated_at": "2016-06-06T20:49:27Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/259#discussion_r65846455",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/259",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/65846455"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/259#discussion_r65846455"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/259"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/65966358",
+        "pull_request_review_id": null,
+        "id": 65966358,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY1OTY2MzU4",
+        "diff_hunk": "@@ -62,6 +62,8 @@ GlobSync.prototype._finish = function () {\n         } catch (er) {\n           if (er.syscall === 'stat')\n             set[self._makeAbs(p)] = true\n+          else if (er.code === 'ELOOP')\n+            if (real) set[real] = true\n           else",
+        "path": "sync.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "7c5655eaad76815a7a073231d5d102147314843d",
+        "original_commit_id": "bdf89d1a0c59f98b52b67f844e3c30f8dcc2f058",
+        "user": {
+            "login": "MylesBorins",
+            "id": 498775,
+            "node_id": "MDQ6VXNlcjQ5ODc3NQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/498775?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/MylesBorins",
+            "html_url": "https://github.com/MylesBorins",
+            "followers_url": "https://api.github.com/users/MylesBorins/followers",
+            "following_url": "https://api.github.com/users/MylesBorins/following{/other_user}",
+            "gists_url": "https://api.github.com/users/MylesBorins/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/MylesBorins/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/MylesBorins/subscriptions",
+            "organizations_url": "https://api.github.com/users/MylesBorins/orgs",
+            "repos_url": "https://api.github.com/users/MylesBorins/repos",
+            "events_url": "https://api.github.com/users/MylesBorins/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/MylesBorins/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "added braces to fix the error. I'm going to have to dig back into the code to figure out exactly why we went with setting real... although based on your response at the end of this PR it may not be worth putting in the time.\n",
+        "created_at": "2016-06-06T20:50:58Z",
+        "updated_at": "2016-06-06T20:50:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/259#discussion_r65966358",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/259",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/65966358"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/259#discussion_r65966358"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/259"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79656811",
+        "pull_request_review_id": 789276,
+        "id": 79656811,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NjU2ODEx",
+        "diff_hunk": "@@ -273,6 +273,9 @@ the filesystem.\n   In the case of a symlink that cannot be resolved, the full absolute\n   path to the matched entry is returned (though it will usually be a\n   broken symlink)\n+* `absolute` Set to true to always receive absolute paths for the\n+  `'match'` event. Will not pass absolute paths to the callback\n+  or returned from `glob.sync`.",
+        "path": "README.md",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "b266df38f1676510e6043a401f391e07ed17d138",
+        "original_commit_id": "b266df38f1676510e6043a401f391e07ed17d138",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think it's a little bit surprising for the `match` events to be absolute, but for the results to still be relative.  I'll check out the code to see how hard this is, probably I can at least point you in the right direction.\n",
+        "created_at": "2016-09-20T16:42:56Z",
+        "updated_at": "2016-09-20T17:29:30Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/293#discussion_r79656811",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/293",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79656811"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/293#discussion_r79656811"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/293"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79657247",
+        "pull_request_review_id": 789276,
+        "id": 79657247,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NjU3MjQ3",
+        "diff_hunk": "@@ -80,6 +80,7 @@ function setopts (self, pattern, options) {\n   self.nocase = !!options.nocase\n   self.stat = !!options.stat\n   self.noprocess = !!options.noprocess\n+  self._absolute = !!options.absolute",
+        "path": "common.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "b266df38f1676510e6043a401f391e07ed17d138",
+        "original_commit_id": "b266df38f1676510e6043a401f391e07ed17d138",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "In my suggestion, I'd forgotten the pattern that this module uses.  Probably it should be `self.absolute`, to match the other settings.\n",
+        "created_at": "2016-09-20T16:44:44Z",
+        "updated_at": "2016-09-20T17:29:30Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/293#discussion_r79657247",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/293",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79657247"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/293#discussion_r79657247"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/293"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79737294",
+        "pull_request_review_id": 862949,
+        "id": 79737294,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NzM3Mjk0",
+        "diff_hunk": "@@ -52,3 +52,48 @@ t.test('root=a, cwd=a/b', function (t) {\n     t.end()\n   })\n })\n+\n+t.test('combined with absolute option', function(t) {\n+  var g = glob('/b*/**', { root: path.resolve('a'), absolute: true }, function (er, matches) {\n+    t.ifError(er)\n+    /* For some reason this passes even though it compares\n+      [ '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/b',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/b/c',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/b/c/d',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/bc',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/bc/e',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/bc/e/f' ]\n+      to\n+      [ '/Users/phated/node-glob/test/fixtures/a/b',\n+        '/Users/phated/node-glob/test/fixtures/a/b/c',\n+        '/Users/phated/node-glob/test/fixtures/a/b/c/d',\n+        '/Users/phated/node-glob/test/fixtures/a/bc',\n+        '/Users/phated/node-glob/test/fixtures/a/bc/e',\n+        '/Users/phated/node-glob/test/fixtures/a/bc/e/f' ]\n+    */\n+    // t.like(matches, [ '/b', '/b/c', '/b/c/d', '/bc', '/bc/e', '/bc/e/f' ].map(function (m) {",
+        "path": "test/root.js",
+        "position": null,
+        "original_position": 23,
+        "commit_id": "59b9fd333101ec0812102a0ab4c7eadf61e41f40",
+        "original_commit_id": "1085542bf3b470a4c9e48936270a4fbcd6572e23",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ha!  Yes, this is because `t.like` does substring matching.  So, `t.like('hamburger', 'amburg')` passes.  Calling `t.like(array, otherArray)` does a `t.like` on the elements, so `t.like(['hamburger'], ['amburg'])` would also pass.  `tap` is working as designed, but I'm using it wrong here.\n",
+        "created_at": "2016-09-20T23:50:58Z",
+        "updated_at": "2016-09-21T20:32:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/294#discussion_r79737294",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/294",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79737294"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/294#discussion_r79737294"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/294"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79737324",
+        "pull_request_review_id": 862949,
+        "id": 79737324,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NzM3MzI0",
+        "diff_hunk": "@@ -52,3 +52,48 @@ t.test('root=a, cwd=a/b', function (t) {\n     t.end()\n   })\n })\n+\n+t.test('combined with absolute option', function(t) {\n+  var g = glob('/b*/**', { root: path.resolve('a'), absolute: true }, function (er, matches) {\n+    t.ifError(er)\n+    /* For some reason this passes even though it compares\n+      [ '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/b',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/b/c',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/b/c/d',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/bc',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/bc/e',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/bc/e/f' ]\n+      to\n+      [ '/Users/phated/node-glob/test/fixtures/a/b',\n+        '/Users/phated/node-glob/test/fixtures/a/b/c',\n+        '/Users/phated/node-glob/test/fixtures/a/b/c/d',\n+        '/Users/phated/node-glob/test/fixtures/a/bc',\n+        '/Users/phated/node-glob/test/fixtures/a/bc/e',\n+        '/Users/phated/node-glob/test/fixtures/a/bc/e/f' ]\n+    */\n+    // t.like(matches, [ '/b', '/b/c', '/b/c/d', '/bc', '/bc/e', '/bc/e/f' ].map(function (m) {\n+    //   return path.join(path.resolve('a'), m).replace(/\\\\/g, '/')\n+    // }))\n+    t.same(matches, [ '/b', '/b/c', '/b/c/d', '/bc', '/bc/e', '/bc/e/f' ].map(function (m) {",
+        "path": "test/root.js",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "59b9fd333101ec0812102a0ab4c7eadf61e41f40",
+        "original_commit_id": "1085542bf3b470a4c9e48936270a4fbcd6572e23",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`t.same` is the right thing to use here.\n",
+        "created_at": "2016-09-20T23:51:16Z",
+        "updated_at": "2016-09-21T20:32:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/294#discussion_r79737324",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/294",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79737324"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/294#discussion_r79737324"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/294"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79737652",
+        "pull_request_review_id": 863272,
+        "id": 79737652,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NzM3NjUy",
+        "diff_hunk": "@@ -103,7 +103,11 @@ function setopts (self, pattern, options) {\n   if (process.platform === \"win32\")\n     self.root = self.root.replace(/\\\\/g, \"/\")\n \n-  self.cwdAbs = makeAbs(self, self.cwd)\n+  // TODO: is an absolute `cwd` supposed to be resolved against `root`?\n+  // e.g. { cwd: '/test', root: __dirname } === path.join(__dirname, '/test')\n+  self.cwdAbs = isAbsolute(self.cwd) ? self.cwd : makeAbs(self, self.cwd)",
+        "path": "common.js",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "59b9fd333101ec0812102a0ab4c7eadf61e41f40",
+        "original_commit_id": "1085542bf3b470a4c9e48936270a4fbcd6572e23",
+        "user": {
+            "login": "isaacs",
+            "id": 9287,
+            "node_id": "MDQ6VXNlcjkyODc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9287?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isaacs",
+            "html_url": "https://github.com/isaacs",
+            "followers_url": "https://api.github.com/users/isaacs/followers",
+            "following_url": "https://api.github.com/users/isaacs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isaacs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isaacs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isaacs/subscriptions",
+            "organizations_url": "https://api.github.com/users/isaacs/orgs",
+            "repos_url": "https://api.github.com/users/isaacs/repos",
+            "events_url": "https://api.github.com/users/isaacs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isaacs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This seems like a reasonable fix.  We do need `makeAbs` to mount onto the root, if one is specified, so that `/a/*` maps onto `{root}/a/b`.  But using cwd and root together is just... kinda weird.\n",
+        "created_at": "2016-09-20T23:53:50Z",
+        "updated_at": "2016-09-21T20:32:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/294#discussion_r79737652",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/294",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79737652"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/294#discussion_r79737652"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/294"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79924546",
+        "pull_request_review_id": 1035071,
+        "id": 79924546,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5OTI0NTQ2",
+        "diff_hunk": "@@ -52,3 +52,48 @@ t.test('root=a, cwd=a/b', function (t) {\n     t.end()\n   })\n })\n+\n+t.test('combined with absolute option', function(t) {\n+  var g = glob('/b*/**', { root: path.resolve('a'), absolute: true }, function (er, matches) {\n+    t.ifError(er)\n+    /* For some reason this passes even though it compares\n+      [ '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/b',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/b/c',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/b/c/d',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/bc',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/bc/e',\n+        '/Users/phated/node-glob/test/fixtures/a/Users/phated/node-glob/test/fixtures/a/bc/e/f' ]\n+      to\n+      [ '/Users/phated/node-glob/test/fixtures/a/b',\n+        '/Users/phated/node-glob/test/fixtures/a/b/c',\n+        '/Users/phated/node-glob/test/fixtures/a/b/c/d',\n+        '/Users/phated/node-glob/test/fixtures/a/bc',\n+        '/Users/phated/node-glob/test/fixtures/a/bc/e',\n+        '/Users/phated/node-glob/test/fixtures/a/bc/e/f' ]\n+    */\n+    // t.like(matches, [ '/b', '/b/c', '/b/c/d', '/bc', '/bc/e', '/bc/e/f' ].map(function (m) {",
+        "path": "test/root.js",
+        "position": null,
+        "original_position": 23,
+        "commit_id": "59b9fd333101ec0812102a0ab4c7eadf61e41f40",
+        "original_commit_id": "1085542bf3b470a4c9e48936270a4fbcd6572e23",
+        "user": {
+            "login": "phated",
+            "id": 992373,
+            "node_id": "MDQ6VXNlcjk5MjM3Mw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/992373?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phated",
+            "html_url": "https://github.com/phated",
+            "followers_url": "https://api.github.com/users/phated/followers",
+            "following_url": "https://api.github.com/users/phated/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phated/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phated/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phated/subscriptions",
+            "organizations_url": "https://api.github.com/users/phated/orgs",
+            "repos_url": "https://api.github.com/users/phated/repos",
+            "events_url": "https://api.github.com/users/phated/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phated/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "alright, I'll update the tests in this file to use `t.same`\n",
+        "created_at": "2016-09-21T20:26:04Z",
+        "updated_at": "2016-09-21T20:32:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/294#discussion_r79924546",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/294",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79924546"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/294#discussion_r79924546"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/294"
+            }
+        },
+        "in_reply_to_id": 79737294
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79924936",
+        "pull_request_review_id": 1035438,
+        "id": 79924936,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5OTI0OTM2",
+        "diff_hunk": "@@ -103,7 +103,11 @@ function setopts (self, pattern, options) {\n   if (process.platform === \"win32\")\n     self.root = self.root.replace(/\\\\/g, \"/\")\n \n-  self.cwdAbs = makeAbs(self, self.cwd)\n+  // TODO: is an absolute `cwd` supposed to be resolved against `root`?\n+  // e.g. { cwd: '/test', root: __dirname } === path.join(__dirname, '/test')\n+  self.cwdAbs = isAbsolute(self.cwd) ? self.cwd : makeAbs(self, self.cwd)",
+        "path": "common.js",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "59b9fd333101ec0812102a0ab4c7eadf61e41f40",
+        "original_commit_id": "1085542bf3b470a4c9e48936270a4fbcd6572e23",
+        "user": {
+            "login": "phated",
+            "id": 992373,
+            "node_id": "MDQ6VXNlcjk5MjM3Mw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/992373?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phated",
+            "html_url": "https://github.com/phated",
+            "followers_url": "https://api.github.com/users/phated/followers",
+            "following_url": "https://api.github.com/users/phated/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phated/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phated/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phated/subscriptions",
+            "organizations_url": "https://api.github.com/users/phated/orgs",
+            "repos_url": "https://api.github.com/users/phated/repos",
+            "events_url": "https://api.github.com/users/phated/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phated/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hmm, how should I go about resolving this then?  If `makeAbs` is used, it appends an absolute path to an absolute root resulting in something like `/Users/phated/node-glob/test/Users/phated/node-glob/test/fixtures`\n",
+        "created_at": "2016-09-21T20:28:07Z",
+        "updated_at": "2016-09-21T20:32:58Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/294#discussion_r79924936",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/294",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/79924936"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/294#discussion_r79924936"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/294"
+            }
+        },
+        "in_reply_to_id": 79737652
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/98627362",
+        "pull_request_review_id": 19272642,
+        "id": 98627362,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk4NjI3MzYy",
+        "diff_hunk": "@@ -16,6 +16,19 @@\n   \"engines\": {\n     \"node\": \"*\"\n   },\n+  \"keywords\" : [\n+    \"wildcard\",\n+    \"regex\",\n+    \"patterns\",\n+    \"finding\",\n+    \"filesystem\",\n+    \"directories\",\n+    \"utilitly\",",
+        "path": "package.json",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "9083878cf03a22c3e13b7cceeb7f043e29f5ea4e",
+        "original_commit_id": "b3b9eeb4b17f8d33b2d1a7f648e5e07fa8284bef",
+        "user": {
+            "login": "shinnn",
+            "id": 1131567,
+            "node_id": "MDQ6VXNlcjExMzE1Njc=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1131567?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/shinnn",
+            "html_url": "https://github.com/shinnn",
+            "followers_url": "https://api.github.com/users/shinnn/followers",
+            "following_url": "https://api.github.com/users/shinnn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/shinnn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/shinnn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/shinnn/subscriptions",
+            "organizations_url": "https://api.github.com/users/shinnn/orgs",
+            "repos_url": "https://api.github.com/users/shinnn/repos",
+            "events_url": "https://api.github.com/users/shinnn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/shinnn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "utility\r\n",
+        "created_at": "2017-01-31T09:34:40Z",
+        "updated_at": "2017-02-01T05:08:48Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/317#discussion_r98627362",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/317",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/98627362"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/317#discussion_r98627362"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/317"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/179851881",
+        "pull_request_review_id": 110178788,
+        "id": 179851881,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3OTg1MTg4MQ==",
+        "diff_hunk": "@@ -7,7 +7,7 @@ var patterns = [\n   '# comment',\n   ' ',\n   '\\n',\n-  'just doesnt happen to match anything so this is a control'\n+  'just doesn't happen to match anything so this is a control'",
+        "path": "test/empty-set.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "0c6916c359f1e42fd227b92c61b975d2d7d53291",
+        "original_commit_id": "0c6916c359f1e42fd227b92c61b975d2d7d53291",
+        "user": {
+            "login": "Nuuou",
+            "id": 2430471,
+            "node_id": "MDQ6VXNlcjI0MzA0NzE=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/2430471?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Nuuou",
+            "html_url": "https://github.com/Nuuou",
+            "followers_url": "https://api.github.com/users/Nuuou/followers",
+            "following_url": "https://api.github.com/users/Nuuou/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Nuuou/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Nuuou/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Nuuou/subscriptions",
+            "organizations_url": "https://api.github.com/users/Nuuou/orgs",
+            "repos_url": "https://api.github.com/users/Nuuou/repos",
+            "events_url": "https://api.github.com/users/Nuuou/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Nuuou/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Looks like the single quote here needs to be escaped, causing a syntax error otherwise.",
+        "created_at": "2018-04-06T19:15:53Z",
+        "updated_at": "2018-04-06T19:15:53Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/349#discussion_r179851881",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/349",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/179851881"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/349#discussion_r179851881"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/349"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/179852184",
+        "pull_request_review_id": 110179157,
+        "id": 179852184,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3OTg1MjE4NA==",
+        "diff_hunk": "@@ -7,7 +7,7 @@ var patterns = [\n   '# comment',\n   ' ',\n   '\\n',\n-  'just doesnt happen to match anything so this is a control'\n+  'just doesn't happen to match anything so this is a control'",
+        "path": "test/empty-set.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "0c6916c359f1e42fd227b92c61b975d2d7d53291",
+        "original_commit_id": "0c6916c359f1e42fd227b92c61b975d2d7d53291",
+        "user": {
+            "login": "EdwardBetts",
+            "id": 3818,
+            "node_id": "MDQ6VXNlcjM4MTg=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/3818?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/EdwardBetts",
+            "html_url": "https://github.com/EdwardBetts",
+            "followers_url": "https://api.github.com/users/EdwardBetts/followers",
+            "following_url": "https://api.github.com/users/EdwardBetts/following{/other_user}",
+            "gists_url": "https://api.github.com/users/EdwardBetts/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/EdwardBetts/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/EdwardBetts/subscriptions",
+            "organizations_url": "https://api.github.com/users/EdwardBetts/orgs",
+            "repos_url": "https://api.github.com/users/EdwardBetts/repos",
+            "events_url": "https://api.github.com/users/EdwardBetts/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/EdwardBetts/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sorry about that. I will close this request.",
+        "created_at": "2018-04-06T19:17:28Z",
+        "updated_at": "2018-04-06T19:17:28Z",
+        "html_url": "https://github.com/isaacs/node-glob/pull/349#discussion_r179852184",
+        "pull_request_url": "https://api.github.com/repos/isaacs/node-glob/pulls/349",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/comments/179852184"
+            },
+            "html": {
+                "href": "https://github.com/isaacs/node-glob/pull/349#discussion_r179852184"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/isaacs/node-glob/pulls/349"
+            }
+        },
+        "in_reply_to_id": 179851881
+    }
+]

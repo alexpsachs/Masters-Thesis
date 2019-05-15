@@ -1,0 +1,149 @@
+[
+    {
+        "url": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/comments/10402546",
+        "pull_request_review_id": null,
+        "id": 10402546,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNDAyNTQ2",
+        "diff_hunk": "@@ -266,6 +266,7 @@\n \n         // Hack for IE img onload event\n         self.$img.attr('src', self.images[newIndex]);\n+\tself.$img.attr('alt', 'backstretch');",
+        "path": "jquery.backstretch.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "7f1567fdbd3db48da7e0b96ccc1a8b9cb790969a",
+        "original_commit_id": "7f1567fdbd3db48da7e0b96ccc1a8b9cb790969a",
+        "user": {
+            "login": "RobLoach",
+            "id": 25086,
+            "node_id": "MDQ6VXNlcjI1MDg2",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/25086?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/RobLoach",
+            "html_url": "https://github.com/RobLoach",
+            "followers_url": "https://api.github.com/users/RobLoach/followers",
+            "following_url": "https://api.github.com/users/RobLoach/following{/other_user}",
+            "gists_url": "https://api.github.com/users/RobLoach/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/RobLoach/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/RobLoach/subscriptions",
+            "organizations_url": "https://api.github.com/users/RobLoach/orgs",
+            "repos_url": "https://api.github.com/users/RobLoach/repos",
+            "events_url": "https://api.github.com/users/RobLoach/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/RobLoach/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Use Spaces instead of Tab... Also, could there be a bit more contextual data we could stick in the alt tag instead?\n",
+        "created_at": "2014-03-07T22:09:52Z",
+        "updated_at": "2014-03-07T22:09:52Z",
+        "html_url": "https://github.com/jquery-backstretch/jquery-backstretch/pull/292#discussion_r10402546",
+        "pull_request_url": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/292",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/comments/10402546"
+            },
+            "html": {
+                "href": "https://github.com/jquery-backstretch/jquery-backstretch/pull/292#discussion_r10402546"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/292"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/comments/34409257",
+        "pull_request_review_id": null,
+        "id": 34409257,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NDA5MjU3",
+        "diff_hunk": "@@ -266,6 +266,7 @@\n \n         // Hack for IE img onload event\n         self.$img.attr('src', self.images[newIndex]);\n+\tself.$img.attr('alt', 'backstretch');",
+        "path": "jquery.backstretch.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "7f1567fdbd3db48da7e0b96ccc1a8b9cb790969a",
+        "original_commit_id": "7f1567fdbd3db48da7e0b96ccc1a8b9cb790969a",
+        "user": {
+            "login": "mkormendy",
+            "id": 1437667,
+            "node_id": "MDQ6VXNlcjE0Mzc2Njc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1437667?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mkormendy",
+            "html_url": "https://github.com/mkormendy",
+            "followers_url": "https://api.github.com/users/mkormendy/followers",
+            "following_url": "https://api.github.com/users/mkormendy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mkormendy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mkormendy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mkormendy/subscriptions",
+            "organizations_url": "https://api.github.com/users/mkormendy/orgs",
+            "repos_url": "https://api.github.com/users/mkormendy/repos",
+            "events_url": "https://api.github.com/users/mkormendy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mkormendy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Could change alt attribute to rel attribute.\n",
+        "created_at": "2015-07-11T03:38:26Z",
+        "updated_at": "2015-07-11T03:38:26Z",
+        "html_url": "https://github.com/jquery-backstretch/jquery-backstretch/pull/292#discussion_r34409257",
+        "pull_request_url": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/292",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/comments/34409257"
+            },
+            "html": {
+                "href": "https://github.com/jquery-backstretch/jquery-backstretch/pull/292#discussion_r34409257"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/292"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/comments/57665744",
+        "pull_request_review_id": null,
+        "id": 57665744,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU3NjY1NzQ0",
+        "diff_hunk": "@@ -266,6 +266,7 @@\n \n         // Hack for IE img onload event\n         self.$img.attr('src', self.images[newIndex]);\n+\tself.$img.attr('alt', 'backstretch');",
+        "path": "jquery.backstretch.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "7f1567fdbd3db48da7e0b96ccc1a8b9cb790969a",
+        "original_commit_id": "7f1567fdbd3db48da7e0b96ccc1a8b9cb790969a",
+        "user": {
+            "login": "GaryJones",
+            "id": 88371,
+            "node_id": "MDQ6VXNlcjg4Mzcx",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/88371?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/GaryJones",
+            "html_url": "https://github.com/GaryJones",
+            "followers_url": "https://api.github.com/users/GaryJones/followers",
+            "following_url": "https://api.github.com/users/GaryJones/following{/other_user}",
+            "gists_url": "https://api.github.com/users/GaryJones/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/GaryJones/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/GaryJones/subscriptions",
+            "organizations_url": "https://api.github.com/users/GaryJones/orgs",
+            "repos_url": "https://api.github.com/users/GaryJones/repos",
+            "events_url": "https://api.github.com/users/GaryJones/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/GaryJones/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Images need an `alt` attribute to be valid. Since the image is merely decorative, the value should be `''` (empty string).\n",
+        "created_at": "2016-03-29T02:45:41Z",
+        "updated_at": "2016-03-29T02:45:41Z",
+        "html_url": "https://github.com/jquery-backstretch/jquery-backstretch/pull/292#discussion_r57665744",
+        "pull_request_url": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/292",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/comments/57665744"
+            },
+            "html": {
+                "href": "https://github.com/jquery-backstretch/jquery-backstretch/pull/292#discussion_r57665744"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jquery-backstretch/jquery-backstretch/pulls/292"
+            }
+        }
+    }
+]

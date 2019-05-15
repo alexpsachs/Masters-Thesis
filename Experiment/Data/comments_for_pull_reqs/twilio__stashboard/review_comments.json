@@ -1,0 +1,149 @@
+[
+    {
+        "url": "https://api.github.com/repos/twilio/stashboard/pulls/comments/2784480",
+        "pull_request_review_id": null,
+        "id": 2784480,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3ODQ0ODA=",
+        "diff_hunk": "@@ -247,7 +249,9 @@ def load_defaults(cls):\n         if not cls.get_by_slug(\"warning\"):\n             w = cls(name=\"Warning\", slug=\"warning\",\n                     image=\"icons/fugue/exclamation.png\",\n-                    description=\"The service is experiencing intermittent problems\")\n+                    description=(\"The service is experiencing intermittent \",",
+        "path": "stashboard/models.py",
+        "position": 62,
+        "original_position": 62,
+        "commit_id": "3f9714d40e2e7d6e8bb035a94d5fb221f43ee5b1",
+        "original_commit_id": "3f9714d40e2e7d6e8bb035a94d5fb221f43ee5b1",
+        "user": {
+            "login": "feczo",
+            "id": 3347261,
+            "node_id": "MDQ6VXNlcjMzNDcyNjE=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3347261?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/feczo",
+            "html_url": "https://github.com/feczo",
+            "followers_url": "https://api.github.com/users/feczo/followers",
+            "following_url": "https://api.github.com/users/feczo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/feczo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/feczo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/feczo/subscriptions",
+            "organizations_url": "https://api.github.com/users/feczo/orgs",
+            "repos_url": "https://api.github.com/users/feczo/repos",
+            "events_url": "https://api.github.com/users/feczo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/feczo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why was this changed to a list? Seems to break things for me when initializing the datastore with defaults\n",
+        "created_at": "2013-01-26T09:13:42Z",
+        "updated_at": "2013-01-26T09:24:05Z",
+        "html_url": "https://github.com/twilio/stashboard/pull/42#discussion_r2784480",
+        "pull_request_url": "https://api.github.com/repos/twilio/stashboard/pulls/42",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/twilio/stashboard/pulls/comments/2784480"
+            },
+            "html": {
+                "href": "https://github.com/twilio/stashboard/pull/42#discussion_r2784480"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/twilio/stashboard/pulls/42"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/twilio/stashboard/pulls/comments/2784595",
+        "pull_request_review_id": null,
+        "id": 2784595,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3ODQ1OTU=",
+        "diff_hunk": "@@ -247,7 +249,9 @@ def load_defaults(cls):\n         if not cls.get_by_slug(\"warning\"):\n             w = cls(name=\"Warning\", slug=\"warning\",\n                     image=\"icons/fugue/exclamation.png\",\n-                    description=\"The service is experiencing intermittent problems\")\n+                    description=(\"The service is experiencing intermittent \",",
+        "path": "stashboard/models.py",
+        "position": 62,
+        "original_position": 62,
+        "commit_id": "3f9714d40e2e7d6e8bb035a94d5fb221f43ee5b1",
+        "original_commit_id": "3f9714d40e2e7d6e8bb035a94d5fb221f43ee5b1",
+        "user": {
+            "login": "jamezpolley",
+            "id": 216918,
+            "node_id": "MDQ6VXNlcjIxNjkxOA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/216918?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jamezpolley",
+            "html_url": "https://github.com/jamezpolley",
+            "followers_url": "https://api.github.com/users/jamezpolley/followers",
+            "following_url": "https://api.github.com/users/jamezpolley/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jamezpolley/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jamezpolley/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jamezpolley/subscriptions",
+            "organizations_url": "https://api.github.com/users/jamezpolley/orgs",
+            "repos_url": "https://api.github.com/users/jamezpolley/repos",
+            "events_url": "https://api.github.com/users/jamezpolley/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jamezpolley/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Oops. Not meant to be a list. Take out the comma and it should work.\n",
+        "created_at": "2013-01-26T12:19:57Z",
+        "updated_at": "2013-01-26T12:19:57Z",
+        "html_url": "https://github.com/twilio/stashboard/pull/42#discussion_r2784595",
+        "pull_request_url": "https://api.github.com/repos/twilio/stashboard/pulls/42",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/twilio/stashboard/pulls/comments/2784595"
+            },
+            "html": {
+                "href": "https://github.com/twilio/stashboard/pull/42#discussion_r2784595"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/twilio/stashboard/pulls/42"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/twilio/stashboard/pulls/comments/2839430",
+        "pull_request_review_id": null,
+        "id": 2839430,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4Mzk0MzA=",
+        "diff_hunk": "@@ -247,7 +249,9 @@ def load_defaults(cls):\n         if not cls.get_by_slug(\"warning\"):\n             w = cls(name=\"Warning\", slug=\"warning\",\n                     image=\"icons/fugue/exclamation.png\",\n-                    description=\"The service is experiencing intermittent problems\")\n+                    description=(\"The service is experiencing intermittent \",",
+        "path": "stashboard/models.py",
+        "position": 62,
+        "original_position": 62,
+        "commit_id": "3f9714d40e2e7d6e8bb035a94d5fb221f43ee5b1",
+        "original_commit_id": "3f9714d40e2e7d6e8bb035a94d5fb221f43ee5b1",
+        "user": {
+            "login": "feczo",
+            "id": 3347261,
+            "node_id": "MDQ6VXNlcjMzNDcyNjE=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3347261?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/feczo",
+            "html_url": "https://github.com/feczo",
+            "followers_url": "https://api.github.com/users/feczo/followers",
+            "following_url": "https://api.github.com/users/feczo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/feczo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/feczo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/feczo/subscriptions",
+            "organizations_url": "https://api.github.com/users/feczo/orgs",
+            "repos_url": "https://api.github.com/users/feczo/repos",
+            "events_url": "https://api.github.com/users/feczo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/feczo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "forked https://github.com/feczo/splashmon\n",
+        "created_at": "2013-01-31T07:08:52Z",
+        "updated_at": "2013-01-31T07:08:52Z",
+        "html_url": "https://github.com/twilio/stashboard/pull/42#discussion_r2839430",
+        "pull_request_url": "https://api.github.com/repos/twilio/stashboard/pulls/42",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/twilio/stashboard/pulls/comments/2839430"
+            },
+            "html": {
+                "href": "https://github.com/twilio/stashboard/pull/42#discussion_r2839430"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/twilio/stashboard/pulls/42"
+            }
+        }
+    }
+]

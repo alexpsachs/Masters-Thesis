@@ -1,0 +1,247 @@
+[
+    {
+        "url": "https://api.github.com/repos/Comcast/FreeFlow/pulls/comments/10148588",
+        "pull_request_review_id": null,
+        "id": 10148588,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMTQ4NTg4",
+        "diff_hunk": "@@ -0,0 +1,16 @@\n+buildscript {\n+  dependencies {\n+    classpath 'com.android.tools.build:gradle:0.8.+'\n+  }\n+}\n+\n+apply plugin: 'android-library'\n+\n+dependencies {\n+  compile 'com.android.support:support-v4:19.0.+'\n+}\n+\n+android {\n+  compileSdkVersion 19\n+  buildToolsVersion '19.0.1'",
+        "path": "FreeFlow/build.gradle",
+        "position": null,
+        "original_position": 15,
+        "commit_id": "e70476da44e3dafb35a66245589860ff7e0351c4",
+        "original_commit_id": "30a0750e2fa92a70040b9caf5316444aaea72d38",
+        "user": {
+            "login": "iamstuffed",
+            "id": 592238,
+            "node_id": "MDQ6VXNlcjU5MjIzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/592238?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/iamstuffed",
+            "html_url": "https://github.com/iamstuffed",
+            "followers_url": "https://api.github.com/users/iamstuffed/followers",
+            "following_url": "https://api.github.com/users/iamstuffed/following{/other_user}",
+            "gists_url": "https://api.github.com/users/iamstuffed/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/iamstuffed/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/iamstuffed/subscriptions",
+            "organizations_url": "https://api.github.com/users/iamstuffed/orgs",
+            "repos_url": "https://api.github.com/users/iamstuffed/repos",
+            "events_url": "https://api.github.com/users/iamstuffed/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/iamstuffed/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "19.0.2 is the current version.\n",
+        "created_at": "2014-02-27T23:57:17Z",
+        "updated_at": "2014-02-28T00:02:03Z",
+        "html_url": "https://github.com/Comcast/FreeFlow/pull/26#discussion_r10148588",
+        "pull_request_url": "https://api.github.com/repos/Comcast/FreeFlow/pulls/26",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/Comcast/FreeFlow/pulls/comments/10148588"
+            },
+            "html": {
+                "href": "https://github.com/Comcast/FreeFlow/pull/26#discussion_r10148588"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/Comcast/FreeFlow/pulls/26"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/Comcast/FreeFlow/pulls/comments/10307444",
+        "pull_request_review_id": null,
+        "id": 10307444,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMzA3NDQ0",
+        "diff_hunk": "@@ -1136,7 +1137,7 @@ protected void onDraw(Canvas canvas) {\n \t\t}\n \n \t\tif (needsInvalidate)\n-\t\t\tpostInvalidateOnAnimation();\n+            ViewCompat.postInvalidateOnAnimation(this);",
+        "path": "FreeFlow/src/com/comcast/freeflow/core/FreeFlowContainer.java",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "7e8e152e83776e0017b28066ae5a64eb8cb4fe70",
+        "original_commit_id": "b25cbe1c5ac85b591771754f1b00679f685954d9",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Bad indent. This library uses tabs.\n",
+        "created_at": "2014-03-05T16:56:52Z",
+        "updated_at": "2014-03-05T17:12:05Z",
+        "html_url": "https://github.com/Comcast/FreeFlow/pull/37#discussion_r10307444",
+        "pull_request_url": "https://api.github.com/repos/Comcast/FreeFlow/pulls/37",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/Comcast/FreeFlow/pulls/comments/10307444"
+            },
+            "html": {
+                "href": "https://github.com/Comcast/FreeFlow/pull/37#discussion_r10307444"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/Comcast/FreeFlow/pulls/37"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/Comcast/FreeFlow/pulls/comments/10308296",
+        "pull_request_review_id": null,
+        "id": 10308296,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMzA4Mjk2",
+        "diff_hunk": "@@ -1136,7 +1137,7 @@ protected void onDraw(Canvas canvas) {\n \t\t}\n \n \t\tif (needsInvalidate)\n-\t\t\tpostInvalidateOnAnimation();\n+            ViewCompat.postInvalidateOnAnimation(this);",
+        "path": "FreeFlow/src/com/comcast/freeflow/core/FreeFlowContainer.java",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "7e8e152e83776e0017b28066ae5a64eb8cb4fe70",
+        "original_commit_id": "b25cbe1c5ac85b591771754f1b00679f685954d9",
+        "user": {
+            "login": "mingfai",
+            "id": 40657,
+            "node_id": "MDQ6VXNlcjQwNjU3",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/40657?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mingfai",
+            "html_url": "https://github.com/mingfai",
+            "followers_url": "https://api.github.com/users/mingfai/followers",
+            "following_url": "https://api.github.com/users/mingfai/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mingfai/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mingfai/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mingfai/subscriptions",
+            "organizations_url": "https://api.github.com/users/mingfai/orgs",
+            "repos_url": "https://api.github.com/users/mingfai/repos",
+            "events_url": "https://api.github.com/users/mingfai/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mingfai/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "fixed. Intellij IDEA doesn't allow me to change to tab and commit. ends up using vim.\n",
+        "created_at": "2014-03-05T17:16:10Z",
+        "updated_at": "2014-03-05T17:16:10Z",
+        "html_url": "https://github.com/Comcast/FreeFlow/pull/37#discussion_r10308296",
+        "pull_request_url": "https://api.github.com/repos/Comcast/FreeFlow/pulls/37",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/Comcast/FreeFlow/pulls/comments/10308296"
+            },
+            "html": {
+                "href": "https://github.com/Comcast/FreeFlow/pull/37#discussion_r10308296"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/Comcast/FreeFlow/pulls/37"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/Comcast/FreeFlow/pulls/comments/11708998",
+        "pull_request_review_id": null,
+        "id": 11708998,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNzA4OTk4",
+        "diff_hunk": "@@ -0,0 +1,18 @@\n+# Project-wide Gradle settings.\n+\n+# IDE (e.g. Android Studio) users:\n+# Settings specified in this file will override any Gradle settings\n+# configured through the IDE.\n+\n+# For more details on how to configure your build environment visit\n+# http://www.gradle.org/docs/current/userguide/build_environment.html\n+\n+# Specifies the JVM arguments used for the daemon process.\n+# The setting is particularly useful for tweaking memory settings.\n+# Default value: -Xmx10248m -XX:MaxPermSize=256m\n+# org.gradle.jvmargs=-Xmx2048m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8\n+\n+# When configured, Gradle will run in incubating parallel mode.\n+# This option should only be used with decoupled projects. More details, visit\n+# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects\n+# org.gradle.parallel=true",
+        "path": "gradle.properties",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "3d738e2213eab12c160a43b1ab4e0ec1806eb372",
+        "original_commit_id": "3d738e2213eab12c160a43b1ab4e0ec1806eb372",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This file can be deleted.\n",
+        "created_at": "2014-04-16T21:39:58Z",
+        "updated_at": "2014-04-16T21:39:58Z",
+        "html_url": "https://github.com/Comcast/FreeFlow/pull/51#discussion_r11708998",
+        "pull_request_url": "https://api.github.com/repos/Comcast/FreeFlow/pulls/51",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/Comcast/FreeFlow/pulls/comments/11708998"
+            },
+            "html": {
+                "href": "https://github.com/Comcast/FreeFlow/pull/51#discussion_r11708998"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/Comcast/FreeFlow/pulls/51"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/Comcast/FreeFlow/pulls/comments/11717180",
+        "pull_request_review_id": null,
+        "id": 11717180,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNzE3MTgw",
+        "diff_hunk": "@@ -0,0 +1,18 @@\n+# Project-wide Gradle settings.\n+\n+# IDE (e.g. Android Studio) users:\n+# Settings specified in this file will override any Gradle settings\n+# configured through the IDE.\n+\n+# For more details on how to configure your build environment visit\n+# http://www.gradle.org/docs/current/userguide/build_environment.html\n+\n+# Specifies the JVM arguments used for the daemon process.\n+# The setting is particularly useful for tweaking memory settings.\n+# Default value: -Xmx10248m -XX:MaxPermSize=256m\n+# org.gradle.jvmargs=-Xmx2048m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8\n+\n+# When configured, Gradle will run in incubating parallel mode.\n+# This option should only be used with decoupled projects. More details, visit\n+# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects\n+# org.gradle.parallel=true",
+        "path": "gradle.properties",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "3d738e2213eab12c160a43b1ab4e0ec1806eb372",
+        "original_commit_id": "3d738e2213eab12c160a43b1ab4e0ec1806eb372",
+        "user": {
+            "login": "arpit",
+            "id": 61332,
+            "node_id": "MDQ6VXNlcjYxMzMy",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/61332?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/arpit",
+            "html_url": "https://github.com/arpit",
+            "followers_url": "https://api.github.com/users/arpit/followers",
+            "following_url": "https://api.github.com/users/arpit/following{/other_user}",
+            "gists_url": "https://api.github.com/users/arpit/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/arpit/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/arpit/subscriptions",
+            "organizations_url": "https://api.github.com/users/arpit/orgs",
+            "repos_url": "https://api.github.com/users/arpit/repos",
+            "events_url": "https://api.github.com/users/arpit/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/arpit/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Deleted in 5c2e3fb1eb4d66c7eb51598568b66271c34fa86f\n",
+        "created_at": "2014-04-17T03:02:09Z",
+        "updated_at": "2014-04-17T03:02:09Z",
+        "html_url": "https://github.com/Comcast/FreeFlow/pull/51#discussion_r11717180",
+        "pull_request_url": "https://api.github.com/repos/Comcast/FreeFlow/pulls/51",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/Comcast/FreeFlow/pulls/comments/11717180"
+            },
+            "html": {
+                "href": "https://github.com/Comcast/FreeFlow/pull/51#discussion_r11717180"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/Comcast/FreeFlow/pulls/51"
+            }
+        }
+    }
+]

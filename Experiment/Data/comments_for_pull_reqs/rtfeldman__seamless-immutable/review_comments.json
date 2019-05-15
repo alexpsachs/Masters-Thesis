@@ -1,0 +1,1770 @@
+[
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/19850019",
+        "pull_request_review_id": null,
+        "id": 19850019,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5ODUwMDE5",
+        "diff_hunk": "@@ -90,6 +90,7 @@\n \n     addPropertyTo(array, \"flatMap\",  flatMap);\n     addPropertyTo(array, \"asObject\", asObject);\n+    addPropertyTo(array, \"toMutable\", toMutableArray);",
+        "path": "seamless-immutable.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "3a3ae1baecf8b41327039325452d77515f422c9f",
+        "original_commit_id": "5e8332852d5e43238cea912d8b0c6daf55cb81c6",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Should be `asMutable` rather than `toMutable`, yeah?\n",
+        "created_at": "2014-11-05T01:27:04Z",
+        "updated_at": "2014-11-05T18:14:17Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/9#discussion_r19850019",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/9",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/19850019"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/9#discussion_r19850019"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/9"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/19850030",
+        "pull_request_review_id": null,
+        "id": 19850030,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5ODUwMDMw",
+        "diff_hunk": "@@ -231,10 +253,27 @@\n     return makeImmutableObject(result);\n   };\n \n+  function toMutableObject(opts) {\n+    var result = {};\n+\n+    if(!!opts && opts['deep']) {\n+      for (var key in this) {\n+        result[key] = toMutable(this[key]);\n+      };\n+    } else {\n+      for (var key in this) {\n+        result[key] = this[key];\n+      };\n+    };\n+\n+    return result;\n+  };\n+\n   // Finalizes an object with immutable methods, freezes it, and returns it.\n   function makeImmutableObject(obj) {\n     addPropertyTo(obj, \"merge\", merge);\n     addPropertyTo(obj, \"without\", without);\n+    addPropertyTo(obj, \"toMutable\", toMutableObject);",
+        "path": "seamless-immutable.js",
+        "position": null,
+        "original_position": 67,
+        "commit_id": "3a3ae1baecf8b41327039325452d77515f422c9f",
+        "original_commit_id": "5e8332852d5e43238cea912d8b0c6daf55cb81c6",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "ditto regarding `asMutable` vs. `toMutable`\n",
+        "created_at": "2014-11-05T01:27:27Z",
+        "updated_at": "2014-11-05T18:14:17Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/9#discussion_r19850030",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/9",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/19850030"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/9#discussion_r19850030"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/9"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/19850064",
+        "pull_request_review_id": null,
+        "id": 19850064,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5ODUwMDY0",
+        "diff_hunk": "@@ -155,6 +156,22 @@\n     return makeImmutableObject(result);\n   }\n \n+  function toMutableArray(opts) {\n+    var result = []\n+\n+    if(!!opts && opts['deep']) {",
+        "path": "seamless-immutable.js",
+        "position": null,
+        "original_position": 15,
+        "commit_id": "3a3ae1baecf8b41327039325452d77515f422c9f",
+        "original_commit_id": "5e8332852d5e43238cea912d8b0c6daf55cb81c6",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Style note: I'd do this as `if (opts && opts.deep)` (and the same below)\n",
+        "created_at": "2014-11-05T01:28:43Z",
+        "updated_at": "2014-11-05T18:14:17Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/9#discussion_r19850064",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/9",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/19850064"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/9#discussion_r19850064"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/9"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/19850146",
+        "pull_request_review_id": null,
+        "id": 19850146,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5ODUwMTQ2",
+        "diff_hunk": "@@ -189,6 +206,11 @@\n     return makeImmutableObject(result);\n   }\n \n+  function toMutable(obj) {",
+        "path": "seamless-immutable.js",
+        "position": null,
+        "original_position": 35,
+        "commit_id": "3a3ae1baecf8b41327039325452d77515f422c9f",
+        "original_commit_id": "5e8332852d5e43238cea912d8b0c6daf55cb81c6",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It would be clearer to rename this to like `toDeepMutable`, since it always runs in deep mode.\n",
+        "created_at": "2014-11-05T01:31:27Z",
+        "updated_at": "2014-11-05T18:14:17Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/9#discussion_r19850146",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/9",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/19850146"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/9#discussion_r19850146"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/9"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/36158690",
+        "pull_request_review_id": null,
+        "id": 36158690,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2MTU4Njkw",
+        "diff_hunk": "@@ -326,20 +326,24 @@\n     return result;\n   }\n \n+  // Creates empty object, using prototype if present\n+  function instantiateEmptyObject() {\n+    var prototype = Object.getPrototypeOf(this);\n+    return prototype !== Object.prototype ? Object.create(prototype) : {};\n+  }\n+\n   // Finalizes an object with immutable methods, freezes it, and returns it.\n   function makeImmutableObject(obj) {\n     addPropertyTo(obj, \"merge\", merge);\n     addPropertyTo(obj, \"without\", without);\n     addPropertyTo(obj, \"asMutable\", asMutableObject);\n+    addPropertyTo(obj, \"instantiateEmptyObject\", instantiateEmptyObject);",
+        "path": "seamless-immutable.development.js",
+        "position": null,
+        "original_position": 42,
+        "commit_id": "8f22cfeb5652a505435e2c130573f01b9f44e17c",
+        "original_commit_id": "6ad3e3f449bf484d387dd552b8ca7dab6fd27522",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let's inline `instantiateEmptyObject` into `makeImmutableObject` so we can just do the prototype check once instead of every time we instantiate an object:\n\n``` javascript\nvar prototype = Object.getPrototypeOf(this);\nvar instantiateEmptyObject =\n  (prototype === Object.prototype)\n    ? instantiatePlainObject\n    : (function() { return Object.create(prototype); });\n\n// ... the other addPropertyTo calls go here ... //\n\naddPropertyTo(obj, \"instantiateEmptyObject\", instantiateEmptyObject);\n```\n\n...and then, elsewhere in the file:\n\n``` javascript\nfunction instantiatePlainObject() { return {}; }\n```\n",
+        "created_at": "2015-08-04T05:33:08Z",
+        "updated_at": "2015-08-08T23:21:34Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/51#discussion_r36158690",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/51",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/36158690"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/51#discussion_r36158690"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/51"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/36237839",
+        "pull_request_review_id": null,
+        "id": 36237839,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2MjM3ODM5",
+        "diff_hunk": "@@ -326,20 +326,24 @@\n     return result;\n   }\n \n+  // Creates empty object, using prototype if present\n+  function instantiateEmptyObject() {\n+    var prototype = Object.getPrototypeOf(this);\n+    return prototype !== Object.prototype ? Object.create(prototype) : {};\n+  }\n+\n   // Finalizes an object with immutable methods, freezes it, and returns it.\n   function makeImmutableObject(obj) {\n     addPropertyTo(obj, \"merge\", merge);\n     addPropertyTo(obj, \"without\", without);\n     addPropertyTo(obj, \"asMutable\", asMutableObject);\n+    addPropertyTo(obj, \"instantiateEmptyObject\", instantiateEmptyObject);",
+        "path": "seamless-immutable.development.js",
+        "position": null,
+        "original_position": 42,
+        "commit_id": "8f22cfeb5652a505435e2c130573f01b9f44e17c",
+        "original_commit_id": "6ad3e3f449bf484d387dd552b8ca7dab6fd27522",
+        "user": {
+            "login": "virajsanghvi",
+            "id": 1366272,
+            "node_id": "MDQ6VXNlcjEzNjYyNzI=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1366272?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/virajsanghvi",
+            "html_url": "https://github.com/virajsanghvi",
+            "followers_url": "https://api.github.com/users/virajsanghvi/followers",
+            "following_url": "https://api.github.com/users/virajsanghvi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/virajsanghvi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/virajsanghvi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/virajsanghvi/subscriptions",
+            "organizations_url": "https://api.github.com/users/virajsanghvi/orgs",
+            "repos_url": "https://api.github.com/users/virajsanghvi/repos",
+            "events_url": "https://api.github.com/users/virajsanghvi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/virajsanghvi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I want to point out that with the suggested approach, you'd still be doing the prototype check almost every time we instantiate an object. `merge` and `without` both call `makeImmutableObject` on their clones, and would go through this check. The added benefit over the previous approach is that `asMutable` and `merge`s without `anyChanges` would not have to go through this check.\n\nOne option I was thinking about was passing an options hash to `makeImmutableObject` with `instantiateEmptyObject` as an option, which when present, would be used instead of constructing it.\n\nAnyways, let me know if you still want to proceed with the above suggestions.\n",
+        "created_at": "2015-08-04T20:33:42Z",
+        "updated_at": "2015-08-08T23:21:34Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/51#discussion_r36237839",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/51",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/36237839"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/51#discussion_r36237839"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/51"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/36434898",
+        "pull_request_review_id": null,
+        "id": 36434898,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NDM0ODk4",
+        "diff_hunk": "@@ -326,20 +326,24 @@\n     return result;\n   }\n \n+  // Creates empty object, using prototype if present\n+  function instantiateEmptyObject() {\n+    var prototype = Object.getPrototypeOf(this);\n+    return prototype !== Object.prototype ? Object.create(prototype) : {};\n+  }\n+\n   // Finalizes an object with immutable methods, freezes it, and returns it.\n   function makeImmutableObject(obj) {\n     addPropertyTo(obj, \"merge\", merge);\n     addPropertyTo(obj, \"without\", without);\n     addPropertyTo(obj, \"asMutable\", asMutableObject);\n+    addPropertyTo(obj, \"instantiateEmptyObject\", instantiateEmptyObject);",
+        "path": "seamless-immutable.development.js",
+        "position": null,
+        "original_position": 42,
+        "commit_id": "8f22cfeb5652a505435e2c130573f01b9f44e17c",
+        "original_commit_id": "6ad3e3f449bf484d387dd552b8ca7dab6fd27522",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "+1 for passing it as an argument to `makeImmutableObject`! That sounds like the best approach yet.\n",
+        "created_at": "2015-08-06T16:26:38Z",
+        "updated_at": "2015-08-08T23:21:34Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/51#discussion_r36434898",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/51",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/36434898"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/51#discussion_r36434898"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/51"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/43328807",
+        "pull_request_review_id": null,
+        "id": 43328807,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMzI4ODA3",
+        "diff_hunk": "@@ -0,0 +1,53 @@\n+var JSC          = require(\"jscheck\");\n+var assert       = require(\"chai\").assert;\n+var _            = require(\"lodash\");\n+var getTestUtils = require(\"../TestUtils.js\");\n+\n+\n+module.exports = function(config) {\n+  var Immutable = config.implementation;\n+  var TestUtils = getTestUtils(Immutable);\n+  var check     = TestUtils.check;\n+\n+  function getPathComponent() {\n+    // It's very convenient to use lodash.set, but it has funky behaviour\n+    // with numeric keys.\n+    var s = JSC.string()().replace(/[^\\w]/g, '_');\n+    return /^\\d+$/.test(s) ? s + 'a' : s;\n+  }\n+\n+  describe(\"#set\", function() {\n+    it(\"sets a property by name\", function () {\n+      check(100, [TestUtils.ComplexObjectSpecifier()], function(ob) {\n+        var clone = _.cloneDeep(ob),\n+          prop = getPathComponent(),\n+          value = Math.random();",
+        "path": "test/ImmutableObject/test-set.js",
+        "position": null,
+        "original_position": 24,
+        "commit_id": "9562ddf9a1f6d43a0e9577019028bb6cf95aa3e4",
+        "original_commit_id": "764d5c15d17cea916b4c331fdaf977382e82499d",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Any reason not to use `JSC` for this?\n",
+        "created_at": "2015-10-28T22:46:05Z",
+        "updated_at": "2015-11-26T00:14:59Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/69#discussion_r43328807",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/69",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/43328807"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/69#discussion_r43328807"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/69"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/43328855",
+        "pull_request_review_id": null,
+        "id": 43328855,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMzI4ODU1",
+        "diff_hunk": "@@ -343,6 +360,8 @@\n     addPropertyTo(obj, \"without\", without);\n     addPropertyTo(obj, \"asMutable\", asMutableObject);\n     addPropertyTo(obj, \"instantiateEmptyObject\", instantiateEmptyObject);\n+    addPropertyTo(obj, \"set\", set);\n+    addPropertyTo(obj, \"setIn\", setIn);",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 29,
+        "commit_id": "9562ddf9a1f6d43a0e9577019028bb6cf95aa3e4",
+        "original_commit_id": "764d5c15d17cea916b4c331fdaf977382e82499d",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Mind documenting these in `README`?\n",
+        "created_at": "2015-10-28T22:46:25Z",
+        "updated_at": "2015-11-26T00:14:59Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/69#discussion_r43328855",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/69",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/43328855"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/69#discussion_r43328855"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/69"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/58699353",
+        "pull_request_review_id": null,
+        "id": 58699353,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4Njk5MzUz",
+        "diff_hunk": "@@ -486,9 +486,21 @@\n           instantiatePlainObject : (function() { return Object.create(prototype); });\n       var clone = instantiateEmptyObject();\n \n+      if (process.env.NODE_ENV !== \"production\") {\n+        if (level === undefined) {\n+          level = 0;\n+        }",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "c6a1b660ece31f208f083fcf72a5b10b5a0929f0",
+        "original_commit_id": "a46e934023c0525b0c5fdfc520f83917d5a1ed98",
+        "user": {
+            "login": "Connormiha",
+            "id": 4091305,
+            "node_id": "MDQ6VXNlcjQwOTEzMDU=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/4091305?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Connormiha",
+            "html_url": "https://github.com/Connormiha",
+            "followers_url": "https://api.github.com/users/Connormiha/followers",
+            "following_url": "https://api.github.com/users/Connormiha/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Connormiha/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Connormiha/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Connormiha/subscriptions",
+            "organizations_url": "https://api.github.com/users/Connormiha/orgs",
+            "repos_url": "https://api.github.com/users/Connormiha/repos",
+            "events_url": "https://api.github.com/users/Connormiha/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Connormiha/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "``` javascript\nlevel = level || 0;\n```\n",
+        "created_at": "2016-04-06T12:57:34Z",
+        "updated_at": "2016-04-14T22:19:08Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/119#discussion_r58699353",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/119",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/58699353"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/119#discussion_r58699353"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/119"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/58699527",
+        "pull_request_review_id": null,
+        "id": 58699527,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4Njk5NTI3",
+        "diff_hunk": "@@ -486,9 +486,21 @@\n           instantiatePlainObject : (function() { return Object.create(prototype); });\n       var clone = instantiateEmptyObject();\n \n+      if (process.env.NODE_ENV !== \"production\") {\n+        if (level === undefined) {\n+          level = 0;\n+        }\n+        if (level >= 64) {\n+          throw new ImmutableError(\"Attempt to construct Immutable from a deeply nested object was detected.\" +\n+            \" Have you tried to wrap an object with circular references (e.g. React Component)?\" +\n+            \" See https://github.com/rtfeldman/seamless-immutable/issues/73 for details.\");\n+        }\n+        level += 1;\n+      }",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 23,
+        "commit_id": "c6a1b660ece31f208f083fcf72a5b10b5a0929f0",
+        "original_commit_id": "a46e934023c0525b0c5fdfc520f83917d5a1ed98",
+        "user": {
+            "login": "Connormiha",
+            "id": 4091305,
+            "node_id": "MDQ6VXNlcjQwOTEzMDU=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/4091305?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Connormiha",
+            "html_url": "https://github.com/Connormiha",
+            "followers_url": "https://api.github.com/users/Connormiha/followers",
+            "following_url": "https://api.github.com/users/Connormiha/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Connormiha/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Connormiha/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Connormiha/subscriptions",
+            "organizations_url": "https://api.github.com/users/Connormiha/orgs",
+            "repos_url": "https://api.github.com/users/Connormiha/repos",
+            "events_url": "https://api.github.com/users/Connormiha/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Connormiha/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Increment?\n`level++;`\n",
+        "created_at": "2016-04-06T12:58:45Z",
+        "updated_at": "2016-04-14T22:19:08Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/119#discussion_r58699527",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/119",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/58699527"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/119#discussion_r58699527"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/119"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/58701003",
+        "pull_request_review_id": null,
+        "id": 58701003,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4NzAxMDAz",
+        "diff_hunk": "@@ -98,6 +98,17 @@ var getTestUtils = require(\"./TestUtils.js\");\n           });\n         });\n       });\n+\n+      it(\"detects cycles\", function() {\n+        var obj = {};\n+        obj.prop = obj;\n+\n+        if (config.id === 'prod') {\n+          assert.throws(function() { Immutable(obj); }, RangeError);\n+        } else {\n+          assert.throws(function() { Immutable(obj); }, /deeply nested/);\n+        }\n+      });",
+        "path": "test/Immutable.spec.js",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "c6a1b660ece31f208f083fcf72a5b10b5a0929f0",
+        "original_commit_id": "a46e934023c0525b0c5fdfc520f83917d5a1ed98",
+        "user": {
+            "login": "Connormiha",
+            "id": 4091305,
+            "node_id": "MDQ6VXNlcjQwOTEzMDU=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/4091305?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Connormiha",
+            "html_url": "https://github.com/Connormiha",
+            "followers_url": "https://api.github.com/users/Connormiha/followers",
+            "following_url": "https://api.github.com/users/Connormiha/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Connormiha/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Connormiha/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Connormiha/subscriptions",
+            "organizations_url": "https://api.github.com/users/Connormiha/orgs",
+            "repos_url": "https://api.github.com/users/Connormiha/repos",
+            "events_url": "https://api.github.com/users/Connormiha/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Connormiha/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "``` javascript\nassert.throws(Immutable.bind(null, obj), config.id === 'prod' ? RangeError : /deeply nested/);\n```\n",
+        "created_at": "2016-04-06T13:09:33Z",
+        "updated_at": "2016-04-14T22:19:08Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/119#discussion_r58701003",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/119",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/58701003"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/119#discussion_r58701003"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/119"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/58702493",
+        "pull_request_review_id": null,
+        "id": 58702493,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4NzAyNDkz",
+        "diff_hunk": "@@ -98,6 +98,17 @@ var getTestUtils = require(\"./TestUtils.js\");\n           });\n         });\n       });\n+\n+      it(\"detects cycles\", function() {\n+        var obj = {};\n+        obj.prop = obj;\n+\n+        if (config.id === 'prod') {\n+          assert.throws(function() { Immutable(obj); }, RangeError);\n+        } else {\n+          assert.throws(function() { Immutable(obj); }, /deeply nested/);\n+        }\n+      });",
+        "path": "test/Immutable.spec.js",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "c6a1b660ece31f208f083fcf72a5b10b5a0929f0",
+        "original_commit_id": "a46e934023c0525b0c5fdfc520f83917d5a1ed98",
+        "user": {
+            "login": "shamrin",
+            "id": 510678,
+            "node_id": "MDQ6VXNlcjUxMDY3OA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/510678?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/shamrin",
+            "html_url": "https://github.com/shamrin",
+            "followers_url": "https://api.github.com/users/shamrin/followers",
+            "following_url": "https://api.github.com/users/shamrin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/shamrin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/shamrin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/shamrin/subscriptions",
+            "organizations_url": "https://api.github.com/users/shamrin/orgs",
+            "repos_url": "https://api.github.com/users/shamrin/repos",
+            "events_url": "https://api.github.com/users/shamrin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/shamrin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Nice suggestion, thank you! But I find my version a little easier to follow.\n",
+        "created_at": "2016-04-06T13:19:45Z",
+        "updated_at": "2016-04-14T22:19:08Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/119#discussion_r58702493",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/119",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/58702493"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/119#discussion_r58702493"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/119"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59635883",
+        "pull_request_review_id": null,
+        "id": 59635883,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5NjM1ODgz",
+        "diff_hunk": "@@ -471,8 +471,17 @@\n     return makeImmutable(obj, mutatingObjectMethods);\n   }\n \n+  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');\n+  var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;\n+\n+  function isReactElement(obj) {\n+    return obj.hasOwnProperty &&\n+           obj.hasOwnProperty('$$typeof') &&\n+           obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE;\n+  }",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "784d6485f78b9468592fcf6dbdd49f1ff78cf1d4",
+        "original_commit_id": "e5602f933b39e26c2f8ee78aaddd221745be27c8",
+        "user": {
+            "login": "shamrin",
+            "id": 510678,
+            "node_id": "MDQ6VXNlcjUxMDY3OA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/510678?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/shamrin",
+            "html_url": "https://github.com/shamrin",
+            "followers_url": "https://api.github.com/users/shamrin/followers",
+            "following_url": "https://api.github.com/users/shamrin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/shamrin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/shamrin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/shamrin/subscriptions",
+            "organizations_url": "https://api.github.com/users/shamrin/orgs",
+            "repos_url": "https://api.github.com/users/shamrin/repos",
+            "events_url": "https://api.github.com/users/shamrin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/shamrin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What do you think about following [`React.isValidElement` implementation](https://github.com/facebook/react/blob/932334d3d46627adb08013e8e/src/isomorphic/classic/element/ReactElement.js#L342-L347) more closely?\n\n``` js\nfunction isReactElement (obj) {\n  return (\n    typeof obj === 'object' &&\n    obj !== null &&\n    obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE\n  );\n}\n```\n",
+        "created_at": "2016-04-13T22:18:29Z",
+        "updated_at": "2016-04-19T22:08:57Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59635883",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59635883"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59635883"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59647898",
+        "pull_request_review_id": null,
+        "id": 59647898,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5NjQ3ODk4",
+        "diff_hunk": "@@ -471,8 +471,17 @@\n     return makeImmutable(obj, mutatingObjectMethods);\n   }\n \n+  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');\n+  var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;\n+\n+  function isReactElement(obj) {\n+    return obj.hasOwnProperty &&\n+           obj.hasOwnProperty('$$typeof') &&\n+           obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE;\n+  }",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "784d6485f78b9468592fcf6dbdd49f1ff78cf1d4",
+        "original_commit_id": "e5602f933b39e26c2f8ee78aaddd221745be27c8",
+        "user": {
+            "login": "davidblurton",
+            "id": 1696979,
+            "node_id": "MDQ6VXNlcjE2OTY5Nzk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1696979?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/davidblurton",
+            "html_url": "https://github.com/davidblurton",
+            "followers_url": "https://api.github.com/users/davidblurton/followers",
+            "following_url": "https://api.github.com/users/davidblurton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/davidblurton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/davidblurton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/davidblurton/subscriptions",
+            "organizations_url": "https://api.github.com/users/davidblurton/orgs",
+            "repos_url": "https://api.github.com/users/davidblurton/repos",
+            "events_url": "https://api.github.com/users/davidblurton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/davidblurton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I initially just copied that function but I had it fail in production in IE11 because Symbol is defined but not implemented. Could also be an issue with the polyfill I was using. \n\nIt would be nice if it was the same implementation, but I couldn't get it to work like that. I need to write some tests for this. Do you think I should add a dev dependency on React so I can test the detection?\n\n> On 13 Apr 2016, at 22:18, Alexey Shamrin notifications@github.com wrote:\n> \n> In src/seamless-immutable.js:\n> \n> > @@ -471,8 +471,17 @@\n> >      return makeImmutable(obj, mutatingObjectMethods);\n> >    }\n> > -  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');\n> > -  var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;\n> >   +\n> > -  function isReactElement(obj) {\n> > -    return obj.hasOwnProperty &&\n> > -           obj.hasOwnProperty('$$typeof') &&\n> > -           obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE;\n> > -  }\n> >   What do you think about following React.isValidElement implementation more closely?\n> \n> function isReactElement (obj) {\n>   return (\n>     typeof obj === 'object' &&\n>     obj !== null &&\n>     obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE\n>   );\n> }\n> \u2014\n> You are receiving this because you were mentioned.\n> Reply to this email directly or view it on GitHub\n",
+        "created_at": "2016-04-14T00:17:05Z",
+        "updated_at": "2016-04-19T22:08:57Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59647898",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59647898"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59647898"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59649180",
+        "pull_request_review_id": null,
+        "id": 59649180,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5NjQ5MTgw",
+        "diff_hunk": "@@ -471,8 +471,17 @@\n     return makeImmutable(obj, mutatingObjectMethods);\n   }\n \n+  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');\n+  var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;\n+\n+  function isReactElement(obj) {\n+    return obj.hasOwnProperty &&\n+           obj.hasOwnProperty('$$typeof') &&\n+           obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE;\n+  }",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "784d6485f78b9468592fcf6dbdd49f1ff78cf1d4",
+        "original_commit_id": "e5602f933b39e26c2f8ee78aaddd221745be27c8",
+        "user": {
+            "login": "shamrin",
+            "id": 510678,
+            "node_id": "MDQ6VXNlcjUxMDY3OA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/510678?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/shamrin",
+            "html_url": "https://github.com/shamrin",
+            "followers_url": "https://api.github.com/users/shamrin/followers",
+            "following_url": "https://api.github.com/users/shamrin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/shamrin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/shamrin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/shamrin/subscriptions",
+            "organizations_url": "https://api.github.com/users/shamrin/orgs",
+            "repos_url": "https://api.github.com/users/shamrin/repos",
+            "events_url": "https://api.github.com/users/shamrin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/shamrin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think it should be okay in IE11. I've kept your `\u2026_TYPE_FALLBACK || \u2026_TYPE` condition intact.\n\nThe only difference between your `isReactElement` and `React.isValidElement` is that you test for `hasOwnProperty`, while they test for `typeof obj` and `obj !== null`.\n\n> Do you think I should add a dev dependency on React so I can test the detection?\n\nPersonally I don't see any problems with it. But take it with a grain of salt - I'm not a maintainer of this repo, @rtfeldman is.\n",
+        "created_at": "2016-04-14T00:32:46Z",
+        "updated_at": "2016-04-19T22:08:57Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59649180",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59649180"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59649180"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59730057",
+        "pull_request_review_id": null,
+        "id": 59730057,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5NzMwMDU3",
+        "diff_hunk": "@@ -471,8 +471,17 @@\n     return makeImmutable(obj, mutatingObjectMethods);\n   }\n \n+  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');\n+  var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;\n+\n+  function isReactElement(obj) {\n+    return obj.hasOwnProperty &&\n+           obj.hasOwnProperty('$$typeof') &&\n+           obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE;\n+  }",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "784d6485f78b9468592fcf6dbdd49f1ff78cf1d4",
+        "original_commit_id": "e5602f933b39e26c2f8ee78aaddd221745be27c8",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is looking like the right approach! Would you mind adding some comments to the detection linking to where the magic constants come from?\n\nI tried to avoid special casing React components for a long time, but the overwhelming demand has convinced me otherwise. One of the things this means is that now we need to document which React version(s) are supported, and the test cases will need to back that up.\n\nSo it probably won't be as simple as just adding React as a single dev dependency; since React will keep having new releases, there will pretty quickly need to be multiple React versions supported and tested separately!\n",
+        "created_at": "2016-04-14T14:45:51Z",
+        "updated_at": "2016-04-19T22:08:57Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59730057",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59730057"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59730057"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59733940",
+        "pull_request_review_id": null,
+        "id": 59733940,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5NzMzOTQw",
+        "diff_hunk": "@@ -471,8 +471,17 @@\n     return makeImmutable(obj, mutatingObjectMethods);\n   }\n \n+  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');\n+  var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;\n+\n+  function isReactElement(obj) {\n+    return obj.hasOwnProperty &&\n+           obj.hasOwnProperty('$$typeof') &&\n+           obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE;\n+  }",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "784d6485f78b9468592fcf6dbdd49f1ff78cf1d4",
+        "original_commit_id": "e5602f933b39e26c2f8ee78aaddd221745be27c8",
+        "user": {
+            "login": "davidblurton",
+            "id": 1696979,
+            "node_id": "MDQ6VXNlcjE2OTY5Nzk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1696979?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/davidblurton",
+            "html_url": "https://github.com/davidblurton",
+            "followers_url": "https://api.github.com/users/davidblurton/followers",
+            "following_url": "https://api.github.com/users/davidblurton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/davidblurton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/davidblurton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/davidblurton/subscriptions",
+            "organizations_url": "https://api.github.com/users/davidblurton/orgs",
+            "repos_url": "https://api.github.com/users/davidblurton/repos",
+            "events_url": "https://api.github.com/users/davidblurton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/davidblurton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hopefully this isn't something that will change in React, since it was\nadded as a security feature. I'm not sure it's possible to depends on\nmultiple versions of the same package with npm, so might need to use\nsomething else (bower?) to work around that.\n\nI'll add some more comments and some tests for react 0.14 as a first pass.\n\nI agree that it's strange for an immutability library to special case\nreact, but it does make working with the library more, well, seamless :)\n\nOn Thu, 14 Apr 2016 at 14:45 Richard Feldman notifications@github.com\nwrote:\n\n> In src/seamless-immutable.js\n> https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59730057\n> :\n> \n> > @@ -471,8 +471,17 @@\n> >      return makeImmutable(obj, mutatingObjectMethods);\n> >    }\n> > -  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');\n> > -  var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;\n> >   +\n> > -  function isReactElement(obj) {\n> > -    return obj.hasOwnProperty &&\n> > -           obj.hasOwnProperty('$$typeof') &&\n> > -           obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE;\n> > -  }\n> \n> This is looking like the right approach! Would you mind adding some\n> comments to the detection linking to where the magic constants come from?\n> \n> I tried to avoid special casing React components for a long time, but the\n> overwhelming demand has convinced me otherwise. One of the things this\n> means is that now we need to document which React version(s) are supported,\n> and the test cases will need to back that up.\n> \n> So it probably won't be as simple as just adding React as a single dev\n> dependency; since React will keep having new releases, there will pretty\n> quickly need to be multiple React versions supported and tested separately!\n> \n> \u2014\n> You are receiving this because you were mentioned.\n> Reply to this email directly or view it on GitHub\n> https://github.com/rtfeldman/seamless-immutable/pull/120/files/e5602f933b39e26c2f8ee78aaddd221745be27c8#r59730057\n",
+        "created_at": "2016-04-14T15:06:07Z",
+        "updated_at": "2016-04-19T22:08:57Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59733940",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59733940"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59733940"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59748495",
+        "pull_request_review_id": null,
+        "id": 59748495,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5NzQ4NDk1",
+        "diff_hunk": "@@ -471,8 +471,17 @@\n     return makeImmutable(obj, mutatingObjectMethods);\n   }\n \n+  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');\n+  var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;\n+\n+  function isReactElement(obj) {\n+    return obj.hasOwnProperty &&\n+           obj.hasOwnProperty('$$typeof') &&\n+           obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE;\n+  }",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "784d6485f78b9468592fcf6dbdd49f1ff78cf1d4",
+        "original_commit_id": "e5602f933b39e26c2f8ee78aaddd221745be27c8",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yeah, might need to get creative on the tests. React 0.14 is certainly a start!\n",
+        "created_at": "2016-04-14T16:30:40Z",
+        "updated_at": "2016-04-19T22:08:57Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59748495",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/59748495"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/120#discussion_r59748495"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/120"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/81279897",
+        "pull_request_review_id": 2270664,
+        "id": 81279897,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgxMjc5ODk3",
+        "diff_hunk": "@@ -127,7 +127,13 @@\n         // Might (validly) be object or array\n         newValue = thisHead.setIn(tail, value);\n       } else {\n-        newValue = arraySetIn.call(immutableEmptyArray, tail, value);\n+        var nextHead = tail[0];\n+        // If the next path part is a number, then we are setting into an array, else an object.\n+        if (!isNaN(parseFloat(nextHead)) && isFinite(nextHead)) {",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "51d28db97b96b59dd1adcaaa6cf6804a893c096f",
+        "original_commit_id": "2137c91160b5d09a424d14ed93ce4985ee7b5b4f",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Don't we want something other than `parseFloat` here? For example: http://stackoverflow.com/questions/12227594/which-is-better-numberx-or-parsefloatx\n",
+        "created_at": "2016-09-30T05:23:43Z",
+        "updated_at": "2016-09-30T22:06:36Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/152#discussion_r81279897",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/152",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/81279897"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/152#discussion_r81279897"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/152"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/81359111",
+        "pull_request_review_id": 2345784,
+        "id": 81359111,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgxMzU5MTEx",
+        "diff_hunk": "@@ -127,7 +127,13 @@\n         // Might (validly) be object or array\n         newValue = thisHead.setIn(tail, value);\n       } else {\n-        newValue = arraySetIn.call(immutableEmptyArray, tail, value);\n+        var nextHead = tail[0];\n+        // If the next path part is a number, then we are setting into an array, else an object.\n+        if (!isNaN(parseFloat(nextHead)) && isFinite(nextHead)) {",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "51d28db97b96b59dd1adcaaa6cf6804a893c096f",
+        "original_commit_id": "2137c91160b5d09a424d14ed93ce4985ee7b5b4f",
+        "user": {
+            "login": "marbemac",
+            "id": 847542,
+            "node_id": "MDQ6VXNlcjg0NzU0Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/847542?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/marbemac",
+            "html_url": "https://github.com/marbemac",
+            "followers_url": "https://api.github.com/users/marbemac/followers",
+            "following_url": "https://api.github.com/users/marbemac/following{/other_user}",
+            "gists_url": "https://api.github.com/users/marbemac/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/marbemac/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/marbemac/subscriptions",
+            "organizations_url": "https://api.github.com/users/marbemac/orgs",
+            "repos_url": "https://api.github.com/users/marbemac/repos",
+            "events_url": "https://api.github.com/users/marbemac/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/marbemac/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sure, we could use Numberx - something like this?\n\n``` js\nif (nextHead !== '' && !isNaN(Number(nextHead)) && isFinite(nextHead)) {\n```\n\nAfter reading a bit more about how isFinite works, we could probably actually shorten it to this:\n\n``` js\nif (nextHead !== '' && isFinite(nextHead)) {\n```\n",
+        "created_at": "2016-09-30T15:18:21Z",
+        "updated_at": "2016-09-30T22:06:36Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/152#discussion_r81359111",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/152",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/81359111"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/152#discussion_r81359111"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/152"
+            }
+        },
+        "in_reply_to_id": 81279897
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/81379491",
+        "pull_request_review_id": 2365315,
+        "id": 81379491,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgxMzc5NDkx",
+        "diff_hunk": "@@ -127,7 +127,13 @@\n         // Might (validly) be object or array\n         newValue = thisHead.setIn(tail, value);\n       } else {\n-        newValue = arraySetIn.call(immutableEmptyArray, tail, value);\n+        var nextHead = tail[0];\n+        // If the next path part is a number, then we are setting into an array, else an object.\n+        if (!isNaN(parseFloat(nextHead)) && isFinite(nextHead)) {",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "51d28db97b96b59dd1adcaaa6cf6804a893c096f",
+        "original_commit_id": "2137c91160b5d09a424d14ed93ce4985ee7b5b4f",
+        "user": {
+            "login": "rtfeldman",
+            "id": 1094080,
+            "node_id": "MDQ6VXNlcjEwOTQwODA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1094080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rtfeldman",
+            "html_url": "https://github.com/rtfeldman",
+            "followers_url": "https://api.github.com/users/rtfeldman/followers",
+            "following_url": "https://api.github.com/users/rtfeldman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rtfeldman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rtfeldman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rtfeldman/subscriptions",
+            "organizations_url": "https://api.github.com/users/rtfeldman/orgs",
+            "repos_url": "https://api.github.com/users/rtfeldman/repos",
+            "events_url": "https://api.github.com/users/rtfeldman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rtfeldman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "yeah - if that works, it seems best!\n",
+        "created_at": "2016-09-30T17:12:33Z",
+        "updated_at": "2016-09-30T22:06:36Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/152#discussion_r81379491",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/152",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/81379491"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/152#discussion_r81379491"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/152"
+            }
+        },
+        "in_reply_to_id": 81279897
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/83690812",
+        "pull_request_review_id": 4517948,
+        "id": 83690812,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgzNjkwODEy",
+        "diff_hunk": "@@ -72,7 +72,8 @@ Immutable([1, 2, 3]).concat([10, 9, 8]).sort()\n // [1, 2, 3, 4, 5, 6], because a vanilla array's concat() method has\n // no knowledge of Immutable.\n \n-Immutable({all: \"your base\", are: {belong: \"to them\"}}).merge({are: {belong: \"to us\"}})\n+var obj = Immutable({all: \"your base\", are: {belong: \"to them\"}});\n+Immutable.merge(obj, {are: {belong: \"to us\"}})\n // This handy new method will return the following:",
+        "path": "README.md",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "21882b29eff5ad8590d572f792501026c52a5738",
+        "original_commit_id": "0bb6411586ae7cbacc60d5b2cd591c4c71ce7bad",
+        "user": {
+            "login": "suchipi",
+            "id": 1341513,
+            "node_id": "MDQ6VXNlcjEzNDE1MTM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1341513?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/suchipi",
+            "html_url": "https://github.com/suchipi",
+            "followers_url": "https://api.github.com/users/suchipi/followers",
+            "following_url": "https://api.github.com/users/suchipi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/suchipi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/suchipi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/suchipi/subscriptions",
+            "organizations_url": "https://api.github.com/users/suchipi/orgs",
+            "repos_url": "https://api.github.com/users/suchipi/repos",
+            "events_url": "https://api.github.com/users/suchipi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/suchipi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It's not really a \"method\" per se anymore, so maybe the wording should be changed here\n",
+        "created_at": "2016-10-17T17:16:50Z",
+        "updated_at": "2016-12-11T12:14:26Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/160#discussion_r83690812",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/160",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/83690812"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/160#discussion_r83690812"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/160"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/83691200",
+        "pull_request_review_id": 4518315,
+        "id": 83691200,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgzNjkxMjAw",
+        "diff_hunk": "@@ -318,14 +324,15 @@ Multiple keys can be provided, either in an Array or as extra arguments.\n ### asMutable\n \n ```javascript\n-var mutableObject = Immutable({when: \"the\", levee: \"breaks\"}).asMutable();\n+var obj = Immutable({when: \"the\", levee: \"breaks\"});\n+var mutable = Immutable.asMutable(obj);\n \n mutableObject.have = \"no place to go\";\n \n mutableObject // {when: \"the\", levee: \"breaks\", have: \"no place to go\"}\n ```\n \n-Returns a mutable copy of the object. For a deeply mutable copy, in which any instances of `Immutable` contained in nested data structures within the object have been converted back to mutable data structures, call `.asMutable({deep: true})` instead.\n+Returns a mutable copy of the object. For a deeply mutable copy, in which any instances of `Immutable` contained in nested data structures within the object have been converted back to mutable data structures, call `.asMutable(obj, {deep: true})` instead.",
+        "path": "README.md",
+        "position": null,
+        "original_position": 190,
+        "commit_id": "21882b29eff5ad8590d572f792501026c52a5738",
+        "original_commit_id": "0bb6411586ae7cbacc60d5b2cd591c4c71ce7bad",
+        "user": {
+            "login": "suchipi",
+            "id": 1341513,
+            "node_id": "MDQ6VXNlcjEzNDE1MTM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1341513?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/suchipi",
+            "html_url": "https://github.com/suchipi",
+            "followers_url": "https://api.github.com/users/suchipi/followers",
+            "following_url": "https://api.github.com/users/suchipi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/suchipi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/suchipi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/suchipi/subscriptions",
+            "organizations_url": "https://api.github.com/users/suchipi/orgs",
+            "repos_url": "https://api.github.com/users/suchipi/repos",
+            "events_url": "https://api.github.com/users/suchipi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/suchipi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think this was written as `.asMutable` because the object to the left of the dot could be anything; with the docs only talking about the static method syntax, this could be changed to `Immutable.asMutable`\n",
+        "created_at": "2016-10-17T17:19:00Z",
+        "updated_at": "2016-12-11T12:14:26Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/160#discussion_r83691200",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/160",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/83691200"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/160#discussion_r83691200"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/160"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/83691819",
+        "pull_request_review_id": 4518901,
+        "id": 83691819,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgzNjkxODE5",
+        "diff_hunk": "@@ -5,11 +5,36 @@\n   var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');\n   var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;\n \n+  function instantiateEmptyObject(obj) {\n+      var prototype = Object.getPrototypeOf(obj);\n+      if (!prototype) {\n+          return {};\n+      } else {\n+          return Object.create(prototype);\n+      }\n+  }\n+\n+  function staticWarning(fn, name) {\n+      function staticWrapper() {\n+          console.log('DEPRECATED: Using x.' + name + '(...) will be deprecated. Please use Immutable.' + name + '(x, ...) instead.');",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 15,
+        "commit_id": "21882b29eff5ad8590d572f792501026c52a5738",
+        "original_commit_id": "0bb6411586ae7cbacc60d5b2cd591c4c71ce7bad",
+        "user": {
+            "login": "suchipi",
+            "id": 1341513,
+            "node_id": "MDQ6VXNlcjEzNDE1MTM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1341513?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/suchipi",
+            "html_url": "https://github.com/suchipi",
+            "followers_url": "https://api.github.com/users/suchipi/followers",
+            "following_url": "https://api.github.com/users/suchipi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/suchipi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/suchipi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/suchipi/subscriptions",
+            "organizations_url": "https://api.github.com/users/suchipi/orgs",
+            "repos_url": "https://api.github.com/users/suchipi/repos",
+            "events_url": "https://api.github.com/users/suchipi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/suchipi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It would be nice to use console.warn instead.\n\nAlso, instead of \"will be deprecated\", maybe it would be better to say \"has been deprecated\". Saying \"DEPRECATED: ...will be deprecated\" is a bit confusing.\n",
+        "created_at": "2016-10-17T17:22:21Z",
+        "updated_at": "2016-12-11T12:14:26Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/160#discussion_r83691819",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/160",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/83691819"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/160#discussion_r83691819"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/160"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/83691960",
+        "pull_request_review_id": 4519017,
+        "id": 83691960,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgzNjkxOTYw",
+        "diff_hunk": "@@ -5,11 +5,36 @@\n   var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');\n   var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;\n \n+  function instantiateEmptyObject(obj) {\n+      var prototype = Object.getPrototypeOf(obj);\n+      if (!prototype) {\n+          return {};\n+      } else {\n+          return Object.create(prototype);\n+      }\n+  }\n+\n+  function staticWarning(fn, name) {\n+      function staticWrapper() {\n+          console.log('DEPRECATED: Using x.' + name + '(...) will be deprecated. Please use Immutable.' + name + '(x, ...) instead.');\n+          return fn.apply(this, [].slice.call(arguments));\n+      }\n+\n+      if (process.env.NODE_ENV !== \"production\") {",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 19,
+        "commit_id": "21882b29eff5ad8590d572f792501026c52a5738",
+        "original_commit_id": "0bb6411586ae7cbacc60d5b2cd591c4c71ce7bad",
+        "user": {
+            "login": "suchipi",
+            "id": 1341513,
+            "node_id": "MDQ6VXNlcjEzNDE1MTM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1341513?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/suchipi",
+            "html_url": "https://github.com/suchipi",
+            "followers_url": "https://api.github.com/users/suchipi/followers",
+            "following_url": "https://api.github.com/users/suchipi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/suchipi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/suchipi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/suchipi/subscriptions",
+            "organizations_url": "https://api.github.com/users/suchipi/orgs",
+            "repos_url": "https://api.github.com/users/suchipi/repos",
+            "events_url": "https://api.github.com/users/suchipi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/suchipi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Will this blow up in the browser? Not sure what the build system for this project is like\n",
+        "created_at": "2016-10-17T17:23:00Z",
+        "updated_at": "2016-12-11T12:14:26Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/160#discussion_r83691960",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/160",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/83691960"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/160#discussion_r83691960"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/160"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/83692234",
+        "pull_request_review_id": 4519269,
+        "id": 83692234,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgzNjkyMjM0",
+        "diff_hunk": "@@ -5,11 +5,36 @@\n   var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');\n   var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;\n \n+  function instantiateEmptyObject(obj) {\n+      var prototype = Object.getPrototypeOf(obj);\n+      if (!prototype) {\n+          return {};\n+      } else {\n+          return Object.create(prototype);\n+      }\n+  }\n+\n+  function staticWarning(fn, name) {\n+      function staticWrapper() {\n+          console.log('DEPRECATED: Using x.' + name + '(...) will be deprecated. Please use Immutable.' + name + '(x, ...) instead.');\n+          return fn.apply(this, [].slice.call(arguments));\n+      }\n+\n+      if (process.env.NODE_ENV !== \"production\") {",
+        "path": "src/seamless-immutable.js",
+        "position": null,
+        "original_position": 19,
+        "commit_id": "21882b29eff5ad8590d572f792501026c52a5738",
+        "original_commit_id": "0bb6411586ae7cbacc60d5b2cd591c4c71ce7bad",
+        "user": {
+            "login": "saivann",
+            "id": 3578089,
+            "node_id": "MDQ6VXNlcjM1NzgwODk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/3578089?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/saivann",
+            "html_url": "https://github.com/saivann",
+            "followers_url": "https://api.github.com/users/saivann/followers",
+            "following_url": "https://api.github.com/users/saivann/following{/other_user}",
+            "gists_url": "https://api.github.com/users/saivann/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/saivann/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/saivann/subscriptions",
+            "organizations_url": "https://api.github.com/users/saivann/orgs",
+            "repos_url": "https://api.github.com/users/saivann/repos",
+            "events_url": "https://api.github.com/users/saivann/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/saivann/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm relying on the fact that this is used elsewhere in the codebase (e.g. to use Object.freeze() or not). @rtfeldman any thoughts?\n",
+        "created_at": "2016-10-17T17:24:25Z",
+        "updated_at": "2016-12-11T12:14:26Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/160#discussion_r83692234",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/160",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/83692234"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/160#discussion_r83692234"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/160"
+            }
+        },
+        "in_reply_to_id": 83691960
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/100747116",
+        "pull_request_review_id": 21460377,
+        "id": 100747116,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMDc0NzExNg==",
+        "diff_hunk": "@@ -99,13 +99,12 @@ function immutableInit(config) {\n   ]);\n \n   function ImmutableError(message) {\n-    var err       = new Error(message);\n-    // TODO: Consider `Object.setPrototypeOf(err, ImmutableError);`\n-    err.__proto__ = ImmutableError;\n-\n-    return err;\n+    this.name = 'MyError';",
+        "path": "seamless-immutable.development.js",
+        "position": 9,
+        "original_position": 9,
+        "commit_id": "b6b38432a9ffa7b26ad0cddf703a8922f1d3abf7",
+        "original_commit_id": "b6b38432a9ffa7b26ad0cddf703a8922f1d3abf7",
+        "user": {
+            "login": "holyjak",
+            "id": 624958,
+            "node_id": "MDQ6VXNlcjYyNDk1OA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/624958?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/holyjak",
+            "html_url": "https://github.com/holyjak",
+            "followers_url": "https://api.github.com/users/holyjak/followers",
+            "following_url": "https://api.github.com/users/holyjak/following{/other_user}",
+            "gists_url": "https://api.github.com/users/holyjak/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/holyjak/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/holyjak/subscriptions",
+            "organizations_url": "https://api.github.com/users/holyjak/orgs",
+            "repos_url": "https://api.github.com/users/holyjak/repos",
+            "events_url": "https://api.github.com/users/holyjak/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/holyjak/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I guess this isn't really as intended:\r\n\r\n    this.name = 'MyError';\r\n\r\nA copy & paste error? Should likely be `ImmutableError`...",
+        "created_at": "2017-02-13T08:55:27Z",
+        "updated_at": "2017-02-13T08:55:27Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/195#discussion_r100747116",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/195",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/100747116"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/195#discussion_r100747116"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/195"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/121736514",
+        "pull_request_review_id": 43788395,
+        "id": 121736514,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMTczNjUxNA==",
+        "diff_hunk": "@@ -94,13 +94,13 @@ Seamless-immutable supports both static and instance syntaxes:\n ```",
+        "path": "README.md",
+        "position": 11,
+        "original_position": 1,
+        "commit_id": "209b948e9fc3e94948019b06f2d06f87dd955154",
+        "original_commit_id": "0a81a62e3b372d85a6b51fd9de1a13e78fd703f6",
+        "user": {
+            "login": "fobos",
+            "id": 372529,
+            "node_id": "MDQ6VXNlcjM3MjUyOQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/372529?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fobos",
+            "html_url": "https://github.com/fobos",
+            "followers_url": "https://api.github.com/users/fobos/followers",
+            "following_url": "https://api.github.com/users/fobos/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fobos/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fobos/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fobos/subscriptions",
+            "organizations_url": "https://api.github.com/users/fobos/orgs",
+            "repos_url": "https://api.github.com/users/fobos/repos",
+            "events_url": "https://api.github.com/users/fobos/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fobos/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "it would be great to note the code snippet as js for syntax highlighting. In both examples",
+        "created_at": "2017-06-13T16:57:03Z",
+        "updated_at": "2017-06-20T09:44:01Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/224#discussion_r121736514",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/224",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/121736514"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/224#discussion_r121736514"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/224"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/121991174",
+        "pull_request_review_id": 44066822,
+        "id": 121991174,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMTk5MTE3NA==",
+        "diff_hunk": "@@ -94,13 +94,13 @@ Seamless-immutable supports both static and instance syntaxes:\n ```",
+        "path": "README.md",
+        "position": 11,
+        "original_position": 1,
+        "commit_id": "209b948e9fc3e94948019b06f2d06f87dd955154",
+        "original_commit_id": "0a81a62e3b372d85a6b51fd9de1a13e78fd703f6",
+        "user": {
+            "login": "koddsson",
+            "id": 318208,
+            "node_id": "MDQ6VXNlcjMxODIwOA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/318208?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/koddsson",
+            "html_url": "https://github.com/koddsson",
+            "followers_url": "https://api.github.com/users/koddsson/followers",
+            "following_url": "https://api.github.com/users/koddsson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/koddsson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/koddsson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/koddsson/subscriptions",
+            "organizations_url": "https://api.github.com/users/koddsson/orgs",
+            "repos_url": "https://api.github.com/users/koddsson/repos",
+            "events_url": "https://api.github.com/users/koddsson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/koddsson/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "I've updated the PR but this comment is on a the close comment so it didn't hide it :)",
+        "created_at": "2017-06-14T16:02:42Z",
+        "updated_at": "2017-06-20T09:44:01Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/224#discussion_r121991174",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/224",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/121991174"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/224#discussion_r121991174"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/224"
+            }
+        },
+        "in_reply_to_id": 121736514
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/121998385",
+        "pull_request_review_id": 44074639,
+        "id": 121998385,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMTk5ODM4NQ==",
+        "diff_hunk": "@@ -91,16 +91,16 @@ Immutable.merge(obj, {are: {belong: \"to us\"}})\n \n Seamless-immutable supports both static and instance syntaxes:\n \n-```\n+```javascript\n var Immutable = require(\"seamless-immutable\").static;\n \n-Immutable.setIn(obj, 'key', data)\n+Immutable.setIn(obj, ['key'], data)",
+        "path": "README.md",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "209b948e9fc3e94948019b06f2d06f87dd955154",
+        "original_commit_id": "b2319c074e1fee180e10a94513a8ccbfc2ac5438",
+        "user": {
+            "login": "fobos",
+            "id": 372529,
+            "node_id": "MDQ6VXNlcjM3MjUyOQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/372529?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fobos",
+            "html_url": "https://github.com/fobos",
+            "followers_url": "https://api.github.com/users/fobos/followers",
+            "following_url": "https://api.github.com/users/fobos/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fobos/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fobos/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fobos/subscriptions",
+            "organizations_url": "https://api.github.com/users/fobos/orgs",
+            "repos_url": "https://api.github.com/users/fobos/repos",
+            "events_url": "https://api.github.com/users/fobos/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fobos/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "There is no definition for `obj` property",
+        "created_at": "2017-06-14T16:31:10Z",
+        "updated_at": "2017-06-20T09:44:01Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/224#discussion_r121998385",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/224",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/121998385"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/224#discussion_r121998385"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/224"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/121998454",
+        "pull_request_review_id": 44074639,
+        "id": 121998454,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMTk5ODQ1NA==",
+        "diff_hunk": "@@ -91,16 +91,16 @@ Immutable.merge(obj, {are: {belong: \"to us\"}})\n \n Seamless-immutable supports both static and instance syntaxes:\n \n-```\n+```javascript\n var Immutable = require(\"seamless-immutable\").static;\n \n-Immutable.setIn(obj, 'key', data)\n+Immutable.setIn(obj, ['key'], data)\n ```\n \n-```\n+```javascript\n var Immutable = require(\"seamless-immutable\");\n \n-obj.setIn('key', data)\n+obj.setIn(['key'], data)",
+        "path": "README.md",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "209b948e9fc3e94948019b06f2d06f87dd955154",
+        "original_commit_id": "b2319c074e1fee180e10a94513a8ccbfc2ac5438",
+        "user": {
+            "login": "fobos",
+            "id": 372529,
+            "node_id": "MDQ6VXNlcjM3MjUyOQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/372529?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fobos",
+            "html_url": "https://github.com/fobos",
+            "followers_url": "https://api.github.com/users/fobos/followers",
+            "following_url": "https://api.github.com/users/fobos/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fobos/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fobos/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fobos/subscriptions",
+            "organizations_url": "https://api.github.com/users/fobos/orgs",
+            "repos_url": "https://api.github.com/users/fobos/repos",
+            "events_url": "https://api.github.com/users/fobos/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fobos/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The same as above",
+        "created_at": "2017-06-14T16:31:26Z",
+        "updated_at": "2017-06-20T09:44:01Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/224#discussion_r121998454",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/224",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/121998454"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/224#discussion_r121998454"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/224"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/202158330",
+        "pull_request_review_id": 136803319,
+        "id": 202158330,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMjE1ODMzMA==",
+        "diff_hunk": "@@ -577,6 +577,42 @@ function immutableInit(config) {\n     return result;\n   }\n \n+  function sortBy(array, sorter) {\n+    var result = [], i, length, rearranged;\n+\n+    if (!(array instanceof Array)) {\n+      throw new TypeError(\"The first argument to Immutable#sortBy must be an array.\");\n+    }\n+\n+    for (i = 0, length = array.length; i < length; i++) {\n+      result.push(array[i]);\n+    }",
+        "path": "src/seamless-immutable.js",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "7eecb314cd9f36db998af0c34e2040533e160bc8",
+        "original_commit_id": "7eecb314cd9f36db998af0c34e2040533e160bc8",
+        "user": {
+            "login": "pekeler",
+            "id": 42363,
+            "node_id": "MDQ6VXNlcjQyMzYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/42363?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pekeler",
+            "html_url": "https://github.com/pekeler",
+            "followers_url": "https://api.github.com/users/pekeler/followers",
+            "following_url": "https://api.github.com/users/pekeler/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pekeler/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pekeler/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pekeler/subscriptions",
+            "organizations_url": "https://api.github.com/users/pekeler/orgs",
+            "repos_url": "https://api.github.com/users/pekeler/repos",
+            "events_url": "https://api.github.com/users/pekeler/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pekeler/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why not use `asMutable()` instead of making a mutable copy manually?",
+        "created_at": "2018-07-12T19:52:14Z",
+        "updated_at": "2018-07-12T19:52:14Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/211#discussion_r202158330",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/211",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/202158330"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/211#discussion_r202158330"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/211"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/202158764",
+        "pull_request_review_id": 136803896,
+        "id": 202158764,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMjE1ODc2NA==",
+        "diff_hunk": "@@ -577,6 +577,42 @@ function immutableInit(config) {\n     return result;\n   }\n \n+  function sortBy(array, sorter) {\n+    var result = [], i, length, rearranged;\n+\n+    if (!(array instanceof Array)) {\n+      throw new TypeError(\"The first argument to Immutable#sortBy must be an array.\");\n+    }\n+\n+    for (i = 0, length = array.length; i < length; i++) {\n+      result.push(array[i]);\n+    }\n+    result.sort(sorter);\n+\n+    // Test if elements of the array have been rearranged\n+    rearranged = false;\n+    for (i = 0, length = array.length; i < length; i++) {\n+      if(result[i] !== array[i]) {\n+        // Check if both are NaN. Type checks catch cases where isNaN returns true for strings.\n+        if(!(typeof result[i] === \"number\" && isNaN(result[i]) && typeof array[i] === \"number\" && isNaN(array[i]))) {\n+            rearranged = true;\n+        }",
+        "path": "src/seamless-immutable.js",
+        "position": 23,
+        "original_position": 23,
+        "commit_id": "7eecb314cd9f36db998af0c34e2040533e160bc8",
+        "original_commit_id": "7eecb314cd9f36db998af0c34e2040533e160bc8",
+        "user": {
+            "login": "pekeler",
+            "id": 42363,
+            "node_id": "MDQ6VXNlcjQyMzYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/42363?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pekeler",
+            "html_url": "https://github.com/pekeler",
+            "followers_url": "https://api.github.com/users/pekeler/followers",
+            "following_url": "https://api.github.com/users/pekeler/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pekeler/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pekeler/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pekeler/subscriptions",
+            "organizations_url": "https://api.github.com/users/pekeler/orgs",
+            "repos_url": "https://api.github.com/users/pekeler/repos",
+            "events_url": "https://api.github.com/users/pekeler/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pekeler/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "should `break` here",
+        "created_at": "2018-07-12T19:53:49Z",
+        "updated_at": "2018-07-12T19:53:49Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/211#discussion_r202158764",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/211",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/202158764"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/211#discussion_r202158764"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/211"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/212539210",
+        "pull_request_review_id": 149195755,
+        "id": 212539210,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxMjUzOTIxMA==",
+        "diff_hunk": "@@ -10,11 +10,12 @@\n     \"coveralls\": \"2.11.8\",\n     \"deep-equal\": \"1.0.1\",\n     \"envify\": \"3.4.0\",\n-    \"grunt\": \"0.4.5\",\n+    \"grunt\": \"^1.0.2\",",
+        "path": "package.json",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "d7f5238f4a85f6589da03cdee5d71893a901fb0e",
+        "original_commit_id": "c549c67a1c21ae71941a63fe526f6639d8b5c2ca",
+        "user": {
+            "login": "crudh",
+            "id": 3248512,
+            "node_id": "MDQ6VXNlcjMyNDg1MTI=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3248512?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/crudh",
+            "html_url": "https://github.com/crudh",
+            "followers_url": "https://api.github.com/users/crudh/followers",
+            "following_url": "https://api.github.com/users/crudh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/crudh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/crudh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/crudh/subscriptions",
+            "organizations_url": "https://api.github.com/users/crudh/orgs",
+            "repos_url": "https://api.github.com/users/crudh/repos",
+            "events_url": "https://api.github.com/users/crudh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/crudh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Lock the version as with the other dependencies.",
+        "created_at": "2018-08-24T07:11:49Z",
+        "updated_at": "2018-08-24T11:37:53Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/249#discussion_r212539210",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/249",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/212539210"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/249#discussion_r212539210"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/249"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/212539303",
+        "pull_request_review_id": 149195755,
+        "id": 212539303,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxMjUzOTMwMw==",
+        "diff_hunk": "@@ -10,11 +10,12 @@\n     \"coveralls\": \"2.11.8\",\n     \"deep-equal\": \"1.0.1\",\n     \"envify\": \"3.4.0\",\n-    \"grunt\": \"0.4.5\",\n+    \"grunt\": \"^1.0.2\",\n     \"grunt-contrib-uglify\": \"0.11.1\",\n     \"grunt-mocha-test\": \"0.12.7\",\n     \"istanbul\": \"0.4.2\",\n     \"jscheck\": \"0.2.0\",\n+    \"jshint\": \"^2.9.5\",",
+        "path": "package.json",
+        "position": null,
+        "original_position": 10,
+        "commit_id": "d7f5238f4a85f6589da03cdee5d71893a901fb0e",
+        "original_commit_id": "c549c67a1c21ae71941a63fe526f6639d8b5c2ca",
+        "user": {
+            "login": "crudh",
+            "id": 3248512,
+            "node_id": "MDQ6VXNlcjMyNDg1MTI=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3248512?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/crudh",
+            "html_url": "https://github.com/crudh",
+            "followers_url": "https://api.github.com/users/crudh/followers",
+            "following_url": "https://api.github.com/users/crudh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/crudh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/crudh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/crudh/subscriptions",
+            "organizations_url": "https://api.github.com/users/crudh/orgs",
+            "repos_url": "https://api.github.com/users/crudh/repos",
+            "events_url": "https://api.github.com/users/crudh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/crudh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Lock the version as with the other dependencies.",
+        "created_at": "2018-08-24T07:12:00Z",
+        "updated_at": "2018-08-24T11:37:53Z",
+        "html_url": "https://github.com/rtfeldman/seamless-immutable/pull/249#discussion_r212539303",
+        "pull_request_url": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/249",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/comments/212539303"
+            },
+            "html": {
+                "href": "https://github.com/rtfeldman/seamless-immutable/pull/249#discussion_r212539303"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rtfeldman/seamless-immutable/pulls/249"
+            }
+        }
+    }
+]

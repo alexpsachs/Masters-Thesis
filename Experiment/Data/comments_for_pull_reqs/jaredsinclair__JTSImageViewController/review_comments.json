@@ -1,0 +1,492 @@
+[
+    {
+        "url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/16032771",
+        "pull_request_review_id": null,
+        "id": 16032771,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDMyNzcx",
+        "diff_hunk": "@@ -547,14 +549,16 @@ - (void)showImageViewerByExpandingFromOriginalPositionFromViewController:(UIView\n                      [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];\n                  }\n                  \n-                 CGFloat scaling = JTSImageViewController_MinimumBackgroundScaling;\n-                 weakSelf.snapshotView.transform = CGAffineTransformConcat(weakSelf.snapshotView.transform, CGAffineTransformMakeScale(scaling, scaling));\n-                 \n-                 if (weakSelf.backgroundStyle == JTSImageViewControllerBackgroundStyle_ScaledDimmedBlurred) {\n-                     [weakSelf.blurredSnapshotView setAlpha:1];\n+                 if (self.backgroundStyle < JTSImageViewControllerBackgroundStyle_Dimmed) {",
+        "path": "Source/JTSImageViewController.m",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "fba3ede6d31b4590d2860e12811fc8d41c0fcca0",
+        "original_commit_id": "fba3ede6d31b4590d2860e12811fc8d41c0fcca0",
+        "user": {
+            "login": "jaredsinclair",
+            "id": 720600,
+            "node_id": "MDQ6VXNlcjcyMDYwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/720600?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsinclair",
+            "html_url": "https://github.com/jaredsinclair",
+            "followers_url": "https://api.github.com/users/jaredsinclair/followers",
+            "following_url": "https://api.github.com/users/jaredsinclair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsinclair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsinclair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsinclair/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsinclair/orgs",
+            "repos_url": "https://api.github.com/users/jaredsinclair/repos",
+            "events_url": "https://api.github.com/users/jaredsinclair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsinclair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Even though the backing data type for the backgroundStyle is an NSInteger, conditionals create potential confusion when compared in this manner. They could be reordered later, etc. I'd recommend a switch instead. \n",
+        "created_at": "2014-08-10T19:06:56Z",
+        "updated_at": "2014-08-10T19:06:56Z",
+        "html_url": "https://github.com/jaredsinclair/JTSImageViewController/pull/24#discussion_r16032771",
+        "pull_request_url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/24",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/16032771"
+            },
+            "html": {
+                "href": "https://github.com/jaredsinclair/JTSImageViewController/pull/24#discussion_r16032771"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/16032775",
+        "pull_request_review_id": null,
+        "id": 16032775,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDMyNzc1",
+        "diff_hunk": "@@ -659,14 +666,18 @@ - (void)showImageViewerByScalingDownFromOffscreenPositionWithViewController:(UIV\n                      [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];\n                  }\n                  \n-                 CGFloat scaling = JTSImageViewController_MinimumBackgroundScaling;\n-                 weakSelf.snapshotView.transform = CGAffineTransformConcat(weakSelf.snapshotView.transform, CGAffineTransformMakeScale(scaling, scaling));\n-                 \n-                 if (weakSelf.backgroundStyle == JTSImageViewControllerBackgroundStyle_ScaledDimmedBlurred) {\n-                     [weakSelf.blurredSnapshotView setAlpha:1];\n+                 if (self.backgroundStyle < JTSImageViewControllerBackgroundStyle_Dimmed) {",
+        "path": "Source/JTSImageViewController.m",
+        "position": 52,
+        "original_position": 52,
+        "commit_id": "fba3ede6d31b4590d2860e12811fc8d41c0fcca0",
+        "original_commit_id": "fba3ede6d31b4590d2860e12811fc8d41c0fcca0",
+        "user": {
+            "login": "jaredsinclair",
+            "id": 720600,
+            "node_id": "MDQ6VXNlcjcyMDYwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/720600?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsinclair",
+            "html_url": "https://github.com/jaredsinclair",
+            "followers_url": "https://api.github.com/users/jaredsinclair/followers",
+            "following_url": "https://api.github.com/users/jaredsinclair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsinclair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsinclair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsinclair/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsinclair/orgs",
+            "repos_url": "https://api.github.com/users/jaredsinclair/repos",
+            "events_url": "https://api.github.com/users/jaredsinclair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsinclair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Same as above comment.\n",
+        "created_at": "2014-08-10T19:07:23Z",
+        "updated_at": "2014-08-10T19:07:23Z",
+        "html_url": "https://github.com/jaredsinclair/JTSImageViewController/pull/24#discussion_r16032775",
+        "pull_request_url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/24",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/16032775"
+            },
+            "html": {
+                "href": "https://github.com/jaredsinclair/JTSImageViewController/pull/24#discussion_r16032775"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503385",
+        "pull_request_review_id": null,
+        "id": 69503385,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NTAzMzg1",
+        "diff_hunk": "@@ -104,13 +104,24 @@ static void releaseImages(size_t const count, CGImageRef const images[count]) {\n     int delayCentiseconds[count]; // in centiseconds\n     createImagesAndDelays(source, count, images, delayCentiseconds);\n     int const totalDurationCentiseconds = sum(count, delayCentiseconds);\n-    NSArray *const frames = frameArray(count, images, delayCentiseconds, totalDurationCentiseconds);\n-    UIImage *const animation = [UIImage animatedImageWithImages:frames duration:(NSTimeInterval)totalDurationCentiseconds / 100.0];\n-    releaseImages(count, images);\n-    return animation;\n+    UIImage *image = nil;",
+        "path": "Source/JTSAnimatedGIFUtility.m",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "original_commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "user": {
+            "login": "jaredsinclair",
+            "id": 720600,
+            "node_id": "MDQ6VXNlcjcyMDYwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/720600?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsinclair",
+            "html_url": "https://github.com/jaredsinclair",
+            "followers_url": "https://api.github.com/users/jaredsinclair/followers",
+            "following_url": "https://api.github.com/users/jaredsinclair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsinclair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsinclair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsinclair/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsinclair/orgs",
+            "repos_url": "https://api.github.com/users/jaredsinclair/repos",
+            "events_url": "https://api.github.com/users/jaredsinclair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsinclair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Looks like `dev` and `master` were out of date. I've updated `dev`. Would you please rebase this against latest dev so the merge is a fast-forward?\n",
+        "created_at": "2016-07-05T03:25:17Z",
+        "updated_at": "2016-07-05T03:25:17Z",
+        "html_url": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503385",
+        "pull_request_url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503385"
+            },
+            "html": {
+                "href": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503385"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503703",
+        "pull_request_review_id": null,
+        "id": 69503703,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NTAzNzAz",
+        "diff_hunk": "@@ -36,6 +36,11 @@ typedef NS_OPTIONS(NSInteger, JTSImageViewControllerBackgroundOptions) {\n     JTSImageViewControllerBackgroundOption_Blurred = 1 << 1,\n };\n \n+typedef NS_ENUM(NSInteger, JTSImageViewControllerDismissMode) {\n+    JTSImageViewControllerDismissMode_UpDownDirection,\n+    JTSImageViewControllerDismissMode_AnyDirection\n+};",
+        "path": "Source/JTSImageViewController.h",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "original_commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "user": {
+            "login": "jaredsinclair",
+            "id": 720600,
+            "node_id": "MDQ6VXNlcjcyMDYwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/720600?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsinclair",
+            "html_url": "https://github.com/jaredsinclair",
+            "followers_url": "https://api.github.com/users/jaredsinclair/followers",
+            "following_url": "https://api.github.com/users/jaredsinclair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsinclair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsinclair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsinclair/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsinclair/orgs",
+            "repos_url": "https://api.github.com/users/jaredsinclair/repos",
+            "events_url": "https://api.github.com/users/jaredsinclair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsinclair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Nice addition. I'd like to quibble with the name a bit. \"Dismiss mode\" sounds too broad for a feature that's just determining the allowed directions for flicking-to-dismiss (there are other ways to dismiss that aren't disallowed). What about renaming \"dismiss mode\" to \"flick axis\":\n\n```\ntypedef NS_ENUM(NSInteger, JTSImageViewControllerFlickAxis) {\n     JTSImageViewControllerFlickAxis_Vertical,\n     JTSImageViewControllerFlickAxis_Any\n };\n```\n\nAnd rename the `modalDismissMode` property to `permittedDismissalFlickAxis`.\n",
+        "created_at": "2016-07-05T03:32:34Z",
+        "updated_at": "2016-07-05T03:32:34Z",
+        "html_url": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503703",
+        "pull_request_url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503703"
+            },
+            "html": {
+                "href": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503703"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503706",
+        "pull_request_review_id": null,
+        "id": 69503706,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NTAzNzA2",
+        "diff_hunk": "@@ -63,6 +68,8 @@ extern CGFloat const JTSImageViewController_DefaultBackgroundBlurRadius;\n \n @property (weak, nonatomic, readwrite) id <JTSImageViewControllerAnimationDelegate> animationDelegate;\n \n+@property (assign, nonatomic, readwrite)  JTSImageViewControllerDismissMode modalDismissMode;",
+        "path": "Source/JTSImageViewController.h",
+        "position": 16,
+        "original_position": 16,
+        "commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "original_commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "user": {
+            "login": "jaredsinclair",
+            "id": 720600,
+            "node_id": "MDQ6VXNlcjcyMDYwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/720600?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsinclair",
+            "html_url": "https://github.com/jaredsinclair",
+            "followers_url": "https://api.github.com/users/jaredsinclair/followers",
+            "following_url": "https://api.github.com/users/jaredsinclair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsinclair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsinclair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsinclair/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsinclair/orgs",
+            "repos_url": "https://api.github.com/users/jaredsinclair/repos",
+            "events_url": "https://api.github.com/users/jaredsinclair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsinclair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "See note above.\n",
+        "created_at": "2016-07-05T03:32:38Z",
+        "updated_at": "2016-07-05T03:32:38Z",
+        "html_url": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503706",
+        "pull_request_url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503706"
+            },
+            "html": {
+                "href": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503706"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503713",
+        "pull_request_review_id": null,
+        "id": 69503713,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NTAzNzEz",
+        "diff_hunk": "@@ -12,12 +12,20 @@\n #import \"UIImage+JTSImageEffects.h\"\n #import \"UIApplication+JTSImageViewController.h\"\n \n+CG_INLINE CGFLOAT_TYPE JTSImageFloatAbs(CGFLOAT_TYPE aFloat) {\n+#if CGFLOAT_IS_DOUBLE\n+    return fabs(aFloat);\n+#else\n+    return fabsf(aFloat);\n+#endif\n+}\n+\n ///--------------------------------------------------------------------------------------------------------------------\n /// Definitions\n ///--------------------------------------------------------------------------------------------------------------------\n \n // Public Constants\n-CGFloat const JTSImageViewController_DefaultAlphaForBackgroundDimmingOverlay = 0.66f;\n+CGFloat const JTSImageViewController_DefaultAlphaForBackgroundDimmingOverlay = 0.85f;",
+        "path": "Source/JTSImageViewController.m",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "original_commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "user": {
+            "login": "jaredsinclair",
+            "id": 720600,
+            "node_id": "MDQ6VXNlcjcyMDYwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/720600?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsinclair",
+            "html_url": "https://github.com/jaredsinclair",
+            "followers_url": "https://api.github.com/users/jaredsinclair/followers",
+            "following_url": "https://api.github.com/users/jaredsinclair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsinclair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsinclair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsinclair/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsinclair/orgs",
+            "repos_url": "https://api.github.com/users/jaredsinclair/repos",
+            "events_url": "https://api.github.com/users/jaredsinclair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsinclair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please revert this.\n",
+        "created_at": "2016-07-05T03:32:52Z",
+        "updated_at": "2016-07-05T03:32:52Z",
+        "html_url": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503713",
+        "pull_request_url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503713"
+            },
+            "html": {
+                "href": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503713"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503731",
+        "pull_request_review_id": null,
+        "id": 69503731,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NTAzNzMx",
+        "diff_hunk": "@@ -547,6 +555,7 @@ - (void)setupImageModeGestureRecognizers {\n     [self.view addGestureRecognizer:self.longPresserPhoto];\n     \n     self.panRecognizer = [[UIPanGestureRecognizer alloc] init];\n+    self.panRecognizer.maximumNumberOfTouches = 1;",
+        "path": "Source/JTSImageViewController.m",
+        "position": 35,
+        "original_position": 35,
+        "commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "original_commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "user": {
+            "login": "jaredsinclair",
+            "id": 720600,
+            "node_id": "MDQ6VXNlcjcyMDYwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/720600?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsinclair",
+            "html_url": "https://github.com/jaredsinclair",
+            "followers_url": "https://api.github.com/users/jaredsinclair/followers",
+            "following_url": "https://api.github.com/users/jaredsinclair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsinclair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsinclair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsinclair/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsinclair/orgs",
+            "repos_url": "https://api.github.com/users/jaredsinclair/repos",
+            "events_url": "https://api.github.com/users/jaredsinclair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsinclair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What's the rationale for this?\n",
+        "created_at": "2016-07-05T03:33:21Z",
+        "updated_at": "2016-07-05T03:33:21Z",
+        "html_url": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503731",
+        "pull_request_url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503731"
+            },
+            "html": {
+                "href": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503731"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503766",
+        "pull_request_review_id": null,
+        "id": 69503766,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NTAzNzY2",
+        "diff_hunk": "@@ -1692,34 +1700,76 @@ - (void)dismissingPanGestureRecognizerPanned:(UIPanGestureRecognizer *)panner {\n         return;\n     }\n     \n+    CGPoint velocity = [panner velocityInView:panner.view];\n+    \n+    if (JTSImageViewControllerDismissMode_UpDownDirection == self.modalDismissMode) {\n+        if (fabs(velocity.y) < fabs(velocity.x)) {",
+        "path": "Source/JTSImageViewController.m",
+        "position": 63,
+        "original_position": 63,
+        "commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "original_commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "user": {
+            "login": "jaredsinclair",
+            "id": 720600,
+            "node_id": "MDQ6VXNlcjcyMDYwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/720600?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsinclair",
+            "html_url": "https://github.com/jaredsinclair",
+            "followers_url": "https://api.github.com/users/jaredsinclair/followers",
+            "following_url": "https://api.github.com/users/jaredsinclair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsinclair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsinclair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsinclair/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsinclair/orgs",
+            "repos_url": "https://api.github.com/users/jaredsinclair/repos",
+            "events_url": "https://api.github.com/users/jaredsinclair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsinclair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Should these be `JTSImageFloatAbs`?\n",
+        "created_at": "2016-07-05T03:34:14Z",
+        "updated_at": "2016-07-05T03:34:14Z",
+        "html_url": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503766",
+        "pull_request_url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69503766"
+            },
+            "html": {
+                "href": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69503766"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69504063",
+        "pull_request_review_id": null,
+        "id": 69504063,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NTA0MDYz",
+        "diff_hunk": "@@ -1692,34 +1700,76 @@ - (void)dismissingPanGestureRecognizerPanned:(UIPanGestureRecognizer *)panner {\n         return;\n     }\n     \n+    CGPoint velocity = [panner velocityInView:panner.view];\n+    \n+    if (JTSImageViewControllerDismissMode_UpDownDirection == self.modalDismissMode) {\n+        if (fabs(velocity.y) < fabs(velocity.x)) {\n+            // Allow only up/down\n+            return;\n+        }\n+    }\n+    \n+    //Only used for mode JTSImageViewControllerDismissMode_UpDownDirection\n+    CGPoint centerOfView = self.view.center;\n+    \n     CGPoint translation = [panner translationInView:panner.view];\n     CGPoint locationInView = [panner locationInView:panner.view];\n-    CGPoint velocity = [panner velocityInView:panner.view];\n     CGFloat vectorDistance = sqrtf(powf(velocity.x, 2)+powf(velocity.y, 2));\n-    \n+\n     if (panner.state == UIGestureRecognizerStateBegan) {\n+        \n         _flags.isDraggingImage = CGRectContainsPoint(self.imageView.frame, locationInView);\n+        \n         if (_flags.isDraggingImage) {\n+            \n+            if (JTSImageViewControllerDismissMode_UpDownDirection == self.modalDismissMode) {\n+                // Change the center for JTSImageViewControllerDismissMode_UpDownDirection\n+                locationInView = centerOfView;\n+            }\n+            \n             [self startImageDragging:locationInView translationOffset:UIOffsetZero];\n+\n         }\n     }\n     else if (panner.state == UIGestureRecognizerStateChanged) {\n+        \n         if (_flags.isDraggingImage) {\n+            \n             CGPoint newAnchor = self.imageDragStartingPoint;\n-            newAnchor.x += translation.x + self.imageDragOffsetFromActualTranslation.horizontal;\n-            newAnchor.y += translation.y + self.imageDragOffsetFromActualTranslation.vertical;\n+            \n+            if (JTSImageViewControllerDismissMode_UpDownDirection == self.modalDismissMode) {\n+                newAnchor.x = centerOfView.x;\n+                newAnchor.y += translation.y;\n+            } else {\n+                newAnchor.x += translation.x + self.imageDragOffsetFromActualTranslation.horizontal;\n+                newAnchor.y += translation.y + self.imageDragOffsetFromActualTranslation.vertical;\n+            }\n+            ",
+        "path": "Source/JTSImageViewController.m",
+        "position": 108,
+        "original_position": 108,
+        "commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "original_commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "user": {
+            "login": "jaredsinclair",
+            "id": 720600,
+            "node_id": "MDQ6VXNlcjcyMDYwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/720600?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsinclair",
+            "html_url": "https://github.com/jaredsinclair",
+            "followers_url": "https://api.github.com/users/jaredsinclair/followers",
+            "following_url": "https://api.github.com/users/jaredsinclair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsinclair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsinclair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsinclair/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsinclair/orgs",
+            "repos_url": "https://api.github.com/users/jaredsinclair/repos",
+            "events_url": "https://api.github.com/users/jaredsinclair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsinclair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'd like to hear why you went with this overall approach and not something I believe would be simpler and easier to debug. I think you could drop all of these additions and changes in here and just force the x component of `translation` and `velocity` to zero if horizontal movement is disallowed:\n\n```\nCGPoint translation = [panner translationInView:panner.view];\nCGPoint velocity = [panner velocityInView:panner.view];\nif (JTSImageViewControllerDismissMode_UpDownDirection == self.modalDismissMode) {\n    translation.x = 0;\n    velocity.x = 0;\n}\nCGPoint locationInView = [panner locationInView:panner.view];\nCGFloat vectorDistance = sqrtf(powf(velocity.x, 2)+powf(velocity.y, 2));\n```\n\nI think you could then leave the rest of the logic intact. It would be as if the user had entered a perfectly vertical gesture. \n",
+        "created_at": "2016-07-05T03:43:06Z",
+        "updated_at": "2016-07-05T03:43:06Z",
+        "html_url": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69504063",
+        "pull_request_url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69504063"
+            },
+            "html": {
+                "href": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69504063"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69504230",
+        "pull_request_review_id": null,
+        "id": 69504230,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NTA0MjMw",
+        "diff_hunk": "@@ -1692,34 +1700,76 @@ - (void)dismissingPanGestureRecognizerPanned:(UIPanGestureRecognizer *)panner {\n         return;\n     }\n     \n+    CGPoint velocity = [panner velocityInView:panner.view];\n+    \n+    if (JTSImageViewControllerDismissMode_UpDownDirection == self.modalDismissMode) {\n+        if (fabs(velocity.y) < fabs(velocity.x)) {\n+            // Allow only up/down\n+            return;\n+        }\n+    }\n+    \n+    //Only used for mode JTSImageViewControllerDismissMode_UpDownDirection\n+    CGPoint centerOfView = self.view.center;\n+    \n     CGPoint translation = [panner translationInView:panner.view];\n     CGPoint locationInView = [panner locationInView:panner.view];\n-    CGPoint velocity = [panner velocityInView:panner.view];\n     CGFloat vectorDistance = sqrtf(powf(velocity.x, 2)+powf(velocity.y, 2));\n-    \n+\n     if (panner.state == UIGestureRecognizerStateBegan) {\n+        \n         _flags.isDraggingImage = CGRectContainsPoint(self.imageView.frame, locationInView);\n+        \n         if (_flags.isDraggingImage) {\n+            \n+            if (JTSImageViewControllerDismissMode_UpDownDirection == self.modalDismissMode) {\n+                // Change the center for JTSImageViewControllerDismissMode_UpDownDirection\n+                locationInView = centerOfView;\n+            }\n+            \n             [self startImageDragging:locationInView translationOffset:UIOffsetZero];\n+\n         }\n     }\n     else if (panner.state == UIGestureRecognizerStateChanged) {\n+        \n         if (_flags.isDraggingImage) {\n+            \n             CGPoint newAnchor = self.imageDragStartingPoint;\n-            newAnchor.x += translation.x + self.imageDragOffsetFromActualTranslation.horizontal;\n-            newAnchor.y += translation.y + self.imageDragOffsetFromActualTranslation.vertical;\n+            \n+            if (JTSImageViewControllerDismissMode_UpDownDirection == self.modalDismissMode) {\n+                newAnchor.x = centerOfView.x;\n+                newAnchor.y += translation.y;\n+            } else {\n+                newAnchor.x += translation.x + self.imageDragOffsetFromActualTranslation.horizontal;\n+                newAnchor.y += translation.y + self.imageDragOffsetFromActualTranslation.vertical;\n+            }\n+            ",
+        "path": "Source/JTSImageViewController.m",
+        "position": 108,
+        "original_position": 108,
+        "commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "original_commit_id": "11db9fe3beb354a64bf1739f0754a58a24081199",
+        "user": {
+            "login": "jaredsinclair",
+            "id": 720600,
+            "node_id": "MDQ6VXNlcjcyMDYwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/720600?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsinclair",
+            "html_url": "https://github.com/jaredsinclair",
+            "followers_url": "https://api.github.com/users/jaredsinclair/followers",
+            "following_url": "https://api.github.com/users/jaredsinclair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsinclair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsinclair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsinclair/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsinclair/orgs",
+            "repos_url": "https://api.github.com/users/jaredsinclair/repos",
+            "events_url": "https://api.github.com/users/jaredsinclair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsinclair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You can (and probably should) also update the value of `allowsRotation` on the UIDynamicItemBehavior in response to the new flick axis setting.\n",
+        "created_at": "2016-07-05T03:47:38Z",
+        "updated_at": "2016-07-05T03:47:38Z",
+        "html_url": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69504230",
+        "pull_request_url": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/comments/69504230"
+            },
+            "html": {
+                "href": "https://github.com/jaredsinclair/JTSImageViewController/pull/100#discussion_r69504230"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jaredsinclair/JTSImageViewController/pulls/100"
+            }
+        }
+    }
+]

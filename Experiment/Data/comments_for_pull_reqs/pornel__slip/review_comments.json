@@ -1,0 +1,443 @@
+[
+    {
+        "url": "https://api.github.com/repos/kornelski/slip/pulls/comments/53326806",
+        "pull_request_review_id": null,
+        "id": 53326806,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzI2ODA2",
+        "diff_hunk": "@@ -502,7 +502,9 @@ window['Slip'] = (function(){\n             this.otherNodes = [];\n \n             // selection on iOS interferes with reordering\n-            document.addEventListener(\"selectionchange\", this.onSelection, false);\n+            if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {",
+        "path": "slip.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "fae1a09b8ee6da31f972768814367b64985ce444",
+        "original_commit_id": "b31fec9b64c25e098d939a15fd26b95967f4c8eb",
+        "user": {
+            "login": "oterral",
+            "id": 621420,
+            "node_id": "MDQ6VXNlcjYyMTQyMA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/621420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/oterral",
+            "html_url": "https://github.com/oterral",
+            "followers_url": "https://api.github.com/users/oterral/followers",
+            "following_url": "https://api.github.com/users/oterral/following{/other_user}",
+            "gists_url": "https://api.github.com/users/oterral/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/oterral/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/oterral/subscriptions",
+            "organizations_url": "https://api.github.com/users/oterral/orgs",
+            "repos_url": "https://api.github.com/users/oterral/repos",
+            "events_url": "https://api.github.com/users/oterral/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/oterral/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "IE Edge contains `Chrome` and `Safari`in its user agent.\n",
+        "created_at": "2016-02-18T15:16:34Z",
+        "updated_at": "2016-02-19T21:16:22Z",
+        "html_url": "https://github.com/kornelski/slip/pull/64#discussion_r53326806",
+        "pull_request_url": "https://api.github.com/repos/kornelski/slip/pulls/64",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/comments/53326806"
+            },
+            "html": {
+                "href": "https://github.com/kornelski/slip/pull/64#discussion_r53326806"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/kornelski/slip/pulls/comments/53340800",
+        "pull_request_review_id": null,
+        "id": 53340800,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzQwODAw",
+        "diff_hunk": "@@ -502,7 +502,9 @@ window['Slip'] = (function(){\n             this.otherNodes = [];\n \n             // selection on iOS interferes with reordering\n-            document.addEventListener(\"selectionchange\", this.onSelection, false);\n+            if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {",
+        "path": "slip.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "fae1a09b8ee6da31f972768814367b64985ce444",
+        "original_commit_id": "b31fec9b64c25e098d939a15fd26b95967f4c8eb",
+        "user": {
+            "login": "Jenselme",
+            "id": 6643536,
+            "node_id": "MDQ6VXNlcjY2NDM1MzY=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/6643536?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Jenselme",
+            "html_url": "https://github.com/Jenselme",
+            "followers_url": "https://api.github.com/users/Jenselme/followers",
+            "following_url": "https://api.github.com/users/Jenselme/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Jenselme/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Jenselme/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Jenselme/subscriptions",
+            "organizations_url": "https://api.github.com/users/Jenselme/orgs",
+            "repos_url": "https://api.github.com/users/Jenselme/repos",
+            "events_url": "https://api.github.com/users/Jenselme/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Jenselme/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@oterral Is this mobile only? On win7, IE edge mode, I get:\n\n```\nnavigator.userAgent\n\"Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; GWX:QUALIFIED; rv:11.0) like Gecko\"\n```\n",
+        "created_at": "2016-02-18T16:35:11Z",
+        "updated_at": "2016-02-19T21:16:22Z",
+        "html_url": "https://github.com/kornelski/slip/pull/64#discussion_r53340800",
+        "pull_request_url": "https://api.github.com/repos/kornelski/slip/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/comments/53340800"
+            },
+            "html": {
+                "href": "https://github.com/kornelski/slip/pull/64#discussion_r53340800"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/kornelski/slip/pulls/comments/53341606",
+        "pull_request_review_id": null,
+        "id": 53341606,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzQxNjA2",
+        "diff_hunk": "@@ -502,7 +502,9 @@ window['Slip'] = (function(){\n             this.otherNodes = [];\n \n             // selection on iOS interferes with reordering\n-            document.addEventListener(\"selectionchange\", this.onSelection, false);\n+            if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {",
+        "path": "slip.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "fae1a09b8ee6da31f972768814367b64985ce444",
+        "original_commit_id": "b31fec9b64c25e098d939a15fd26b95967f4c8eb",
+        "user": {
+            "login": "guillerodriguez",
+            "id": 2486184,
+            "node_id": "MDQ6VXNlcjI0ODYxODQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/2486184?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/guillerodriguez",
+            "html_url": "https://github.com/guillerodriguez",
+            "followers_url": "https://api.github.com/users/guillerodriguez/followers",
+            "following_url": "https://api.github.com/users/guillerodriguez/following{/other_user}",
+            "gists_url": "https://api.github.com/users/guillerodriguez/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/guillerodriguez/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/guillerodriguez/subscriptions",
+            "organizations_url": "https://api.github.com/users/guillerodriguez/orgs",
+            "repos_url": "https://api.github.com/users/guillerodriguez/repos",
+            "events_url": "https://api.github.com/users/guillerodriguez/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/guillerodriguez/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Apparently not only on Mobile: \n\nhttps://dev.windows.com/en-us/microsoft-edge/platform/faq/what-is-the-microsoft-edge-user-agent-st/\n",
+        "created_at": "2016-02-18T16:39:47Z",
+        "updated_at": "2016-02-19T21:16:22Z",
+        "html_url": "https://github.com/kornelski/slip/pull/64#discussion_r53341606",
+        "pull_request_url": "https://api.github.com/repos/kornelski/slip/pulls/64",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/comments/53341606"
+            },
+            "html": {
+                "href": "https://github.com/kornelski/slip/pull/64#discussion_r53341606"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/kornelski/slip/pulls/comments/61138654",
+        "pull_request_review_id": null,
+        "id": 61138654,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYxMTM4NjU0",
+        "diff_hunk": "@@ -454,21 +454,25 @@ window['Slip'] = (function(){\n \n                     onEnd: function() {\n                         var move = this.getTotalMovement();\n+                        var i, spliceIndex;\n                         if (move.y < 0) {\n-                            for(var i=0; i < otherNodes.length; i++) {\n+                            for (i=0; i < otherNodes.length; i++) {\n                                 if (otherNodes[i].pos > move.y) {\n-                                    this.dispatch(this.target.node, 'reorder', {spliceIndex:i, insertBefore:otherNodes[i].node, originalIndex: originalIndex});",
+        "path": "slip.js",
+        "position": 9,
+        "original_position": 9,
+        "commit_id": "a35e6ee90de8e0dcd7715e8cd1c5446c1adbeac3",
+        "original_commit_id": "a35e6ee90de8e0dcd7715e8cd1c5446c1adbeac3",
+        "user": {
+            "login": "carter-thaxton",
+            "id": 303253,
+            "node_id": "MDQ6VXNlcjMwMzI1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/303253?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/carter-thaxton",
+            "html_url": "https://github.com/carter-thaxton",
+            "followers_url": "https://api.github.com/users/carter-thaxton/followers",
+            "following_url": "https://api.github.com/users/carter-thaxton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/carter-thaxton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/carter-thaxton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/carter-thaxton/subscriptions",
+            "organizations_url": "https://api.github.com/users/carter-thaxton/orgs",
+            "repos_url": "https://api.github.com/users/carter-thaxton/repos",
+            "events_url": "https://api.github.com/users/carter-thaxton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/carter-thaxton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The old code would dispatch the event in this for-loop, but what if the condition is never met?\n",
+        "created_at": "2016-04-26T18:25:31Z",
+        "updated_at": "2016-04-26T23:35:28Z",
+        "html_url": "https://github.com/kornelski/slip/pull/68#discussion_r61138654",
+        "pull_request_url": "https://api.github.com/repos/kornelski/slip/pulls/68",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/comments/61138654"
+            },
+            "html": {
+                "href": "https://github.com/kornelski/slip/pull/68#discussion_r61138654"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/kornelski/slip/pulls/comments/61138735",
+        "pull_request_review_id": null,
+        "id": 61138735,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYxMTM4NzM1",
+        "diff_hunk": "@@ -454,21 +454,25 @@ window['Slip'] = (function(){\n \n                     onEnd: function() {\n                         var move = this.getTotalMovement();\n+                        var i, spliceIndex;\n                         if (move.y < 0) {\n-                            for(var i=0; i < otherNodes.length; i++) {\n+                            for (i=0; i < otherNodes.length; i++) {\n                                 if (otherNodes[i].pos > move.y) {\n-                                    this.dispatch(this.target.node, 'reorder', {spliceIndex:i, insertBefore:otherNodes[i].node, originalIndex: originalIndex});\n                                     break;\n                                 }\n                             }\n+                            spliceIndex = i;\n                         } else {\n-                            for(var i=otherNodes.length-1; i >= 0; i--) {\n+                            for (i=otherNodes.length-1; i >= 0; i--) {\n                                 if (otherNodes[i].pos < move.y) {\n-                                    this.dispatch(this.target.node, 'reorder', {spliceIndex:i+1, insertBefore:otherNodes[i+1] ? otherNodes[i+1].node : null, originalIndex: originalIndex});\n                                     break;\n                                 }\n                             }\n+                            spliceIndex = i+1;\n                         }\n+\n+                        this.dispatch(this.target.node, 'reorder', {spliceIndex:spliceIndex, insertBefore:otherNodes[spliceIndex] ? otherNodes[spliceIndex].node : null, originalIndex: originalIndex});",
+        "path": "slip.js",
+        "position": 25,
+        "original_position": 25,
+        "commit_id": "a35e6ee90de8e0dcd7715e8cd1c5446c1adbeac3",
+        "original_commit_id": "a35e6ee90de8e0dcd7715e8cd1c5446c1adbeac3",
+        "user": {
+            "login": "carter-thaxton",
+            "id": 303253,
+            "node_id": "MDQ6VXNlcjMwMzI1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/303253?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/carter-thaxton",
+            "html_url": "https://github.com/carter-thaxton",
+            "followers_url": "https://api.github.com/users/carter-thaxton/followers",
+            "following_url": "https://api.github.com/users/carter-thaxton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/carter-thaxton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/carter-thaxton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/carter-thaxton/subscriptions",
+            "organizations_url": "https://api.github.com/users/carter-thaxton/orgs",
+            "repos_url": "https://api.github.com/users/carter-thaxton/repos",
+            "events_url": "https://api.github.com/users/carter-thaxton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/carter-thaxton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The new code always dispatches the event.\n",
+        "created_at": "2016-04-26T18:26:00Z",
+        "updated_at": "2016-04-26T23:35:28Z",
+        "html_url": "https://github.com/kornelski/slip/pull/68#discussion_r61138735",
+        "pull_request_url": "https://api.github.com/repos/kornelski/slip/pulls/68",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/comments/61138735"
+            },
+            "html": {
+                "href": "https://github.com/kornelski/slip/pull/68#discussion_r61138735"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/kornelski/slip/pulls/comments/61139178",
+        "pull_request_review_id": null,
+        "id": 61139178,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYxMTM5MTc4",
+        "diff_hunk": "@@ -454,21 +454,25 @@ window['Slip'] = (function(){\n \n                     onEnd: function() {\n                         var move = this.getTotalMovement();\n+                        var i, spliceIndex;\n                         if (move.y < 0) {\n-                            for(var i=0; i < otherNodes.length; i++) {\n+                            for (i=0; i < otherNodes.length; i++) {\n                                 if (otherNodes[i].pos > move.y) {\n-                                    this.dispatch(this.target.node, 'reorder', {spliceIndex:i, insertBefore:otherNodes[i].node, originalIndex: originalIndex});\n                                     break;\n                                 }\n                             }\n+                            spliceIndex = i;\n                         } else {\n-                            for(var i=otherNodes.length-1; i >= 0; i--) {\n+                            for (i=otherNodes.length-1; i >= 0; i--) {",
+        "path": "slip.js",
+        "position": 16,
+        "original_position": 16,
+        "commit_id": "a35e6ee90de8e0dcd7715e8cd1c5446c1adbeac3",
+        "original_commit_id": "a35e6ee90de8e0dcd7715e8cd1c5446c1adbeac3",
+        "user": {
+            "login": "carter-thaxton",
+            "id": 303253,
+            "node_id": "MDQ6VXNlcjMwMzI1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/303253?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/carter-thaxton",
+            "html_url": "https://github.com/carter-thaxton",
+            "followers_url": "https://api.github.com/users/carter-thaxton/followers",
+            "following_url": "https://api.github.com/users/carter-thaxton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/carter-thaxton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/carter-thaxton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/carter-thaxton/subscriptions",
+            "organizations_url": "https://api.github.com/users/carter-thaxton/orgs",
+            "repos_url": "https://api.github.com/users/carter-thaxton/repos",
+            "events_url": "https://api.github.com/users/carter-thaxton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/carter-thaxton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Think of these loops as simply finding the first index that meets the condition.  And if the condition is never met, the index that falls out of the loop is the one to use.\n",
+        "created_at": "2016-04-26T18:28:42Z",
+        "updated_at": "2016-04-26T23:35:28Z",
+        "html_url": "https://github.com/kornelski/slip/pull/68#discussion_r61139178",
+        "pull_request_url": "https://api.github.com/repos/kornelski/slip/pulls/68",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/comments/61139178"
+            },
+            "html": {
+                "href": "https://github.com/kornelski/slip/pull/68#discussion_r61139178"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/kornelski/slip/pulls/comments/61183982",
+        "pull_request_review_id": null,
+        "id": 61183982,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYxMTgzOTgy",
+        "diff_hunk": "@@ -454,21 +454,25 @@ window['Slip'] = (function(){\n \n                     onEnd: function() {\n                         var move = this.getTotalMovement();\n+                        var i, spliceIndex;",
+        "path": "slip.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "554e3044451148d52824cea43ac74a6eb12eafc2",
+        "original_commit_id": "554e3044451148d52824cea43ac74a6eb12eafc2",
+        "user": {
+            "login": "carter-thaxton",
+            "id": 303253,
+            "node_id": "MDQ6VXNlcjMwMzI1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/303253?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/carter-thaxton",
+            "html_url": "https://github.com/carter-thaxton",
+            "followers_url": "https://api.github.com/users/carter-thaxton/followers",
+            "following_url": "https://api.github.com/users/carter-thaxton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/carter-thaxton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/carter-thaxton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/carter-thaxton/subscriptions",
+            "organizations_url": "https://api.github.com/users/carter-thaxton/orgs",
+            "repos_url": "https://api.github.com/users/carter-thaxton/repos",
+            "events_url": "https://api.github.com/users/carter-thaxton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/carter-thaxton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Rather than dispatch within a for-loop, and then break, the new code calculates the spliceIndex using a for-loop, and then dispatches the event.  This handles the case where the whole loop is traversed, and no otherNode is found that meets the condition of `otherNode.pos > move.y` (or `otherNode.pos < move.y` when moving the other direction).  This occurs when dragging the first or last element, and then letting go at the originalIndex.  Before this fix, the `reorder` event would only fire if you let go of the first element slightly above where it started, but not if you let go slightly below.  (And vice versa for the last element).\n\nI also think it's a little cleaner to compute the spliceIndex separately from the dispatch code, which reduces some duplication.\n",
+        "created_at": "2016-04-26T23:49:46Z",
+        "updated_at": "2016-04-26T23:49:46Z",
+        "html_url": "https://github.com/kornelski/slip/pull/69#discussion_r61183982",
+        "pull_request_url": "https://api.github.com/repos/kornelski/slip/pulls/69",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/comments/61183982"
+            },
+            "html": {
+                "href": "https://github.com/kornelski/slip/pull/69#discussion_r61183982"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/69"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/kornelski/slip/pulls/comments/177911467",
+        "pull_request_review_id": 107876341,
+        "id": 177911467,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3NzkxMTQ2Nw==",
+        "diff_hunk": "@@ -649,6 +651,7 @@ window['Slip'] = (function(){\n         },\n \n         onMouseLeave: function(e) {\n+            e.stopPropagation();\n             if (this.usingTouch) return;",
+        "path": "slip.js",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "d244ec80f256d6b8975ccbd7c5622954c0ddaf24",
+        "original_commit_id": "d244ec80f256d6b8975ccbd7c5622954c0ddaf24",
+        "user": {
+            "login": "kornelski",
+            "id": 72159,
+            "node_id": "MDQ6VXNlcjcyMTU5",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/72159?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kornelski",
+            "html_url": "https://github.com/kornelski",
+            "followers_url": "https://api.github.com/users/kornelski/followers",
+            "following_url": "https://api.github.com/users/kornelski/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kornelski/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kornelski/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kornelski/subscriptions",
+            "organizations_url": "https://api.github.com/users/kornelski/orgs",
+            "repos_url": "https://api.github.com/users/kornelski/repos",
+            "events_url": "https://api.github.com/users/kornelski/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kornelski/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think the stop should be after the check, otherwise it will \"eat\" events it doesn't use anyway.",
+        "created_at": "2018-03-28T22:43:09Z",
+        "updated_at": "2018-03-28T22:45:06Z",
+        "html_url": "https://github.com/kornelski/slip/pull/100#discussion_r177911467",
+        "pull_request_url": "https://api.github.com/repos/kornelski/slip/pulls/100",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/comments/177911467"
+            },
+            "html": {
+                "href": "https://github.com/kornelski/slip/pull/100#discussion_r177911467"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/100"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/kornelski/slip/pulls/comments/177911575",
+        "pull_request_review_id": 107876341,
+        "id": 177911575,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3NzkxMTU3NQ==",
+        "diff_hunk": "@@ -659,6 +662,7 @@ window['Slip'] = (function(){\n         },\n \n         onMouseDown: function(e) {\n+            e.stopPropagation();\n             if (this.usingTouch || e.button != 0 || !this.setTarget(e)) return;",
+        "path": "slip.js",
+        "position": 29,
+        "original_position": 29,
+        "commit_id": "d244ec80f256d6b8975ccbd7c5622954c0ddaf24",
+        "original_commit_id": "d244ec80f256d6b8975ccbd7c5622954c0ddaf24",
+        "user": {
+            "login": "kornelski",
+            "id": 72159,
+            "node_id": "MDQ6VXNlcjcyMTU5",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/72159?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kornelski",
+            "html_url": "https://github.com/kornelski",
+            "followers_url": "https://api.github.com/users/kornelski/followers",
+            "following_url": "https://api.github.com/users/kornelski/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kornelski/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kornelski/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kornelski/subscriptions",
+            "organizations_url": "https://api.github.com/users/kornelski/orgs",
+            "repos_url": "https://api.github.com/users/kornelski/repos",
+            "events_url": "https://api.github.com/users/kornelski/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kornelski/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this will block all mouse buttons, because stop is before the check.",
+        "created_at": "2018-03-28T22:43:44Z",
+        "updated_at": "2018-03-28T22:45:06Z",
+        "html_url": "https://github.com/kornelski/slip/pull/100#discussion_r177911575",
+        "pull_request_url": "https://api.github.com/repos/kornelski/slip/pulls/100",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/comments/177911575"
+            },
+            "html": {
+                "href": "https://github.com/kornelski/slip/pull/100#discussion_r177911575"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/kornelski/slip/pulls/100"
+            }
+        }
+    }
+]

@@ -1,0 +1,3068 @@
+[
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/4833931",
+        "pull_request_review_id": null,
+        "id": 4833931,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzM5MzE=",
+        "diff_hunk": "@@ -0,0 +1,41 @@\n+\n+#ifdef DEBUG\n+# include \"core.h\"\n+# include \"common.h\"\n+# include \"debug.h\"\n+\n+char *proxy_type_strmap[] = {",
+        "path": "src/debug.c",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "71b7c8b7af66c804ea91918f01f9da254bf90fbc",
+        "original_commit_id": "5e202561a82c6ca266270884e3ddc5a949f1d894",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "1) this should be const\n2) we could put those string tables into core.c and reuse them in the config parser (by iterating through the possible chain_type enum values\nfor ex. CT_FIRST = 0, CT_DYNAMIC = CT_FIRST, ..., CT_ROUNDROBIN, CT_MAX\nfor(enum chain_type i = CT_FIRST; i < CT_MAX; i++) { ... }\n\nbtw the current parser code is rather lame using strstr... \n",
+        "created_at": "2013-06-23T18:52:59Z",
+        "updated_at": "2013-06-25T23:47:04Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/21#discussion_r4833931",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/21",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/4833931"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/21#discussion_r4833931"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/4833934",
+        "pull_request_review_id": null,
+        "id": 4833934,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzM5MzQ=",
+        "diff_hunk": "@@ -0,0 +1,41 @@\n+\n+#ifdef DEBUG\n+# include \"core.h\"\n+# include \"common.h\"\n+# include \"debug.h\"\n+\n+char *proxy_type_strmap[] = {",
+        "path": "src/debug.c",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "71b7c8b7af66c804ea91918f01f9da254bf90fbc",
+        "original_commit_id": "5e202561a82c6ca266270884e3ddc5a949f1d894",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "s/core.c/common.c/\n",
+        "created_at": "2013-06-23T18:53:47Z",
+        "updated_at": "2013-06-25T23:47:04Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/21#discussion_r4833934",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/21",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/4833934"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/21#discussion_r4833934"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/4833944",
+        "pull_request_review_id": null,
+        "id": 4833944,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzM5NDQ=",
+        "diff_hunk": "@@ -646,15 +699,15 @@ int connect_proxy_chain(int sock, ip_type target_ip,\n \tdup2(ns, sock);\n \tclose(ns);\n \treturn 0;\n-\terror:",
+        "path": "src/core.c",
+        "position": null,
+        "original_position": 104,
+        "commit_id": "71b7c8b7af66c804ea91918f01f9da254bf90fbc",
+        "original_commit_id": "5e202561a82c6ca266270884e3ddc5a949f1d894",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "whitespace changes - why ?\n",
+        "created_at": "2013-06-23T18:57:50Z",
+        "updated_at": "2013-06-25T23:47:04Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/21#discussion_r4833944",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/21",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/4833944"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/21#discussion_r4833944"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/4835742",
+        "pull_request_review_id": null,
+        "id": 4835742,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzU3NDI=",
+        "diff_hunk": "@@ -0,0 +1,41 @@\n+\n+#ifdef DEBUG\n+# include \"core.h\"\n+# include \"common.h\"\n+# include \"debug.h\"\n+\n+char *proxy_type_strmap[] = {",
+        "path": "src/debug.c",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "71b7c8b7af66c804ea91918f01f9da254bf90fbc",
+        "original_commit_id": "5e202561a82c6ca266270884e3ddc5a949f1d894",
+        "user": {
+            "login": "crass",
+            "id": 740863,
+            "node_id": "MDQ6VXNlcjc0MDg2Mw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/740863?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/crass",
+            "html_url": "https://github.com/crass",
+            "followers_url": "https://api.github.com/users/crass/followers",
+            "following_url": "https://api.github.com/users/crass/following{/other_user}",
+            "gists_url": "https://api.github.com/users/crass/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/crass/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/crass/subscriptions",
+            "organizations_url": "https://api.github.com/users/crass/orgs",
+            "repos_url": "https://api.github.com/users/crass/repos",
+            "events_url": "https://api.github.com/users/crass/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/crass/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "good ideas, I'll put them in.  ditto on the parsing code, I thought about making a lex-yacc parser, but it was less work to extend it.\n",
+        "created_at": "2013-06-24T04:03:06Z",
+        "updated_at": "2013-06-25T23:47:04Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/21#discussion_r4835742",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/21",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/4835742"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/21#discussion_r4835742"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/4870677",
+        "pull_request_review_id": null,
+        "id": 4870677,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4NzA2Nzc=",
+        "diff_hunk": "@@ -0,0 +1,41 @@\n+\n+#ifdef DEBUG\n+# include \"core.h\"\n+# include \"common.h\"\n+# include \"debug.h\"\n+\n+char *proxy_type_strmap[] = {",
+        "path": "src/debug.c",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "71b7c8b7af66c804ea91918f01f9da254bf90fbc",
+        "original_commit_id": "5e202561a82c6ca266270884e3ddc5a949f1d894",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "that would be way beyond the scope of proxychains-ng, and add a build-time dependency.\nparsing a config file is not something you need a huge parser/lexer framework for, but still can be done cleanly and efficiently.\n",
+        "created_at": "2013-06-25T16:30:47Z",
+        "updated_at": "2013-06-25T23:47:04Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/21#discussion_r4870677",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/21",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/4870677"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/21#discussion_r4870677"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/8607550",
+        "pull_request_review_id": null,
+        "id": 8607550,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MDc1NTA=",
+        "diff_hunk": "@@ -85,6 +95,11 @@ if ismac ; then\n \techo NO_AS_NEEDED=>>config.mak\n \techo LDSO_SUFFIX=dylib>>config.mak\n \techo MAC_CFLAGS+=-DIS_MAC=1>>config.mak\n+\tif isx86_64 && [[ -n ${FAT_BINARY+x} ]]; then",
+        "path": "configure",
+        "position": 55,
+        "original_position": 55,
+        "commit_id": "d8f55775585e15eb21ad216851c4634e2163ef97",
+        "original_commit_id": "d8f55775585e15eb21ad216851c4634e2163ef97",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`[[` is not posix sh, it's a bashism\nplease use `&& [ \"$FAT_BINARY\" = 1 ]`\n",
+        "created_at": "2014-01-02T00:32:31Z",
+        "updated_at": "2014-01-02T00:35:29Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/27#discussion_r8607550",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/27",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/8607550"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/27#discussion_r8607550"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/27"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/8607541",
+        "pull_request_review_id": null,
+        "id": 8607541,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MDc1NDE=",
+        "diff_hunk": "@@ -2,6 +2,18 @@\n \n prefix=/usr/local\n \n+ismac() {\n+\tuname -s | grep Darwin >/dev/null\n+}\n+\n+isx86_64() {",
+        "path": "configure",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "d8f55775585e15eb21ad216851c4634e2163ef97",
+        "original_commit_id": "d8f55775585e15eb21ad216851c4634e2163ef97",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "could you rename that to is64bitmac or so ? otherwise this is misleading as for example on my linux box i get \n`x86_64`, and it's only used for macs\n\nedit ok i just saw the -i so scratch that\n",
+        "created_at": "2014-01-02T00:30:03Z",
+        "updated_at": "2014-01-02T00:36:28Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/27#discussion_r8607541",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/27",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/8607541"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/27#discussion_r8607541"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/27"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/8612180",
+        "pull_request_review_id": null,
+        "id": 8612180,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MTIxODA=",
+        "diff_hunk": "@@ -85,6 +95,11 @@ if ismac ; then\n \techo NO_AS_NEEDED=>>config.mak\n \techo LDSO_SUFFIX=dylib>>config.mak\n \techo MAC_CFLAGS+=-DIS_MAC=1>>config.mak\n+\tif isx86_64 && [[ -n ${FAT_BINARY+x} ]]; then",
+        "path": "configure",
+        "position": 55,
+        "original_position": 55,
+        "commit_id": "d8f55775585e15eb21ad216851c4634e2163ef97",
+        "original_commit_id": "d8f55775585e15eb21ad216851c4634e2163ef97",
+        "user": {
+            "login": "nmcv",
+            "id": 626881,
+            "node_id": "MDQ6VXNlcjYyNjg4MQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/626881?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nmcv",
+            "html_url": "https://github.com/nmcv",
+            "followers_url": "https://api.github.com/users/nmcv/followers",
+            "following_url": "https://api.github.com/users/nmcv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nmcv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nmcv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nmcv/subscriptions",
+            "organizations_url": "https://api.github.com/users/nmcv/orgs",
+            "repos_url": "https://api.github.com/users/nmcv/repos",
+            "events_url": "https://api.github.com/users/nmcv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nmcv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I've always sticked to `[[` as more portable (in my experience). Agreed though.\n",
+        "created_at": "2014-01-02T13:49:25Z",
+        "updated_at": "2014-01-02T13:49:25Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/27#discussion_r8612180",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/27",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/8612180"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/27#discussion_r8612180"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/27"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/8612428",
+        "pull_request_review_id": null,
+        "id": 8612428,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MTI0Mjg=",
+        "diff_hunk": "@@ -85,6 +95,11 @@ if ismac ; then\n \techo NO_AS_NEEDED=>>config.mak\n \techo LDSO_SUFFIX=dylib>>config.mak\n \techo MAC_CFLAGS+=-DIS_MAC=1>>config.mak\n+\tif isx86_64 && [[ -n ${FAT_BINARY+x} ]]; then",
+        "path": "configure",
+        "position": 55,
+        "original_position": 55,
+        "commit_id": "d8f55775585e15eb21ad216851c4634e2163ef97",
+        "original_commit_id": "d8f55775585e15eb21ad216851c4634e2163ef97",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "no, `[[` is a bash invention, and `[` is defined by posix, so any shell implements it\n",
+        "created_at": "2014-01-02T14:07:54Z",
+        "updated_at": "2014-01-02T14:07:54Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/27#discussion_r8612428",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/27",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/8612428"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/27#discussion_r8612428"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/27"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/24226147",
+        "pull_request_review_id": null,
+        "id": 24226147,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MjI2MTQ3",
+        "diff_hunk": "@@ -479,3 +481,18 @@ struct hostent *gethostbyaddr(const void *addr, socklen_t len, int type) {\n \t}\n \treturn NULL;\n }\n+\n+ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,\n+\t       const struct sockaddr *dest_addr, socklen_t addrlen) {\n+#ifdef MSG_FASTOPEN",
+        "path": "src/libproxychains.c",
+        "position": null,
+        "original_position": 23,
+        "commit_id": "4e986caa2a31997d3e053803edee8918edbb726e",
+        "original_commit_id": "8dd08e2cd29b2b0c1174adac4935e256b38c08b7",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "interesting PR. i assume MSG_FASTOPEN uses the same value across all archs, so imo it would be better to have\n\n```\n#ifndef MSG_FASTOPEN\n#define MSG_FASTOPEN 0x20000000\n#endif\n```\n\nand remove the conditional compilation.\nthat way we produce a .so that works the same way on machines with old and new kernels\n",
+        "created_at": "2015-02-06T07:27:44Z",
+        "updated_at": "2015-02-17T14:30:50Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/44#discussion_r24226147",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/44",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/24226147"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/44#discussion_r24226147"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/24235310",
+        "pull_request_review_id": null,
+        "id": 24235310,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MjM1MzEw",
+        "diff_hunk": "@@ -479,3 +481,18 @@ struct hostent *gethostbyaddr(const void *addr, socklen_t len, int type) {\n \t}\n \treturn NULL;\n }\n+\n+ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,\n+\t       const struct sockaddr *dest_addr, socklen_t addrlen) {\n+#ifdef MSG_FASTOPEN",
+        "path": "src/libproxychains.c",
+        "position": null,
+        "original_position": 23,
+        "commit_id": "4e986caa2a31997d3e053803edee8918edbb726e",
+        "original_commit_id": "8dd08e2cd29b2b0c1174adac4935e256b38c08b7",
+        "user": {
+            "login": "sarum9in",
+            "id": 1058248,
+            "node_id": "MDQ6VXNlcjEwNTgyNDg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1058248?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sarum9in",
+            "html_url": "https://github.com/sarum9in",
+            "followers_url": "https://api.github.com/users/sarum9in/followers",
+            "following_url": "https://api.github.com/users/sarum9in/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sarum9in/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sarum9in/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sarum9in/subscriptions",
+            "organizations_url": "https://api.github.com/users/sarum9in/orgs",
+            "repos_url": "https://api.github.com/users/sarum9in/repos",
+            "events_url": "https://api.github.com/users/sarum9in/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sarum9in/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Since we don't actually call sendto(FASTOPEN) on old kernels that do not support it, but issuing connect, this seems to be a good idea. I will try to test it then write back to you. Thanks for suggestion.\n",
+        "created_at": "2015-02-06T11:31:33Z",
+        "updated_at": "2015-02-17T14:30:50Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/44#discussion_r24235310",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/44",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/24235310"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/44#discussion_r24235310"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/40804041",
+        "pull_request_review_id": null,
+        "id": 40804041,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwODA0MDQx",
+        "diff_hunk": "@@ -28,6 +28,16 @@\n \n #include \"ip_type.h\"\n \n+#if defined(__APPLE__) || defined(__darwin__)",
+        "path": "src/core.h",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "bd97d1bfaa9f12eb7afe29f962de122b665c23be",
+        "original_commit_id": "bd97d1bfaa9f12eb7afe29f962de122b665c23be",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "can you add `__OpenBSD__` to that list as well so we can close #83 as well\nplease see also the other comments in that issue (for example it's sufficient to check for s6_addr16 only) also about where to put the block\n",
+        "created_at": "2015-09-30T14:56:41Z",
+        "updated_at": "2015-09-30T14:56:41Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/85#discussion_r40804041",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/85",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/40804041"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/85#discussion_r40804041"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/85"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/92256202",
+        "pull_request_review_id": 12768515,
+        "id": 92256202,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkyMjU2MjAy",
+        "diff_hunk": "@@ -289,7 +289,8 @@ void at_init(void) {\n void at_close(void) {\n \tPFUNC();\n \tconst int msg = ATM_EXIT;\n-\twrite(req_pipefd[1], &msg, sizeof(int));\n+\tif(write(req_pipefd[1], &msg, sizeof(int)) == -1)",
+        "path": "src/allocator_thread.c",
+        "position": 31,
+        "original_position": 5,
+        "commit_id": "e0edbb659862a466800910fab0d95f7302b278f6",
+        "original_commit_id": "fda48f944a1fa6effbbe5ce07546421452f1a709",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "'tis better to use (void) write(...) here, since we dont want error message output from here.",
+        "created_at": "2016-12-13T20:14:09Z",
+        "updated_at": "2016-12-13T20:14:09Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/149#discussion_r92256202",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/92256202"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/149#discussion_r92256202"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/92257258",
+        "pull_request_review_id": 12769539,
+        "id": 92257258,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkyMjU3MjU4",
+        "diff_hunk": "@@ -74,15 +74,19 @@ static int init_l = 0;\n \n static inline void get_chain_data(proxy_data * pd, unsigned int *proxy_count, chain_type * ct);\n \n-static void* load_sym(char* symname, void* proxyfunc) {\n+typedef void (*func_t)(void);",
+        "path": "src/libproxychains.c",
+        "position": 16,
+        "original_position": 5,
+        "commit_id": "e0edbb659862a466800910fab0d95f7302b278f6",
+        "original_commit_id": "4d8dff908309b017538b1989c6fc0f8512ef4cc2",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "what you're doing here is not just ugly, it's outright wrong. the functions we're dealing with have all different prototypes so we would need the right function pointer type for every single function.\r\nthankfully according to the standard, all pointers can be cast to void* legally (and only to void*).",
+        "created_at": "2016-12-13T20:19:20Z",
+        "updated_at": "2016-12-13T20:19:20Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/149#discussion_r92257258",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/92257258"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/149#discussion_r92257258"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/92257843",
+        "pull_request_review_id": 12770129,
+        "id": 92257843,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkyMjU3ODQz",
+        "diff_hunk": "@@ -86,14 +86,14 @@ static ip_type4 ip_from_internal_list(char* name, size_t len) {\n \t}\n \t// grow list if needed.\n \tif(internal_ips->capa < internal_ips->counter + 1) {\n-\t\tPDEBUG(\"realloc\\n\");\n+\t\tPDEBUG1(\"realloc\\n\");\n \t\tnew_mem = realloc(internal_ips->list, (internal_ips->capa + 16) * sizeof(void *));\n \t\tif(new_mem) {\n \t\t\tinternal_ips->capa += 16;\n \t\t\tinternal_ips->list = new_mem;\n \t\t} else {\n \toom:\n-\t\t\tPDEBUG(\"out of mem\\n\");\n+\t\t\tPDEBUG1(\"out of mem\\n\");",
+        "path": "src/allocator_thread.c",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "e0edbb659862a466800910fab0d95f7302b278f6",
+        "original_commit_id": "d20b833644c5455d413806e925b4d0c09f75850e",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "you're polishing a turd. what i want to say is that this is dead code, that only gets activated if a user explicitly compiles the code with -DDEBUG (there's not even a configure switch for that).\r\napart from that the change you propose is utterly verbose since you not just duplicate the variadic code, you even change the toplevel macro name so all calling sites need to be touched!",
+        "created_at": "2016-12-13T20:22:30Z",
+        "updated_at": "2016-12-13T20:22:30Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/149#discussion_r92257843",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/92257843"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/149#discussion_r92257843"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/92258451",
+        "pull_request_review_id": 12770758,
+        "id": 92258451,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkyMjU4NDUx",
+        "diff_hunk": "@@ -336,7 +336,7 @@ static int is_v4inv6(const struct in6_addr *a) {\n \treturn a->s6_addr32[0] == 0 && a->s6_addr32[1] == 0 &&\n \t       a->s6_addr16[4] == 0 && a->s6_addr16[5] == 0xffff;\n }\n-int connect(int sock, const struct sockaddr *addr, unsigned int len) {\n+int connect(int sock, const struct sockaddr *addr, socklen_t len) {",
+        "path": "src/libproxychains.c",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "e0edbb659862a466800910fab0d95f7302b278f6",
+        "original_commit_id": "479387cdb7e0669a289c399e2625575c04ee09db",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this change can open a new can of worms, since the build will fail on every platform where the function prototype is only even cosmetically different from what the libc headers declare.\r\nthat means that this change will eventually break the build on musl libc, uclibc, newlib, freebsd, etc and does not even fix a warning.",
+        "created_at": "2016-12-13T20:25:32Z",
+        "updated_at": "2016-12-13T20:25:32Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/149#discussion_r92258451",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/92258451"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/149#discussion_r92258451"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/92259171",
+        "pull_request_review_id": 12771517,
+        "id": 92259171,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkyMjU5MTcx",
+        "diff_hunk": "@@ -517,8 +529,15 @@ struct hostent *gethostbyaddr(const void *addr, socklen_t len, int type) {\n #   define MSG_FASTOPEN 0x20000000\n #endif\n \n+#if defined HAVE_GCC_DIAGNOSTIC\n+# pragma GCC diagnostic push\n+# pragma GCC diagnostic ignored \"-Wpedantic\"\n+#endif\n ssize_t sendto(int sockfd, const void *buf, size_t len, int flags,\n \t       const struct sockaddr *dest_addr, socklen_t addrlen) {\n+#if defined HAVE_GCC_DIAGNOSTIC\n+# pragma GCC diagnostic pop\n+#endif",
+        "path": "src/libproxychains.c",
+        "position": 122,
+        "original_position": 39,
+        "commit_id": "e0edbb659862a466800910fab0d95f7302b278f6",
+        "original_commit_id": "e0edbb659862a466800910fab0d95f7302b278f6",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "sorry, but it is not acceptable to litter the code with ifdefs and nasty compiler-specific pragma just to avoid warnings that shouldnt be used.",
+        "created_at": "2016-12-13T20:29:25Z",
+        "updated_at": "2016-12-13T20:29:25Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/149#discussion_r92259171",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/92259171"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/149#discussion_r92259171"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160241693",
+        "pull_request_review_id": 87322827,
+        "id": 160241693,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDI0MTY5Mw==",
+        "diff_hunk": "@@ -133,13 +141,19 @@ if [ -z \"$CC\" ] ; then\n \tCC=cc\n fi\n \n-check_compile 'whether netinet/in.h defines s6_addr16' \"\" \\\n-'#include <netinet/in.h>\\nint main(int a, char**c){struct in6_addr x={.s6_addr32[0]=a};return x.s6_addr16[0]; }' \\\n-|| {\n-check_compile 'whether netinet/in.h defines __u6_addr.__u6_addr16' \\\n-'-Ds6_addr16=__u6_addr.__u6_addr16 -Ds6_addr32=__u6_addr.__u6_addr32' \\\n-'#include <netinet/in.h>\\nint main(int a, char**c){struct in6_addr x={.s6_addr32[0]=a};return x.s6_addr16[0]; }'\n-}\n+for i in 16 32; do",
+        "path": "configure",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "why check both ? if one of the two exist, we can assume the other does too",
+        "created_at": "2018-01-08T20:01:46Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160241693",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160241693"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160241693"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160242310",
+        "pull_request_review_id": 87323542,
+        "id": 160242310,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDI0MjMxMA==",
+        "diff_hunk": "@@ -30,6 +30,14 @@ isopenbsd() {\n \tuname -s | grep OpenBSD >/dev/null\n }\n \n+issolaris() {\n+\t[ \"`uname -s`\" = SunOS ]\n+}\n+\n+isgunld() {",
+        "path": "configure",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "i think this should be named GNU, not GUN\r\n\r\nbut then, wouldn't it be better to check if the linker supports the feature you want ?\r\n\r\nalso, since we never call ld directly, it doesnt actually matter what ld is. we need to know the properties of the linker called by compiler...",
+        "created_at": "2018-01-08T20:04:32Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160242310",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160242310"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160242310"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160242619",
+        "pull_request_review_id": 87323958,
+        "id": 160242619,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDI0MjYxOQ==",
+        "diff_hunk": "@@ -30,6 +30,14 @@ isopenbsd() {\n \tuname -s | grep OpenBSD >/dev/null\n }\n \n+issolaris() {\n+\t[ \"`uname -s`\" = SunOS ]\n+}\n+\n+isgunld() {",
+        "path": "configure",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "btw, someone might use a crosscompiler, and then running \"ld\" is entirely counter-productive...\r\n\r\ni also do not like the uname check, but i guess i can't say nothing against it since i did it myself :/",
+        "created_at": "2018-01-08T20:05:57Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160242619",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160242619"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160242619"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        },
+        "in_reply_to_id": 160242310
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160242879",
+        "pull_request_review_id": 87324288,
+        "id": 160242879,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDI0Mjg3OQ==",
+        "diff_hunk": "@@ -3,6 +3,7 @@\n #undef _POSIX_C_SOURCE\n #define _POSIX_C_SOURCE 200809L\n #define _DARWIN_C_SOURCE\n+#define _XOPEN_SOURCE 600",
+        "path": "src/allocator_thread.c",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "what for ? setting _XOPEN_SOURCE to an old version might have unwanted consequences using other C libraries (that's why i used _DARWIN_C_SOURCE, instead of _XOPEN_SOURCE)",
+        "created_at": "2018-01-08T20:07:18Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160242879",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160242879"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160242879"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160243289",
+        "pull_request_review_id": 87324761,
+        "id": 160243289,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDI0MzI4OQ==",
+        "diff_hunk": "@@ -38,6 +38,12 @@\n #include \"core.h\"\n #include \"common.h\"\n \n+#ifdef IS_SOLARIS\n+#ifndef s6_addr32\n+#define s6_addr32 _S6_un._S6_u32",
+        "path": "src/libproxychains.c",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "NOPE\r\n\r\ni did the configure check the way it is done to not have to clutter the code with ugly ifdefs\r\nconfigure sets the macro to the right value for the platform its compiled too.",
+        "created_at": "2018-01-08T20:09:07Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160243289",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160243289"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160243289"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160243622",
+        "pull_request_review_id": 87324761,
+        "id": 160243622,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDI0MzYyMg==",
+        "diff_hunk": "@@ -10,7 +10,11 @@\n #undef _POSIX_C_SOURCE\n #define _POSIX_C_SOURCE 200809L\n #undef _XOPEN_SOURCE\n+#ifdef IS_SOLARIS\t/* Solaris doesn't recognize this macro greater than 600 */",
+        "path": "src/main.c",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "if that is so, then i suggest we add -D_XOPEN_SOURCE to CFLAGS and here:\r\n```\r\n#ifndef _XOPEN_SOURCE\r\n#define _XOPEN_SOURCE 700\r\n#endif",
+        "created_at": "2018-01-08T20:10:50Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160243622",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160243622"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160243622"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160287061",
+        "pull_request_review_id": 87377070,
+        "id": 160287061,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDI4NzA2MQ==",
+        "diff_hunk": "@@ -133,13 +141,19 @@ if [ -z \"$CC\" ] ; then\n \tCC=cc\n fi\n \n-check_compile 'whether netinet/in.h defines s6_addr16' \"\" \\\n-'#include <netinet/in.h>\\nint main(int a, char**c){struct in6_addr x={.s6_addr32[0]=a};return x.s6_addr16[0]; }' \\\n-|| {\n-check_compile 'whether netinet/in.h defines __u6_addr.__u6_addr16' \\\n-'-Ds6_addr16=__u6_addr.__u6_addr16 -Ds6_addr32=__u6_addr.__u6_addr32' \\\n-'#include <netinet/in.h>\\nint main(int a, char**c){struct in6_addr x={.s6_addr32[0]=a};return x.s6_addr16[0]; }'\n-}\n+for i in 16 32; do",
+        "path": "configure",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "papadave66",
+            "id": 14260128,
+            "node_id": "MDQ6VXNlcjE0MjYwMTI4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/14260128?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/papadave66",
+            "html_url": "https://github.com/papadave66",
+            "followers_url": "https://api.github.com/users/papadave66/followers",
+            "following_url": "https://api.github.com/users/papadave66/following{/other_user}",
+            "gists_url": "https://api.github.com/users/papadave66/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/papadave66/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/papadave66/subscriptions",
+            "organizations_url": "https://api.github.com/users/papadave66/orgs",
+            "repos_url": "https://api.github.com/users/papadave66/repos",
+            "events_url": "https://api.github.com/users/papadave66/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/papadave66/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Check for both is needed since Solaris does have `_S6_un._S6_u32`, but not `_S6_un._S6_u16`\r\n  ",
+        "created_at": "2018-01-08T23:52:25Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160287061",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160287061"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160287061"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        },
+        "in_reply_to_id": 160241693
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160287149",
+        "pull_request_review_id": 87377174,
+        "id": 160287149,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDI4NzE0OQ==",
+        "diff_hunk": "@@ -30,6 +30,14 @@ isopenbsd() {\n \tuname -s | grep OpenBSD >/dev/null\n }\n \n+issolaris() {\n+\t[ \"`uname -s`\" = SunOS ]\n+}\n+\n+isgunld() {",
+        "path": "configure",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "papadave66",
+            "id": 14260128,
+            "node_id": "MDQ6VXNlcjE0MjYwMTI4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/14260128?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/papadave66",
+            "html_url": "https://github.com/papadave66",
+            "followers_url": "https://api.github.com/users/papadave66/followers",
+            "following_url": "https://api.github.com/users/papadave66/following{/other_user}",
+            "gists_url": "https://api.github.com/users/papadave66/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/papadave66/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/papadave66/subscriptions",
+            "organizations_url": "https://api.github.com/users/papadave66/orgs",
+            "repos_url": "https://api.github.com/users/papadave66/repos",
+            "events_url": "https://api.github.com/users/papadave66/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/papadave66/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I will fix the typo in next commit",
+        "created_at": "2018-01-08T23:53:05Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160287149",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160287149"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160287149"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        },
+        "in_reply_to_id": 160242310
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160287441",
+        "pull_request_review_id": 87377534,
+        "id": 160287441,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDI4NzQ0MQ==",
+        "diff_hunk": "@@ -30,6 +30,14 @@ isopenbsd() {\n \tuname -s | grep OpenBSD >/dev/null\n }\n \n+issolaris() {\n+\t[ \"`uname -s`\" = SunOS ]\n+}\n+\n+isgunld() {",
+        "path": "configure",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "papadave66",
+            "id": 14260128,
+            "node_id": "MDQ6VXNlcjE0MjYwMTI4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/14260128?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/papadave66",
+            "html_url": "https://github.com/papadave66",
+            "followers_url": "https://api.github.com/users/papadave66/followers",
+            "following_url": "https://api.github.com/users/papadave66/following{/other_user}",
+            "gists_url": "https://api.github.com/users/papadave66/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/papadave66/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/papadave66/subscriptions",
+            "organizations_url": "https://api.github.com/users/papadave66/orgs",
+            "repos_url": "https://api.github.com/users/papadave66/repos",
+            "events_url": "https://api.github.com/users/papadave66/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/papadave66/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I check for the GNU ld because some GNU ld specific options `--no-as-needed` and `--soname` are used in `Makefile`",
+        "created_at": "2018-01-08T23:55:19Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160287441",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160287441"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160287441"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        },
+        "in_reply_to_id": 160242310
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160287556",
+        "pull_request_review_id": 87377677,
+        "id": 160287556,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDI4NzU1Ng==",
+        "diff_hunk": "@@ -38,6 +38,12 @@\n #include \"core.h\"\n #include \"common.h\"\n \n+#ifdef IS_SOLARIS\n+#ifndef s6_addr32\n+#define s6_addr32 _S6_un._S6_u32",
+        "path": "src/libproxychains.c",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "papadave66",
+            "id": 14260128,
+            "node_id": "MDQ6VXNlcjE0MjYwMTI4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/14260128?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/papadave66",
+            "html_url": "https://github.com/papadave66",
+            "followers_url": "https://api.github.com/users/papadave66/followers",
+            "following_url": "https://api.github.com/users/papadave66/following{/other_user}",
+            "gists_url": "https://api.github.com/users/papadave66/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/papadave66/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/papadave66/subscriptions",
+            "organizations_url": "https://api.github.com/users/papadave66/orgs",
+            "repos_url": "https://api.github.com/users/papadave66/repos",
+            "events_url": "https://api.github.com/users/papadave66/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/papadave66/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sorry, I forgot to remove this in commit e20e0e8",
+        "created_at": "2018-01-08T23:56:16Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160287556",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160287556"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160287556"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        },
+        "in_reply_to_id": 160243289
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160288041",
+        "pull_request_review_id": 87378277,
+        "id": 160288041,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDI4ODA0MQ==",
+        "diff_hunk": "@@ -3,6 +3,7 @@\n #undef _POSIX_C_SOURCE\n #define _POSIX_C_SOURCE 200809L\n #define _DARWIN_C_SOURCE\n+#define _XOPEN_SOURCE 600",
+        "path": "src/allocator_thread.c",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "papadave66",
+            "id": 14260128,
+            "node_id": "MDQ6VXNlcjE0MjYwMTI4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/14260128?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/papadave66",
+            "html_url": "https://github.com/papadave66",
+            "followers_url": "https://api.github.com/users/papadave66/followers",
+            "following_url": "https://api.github.com/users/papadave66/following{/other_user}",
+            "gists_url": "https://api.github.com/users/papadave66/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/papadave66/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/papadave66/subscriptions",
+            "organizations_url": "https://api.github.com/users/papadave66/orgs",
+            "repos_url": "https://api.github.com/users/papadave66/repos",
+            "events_url": "https://api.github.com/users/papadave66/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/papadave66/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The original source failed to compile due to `feature_tests.h`:\r\n```c\r\n...\r\n#elif (_XOPEN_SOURCE - 0 = 600) || (_POSIX_C_SOURCE - 0 = 200112L)\r\n#define _XPG6\r\n\r\n...\r\n\r\n#if defined(_STDC_C99) && (defined(__XOPEN_OR_POSIX) && !defined(_XPG6)\r\n#error \"Compiler or option invalid for pre-UNIX 03 X/Open applications and pre-2001 POSIX applications\"\r\n```\r\n\r\nThe source is compiling using `-std=c99`, then this `#error` is triggered.",
+        "created_at": "2018-01-08T23:59:50Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160288041",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160288041"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160288041"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        },
+        "in_reply_to_id": 160242879
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160303772",
+        "pull_request_review_id": 87396270,
+        "id": 160303772,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDMwMzc3Mg==",
+        "diff_hunk": "@@ -133,13 +141,19 @@ if [ -z \"$CC\" ] ; then\n \tCC=cc\n fi\n \n-check_compile 'whether netinet/in.h defines s6_addr16' \"\" \\\n-'#include <netinet/in.h>\\nint main(int a, char**c){struct in6_addr x={.s6_addr32[0]=a};return x.s6_addr16[0]; }' \\\n-|| {\n-check_compile 'whether netinet/in.h defines __u6_addr.__u6_addr16' \\\n-'-Ds6_addr16=__u6_addr.__u6_addr16 -Ds6_addr32=__u6_addr.__u6_addr32' \\\n-'#include <netinet/in.h>\\nint main(int a, char**c){struct in6_addr x={.s6_addr32[0]=a};return x.s6_addr16[0]; }'\n-}\n+for i in 16 32; do",
+        "path": "configure",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "can you show the snippet from the solaris header, or even better, a link to the entire header ?",
+        "created_at": "2018-01-09T02:00:31Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160303772",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160303772"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160303772"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        },
+        "in_reply_to_id": 160241693
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160304118",
+        "pull_request_review_id": 87396643,
+        "id": 160304118,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDMwNDExOA==",
+        "diff_hunk": "@@ -3,6 +3,7 @@\n #undef _POSIX_C_SOURCE\n #define _POSIX_C_SOURCE 200809L\n #define _DARWIN_C_SOURCE\n+#define _XOPEN_SOURCE 600",
+        "path": "src/allocator_thread.c",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "see my suggestion below https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160243622",
+        "created_at": "2018-01-09T02:04:08Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160304118",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160304118"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160304118"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        },
+        "in_reply_to_id": 160242879
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160307315",
+        "pull_request_review_id": 87400282,
+        "id": 160307315,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDMwNzMxNQ==",
+        "diff_hunk": "@@ -133,13 +141,19 @@ if [ -z \"$CC\" ] ; then\n \tCC=cc\n fi\n \n-check_compile 'whether netinet/in.h defines s6_addr16' \"\" \\\n-'#include <netinet/in.h>\\nint main(int a, char**c){struct in6_addr x={.s6_addr32[0]=a};return x.s6_addr16[0]; }' \\\n-|| {\n-check_compile 'whether netinet/in.h defines __u6_addr.__u6_addr16' \\\n-'-Ds6_addr16=__u6_addr.__u6_addr16 -Ds6_addr32=__u6_addr.__u6_addr32' \\\n-'#include <netinet/in.h>\\nint main(int a, char**c){struct in6_addr x={.s6_addr32[0]=a};return x.s6_addr16[0]; }'\n-}\n+for i in 16 32; do",
+        "path": "configure",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "papadave66",
+            "id": 14260128,
+            "node_id": "MDQ6VXNlcjE0MjYwMTI4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/14260128?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/papadave66",
+            "html_url": "https://github.com/papadave66",
+            "followers_url": "https://api.github.com/users/papadave66/followers",
+            "following_url": "https://api.github.com/users/papadave66/following{/other_user}",
+            "gists_url": "https://api.github.com/users/papadave66/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/papadave66/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/papadave66/subscriptions",
+            "organizations_url": "https://api.github.com/users/papadave66/orgs",
+            "repos_url": "https://api.github.com/users/papadave66/repos",
+            "events_url": "https://api.github.com/users/papadave66/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/papadave66/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "https://github.com/nxmirrors/onnv/blob/master/usr/src/uts/common/netinet/in.h\r\nThis OpenSolaris header may different from Solaris 11.3, but the `struct in6_addr` declaration is same.\r\n  ",
+        "created_at": "2018-01-09T02:35:10Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160307315",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160307315"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160307315"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        },
+        "in_reply_to_id": 160241693
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160308940",
+        "pull_request_review_id": 87402049,
+        "id": 160308940,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDMwODk0MA==",
+        "diff_hunk": "@@ -10,7 +10,11 @@\n #undef _POSIX_C_SOURCE\n #define _POSIX_C_SOURCE 200809L\n #undef _XOPEN_SOURCE\n+#ifdef IS_SOLARIS\t/* Solaris doesn't recognize this macro greater than 600 */",
+        "path": "src/main.c",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "papadave66",
+            "id": 14260128,
+            "node_id": "MDQ6VXNlcjE0MjYwMTI4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/14260128?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/papadave66",
+            "html_url": "https://github.com/papadave66",
+            "followers_url": "https://api.github.com/users/papadave66/followers",
+            "following_url": "https://api.github.com/users/papadave66/following{/other_user}",
+            "gists_url": "https://api.github.com/users/papadave66/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/papadave66/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/papadave66/subscriptions",
+            "organizations_url": "https://api.github.com/users/papadave66/orgs",
+            "repos_url": "https://api.github.com/users/papadave66/repos",
+            "events_url": "https://api.github.com/users/papadave66/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/papadave66/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Does the `-std=c99` is required? If so I will trying to add this option to `configure`",
+        "created_at": "2018-01-09T02:51:01Z",
+        "updated_at": "2018-01-09T04:03:56Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160308940",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160308940"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160308940"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        },
+        "in_reply_to_id": 160243622
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160411545",
+        "pull_request_review_id": 87523304,
+        "id": 160411545,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQxMTU0NQ==",
+        "diff_hunk": "@@ -133,13 +141,19 @@ if [ -z \"$CC\" ] ; then\n \tCC=cc\n fi\n \n-check_compile 'whether netinet/in.h defines s6_addr16' \"\" \\\n-'#include <netinet/in.h>\\nint main(int a, char**c){struct in6_addr x={.s6_addr32[0]=a};return x.s6_addr16[0]; }' \\\n-|| {\n-check_compile 'whether netinet/in.h defines __u6_addr.__u6_addr16' \\\n-'-Ds6_addr16=__u6_addr.__u6_addr16 -Ds6_addr32=__u6_addr.__u6_addr32' \\\n-'#include <netinet/in.h>\\nint main(int a, char**c){struct in6_addr x={.s6_addr32[0]=a};return x.s6_addr16[0]; }'\n-}\n+for i in 16 32; do",
+        "path": "configure",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "bf7b4611c4c4152e484c4ce4e909483f6950cbe5",
+        "original_commit_id": "e20e0e8b5de22697374516a2fcfb67e7d8f2c8eb",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "thanks. it seems it was not a good idea to use s6_addr16/32, so i pushed 2 changes. can you rebase your changes on top of that and tell me if it fixes this particular issue ?\r\n  ",
+        "created_at": "2018-01-09T13:55:35Z",
+        "updated_at": "2018-01-09T13:55:55Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160411545",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160411545"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/212#discussion_r160411545"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/212"
+            }
+        },
+        "in_reply_to_id": 160241693
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160450182",
+        "pull_request_review_id": 87569853,
+        "id": 160450182,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQ1MDE4Mg==",
+        "diff_hunk": "@@ -14,11 +15,16 @@ done\n set +C\n trap 'rm \"$tmpc\"' EXIT INT QUIT TERM HUP\n \n+isgnuld() {\n+\tlocal ld=\"`$CC --print-prog-name=ld 2> /dev/null`\" || return 1",
+        "path": "configure",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "521175969f9e27c66f974d4201d8b1c19bd06e5c",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "that approach is better, however i think we should do something like this\r\n```\r\necho \"int main() {return 0;}\" > foo.c\r\n$CC foo.c -Wl,--linker-option-that-solaris-ld-does-not-like || echo nope\r\n```\r\n```",
+        "created_at": "2018-01-09T16:10:50Z",
+        "updated_at": "2018-01-10T05:37:19Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160450182",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160450182"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160450182"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160450734",
+        "pull_request_review_id": 87569853,
+        "id": 160450734,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQ1MDczNA==",
+        "diff_hunk": "@@ -2,6 +2,7 @@\n \n prefix=/usr/local\n OUR_CPPFLAGS=\n+C99_CFLAGS=\"-std=c99\"",
+        "path": "configure",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "521175969f9e27c66f974d4201d8b1c19bd06e5c",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "what's the point of separating this out ? i can't see it conditionally used later on",
+        "created_at": "2018-01-09T16:12:47Z",
+        "updated_at": "2018-01-10T05:37:19Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160450734",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160450734"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160450734"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160451257",
+        "pull_request_review_id": 87569853,
+        "id": 160451257,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQ1MTI1Nw==",
+        "diff_hunk": "@@ -130,7 +136,13 @@ mac_64=false\n ismac64() {\n \t$mac_64\n }\n+solaris_detected=false\n+issolaris() {\n+\t$solaris_detected\n+}\n \n+check_compile \"whether fine to define _GNU_SOURCE\" \"-D_GNU_SOURCE\" \\\n+'#include <unistd.h>\\nint main() { return 0; }'",
+        "path": "configure",
+        "position": null,
+        "original_position": 54,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "521175969f9e27c66f974d4201d8b1c19bd06e5c",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "does using _GNU_SOURCE cause build failure on solaris ?",
+        "created_at": "2018-01-09T16:14:24Z",
+        "updated_at": "2018-01-10T05:37:19Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160451257",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160451257"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160451257"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160454045",
+        "pull_request_review_id": 87574501,
+        "id": 160454045,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQ1NDA0NQ==",
+        "diff_hunk": "@@ -130,7 +136,13 @@ mac_64=false\n ismac64() {\n \t$mac_64\n }\n+solaris_detected=false\n+issolaris() {\n+\t$solaris_detected\n+}\n \n+check_compile \"whether fine to define _GNU_SOURCE\" \"-D_GNU_SOURCE\" \\\n+'#include <unistd.h>\\nint main() { return 0; }'",
+        "path": "configure",
+        "position": null,
+        "original_position": 54,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "521175969f9e27c66f974d4201d8b1c19bd06e5c",
+        "user": {
+            "login": "Low-power",
+            "id": 6129385,
+            "node_id": "MDQ6VXNlcjYxMjkzODU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/6129385?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Low-power",
+            "html_url": "https://github.com/Low-power",
+            "followers_url": "https://api.github.com/users/Low-power/followers",
+            "following_url": "https://api.github.com/users/Low-power/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Low-power/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Low-power/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Low-power/subscriptions",
+            "organizations_url": "https://api.github.com/users/Low-power/orgs",
+            "repos_url": "https://api.github.com/users/Low-power/repos",
+            "events_url": "https://api.github.com/users/Low-power/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Low-power/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No, this is just to add `-D_GNU_SOURCE` to later check_compile calls.\r\n\r\nSince the actual sources is compiled with `-D_GNU_SOURCE`, the test compiles should also define this; same reason for `C99_CFLAGS`.",
+        "created_at": "2018-01-09T16:23:14Z",
+        "updated_at": "2018-01-10T05:37:19Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160454045",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160454045"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160454045"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        },
+        "in_reply_to_id": 160451257
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160454751",
+        "pull_request_review_id": 87575334,
+        "id": 160454751,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQ1NDc1MQ==",
+        "diff_hunk": "@@ -130,7 +136,13 @@ mac_64=false\n ismac64() {\n \t$mac_64\n }\n+solaris_detected=false\n+issolaris() {\n+\t$solaris_detected\n+}\n \n+check_compile \"whether fine to define _GNU_SOURCE\" \"-D_GNU_SOURCE\" \\\n+'#include <unistd.h>\\nint main() { return 0; }'",
+        "path": "configure",
+        "position": null,
+        "original_position": 54,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "521175969f9e27c66f974d4201d8b1c19bd06e5c",
+        "user": {
+            "login": "Low-power",
+            "id": 6129385,
+            "node_id": "MDQ6VXNlcjYxMjkzODU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/6129385?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Low-power",
+            "html_url": "https://github.com/Low-power",
+            "followers_url": "https://api.github.com/users/Low-power/followers",
+            "following_url": "https://api.github.com/users/Low-power/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Low-power/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Low-power/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Low-power/subscriptions",
+            "organizations_url": "https://api.github.com/users/Low-power/orgs",
+            "repos_url": "https://api.github.com/users/Low-power/repos",
+            "events_url": "https://api.github.com/users/Low-power/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Low-power/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If you consider this `check_compile` is unnecessary, it can be replaced with `OUR_CPPFLAGS=\"$OUR_CPPFLAGS -D_GNU_SOURCE`\r\n  ",
+        "created_at": "2018-01-09T16:25:25Z",
+        "updated_at": "2018-01-10T05:37:19Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160454751",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160454751"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160454751"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        },
+        "in_reply_to_id": 160451257
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160457907",
+        "pull_request_review_id": 87579142,
+        "id": 160457907,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQ1NzkwNw==",
+        "diff_hunk": "@@ -14,11 +15,16 @@ done\n set +C\n trap 'rm \"$tmpc\"' EXIT INT QUIT TERM HUP\n \n+isgnuld() {\n+\tlocal ld=\"`$CC --print-prog-name=ld 2> /dev/null`\" || return 1",
+        "path": "configure",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "521175969f9e27c66f974d4201d8b1c19bd06e5c",
+        "user": {
+            "login": "Low-power",
+            "id": 6129385,
+            "node_id": "MDQ6VXNlcjYxMjkzODU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/6129385?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Low-power",
+            "html_url": "https://github.com/Low-power",
+            "followers_url": "https://api.github.com/users/Low-power/followers",
+            "following_url": "https://api.github.com/users/Low-power/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Low-power/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Low-power/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Low-power/subscriptions",
+            "organizations_url": "https://api.github.com/users/Low-power/orgs",
+            "repos_url": "https://api.github.com/users/Low-power/repos",
+            "events_url": "https://api.github.com/users/Low-power/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Low-power/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "There are 2 options not recognized by Solaris ld `--no-as-needed` and `-soname=<name>`\r\n\r\n`--no-as-needed` is not need for Solaris ld, since it is not have such bug to workaround by this option.\r\n\r\n`-soname=<name>` could be replaced to `-h <name>`, and the later form is also accepted by GNU ld.\r\n\r\n  \r\n  ",
+        "created_at": "2018-01-09T16:36:08Z",
+        "updated_at": "2018-01-10T05:37:19Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160457907",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160457907"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160457907"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        },
+        "in_reply_to_id": 160450182
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160460090",
+        "pull_request_review_id": 87581746,
+        "id": 160460090,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQ2MDA5MA==",
+        "diff_hunk": "@@ -14,11 +15,16 @@ done\n set +C\n trap 'rm \"$tmpc\"' EXIT INT QUIT TERM HUP\n \n+isgnuld() {\n+\tlocal ld=\"`$CC --print-prog-name=ld 2> /dev/null`\" || return 1",
+        "path": "configure",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "521175969f9e27c66f974d4201d8b1c19bd06e5c",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "ok, so let's try to add the above check and call it something like\r\n```\r\nwhether linker supports -Wl,--no-as-needed ... yes/no\r\n```\r\nand then if its not supported we write `echo NO_AS_NEEDED= >>config.mak`",
+        "created_at": "2018-01-09T16:43:18Z",
+        "updated_at": "2018-01-10T05:37:19Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160460090",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160460090"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160460090"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        },
+        "in_reply_to_id": 160450182
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160460985",
+        "pull_request_review_id": 87582761,
+        "id": 160460985,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQ2MDk4NQ==",
+        "diff_hunk": "@@ -130,7 +136,13 @@ mac_64=false\n ismac64() {\n \t$mac_64\n }\n+solaris_detected=false\n+issolaris() {\n+\t$solaris_detected\n+}\n \n+check_compile \"whether fine to define _GNU_SOURCE\" \"-D_GNU_SOURCE\" \\\n+'#include <unistd.h>\\nint main() { return 0; }'",
+        "path": "configure",
+        "position": null,
+        "original_position": 54,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "521175969f9e27c66f974d4201d8b1c19bd06e5c",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "yeah, the OUR_CPPFLAGS way is preferable",
+        "created_at": "2018-01-09T16:46:22Z",
+        "updated_at": "2018-01-10T05:37:19Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160460985",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160460985"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160460985"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        },
+        "in_reply_to_id": 160451257
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160468727",
+        "pull_request_review_id": 87591427,
+        "id": 160468727,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQ2ODcyNw==",
+        "diff_hunk": "@@ -14,11 +15,16 @@ done\n set +C\n trap 'rm \"$tmpc\"' EXIT INT QUIT TERM HUP\n \n+isgnuld() {\n+\tlocal ld=\"`$CC --print-prog-name=ld 2> /dev/null`\" || return 1",
+        "path": "configure",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "521175969f9e27c66f974d4201d8b1c19bd06e5c",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "in order to support this, we would need to modify `check_compile` function not to unconditionally put its argument into OUR_CFLAGS. that can go into a separate commit, since it's a logically separate change.",
+        "created_at": "2018-01-09T17:12:48Z",
+        "updated_at": "2018-01-10T05:37:19Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160468727",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160468727"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160468727"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        },
+        "in_reply_to_id": 160450182
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160479456",
+        "pull_request_review_id": 87604112,
+        "id": 160479456,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQ3OTQ1Ng==",
+        "diff_hunk": "@@ -38,14 +41,28 @@ check_compile_run() {\n \tprintf \"checking %s ... \" \"$1\"\n \tprintf \"$2\" > \"$tmpc\"\n \tlocal res=0\n-\t$CC $OUR_CPPFLAGS $CPPFLAGS $CFLAGS \"$tmpc\" -o \"$tmpc\".out >/dev/null 2>&1 \\\n+\t$CC $OUR_CPPFLAGS $CPPFLAGS $C99_CFLAGS $CFLAGS \"$tmpc\" -o \"$tmpc\".out >/dev/null 2>&1 \\\n \t|| res=1\n \ttest x$res = x0 && { \"$tmpc\".out || res=1 ; }\n \trm -f \"$tmpc\".out\n \ttest x$res = x0 && printf \"yes\\n\" || printf \"no\\n\"\n \treturn $res\n }\n \n+check_link_slient() {",
+        "path": "configure",
+        "position": null,
+        "original_position": 49,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "dc1a3a03f0e768aa11f248c7d9f5b54e62ceafcf",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "should that mean `silent` ?",
+        "created_at": "2018-01-09T17:54:37Z",
+        "updated_at": "2018-01-10T05:37:19Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160479456",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160479456"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160479456"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160480756",
+        "pull_request_review_id": 87605657,
+        "id": 160480756,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDQ4MDc1Ng==",
+        "diff_hunk": "@@ -38,14 +41,28 @@ check_compile_run() {\n \tprintf \"checking %s ... \" \"$1\"\n \tprintf \"$2\" > \"$tmpc\"\n \tlocal res=0\n-\t$CC $OUR_CPPFLAGS $CPPFLAGS $CFLAGS \"$tmpc\" -o \"$tmpc\".out >/dev/null 2>&1 \\\n+\t$CC $OUR_CPPFLAGS $CPPFLAGS $C99_CFLAGS $CFLAGS \"$tmpc\" -o \"$tmpc\".out >/dev/null 2>&1 \\\n \t|| res=1\n \ttest x$res = x0 && { \"$tmpc\".out || res=1 ; }\n \trm -f \"$tmpc\".out\n \ttest x$res = x0 && printf \"yes\\n\" || printf \"no\\n\"\n \treturn $res\n }\n \n+check_link_slient() {",
+        "path": "configure",
+        "position": null,
+        "original_position": 49,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "dc1a3a03f0e768aa11f248c7d9f5b54e62ceafcf",
+        "user": {
+            "login": "Low-power",
+            "id": 6129385,
+            "node_id": "MDQ6VXNlcjYxMjkzODU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/6129385?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Low-power",
+            "html_url": "https://github.com/Low-power",
+            "followers_url": "https://api.github.com/users/Low-power/followers",
+            "following_url": "https://api.github.com/users/Low-power/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Low-power/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Low-power/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Low-power/subscriptions",
+            "organizations_url": "https://api.github.com/users/Low-power/orgs",
+            "repos_url": "https://api.github.com/users/Low-power/repos",
+            "events_url": "https://api.github.com/users/Low-power/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Low-power/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "eh ... Yes you are right",
+        "created_at": "2018-01-09T17:59:34Z",
+        "updated_at": "2018-01-10T05:37:19Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160480756",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160480756"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160480756"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        },
+        "in_reply_to_id": 160479456
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160595631",
+        "pull_request_review_id": 87738889,
+        "id": 160595631,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDU5NTYzMQ==",
+        "diff_hunk": "@@ -1,7 +1,8 @@\n #undef _GNU_SOURCE\n #define _GNU_SOURCE\n-#undef _POSIX_C_SOURCE\n-#define _POSIX_C_SOURCE 200809L\n+//#ifndef _POSIX_C_SOURCE",
+        "path": "src/allocator_thread.c",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "user": {
+            "login": "Low-power",
+            "id": 6129385,
+            "node_id": "MDQ6VXNlcjYxMjkzODU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/6129385?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Low-power",
+            "html_url": "https://github.com/Low-power",
+            "followers_url": "https://api.github.com/users/Low-power/followers",
+            "following_url": "https://api.github.com/users/Low-power/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Low-power/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Low-power/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Low-power/subscriptions",
+            "organizations_url": "https://api.github.com/users/Low-power/orgs",
+            "repos_url": "https://api.github.com/users/Low-power/repos",
+            "events_url": "https://api.github.com/users/Low-power/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Low-power/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What is the `_POSIX_C_SOURCE` definition here is used for? I don't see any broken compile on GNU/Linux and OS X after comment this out.",
+        "created_at": "2018-01-10T06:02:10Z",
+        "updated_at": "2018-01-10T14:29:42Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160595631",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160595631"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160595631"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160595986",
+        "pull_request_review_id": 87738889,
+        "id": 160595986,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDU5NTk4Ng==",
+        "diff_hunk": "@@ -7,9 +7,10 @@\n  *                                                                         *\n  ***************************************************************************/\n \n-#undef _POSIX_C_SOURCE\n-#define _POSIX_C_SOURCE 200809L\n-#ifndef _XOPEN_SOURCE\n+#ifndef _POSIX_C_SOURCE\n+#define _POSIX_C_SOURCE MAX_POSIX_VERSION\n+#endif\n+#ifndef IS_SOLARIS",
+        "path": "src/main.c",
+        "position": null,
+        "original_position": 10,
+        "commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "original_commit_id": "1f45deaf384c6e6dfdee1c763074f5aed64ca709",
+        "user": {
+            "login": "Low-power",
+            "id": 6129385,
+            "node_id": "MDQ6VXNlcjYxMjkzODU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/6129385?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Low-power",
+            "html_url": "https://github.com/Low-power",
+            "followers_url": "https://api.github.com/users/Low-power/followers",
+            "following_url": "https://api.github.com/users/Low-power/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Low-power/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Low-power/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Low-power/subscriptions",
+            "organizations_url": "https://api.github.com/users/Low-power/orgs",
+            "repos_url": "https://api.github.com/users/Low-power/repos",
+            "events_url": "https://api.github.com/users/Low-power/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Low-power/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I have no other way but treats Solaris specially.",
+        "created_at": "2018-01-10T06:05:17Z",
+        "updated_at": "2018-01-10T14:29:42Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160595986",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/160595986"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/214#discussion_r160595986"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/214"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/211669389",
+        "pull_request_review_id": 148140519,
+        "id": 211669389,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxMTY2OTM4OQ==",
+        "diff_hunk": "@@ -569,6 +569,7 @@ int connect_proxy_chain(int sock, ip_type target_ip,\n \tunsigned int curr_len = 0;\n \tunsigned int curr_pos = 0;\n \tunsigned int looped = 0; // went back to start of list in RR mode\n+\tint rr_loop_max = 14;",
+        "path": "src/core.c",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "b6339833369d57dd23c908a929e19d4daebde324",
+        "original_commit_id": "2f8baf1ab584272de7d49eb364b95f8dce3d6bbf",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "why 14 ?",
+        "created_at": "2018-08-21T16:18:54Z",
+        "updated_at": "2018-08-22T02:56:08Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r211669389",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/211669389"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r211669389"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/211669800",
+        "pull_request_review_id": 148141031,
+        "id": 211669800,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxMTY2OTgwMA==",
+        "diff_hunk": "@@ -615,7 +616,15 @@ int connect_proxy_chain(int sock, ip_type target_ip,\n \t\t\t\t\t/* We've reached the end of the list, go to the start */\n  \t\t\t\t\toffset = 0;\n \t\t\t\t\tlooped++;\n-\t\t\t\t\tcontinue;\n+\t\t\t\t\tif (looped > rr_loop_max) {\n+\t\t\t\t\t\tgoto error_more;\n+\t\t\t\t\t} else {\n+\t\t\t\t\t\tPDEBUG(\"rr_type all proxies down, release all\\n\");\n+\t\t\t\t\t\trelease_all(pd, proxy_count);",
+        "path": "src/core.c",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "b6339833369d57dd23c908a929e19d4daebde324",
+        "original_commit_id": "2f8baf1ab584272de7d49eb364b95f8dce3d6bbf",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "why is release_all() necessary ?",
+        "created_at": "2018-08-21T16:20:14Z",
+        "updated_at": "2018-08-22T02:56:08Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r211669800",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/211669800"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r211669800"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/211816731",
+        "pull_request_review_id": 148318448,
+        "id": 211816731,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxMTgxNjczMQ==",
+        "diff_hunk": "@@ -615,7 +616,15 @@ int connect_proxy_chain(int sock, ip_type target_ip,\n \t\t\t\t\t/* We've reached the end of the list, go to the start */\n  \t\t\t\t\toffset = 0;\n \t\t\t\t\tlooped++;\n-\t\t\t\t\tcontinue;\n+\t\t\t\t\tif (looped > rr_loop_max) {\n+\t\t\t\t\t\tgoto error_more;\n+\t\t\t\t\t} else {\n+\t\t\t\t\t\tPDEBUG(\"rr_type all proxies down, release all\\n\");\n+\t\t\t\t\t\trelease_all(pd, proxy_count);",
+        "path": "src/core.c",
+        "position": 17,
+        "original_position": 17,
+        "commit_id": "2f8baf1ab584272de7d49eb364b95f8dce3d6bbf",
+        "original_commit_id": "2f8baf1ab584272de7d49eb364b95f8dce3d6bbf",
+        "user": {
+            "login": "amyangfei",
+            "id": 1527315,
+            "node_id": "MDQ6VXNlcjE1MjczMTU=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1527315?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/amyangfei",
+            "html_url": "https://github.com/amyangfei",
+            "followers_url": "https://api.github.com/users/amyangfei/followers",
+            "following_url": "https://api.github.com/users/amyangfei/following{/other_user}",
+            "gists_url": "https://api.github.com/users/amyangfei/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/amyangfei/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/amyangfei/subscriptions",
+            "organizations_url": "https://api.github.com/users/amyangfei/orgs",
+            "repos_url": "https://api.github.com/users/amyangfei/repos",
+            "events_url": "https://api.github.com/users/amyangfei/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/amyangfei/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`select_proxy()` just finds a proxy in `PLAY_STATE`,  and then tries to connect via this proxy. `release_all()` resets all proxies' state to `PLAY_STATE`\r\nThe changes have two purposes:\r\n1. If all proxies failed, wait and retry, so we call `release_all()` before another select loop.\r\n2. Fast fail, if all proxies failed, we don't wait too long. So I choose 14 loops sums up with 1.05 second\r\nThe original code is a bit confusing\r\n1. In this if condition waits for an available proxy https://github.com/rofl0r/proxychains-ng/blob/master/src/core.c#L614-L619\r\n2. While in this else block, https://github.com/rofl0r/proxychains-ng/blob/master/src/core.c#L619-L624  if all proxies have failed to connect in one loop, just `goto error`\r\n\r\nI pushed another commit to have better error handling\r\n",
+        "created_at": "2018-08-22T02:56:08Z",
+        "updated_at": "2018-08-22T03:03:00Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r211816731",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/211816731"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r211816731"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251"
+            }
+        },
+        "in_reply_to_id": 211669800
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/211965871",
+        "pull_request_review_id": 148496243,
+        "id": 211965871,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxMTk2NTg3MQ==",
+        "diff_hunk": "@@ -615,7 +616,15 @@ int connect_proxy_chain(int sock, ip_type target_ip,\n \t\t\t\t\t/* We've reached the end of the list, go to the start */\n  \t\t\t\t\toffset = 0;\n \t\t\t\t\tlooped++;\n-\t\t\t\t\tcontinue;\n+\t\t\t\t\tif (looped > rr_loop_max) {\n+\t\t\t\t\t\tgoto error_more;\n+\t\t\t\t\t} else {\n+\t\t\t\t\t\tPDEBUG(\"rr_type all proxies down, release all\\n\");\n+\t\t\t\t\t\trelease_all(pd, proxy_count);",
+        "path": "src/core.c",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "b6339833369d57dd23c908a929e19d4daebde324",
+        "original_commit_id": "2f8baf1ab584272de7d49eb364b95f8dce3d6bbf",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "where does the seemingly arbitrary number 14 come from ? is it some \"lucky number\" in china ?",
+        "created_at": "2018-08-22T14:02:35Z",
+        "updated_at": "2018-08-22T14:02:35Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r211965871",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/211965871"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r211965871"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251"
+            }
+        },
+        "in_reply_to_id": 211669800
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/212161997",
+        "pull_request_review_id": 148733715,
+        "id": 212161997,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxMjE2MTk5Nw==",
+        "diff_hunk": "@@ -615,7 +616,15 @@ int connect_proxy_chain(int sock, ip_type target_ip,\n \t\t\t\t\t/* We've reached the end of the list, go to the start */\n  \t\t\t\t\toffset = 0;\n \t\t\t\t\tlooped++;\n-\t\t\t\t\tcontinue;\n+\t\t\t\t\tif (looped > rr_loop_max) {\n+\t\t\t\t\t\tgoto error_more;\n+\t\t\t\t\t} else {\n+\t\t\t\t\t\tPDEBUG(\"rr_type all proxies down, release all\\n\");\n+\t\t\t\t\t\trelease_all(pd, proxy_count);",
+        "path": "src/core.c",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "b6339833369d57dd23c908a929e19d4daebde324",
+        "original_commit_id": "2f8baf1ab584272de7d49eb364b95f8dce3d6bbf",
+        "user": {
+            "login": "amyangfei",
+            "id": 1527315,
+            "node_id": "MDQ6VXNlcjE1MjczMTU=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1527315?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/amyangfei",
+            "html_url": "https://github.com/amyangfei",
+            "followers_url": "https://api.github.com/users/amyangfei/followers",
+            "following_url": "https://api.github.com/users/amyangfei/following{/other_user}",
+            "gists_url": "https://api.github.com/users/amyangfei/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/amyangfei/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/amyangfei/subscriptions",
+            "organizations_url": "https://api.github.com/users/amyangfei/orgs",
+            "repos_url": "https://api.github.com/users/amyangfei/repos",
+            "events_url": "https://api.github.com/users/amyangfei/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/amyangfei/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The number 14  has no special meaning. As I said first loop waits 10ms, then each loop increases 10ms, 14 loops sums up with 1.05s. When all proxies are not available, what we can do is either retry or raise an error. Do you have some better suggestions?",
+        "created_at": "2018-08-23T01:53:05Z",
+        "updated_at": "2018-08-23T01:53:23Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r212161997",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/212161997"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r212161997"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251"
+            }
+        },
+        "in_reply_to_id": 211669800
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/212273312",
+        "pull_request_review_id": 148866261,
+        "id": 212273312,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxMjI3MzMxMg==",
+        "diff_hunk": "@@ -615,7 +616,15 @@ int connect_proxy_chain(int sock, ip_type target_ip,\n \t\t\t\t\t/* We've reached the end of the list, go to the start */\n  \t\t\t\t\toffset = 0;\n \t\t\t\t\tlooped++;\n-\t\t\t\t\tcontinue;\n+\t\t\t\t\tif (looped > rr_loop_max) {\n+\t\t\t\t\t\tgoto error_more;\n+\t\t\t\t\t} else {\n+\t\t\t\t\t\tPDEBUG(\"rr_type all proxies down, release all\\n\");\n+\t\t\t\t\t\trelease_all(pd, proxy_count);",
+        "path": "src/core.c",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "b6339833369d57dd23c908a929e19d4daebde324",
+        "original_commit_id": "2f8baf1ab584272de7d49eb364b95f8dce3d6bbf",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "well i thought a config variable would maybe be more suitable. but then it seems you're the only one using round robin mode anyway...",
+        "created_at": "2018-08-23T11:27:27Z",
+        "updated_at": "2018-08-23T11:27:27Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r212273312",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/212273312"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/251#discussion_r212273312"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/251"
+            }
+        },
+        "in_reply_to_id": 211669800
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/212802606",
+        "pull_request_review_id": 149514536,
+        "id": 212802606,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxMjgwMjYwNg==",
+        "diff_hunk": "@@ -606,10 +605,10 @@ int connect_proxy_chain(int sock, ip_type target_ip,\n \n \t\tcase ROUND_ROBIN_TYPE:\n \t\t\talive_count = calc_alive(pd, proxy_count);\n-\t\t\tcurr_pos = offset = proxychains_proxy_offset;\n+\t\t\toffset = proxychains_proxy_offset;\n \t\t\tif(alive_count < max_chain)\n \t\t\t\tgoto error_more;\n-                        PDEBUG(\"1:rr_offset = %d, curr_pos = %d\\n\", offset, curr_pos);\n+\t\t\t\tPDEBUG(\"1:rr_offset = %d\\n\", offset);",
+        "path": "src/core.c",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "586f56aca5f52e68815bd375078d97e8a203c509",
+        "original_commit_id": "c872cebc7a41b943f653d73a80a6a78941901f0f",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "the added indentation here is wrong, it makes it look as if the statement belongs to the if(...) above",
+        "created_at": "2018-08-25T16:19:06Z",
+        "updated_at": "2018-08-26T00:52:03Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/255#discussion_r212802606",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/255",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/212802606"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/255#discussion_r212802606"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/255"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/212812125",
+        "pull_request_review_id": 149524084,
+        "id": 212812125,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxMjgxMjEyNQ==",
+        "diff_hunk": "@@ -606,10 +605,10 @@ int connect_proxy_chain(int sock, ip_type target_ip,\n \n \t\tcase ROUND_ROBIN_TYPE:\n \t\t\talive_count = calc_alive(pd, proxy_count);\n-\t\t\tcurr_pos = offset = proxychains_proxy_offset;\n+\t\t\toffset = proxychains_proxy_offset;\n \t\t\tif(alive_count < max_chain)\n \t\t\t\tgoto error_more;\n-                        PDEBUG(\"1:rr_offset = %d, curr_pos = %d\\n\", offset, curr_pos);\n+\t\t\t\tPDEBUG(\"1:rr_offset = %d\\n\", offset);",
+        "path": "src/core.c",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "586f56aca5f52e68815bd375078d97e8a203c509",
+        "original_commit_id": "c872cebc7a41b943f653d73a80a6a78941901f0f",
+        "user": {
+            "login": "amyangfei",
+            "id": 1527315,
+            "node_id": "MDQ6VXNlcjE1MjczMTU=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1527315?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/amyangfei",
+            "html_url": "https://github.com/amyangfei",
+            "followers_url": "https://api.github.com/users/amyangfei/followers",
+            "following_url": "https://api.github.com/users/amyangfei/following{/other_user}",
+            "gists_url": "https://api.github.com/users/amyangfei/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/amyangfei/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/amyangfei/subscriptions",
+            "organizations_url": "https://api.github.com/users/amyangfei/orgs",
+            "repos_url": "https://api.github.com/users/amyangfei/repos",
+            "events_url": "https://api.github.com/users/amyangfei/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/amyangfei/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Fixed",
+        "created_at": "2018-08-26T00:53:03Z",
+        "updated_at": "2018-08-26T00:53:03Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/255#discussion_r212812125",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/255",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/212812125"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/255#discussion_r212812125"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/255"
+            }
+        },
+        "in_reply_to_id": 212802606
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/214514779",
+        "pull_request_review_id": 151594437,
+        "id": 214514779,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNDUxNDc3OQ==",
+        "diff_hunk": "@@ -131,6 +131,14 @@ int main(int argc, char *argv[]) {\n \tif(!quiet)\n \t\tfprintf(stderr, LOG_PREFIX \"preloading %s/%s\\n\", prefix, dll_name);\n \n+\tsnprintf(path=pbuf, sizeof(pbuf), \"%s/%s\", prefix, dll_name);\n+\tif (path[0] != '/'){\n+\t\tpath = realpath(path, NULL);\n+\t\tstrncpy(pbuf, path, sizeof(pbuf));",
+        "path": "src/main.c",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "f7efb1ecbebd52a60e228a1984face7cbf19e7ed",
+        "original_commit_id": "428d8c7a33518ea78fc052d5699f70127934702d",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`strncpy()` doesn't do what you think it does. use `snprintf(pbuf, sizeof pbuf, \"%s\", path)` instead",
+        "created_at": "2018-09-01T14:07:01Z",
+        "updated_at": "2018-09-03T02:23:45Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/257#discussion_r214514779",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/257",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/214514779"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/257#discussion_r214514779"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/257"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/214514889",
+        "pull_request_review_id": 151594554,
+        "id": 214514889,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNDUxNDg4OQ==",
+        "diff_hunk": "@@ -3,8 +3,8 @@\n \n #ifdef DEBUG\n # include <stdio.h>\n-# define PSTDERR(fmt, args...) do { dprintf(2,fmt, ## args); } while(0)\n-# define PDEBUG(fmt, args...) PSTDERR(\"DEBUG:\"fmt, ## args)\n+# define PSTDERR(fmt, args...) do { dprintf(2,fmt, getpid(), ## args); } while(0)",
+        "path": "src/debug.h",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "f7efb1ecbebd52a60e228a1984face7cbf19e7ed",
+        "original_commit_id": "13fa2550e34504b6543648f2129f3b25efec745b",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "there's one occurence of PSTDERR() in debug.c. i suspect that one will get the arguments shuffled around unexpectedly with this change. i guess it'd be safer to put the getpid call directly into the PDEBUG macro, rather than spreading the functionality over 2 macros depending on each other",
+        "created_at": "2018-09-01T14:12:02Z",
+        "updated_at": "2018-09-03T02:23:45Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/257#discussion_r214514889",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/257",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/214514889"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/257#discussion_r214514889"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/257"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/214564017",
+        "pull_request_review_id": 151645456,
+        "id": 214564017,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNDU2NDAxNw==",
+        "diff_hunk": "@@ -131,6 +131,14 @@ int main(int argc, char *argv[]) {\n \tif(!quiet)\n \t\tfprintf(stderr, LOG_PREFIX \"preloading %s/%s\\n\", prefix, dll_name);\n \n+\tsnprintf(path=pbuf, sizeof(pbuf), \"%s/%s\", prefix, dll_name);\n+\tif (path[0] != '/'){\n+\t\tpath = realpath(path, NULL);\n+\t\tstrncpy(pbuf, path, sizeof(pbuf));",
+        "path": "src/main.c",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "f7efb1ecbebd52a60e228a1984face7cbf19e7ed",
+        "original_commit_id": "428d8c7a33518ea78fc052d5699f70127934702d",
+        "user": {
+            "login": "crass",
+            "id": 740863,
+            "node_id": "MDQ6VXNlcjc0MDg2Mw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/740863?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/crass",
+            "html_url": "https://github.com/crass",
+            "followers_url": "https://api.github.com/users/crass/followers",
+            "following_url": "https://api.github.com/users/crass/following{/other_user}",
+            "gists_url": "https://api.github.com/users/crass/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/crass/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/crass/subscriptions",
+            "organizations_url": "https://api.github.com/users/crass/orgs",
+            "repos_url": "https://api.github.com/users/crass/repos",
+            "events_url": "https://api.github.com/users/crass/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/crass/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm willing to concede you're correct, but I'm not seeing why strncpy is wrong.  Could you give me a clue?  Upon review I realize that it should be `size(pbuf)-1` though.  I'll change it anyway, since upon further thought the reason I was using it was dumb.",
+        "created_at": "2018-09-03T02:11:11Z",
+        "updated_at": "2018-09-03T02:23:45Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/257#discussion_r214564017",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/257",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/214564017"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/257#discussion_r214564017"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/257"
+            }
+        },
+        "in_reply_to_id": 214514779
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/214564275",
+        "pull_request_review_id": 151645784,
+        "id": 214564275,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNDU2NDI3NQ==",
+        "diff_hunk": "@@ -3,8 +3,8 @@\n \n #ifdef DEBUG\n # include <stdio.h>\n-# define PSTDERR(fmt, args...) do { dprintf(2,fmt, ## args); } while(0)\n-# define PDEBUG(fmt, args...) PSTDERR(\"DEBUG:\"fmt, ## args)\n+# define PSTDERR(fmt, args...) do { dprintf(2,fmt, getpid(), ## args); } while(0)",
+        "path": "src/debug.h",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "f7efb1ecbebd52a60e228a1984face7cbf19e7ed",
+        "original_commit_id": "13fa2550e34504b6543648f2129f3b25efec745b",
+        "user": {
+            "login": "crass",
+            "id": 740863,
+            "node_id": "MDQ6VXNlcjc0MDg2Mw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/740863?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/crass",
+            "html_url": "https://github.com/crass",
+            "followers_url": "https://api.github.com/users/crass/followers",
+            "following_url": "https://api.github.com/users/crass/following{/other_user}",
+            "gists_url": "https://api.github.com/users/crass/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/crass/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/crass/subscriptions",
+            "organizations_url": "https://api.github.com/users/crass/orgs",
+            "repos_url": "https://api.github.com/users/crass/repos",
+            "events_url": "https://api.github.com/users/crass/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/crass/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hah! Good catch, that was unintentional... 3am coding...",
+        "created_at": "2018-09-03T02:14:56Z",
+        "updated_at": "2018-09-03T02:23:45Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/257#discussion_r214564275",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/257",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/214564275"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/257#discussion_r214564275"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/257"
+            }
+        },
+        "in_reply_to_id": 214514889
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/214716559",
+        "pull_request_review_id": 151828835,
+        "id": 214716559,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNDcxNjU1OQ==",
+        "diff_hunk": "@@ -131,6 +131,14 @@ int main(int argc, char *argv[]) {\n \tif(!quiet)\n \t\tfprintf(stderr, LOG_PREFIX \"preloading %s/%s\\n\", prefix, dll_name);\n \n+\tsnprintf(path=pbuf, sizeof(pbuf), \"%s/%s\", prefix, dll_name);\n+\tif (path[0] != '/'){\n+\t\tpath = realpath(path, NULL);\n+\t\tstrncpy(pbuf, path, sizeof(pbuf));",
+        "path": "src/main.c",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "f7efb1ecbebd52a60e228a1984face7cbf19e7ed",
+        "original_commit_id": "428d8c7a33518ea78fc052d5699f70127934702d",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "strncpy() has 2 properties ppl aren't usually aware of\r\n1) strncpy doesn't zero-terminate the resulting string if the strlen is >= buffer length\r\n2) strncpy always zero-pads the entire buffer, means if the buffersize is 64K and the string is 5 bytes, it will write 64K characters\r\n\r\nwhile 2) is just very ineffective, 1) can turn into an exploitable security issue\r\n",
+        "created_at": "2018-09-03T15:06:11Z",
+        "updated_at": "2018-09-03T15:06:11Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/257#discussion_r214716559",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/257",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/214716559"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/257#discussion_r214716559"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/257"
+            }
+        },
+        "in_reply_to_id": 214514779
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/243917831",
+        "pull_request_review_id": 187800976,
+        "id": 243917831,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MzkxNzgzMQ==",
+        "diff_hunk": "@@ -166,6 +166,10 @@ OUR_CPPFLAGS=\"$OUR_CPPFLAGS -DBROKEN_FCLOSE\"\n }\n check_define __sun && check_define __SVR4 && solaris_detected=true\n \n+check_compile_run 'whether we have pipe2() and O_CLOEXEC' \\\n+'#define _GNU_SOURCE\\n#include <fcntl.h>\\n#include <unistd.h>\\nint main() {\\nint pipefd[2];\\npipe2(pipefd, O_CLOEXEC);\\nreturn 0;}' && \\",
+        "path": "configure",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "88d695431a0b7cc4c32a64b6cf012c572f8e8754",
+        "original_commit_id": "3bf38839a1179aab673511ad69e6fd785f333c73",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "we don't need to actually run the binary (which is incompatible with cross-compilation).\r\nif it compiles, it means pipe2 is supported.",
+        "created_at": "2018-12-25T16:21:59Z",
+        "updated_at": "2018-12-25T17:59:49Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/274#discussion_r243917831",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/274",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/243917831"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/274#discussion_r243917831"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/274"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/243918026",
+        "pull_request_review_id": 187801154,
+        "id": 243918026,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MzkxODAyNg==",
+        "diff_hunk": "@@ -166,6 +166,10 @@ OUR_CPPFLAGS=\"$OUR_CPPFLAGS -DBROKEN_FCLOSE\"\n }\n check_define __sun && check_define __SVR4 && solaris_detected=true\n \n+check_compile_run 'whether we have pipe2() and O_CLOEXEC' \\\n+'#define _GNU_SOURCE\\n#include <fcntl.h>\\n#include <unistd.h>\\nint main() {\\nint pipefd[2];\\npipe2(pipefd, O_CLOEXEC);\\nreturn 0;}' && \\",
+        "path": "configure",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "88d695431a0b7cc4c32a64b6cf012c572f8e8754",
+        "original_commit_id": "3bf38839a1179aab673511ad69e6fd785f333c73",
+        "user": {
+            "login": "biergaizi",
+            "id": 1310693,
+            "node_id": "MDQ6VXNlcjEzMTA2OTM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1310693?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/biergaizi",
+            "html_url": "https://github.com/biergaizi",
+            "followers_url": "https://api.github.com/users/biergaizi/followers",
+            "following_url": "https://api.github.com/users/biergaizi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/biergaizi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/biergaizi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/biergaizi/subscriptions",
+            "organizations_url": "https://api.github.com/users/biergaizi/orgs",
+            "repos_url": "https://api.github.com/users/biergaizi/repos",
+            "events_url": "https://api.github.com/users/biergaizi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/biergaizi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Unfortunately, no. I initially tested `check_compile` on my system, due to C implicit function definition, it will silently pass the compile test! Let me see if `check_compile` itself can be fixed...",
+        "created_at": "2018-12-25T16:26:07Z",
+        "updated_at": "2018-12-25T17:59:49Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/274#discussion_r243918026",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/274",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/243918026"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/274#discussion_r243918026"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/274"
+            }
+        },
+        "in_reply_to_id": 243917831
+    },
+    {
+        "url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/243918224",
+        "pull_request_review_id": 187801343,
+        "id": 243918224,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MzkxODIyNA==",
+        "diff_hunk": "@@ -166,6 +166,10 @@ OUR_CPPFLAGS=\"$OUR_CPPFLAGS -DBROKEN_FCLOSE\"\n }\n check_define __sun && check_define __SVR4 && solaris_detected=true\n \n+check_compile_run 'whether we have pipe2() and O_CLOEXEC' \\\n+'#define _GNU_SOURCE\\n#include <fcntl.h>\\n#include <unistd.h>\\nint main() {\\nint pipefd[2];\\npipe2(pipefd, O_CLOEXEC);\\nreturn 0;}' && \\",
+        "path": "configure",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "88d695431a0b7cc4c32a64b6cf012c572f8e8754",
+        "original_commit_id": "3bf38839a1179aab673511ad69e6fd785f333c73",
+        "user": {
+            "login": "rofl0r",
+            "id": 341425,
+            "node_id": "MDQ6VXNlcjM0MTQyNQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/341425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rofl0r",
+            "html_url": "https://github.com/rofl0r",
+            "followers_url": "https://api.github.com/users/rofl0r/followers",
+            "following_url": "https://api.github.com/users/rofl0r/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rofl0r/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rofl0r/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rofl0r/subscriptions",
+            "organizations_url": "https://api.github.com/users/rofl0r/orgs",
+            "repos_url": "https://api.github.com/users/rofl0r/repos",
+            "events_url": "https://api.github.com/users/rofl0r/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rofl0r/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "-Werror-implicit-function-declaration",
+        "created_at": "2018-12-25T16:32:56Z",
+        "updated_at": "2018-12-25T17:59:49Z",
+        "html_url": "https://github.com/rofl0r/proxychains-ng/pull/274#discussion_r243918224",
+        "pull_request_url": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/274",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/comments/243918224"
+            },
+            "html": {
+                "href": "https://github.com/rofl0r/proxychains-ng/pull/274#discussion_r243918224"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rofl0r/proxychains-ng/pulls/274"
+            }
+        },
+        "in_reply_to_id": 243917831
+    }
+]

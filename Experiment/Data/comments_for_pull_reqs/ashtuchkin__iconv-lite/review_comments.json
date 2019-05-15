@@ -1,0 +1,1140 @@
+[
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/4833377",
+        "pull_request_review_id": null,
+        "id": 4833377,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzMzNzc=",
+        "diff_hunk": "@@ -220,3 +220,48 @@ var getType = function(obj) {\n     return Object.prototype.toString.call(obj).slice(8, -1);\n }\n \n+var stream = require('stream');\n+if ('Transform' in stream) {\n+    var Transform = stream.Transform;\n+    var detectIncompleteChar = {'utf8': (new(require('string_decoder').StringDecoder)()).detectIncompleteChar};\n+    /** StreamEncoder constructs stream.Transform instance\n+     *  which receives input {String} chunk and sends output {Buffer} with specified encoding\n+     * @constructor StreamEncoder\n+     * @param {String} [encoding='utf8'] specifies encoding\n+     */\n+    var StreamEncoder = iconv.StreamEncoder = function (encoding) {\n+        Transform.call(this, {decodeStrings: false});\n+        this.enc = encoding || 'utf8';\n+    };\n+    StreamEncoder.prototype = Object.create(Transform.prototype, {\n+        constructor: {value: StreamEncoder}\n+    });\n+    StreamEncoder.prototype._transform = function(chunk, enc, done) {\n+        this.push(iconv.toEncoding(chunk, this.enc));\n+        done();\n+    };\n+    /** StreamDecoder constructs stream.Transform instance\n+     *  which receives input chunk {Buffer} with specified encoding and sends output utf8 {String}\n+     * @constructor StreamEncoder",
+        "path": "index.js",
+        "position": 26,
+        "original_position": 26,
+        "commit_id": "b0506f08c03c908c4cbf64d2b77f568b80440149",
+        "original_commit_id": "b0506f08c03c908c4cbf64d2b77f568b80440149",
+        "user": {
+            "login": "aves84",
+            "id": 890236,
+            "node_id": "MDQ6VXNlcjg5MDIzNg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/890236?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aves84",
+            "html_url": "https://github.com/aves84",
+            "followers_url": "https://api.github.com/users/aves84/followers",
+            "following_url": "https://api.github.com/users/aves84/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aves84/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aves84/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aves84/subscriptions",
+            "organizations_url": "https://api.github.com/users/aves84/orgs",
+            "repos_url": "https://api.github.com/users/aves84/repos",
+            "events_url": "https://api.github.com/users/aves84/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aves84/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Here means \"@conslructor StreamDecoder\"\n",
+        "created_at": "2013-06-23T15:29:51Z",
+        "updated_at": "2013-06-26T18:28:26Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/28#discussion_r4833377",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/28",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/4833377"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/28#discussion_r4833377"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828022",
+        "pull_request_review_id": 26724603,
+        "id": 105828022,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTgyODAyMg==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.",
+        "path": "lib/index.d.ts",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "ashtuchkin",
+            "id": 627997,
+            "node_id": "MDQ6VXNlcjYyNzk5Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/627997?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ashtuchkin",
+            "html_url": "https://github.com/ashtuchkin",
+            "followers_url": "https://api.github.com/users/ashtuchkin/followers",
+            "following_url": "https://api.github.com/users/ashtuchkin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ashtuchkin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ashtuchkin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ashtuchkin/subscriptions",
+            "organizations_url": "https://api.github.com/users/ashtuchkin/orgs",
+            "repos_url": "https://api.github.com/users/ashtuchkin/repos",
+            "events_url": "https://api.github.com/users/ashtuchkin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ashtuchkin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is it really copyright by Microsoft Corp? Could you clarify the ownership and licensing (either on pull request comments, or here).",
+        "created_at": "2017-03-14T04:57:43Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828022",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828022"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828022"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828059",
+        "pull_request_review_id": 26724603,
+        "id": 105828059,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTgyODA1OQ==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "ashtuchkin",
+            "id": 627997,
+            "node_id": "MDQ6VXNlcjYyNzk5Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/627997?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ashtuchkin",
+            "html_url": "https://github.com/ashtuchkin",
+            "followers_url": "https://api.github.com/users/ashtuchkin/followers",
+            "following_url": "https://api.github.com/users/ashtuchkin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ashtuchkin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ashtuchkin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ashtuchkin/subscriptions",
+            "organizations_url": "https://api.github.com/users/ashtuchkin/orgs",
+            "repos_url": "https://api.github.com/users/ashtuchkin/repos",
+            "events_url": "https://api.github.com/users/ashtuchkin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ashtuchkin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: there's no License.txt in the project root ;)",
+        "created_at": "2017-03-14T04:58:03Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828059",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828059"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828059"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828177",
+        "pull_request_review_id": 26724603,
+        "id": 105828177,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTgyODE3Nw==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.\n+ *--------------------------------------------------------------------------------------------*/\n \n-import stream = require(\"stream\");\n+declare module 'iconv-lite' {",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "ashtuchkin",
+            "id": 627997,
+            "node_id": "MDQ6VXNlcjYyNzk5Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/627997?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ashtuchkin",
+            "html_url": "https://github.com/ashtuchkin",
+            "followers_url": "https://api.github.com/users/ashtuchkin/followers",
+            "following_url": "https://api.github.com/users/ashtuchkin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ashtuchkin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ashtuchkin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ashtuchkin/subscriptions",
+            "organizations_url": "https://api.github.com/users/ashtuchkin/orgs",
+            "repos_url": "https://api.github.com/users/ashtuchkin/repos",
+            "events_url": "https://api.github.com/users/ashtuchkin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ashtuchkin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is this ambient declaration really needed?",
+        "created_at": "2017-03-14T05:00:01Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828177",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828177"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828177"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828281",
+        "pull_request_review_id": 26724603,
+        "id": 105828281,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTgyODI4MQ==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.\n+ *--------------------------------------------------------------------------------------------*/\n \n-import stream = require(\"stream\");\n+declare module 'iconv-lite' {\n+\texport function decode(buffer: NodeBuffer, encoding: string, options?: any): string;",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "ashtuchkin",
+            "id": 627997,
+            "node_id": "MDQ6VXNlcjYyNzk5Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/627997?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ashtuchkin",
+            "html_url": "https://github.com/ashtuchkin",
+            "followers_url": "https://api.github.com/users/ashtuchkin/followers",
+            "following_url": "https://api.github.com/users/ashtuchkin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ashtuchkin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ashtuchkin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ashtuchkin/subscriptions",
+            "organizations_url": "https://api.github.com/users/ashtuchkin/orgs",
+            "repos_url": "https://api.github.com/users/ashtuchkin/repos",
+            "events_url": "https://api.github.com/users/ashtuchkin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ashtuchkin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "As we're using NodeBuffer and ReadWriteStream, could you add a comment on top of this file that we're depending on @types/node package?",
+        "created_at": "2017-03-14T05:01:12Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828281",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828281"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828281"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828358",
+        "pull_request_review_id": 26724603,
+        "id": 105828358,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTgyODM1OA==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.\n+ *--------------------------------------------------------------------------------------------*/\n \n-import stream = require(\"stream\");\n+declare module 'iconv-lite' {\n+\texport function decode(buffer: NodeBuffer, encoding: string, options?: any): string;\n \n-export interface Options {",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "ashtuchkin",
+            "id": 627997,
+            "node_id": "MDQ6VXNlcjYyNzk5Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/627997?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ashtuchkin",
+            "html_url": "https://github.com/ashtuchkin",
+            "followers_url": "https://api.github.com/users/ashtuchkin/followers",
+            "following_url": "https://api.github.com/users/ashtuchkin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ashtuchkin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ashtuchkin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ashtuchkin/subscriptions",
+            "organizations_url": "https://api.github.com/users/ashtuchkin/orgs",
+            "repos_url": "https://api.github.com/users/ashtuchkin/repos",
+            "events_url": "https://api.github.com/users/ashtuchkin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ashtuchkin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Could you add this interface back? It adds a lot of clarity.",
+        "created_at": "2017-03-14T05:02:12Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828358",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828358"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828358"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828770",
+        "pull_request_review_id": 26724603,
+        "id": 105828770,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTgyODc3MA==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.\n+ *--------------------------------------------------------------------------------------------*/\n \n-import stream = require(\"stream\");\n+declare module 'iconv-lite' {\n+\texport function decode(buffer: NodeBuffer, encoding: string, options?: any): string;\n \n-export interface Options {\n-    stripBOM: boolean;\n-    addBOM: boolean;\n-    defaultEncoding: string;\n-}\n+\texport function encode(content: string, encoding: string, options?: any): NodeBuffer;\n \n-export function decode(buffer: Buffer, encoding: string, options?: Options): string;\n-export function encode(source: string, encoding: string, options?: Options): Buffer;\n-export function encodingExists(encoding: string): boolean;\n+\texport function encodingExists(encoding: string): boolean;\n \n-export class DecodeStream extends stream.Transform {\n-    collect(cb: (err: Error, decoded: string) => any): DecodeStream;\n-}\n+\texport function decodeStream(encoding: string): NodeJS.ReadWriteStream;",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 29,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "ashtuchkin",
+            "id": 627997,
+            "node_id": "MDQ6VXNlcjYyNzk5Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/627997?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ashtuchkin",
+            "html_url": "https://github.com/ashtuchkin",
+            "followers_url": "https://api.github.com/users/ashtuchkin/followers",
+            "following_url": "https://api.github.com/users/ashtuchkin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ashtuchkin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ashtuchkin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ashtuchkin/subscriptions",
+            "organizations_url": "https://api.github.com/users/ashtuchkin/orgs",
+            "repos_url": "https://api.github.com/users/ashtuchkin/repos",
+            "events_url": "https://api.github.com/users/ashtuchkin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ashtuchkin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "decodeStream and encodeStream both have options as their second argument.",
+        "created_at": "2017-03-14T05:08:10Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828770",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105828770"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105828770"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105861212",
+        "pull_request_review_id": 26758421,
+        "id": 105861212,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTg2MTIxMg==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.",
+        "path": "lib/index.d.ts",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "larssn",
+            "id": 890725,
+            "node_id": "MDQ6VXNlcjg5MDcyNQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/890725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/larssn",
+            "html_url": "https://github.com/larssn",
+            "followers_url": "https://api.github.com/users/larssn/followers",
+            "following_url": "https://api.github.com/users/larssn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/larssn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/larssn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/larssn/subscriptions",
+            "organizations_url": "https://api.github.com/users/larssn/orgs",
+            "repos_url": "https://api.github.com/users/larssn/repos",
+            "events_url": "https://api.github.com/users/larssn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/larssn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Well its under the MIT license, which is very open:\r\n\r\n_Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software_",
+        "created_at": "2017-03-14T09:36:32Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105861212",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105861212"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105861212"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        },
+        "in_reply_to_id": 105828022
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105861747",
+        "pull_request_review_id": 26758983,
+        "id": 105861747,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTg2MTc0Nw==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "larssn",
+            "id": 890725,
+            "node_id": "MDQ6VXNlcjg5MDcyNQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/890725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/larssn",
+            "html_url": "https://github.com/larssn",
+            "followers_url": "https://api.github.com/users/larssn/followers",
+            "following_url": "https://api.github.com/users/larssn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/larssn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/larssn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/larssn/subscriptions",
+            "organizations_url": "https://api.github.com/users/larssn/orgs",
+            "repos_url": "https://api.github.com/users/larssn/repos",
+            "events_url": "https://api.github.com/users/larssn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/larssn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yeah I basically just dumped their version in here, we have a deadline this week, and this was breaking newer versions of Ionic2.",
+        "created_at": "2017-03-14T09:39:08Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105861747",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105861747"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105861747"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        },
+        "in_reply_to_id": 105828059
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105861807",
+        "pull_request_review_id": 26759043,
+        "id": 105861807,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTg2MTgwNw==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.\n+ *--------------------------------------------------------------------------------------------*/\n \n-import stream = require(\"stream\");\n+declare module 'iconv-lite' {\n+\texport function decode(buffer: NodeBuffer, encoding: string, options?: any): string;\n \n-export interface Options {",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "larssn",
+            "id": 890725,
+            "node_id": "MDQ6VXNlcjg5MDcyNQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/890725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/larssn",
+            "html_url": "https://github.com/larssn",
+            "followers_url": "https://api.github.com/users/larssn/followers",
+            "following_url": "https://api.github.com/users/larssn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/larssn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/larssn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/larssn/subscriptions",
+            "organizations_url": "https://api.github.com/users/larssn/orgs",
+            "repos_url": "https://api.github.com/users/larssn/repos",
+            "events_url": "https://api.github.com/users/larssn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/larssn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'll look at it; won't have time this week.",
+        "created_at": "2017-03-14T09:39:28Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105861807",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105861807"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105861807"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        },
+        "in_reply_to_id": 105828358
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105861937",
+        "pull_request_review_id": 26759186,
+        "id": 105861937,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTg2MTkzNw==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.\n+ *--------------------------------------------------------------------------------------------*/\n \n-import stream = require(\"stream\");\n+declare module 'iconv-lite' {\n+\texport function decode(buffer: NodeBuffer, encoding: string, options?: any): string;\n \n-export interface Options {\n-    stripBOM: boolean;\n-    addBOM: boolean;\n-    defaultEncoding: string;\n-}\n+\texport function encode(content: string, encoding: string, options?: any): NodeBuffer;\n \n-export function decode(buffer: Buffer, encoding: string, options?: Options): string;\n-export function encode(source: string, encoding: string, options?: Options): Buffer;\n-export function encodingExists(encoding: string): boolean;\n+\texport function encodingExists(encoding: string): boolean;\n \n-export class DecodeStream extends stream.Transform {\n-    collect(cb: (err: Error, decoded: string) => any): DecodeStream;\n-}\n+\texport function decodeStream(encoding: string): NodeJS.ReadWriteStream;",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 29,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "larssn",
+            "id": 890725,
+            "node_id": "MDQ6VXNlcjg5MDcyNQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/890725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/larssn",
+            "html_url": "https://github.com/larssn",
+            "followers_url": "https://api.github.com/users/larssn/followers",
+            "following_url": "https://api.github.com/users/larssn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/larssn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/larssn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/larssn/subscriptions",
+            "organizations_url": "https://api.github.com/users/larssn/orgs",
+            "repos_url": "https://api.github.com/users/larssn/repos",
+            "events_url": "https://api.github.com/users/larssn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/larssn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'll try to make them both more in par with the actual API.",
+        "created_at": "2017-03-14T09:40:08Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105861937",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105861937"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105861937"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        },
+        "in_reply_to_id": 105828770
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105881934",
+        "pull_request_review_id": 26780164,
+        "id": 105881934,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTg4MTkzNA==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.\n+ *--------------------------------------------------------------------------------------------*/\n \n-import stream = require(\"stream\");\n+declare module 'iconv-lite' {",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "larssn",
+            "id": 890725,
+            "node_id": "MDQ6VXNlcjg5MDcyNQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/890725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/larssn",
+            "html_url": "https://github.com/larssn",
+            "followers_url": "https://api.github.com/users/larssn/followers",
+            "following_url": "https://api.github.com/users/larssn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/larssn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/larssn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/larssn/subscriptions",
+            "organizations_url": "https://api.github.com/users/larssn/orgs",
+            "repos_url": "https://api.github.com/users/larssn/repos",
+            "events_url": "https://api.github.com/users/larssn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/larssn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Not sure tbh. I'm no authority on type definitions. The main problem comes from writing definitions that Angular's AoT compiler understands.",
+        "created_at": "2017-03-14T11:23:59Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105881934",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105881934"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105881934"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        },
+        "in_reply_to_id": 105828177
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105881969",
+        "pull_request_review_id": 26780194,
+        "id": 105881969,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNTg4MTk2OQ==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.\n+ *--------------------------------------------------------------------------------------------*/\n \n-import stream = require(\"stream\");\n+declare module 'iconv-lite' {\n+\texport function decode(buffer: NodeBuffer, encoding: string, options?: any): string;",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "larssn",
+            "id": 890725,
+            "node_id": "MDQ6VXNlcjg5MDcyNQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/890725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/larssn",
+            "html_url": "https://github.com/larssn",
+            "followers_url": "https://api.github.com/users/larssn/followers",
+            "following_url": "https://api.github.com/users/larssn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/larssn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/larssn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/larssn/subscriptions",
+            "organizations_url": "https://api.github.com/users/larssn/orgs",
+            "repos_url": "https://api.github.com/users/larssn/repos",
+            "events_url": "https://api.github.com/users/larssn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/larssn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes",
+        "created_at": "2017-03-14T11:24:10Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105881969",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/105881969"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r105881969"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        },
+        "in_reply_to_id": 105828281
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/112650195",
+        "pull_request_review_id": 33980929,
+        "id": 112650195,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjY1MDE5NQ==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "ashtuchkin",
+            "id": 627997,
+            "node_id": "MDQ6VXNlcjYyNzk5Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/627997?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ashtuchkin",
+            "html_url": "https://github.com/ashtuchkin",
+            "followers_url": "https://api.github.com/users/ashtuchkin/followers",
+            "following_url": "https://api.github.com/users/ashtuchkin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ashtuchkin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ashtuchkin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ashtuchkin/subscriptions",
+            "organizations_url": "https://api.github.com/users/ashtuchkin/orgs",
+            "repos_url": "https://api.github.com/users/ashtuchkin/repos",
+            "events_url": "https://api.github.com/users/ashtuchkin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ashtuchkin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Still no License.txt in this project root.. Are you referring to some other project?",
+        "created_at": "2017-04-21T09:34:49Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r112650195",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/112650195"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r112650195"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        },
+        "in_reply_to_id": 105828059
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/112650369",
+        "pull_request_review_id": 33980929,
+        "id": 112650369,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjY1MDM2OQ==",
+        "diff_hunk": "@@ -1,31 +1,16 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.\n+ *--------------------------------------------------------------------------------------------*/\n \n-import stream = require(\"stream\");\n+declare module 'iconv-lite' {\n+\texport function decode(buffer: NodeBuffer, encoding: string, options?: any): string;",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "4d89b52648f502626b9a2f9bef10b7b53e957a63",
+        "user": {
+            "login": "ashtuchkin",
+            "id": 627997,
+            "node_id": "MDQ6VXNlcjYyNzk5Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/627997?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ashtuchkin",
+            "html_url": "https://github.com/ashtuchkin",
+            "followers_url": "https://api.github.com/users/ashtuchkin/followers",
+            "following_url": "https://api.github.com/users/ashtuchkin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ashtuchkin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ashtuchkin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ashtuchkin/subscriptions",
+            "organizations_url": "https://api.github.com/users/ashtuchkin/orgs",
+            "repos_url": "https://api.github.com/users/ashtuchkin/repos",
+            "events_url": "https://api.github.com/users/ashtuchkin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ashtuchkin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks!\r\n\r\nCould you replace \"any\" type here with the \"Options\", so that it's actually used?",
+        "created_at": "2017-04-21T09:35:38Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r112650369",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/112650369"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r112650369"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        },
+        "in_reply_to_id": 105828281
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/112650477",
+        "pull_request_review_id": 33980929,
+        "id": 112650477,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjY1MDQ3Nw==",
+        "diff_hunk": "@@ -1,31 +1,24 @@\n-// Type definitions for iconv-lite\n-// Project: https://github.com/ashtuchkin/iconv-lite\n-// Definitions by: Martin Poelstra <https://github.com/poelstra>\n-// Definitions: https://github.com/borisyankov/DefinitelyTyped\n+/*---------------------------------------------------------------------------------------------\n+ *  Copyright (c) Microsoft Corporation. All rights reserved.\n+ *  Licensed under the MIT License. See License.txt in the project root for license information.\n+ *  REQUIREMENT: This definition is dependant on the @types/node definition.\n+ *  Install with `npm install @types/node --save-dev`\n+ *--------------------------------------------------------------------------------------------*/\n \n-import stream = require(\"stream\");\n+declare module 'iconv-lite' {\n+\texport function decode(buffer: NodeBuffer, encoding: string, options?: any): string;\n \n-export interface Options {\n-    stripBOM: boolean;\n-    addBOM: boolean;\n-    defaultEncoding: string;\n-}\n+\texport function encode(content: string, encoding: string, options?: any): NodeBuffer;\n \n-export function decode(buffer: Buffer, encoding: string, options?: Options): string;\n-export function encode(source: string, encoding: string, options?: Options): Buffer;\n-export function encodingExists(encoding: string): boolean;\n+\texport function encodingExists(encoding: string): boolean;\n \n-export class DecodeStream extends stream.Transform {\n-    collect(cb: (err: Error, decoded: string) => any): DecodeStream;\n-}\n+\texport function decodeStream(encoding: string, options?: Options): NodeJS.ReadWriteStream;\n \n-export class EncodeStream extends stream.Transform {\n-    collect(cb: (err: Error, decoded: Buffer) => any): EncodeStream;\n+\texport function encodeStream(encoding: string, options?: Options): NodeJS.ReadWriteStream;\n }\n \n-export function decodeStream(encoding: string, options?: Options): DecodeStream;\n-export function encodeStream(encoding: string, options?: Options): EncodeStream;\n-\n-// NOTE: These are deprecated.\n-export function extendNodeEncodings(): void;\n-export function undoExtendNodeEncodings(): void;\n+export interface Options {\n+    stripBOM: boolean;",
+        "path": "lib/index.d.ts",
+        "position": null,
+        "original_position": 45,
+        "commit_id": "f8698995923541d33459be1215d4b4baf17a1837",
+        "original_commit_id": "3c028e2436026507287fb21b46bf2996f012ca1f",
+        "user": {
+            "login": "ashtuchkin",
+            "id": 627997,
+            "node_id": "MDQ6VXNlcjYyNzk5Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/627997?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ashtuchkin",
+            "html_url": "https://github.com/ashtuchkin",
+            "followers_url": "https://api.github.com/users/ashtuchkin/followers",
+            "following_url": "https://api.github.com/users/ashtuchkin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ashtuchkin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ashtuchkin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ashtuchkin/subscriptions",
+            "organizations_url": "https://api.github.com/users/ashtuchkin/orgs",
+            "repos_url": "https://api.github.com/users/ashtuchkin/repos",
+            "events_url": "https://api.github.com/users/ashtuchkin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ashtuchkin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "All three fields are optional - do we need to add \"?\" to the types?",
+        "created_at": "2017-04-21T09:36:16Z",
+        "updated_at": "2017-04-25T14:41:36Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r112650477",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/112650477"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/149#discussion_r112650477"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/186269830",
+        "pull_request_review_id": 117822589,
+        "id": 186269830,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NjI2OTgzMA==",
+        "diff_hunk": "@@ -21,3 +22,7 @@\n        - gcc-4.8\n        - g++-4.8\n \n+\n+ before_install:\n+   - 'case \"${TRAVIS_NODE_VERSION}\" in 0.*) export NPM_CONFIG_STRICT_SSL=false ;; esac'",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "133b0bb0250d99ba3f3a5517217f4a36c1bf1f32",
+        "original_commit_id": "799e2b8d679d6caf9e530a7e8b3175f789fda99e",
+        "user": {
+            "login": "ChALkeR",
+            "id": 291301,
+            "node_id": "MDQ6VXNlcjI5MTMwMQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/291301?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ChALkeR",
+            "html_url": "https://github.com/ChALkeR",
+            "followers_url": "https://api.github.com/users/ChALkeR/followers",
+            "following_url": "https://api.github.com/users/ChALkeR/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ChALkeR/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ChALkeR/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ChALkeR/subscriptions",
+            "organizations_url": "https://api.github.com/users/ChALkeR/orgs",
+            "repos_url": "https://api.github.com/users/ChALkeR/repos",
+            "events_url": "https://api.github.com/users/ChALkeR/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ChALkeR/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "So, this is needed?",
+        "created_at": "2018-05-05T19:12:24Z",
+        "updated_at": "2018-05-05T23:16:54Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/182#discussion_r186269830",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/182",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/186269830"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/182#discussion_r186269830"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/182"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/186269846",
+        "pull_request_review_id": 117822611,
+        "id": 186269846,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NjI2OTg0Ng==",
+        "diff_hunk": "@@ -214,13 +214,14 @@ describe(\"Streaming mode\", function() {\n         input: [[0x3D], [0xD8, 0x3B], [0xDE]], // U+1F63B, \ud83d\ude3b, SMILING CAT FACE WITH HEART-SHAPED EYES\n         outputType: false, // Don't concat\n         checkOutput: function(res) {\n-            if (semver.lt(process.version, \"v6.2.1\")) {\n-                assert.deepEqual(res, [\"\\uD83D\\uDE3B\"]); // We should have only 1 chunk.\n-            } else {\n+            if (semver.satisfies(process.version, '>= 6.2.1 < 10.0.0')) {\n                 // After a string_decoder rewrite in https://github.com/nodejs/node/pull/6777, which\n                 // was merged in Node v6.2.1, we don't merge chunks anymore.\n                 // Not really correct, but it seems we cannot do anything with it.\n+                // Though it has been fixed again in Node v10.0.0",
+        "path": "test/streams-test.js",
+        "position": 11,
+        "original_position": 11,
+        "commit_id": "133b0bb0250d99ba3f3a5517217f4a36c1bf1f32",
+        "original_commit_id": "799e2b8d679d6caf9e530a7e8b3175f789fda99e",
+        "user": {
+            "login": "ChALkeR",
+            "id": 291301,
+            "node_id": "MDQ6VXNlcjI5MTMwMQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/291301?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ChALkeR",
+            "html_url": "https://github.com/ChALkeR",
+            "followers_url": "https://api.github.com/users/ChALkeR/followers",
+            "following_url": "https://api.github.com/users/ChALkeR/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ChALkeR/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ChALkeR/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ChALkeR/subscriptions",
+            "organizations_url": "https://api.github.com/users/ChALkeR/orgs",
+            "repos_url": "https://api.github.com/users/ChALkeR/repos",
+            "events_url": "https://api.github.com/users/ChALkeR/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ChALkeR/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": ":tada: Thanks for figuring this out!",
+        "created_at": "2018-05-05T19:13:13Z",
+        "updated_at": "2018-05-05T23:16:54Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/182#discussion_r186269846",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/182",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/186269846"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/182#discussion_r186269846"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/182"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/186269853",
+        "pull_request_review_id": 117822619,
+        "id": 186269853,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NjI2OTg1Mw==",
+        "diff_hunk": "@@ -21,3 +22,7 @@\n        - gcc-4.8\n        - g++-4.8\n \n+\n+ before_install:\n+   - 'case \"${TRAVIS_NODE_VERSION}\" in 0.*) export NPM_CONFIG_STRICT_SSL=false ;; esac'",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "133b0bb0250d99ba3f3a5517217f4a36c1bf1f32",
+        "original_commit_id": "799e2b8d679d6caf9e530a7e8b3175f789fda99e",
+        "user": {
+            "login": "dougwilson",
+            "id": 67512,
+            "node_id": "MDQ6VXNlcjY3NTEy",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/67512?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dougwilson",
+            "html_url": "https://github.com/dougwilson",
+            "followers_url": "https://api.github.com/users/dougwilson/followers",
+            "following_url": "https://api.github.com/users/dougwilson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dougwilson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dougwilson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dougwilson/subscriptions",
+            "organizations_url": "https://api.github.com/users/dougwilson/orgs",
+            "repos_url": "https://api.github.com/users/dougwilson/repos",
+            "events_url": "https://api.github.com/users/dougwilson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dougwilson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "For the npm that is included in Node.js 0.10.0, yes. That's not the version that is in the PaaS I use, though, but you wanted me to add 0.10.0 to the matrix \ud83d\udc4d ",
+        "created_at": "2018-05-05T19:13:24Z",
+        "updated_at": "2018-05-05T23:16:54Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/182#discussion_r186269853",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/182",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/186269853"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/182#discussion_r186269853"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/182"
+            }
+        },
+        "in_reply_to_id": 186269830
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/186271890",
+        "pull_request_review_id": 117824677,
+        "id": 186271890,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NjI3MTg5MA==",
+        "diff_hunk": "@@ -21,3 +22,7 @@\n        - gcc-4.8\n        - g++-4.8\n \n+\n+ before_install:\n+   - 'test $TRAVIS_NODE_VERSION != '0.10.0' || npm config set strict-ssl false'",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "133b0bb0250d99ba3f3a5517217f4a36c1bf1f32",
+        "original_commit_id": "d8cb951e3bbce7edcfd5c52e579856e4bfc78411",
+        "user": {
+            "login": "ljharb",
+            "id": 45469,
+            "node_id": "MDQ6VXNlcjQ1NDY5",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/45469?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ljharb",
+            "html_url": "https://github.com/ljharb",
+            "followers_url": "https://api.github.com/users/ljharb/followers",
+            "following_url": "https://api.github.com/users/ljharb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ljharb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ljharb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ljharb/subscriptions",
+            "organizations_url": "https://api.github.com/users/ljharb/orgs",
+            "repos_url": "https://api.github.com/users/ljharb/repos",
+            "events_url": "https://api.github.com/users/ljharb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ljharb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nested single quotes here are breaking it",
+        "created_at": "2018-05-05T20:53:48Z",
+        "updated_at": "2018-05-05T23:16:54Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/182#discussion_r186271890",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/182",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/186271890"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/182#discussion_r186271890"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/182"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/186274459",
+        "pull_request_review_id": 117827123,
+        "id": 186274459,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NjI3NDQ1OQ==",
+        "diff_hunk": "@@ -214,13 +214,14 @@ describe(\"Streaming mode\", function() {\n         input: [[0x3D], [0xD8, 0x3B], [0xDE]], // U+1F63B, \ud83d\ude3b, SMILING CAT FACE WITH HEART-SHAPED EYES\n         outputType: false, // Don't concat\n         checkOutput: function(res) {\n-            if (semver.lt(process.version, \"v6.2.1\")) {\n-                assert.deepEqual(res, [\"\\uD83D\\uDE3B\"]); // We should have only 1 chunk.\n-            } else {\n+            if (semver.satisfies(process.version, '>= 6.2.1 < 10.0.0')) {\n                 // After a string_decoder rewrite in https://github.com/nodejs/node/pull/6777, which\n                 // was merged in Node v6.2.1, we don't merge chunks anymore.\n                 // Not really correct, but it seems we cannot do anything with it.\n+                // Though it has been fixed again in Node v10.0.0",
+        "path": "test/streams-test.js",
+        "position": 11,
+        "original_position": 11,
+        "commit_id": "133b0bb0250d99ba3f3a5517217f4a36c1bf1f32",
+        "original_commit_id": "799e2b8d679d6caf9e530a7e8b3175f789fda99e",
+        "user": {
+            "login": "ashtuchkin",
+            "id": 627997,
+            "node_id": "MDQ6VXNlcjYyNzk5Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/627997?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ashtuchkin",
+            "html_url": "https://github.com/ashtuchkin",
+            "followers_url": "https://api.github.com/users/ashtuchkin/followers",
+            "following_url": "https://api.github.com/users/ashtuchkin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ashtuchkin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ashtuchkin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ashtuchkin/subscriptions",
+            "organizations_url": "https://api.github.com/users/ashtuchkin/orgs",
+            "repos_url": "https://api.github.com/users/ashtuchkin/repos",
+            "events_url": "https://api.github.com/users/ashtuchkin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ashtuchkin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "+1 thank you!",
+        "created_at": "2018-05-05T23:07:24Z",
+        "updated_at": "2018-05-05T23:16:54Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/182#discussion_r186274459",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/182",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/186274459"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/182#discussion_r186274459"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/182"
+            }
+        },
+        "in_reply_to_id": 186269846
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/208692347",
+        "pull_request_review_id": 144555154,
+        "id": 208692347,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwODY5MjM0Nw==",
+        "diff_hunk": "@@ -20,7 +20,7 @@ function SBCSCodec(codecOptions, iconv) {\n         codecOptions.chars = asciiString + codecOptions.chars;\n     }\n \n-    this.decodeBuf = new Buffer.from(codecOptions.chars, 'ucs2');\n+    this.decodeBuf = Buffer.from(codecOptions.chars, 'ucs2');\n     \n     // Encoding buffer.\n     var encodeBuf = new Buffer.alloc(65536, iconv.defaultCharSingleByte.charCodeAt(0));",
+        "path": "encodings/sbcs-codec.js",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "e823d0fd3e9053d29c65e18bafb0c63b5d830e6f",
+        "original_commit_id": "5b97d4f068423e370f1019336aa43ab6e281f100",
+        "user": {
+            "login": "ashtuchkin",
+            "id": 627997,
+            "node_id": "MDQ6VXNlcjYyNzk5Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/627997?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ashtuchkin",
+            "html_url": "https://github.com/ashtuchkin",
+            "followers_url": "https://api.github.com/users/ashtuchkin/followers",
+            "following_url": "https://api.github.com/users/ashtuchkin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ashtuchkin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ashtuchkin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ashtuchkin/subscriptions",
+            "organizations_url": "https://api.github.com/users/ashtuchkin/orgs",
+            "repos_url": "https://api.github.com/users/ashtuchkin/repos",
+            "events_url": "https://api.github.com/users/ashtuchkin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ashtuchkin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "should this line be fixed too?",
+        "created_at": "2018-08-08T18:42:10Z",
+        "updated_at": "2018-08-08T18:48:28Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/195#discussion_r208692347",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/195",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/208692347"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/195#discussion_r208692347"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/195"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/208694227",
+        "pull_request_review_id": 144557460,
+        "id": 208694227,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwODY5NDIyNw==",
+        "diff_hunk": "@@ -20,7 +20,7 @@ function SBCSCodec(codecOptions, iconv) {\n         codecOptions.chars = asciiString + codecOptions.chars;\n     }\n \n-    this.decodeBuf = new Buffer.from(codecOptions.chars, 'ucs2');\n+    this.decodeBuf = Buffer.from(codecOptions.chars, 'ucs2');\n     \n     // Encoding buffer.\n     var encodeBuf = new Buffer.alloc(65536, iconv.defaultCharSingleByte.charCodeAt(0));",
+        "path": "encodings/sbcs-codec.js",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "e823d0fd3e9053d29c65e18bafb0c63b5d830e6f",
+        "original_commit_id": "5b97d4f068423e370f1019336aa43ab6e281f100",
+        "user": {
+            "login": "tlhunter",
+            "id": 551402,
+            "node_id": "MDQ6VXNlcjU1MTQwMg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/551402?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tlhunter",
+            "html_url": "https://github.com/tlhunter",
+            "followers_url": "https://api.github.com/users/tlhunter/followers",
+            "following_url": "https://api.github.com/users/tlhunter/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tlhunter/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tlhunter/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tlhunter/subscriptions",
+            "organizations_url": "https://api.github.com/users/tlhunter/orgs",
+            "repos_url": "https://api.github.com/users/tlhunter/repos",
+            "events_url": "https://api.github.com/users/tlhunter/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tlhunter/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes, good point.",
+        "created_at": "2018-08-08T18:48:07Z",
+        "updated_at": "2018-08-08T18:48:28Z",
+        "html_url": "https://github.com/ashtuchkin/iconv-lite/pull/195#discussion_r208694227",
+        "pull_request_url": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/195",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/comments/208694227"
+            },
+            "html": {
+                "href": "https://github.com/ashtuchkin/iconv-lite/pull/195#discussion_r208694227"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ashtuchkin/iconv-lite/pulls/195"
+            }
+        },
+        "in_reply_to_id": 208692347
+    }
+]

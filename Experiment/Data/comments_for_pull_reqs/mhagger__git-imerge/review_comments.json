@@ -1,0 +1,3043 @@
+[
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/9533896",
+        "pull_request_review_id": null,
+        "id": 9533896,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk1MzM4OTY=",
+        "diff_hunk": "@@ -91,7 +91,7 @@ def check_output(*popenargs, **kwargs):\n     if 'stdout' in kwargs:\n         raise ValueError('stdout argument not allowed, it will be overridden.')\n     process = subprocess.Popen(stdout=subprocess.PIPE, *popenargs, **kwargs)\n-    output, unused_err = process.communicate()\n+    output = process.communicate()[0]",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "7e6ec8beba8deb1683a1658c25f6ee936c31984c",
+        "original_commit_id": "9b8e4e5ed684af61fc740b1b9f40933c9fc93ede",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "Just to double-check: did you mean to convert this call to use `communicate()`, too?\n",
+        "created_at": "2014-02-07T09:56:35Z",
+        "updated_at": "2014-02-07T14:15:12Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/48#discussion_r9533896",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/48",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/9533896"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/48#discussion_r9533896"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/9539517",
+        "pull_request_review_id": null,
+        "id": 9539517,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk1Mzk1MTc=",
+        "diff_hunk": "@@ -91,7 +91,7 @@ def check_output(*popenargs, **kwargs):\n     if 'stdout' in kwargs:\n         raise ValueError('stdout argument not allowed, it will be overridden.')\n     process = subprocess.Popen(stdout=subprocess.PIPE, *popenargs, **kwargs)\n-    output, unused_err = process.communicate()\n+    output = process.communicate()[0]",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "7e6ec8beba8deb1683a1658c25f6ee936c31984c",
+        "original_commit_id": "9b8e4e5ed684af61fc740b1b9f40933c9fc93ede",
+        "user": {
+            "login": "myint",
+            "id": 1235108,
+            "node_id": "MDQ6VXNlcjEyMzUxMDg=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1235108?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/myint",
+            "html_url": "https://github.com/myint",
+            "followers_url": "https://api.github.com/users/myint/followers",
+            "following_url": "https://api.github.com/users/myint/following{/other_user}",
+            "gists_url": "https://api.github.com/users/myint/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/myint/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/myint/subscriptions",
+            "organizations_url": "https://api.github.com/users/myint/orgs",
+            "repos_url": "https://api.github.com/users/myint/repos",
+            "events_url": "https://api.github.com/users/myint/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/myint/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I might as well. See latest update.\n",
+        "created_at": "2014-02-07T14:16:41Z",
+        "updated_at": "2014-02-07T14:16:41Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/48#discussion_r9539517",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/48",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/9539517"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/48#discussion_r9539517"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13080025",
+        "pull_request_review_id": null,
+        "id": 13080025,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDgwMDI1",
+        "diff_hunk": "@@ -2647,6 +2647,86 @@ def read_merge_state(name=None, default_to_unique=True):\n \n @Failure.wrap\n def main(args):\n+    def add_name_argument(subparser):\n+        def name_arg_generator(s):\n+            subparser.add_argument(\n+                '--name', action='store', default=None,\n+                help='name of merge to {0}'.format(s),\n+                )\n+        subcommand = subparser.prog.split()[1]\n+        if subcommand == \"record\":\n+            name_arg_generator('which the merge should be added')\n+        elif subcommand in [\"continue\", \"finish\", \"diagram\", \"simplify\",\n+                          \"autofill\", \"remove\",]:\n+            name_arg_generator(subcommand)\n+        else:\n+            subparser.add_argument(\n+                '--name', action='store', default=None,\n+                help='name to use for this incremental merge',\n+                )\n+",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 21,
+        "commit_id": "e3d0f7bf79b948b38c6553c6208316e12852ff9d",
+        "original_commit_id": "bd07895889adae83d9f43f5c8dc1c019ca42707e",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "It's kindof cumbersome following logic like this to figure out what help strings are generated in what cases.  I think it would be simpler to have the function cover only the standard case, and have the invokers supply the help strings for the non-standard cases, like\n\n```\ndef add_name_argument(subparser, help=None):\n    if help is None:\n        subcommand = subparser.prog.split()[1]\n        help = 'name of merge to {0}'.format(subcommand)\n\n    subparser.add_argument(\n        '--name', action='store', default=None, help=help,\n        )\n```\n\nand then later, for example,\n\n```\n# record:\nadd_name_argument(\n    subparser,\n    help='name of merge to which the merge should be added',\n    )\n\n# finish:\nadd_name_argument(subparser)\n```\n\nIt costs a little bit of string duplication but IMO makes the code easier to read.\n",
+        "created_at": "2014-05-27T14:25:49Z",
+        "updated_at": "2014-05-29T07:33:02Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/65#discussion_r13080025",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/65",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13080025"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/65#discussion_r13080025"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/65"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13171696",
+        "pull_request_review_id": null,
+        "id": 13171696,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMTcxNjk2",
+        "diff_hunk": "@@ -2647,6 +2647,86 @@ def read_merge_state(name=None, default_to_unique=True):\n \n @Failure.wrap\n def main(args):\n+    def add_name_argument(subparser):\n+        def name_arg_generator(s):\n+            subparser.add_argument(\n+                '--name', action='store', default=None,\n+                help='name of merge to {0}'.format(s),\n+                )\n+        subcommand = subparser.prog.split()[1]\n+        if subcommand == \"record\":\n+            name_arg_generator('which the merge should be added')\n+        elif subcommand in [\"continue\", \"finish\", \"diagram\", \"simplify\",\n+                          \"autofill\", \"remove\",]:\n+            name_arg_generator(subcommand)\n+        else:\n+            subparser.add_argument(\n+                '--name', action='store', default=None,\n+                help='name to use for this incremental merge',\n+                )\n+",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 21,
+        "commit_id": "e3d0f7bf79b948b38c6553c6208316e12852ff9d",
+        "original_commit_id": "bd07895889adae83d9f43f5c8dc1c019ca42707e",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes, this is much clearer!\n",
+        "created_at": "2014-05-29T07:34:25Z",
+        "updated_at": "2014-05-29T07:34:25Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/65#discussion_r13171696",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/65",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13171696"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/65#discussion_r13171696"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/65"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12421644",
+        "pull_request_review_id": null,
+        "id": 12421644,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIxNjQ0",
+        "diff_hunk": "@@ -553,6 +553,14 @@ class AutomaticMergeFailed(Exception):\n         self.commit1, self.commit2 = commit1, commit2\n \n \n+class AutomaticBuildFailed(Exception):",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "I think it would be appropriate for `AutomaticMergeFailed` and `AutomaticBuildFailed` to inherit from a common base class, as suggested [here](https://github.com/mhagger/git-imerge/issues/58#issuecomment-38075472).  After all, they both represent a failure of an automatic merge, albeit for different reasons.  The base class could also manage the commit arguments.\n",
+        "created_at": "2014-05-08T10:01:26Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12421644",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12421644"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12421644"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12421981",
+        "pull_request_review_id": null,
+        "id": 12421981,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIxOTgx",
+        "diff_hunk": "@@ -572,8 +580,18 @@ def automerge(commit1, commit2, msg=None):\n         # added in git version 1.7.4.\n         call_silently(['git', 'reset', '--merge'])\n         raise AutomaticMergeFailed(commit1, commit2)\n-    else:\n-        return get_commit_sha1('HEAD')\n+\n+    build_script = MergeState.get_default_test_command()\n+    if build_script:\n+        try:\n+            check_call(['/bin/sh', build_script])",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 25,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "The way you are invoking the test is unnecessarily restrictive.  It requires the test to be embodied in a single shell script, which in many cases the user would have to write just for this purpose.\n\nIf instead you would invoke it using\n\n```\ncheck_call(['/bin/sh', '-c', build_script])\n```\n\nthen `build_script` could be an arbitrary shell command (or even sequence of commands).  Then the user could specifiy something like\n\n```\ngit imerge --build-command='make' [...]\n```\n\nor even\n\n```\ngit imerge --build-command='make test' [...]\n```\n\nPlease note that `git bisect --run` does things differently.  It treats all of the `git bisect` arguments following the `--run` option as individual words of the command that it will run.  This is more flexible still, and maybe a bit less confusing with respect to shell quoting.  But it makes it harder to parse the `git bisect` command itself, because the command to be invoked is \"the rest of the line\", so no other options or arguments can follow it on the command line.  Moreover, we will need to serialize the command somewhere, and it is easier to serialize a string than a list of strings.  So I think `git bisect`'s approach is not necessarily a model that `git imerge` should follow.\n\nBy the way, deviation from `git bisect`'s style of handling the command is a good reason that our option shouldn't be called `--run`.\n",
+        "created_at": "2014-05-08T10:16:06Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12421981",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12421981"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12421981"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422228",
+        "pull_request_review_id": null,
+        "id": 12422228,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIyMjI4",
+        "diff_hunk": "@@ -572,8 +580,18 @@ def automerge(commit1, commit2, msg=None):\n         # added in git version 1.7.4.\n         call_silently(['git', 'reset', '--merge'])\n         raise AutomaticMergeFailed(commit1, commit2)\n-    else:\n-        return get_commit_sha1('HEAD')\n+\n+    build_script = MergeState.get_default_test_command()\n+    if build_script:\n+        try:\n+            check_call(['/bin/sh', build_script])\n+        except CalledProcessError as e:\n+            if e.returncode == 125:",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "Interesting.  So \"the source at this commit cannot be built or cannot be tested\" is treated as success as far as `git imerge` is concerned?  This is different than `git bisect`: there, return value 125 is handled as a third, \"indeterminate\" state and it is treated differently in subsequent logic.\n\nWe could also handle this return code specially during bisection.  It could be treated as \"something is fishy.  Don't treat it as a failure, as long as the status of other tests are definitive\".  So if an earlier merge is found to FAIL definitively, then we would continue to the left of _that_ merge.  And if a later merge is found to SUCCEED definitively, then we would continue to the right of _that_ merge.  And if an indeterminate merge is found at the boundary between SUCCEED and FAIL, then we would treat the indeterminate status the same as a FAIL.\n\nBut without some kind of special handling, I don't see the value of treating return code 125 specially.  The test script could just as well return 0 because it would have the same end result.\n",
+        "created_at": "2014-05-08T10:26:15Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422228",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422228"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422228"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422297",
+        "pull_request_review_id": null,
+        "id": 12422297,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIyMjk3",
+        "diff_hunk": "@@ -1474,11 +1492,15 @@ class Block(object):\n                 'Attempting automerge of %d-%d...' % self.get_original_indexes(i1, i2)\n                 )\n             try:\n+                print(\"Automerging from is_mergeable\")\n                 automerge(self[i1, 0].sha1, self[0, i2].sha1)\n                 sys.stderr.write('success.\\n')\n                 return True\n             except AutomaticMergeFailed:\n-                sys.stderr.write('failure.\\n')\n+                sys.stderr.write('Merge failure.\\n')",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 46,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "The old message was lower case because it was a continuation of the line started above, like:\n\n```\nAttempting automerge of 3-12...failure.\n```\n\nI think lower-case looks better here because it is punctuated like a single sentence.  The same comment applies a few lines down, too.\n",
+        "created_at": "2014-05-08T10:29:06Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422297",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422297"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422297"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422465",
+        "pull_request_review_id": null,
+        "id": 12422465,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIyNDY1",
+        "diff_hunk": "@@ -1778,6 +1802,8 @@ class MergeState(Block):\n         re.VERBOSE,\n         )\n \n+    DEFAULT_BUILD_COMMAND = None",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 73,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "Usually `ALL_CAPS` indicates a constant whose value won't change over time.  But this one is initialized later, so it should probably be written in lower-case.  I'm also not sure why you call it `default_build_command` as opposed to `build_command` (or `test_command`).  In what sense is it a \"default\"?\n",
+        "created_at": "2014-05-08T10:35:42Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422465",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422465"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422465"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422523",
+        "pull_request_review_id": null,
+        "id": 12422523,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIyNTIz",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 89,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "This should probably be `--unset-all`, though I see I've made the same mistake elsewhere in the code.\n",
+        "created_at": "2014-05-08T10:38:14Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422523",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422523"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422523"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422565",
+        "pull_request_review_id": null,
+        "id": 12422565,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIyNTY1",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])\n+            except CalledProcessError as e:\n+                if e.returncode == 5:\n+                    # Value was not set\n+                    pass\n+                else:\n+                    raise\n+        else:\n+            check_call(['git', 'config', 'imerge.command', name])\n+\n+    @staticmethod\n+    def get_default_test_command():",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 100,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "Again, why is \"`default`\" in the name?  But I like that the name includes \"`test`\" rather than \"`build`\" :trollface:\n",
+        "created_at": "2014-05-08T10:40:00Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422565",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422565"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422565"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422602",
+        "pull_request_review_id": null,
+        "id": 12422602,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIyNjAy",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 82,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "Shouldn't this method also set/unset `DEFAULT_BUILD_COMMAND`?\n",
+        "created_at": "2014-05-08T10:41:13Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422602",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422602"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422602"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422658",
+        "pull_request_review_id": null,
+        "id": 12422658,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIyNjU4",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])\n+            except CalledProcessError as e:\n+                if e.returncode == 5:\n+                    # Value was not set\n+                    pass\n+                else:\n+                    raise\n+        else:\n+            check_call(['git', 'config', 'imerge.command', name])",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 97,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "I think the name of this config variable should be more reminiscent of the name of the option; maybe `buildcommand` (or `testcommand`).\n",
+        "created_at": "2014-05-08T10:43:24Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422658",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12422658"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12422658"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12423022",
+        "pull_request_review_id": null,
+        "id": 12423022,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIzMDIy",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])\n+            except CalledProcessError as e:\n+                if e.returncode == 5:\n+                    # Value was not set\n+                    pass\n+                else:\n+                    raise\n+        else:\n+            check_call(['git', 'config', 'imerge.command', name])\n+\n+    @staticmethod\n+    def get_default_test_command():\n+        \"\"\"Get the name of the test command, or None if none is currently set.\"\"\"\n+\n+        if MergeState.DEFAULT_BUILD_COMMAND:",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 103,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "Please compare explicitly against `None` instead of testing its boolean value:\n\n```\nif MergeState.DEFAULT_BUILD_COMMAND is not None:\n```\n\nAlso, you can be more idiomatic (and save a line or two of code) by inverting the `if` statement:\n\n```\nif MergeState.DEFAULT_BUILD_COMMAND is None:\n    try:\n        MergeState.DEFAULT_BUILD_COMMAND = \\\n            check_output(['git', 'config', 'imerge.command']).rstrip()\n        return MergeState.DEFAULT_BUILD_COMMAND\n    except CalledProcessError:\n        return None\n\nreturn MergeState.DEFAULT_BUILD_COMMAND\n```\n\nFinally, please note that in the (common) case that there is no such config setting, you will call the same `git config` command every time this method is called.  You can avoid that by distinguishing somehow between \"not yet initialized\" and \"no command configured\".\n",
+        "created_at": "2014-05-08T10:47:39Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12423022",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12423022"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12423022"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12423108",
+        "pull_request_review_id": null,
+        "id": 12423108,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIzMTA4",
+        "diff_hunk": "@@ -2116,6 +2176,7 @@ class MergeState(Block):\n         self.goal = goal\n         self.manual = bool(manual)\n         self.branch = branch or name\n+        self.build_command = build_command",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 146,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "I don't see where this attribute is ever used.\n\n...which probably goes some way towards answering why the class field has \"default\" in its name.\n",
+        "created_at": "2014-05-08T10:51:26Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12423108",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12423108"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12423108"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12423221",
+        "pull_request_review_id": null,
+        "id": 12423221,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIzMjIx",
+        "diff_hunk": "@@ -2676,6 +2737,18 @@ def main(args):\n         help='the name of the branch to which the result will be stored',\n         )\n     subparser.add_argument(\n+        '--build-command',",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 154,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "There's a lot of duplication here among subparser options.  It would be great to have a function to add this option.  The same function could also handle other options that are common to the subcommands that  initiate incremental merges, like `--manual`.\n",
+        "created_at": "2014-05-08T10:56:08Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12423221",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12423221"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12423221"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12423555",
+        "pull_request_review_id": null,
+        "id": 12423555,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDIzNTU1",
+        "diff_hunk": "@@ -3040,9 +3149,11 @@ def main(args):\n             tip2, commits2,\n             goal=options.goal, manual=options.manual,\n             branch=(options.branch or options.name),\n+            build_command=options.build_command,\n             )\n         merge_state.save()\n         MergeState.set_default_name(options.name)\n+        MergeState.set_default_test_command(options.build_command)",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 234,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "So there is only one build command shared by all `git imerge`s (yes, believe it or not, I have had multiple imerges going on in parallel in a single repo!).  And yet by default the value is not carried over from one completed imerge to a newly-started one, but nor is the old value deleted when a new imerge is finished.  It is a bit inconsistent.\n\nIt seem to me that there are two possible self-consistent policies:\n- Each imerge has its own test command, maybe stored in `imerge.<name>.testcommand`.  Possibly there is also a default value for when the user doesn't specify a command explicitly, maybe stored under `imerge.defaulttestcommand`.  When an imerge is finished, its `imerge.<name>.testcommand` setting should be erased.\n- All imerges use the same command, all the time.  Then it could be stored in `imerge.testcommand`, but then it should be carried over from one run to the next (i.e., if the user starts `git imerge` without setting a new command, then the old command should continue to be used).\n\nI prefer the former.\n",
+        "created_at": "2014-05-08T11:07:55Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12423555",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12423555"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12423555"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440069",
+        "pull_request_review_id": null,
+        "id": 12440069,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDQwMDY5",
+        "diff_hunk": "@@ -2676,6 +2737,18 @@ def main(args):\n         help='the name of the branch to which the result will be stored',\n         )\n     subparser.add_argument(\n+        '--build-command',",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 154,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yeah that's what I thought too.\n",
+        "created_at": "2014-05-08T17:11:47Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440069",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440069"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440069"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440275",
+        "pull_request_review_id": null,
+        "id": 12440275,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDQwMjc1",
+        "diff_hunk": "@@ -3040,9 +3149,11 @@ def main(args):\n             tip2, commits2,\n             goal=options.goal, manual=options.manual,\n             branch=(options.branch or options.name),\n+            build_command=options.build_command,\n             )\n         merge_state.save()\n         MergeState.set_default_name(options.name)\n+        MergeState.set_default_test_command(options.build_command)",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 234,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yeah, the former makes sense. I'll see what I can do.\n",
+        "created_at": "2014-05-08T17:15:52Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440275",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440275"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440275"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440520",
+        "pull_request_review_id": null,
+        "id": 12440520,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDQwNTIw",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])\n+            except CalledProcessError as e:\n+                if e.returncode == 5:\n+                    # Value was not set\n+                    pass\n+                else:\n+                    raise\n+        else:\n+            check_call(['git', 'config', 'imerge.command', name])\n+\n+    @staticmethod\n+    def get_default_test_command():",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 100,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I believe I was following get_default_name() for getting the imerge name. There doesn't seem to be any calls to 'git config' that are not in functions with \"default\" in the name. How do you record different imerge names for multiple imerges?\n",
+        "created_at": "2014-05-08T17:20:32Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440520",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440520"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440520"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440535",
+        "pull_request_review_id": null,
+        "id": 12440535,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDQwNTM1",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])\n+            except CalledProcessError as e:\n+                if e.returncode == 5:\n+                    # Value was not set\n+                    pass\n+                else:\n+                    raise\n+        else:\n+            check_call(['git', 'config', 'imerge.command', name])",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 97,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sure\n",
+        "created_at": "2014-05-08T17:20:47Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440535",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440535"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440535"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440565",
+        "pull_request_review_id": null,
+        "id": 12440565,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDQwNTY1",
+        "diff_hunk": "@@ -1474,11 +1492,15 @@ class Block(object):\n                 'Attempting automerge of %d-%d...' % self.get_original_indexes(i1, i2)\n                 )\n             try:\n+                print(\"Automerging from is_mergeable\")\n                 automerge(self[i1, 0].sha1, self[0, i2].sha1)\n                 sys.stderr.write('success.\\n')\n                 return True\n             except AutomaticMergeFailed:\n-                sys.stderr.write('failure.\\n')\n+                sys.stderr.write('Merge failure.\\n')",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 46,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ah I see\n",
+        "created_at": "2014-05-08T17:21:23Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440565",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440565"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440565"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440764",
+        "pull_request_review_id": null,
+        "id": 12440764,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDQwNzY0",
+        "diff_hunk": "@@ -572,8 +580,18 @@ def automerge(commit1, commit2, msg=None):\n         # added in git version 1.7.4.\n         call_silently(['git', 'reset', '--merge'])\n         raise AutomaticMergeFailed(commit1, commit2)\n-    else:\n-        return get_commit_sha1('HEAD')\n+\n+    build_script = MergeState.get_default_test_command()\n+    if build_script:\n+        try:\n+            check_call(['/bin/sh', build_script])\n+        except CalledProcessError as e:\n+            if e.returncode == 125:",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yeah it's treated as a success... I guess it was a placeholder for doing the right thing.\n\nI agree with the middle paragraph. I'll see if acting on an indeterminate state during the bisect stage is possible.\n",
+        "created_at": "2014-05-08T17:25:25Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440764",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440764"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440764"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440818",
+        "pull_request_review_id": null,
+        "id": 12440818,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDQwODE4",
+        "diff_hunk": "@@ -572,8 +580,18 @@ def automerge(commit1, commit2, msg=None):\n         # added in git version 1.7.4.\n         call_silently(['git', 'reset', '--merge'])\n         raise AutomaticMergeFailed(commit1, commit2)\n-    else:\n-        return get_commit_sha1('HEAD')\n+\n+    build_script = MergeState.get_default_test_command()\n+    if build_script:\n+        try:\n+            check_call(['/bin/sh', build_script])",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 25,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Agree\n",
+        "created_at": "2014-05-08T17:26:20Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440818",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440818"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440818"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440836",
+        "pull_request_review_id": null,
+        "id": 12440836,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDQwODM2",
+        "diff_hunk": "@@ -553,6 +553,14 @@ class AutomaticMergeFailed(Exception):\n         self.commit1, self.commit2 = commit1, commit2\n \n \n+class AutomaticBuildFailed(Exception):",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yep\n",
+        "created_at": "2014-05-08T17:26:42Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440836",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12440836"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12440836"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12466340",
+        "pull_request_review_id": null,
+        "id": 12466340,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDY2MzQw",
+        "diff_hunk": "@@ -572,8 +580,18 @@ def automerge(commit1, commit2, msg=None):\n         # added in git version 1.7.4.\n         call_silently(['git', 'reset', '--merge'])\n         raise AutomaticMergeFailed(commit1, commit2)\n-    else:\n-        return get_commit_sha1('HEAD')\n+\n+    build_script = MergeState.get_default_test_command()\n+    if build_script:\n+        try:\n+            check_call(['/bin/sh', build_script])\n+        except CalledProcessError as e:\n+            if e.returncode == 125:",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "This is definitely something that doesn't have to be implemented in the first version.\n",
+        "created_at": "2014-05-09T07:28:01Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12466340",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/12466340"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r12466340"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025100",
+        "pull_request_review_id": null,
+        "id": 13025100,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDI1MTAw",
+        "diff_hunk": "@@ -553,6 +553,14 @@ class AutomaticMergeFailed(Exception):\n         self.commit1, self.commit2 = commit1, commit2\n \n \n+class AutomaticBuildFailed(Exception):",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Done\n",
+        "created_at": "2014-05-24T06:29:23Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025100",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025100"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025100"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025101",
+        "pull_request_review_id": null,
+        "id": 13025101,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDI1MTAx",
+        "diff_hunk": "@@ -572,8 +580,18 @@ def automerge(commit1, commit2, msg=None):\n         # added in git version 1.7.4.\n         call_silently(['git', 'reset', '--merge'])\n         raise AutomaticMergeFailed(commit1, commit2)\n-    else:\n-        return get_commit_sha1('HEAD')\n+\n+    build_script = MergeState.get_default_test_command()\n+    if build_script:\n+        try:\n+            check_call(['/bin/sh', build_script])",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 25,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Done\n",
+        "created_at": "2014-05-24T06:29:28Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025101",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025101"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025101"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025104",
+        "pull_request_review_id": null,
+        "id": 13025104,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDI1MTA0",
+        "diff_hunk": "@@ -572,8 +580,18 @@ def automerge(commit1, commit2, msg=None):\n         # added in git version 1.7.4.\n         call_silently(['git', 'reset', '--merge'])\n         raise AutomaticMergeFailed(commit1, commit2)\n-    else:\n-        return get_commit_sha1('HEAD')\n+\n+    build_script = MergeState.get_default_test_command()\n+    if build_script:\n+        try:\n+            check_call(['/bin/sh', build_script])\n+        except CalledProcessError as e:\n+            if e.returncode == 125:",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Removed for another version\n",
+        "created_at": "2014-05-24T06:29:39Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025104",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025104"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025104"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025105",
+        "pull_request_review_id": null,
+        "id": 13025105,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDI1MTA1",
+        "diff_hunk": "@@ -1474,11 +1492,15 @@ class Block(object):\n                 'Attempting automerge of %d-%d...' % self.get_original_indexes(i1, i2)\n                 )\n             try:\n+                print(\"Automerging from is_mergeable\")\n                 automerge(self[i1, 0].sha1, self[0, i2].sha1)\n                 sys.stderr.write('success.\\n')\n                 return True\n             except AutomaticMergeFailed:\n-                sys.stderr.write('failure.\\n')\n+                sys.stderr.write('Merge failure.\\n')",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 46,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Done\n",
+        "created_at": "2014-05-24T06:29:44Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025105",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025105"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025105"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025111",
+        "pull_request_review_id": null,
+        "id": 13025111,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDI1MTEx",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 89,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Done, and fixed the other place where this was used. I actually think this helps with some confusion that I was having with set_default_name.\n",
+        "created_at": "2014-05-24T06:30:56Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025111",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025111"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025111"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025120",
+        "pull_request_review_id": null,
+        "id": 13025120,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDI1MTIw",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])\n+            except CalledProcessError as e:\n+                if e.returncode == 5:\n+                    # Value was not set\n+                    pass\n+                else:\n+                    raise\n+        else:\n+            check_call(['git', 'config', 'imerge.command', name])",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 97,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Done\n",
+        "created_at": "2014-05-24T06:32:49Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025120",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025120"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025120"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025170",
+        "pull_request_review_id": null,
+        "id": 13025170,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDI1MTcw",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])\n+            except CalledProcessError as e:\n+                if e.returncode == 5:\n+                    # Value was not set\n+                    pass\n+                else:\n+                    raise\n+        else:\n+            check_call(['git', 'config', 'imerge.command', name])\n+\n+    @staticmethod\n+    def get_default_test_command():\n+        \"\"\"Get the name of the test command, or None if none is currently set.\"\"\"\n+\n+        if MergeState.DEFAULT_BUILD_COMMAND:",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 103,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I was trying to avoid the case of calling git config every time by using the static variable DEFAULT_BUILD_COMMAND. The variable is initialized to None and assigned a non None value by check_output.\n\nMy confusing is coming from 'set_default_name'. I was attempting to set the test command in git config the same way the imerge name is set. I couldn't figure out the right way to set the test command to be anything other than a default value. How are other values of the imerge name set in the git config file? \n",
+        "created_at": "2014-05-24T06:48:39Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025170",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025170"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025170"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025172",
+        "pull_request_review_id": null,
+        "id": 13025172,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDI1MTcy",
+        "diff_hunk": "@@ -2116,6 +2176,7 @@ class MergeState(Block):\n         self.goal = goal\n         self.manual = bool(manual)\n         self.branch = branch or name\n+        self.build_command = build_command",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 146,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Removed this (although I feel like it might have to be re-added and the DEFAULT_TEST_COMMAND variable removed)\n",
+        "created_at": "2014-05-24T06:49:50Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025172",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025172"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025172"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025178",
+        "pull_request_review_id": null,
+        "id": 13025178,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDI1MTc4",
+        "diff_hunk": "@@ -3040,9 +3149,11 @@ def main(args):\n             tip2, commits2,\n             goal=options.goal, manual=options.manual,\n             branch=(options.branch or options.name),\n+            build_command=options.build_command,\n             )\n         merge_state.save()\n         MergeState.set_default_name(options.name)\n+        MergeState.set_default_test_command(options.build_command)",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 234,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is your above comment true for the imerge name? Where is the git config value set for different imerge branches? This will help me understand how to accomplish this for different test commands.\n",
+        "created_at": "2014-05-24T06:53:33Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025178",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025178"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025178"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025192",
+        "pull_request_review_id": null,
+        "id": 13025192,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDI1MTky",
+        "diff_hunk": "@@ -2676,6 +2737,18 @@ def main(args):\n         help='the name of the branch to which the result will be stored',\n         )\n     subparser.add_argument(\n+        '--build-command',",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 154,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "dleen",
+            "id": 1297964,
+            "node_id": "MDQ6VXNlcjEyOTc5NjQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1297964?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dleen",
+            "html_url": "https://github.com/dleen",
+            "followers_url": "https://api.github.com/users/dleen/followers",
+            "following_url": "https://api.github.com/users/dleen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dleen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dleen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dleen/subscriptions",
+            "organizations_url": "https://api.github.com/users/dleen/orgs",
+            "repos_url": "https://api.github.com/users/dleen/repos",
+            "events_url": "https://api.github.com/users/dleen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dleen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I've fallen in love with the really awesome 'docopt' package for help messages and options. I understand that we don't want to add any dependencies however. \n\nAdded a function for this.\n",
+        "created_at": "2014-05-24T07:03:29Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025192",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13025192"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13025192"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13261589",
+        "pull_request_review_id": null,
+        "id": 13261589,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjYxNTg5",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])\n+            except CalledProcessError as e:\n+                if e.returncode == 5:\n+                    # Value was not set\n+                    pass\n+                else:\n+                    raise\n+        else:\n+            check_call(['git', 'config', 'imerge.command', name])\n+\n+    @staticmethod\n+    def get_default_test_command():\n+        \"\"\"Get the name of the test command, or None if none is currently set.\"\"\"\n+\n+        if MergeState.DEFAULT_BUILD_COMMAND:",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 103,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "See my comment above where I show how to store the command in the git config.\n",
+        "created_at": "2014-05-31T15:32:52Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13261589",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13261589"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13261589"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13261594",
+        "pull_request_review_id": null,
+        "id": 13261594,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjYxNTk0",
+        "diff_hunk": "@@ -2116,6 +2176,7 @@ class MergeState(Block):\n         self.goal = goal\n         self.manual = bool(manual)\n         self.branch = branch or name\n+        self.build_command = build_command",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 146,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "That's my feeling, too.\n",
+        "created_at": "2014-05-31T15:33:19Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13261594",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13261594"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13261594"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13261710",
+        "pull_request_review_id": null,
+        "id": 13261710,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjYxNzEw",
+        "diff_hunk": "@@ -2676,6 +2737,18 @@ def main(args):\n         help='the name of the branch to which the result will be stored',\n         )\n     subparser.add_argument(\n+        '--build-command',",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 154,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "`docopt` looks interesting, but you're right that I'd prefer not to add another dependency.\n\nI do like about `argparse` that it validates the arguments and converts them into the types that you want.  It appears that `docopt` returns all arguments as strings, which I consider a disadvantage.\n",
+        "created_at": "2014-05-31T15:50:51Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13261710",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13261710"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13261710"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13261764",
+        "pull_request_review_id": null,
+        "id": 13261764,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjYxNzY0",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])\n+            except CalledProcessError as e:\n+                if e.returncode == 5:\n+                    # Value was not set\n+                    pass\n+                else:\n+                    raise\n+        else:\n+            check_call(['git', 'config', 'imerge.command', name])\n+\n+    @staticmethod\n+    def get_default_test_command():\n+        \"\"\"Get the name of the test command, or None if none is currently set.\"\"\"\n+\n+        if MergeState.DEFAULT_BUILD_COMMAND:",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 103,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "> I was trying to avoid the case of calling git config every time by using the static variable DEFAULT_BUILD_COMMAND. The variable is initialized to None and assigned a non None value by check_output.\n\nThe way I read the code is that if the configuration value is unset, then `git config` fails, and the exception handler in `get_default_test_command()` causes it to return `None`.  So `DEFAULT_BUILD_COMMAND` is set to `None` again, and every time it is queried the whole sequence is repeated.\n\nI think you need a way to distinguish \"command hasn't been checked yet; we don't know what it is\" from \"command has been checked but it was not set\"; either an additional boolean variable that keeps track of whether you have tried to read the command already, or maybe store another value (`False`?) to the variable to distinguish it from `None`.\n",
+        "created_at": "2014-05-31T15:59:24Z",
+        "updated_at": "2014-06-18T08:00:19Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13261764",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13261764"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13261764"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/15071276",
+        "pull_request_review_id": null,
+        "id": 15071276,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MDcxMjc2",
+        "diff_hunk": "@@ -580,6 +580,67 @@ class AutomaticMergeFailed(Exception):\n         self.commit1, self.commit2 = commit1, commit2\n \n \n+class GitConfigError(Exception):\n+    def __init__(self, returncode, output):\n+        Exception.__init__(\n+            self, 'Git config failed with exit code %s: %s' % (returncode, output,)\n+            )\n+\n+\n+def memo(obj):\n+    cache = {}\n+    @functools.wraps(obj)\n+    def wrap(*args, **kwds):\n+        if args not in cache:\n+            cache[args] = obj(*args, **kwds)\n+        return cache[args]\n+    return wrap\n+\n+\n+@memo\n+class GitConfigStore(object):\n+    def __init__(self, name, config_prefix='imerge'):\n+        self.config_prefix = config_prefix\n+        self.config = self._get_all_keys()\n+\n+    def _get_all_keys(self):\n+        d = {}\n+        try:\n+            items_with_prefix = check_output(\n+                ['git', 'config', '--get-regex', self.config_prefix]\n+                ).rstrip().split('\\n')\n+            for row in items_with_prefix:\n+                k, v = row.split()\n+                d[k[len(self.config_prefix + '.'):]] = v",
+        "path": "git-imerge",
+        "position": 35,
+        "original_position": 35,
+        "commit_id": "b2bc3390413f7fdfdd2baabd2c244576fa31fc58",
+        "original_commit_id": "b2bc3390413f7fdfdd2baabd2c244576fa31fc58",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "This storage scheme limits the `GitConfigStore` class to single-valued config settings, correct?  That is OK, but it might be worth mentioning this limitation in the class docstring.\n",
+        "created_at": "2014-07-17T17:26:46Z",
+        "updated_at": "2014-07-17T17:26:46Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/69#discussion_r15071276",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/69",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/15071276"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/69#discussion_r15071276"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/69"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/15071697",
+        "pull_request_review_id": null,
+        "id": 15071697,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MDcxNjk3",
+        "diff_hunk": "@@ -580,6 +580,67 @@ class AutomaticMergeFailed(Exception):\n         self.commit1, self.commit2 = commit1, commit2\n \n \n+class GitConfigError(Exception):\n+    def __init__(self, returncode, output):\n+        Exception.__init__(\n+            self, 'Git config failed with exit code %s: %s' % (returncode, output,)\n+            )\n+\n+\n+def memo(obj):\n+    cache = {}\n+    @functools.wraps(obj)\n+    def wrap(*args, **kwds):\n+        if args not in cache:\n+            cache[args] = obj(*args, **kwds)\n+        return cache[args]\n+    return wrap\n+\n+\n+@memo\n+class GitConfigStore(object):\n+    def __init__(self, name, config_prefix='imerge'):",
+        "path": "git-imerge",
+        "position": 23,
+        "original_position": 23,
+        "commit_id": "b2bc3390413f7fdfdd2baabd2c244576fa31fc58",
+        "original_commit_id": "b2bc3390413f7fdfdd2baabd2c244576fa31fc58",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "I don't understand. `name` doesn't seem to be used, aside from its role in memoization, and I don't see how that has a useful effect. Would you please explain?\n",
+        "created_at": "2014-07-17T17:34:08Z",
+        "updated_at": "2014-07-17T17:34:08Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/69#discussion_r15071697",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/69",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/15071697"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/69#discussion_r15071697"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/69"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/15071762",
+        "pull_request_review_id": null,
+        "id": 15071762,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MDcxNzYy",
+        "diff_hunk": "@@ -580,6 +580,67 @@ class AutomaticMergeFailed(Exception):\n         self.commit1, self.commit2 = commit1, commit2\n \n \n+class GitConfigError(Exception):\n+    def __init__(self, returncode, output):\n+        Exception.__init__(\n+            self, 'Git config failed with exit code %s: %s' % (returncode, output,)\n+            )\n+\n+\n+def memo(obj):\n+    cache = {}\n+    @functools.wraps(obj)\n+    def wrap(*args, **kwds):\n+        if args not in cache:\n+            cache[args] = obj(*args, **kwds)\n+        return cache[args]\n+    return wrap\n+\n+\n+@memo\n+class GitConfigStore(object):\n+    def __init__(self, name, config_prefix='imerge'):",
+        "path": "git-imerge",
+        "position": 23,
+        "original_position": 23,
+        "commit_id": "b2bc3390413f7fdfdd2baabd2c244576fa31fc58",
+        "original_commit_id": "b2bc3390413f7fdfdd2baabd2c244576fa31fc58",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "Another thing: depending on what effect `name` is supposed to have, maybe it should default to `None` to avoid having to pass `None` to the constructor explicitly, below.\n",
+        "created_at": "2014-07-17T17:35:07Z",
+        "updated_at": "2014-07-17T17:35:07Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/69#discussion_r15071762",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/69",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/15071762"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/69#discussion_r15071762"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/69"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/15071177",
+        "pull_request_review_id": null,
+        "id": 15071177,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MDcxMTc3",
+        "diff_hunk": "@@ -580,6 +580,67 @@ class AutomaticMergeFailed(Exception):\n         self.commit1, self.commit2 = commit1, commit2\n \n \n+class GitConfigError(Exception):\n+    def __init__(self, returncode, output):\n+        Exception.__init__(\n+            self, 'Git config failed with exit code %s: %s' % (returncode, output,)\n+            )\n+\n+\n+def memo(obj):\n+    cache = {}\n+    @functools.wraps(obj)\n+    def wrap(*args, **kwds):\n+        if args not in cache:\n+            cache[args] = obj(*args, **kwds)\n+        return cache[args]\n+    return wrap\n+\n+\n+@memo",
+        "path": "git-imerge",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "b2bc3390413f7fdfdd2baabd2c244576fa31fc58",
+        "original_commit_id": "b2bc3390413f7fdfdd2baabd2c244576fa31fc58",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "This was confusing to me. Let me see if I understand correctly...\n\nThis level of memoization is so that if the code tries to create multiple instances of `GitConfigStore` with the same `name` and `config_prefix` arguments, that only one instance is actually created.  Right?\n\nThis is distinct from the caching that occurs within the `GitConfigStore` class itself, which is about reading all of the configuration values in a section of the config file and keeping this cache in sync as values are changed or removed.\n\nIt seems a bit overengineered to me, especially the fact that `memo` effectively uses a global cache. Wouldn't it be more straightforward to store an instance of `GitConfigStore(name)` in the `MergeState` instance? Or will future changes make it necessary to access the config for a given `name` from outside of that class?\n",
+        "created_at": "2014-07-17T17:25:14Z",
+        "updated_at": "2014-11-09T10:40:40Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/69#discussion_r15071177",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/69",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/15071177"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/69#discussion_r15071177"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/69"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13261581",
+        "pull_request_review_id": null,
+        "id": 13261581,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjYxNTgx",
+        "diff_hunk": "@@ -1861,6 +1887,38 @@ class MergeState(Block):\n             return None\n \n     @staticmethod\n+    def set_default_test_command(name):\n+        \"\"\"Set the default test command to the specified one.\n+\n+        name can be None to cause the default to be cleared.\"\"\"\n+\n+        if name is None:\n+            try:\n+                check_call(['git', 'config', '--unset', 'imerge.command'])\n+            except CalledProcessError as e:\n+                if e.returncode == 5:\n+                    # Value was not set\n+                    pass\n+                else:\n+                    raise\n+        else:\n+            check_call(['git', 'config', 'imerge.command', name])\n+\n+    @staticmethod\n+    def get_default_test_command():",
+        "path": "git-imerge",
+        "position": null,
+        "original_position": 100,
+        "commit_id": "d278a38779f77b42c90ed11ee2b5df8a451bd3eb",
+        "original_commit_id": "dc7622e8afddcdd32d9bc56a4d962ff6cb1a99e6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "The only thing that `imerge.default` is used for is to record the name of the incremental merge that is \"active\"; that is, if the user runs a `git imerge` without the `--name` parameter, then this is the name of the incremental merge that is affected by the command.  So there is only one `imerge.default` setting at any time, not one per imerge.\n\nOtherwise, nothing has been stored in the configuration for imerges; instead, the rest of the state was recorded in the object database as commits and blobs and references.  The main information for an imerge is stored in a blob referred to by `refs/imerge/$NAME/state`.\n\nIf you want to store a command in the configuration as a string for the imerge named `name`, you need to do something like\n\n```\ncheck_call(['git', 'config', 'imerge.%s.command' % (name,), command])\n```\n\nand to retrieve it again,\n\n```\ncommand = check_output(['git', 'config', 'imerge.%s.command' % (name,)]).rstrip()\n```\n\nHope that helps!\n",
+        "created_at": "2014-05-31T15:30:53Z",
+        "updated_at": "2014-11-09T10:46:04Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13261581",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/64",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/13261581"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/64#discussion_r13261581"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/64"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/38518768",
+        "pull_request_review_id": null,
+        "id": 38518768,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTE4NzY4",
+        "diff_hunk": "@@ -23,6 +23,9 @@ $(module)/talk.html: $(module)/talk.rst\n \n install: $(BIN)\n \tinstall $(BIN) $(PREFIX)/bin\n+\t@mkdir -p /etc/bash_completion.d",
+        "path": "Makefile",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "595005671ba219b9ab8c1b7e1aa4b0aa56a90784",
+        "original_commit_id": "595005671ba219b9ab8c1b7e1aa4b0aa56a90784",
+        "user": {
+            "login": "lucaswerkmeister",
+            "id": 2346599,
+            "node_id": "MDQ6VXNlcjIzNDY1OTk=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2346599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/lucaswerkmeister",
+            "html_url": "https://github.com/lucaswerkmeister",
+            "followers_url": "https://api.github.com/users/lucaswerkmeister/followers",
+            "following_url": "https://api.github.com/users/lucaswerkmeister/following{/other_user}",
+            "gists_url": "https://api.github.com/users/lucaswerkmeister/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/lucaswerkmeister/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/lucaswerkmeister/subscriptions",
+            "organizations_url": "https://api.github.com/users/lucaswerkmeister/orgs",
+            "repos_url": "https://api.github.com/users/lucaswerkmeister/repos",
+            "events_url": "https://api.github.com/users/lucaswerkmeister/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/lucaswerkmeister/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Does it really make sense to create this folder? If it\u2019s not already there, then the system probably stores its bash completion scripts elsewhere, and this folder probably won\u2019t be sourced.\n",
+        "created_at": "2015-09-02T10:42:16Z",
+        "updated_at": "2015-09-02T10:42:16Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/82#discussion_r38518768",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/82",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/38518768"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/82#discussion_r38518768"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/82"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/38710779",
+        "pull_request_review_id": null,
+        "id": 38710779,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NzEwNzc5",
+        "diff_hunk": "@@ -23,6 +23,9 @@ $(module)/talk.html: $(module)/talk.rst\n \n install: $(BIN)\n \tinstall $(BIN) $(PREFIX)/bin\n+\t@mkdir -p /etc/bash_completion.d",
+        "path": "Makefile",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "595005671ba219b9ab8c1b7e1aa4b0aa56a90784",
+        "original_commit_id": "595005671ba219b9ab8c1b7e1aa4b0aa56a90784",
+        "user": {
+            "login": "stevemao",
+            "id": 6316590,
+            "node_id": "MDQ6VXNlcjYzMTY1OTA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6316590?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/stevemao",
+            "html_url": "https://github.com/stevemao",
+            "followers_url": "https://api.github.com/users/stevemao/followers",
+            "following_url": "https://api.github.com/users/stevemao/following{/other_user}",
+            "gists_url": "https://api.github.com/users/stevemao/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/stevemao/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/stevemao/subscriptions",
+            "organizations_url": "https://api.github.com/users/stevemao/orgs",
+            "repos_url": "https://api.github.com/users/stevemao/repos",
+            "events_url": "https://api.github.com/users/stevemao/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/stevemao/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "True. But I basically copied it from https://github.com/tj/git-extras/blob/master/Makefile#L44\n",
+        "created_at": "2015-09-04T00:06:42Z",
+        "updated_at": "2015-09-04T00:06:42Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/82#discussion_r38710779",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/82",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/38710779"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/82#discussion_r38710779"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/82"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629569",
+        "pull_request_review_id": 131413020,
+        "id": 197629569,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzYyOTU2OQ==",
+        "diff_hunk": "@@ -3717,6 +3749,18 @@ def main(args):\n             help='the tip of the branch to be merged into HEAD',\n         )\n \n+    def add_commit_to_reparent_argument(subparser):",
+        "path": "git-imerge",
+        "position": 57,
+        "original_position": 57,
+        "commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "original_commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "There's no need for this to be in a function, since it is only called once. (`add_*_option()` functions are used when the same option applies to multiple commands.)\r\n",
+        "created_at": "2018-06-24T06:21:34Z",
+        "updated_at": "2018-06-24T06:50:24Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629569",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/130",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629569"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629569"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/130"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629600",
+        "pull_request_review_id": 131413020,
+        "id": 197629600,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzYyOTYwMA==",
+        "diff_hunk": "@@ -3717,6 +3749,18 @@ def main(args):\n             help='the tip of the branch to be merged into HEAD',\n         )\n \n+    def add_commit_to_reparent_argument(subparser):\n+        subparser.add_argument(\n+            '--commit-to-reparent', dest='commit_to_reparent', action='store', default=None,",
+        "path": "git-imerge",
+        "position": 59,
+        "original_position": 59,
+        "commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "original_commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "* I think it would be ok to name this option `--commit`.\r\n* `dest` is redundant because that's the default.\r\n* `action` is redundant because `'store'` is the default action.\r\n* `default=None` is redundant because that is the default. However, don't you actually want `default='HEAD'` here? That would remove the need for `cmd_reparent` to check this argument and set it to `HEAD` if it was missing.\r\n",
+        "created_at": "2018-06-24T06:23:47Z",
+        "updated_at": "2018-06-24T06:50:24Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629600",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/130",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629600"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629600"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/130"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629606",
+        "pull_request_review_id": 131413020,
+        "id": 197629606,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzYyOTYwNg==",
+        "diff_hunk": "@@ -3717,6 +3749,18 @@ def main(args):\n             help='the tip of the branch to be merged into HEAD',\n         )\n \n+    def add_commit_to_reparent_argument(subparser):\n+        subparser.add_argument(\n+            '--commit-to-reparent', dest='commit_to_reparent', action='store', default=None,\n+            help=(\n+                'target commit to reparent. reparent will happen from this commit all the way back to HEAD. '\n+                'reparent operation creates a new commit object like the original commit, but with the specified parents. '\n+                'reparent command first executes the reparent operation on the commit specified by the --commit-to-reparent argument to generate a new commit object, '\n+                'then it uses this object to replace the first parent of its child commit on the path towards the HEAD commit.\\n'\n+                'the command repeats this process till the HEAD commit so that a list of new commit objects are created.'",
+        "path": "git-imerge",
+        "position": 65,
+        "original_position": 65,
+        "commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "original_commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "Please limit lines to 79 characters.",
+        "created_at": "2018-06-24T06:24:08Z",
+        "updated_at": "2018-06-24T06:50:24Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629606",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/130",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629606"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629606"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/130"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629633",
+        "pull_request_review_id": 131413020,
+        "id": 197629633,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzYyOTYzMw==",
+        "diff_hunk": "@@ -3927,12 +3971,21 @@ def main(args):\n \n     subparser = subparsers.add_parser(\n         'reparent',\n-        help='change the parents of the HEAD commit',\n+        help=(\n+            'change the parents of the specified commit and propagate the change to HEAD commit'\n+            ),\n         )\n     subparser.add_argument(\n-        'parents', nargs='*', help='[PARENT...]',\n+        'parents', \n+        nargs='*', \n+        help=(\n+            '[PARENT...] \\n'\n+            'parents is a list of SHA1.\\n'\n+            ),",
+        "path": "git-imerge",
+        "position": 88,
+        "original_position": 88,
+        "commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "original_commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "Newline characters don't have an effect in help strings. And instead of starting the help string with `[PARENT...]`, you can set `metavar='PARENT'`.",
+        "created_at": "2018-06-24T06:25:11Z",
+        "updated_at": "2018-06-24T06:50:24Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629633",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/130",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629633"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629633"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/130"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629648",
+        "pull_request_review_id": 131413020,
+        "id": 197629648,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzYyOTY0OA==",
+        "diff_hunk": "@@ -3629,9 +3629,22 @@ def cmd_diagram(parser, options):\n \n \n def cmd_reparent(parser, options):\n+    if len(options.parents) == 0:\n+        parser.error('Parent is not specified, please specify at least one parent.')",
+        "path": "git-imerge",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "original_commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "Why do you add this new restriction? It is perfectly sensible to set a commit to have zero parents; in that case, the commit becomes an orphan commit (i.e., like the first commit made in a fresh repository).\r\n",
+        "created_at": "2018-06-24T06:26:15Z",
+        "updated_at": "2018-06-24T06:50:24Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629648",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/130",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629648"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629648"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/130"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629699",
+        "pull_request_review_id": 131413020,
+        "id": 197629699,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzYyOTY5OQ==",
+        "diff_hunk": "@@ -3640,8 +3653,27 @@ def cmd_reparent(parser, options):\n     except ValueError as e:\n         sys.exit(e.message)\n \n-    sys.stdout.write('%s\\n' % (git.reparent(commit_sha1, parent_sha1s),))",
+        "path": "git-imerge",
+        "position": 28,
+        "original_position": 28,
+        "commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "original_commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "It is not OK to remove this output or complicate it. The `reparent` command is pretty useless if you don't do anything with its output (because it doesn't change any references itself). And likely people want to use the output directly; e.g.,\r\n\r\n    git update-ref refs/heads/mynewbranch $(git imerge reparent $PARENT)\r\n\r\nThis works with the old code because the only thing that it outputs to stdout is the final SHA-1. But it won't work with your changes.",
+        "created_at": "2018-06-24T06:28:43Z",
+        "updated_at": "2018-06-24T06:50:24Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629699",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/130",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629699"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629699"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/130"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629708",
+        "pull_request_review_id": 131413020,
+        "id": 197629708,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzYyOTcwOA==",
+        "diff_hunk": "@@ -3629,9 +3629,22 @@ def cmd_diagram(parser, options):\n \n \n def cmd_reparent(parser, options):\n+    if len(options.parents) == 0:\n+        parser.error('Parent is not specified, please specify at least one parent.')\n+    sys.stdout.write('Reparenting from HEAD to %s...\\n' % options.commit_to_reparent)",
+        "path": "git-imerge",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "original_commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "It is not appropriate to emit progress messages to stdout. They should go to stderr so that the stdout can be piped to another program.",
+        "created_at": "2018-06-24T06:29:15Z",
+        "updated_at": "2018-06-24T06:50:24Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629708",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/130",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629708"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629708"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/130"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629758",
+        "pull_request_review_id": 131413020,
+        "id": 197629758,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzYyOTc1OA==",
+        "diff_hunk": "@@ -3640,8 +3653,27 @@ def cmd_reparent(parser, options):\n     except ValueError as e:\n         sys.exit(e.message)\n \n-    sys.stdout.write('%s\\n' % (git.reparent(commit_sha1, parent_sha1s),))\n+    iterative_reparent(head_sha1, commit_to_reparent_sha1, parent_sha1s, git)\n+\n+def iterative_reparent(head, commit_to_reparent, parents, git):\n+    commit_list = [head];\n+    current_commit = head;\n+    while current_commit != commit_to_reparent:",
+        "path": "git-imerge",
+        "position": 34,
+        "original_position": 34,
+        "commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "original_commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "This loop will totally fail (with an `IndexError`, I believe) if `commit_to_reparent` is not a first-parent ancestor of `head`. I understand that this will never be the case the way you want to use the program, but other people might want to use it other ways, and it shouldn't crash for them.\r\n\r\nIt's not very much harder to rewrite this so that it works for any ancestor of head (not just first-parent ancestors). I'll try to implement that.\r\n",
+        "created_at": "2018-06-24T06:31:56Z",
+        "updated_at": "2018-06-24T06:50:24Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629758",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/130",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197629758"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197629758"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/130"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197630029",
+        "pull_request_review_id": 131413020,
+        "id": 197630029,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzYzMDAyOQ==",
+        "diff_hunk": "@@ -3640,8 +3653,27 @@ def cmd_reparent(parser, options):\n     except ValueError as e:\n         sys.exit(e.message)\n \n-    sys.stdout.write('%s\\n' % (git.reparent(commit_sha1, parent_sha1s),))\n+    iterative_reparent(head_sha1, commit_to_reparent_sha1, parent_sha1s, git)\n+\n+def iterative_reparent(head, commit_to_reparent, parents, git):\n+    commit_list = [head];\n+    current_commit = head;\n+    while current_commit != commit_to_reparent:\n+        current_parents = git.get_commit_parents(current_commit)\n+        first_parent_commit = current_parents[0]\n+        commit_list.append(first_parent_commit)\n+        current_commit = first_parent_commit\n+\n+    commit_list.reverse()\n+    for i in range(0, len(commit_list)):\n+        if i == 0:\n+            current_parents = parents\n+        else:\n+            current_parents = git.get_commit_parents(commit_list[i])\n+            current_parents = [new_commit] + current_parents[1:len(current_parents)]",
+        "path": "git-imerge",
+        "position": 46,
+        "original_position": 46,
+        "commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "original_commit_id": "df2029c3693729366c0f458ec6b81e3de375f6f0",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "This is going to do something screwy if there is more than one ancestry path between `commit_to_reparent` and `head`. For example, suppose that there was a merge in between:\r\n\r\n```\r\no---A---C---D---E---F---H\r\n       /     \\     /\r\n  o---B       X---Y\r\n```\r\n\r\nand you run `git imerge reparent --commit-to-reparent C A`. This algorithm will only rewrite commits `C`, `D`, `E`, `F`, and `H`, but won't rewrite `X` or `Y`. The result will not be the hoped-for\r\n\r\n```\r\no---A---C'--D'--E'--F'--H'\r\n             \\     /\r\n              X'--Y'\r\n```\r\n\r\nbut I think will look like this instead:\r\n\r\n```\r\n      C'--D'--E'------F'--H'\r\n     /               /\r\no---A---C---D       /\r\n       /     \\     /\r\n  o---B       X---Y\r\n```\r\n\r\nI understand that you are not interested in this case, but it's not that much harder to handle it correctly.\r\n",
+        "created_at": "2018-06-24T06:46:28Z",
+        "updated_at": "2018-06-24T06:50:24Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197630029",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/130",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197630029"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/130#discussion_r197630029"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/130"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197977525",
+        "pull_request_review_id": 131825291,
+        "id": 197977525,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5Nzk3NzUyNQ==",
+        "diff_hunk": "@@ -3628,19 +3628,63 @@ def cmd_diagram(parser, options):\n         )\n \n \n+def reparent_recursively(git, start_commit, parents, end_commit):",
+        "path": "git-imerge",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "c7b96a36948fadfd10078f821e986ec0cf6d3df6",
+        "original_commit_id": "c7b96a36948fadfd10078f821e986ec0cf6d3df6",
+        "user": {
+            "login": "make1980",
+            "id": 19718982,
+            "node_id": "MDQ6VXNlcjE5NzE4OTgy",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/19718982?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/make1980",
+            "html_url": "https://github.com/make1980",
+            "followers_url": "https://api.github.com/users/make1980/followers",
+            "following_url": "https://api.github.com/users/make1980/following{/other_user}",
+            "gists_url": "https://api.github.com/users/make1980/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/make1980/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/make1980/subscriptions",
+            "organizations_url": "https://api.github.com/users/make1980/orgs",
+            "repos_url": "https://api.github.com/users/make1980/repos",
+            "events_url": "https://api.github.com/users/make1980/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/make1980/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: this isn't a recursive process but rather an iterative process",
+        "created_at": "2018-06-25T23:58:26Z",
+        "updated_at": "2018-06-25T23:58:26Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/132#discussion_r197977525",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/132",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/197977525"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/132#discussion_r197977525"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/132"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/198022707",
+        "pull_request_review_id": 131875288,
+        "id": 198022707,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5ODAyMjcwNw==",
+        "diff_hunk": "@@ -3628,19 +3628,63 @@ def cmd_diagram(parser, options):\n         )\n \n \n+def reparent_recursively(git, start_commit, parents, end_commit):",
+        "path": "git-imerge",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "c7b96a36948fadfd10078f821e986ec0cf6d3df6",
+        "original_commit_id": "c7b96a36948fadfd10078f821e986ec0cf6d3df6",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "It is in fact recursive; it's just that the recursion is built into `git log --topo-order --reverse` rather than coded explicitly here. But this is just an internal name so I don't think the distinction matters much.\r\n",
+        "created_at": "2018-06-26T06:08:35Z",
+        "updated_at": "2018-06-26T06:08:35Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/132#discussion_r198022707",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/132",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/198022707"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/132#discussion_r198022707"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/132"
+            }
+        },
+        "in_reply_to_id": 197977525
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/198644404",
+        "pull_request_review_id": 132612866,
+        "id": 198644404,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5ODY0NDQwNA==",
+        "diff_hunk": "@@ -3628,19 +3628,63 @@ def cmd_diagram(parser, options):\n         )\n \n \n+def reparent_recursively(git, start_commit, parents, end_commit):",
+        "path": "git-imerge",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "c7b96a36948fadfd10078f821e986ec0cf6d3df6",
+        "original_commit_id": "c7b96a36948fadfd10078f821e986ec0cf6d3df6",
+        "user": {
+            "login": "make1980",
+            "id": 19718982,
+            "node_id": "MDQ6VXNlcjE5NzE4OTgy",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/19718982?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/make1980",
+            "html_url": "https://github.com/make1980",
+            "followers_url": "https://api.github.com/users/make1980/followers",
+            "following_url": "https://api.github.com/users/make1980/following{/other_user}",
+            "gists_url": "https://api.github.com/users/make1980/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/make1980/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/make1980/subscriptions",
+            "organizations_url": "https://api.github.com/users/make1980/orgs",
+            "repos_url": "https://api.github.com/users/make1980/repos",
+            "events_url": "https://api.github.com/users/make1980/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/make1980/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Make sense.",
+        "created_at": "2018-06-27T21:18:51Z",
+        "updated_at": "2018-06-27T21:18:51Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/132#discussion_r198644404",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/132",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/198644404"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/132#discussion_r198644404"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/132"
+            }
+        },
+        "in_reply_to_id": 197977525
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/223240778",
+        "pull_request_review_id": 162319631,
+        "id": 223240778,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMzI0MDc3OA==",
+        "diff_hunk": "@@ -2831,6 +2831,15 @@ class MergeState(Block):\n                     )\n                 self.git.checkout(refname, quiet=True)\n \n+    def get_modified_log_message(self, orig, kind):\n+        msg = self.git.get_log_message(orig)\n+        if os.environ.get('IMERGE_MODIFY_COMMIT_MSG','1') != '0':",
+        "path": "git-imerge",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "db7f936697cfe20d462994076c18e0432a01b6d9",
+        "original_commit_id": "db7f936697cfe20d462994076c18e0432a01b6d9",
+        "user": {
+            "login": "brucehoult",
+            "id": 851040,
+            "node_id": "MDQ6VXNlcjg1MTA0MA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/851040?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/brucehoult",
+            "html_url": "https://github.com/brucehoult",
+            "followers_url": "https://api.github.com/users/brucehoult/followers",
+            "following_url": "https://api.github.com/users/brucehoult/following{/other_user}",
+            "gists_url": "https://api.github.com/users/brucehoult/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/brucehoult/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/brucehoult/subscriptions",
+            "organizations_url": "https://api.github.com/users/brucehoult/orgs",
+            "repos_url": "https://api.github.com/users/brucehoult/repos",
+            "events_url": "https://api.github.com/users/brucehoult/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/brucehoult/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No point to cache/optimise this as the subsequent git operation is far more heavyweight.",
+        "created_at": "2018-10-08T02:57:40Z",
+        "updated_at": "2018-10-08T02:57:40Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/134#discussion_r223240778",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/134",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/223240778"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/134#discussion_r223240778"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/134"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/226198856",
+        "pull_request_review_id": 165961477,
+        "id": 226198856,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNjE5ODg1Ng==",
+        "diff_hunk": "@@ -2863,8 +2863,9 @@ class MergeState(Block):\n                 self.git.get_log_message(orig).rstrip('\\n')\n                 + '\\n\\n(rebased-with-history from commit %s)\\n' % orig\n                 )\n-            commit = self.git.commit_tree(tree, [commit, orig], msg=msg)\n-\n+            kwargs = dict(tree=tree, parents=[commit, orig], msg=msg)\n+            kwargs['metadata']=self.git.get_author_info(orig)\n+            commit = self.git.commit_tree(**kwargs)",
+        "path": "git-imerge",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "d875c3e9ba8b7f4810b93b9e229cd8234e0937cd",
+        "original_commit_id": "d875c3e9ba8b7f4810b93b9e229cd8234e0937cd",
+        "user": {
+            "login": "mhagger",
+            "id": 119718,
+            "node_id": "MDQ6VXNlcjExOTcxOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/119718?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mhagger",
+            "html_url": "https://github.com/mhagger",
+            "followers_url": "https://api.github.com/users/mhagger/followers",
+            "following_url": "https://api.github.com/users/mhagger/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mhagger/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mhagger/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mhagger/subscriptions",
+            "organizations_url": "https://api.github.com/users/mhagger/orgs",
+            "repos_url": "https://api.github.com/users/mhagger/repos",
+            "events_url": "https://api.github.com/users/mhagger/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mhagger/received_events",
+            "type": "User",
+            "site_admin": true
+        },
+        "body": "That's an improvement on #119, but now that this behavior is always in effect, there is no need to use `kwargs`:\r\n\r\n    commit = self.git.commit_tree(tree, [commit, orig], msg=msg, metadata=self.git.get_author_info(orig))\r\n\r\nI've implemented that, and also the analogous change for the `border` variants, in #138. Let me know what you think.\r\n",
+        "created_at": "2018-10-18T07:45:51Z",
+        "updated_at": "2018-10-18T07:45:52Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/137#discussion_r226198856",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/137",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/226198856"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/137#discussion_r226198856"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/137"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/226365624",
+        "pull_request_review_id": 166171437,
+        "id": 226365624,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNjM2NTYyNA==",
+        "diff_hunk": "@@ -2863,8 +2863,9 @@ class MergeState(Block):\n                 self.git.get_log_message(orig).rstrip('\\n')\n                 + '\\n\\n(rebased-with-history from commit %s)\\n' % orig\n                 )\n-            commit = self.git.commit_tree(tree, [commit, orig], msg=msg)\n-\n+            kwargs = dict(tree=tree, parents=[commit, orig], msg=msg)\n+            kwargs['metadata']=self.git.get_author_info(orig)\n+            commit = self.git.commit_tree(**kwargs)",
+        "path": "git-imerge",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "d875c3e9ba8b7f4810b93b9e229cd8234e0937cd",
+        "original_commit_id": "d875c3e9ba8b7f4810b93b9e229cd8234e0937cd",
+        "user": {
+            "login": "DEVoytas",
+            "id": 15203013,
+            "node_id": "MDQ6VXNlcjE1MjAzMDEz",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/15203013?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/DEVoytas",
+            "html_url": "https://github.com/DEVoytas",
+            "followers_url": "https://api.github.com/users/DEVoytas/followers",
+            "following_url": "https://api.github.com/users/DEVoytas/following{/other_user}",
+            "gists_url": "https://api.github.com/users/DEVoytas/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/DEVoytas/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/DEVoytas/subscriptions",
+            "organizations_url": "https://api.github.com/users/DEVoytas/orgs",
+            "repos_url": "https://api.github.com/users/DEVoytas/repos",
+            "events_url": "https://api.github.com/users/DEVoytas/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/DEVoytas/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Good point!",
+        "created_at": "2018-10-18T15:57:42Z",
+        "updated_at": "2018-10-18T15:57:42Z",
+        "html_url": "https://github.com/mhagger/git-imerge/pull/137#discussion_r226365624",
+        "pull_request_url": "https://api.github.com/repos/mhagger/git-imerge/pulls/137",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/comments/226365624"
+            },
+            "html": {
+                "href": "https://github.com/mhagger/git-imerge/pull/137#discussion_r226365624"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mhagger/git-imerge/pulls/137"
+            }
+        },
+        "in_reply_to_id": 226198856
+    }
+]

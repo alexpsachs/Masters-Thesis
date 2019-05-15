@@ -1,0 +1,593 @@
+[
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/197561889",
+        "pull_request_review_id": 131338439,
+        "id": 197561889,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzU2MTg4OQ==",
+        "diff_hunk": "@@ -165,7 +176,13 @@ public virtual string GetName(EnumValueDescriptorProto definition)\n         {\n             var name = definition?.Options?.GetOptions()?.Name;\n             if (!string.IsNullOrWhiteSpace(name)) return name;\n-            return AutoCapitalize(definition.Name);\n+",
+        "path": "src/protobuf-net.Reflection/NameNormalizer.cs",
+        "position": 41,
+        "original_position": 41,
+        "commit_id": "69cb60896b259124e2c38d7dd0248ec4b112c979",
+        "original_commit_id": "382b148629c179a5a6c6b95d45252df83b05991e",
+        "user": {
+            "login": "mgravell",
+            "id": 17328,
+            "node_id": "MDQ6VXNlcjE3MzI4",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/17328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mgravell",
+            "html_url": "https://github.com/mgravell",
+            "followers_url": "https://api.github.com/users/mgravell/followers",
+            "following_url": "https://api.github.com/users/mgravell/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mgravell/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mgravell/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mgravell/subscriptions",
+            "organizations_url": "https://api.github.com/users/mgravell/orgs",
+            "repos_url": "https://api.github.com/users/mgravell/repos",
+            "events_url": "https://api.github.com/users/mgravell/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mgravell/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this seems very odd as an \"enum value only\" thing; IMO this should work everywhere or nowhere; \"enum values\" is *very* specific...",
+        "created_at": "2018-06-22T20:33:27Z",
+        "updated_at": "2018-06-23T05:22:28Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/407#discussion_r197561889",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/407",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/197561889"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/407#discussion_r197561889"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/407"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/197562182",
+        "pull_request_review_id": 131338439,
+        "id": 197562182,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzU2MjE4Mg==",
+        "diff_hunk": "@@ -53,6 +59,11 @@ private class DefaultNormalizer : NameNormalizer\n         protected static string AutoCapitalize(string identifier)\n         {\n             if (string.IsNullOrEmpty(identifier)) return identifier;\n+\n+            // if camel-case, make proper-case\n+            if (Regex.IsMatch(identifier, @\"^[a-z][a-z0-9]+[A-Z][a-zA-Z0-9]+\")) {\n+                return Regex.Replace(identifier, @\"^([a-z])([a-z0-9]+[A-Z][a-zA-Z0-9]+)\", match => match.Groups[1].Value.ToUpperInvariant() + match.Groups[2].Value);\n+            }",
+        "path": "src/protobuf-net.Reflection/NameNormalizer.cs",
+        "position": 23,
+        "original_position": 23,
+        "commit_id": "69cb60896b259124e2c38d7dd0248ec4b112c979",
+        "original_commit_id": "382b148629c179a5a6c6b95d45252df83b05991e",
+        "user": {
+            "login": "mgravell",
+            "id": 17328,
+            "node_id": "MDQ6VXNlcjE3MzI4",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/17328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mgravell",
+            "html_url": "https://github.com/mgravell",
+            "followers_url": "https://api.github.com/users/mgravell/followers",
+            "following_url": "https://api.github.com/users/mgravell/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mgravell/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mgravell/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mgravell/subscriptions",
+            "organizations_url": "https://api.github.com/users/mgravell/orgs",
+            "repos_url": "https://api.github.com/users/mgravell/repos",
+            "events_url": "https://api.github.com/users/mgravell/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mgravell/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\ud83d\udc4d ",
+        "created_at": "2018-06-22T20:34:32Z",
+        "updated_at": "2018-06-23T05:22:28Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/407#discussion_r197562182",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/407",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/197562182"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/407#discussion_r197562182"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/407"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/197562764",
+        "pull_request_review_id": 131338439,
+        "id": 197562764,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzU2Mjc2NA==",
+        "diff_hunk": "@@ -165,7 +176,13 @@ public virtual string GetName(EnumValueDescriptorProto definition)\n         {\n             var name = definition?.Options?.GetOptions()?.Name;\n             if (!string.IsNullOrWhiteSpace(name)) return name;\n-            return AutoCapitalize(definition.Name);\n+\n+            if (CustomNamesConversion != null && CustomNamesConversion.TryGetValue(definition.Name, out var customName))\n+                return customName;\n+            else if (definition.Name.StartsWith($\"{definition.Parent.Name}_\"))",
+        "path": "src/protobuf-net.Reflection/NameNormalizer.cs",
+        "position": 44,
+        "original_position": 44,
+        "commit_id": "69cb60896b259124e2c38d7dd0248ec4b112c979",
+        "original_commit_id": "382b148629c179a5a6c6b95d45252df83b05991e",
+        "user": {
+            "login": "mgravell",
+            "id": 17328,
+            "node_id": "MDQ6VXNlcjE3MzI4",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/17328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mgravell",
+            "html_url": "https://github.com/mgravell",
+            "followers_url": "https://api.github.com/users/mgravell/followers",
+            "following_url": "https://api.github.com/users/mgravell/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mgravell/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mgravell/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mgravell/subscriptions",
+            "organizations_url": "https://api.github.com/users/mgravell/orgs",
+            "repos_url": "https://api.github.com/users/mgravell/repos",
+            "events_url": "https://api.github.com/users/mgravell/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mgravell/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this is fine \"as is\" - but: we should make sure it is running through the *language specific* `Escape` method; and in particular, we should change that `Escape` method so that if the first character isn't valid for a name, we should add a `_` prefix. In reality, this means that the C# and VB generator's `Escape` method should just check \"is the first character a number?\" - and if so, prefix with `_`.",
+        "created_at": "2018-06-22T20:37:03Z",
+        "updated_at": "2018-06-23T05:22:28Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/407#discussion_r197562764",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/407",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/197562764"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/407#discussion_r197562764"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/407"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/197563176",
+        "pull_request_review_id": 131338439,
+        "id": 197563176,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzU2MzE3Ng==",
+        "diff_hunk": "@@ -30,7 +30,7 @@ public abstract class CodeGenerator\n         /// <summary>\n         /// Execute the code generator against a FileDescriptorSet, yielding a sequence of files\n         /// </summary>\n-        public abstract IEnumerable<CodeFile> Generate(FileDescriptorSet set, NameNormalizer normalizer = null, Dictionary<string, string> options = null);\n+        public abstract IEnumerable<CodeFile> Generate(FileDescriptorSet set, NameNormalizer normalizer = null, Dictionary<string, string> options = null, Dictionary<string, string> customNamesConversion = null);",
+        "path": "src/protobuf-net.Reflection/CodeGenerator.cs",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "69cb60896b259124e2c38d7dd0248ec4b112c979",
+        "original_commit_id": "382b148629c179a5a6c6b95d45252df83b05991e",
+        "user": {
+            "login": "mgravell",
+            "id": 17328,
+            "node_id": "MDQ6VXNlcjE3MzI4",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/17328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mgravell",
+            "html_url": "https://github.com/mgravell",
+            "followers_url": "https://api.github.com/users/mgravell/followers",
+            "following_url": "https://api.github.com/users/mgravell/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mgravell/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mgravell/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mgravell/subscriptions",
+            "organizations_url": "https://api.github.com/users/mgravell/orgs",
+            "repos_url": "https://api.github.com/users/mgravell/repos",
+            "events_url": "https://api.github.com/users/mgravell/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mgravell/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "breaking change; needs to be binary compatible - add as new overload, and change the *old* version so that all params are required. The alternative is we say \"to hell with it\", break binary compatibilty, and increment the \"major\". I'd rather not do that.",
+        "created_at": "2018-06-22T20:38:46Z",
+        "updated_at": "2018-06-23T05:22:28Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/407#discussion_r197563176",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/407",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/197563176"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/407#discussion_r197563176"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/407"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/197563387",
+        "pull_request_review_id": 131338439,
+        "id": 197563387,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzU2MzM4Nw==",
+        "diff_hunk": "@@ -143,7 +143,7 @@ public virtual string GetAccess(Access access)\n         /// <summary>\n         /// Execute the code generator against a FileDescriptorSet, yielding a sequence of files\n         /// </summary>\n-        public override IEnumerable<CodeFile> Generate(FileDescriptorSet set, NameNormalizer normalizer = null, Dictionary<string, string> options = null)\n+        public override IEnumerable<CodeFile> Generate(FileDescriptorSet set, NameNormalizer normalizer = null, Dictionary<string, string> options = null, Dictionary<string, string> customNamesConversion = null)",
+        "path": "src/protobuf-net.Reflection/CodeGenerator.cs",
+        "position": 16,
+        "original_position": 14,
+        "commit_id": "69cb60896b259124e2c38d7dd0248ec4b112c979",
+        "original_commit_id": "382b148629c179a5a6c6b95d45252df83b05991e",
+        "user": {
+            "login": "mgravell",
+            "id": 17328,
+            "node_id": "MDQ6VXNlcjE3MzI4",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/17328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mgravell",
+            "html_url": "https://github.com/mgravell",
+            "followers_url": "https://api.github.com/users/mgravell/followers",
+            "following_url": "https://api.github.com/users/mgravell/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mgravell/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mgravell/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mgravell/subscriptions",
+            "organizations_url": "https://api.github.com/users/mgravell/orgs",
+            "repos_url": "https://api.github.com/users/mgravell/repos",
+            "events_url": "https://api.github.com/users/mgravell/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mgravell/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "here we are fine to just add the param - as the `override` is just going to override the more specific one, the one that will get called *anyway*.",
+        "created_at": "2018-06-22T20:39:42Z",
+        "updated_at": "2018-06-23T05:22:28Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/407#discussion_r197563387",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/407",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/197563387"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/407#discussion_r197563387"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/407"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/207747091",
+        "pull_request_review_id": 143421527,
+        "id": 207747091,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwNzc0NzA5MQ==",
+        "diff_hunk": "@@ -333,143 +358,143 @@ private void Log(string message)\n                 Debug.WriteLine(\"[\" + LongPosition.ToString() + \"] \" + message);\n #endif\n             }\n-            [MethodImpl(MethodImplOptions.NoInlining)]\n-            private int TryReadUInt32VarintWithoutMovingSlow(Read32VarintMode mode, out uint value)\n-            {\n-                Span<byte> span = stackalloc byte[20];\n-                var available = ImplPeekBytes(span);\n-                if (available != 20) span = span.Slice(0, available);\n-                var read = TryParseUInt32Varint(mode == Read32VarintMode.Signed, span, 0, out value);\n-                Log($\"T32! - {read}:{value}\");\n-                if (read != 0 && mode == Read32VarintMode.FieldHeader) ReadPreviewField(value, span, read);\n-                return read;\n-            }\n+\n             private protected override int ImplTryReadUInt64VarintWithoutMoving(ref State state, out ulong value)\n             {\n-                var read = previewFieldBytes;\n-                if (read != 0)\n+                if (previewFieldBytes != 0)\n                 {\n+                    var read = previewFieldBytes;\n                     value = checked((uint)PeekPreviewField());\n                     Log($\"T64* - {read}:{value}\");\n                     return read;\n                 }\n \n                 if (GetSomeData(false) >= 10)\n                 {\n-                    read = TryParseUInt64Varint(Peek(out var offset), offset, out value);\n+                    var read = TryParseUInt64Varint(Peek(out var offset), offset, out value);\n                     Log($\"T64 - {read}:{value}\");\n                     return read;\n                 }\n+                else\n+                {\n+                    return ViaStackAlloc(out value);\n+                }\n \n-                Span<byte> span = stackalloc byte[10];\n-                read = ImplPeekBytes(span);\n-                if (read != 10) span = span.Slice(0, read);\n-                read = TryParseUInt64Varint(span, 0, out value);\n-                Log($\"T64! - {read}:{value}\");\n-                return read;\n+                int ViaStackAlloc(out ulong val)\n+                {\n+                    Span<byte> span = stackalloc byte[10];\n+                    var read = ImplPeekBytes(span);\n+                    if (read != 10) span = span.Slice(0, read);\n+                    read = TryParseUInt64Varint(span, 0, out val);\n+                    Log($\"T64! - {read}:{val}\");\n+                    return read;\n+                }\n             }\n+\n+\n             private int TryParseUInt32Varint(bool trimNegative, ReadOnlySpan<byte> span, int offset, out uint value)\n             {\n-                var available = span.Length - offset;\n-                if (available == 0)\n+                if (0 >= (uint)span.Length)\n                 {\n                     value = 0;\n                     return 0;\n                 }\n-                value = span[offset++];\n+\n+                value = span[0];",
+        "path": "src/protobuf-net/ProtoReader.ReadOnlySequence.cs",
+        "position": null,
+        "original_position": 146,
+        "commit_id": "cd21fe8277e7d977a87c0f71b36166343b876d99",
+        "original_commit_id": "71d9716662043284ddc5afc206280857cc622042",
+        "user": {
+            "login": "mgravell",
+            "id": 17328,
+            "node_id": "MDQ6VXNlcjE3MzI4",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/17328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mgravell",
+            "html_url": "https://github.com/mgravell",
+            "followers_url": "https://api.github.com/users/mgravell/followers",
+            "following_url": "https://api.github.com/users/mgravell/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mgravell/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mgravell/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mgravell/subscriptions",
+            "organizations_url": "https://api.github.com/users/mgravell/orgs",
+            "repos_url": "https://api.github.com/users/mgravell/repos",
+            "events_url": "https://api.github.com/users/mgravell/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mgravell/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm concerned that offset has been lost here; the intent of offset was to avoid slicing in common in-situ scenarios... it looks like this will read the wrong data?",
+        "created_at": "2018-08-05T20:08:19Z",
+        "updated_at": "2018-08-05T20:23:15Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/434#discussion_r207747091",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/434",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/207747091"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/434#discussion_r207747091"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/434"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/207747215",
+        "pull_request_review_id": 143421653,
+        "id": 207747215,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwNzc0NzIxNQ==",
+        "diff_hunk": "@@ -333,143 +358,143 @@ private void Log(string message)\n                 Debug.WriteLine(\"[\" + LongPosition.ToString() + \"] \" + message);\n #endif\n             }\n-            [MethodImpl(MethodImplOptions.NoInlining)]\n-            private int TryReadUInt32VarintWithoutMovingSlow(Read32VarintMode mode, out uint value)\n-            {\n-                Span<byte> span = stackalloc byte[20];\n-                var available = ImplPeekBytes(span);\n-                if (available != 20) span = span.Slice(0, available);\n-                var read = TryParseUInt32Varint(mode == Read32VarintMode.Signed, span, 0, out value);\n-                Log($\"T32! - {read}:{value}\");\n-                if (read != 0 && mode == Read32VarintMode.FieldHeader) ReadPreviewField(value, span, read);\n-                return read;\n-            }\n+\n             private protected override int ImplTryReadUInt64VarintWithoutMoving(ref State state, out ulong value)\n             {\n-                var read = previewFieldBytes;\n-                if (read != 0)\n+                if (previewFieldBytes != 0)\n                 {\n+                    var read = previewFieldBytes;\n                     value = checked((uint)PeekPreviewField());\n                     Log($\"T64* - {read}:{value}\");\n                     return read;\n                 }\n \n                 if (GetSomeData(false) >= 10)\n                 {\n-                    read = TryParseUInt64Varint(Peek(out var offset), offset, out value);\n+                    var read = TryParseUInt64Varint(Peek(out var offset), offset, out value);\n                     Log($\"T64 - {read}:{value}\");\n                     return read;\n                 }\n+                else\n+                {\n+                    return ViaStackAlloc(out value);\n+                }\n \n-                Span<byte> span = stackalloc byte[10];\n-                read = ImplPeekBytes(span);\n-                if (read != 10) span = span.Slice(0, read);\n-                read = TryParseUInt64Varint(span, 0, out value);\n-                Log($\"T64! - {read}:{value}\");\n-                return read;\n+                int ViaStackAlloc(out ulong val)\n+                {\n+                    Span<byte> span = stackalloc byte[10];\n+                    var read = ImplPeekBytes(span);\n+                    if (read != 10) span = span.Slice(0, read);\n+                    read = TryParseUInt64Varint(span, 0, out val);\n+                    Log($\"T64! - {read}:{val}\");\n+                    return read;\n+                }\n             }\n+\n+\n             private int TryParseUInt32Varint(bool trimNegative, ReadOnlySpan<byte> span, int offset, out uint value)\n             {\n-                var available = span.Length - offset;\n-                if (available == 0)\n+                if (0 >= (uint)span.Length)\n                 {\n                     value = 0;\n                     return 0;\n                 }\n-                value = span[offset++];\n+\n+                value = span[0];",
+        "path": "src/protobuf-net/ProtoReader.ReadOnlySequence.cs",
+        "position": null,
+        "original_position": 146,
+        "commit_id": "cd21fe8277e7d977a87c0f71b36166343b876d99",
+        "original_commit_id": "71d9716662043284ddc5afc206280857cc622042",
+        "user": {
+            "login": "benaadams",
+            "id": 1142958,
+            "node_id": "MDQ6VXNlcjExNDI5NTg=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1142958?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benaadams",
+            "html_url": "https://github.com/benaadams",
+            "followers_url": "https://api.github.com/users/benaadams/followers",
+            "following_url": "https://api.github.com/users/benaadams/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benaadams/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benaadams/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benaadams/subscriptions",
+            "organizations_url": "https://api.github.com/users/benaadams/orgs",
+            "repos_url": "https://api.github.com/users/benaadams/repos",
+            "events_url": "https://api.github.com/users/benaadams/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benaadams/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ah, copy paste issue :)",
+        "created_at": "2018-08-05T20:13:17Z",
+        "updated_at": "2018-08-05T20:23:15Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/434#discussion_r207747215",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/434",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/207747215"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/434#discussion_r207747215"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/434"
+            }
+        },
+        "in_reply_to_id": 207747091
+    },
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/207747437",
+        "pull_request_review_id": 143421864,
+        "id": 207747437,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwNzc0NzQzNw==",
+        "diff_hunk": "@@ -333,143 +358,143 @@ private void Log(string message)\n                 Debug.WriteLine(\"[\" + LongPosition.ToString() + \"] \" + message);\n #endif\n             }\n-            [MethodImpl(MethodImplOptions.NoInlining)]\n-            private int TryReadUInt32VarintWithoutMovingSlow(Read32VarintMode mode, out uint value)\n-            {\n-                Span<byte> span = stackalloc byte[20];\n-                var available = ImplPeekBytes(span);\n-                if (available != 20) span = span.Slice(0, available);\n-                var read = TryParseUInt32Varint(mode == Read32VarintMode.Signed, span, 0, out value);\n-                Log($\"T32! - {read}:{value}\");\n-                if (read != 0 && mode == Read32VarintMode.FieldHeader) ReadPreviewField(value, span, read);\n-                return read;\n-            }\n+\n             private protected override int ImplTryReadUInt64VarintWithoutMoving(ref State state, out ulong value)\n             {\n-                var read = previewFieldBytes;\n-                if (read != 0)\n+                if (previewFieldBytes != 0)\n                 {\n+                    var read = previewFieldBytes;\n                     value = checked((uint)PeekPreviewField());\n                     Log($\"T64* - {read}:{value}\");\n                     return read;\n                 }\n \n                 if (GetSomeData(false) >= 10)\n                 {\n-                    read = TryParseUInt64Varint(Peek(out var offset), offset, out value);\n+                    var read = TryParseUInt64Varint(Peek(out var offset), offset, out value);\n                     Log($\"T64 - {read}:{value}\");\n                     return read;\n                 }\n+                else\n+                {\n+                    return ViaStackAlloc(out value);\n+                }\n \n-                Span<byte> span = stackalloc byte[10];\n-                read = ImplPeekBytes(span);\n-                if (read != 10) span = span.Slice(0, read);\n-                read = TryParseUInt64Varint(span, 0, out value);\n-                Log($\"T64! - {read}:{value}\");\n-                return read;\n+                int ViaStackAlloc(out ulong val)\n+                {\n+                    Span<byte> span = stackalloc byte[10];\n+                    var read = ImplPeekBytes(span);\n+                    if (read != 10) span = span.Slice(0, read);\n+                    read = TryParseUInt64Varint(span, 0, out val);\n+                    Log($\"T64! - {read}:{val}\");\n+                    return read;\n+                }\n             }\n+\n+\n             private int TryParseUInt32Varint(bool trimNegative, ReadOnlySpan<byte> span, int offset, out uint value)\n             {\n-                var available = span.Length - offset;\n-                if (available == 0)\n+                if (0 >= (uint)span.Length)\n                 {\n                     value = 0;\n                     return 0;\n                 }\n-                value = span[offset++];\n+\n+                value = span[0];",
+        "path": "src/protobuf-net/ProtoReader.ReadOnlySequence.cs",
+        "position": null,
+        "original_position": 146,
+        "commit_id": "cd21fe8277e7d977a87c0f71b36166343b876d99",
+        "original_commit_id": "71d9716662043284ddc5afc206280857cc622042",
+        "user": {
+            "login": "benaadams",
+            "id": 1142958,
+            "node_id": "MDQ6VXNlcjExNDI5NTg=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1142958?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benaadams",
+            "html_url": "https://github.com/benaadams",
+            "followers_url": "https://api.github.com/users/benaadams/followers",
+            "following_url": "https://api.github.com/users/benaadams/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benaadams/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benaadams/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benaadams/subscriptions",
+            "organizations_url": "https://api.github.com/users/benaadams/orgs",
+            "repos_url": "https://api.github.com/users/benaadams/repos",
+            "events_url": "https://api.github.com/users/benaadams/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benaadams/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Better?",
+        "created_at": "2018-08-05T20:23:15Z",
+        "updated_at": "2018-08-05T20:23:16Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/434#discussion_r207747437",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/434",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/207747437"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/434#discussion_r207747437"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/434"
+            }
+        },
+        "in_reply_to_id": 207747091
+    },
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/253797932",
+        "pull_request_review_id": 199990479,
+        "id": 253797932,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1Mzc5NzkzMg==",
+        "diff_hunk": "@@ -709,6 +709,36 @@ protected override void WriteExtension(GeneratorContext ctx, FieldDescriptorProt\n             }\n         }\n \n+        /// <summary>\n+        /// Starts a service block\n+        /// </summary>\n+        protected override void WriteServiceHeader(GeneratorContext ctx, ServiceDescriptorProto service, ref object state)\n+        {\n+            var name = service.Name;\n+            ctx.WriteLine($\"{GetAccess(GetAccess(service))} interface I{Escape(name)}\").WriteLine(\"{\").Indent();\n+        }\n+        /// <summary>\n+        /// Ends an service block\n+        /// </summary>\n+        protected override void WriteServiceFooter(GeneratorContext ctx, ServiceDescriptorProto service, ref object state)\n+        {\n+            ctx.Outdent().WriteLine(\"}\").WriteLine();\n+        }\n+        /// <summary>\n+        /// Write a service method\n+        /// </summary>\n+        protected override void WriteServiceMethod(GeneratorContext ctx, MethodDescriptorProto method, ref object state)\n+        {\n+            var outputType = method.OutputType;\n+            var inputType = method.InputType;\n+\n+            // TODO: What does this signify?",
+        "path": "src/protobuf-net.Reflection/CSharpCodeGenerator.cs",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "57d311388bb1bf7a4f6ad2d5c1cee8bbb206582d",
+        "original_commit_id": "ccaf344b933a95a622c29798f1da1225607f5bb4",
+        "user": {
+            "login": "mgravell",
+            "id": 17328,
+            "node_id": "MDQ6VXNlcjE3MzI4",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/17328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mgravell",
+            "html_url": "https://github.com/mgravell",
+            "followers_url": "https://api.github.com/users/mgravell/followers",
+            "following_url": "https://api.github.com/users/mgravell/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mgravell/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mgravell/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mgravell/subscriptions",
+            "organizations_url": "https://api.github.com/users/mgravell/orgs",
+            "repos_url": "https://api.github.com/users/mgravell/repos",
+            "events_url": "https://api.github.com/users/mgravell/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mgravell/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "that's just how types are fully qualified when resolved via protobuf (especially when it comes from external schemas) you might want to look at `GetTypeName`, noting that IIRC we're always talking about a *message* type here; it may be sufficient to either move or copy the code from `case FieldDescriptorProto.Type.TypeMessage`, so you handle the special types, but the key parts are probably `ctx.TryFind<DescriptorProto>(name)` and `MakeRelativeName`",
+        "created_at": "2019-02-05T10:01:49Z",
+        "updated_at": "2019-02-05T11:55:01Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/492#discussion_r253797932",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/492",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/253797932"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/492#discussion_r253797932"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/492"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/253800813",
+        "pull_request_review_id": 199994042,
+        "id": 253800813,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MzgwMDgxMw==",
+        "diff_hunk": "@@ -709,6 +709,36 @@ protected override void WriteExtension(GeneratorContext ctx, FieldDescriptorProt\n             }\n         }\n \n+        /// <summary>\n+        /// Starts a service block\n+        /// </summary>\n+        protected override void WriteServiceHeader(GeneratorContext ctx, ServiceDescriptorProto service, ref object state)\n+        {\n+            var name = service.Name;\n+            ctx.WriteLine($\"{GetAccess(GetAccess(service))} interface I{Escape(name)}\").WriteLine(\"{\").Indent();\n+        }\n+        /// <summary>\n+        /// Ends an service block\n+        /// </summary>\n+        protected override void WriteServiceFooter(GeneratorContext ctx, ServiceDescriptorProto service, ref object state)\n+        {\n+            ctx.Outdent().WriteLine(\"}\").WriteLine();\n+        }\n+        /// <summary>\n+        /// Write a service method\n+        /// </summary>\n+        protected override void WriteServiceMethod(GeneratorContext ctx, MethodDescriptorProto method, ref object state)\n+        {\n+            var outputType = method.OutputType;\n+            var inputType = method.InputType;\n+\n+            // TODO: What does this signify?",
+        "path": "src/protobuf-net.Reflection/CSharpCodeGenerator.cs",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "57d311388bb1bf7a4f6ad2d5c1cee8bbb206582d",
+        "original_commit_id": "ccaf344b933a95a622c29798f1da1225607f5bb4",
+        "user": {
+            "login": "xPaw",
+            "id": 613331,
+            "node_id": "MDQ6VXNlcjYxMzMzMQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/613331?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/xPaw",
+            "html_url": "https://github.com/xPaw",
+            "followers_url": "https://api.github.com/users/xPaw/followers",
+            "following_url": "https://api.github.com/users/xPaw/following{/other_user}",
+            "gists_url": "https://api.github.com/users/xPaw/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/xPaw/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/xPaw/subscriptions",
+            "organizations_url": "https://api.github.com/users/xPaw/orgs",
+            "repos_url": "https://api.github.com/users/xPaw/repos",
+            "events_url": "https://api.github.com/users/xPaw/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/xPaw/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Are you saying `ctx.TryFind<DescriptorProto>(method.OutputType)` is what should be done?\r\n\r\n`MakeRelativeName` only accepts `FieldDescriptorProto`, not sure if its better to make a new method, or just copy the code over, because it will need to return both input and output names.",
+        "created_at": "2019-02-05T10:10:16Z",
+        "updated_at": "2019-02-05T11:55:01Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/492#discussion_r253800813",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/492",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/253800813"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/492#discussion_r253800813"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/492"
+            }
+        },
+        "in_reply_to_id": 253797932
+    },
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/253818832",
+        "pull_request_review_id": 200016803,
+        "id": 253818832,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MzgxODgzMg==",
+        "diff_hunk": "@@ -709,6 +709,62 @@ protected override void WriteExtension(GeneratorContext ctx, FieldDescriptorProt\n             }\n         }\n \n+        /// <summary>\n+        /// Starts a service block\n+        /// </summary>\n+        protected override void WriteServiceHeader(GeneratorContext ctx, ServiceDescriptorProto service, ref object state)\n+        {\n+            var name = service.Name;\n+            ctx.WriteLine($\"{GetAccess(GetAccess(service))} interface I{Escape(name)}\").WriteLine(\"{\").Indent();\n+        }\n+        /// <summary>\n+        /// Ends a service block\n+        /// </summary>\n+        protected override void WriteServiceFooter(GeneratorContext ctx, ServiceDescriptorProto service, ref object state)\n+        {\n+            ctx.Outdent().WriteLine(\"}\").WriteLine();\n+        }\n+        /// <summary>\n+        /// Write a service method\n+        /// </summary>\n+        protected override void WriteServiceMethod(GeneratorContext ctx, MethodDescriptorProto method, ref object state)\n+        {\n+            var outputType = Escape(method.OutputType);\n+            var inputType = Escape(method.InputType);\n+\n+            var target = ctx.TryFind<DescriptorProto>(method.OutputType);\n+            if (target != null)\n+            {\n+                var declaringType = target.Parent;\n+\n+                if (declaringType is IType type)\n+                {\n+                    var name = FindNameFromCommonAncestor(type, target, ctx.NameNormalizer);\n+                    if (!string.IsNullOrWhiteSpace(name))\n+                    {\n+                        outputType = name;\n+                    }\n+                }\n+            }\n+\n+            target = ctx.TryFind<DescriptorProto>(method.InputType);\n+            if (target != null)",
+        "path": "src/protobuf-net.Reflection/CSharpCodeGenerator.cs",
+        "position": null,
+        "original_position": 43,
+        "commit_id": "57d311388bb1bf7a4f6ad2d5c1cee8bbb206582d",
+        "original_commit_id": "45fbdba8742a1a1c10f93697c493eab9f896bbb4",
+        "user": {
+            "login": "mgravell",
+            "id": 17328,
+            "node_id": "MDQ6VXNlcjE3MzI4",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/17328?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mgravell",
+            "html_url": "https://github.com/mgravell",
+            "followers_url": "https://api.github.com/users/mgravell/followers",
+            "following_url": "https://api.github.com/users/mgravell/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mgravell/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mgravell/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mgravell/subscriptions",
+            "organizations_url": "https://api.github.com/users/mgravell/orgs",
+            "repos_url": "https://api.github.com/users/mgravell/repos",
+            "events_url": "https://api.github.com/users/mgravell/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mgravell/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: it feels like this is pure duplication - maybe a local function would be appropriate here?",
+        "created_at": "2019-02-05T11:05:17Z",
+        "updated_at": "2019-02-05T11:55:01Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/492#discussion_r253818832",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/492",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/253818832"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/492#discussion_r253818832"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/492"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/253831996",
+        "pull_request_review_id": 200033241,
+        "id": 253831996,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MzgzMTk5Ng==",
+        "diff_hunk": "@@ -709,6 +709,62 @@ protected override void WriteExtension(GeneratorContext ctx, FieldDescriptorProt\n             }\n         }\n \n+        /// <summary>\n+        /// Starts a service block\n+        /// </summary>\n+        protected override void WriteServiceHeader(GeneratorContext ctx, ServiceDescriptorProto service, ref object state)\n+        {\n+            var name = service.Name;\n+            ctx.WriteLine($\"{GetAccess(GetAccess(service))} interface I{Escape(name)}\").WriteLine(\"{\").Indent();\n+        }\n+        /// <summary>\n+        /// Ends a service block\n+        /// </summary>\n+        protected override void WriteServiceFooter(GeneratorContext ctx, ServiceDescriptorProto service, ref object state)\n+        {\n+            ctx.Outdent().WriteLine(\"}\").WriteLine();\n+        }\n+        /// <summary>\n+        /// Write a service method\n+        /// </summary>\n+        protected override void WriteServiceMethod(GeneratorContext ctx, MethodDescriptorProto method, ref object state)\n+        {\n+            var outputType = Escape(method.OutputType);\n+            var inputType = Escape(method.InputType);\n+\n+            var target = ctx.TryFind<DescriptorProto>(method.OutputType);\n+            if (target != null)\n+            {\n+                var declaringType = target.Parent;",
+        "path": "src/protobuf-net.Reflection/CSharpCodeGenerator.cs",
+        "position": null,
+        "original_position": 30,
+        "commit_id": "57d311388bb1bf7a4f6ad2d5c1cee8bbb206582d",
+        "original_commit_id": "45fbdba8742a1a1c10f93697c493eab9f896bbb4",
+        "user": {
+            "login": "xPaw",
+            "id": 613331,
+            "node_id": "MDQ6VXNlcjYxMzMzMQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/613331?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/xPaw",
+            "html_url": "https://github.com/xPaw",
+            "followers_url": "https://api.github.com/users/xPaw/followers",
+            "following_url": "https://api.github.com/users/xPaw/following{/other_user}",
+            "gists_url": "https://api.github.com/users/xPaw/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/xPaw/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/xPaw/subscriptions",
+            "organizations_url": "https://api.github.com/users/xPaw/orgs",
+            "repos_url": "https://api.github.com/users/xPaw/repos",
+            "events_url": "https://api.github.com/users/xPaw/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/xPaw/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I used `Parent` from `TryFind` here, does that sound correct?\r\n\r\nI don't see any parents on service method directly.",
+        "created_at": "2019-02-05T11:50:13Z",
+        "updated_at": "2019-02-05T11:55:01Z",
+        "html_url": "https://github.com/mgravell/protobuf-net/pull/492#discussion_r253831996",
+        "pull_request_url": "https://api.github.com/repos/mgravell/protobuf-net/pulls/492",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/comments/253831996"
+            },
+            "html": {
+                "href": "https://github.com/mgravell/protobuf-net/pull/492#discussion_r253831996"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mgravell/protobuf-net/pulls/492"
+            }
+        }
+    }
+]

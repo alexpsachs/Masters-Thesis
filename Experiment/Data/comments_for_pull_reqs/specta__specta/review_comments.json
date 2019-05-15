@@ -1,0 +1,639 @@
+[
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/7212483",
+        "pull_request_review_id": null,
+        "id": 7212483,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMTI0ODM=",
+        "diff_hunk": "@@ -7,13 +7,13 @@\n ;\n \n @interface SPTSenTestCase : SenTestCase {\n-  NSInvocation *_SPT_invocation;\n-  SenTestCaseRun *_SPT_run;\n+  NSInvocation *__strong _SPT_invocation;",
+        "path": "src/SPTSenTestCase.h",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "acefa7452975d4ea06c706cd6a08d100e325325a",
+        "original_commit_id": "0699dd9d8389b45d44351215cf894311ba439431",
+        "user": {
+            "login": "robb",
+            "id": 212465,
+            "node_id": "MDQ6VXNlcjIxMjQ2NQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/212465?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/robb",
+            "html_url": "https://github.com/robb",
+            "followers_url": "https://api.github.com/users/robb/followers",
+            "following_url": "https://api.github.com/users/robb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/robb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/robb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/robb/subscriptions",
+            "organizations_url": "https://api.github.com/users/robb/orgs",
+            "repos_url": "https://api.github.com/users/robb/repos",
+            "events_url": "https://api.github.com/users/robb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/robb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "more ivars that can be removed\n",
+        "created_at": "2013-10-25T10:35:42Z",
+        "updated_at": "2013-10-26T00:23:59Z",
+        "html_url": "https://github.com/specta/specta/pull/49#discussion_r7212483",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/49",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/7212483"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/49#discussion_r7212483"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/49"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/27654580",
+        "pull_request_review_id": null,
+        "id": 27654580,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NjU0NTgw",
+        "diff_hunk": "@@ -23,15 +19,7 @@\n     for(int classIndex = 0; classIndex < numberOfClasses; classIndex++) {\n       Class aClass = classes[classIndex];\n \n-      if (class_conformsToProtocol(aClass, @protocol(SPTExcludeGlobalBeforeAfterEach)) == NO) {\n-        // If you're seeing a crash here then your probably have to blacklist crashing class from global before/after hooks.\n-        // Specta supports blacklisting specific Classes from being treated as before/after helper classes\n-        // to add an new class to the list add the following lines to a project initialiser ( e.g. App Delegate callbacks )\n-        //\n-        //  Class myClass = NSClassFromString(@\"MyClass\");\n-        //  class_addProtocol(myClass, @protocol(SPTExcludeGlobalBeforeAfterEach));\n-        //\n-        //  You can also create a category for that class which implements SPTExcludeGlobalBeforeAfterEach.\n+      if (class_conformsToProtocol(aClass, @protocol(SPTIncludeGlobalBeforeAfterEach)) == YES) {",
+        "path": "Specta/Specta/SPTExampleGroup.m",
+        "position": null,
+        "original_position": 32,
+        "commit_id": "a0907690dd0ac0accde756badfa1ea62566974c6",
+        "original_commit_id": "3d49635ea63d26b7b961afb398761fb08c5d21f2",
+        "user": {
+            "login": "modocache",
+            "id": 552921,
+            "node_id": "MDQ6VXNlcjU1MjkyMQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/552921?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/modocache",
+            "html_url": "https://github.com/modocache",
+            "followers_url": "https://api.github.com/users/modocache/followers",
+            "following_url": "https://api.github.com/users/modocache/following{/other_user}",
+            "gists_url": "https://api.github.com/users/modocache/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/modocache/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/modocache/subscriptions",
+            "organizations_url": "https://api.github.com/users/modocache/orgs",
+            "repos_url": "https://api.github.com/users/modocache/repos",
+            "events_url": "https://api.github.com/users/modocache/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/modocache/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Couldn't this just be:\n\n``` objc\nif (class_conformsToProtocol(aClass, @protocol(SPTIncludeGlobalBeforeAfterEach))) {\n  // ...\n}\n```\n",
+        "created_at": "2015-04-02T13:09:35Z",
+        "updated_at": "2015-04-02T18:13:11Z",
+        "html_url": "https://github.com/specta/specta/pull/149#discussion_r27654580",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/149",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/27654580"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/149#discussion_r27654580"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/27654597",
+        "pull_request_review_id": null,
+        "id": 27654597,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NjU0NTk3",
+        "diff_hunk": "@@ -4,17 +4,13 @@\n #import \"SPTSpec.h\"\n #import \"SpectaUtility.h\"\n #import \"XCTest+Private.h\"\n-#import \"SPTExcludeGlobalBeforeAfterEach.h\"\n+#import \"SPTIncludeGlobalBeforeAfterEach.h\"\n #import <libkern/OSAtomic.h>\n #import <objc/runtime.h>\n \n static NSArray *ClassesWithClassMethod(SEL classMethodSelector) {\n   NSMutableArray *classesWithClassMethod = [[NSMutableArray alloc] init];\n \n-  //TODO: need a better place for this\n-  Class accessbilitySafeCategoryClass = NSClassFromString(@\"UIAccessibilitySafeCategory__NSObject\");\n-  class_addProtocol(accessbilitySafeCategoryClass, @protocol(SPTExcludeGlobalBeforeAfterEach));",
+        "path": "Specta/Specta/SPTExampleGroup.m",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "a0907690dd0ac0accde756badfa1ea62566974c6",
+        "original_commit_id": "3d49635ea63d26b7b961afb398761fb08c5d21f2",
+        "user": {
+            "login": "modocache",
+            "id": 552921,
+            "node_id": "MDQ6VXNlcjU1MjkyMQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/552921?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/modocache",
+            "html_url": "https://github.com/modocache",
+            "followers_url": "https://api.github.com/users/modocache/followers",
+            "following_url": "https://api.github.com/users/modocache/following{/other_user}",
+            "gists_url": "https://api.github.com/users/modocache/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/modocache/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/modocache/subscriptions",
+            "organizations_url": "https://api.github.com/users/modocache/orgs",
+            "repos_url": "https://api.github.com/users/modocache/repos",
+            "events_url": "https://api.github.com/users/modocache/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/modocache/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": ":+1: :tada: \n",
+        "created_at": "2015-04-02T13:09:48Z",
+        "updated_at": "2015-04-02T18:13:11Z",
+        "html_url": "https://github.com/specta/specta/pull/149#discussion_r27654597",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/149",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/27654597"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/149#discussion_r27654597"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/27654661",
+        "pull_request_review_id": null,
+        "id": 27654661,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NjU0NjYx",
+        "diff_hunk": "@@ -0,0 +1,15 @@\n+/*\n+ * Copyright (c) 2015 Specta Team. All rights reserved.\n+ */\n+#import <Foundation/Foundation.h>\n+\n+// This protocol is used for whitelisting classes for global beforeEach and afterEach blocks.\n+// If you want a class to participate in those just add this protocol to a category and it will be\n+// included.\n+@protocol SPTIncludeGlobalBeforeAfterEach <NSObject>",
+        "path": "Specta/Specta/SPTIncludeGlobalBeforeAfterEach.h",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "a0907690dd0ac0accde756badfa1ea62566974c6",
+        "original_commit_id": "3d49635ea63d26b7b961afb398761fb08c5d21f2",
+        "user": {
+            "login": "modocache",
+            "id": 552921,
+            "node_id": "MDQ6VXNlcjU1MjkyMQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/552921?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/modocache",
+            "html_url": "https://github.com/modocache",
+            "followers_url": "https://api.github.com/users/modocache/followers",
+            "following_url": "https://api.github.com/users/modocache/following{/other_user}",
+            "gists_url": "https://api.github.com/users/modocache/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/modocache/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/modocache/subscriptions",
+            "organizations_url": "https://api.github.com/users/modocache/orgs",
+            "repos_url": "https://api.github.com/users/modocache/repos",
+            "events_url": "https://api.github.com/users/modocache/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/modocache/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "A nitpick, but I think this reads better as `SPTGlobalBeforeAfterEach`. `Exclude` made sense, `Include` seems redundant.\n",
+        "created_at": "2015-04-02T13:10:41Z",
+        "updated_at": "2015-04-02T18:13:11Z",
+        "html_url": "https://github.com/specta/specta/pull/149#discussion_r27654661",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/149",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/27654661"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/149#discussion_r27654661"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/27654776",
+        "pull_request_review_id": null,
+        "id": 27654776,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NjU0Nzc2",
+        "diff_hunk": "@@ -3,8 +3,8 @@\n  */\n #import <Foundation/Foundation.h>\n \n-// This protocol is used for blacklisting classes for global beforeEach and afterEach blocks.\n-// If you do not want a class to participate in those just add this protocol to a category and it will be\n-// excluded.\n+// This protocol was used for blacklisting classes for global beforeEach and afterEach blocks.\n+// Now, instead, classes are whitelisted by implementing the SPTIncludeGlobalBeforeAfterEach protocol.\n+__deprecated",
+        "path": "Specta/Specta/SPTExcludeGlobalBeforeAfterEach.h",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "a0907690dd0ac0accde756badfa1ea62566974c6",
+        "original_commit_id": "3d49635ea63d26b7b961afb398761fb08c5d21f2",
+        "user": {
+            "login": "modocache",
+            "id": 552921,
+            "node_id": "MDQ6VXNlcjU1MjkyMQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/552921?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/modocache",
+            "html_url": "https://github.com/modocache",
+            "followers_url": "https://api.github.com/users/modocache/followers",
+            "following_url": "https://api.github.com/users/modocache/following{/other_user}",
+            "gists_url": "https://api.github.com/users/modocache/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/modocache/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/modocache/subscriptions",
+            "organizations_url": "https://api.github.com/users/modocache/orgs",
+            "repos_url": "https://api.github.com/users/modocache/repos",
+            "events_url": "https://api.github.com/users/modocache/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/modocache/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@orta, what are your thoughts on deprecating this vs. removing it altogether? In comments on #148 you seemed gung-ho for moving fast, breaking things (smirk), and bumping Specta to 1.0.\n",
+        "created_at": "2015-04-02T13:12:22Z",
+        "updated_at": "2015-04-02T18:13:11Z",
+        "html_url": "https://github.com/specta/specta/pull/149#discussion_r27654776",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/149",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/27654776"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/149#discussion_r27654776"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/27655248",
+        "pull_request_review_id": null,
+        "id": 27655248,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NjU1MjQ4",
+        "diff_hunk": "@@ -3,8 +3,8 @@\n  */\n #import <Foundation/Foundation.h>\n \n-// This protocol is used for blacklisting classes for global beforeEach and afterEach blocks.\n-// If you do not want a class to participate in those just add this protocol to a category and it will be\n-// excluded.\n+// This protocol was used for blacklisting classes for global beforeEach and afterEach blocks.\n+// Now, instead, classes are whitelisted by implementing the SPTIncludeGlobalBeforeAfterEach protocol.\n+__deprecated",
+        "path": "Specta/Specta/SPTExcludeGlobalBeforeAfterEach.h",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "a0907690dd0ac0accde756badfa1ea62566974c6",
+        "original_commit_id": "3d49635ea63d26b7b961afb398761fb08c5d21f2",
+        "user": {
+            "login": "orta",
+            "id": 49038,
+            "node_id": "MDQ6VXNlcjQ5MDM4",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/49038?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/orta",
+            "html_url": "https://github.com/orta",
+            "followers_url": "https://api.github.com/users/orta/followers",
+            "following_url": "https://api.github.com/users/orta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/orta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/orta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/orta/subscriptions",
+            "organizations_url": "https://api.github.com/users/orta/orgs",
+            "repos_url": "https://api.github.com/users/orta/repos",
+            "events_url": "https://api.github.com/users/orta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/orta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hrm, on a later reflection, I think I'd prefer a single release deprecating it so people will get the message before outright removing. Specta is a fundamental tool for a lot of people, no idea how much this feature is being used. \n",
+        "created_at": "2015-04-02T13:18:33Z",
+        "updated_at": "2015-04-02T18:13:11Z",
+        "html_url": "https://github.com/specta/specta/pull/149#discussion_r27655248",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/149",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/27655248"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/149#discussion_r27655248"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/27655261",
+        "pull_request_review_id": null,
+        "id": 27655261,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NjU1MjYx",
+        "diff_hunk": "@@ -3,8 +3,8 @@\n  */\n #import <Foundation/Foundation.h>\n \n-// This protocol is used for blacklisting classes for global beforeEach and afterEach blocks.\n-// If you do not want a class to participate in those just add this protocol to a category and it will be\n-// excluded.\n+// This protocol was used for blacklisting classes for global beforeEach and afterEach blocks.\n+// Now, instead, classes are whitelisted by implementing the SPTIncludeGlobalBeforeAfterEach protocol.\n+__deprecated",
+        "path": "Specta/Specta/SPTExcludeGlobalBeforeAfterEach.h",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "a0907690dd0ac0accde756badfa1ea62566974c6",
+        "original_commit_id": "3d49635ea63d26b7b961afb398761fb08c5d21f2",
+        "user": {
+            "login": "orta",
+            "id": 49038,
+            "node_id": "MDQ6VXNlcjQ5MDM4",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/49038?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/orta",
+            "html_url": "https://github.com/orta",
+            "followers_url": "https://api.github.com/users/orta/followers",
+            "following_url": "https://api.github.com/users/orta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/orta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/orta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/orta/subscriptions",
+            "organizations_url": "https://api.github.com/users/orta/orgs",
+            "repos_url": "https://api.github.com/users/orta/repos",
+            "events_url": "https://api.github.com/users/orta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/orta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I can push a patch release after this is merged.\n",
+        "created_at": "2015-04-02T13:18:51Z",
+        "updated_at": "2015-04-02T18:13:11Z",
+        "html_url": "https://github.com/specta/specta/pull/149#discussion_r27655261",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/149",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/27655261"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/149#discussion_r27655261"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/27656174",
+        "pull_request_review_id": null,
+        "id": 27656174,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NjU2MTc0",
+        "diff_hunk": "@@ -0,0 +1,15 @@\n+/*\n+ * Copyright (c) 2015 Specta Team. All rights reserved.\n+ */\n+#import <Foundation/Foundation.h>\n+\n+// This protocol is used for whitelisting classes for global beforeEach and afterEach blocks.\n+// If you want a class to participate in those just add this protocol to a category and it will be\n+// included.\n+@protocol SPTIncludeGlobalBeforeAfterEach <NSObject>",
+        "path": "Specta/Specta/SPTIncludeGlobalBeforeAfterEach.h",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "a0907690dd0ac0accde756badfa1ea62566974c6",
+        "original_commit_id": "3d49635ea63d26b7b961afb398761fb08c5d21f2",
+        "user": {
+            "login": "robb",
+            "id": 212465,
+            "node_id": "MDQ6VXNlcjIxMjQ2NQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/212465?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/robb",
+            "html_url": "https://github.com/robb",
+            "followers_url": "https://api.github.com/users/robb/followers",
+            "following_url": "https://api.github.com/users/robb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/robb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/robb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/robb/subscriptions",
+            "organizations_url": "https://api.github.com/users/robb/orgs",
+            "repos_url": "https://api.github.com/users/robb/repos",
+            "events_url": "https://api.github.com/users/robb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/robb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": ":+1:\n",
+        "created_at": "2015-04-02T13:29:38Z",
+        "updated_at": "2015-04-02T18:13:11Z",
+        "html_url": "https://github.com/specta/specta/pull/149#discussion_r27656174",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/149",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/27656174"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/149#discussion_r27656174"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/27680878",
+        "pull_request_review_id": null,
+        "id": 27680878,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NjgwODc4",
+        "diff_hunk": "@@ -23,15 +19,7 @@\n     for(int classIndex = 0; classIndex < numberOfClasses; classIndex++) {\n       Class aClass = classes[classIndex];\n \n-      if (class_conformsToProtocol(aClass, @protocol(SPTExcludeGlobalBeforeAfterEach)) == NO) {\n-        // If you're seeing a crash here then your probably have to blacklist crashing class from global before/after hooks.\n-        // Specta supports blacklisting specific Classes from being treated as before/after helper classes\n-        // to add an new class to the list add the following lines to a project initialiser ( e.g. App Delegate callbacks )\n-        //\n-        //  Class myClass = NSClassFromString(@\"MyClass\");\n-        //  class_addProtocol(myClass, @protocol(SPTExcludeGlobalBeforeAfterEach));\n-        //\n-        //  You can also create a category for that class which implements SPTExcludeGlobalBeforeAfterEach.\n+      if (class_conformsToProtocol(aClass, @protocol(SPTIncludeGlobalBeforeAfterEach)) == YES) {",
+        "path": "Specta/Specta/SPTExampleGroup.m",
+        "position": null,
+        "original_position": 32,
+        "commit_id": "a0907690dd0ac0accde756badfa1ea62566974c6",
+        "original_commit_id": "3d49635ea63d26b7b961afb398761fb08c5d21f2",
+        "user": {
+            "login": "wasnotrice",
+            "id": 908,
+            "node_id": "MDQ6VXNlcjkwOA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/908?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wasnotrice",
+            "html_url": "https://github.com/wasnotrice",
+            "followers_url": "https://api.github.com/users/wasnotrice/followers",
+            "following_url": "https://api.github.com/users/wasnotrice/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wasnotrice/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wasnotrice/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wasnotrice/subscriptions",
+            "organizations_url": "https://api.github.com/users/wasnotrice/orgs",
+            "repos_url": "https://api.github.com/users/wasnotrice/repos",
+            "events_url": "https://api.github.com/users/wasnotrice/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wasnotrice/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "yes\n",
+        "created_at": "2015-04-02T17:58:17Z",
+        "updated_at": "2015-04-02T18:13:11Z",
+        "html_url": "https://github.com/specta/specta/pull/149#discussion_r27680878",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/149",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/27680878"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/149#discussion_r27680878"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/27680908",
+        "pull_request_review_id": null,
+        "id": 27680908,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NjgwOTA4",
+        "diff_hunk": "@@ -0,0 +1,15 @@\n+/*\n+ * Copyright (c) 2015 Specta Team. All rights reserved.\n+ */\n+#import <Foundation/Foundation.h>\n+\n+// This protocol is used for whitelisting classes for global beforeEach and afterEach blocks.\n+// If you want a class to participate in those just add this protocol to a category and it will be\n+// included.\n+@protocol SPTIncludeGlobalBeforeAfterEach <NSObject>",
+        "path": "Specta/Specta/SPTIncludeGlobalBeforeAfterEach.h",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "a0907690dd0ac0accde756badfa1ea62566974c6",
+        "original_commit_id": "3d49635ea63d26b7b961afb398761fb08c5d21f2",
+        "user": {
+            "login": "wasnotrice",
+            "id": 908,
+            "node_id": "MDQ6VXNlcjkwOA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/908?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wasnotrice",
+            "html_url": "https://github.com/wasnotrice",
+            "followers_url": "https://api.github.com/users/wasnotrice/followers",
+            "following_url": "https://api.github.com/users/wasnotrice/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wasnotrice/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wasnotrice/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wasnotrice/subscriptions",
+            "organizations_url": "https://api.github.com/users/wasnotrice/orgs",
+            "repos_url": "https://api.github.com/users/wasnotrice/repos",
+            "events_url": "https://api.github.com/users/wasnotrice/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wasnotrice/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Totally agree\n",
+        "created_at": "2015-04-02T17:58:32Z",
+        "updated_at": "2015-04-02T18:13:11Z",
+        "html_url": "https://github.com/specta/specta/pull/149#discussion_r27680908",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/149",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/27680908"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/149#discussion_r27680908"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/32180820",
+        "pull_request_review_id": null,
+        "id": 32180820,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyMTgwODIw",
+        "diff_hunk": "@@ -48,6 +48,15 @@ OBJC_EXTERN void sharedExamples(NSString *name, void (^block)(NSDictionary *data\n #define      itBehavesLike(...) spt_itShouldBehaveLike_(@(__FILE__), __LINE__, __VA_ARGS__)\n \n OBJC_EXTERN void waitUntil(void (^block)(DoneCallback done));\n+/**\n+ * Runs the @c block and waits until the @c done block is called or the",
+        "path": "Specta/Specta/SpectaDSL.h",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "59ec88775b4a7236109f5fcf023862b452bb3bde",
+        "original_commit_id": "59ec88775b4a7236109f5fcf023862b452bb3bde",
+        "user": {
+            "login": "orta",
+            "id": 49038,
+            "node_id": "MDQ6VXNlcjQ5MDM4",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/49038?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/orta",
+            "html_url": "https://github.com/orta",
+            "followers_url": "https://api.github.com/users/orta/followers",
+            "following_url": "https://api.github.com/users/orta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/orta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/orta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/orta/subscriptions",
+            "organizations_url": "https://api.github.com/users/orta/orgs",
+            "repos_url": "https://api.github.com/users/orta/repos",
+            "events_url": "https://api.github.com/users/orta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/orta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "is `@c` special here, or are you just using it as a contraction of completion ( which is called done ) ?\n",
+        "created_at": "2015-06-11T00:30:15Z",
+        "updated_at": "2015-06-11T00:30:15Z",
+        "html_url": "https://github.com/specta/specta/pull/163#discussion_r32180820",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/163",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/32180820"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/163#discussion_r32180820"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/32181908",
+        "pull_request_review_id": null,
+        "id": 32181908,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyMTgxOTA4",
+        "diff_hunk": "@@ -48,6 +48,15 @@ OBJC_EXTERN void sharedExamples(NSString *name, void (^block)(NSDictionary *data\n #define      itBehavesLike(...) spt_itShouldBehaveLike_(@(__FILE__), __LINE__, __VA_ARGS__)\n \n OBJC_EXTERN void waitUntil(void (^block)(DoneCallback done));\n+/**\n+ * Runs the @c block and waits until the @c done block is called or the",
+        "path": "Specta/Specta/SpectaDSL.h",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "59ec88775b4a7236109f5fcf023862b452bb3bde",
+        "original_commit_id": "59ec88775b4a7236109f5fcf023862b452bb3bde",
+        "user": {
+            "login": "eunikolsky",
+            "id": 9215359,
+            "node_id": "MDQ6VXNlcjkyMTUzNTk=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/9215359?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/eunikolsky",
+            "html_url": "https://github.com/eunikolsky",
+            "followers_url": "https://api.github.com/users/eunikolsky/followers",
+            "following_url": "https://api.github.com/users/eunikolsky/following{/other_user}",
+            "gists_url": "https://api.github.com/users/eunikolsky/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/eunikolsky/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/eunikolsky/subscriptions",
+            "organizations_url": "https://api.github.com/users/eunikolsky/orgs",
+            "repos_url": "https://api.github.com/users/eunikolsky/repos",
+            "events_url": "https://api.github.com/users/eunikolsky/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/eunikolsky/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`@c` makes the next word rendered in monospace font, which highlights it as a parameter.\n",
+        "created_at": "2015-06-11T00:54:59Z",
+        "updated_at": "2015-06-11T00:54:59Z",
+        "html_url": "https://github.com/specta/specta/pull/163#discussion_r32181908",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/32181908"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/163#discussion_r32181908"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/specta/specta/pulls/comments/52615431",
+        "pull_request_review_id": null,
+        "id": 52615431,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUyNjE1NDMx",
+        "diff_hunk": "@@ -145,6 +145,7 @@ - (void)spt_runExample:(SPTCompiledExample *)example {\n     example.block(self);\n   } else if (!example.pending) {\n     self.spt_skipped = YES;\n+    NSLog(@\"Skipping Test\");",
+        "path": "Specta/Specta/SPTSpec.m",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "1df3a7838c191ac3bc7381c3f44f07e27ff159c1",
+        "original_commit_id": "e347fb18224731483add51c28f6f01cd9f709cf5",
+        "user": {
+            "login": "modocache",
+            "id": 552921,
+            "node_id": "MDQ6VXNlcjU1MjkyMQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/552921?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/modocache",
+            "html_url": "https://github.com/modocache",
+            "followers_url": "https://api.github.com/users/modocache/followers",
+            "following_url": "https://api.github.com/users/modocache/following{/other_user}",
+            "gists_url": "https://api.github.com/users/modocache/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/modocache/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/modocache/subscriptions",
+            "organizations_url": "https://api.github.com/users/modocache/orgs",
+            "repos_url": "https://api.github.com/users/modocache/repos",
+            "events_url": "https://api.github.com/users/modocache/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/modocache/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I believe the `example` has a property for its name--why not log that as well, so users know which tests are being skipped?\n",
+        "created_at": "2016-02-11T15:25:06Z",
+        "updated_at": "2016-02-11T15:29:59Z",
+        "html_url": "https://github.com/specta/specta/pull/201#discussion_r52615431",
+        "pull_request_url": "https://api.github.com/repos/specta/specta/pulls/201",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/comments/52615431"
+            },
+            "html": {
+                "href": "https://github.com/specta/specta/pull/201#discussion_r52615431"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/specta/specta/pulls/201"
+            }
+        }
+    }
+]

@@ -1,0 +1,1619 @@
+[
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/3531694",
+        "pull_request_review_id": null,
+        "id": 3531694,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MzE2OTQ=",
+        "diff_hunk": "@@ -9,8 +9,9 @@\n \n %%\n \n-[\\n]+             return 'NL';",
+        "path": "src/grammar.jison",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "2cb3d688d803431e7f1e7b47211913f22df1cdcf",
+        "original_commit_id": "2cb3d688d803431e7f1e7b47211913f22df1cdcf",
+        "user": {
+            "login": "rngtng",
+            "id": 23027,
+            "node_id": "MDQ6VXNlcjIzMDI3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/23027?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rngtng",
+            "html_url": "https://github.com/rngtng",
+            "followers_url": "https://api.github.com/users/rngtng/followers",
+            "following_url": "https://api.github.com/users/rngtng/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rngtng/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rngtng/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rngtng/subscriptions",
+            "organizations_url": "https://api.github.com/users/rngtng/orgs",
+            "repos_url": "https://api.github.com/users/rngtng/repos",
+            "events_url": "https://api.github.com/users/rngtng/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rngtng/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "be consistent: ';' is not needed there..\n",
+        "created_at": "2013-03-26T14:26:14Z",
+        "updated_at": "2013-03-26T14:26:14Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/20#discussion_r3531694",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/20",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/3531694"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/20#discussion_r3531694"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/20"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/3531700",
+        "pull_request_review_id": null,
+        "id": 3531700,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MzE3MDA=",
+        "diff_hunk": "@@ -22,7 +23,7 @@\n \"-\"               return 'LINE'\n \">>\"              return 'OPENARROW'\n \">\"               return 'ARROW'\n-:[^\\n]+           return 'MESSAGE'\n+:[^#\\n]+          return 'MESSAGE'",
+        "path": "src/grammar.jison",
+        "position": 17,
+        "original_position": 17,
+        "commit_id": "2cb3d688d803431e7f1e7b47211913f22df1cdcf",
+        "original_commit_id": "2cb3d688d803431e7f1e7b47211913f22df1cdcf",
+        "user": {
+            "login": "rngtng",
+            "id": 23027,
+            "node_id": "MDQ6VXNlcjIzMDI3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/23027?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rngtng",
+            "html_url": "https://github.com/rngtng",
+            "followers_url": "https://api.github.com/users/rngtng/followers",
+            "following_url": "https://api.github.com/users/rngtng/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rngtng/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rngtng/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rngtng/subscriptions",
+            "organizations_url": "https://api.github.com/users/rngtng/orgs",
+            "repos_url": "https://api.github.com/users/rngtng/repos",
+            "events_url": "https://api.github.com/users/rngtng/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rngtng/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "enable inline comments\n",
+        "created_at": "2013-03-26T14:26:29Z",
+        "updated_at": "2013-03-26T14:26:29Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/20#discussion_r3531700",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/20",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/3531700"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/20#discussion_r3531700"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/20"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/3531703",
+        "pull_request_review_id": null,
+        "id": 3531703,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MzE3MDM=",
+        "diff_hunk": "@@ -9,8 +9,9 @@\n \n %%\n \n-[\\n]+             return 'NL';\n-[ \\t]+             /* skip whitespace */\n+[\\n]+             return 'NL'\n+[ \\t]+            /* skip whitespace */\n+\\#[^\\n]+          /* skip comments */",
+        "path": "src/grammar.jison",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "2cb3d688d803431e7f1e7b47211913f22df1cdcf",
+        "original_commit_id": "2cb3d688d803431e7f1e7b47211913f22df1cdcf",
+        "user": {
+            "login": "rngtng",
+            "id": 23027,
+            "node_id": "MDQ6VXNlcjIzMDI3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/23027?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rngtng",
+            "html_url": "https://github.com/rngtng",
+            "followers_url": "https://api.github.com/users/rngtng/followers",
+            "following_url": "https://api.github.com/users/rngtng/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rngtng/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rngtng/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rngtng/subscriptions",
+            "organizations_url": "https://api.github.com/users/rngtng/orgs",
+            "repos_url": "https://api.github.com/users/rngtng/repos",
+            "events_url": "https://api.github.com/users/rngtng/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rngtng/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "enable full line comments\n",
+        "created_at": "2013-03-26T14:26:42Z",
+        "updated_at": "2013-03-26T14:26:42Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/20#discussion_r3531703",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/20",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/3531703"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/20#discussion_r3531703"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/20"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/36713528",
+        "pull_request_review_id": null,
+        "id": 36713528,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NzEzNTI4",
+        "diff_hunk": "@@ -79,13 +78,17 @@\n /******************\n  * Rapha\u00ebl extras\n  ******************/\n+\tSnap.plugin(function (Snap, Element, Paper, global, Fragment) {\n+\t\tSnap.newmethod = function () { };\n+\t\tElement.prototype.newmethod = function () { };\n+\t\tPaper.prototype.newmethod = function () { };",
+        "path": "src/sequence-diagram.js",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "b04141384d80f0f8f92b05fad3015476e53df003",
+        "original_commit_id": "b04141384d80f0f8f92b05fad3015476e53df003",
+        "user": {
+            "login": "bramp",
+            "id": 160627,
+            "node_id": "MDQ6VXNlcjE2MDYyNw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/160627?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bramp",
+            "html_url": "https://github.com/bramp",
+            "followers_url": "https://api.github.com/users/bramp/followers",
+            "following_url": "https://api.github.com/users/bramp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bramp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bramp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bramp/subscriptions",
+            "organizations_url": "https://api.github.com/users/bramp/orgs",
+            "repos_url": "https://api.github.com/users/bramp/repos",
+            "events_url": "https://api.github.com/users/bramp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bramp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The above three lines aren't needed. (they are copied and pasted from a demo)\n",
+        "created_at": "2015-08-11T05:49:50Z",
+        "updated_at": "2015-08-11T05:49:50Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/125#discussion_r36713528",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/125",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/36713528"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/125#discussion_r36713528"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/125"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/36713545",
+        "pull_request_review_id": null,
+        "id": 36713545,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NzEzNTQ1",
+        "diff_hunk": "@@ -17,15 +50,16 @@\n     \t</textarea>\n     \t<button id=\"parse\" type=\"button\">Click Me!</button>  \n \n-    \t<div id=\"diagram\"></div>\n+    \t<svg id=\"diagram\"></svg>",
+        "path": "test/test.html",
+        "position": 45,
+        "original_position": 45,
+        "commit_id": "b04141384d80f0f8f92b05fad3015476e53df003",
+        "original_commit_id": "b04141384d80f0f8f92b05fad3015476e53df003",
+        "user": {
+            "login": "bramp",
+            "id": 160627,
+            "node_id": "MDQ6VXNlcjE2MDYyNw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/160627?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bramp",
+            "html_url": "https://github.com/bramp",
+            "followers_url": "https://api.github.com/users/bramp/followers",
+            "following_url": "https://api.github.com/users/bramp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bramp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bramp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bramp/subscriptions",
+            "organizations_url": "https://api.github.com/users/bramp/orgs",
+            "repos_url": "https://api.github.com/users/bramp/repos",
+            "events_url": "https://api.github.com/users/bramp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bramp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Changing this to a svg, breaks the API a little bit.\n",
+        "created_at": "2015-08-11T05:50:21Z",
+        "updated_at": "2015-08-11T05:50:21Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/125#discussion_r36713545",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/125",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/36713545"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/125#discussion_r36713545"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/125"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/37429597",
+        "pull_request_review_id": null,
+        "id": 37429597,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDI5NTk3",
+        "diff_hunk": "@@ -23,6 +23,7 @@\n  * License information:\n  * http://creativecommons.org/licenses/by-nd/3.0/\n  */\n+if (typeof Raphael !== \"undefined\") {",
+        "path": "fonts/daniel/daniel_700.font.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "431896f1860f1a52d905c52ec70f8a2402ce7c71",
+        "original_commit_id": "2aef59a00e7166cd00a000584490a5fb2bac8011",
+        "user": {
+            "login": "bramp",
+            "id": 160627,
+            "node_id": "MDQ6VXNlcjE2MDYyNw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/160627?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bramp",
+            "html_url": "https://github.com/bramp",
+            "followers_url": "https://api.github.com/users/bramp/followers",
+            "following_url": "https://api.github.com/users/bramp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bramp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bramp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bramp/subscriptions",
+            "organizations_url": "https://api.github.com/users/bramp/orgs",
+            "repos_url": "https://api.github.com/users/bramp/repos",
+            "events_url": "https://api.github.com/users/bramp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bramp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks, I was being lazy :)\n",
+        "created_at": "2015-08-19T15:38:23Z",
+        "updated_at": "2015-08-29T19:14:27Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/128#discussion_r37429597",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/128",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/37429597"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/128#discussion_r37429597"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/128"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/37429676",
+        "pull_request_review_id": null,
+        "id": 37429676,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDI5Njc2",
+        "diff_hunk": "@@ -50,7 +50,7 @@\n     \t</textarea>\n     \t<button id=\"parse\" type=\"button\">Click Me!</button>  \n \n-    \t<svg id=\"diagram\"></svg>\n+    \t<div id=\"diagram\"></svg>\n ",
+        "path": "test/test.html",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "431896f1860f1a52d905c52ec70f8a2402ce7c71",
+        "original_commit_id": "2aef59a00e7166cd00a000584490a5fb2bac8011",
+        "user": {
+            "login": "bramp",
+            "id": 160627,
+            "node_id": "MDQ6VXNlcjE2MDYyNw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/160627?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bramp",
+            "html_url": "https://github.com/bramp",
+            "followers_url": "https://api.github.com/users/bramp/followers",
+            "following_url": "https://api.github.com/users/bramp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bramp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bramp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bramp/subscriptions",
+            "organizations_url": "https://api.github.com/users/bramp/orgs",
+            "repos_url": "https://api.github.com/users/bramp/repos",
+            "events_url": "https://api.github.com/users/bramp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bramp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Opening div tag, but closing svg tag...\n",
+        "created_at": "2015-08-19T15:39:08Z",
+        "updated_at": "2015-08-29T19:14:27Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/128#discussion_r37429676",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/128",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/37429676"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/128#discussion_r37429676"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/128"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71646211",
+        "pull_request_review_id": null,
+        "id": 71646211,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNjQ2MjEx",
+        "diff_hunk": "@@ -108,6 +176,12 @@\n \t\tOVER    : 2\n \t};\n \n+\tDiagram.EXECUTION_LVL_CHANGE = {",
+        "path": "src/diagram.js",
+        "position": null,
+        "original_position": 109,
+        "commit_id": "d64d749145538e0bd6013e85e5966efa1bf5dddf",
+        "original_commit_id": "f7199d94d4a9fbe68a61fd65cc746c6e789d4b3f",
+        "user": {
+            "login": "bramp",
+            "id": 160627,
+            "node_id": "MDQ6VXNlcjE2MDYyNw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/160627?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bramp",
+            "html_url": "https://github.com/bramp",
+            "followers_url": "https://api.github.com/users/bramp/followers",
+            "following_url": "https://api.github.com/users/bramp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bramp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bramp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bramp/subscriptions",
+            "organizations_url": "https://api.github.com/users/bramp/orgs",
+            "repos_url": "https://api.github.com/users/bramp/repos",
+            "events_url": "https://api.github.com/users/bramp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bramp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Maybe just \"Diagram.EXECUTION_CHANGE\"\n",
+        "created_at": "2016-07-21T04:42:18Z",
+        "updated_at": "2016-07-21T14:25:50Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71646211",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71646211"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71646211"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71646226",
+        "pull_request_review_id": null,
+        "id": 71646226,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNjQ2MjI2",
+        "diff_hunk": "@@ -108,6 +176,12 @@\n \t\tOVER    : 2\n \t};\n \n+\tDiagram.EXECUTION_LVL_CHANGE = {\n+\t\tUNCHANGED      :  0,\n+\t\tINCREASE_LEVEL :  1,\n+\t\tDECREASE_LEVEL : -1",
+        "path": "src/diagram.js",
+        "position": null,
+        "original_position": 112,
+        "commit_id": "d64d749145538e0bd6013e85e5966efa1bf5dddf",
+        "original_commit_id": "f7199d94d4a9fbe68a61fd65cc746c6e789d4b3f",
+        "user": {
+            "login": "bramp",
+            "id": 160627,
+            "node_id": "MDQ6VXNlcjE2MDYyNw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/160627?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bramp",
+            "html_url": "https://github.com/bramp",
+            "followers_url": "https://api.github.com/users/bramp/followers",
+            "following_url": "https://api.github.com/users/bramp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bramp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bramp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bramp/subscriptions",
+            "organizations_url": "https://api.github.com/users/bramp/orgs",
+            "repos_url": "https://api.github.com/users/bramp/repos",
+            "events_url": "https://api.github.com/users/bramp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bramp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Then, None:0, INCREASE:1, DECREASE:2.\n\nDoes the LVL, and LEVEL help explain?\n",
+        "created_at": "2016-07-21T04:42:40Z",
+        "updated_at": "2016-07-21T14:25:50Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71646226",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71646226"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71646226"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71646341",
+        "pull_request_review_id": null,
+        "id": 71646341,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNjQ2MzQx",
+        "diff_hunk": "@@ -185,6 +192,45 @@ test( \"Quoted names\", function() {\n \tassertSingleArrow(Diagram.parse(\"\\\"->:\\\"->B: M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"->:\", \"B\", \"M\");\n \tassertSingleArrow(Diagram.parse(\"A->\\\"->:\\\": M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"A\", \"->:\", \"M\");\n \tassertSingleActor(Diagram.parse(\"Participant \\\"->:\\\"\"), \"->:\");\n+\tassertSingleArrow(Diagram.parse(\"A->\\\"+B\\\": M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"A\", \"+B\", \"M\");\n+\tassertSingleArrow(Diagram.parse(\"\\\"+A\\\"->B: M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"+A\", \"B\", \"M\");\n+\tassertSingleArrow(Diagram.parse(\"\\\"+A\\\"->\\\"+B\\\": M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"+A\", \"+B\", \"M\");\n+});\n+\n+test( \"Executions\", function () {",
+        "path": "test/grammar-tests.js",
+        "position": 23,
+        "original_position": 23,
+        "commit_id": "d64d749145538e0bd6013e85e5966efa1bf5dddf",
+        "original_commit_id": "f7199d94d4a9fbe68a61fd65cc746c6e789d4b3f",
+        "user": {
+            "login": "bramp",
+            "id": 160627,
+            "node_id": "MDQ6VXNlcjE2MDYyNw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/160627?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bramp",
+            "html_url": "https://github.com/bramp",
+            "followers_url": "https://api.github.com/users/bramp/followers",
+            "following_url": "https://api.github.com/users/bramp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bramp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bramp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bramp/subscriptions",
+            "organizations_url": "https://api.github.com/users/bramp/orgs",
+            "repos_url": "https://api.github.com/users/bramp/repos",
+            "events_url": "https://api.github.com/users/bramp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bramp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Does\n++A->B\ndo anything?\n",
+        "created_at": "2016-07-21T04:45:18Z",
+        "updated_at": "2016-07-21T14:25:50Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71646341",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71646341"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71646341"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71646437",
+        "pull_request_review_id": null,
+        "id": 71646437,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNjQ2NDM3",
+        "diff_hunk": "@@ -77,6 +86,27 @@\n \t}\n \n /******************\n+ * Drawing-related extra diagram methods.\n+ ******************/\n+\n+\t// These functions return the x-offset from the lifeline centre given the current Execution nesting-level.\n+\tfunction executionMarginLeft(level) {\n+\t\tif (level < 0) {",
+        "path": "src/sequence-diagram.js",
+        "position": 32,
+        "original_position": 32,
+        "commit_id": "d64d749145538e0bd6013e85e5966efa1bf5dddf",
+        "original_commit_id": "f7199d94d4a9fbe68a61fd65cc746c6e789d4b3f",
+        "user": {
+            "login": "bramp",
+            "id": 160627,
+            "node_id": "MDQ6VXNlcjE2MDYyNw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/160627?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bramp",
+            "html_url": "https://github.com/bramp",
+            "followers_url": "https://api.github.com/users/bramp/followers",
+            "following_url": "https://api.github.com/users/bramp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bramp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bramp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bramp/subscriptions",
+            "organizations_url": "https://api.github.com/users/bramp/orgs",
+            "repos_url": "https://api.github.com/users/bramp/repos",
+            "events_url": "https://api.github.com/users/bramp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bramp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is level allowed to be <0? Should that be stopped elsewhere?\n",
+        "created_at": "2016-07-21T04:46:36Z",
+        "updated_at": "2016-07-21T14:25:50Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71646437",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71646437"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71646437"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71646455",
+        "pull_request_review_id": null,
+        "id": 71646455,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNjQ2NDU1",
+        "diff_hunk": "@@ -77,6 +86,27 @@\n \t}\n \n /******************\n+ * Drawing-related extra diagram methods.\n+ ******************/\n+\n+\t// These functions return the x-offset from the lifeline centre given the current Execution nesting-level.\n+\tfunction executionMarginLeft(level) {\n+\t\tif (level < 0) {\n+\t\t\treturn 0;\n+\t\t} else {",
+        "path": "src/sequence-diagram.js",
+        "position": null,
+        "original_position": 34,
+        "commit_id": "d64d749145538e0bd6013e85e5966efa1bf5dddf",
+        "original_commit_id": "f7199d94d4a9fbe68a61fd65cc746c6e789d4b3f",
+        "user": {
+            "login": "bramp",
+            "id": 160627,
+            "node_id": "MDQ6VXNlcjE2MDYyNw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/160627?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bramp",
+            "html_url": "https://github.com/bramp",
+            "followers_url": "https://api.github.com/users/bramp/followers",
+            "following_url": "https://api.github.com/users/bramp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bramp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bramp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bramp/subscriptions",
+            "organizations_url": "https://api.github.com/users/bramp/orgs",
+            "repos_url": "https://api.github.com/users/bramp/repos",
+            "events_url": "https://api.github.com/users/bramp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bramp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No need for the else, so you return above.\n",
+        "created_at": "2016-07-21T04:46:53Z",
+        "updated_at": "2016-07-21T14:25:50Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71646455",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71646455"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71646455"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71663398",
+        "pull_request_review_id": null,
+        "id": 71663398,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNjYzMzk4",
+        "diff_hunk": "@@ -77,6 +86,27 @@\n \t}\n \n /******************\n+ * Drawing-related extra diagram methods.\n+ ******************/\n+\n+\t// These functions return the x-offset from the lifeline centre given the current Execution nesting-level.\n+\tfunction executionMarginLeft(level) {\n+\t\tif (level < 0) {",
+        "path": "src/sequence-diagram.js",
+        "position": 32,
+        "original_position": 32,
+        "commit_id": "d64d749145538e0bd6013e85e5966efa1bf5dddf",
+        "original_commit_id": "f7199d94d4a9fbe68a61fd65cc746c6e789d4b3f",
+        "user": {
+            "login": "Andrew-Dunn",
+            "id": 417197,
+            "node_id": "MDQ6VXNlcjQxNzE5Nw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/417197?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Andrew-Dunn",
+            "html_url": "https://github.com/Andrew-Dunn",
+            "followers_url": "https://api.github.com/users/Andrew-Dunn/followers",
+            "following_url": "https://api.github.com/users/Andrew-Dunn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Andrew-Dunn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Andrew-Dunn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Andrew-Dunn/subscriptions",
+            "organizations_url": "https://api.github.com/users/Andrew-Dunn/orgs",
+            "repos_url": "https://api.github.com/users/Andrew-Dunn/repos",
+            "events_url": "https://api.github.com/users/Andrew-Dunn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Andrew-Dunn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "A level < 0 indicates that there are no executions (just the actor/lifeline) It is impossible to go lower than -1, the parser will throw an error.\n",
+        "created_at": "2016-07-21T08:11:01Z",
+        "updated_at": "2016-07-21T14:25:50Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71663398",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71663398"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71663398"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71663568",
+        "pull_request_review_id": null,
+        "id": 71663568,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNjYzNTY4",
+        "diff_hunk": "@@ -185,6 +192,45 @@ test( \"Quoted names\", function() {\n \tassertSingleArrow(Diagram.parse(\"\\\"->:\\\"->B: M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"->:\", \"B\", \"M\");\n \tassertSingleArrow(Diagram.parse(\"A->\\\"->:\\\": M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"A\", \"->:\", \"M\");\n \tassertSingleActor(Diagram.parse(\"Participant \\\"->:\\\"\"), \"->:\");\n+\tassertSingleArrow(Diagram.parse(\"A->\\\"+B\\\": M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"A\", \"+B\", \"M\");\n+\tassertSingleArrow(Diagram.parse(\"\\\"+A\\\"->B: M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"+A\", \"B\", \"M\");\n+\tassertSingleArrow(Diagram.parse(\"\\\"+A\\\"->\\\"+B\\\": M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"+A\", \"+B\", \"M\");\n+});\n+\n+test( \"Executions\", function () {",
+        "path": "test/grammar-tests.js",
+        "position": 23,
+        "original_position": 23,
+        "commit_id": "d64d749145538e0bd6013e85e5966efa1bf5dddf",
+        "original_commit_id": "f7199d94d4a9fbe68a61fd65cc746c6e789d4b3f",
+        "user": {
+            "login": "Andrew-Dunn",
+            "id": 417197,
+            "node_id": "MDQ6VXNlcjQxNzE5Nw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/417197?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Andrew-Dunn",
+            "html_url": "https://github.com/Andrew-Dunn",
+            "followers_url": "https://api.github.com/users/Andrew-Dunn/followers",
+            "following_url": "https://api.github.com/users/Andrew-Dunn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Andrew-Dunn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Andrew-Dunn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Andrew-Dunn/subscriptions",
+            "organizations_url": "https://api.github.com/users/Andrew-Dunn/orgs",
+            "repos_url": "https://api.github.com/users/Andrew-Dunn/repos",
+            "events_url": "https://api.github.com/users/Andrew-Dunn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Andrew-Dunn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'll have to check what happens, I know -- will throw an error.\n",
+        "created_at": "2016-07-21T08:12:31Z",
+        "updated_at": "2016-07-21T14:25:50Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71663568",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71663568"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71663568"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71663740",
+        "pull_request_review_id": null,
+        "id": 71663740,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNjYzNzQw",
+        "diff_hunk": "@@ -108,6 +176,12 @@\n \t\tOVER    : 2\n \t};\n \n+\tDiagram.EXECUTION_LVL_CHANGE = {\n+\t\tUNCHANGED      :  0,\n+\t\tINCREASE_LEVEL :  1,\n+\t\tDECREASE_LEVEL : -1",
+        "path": "src/diagram.js",
+        "position": null,
+        "original_position": 112,
+        "commit_id": "d64d749145538e0bd6013e85e5966efa1bf5dddf",
+        "original_commit_id": "f7199d94d4a9fbe68a61fd65cc746c6e789d4b3f",
+        "user": {
+            "login": "Andrew-Dunn",
+            "id": 417197,
+            "node_id": "MDQ6VXNlcjQxNzE5Nw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/417197?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Andrew-Dunn",
+            "html_url": "https://github.com/Andrew-Dunn",
+            "followers_url": "https://api.github.com/users/Andrew-Dunn/followers",
+            "following_url": "https://api.github.com/users/Andrew-Dunn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Andrew-Dunn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Andrew-Dunn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Andrew-Dunn/subscriptions",
+            "organizations_url": "https://api.github.com/users/Andrew-Dunn/orgs",
+            "repos_url": "https://api.github.com/users/Andrew-Dunn/repos",
+            "events_url": "https://api.github.com/users/Andrew-Dunn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Andrew-Dunn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Not really. I should be able to get to this tonight.\n",
+        "created_at": "2016-07-21T08:14:07Z",
+        "updated_at": "2016-07-21T14:25:50Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71663740",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71663740"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71663740"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71664061",
+        "pull_request_review_id": null,
+        "id": 71664061,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNjY0MDYx",
+        "diff_hunk": "@@ -185,6 +192,45 @@ test( \"Quoted names\", function() {\n \tassertSingleArrow(Diagram.parse(\"\\\"->:\\\"->B: M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"->:\", \"B\", \"M\");\n \tassertSingleArrow(Diagram.parse(\"A->\\\"->:\\\": M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"A\", \"->:\", \"M\");\n \tassertSingleActor(Diagram.parse(\"Participant \\\"->:\\\"\"), \"->:\");\n+\tassertSingleArrow(Diagram.parse(\"A->\\\"+B\\\": M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"A\", \"+B\", \"M\");\n+\tassertSingleArrow(Diagram.parse(\"\\\"+A\\\"->B: M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"+A\", \"B\", \"M\");\n+\tassertSingleArrow(Diagram.parse(\"\\\"+A\\\"->\\\"+B\\\": M\"), ARROWTYPE.FILLED, LINETYPE.SOLID, \"+A\", \"+B\", \"M\");\n+});\n+\n+test( \"Executions\", function () {",
+        "path": "test/grammar-tests.js",
+        "position": 23,
+        "original_position": 23,
+        "commit_id": "d64d749145538e0bd6013e85e5966efa1bf5dddf",
+        "original_commit_id": "f7199d94d4a9fbe68a61fd65cc746c6e789d4b3f",
+        "user": {
+            "login": "Andrew-Dunn",
+            "id": 417197,
+            "node_id": "MDQ6VXNlcjQxNzE5Nw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/417197?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Andrew-Dunn",
+            "html_url": "https://github.com/Andrew-Dunn",
+            "followers_url": "https://api.github.com/users/Andrew-Dunn/followers",
+            "following_url": "https://api.github.com/users/Andrew-Dunn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Andrew-Dunn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Andrew-Dunn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Andrew-Dunn/subscriptions",
+            "organizations_url": "https://api.github.com/users/Andrew-Dunn/orgs",
+            "repos_url": "https://api.github.com/users/Andrew-Dunn/repos",
+            "events_url": "https://api.github.com/users/Andrew-Dunn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Andrew-Dunn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I imagine ++ will throw an error too. I've only allowed single changes to the execution level.\n",
+        "created_at": "2016-07-21T08:16:31Z",
+        "updated_at": "2016-07-21T14:25:50Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71664061",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/71664061"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/157#discussion_r71664061"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/157"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/120022070",
+        "pull_request_review_id": 41952086,
+        "id": 120022070,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMDAyMjA3MA==",
+        "diff_hunk": "@@ -1498,7 +1498,7 @@ if (typeof Snap != 'undefined') {\n     drawActor: function(actor, offsetY, height) {\n       this.beginGroup();\n       BaseTheme.prototype.drawActor.call(this, actor, offsetY, height);\n-      return this.finishGroup().addClass('actor');\n+      return this.finishGroup().addClass('actor actor'+actor.index);",
+        "path": "dist/sequence-diagram.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "ee4fd747d674e2c68235e109ec49dcf878d83672",
+        "original_commit_id": "7183efa7c14dcee74e4107b6f97c1261fc70bea4",
+        "user": {
+            "login": "bramp",
+            "id": 160627,
+            "node_id": "MDQ6VXNlcjE2MDYyNw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/160627?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bramp",
+            "html_url": "https://github.com/bramp",
+            "followers_url": "https://api.github.com/users/bramp/followers",
+            "following_url": "https://api.github.com/users/bramp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bramp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bramp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bramp/subscriptions",
+            "organizations_url": "https://api.github.com/users/bramp/orgs",
+            "repos_url": "https://api.github.com/users/bramp/repos",
+            "events_url": "https://api.github.com/users/bramp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bramp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You should make this change in src/theme-snap.js#L231 not in dist/.  dist/ is generated from the files in src/, and can be regenerated by running `make`.\r\n\r\nOtherwise LGTM.",
+        "created_at": "2017-06-04T22:01:23Z",
+        "updated_at": "2017-06-04T22:38:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/177#discussion_r120022070",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/177",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/120022070"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/177#discussion_r120022070"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/177"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731736",
+        "pull_request_review_id": 60310514,
+        "id": 136731736,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjczMTczNg==",
+        "diff_hunk": "@@ -0,0 +1,56 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\"], function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text_highlight_rules\").TextHighlightRules\n+      , s = function() {\n+        function t(e) {\n+            var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\n+            return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\"\n+        }\n+        this.$rules = {\n+            start: [{\n+                token: \"comment\",\n+                regex: /^\\s*#.*/\n+            }, {\n+                token: [\"text\", \"string\"],\n+                regex: /^(\\s*title:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+\t\t// this doesn't handle commas well\n+                token: [\"text\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"string\", \"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\n+\t    },\n+        ]};\n+    };\n+    r.inherits(s, i),\n+    t.SequencebrampHighlightRules = s\n+}),\n+define(\"ace/mode/sequencebramp\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\", \"ace/mode/text\", \"ace/mode/sequencebramp_highlight_rules\", \"ace/mode/folding/sequencebramp\"],\n+  function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text\").Mode\n+      , s = e(\"./sequencebramp_highlight_rules\").SequencebrampHighlightRules\n+      , u = function() {\n+        this.HighlightRules = s\n+    };\n+    r.inherits(u, i),\n+    function() {\n+        this.type = \"text\",\n+        this.$id = \"ace/mode/sequencebramp\"\n+    }\n+    .call(u.prototype),\n+    t.Mode = u\n+})",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 56,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "904af7b8507fc6820192cc726e5453f5eb2c1aca",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Expected an assignment or function call and instead saw an expression.<br>Missing semicolon.",
+        "created_at": "2017-09-04T01:15:33Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731736",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731736"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731736"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731737",
+        "pull_request_review_id": 60310514,
+        "id": 136731737,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjczMTczNw==",
+        "diff_hunk": "@@ -0,0 +1,56 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\"], function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text_highlight_rules\").TextHighlightRules\n+      , s = function() {\n+        function t(e) {\n+            var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\n+            return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\"\n+        }\n+        this.$rules = {\n+            start: [{\n+                token: \"comment\",\n+                regex: /^\\s*#.*/\n+            }, {\n+                token: [\"text\", \"string\"],\n+                regex: /^(\\s*title:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+\t\t// this doesn't handle commas well\n+                token: [\"text\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"string\", \"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\n+\t    },\n+        ]};\n+    };\n+    r.inherits(s, i),\n+    t.SequencebrampHighlightRules = s\n+}),\n+define(\"ace/mode/sequencebramp\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\", \"ace/mode/text\", \"ace/mode/sequencebramp_highlight_rules\", \"ace/mode/folding/sequencebramp\"],\n+  function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text\").Mode\n+      , s = e(\"./sequencebramp_highlight_rules\").SequencebrampHighlightRules\n+      , u = function() {\n+        this.HighlightRules = s\n+    };\n+    r.inherits(u, i),\n+    function() {\n+        this.type = \"text\",\n+        this.$id = \"ace/mode/sequencebramp\"\n+    }\n+    .call(u.prototype),\n+    t.Mode = u",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 55,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "904af7b8507fc6820192cc726e5453f5eb2c1aca",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Expected an assignment or function call and instead saw an expression.<br>Missing semicolon.",
+        "created_at": "2017-09-04T01:15:34Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731737",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731737"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731737"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731738",
+        "pull_request_review_id": 60310514,
+        "id": 136731738,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjczMTczOA==",
+        "diff_hunk": "@@ -0,0 +1,56 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\"], function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text_highlight_rules\").TextHighlightRules\n+      , s = function() {\n+        function t(e) {\n+            var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\n+            return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\"\n+        }\n+        this.$rules = {\n+            start: [{\n+                token: \"comment\",\n+                regex: /^\\s*#.*/\n+            }, {\n+                token: [\"text\", \"string\"],\n+                regex: /^(\\s*title:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+\t\t// this doesn't handle commas well\n+                token: [\"text\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"string\", \"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\n+\t    },\n+        ]};\n+    };\n+    r.inherits(s, i),\n+    t.SequencebrampHighlightRules = s\n+}),\n+define(\"ace/mode/sequencebramp\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\", \"ace/mode/text\", \"ace/mode/sequencebramp_highlight_rules\", \"ace/mode/folding/sequencebramp\"],\n+  function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text\").Mode\n+      , s = e(\"./sequencebramp_highlight_rules\").SequencebrampHighlightRules\n+      , u = function() {\n+        this.HighlightRules = s\n+    };\n+    r.inherits(u, i),\n+    function() {\n+        this.type = \"text\",\n+        this.$id = \"ace/mode/sequencebramp\"",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 52,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "904af7b8507fc6820192cc726e5453f5eb2c1aca",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Expected an assignment or function call and instead saw an expression.<br>Missing semicolon.",
+        "created_at": "2017-09-04T01:15:34Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731738",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731738"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731738"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731739",
+        "pull_request_review_id": 60310514,
+        "id": 136731739,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjczMTczOQ==",
+        "diff_hunk": "@@ -0,0 +1,56 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\"], function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text_highlight_rules\").TextHighlightRules\n+      , s = function() {\n+        function t(e) {\n+            var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\n+            return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\"\n+        }\n+        this.$rules = {\n+            start: [{\n+                token: \"comment\",\n+                regex: /^\\s*#.*/\n+            }, {\n+                token: [\"text\", \"string\"],\n+                regex: /^(\\s*title:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+\t\t// this doesn't handle commas well\n+                token: [\"text\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"string\", \"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\n+\t    },\n+        ]};\n+    };\n+    r.inherits(s, i),\n+    t.SequencebrampHighlightRules = s\n+}),\n+define(\"ace/mode/sequencebramp\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\", \"ace/mode/text\", \"ace/mode/sequencebramp_highlight_rules\", \"ace/mode/folding/sequencebramp\"],\n+  function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text\").Mode\n+      , s = e(\"./sequencebramp_highlight_rules\").SequencebrampHighlightRules\n+      , u = function() {\n+        this.HighlightRules = s",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 47,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "904af7b8507fc6820192cc726e5453f5eb2c1aca",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Missing semicolon.",
+        "created_at": "2017-09-04T01:15:34Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731739",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731739"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731739"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731740",
+        "pull_request_review_id": 60310514,
+        "id": 136731740,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjczMTc0MA==",
+        "diff_hunk": "@@ -0,0 +1,56 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\"], function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text_highlight_rules\").TextHighlightRules\n+      , s = function() {\n+        function t(e) {\n+            var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\n+            return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\"\n+        }\n+        this.$rules = {\n+            start: [{\n+                token: \"comment\",\n+                regex: /^\\s*#.*/\n+            }, {\n+                token: [\"text\", \"string\"],\n+                regex: /^(\\s*title:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+\t\t// this doesn't handle commas well\n+                token: [\"text\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"string\", \"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\n+\t    },\n+        ]};\n+    };\n+    r.inherits(s, i),\n+    t.SequencebrampHighlightRules = s\n+}),\n+define(\"ace/mode/sequencebramp\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\", \"ace/mode/text\", \"ace/mode/sequencebramp_highlight_rules\", \"ace/mode/folding/sequencebramp\"],\n+  function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text\").Mode\n+      , s = e(\"./sequencebramp_highlight_rules\").SequencebrampHighlightRules",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 45,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "904af7b8507fc6820192cc726e5453f5eb2c1aca",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Misleading line break before ','; readers may interpret this as an expression boundary.",
+        "created_at": "2017-09-04T01:15:34Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731740",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731740"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731740"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731741",
+        "pull_request_review_id": 60310514,
+        "id": 136731741,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjczMTc0MQ==",
+        "diff_hunk": "@@ -0,0 +1,56 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\"], function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text_highlight_rules\").TextHighlightRules\n+      , s = function() {\n+        function t(e) {\n+            var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\n+            return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\"\n+        }\n+        this.$rules = {\n+            start: [{\n+                token: \"comment\",\n+                regex: /^\\s*#.*/\n+            }, {\n+                token: [\"text\", \"string\"],\n+                regex: /^(\\s*title:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+\t\t// this doesn't handle commas well\n+                token: [\"text\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"string\", \"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\n+\t    },\n+        ]};\n+    };\n+    r.inherits(s, i),\n+    t.SequencebrampHighlightRules = s\n+}),\n+define(\"ace/mode/sequencebramp\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\", \"ace/mode/text\", \"ace/mode/sequencebramp_highlight_rules\", \"ace/mode/folding/sequencebramp\"],\n+  function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text\").Mode",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 44,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "904af7b8507fc6820192cc726e5453f5eb2c1aca",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Misleading line break before ','; readers may interpret this as an expression boundary.",
+        "created_at": "2017-09-04T01:15:34Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731741",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731741"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731741"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731742",
+        "pull_request_review_id": 60310514,
+        "id": 136731742,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjczMTc0Mg==",
+        "diff_hunk": "@@ -0,0 +1,56 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\"], function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text_highlight_rules\").TextHighlightRules\n+      , s = function() {\n+        function t(e) {\n+            var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\n+            return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\"\n+        }\n+        this.$rules = {\n+            start: [{\n+                token: \"comment\",\n+                regex: /^\\s*#.*/\n+            }, {\n+                token: [\"text\", \"string\"],\n+                regex: /^(\\s*title:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+\t\t// this doesn't handle commas well\n+                token: [\"text\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"string\", \"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\n+\t    },\n+        ]};\n+    };\n+    r.inherits(s, i),\n+    t.SequencebrampHighlightRules = s\n+}),\n+define(\"ace/mode/sequencebramp\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\", \"ace/mode/text\", \"ace/mode/sequencebramp_highlight_rules\", \"ace/mode/folding/sequencebramp\"],\n+  function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 43,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "904af7b8507fc6820192cc726e5453f5eb2c1aca",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Misleading line break before ','; readers may interpret this as an expression boundary.",
+        "created_at": "2017-09-04T01:15:34Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731742",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731742"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731742"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731744",
+        "pull_request_review_id": 60310514,
+        "id": 136731744,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjczMTc0NA==",
+        "diff_hunk": "@@ -0,0 +1,56 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\"], function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text_highlight_rules\").TextHighlightRules\n+      , s = function() {\n+        function t(e) {\n+            var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\n+            return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\"\n+        }\n+        this.$rules = {\n+            start: [{\n+                token: \"comment\",\n+                regex: /^\\s*#.*/\n+            }, {\n+                token: [\"text\", \"string\"],\n+                regex: /^(\\s*title:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+\t\t// this doesn't handle commas well\n+                token: [\"text\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"string\", \"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"text\", \"keyword\"],\n+                regex: /^(\\s*participant\\s+)(.*)/,\n+\t\tcaseInsensitive: true,\n+            }, {\n+                token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\n+                regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\n+\t    },\n+        ]};\n+    };\n+    r.inherits(s, i),\n+    t.SequencebrampHighlightRules = s",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 38,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "904af7b8507fc6820192cc726e5453f5eb2c1aca",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Expected an assignment or function call and instead saw an expression.<br>Missing semicolon.",
+        "created_at": "2017-09-04T01:15:34Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731744",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731744"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731744"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731745",
+        "pull_request_review_id": 60310514,
+        "id": 136731745,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjczMTc0NQ==",
+        "diff_hunk": "@@ -0,0 +1,56 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\"], function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text_highlight_rules\").TextHighlightRules\n+      , s = function() {\n+        function t(e) {\n+            var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\n+            return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\"",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "904af7b8507fc6820192cc726e5453f5eb2c1aca",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Missing semicolon.",
+        "created_at": "2017-09-04T01:15:34Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731745",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731745"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731745"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731746",
+        "pull_request_review_id": 60310514,
+        "id": 136731746,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjczMTc0Ng==",
+        "diff_hunk": "@@ -0,0 +1,56 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\"], function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 3,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "904af7b8507fc6820192cc726e5453f5eb2c1aca",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Misleading line break before ','; readers may interpret this as an expression boundary.",
+        "created_at": "2017-09-04T01:15:34Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731746",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731746"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731746"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731747",
+        "pull_request_review_id": 60310514,
+        "id": 136731747,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjczMTc0Nw==",
+        "diff_hunk": "@@ -0,0 +1,56 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\", [\"require\", \"exports\", \"module\", \"ace/lib/oop\"], function(e, t, n) {\n+    \"use strict\";\n+    var r = e(\"../lib/oop\")\n+      , i = e(\"./text_highlight_rules\").TextHighlightRules",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "904af7b8507fc6820192cc726e5453f5eb2c1aca",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Comma warnings can be turned off with 'laxcomma'.<br>Misleading line break before ','; readers may interpret this as an expression boundary.",
+        "created_at": "2017-09-04T01:15:34Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731747",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/136731747"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r136731747"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/142044145",
+        "pull_request_review_id": 66350450,
+        "id": 142044145,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MjA0NDE0NQ==",
+        "diff_hunk": "@@ -0,0 +1,61 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\",\r\n+       [\"require\", \"exports\", \"module\", \"ace/lib/oop\"],\r\n+       function(e, t, n) {\r\n+           \"use strict\";\r\n+           var r = e(\"../lib/oop\"),\r\n+               i = e(\"./text_highlight_rules\").TextHighlightRules,\r\n+               s = function() {\r\n+                   function t(e) {\r\n+                       var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\r\n+                       return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\";\r\n+                   }\r\n+                   this.$rules = {\r\n+                       start: [{\r\n+                           token: \"comment\",\r\n+                           regex: /^\\s*#.*/\r\n+                       }, {\r\n+                           token: [\"text\", \"string\"],\r\n+                           regex: /^(\\s*title:)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           // this doesn't handle commas well\r\n+                           token: [\"text\", \"keyword\", \"text\", \"string\"],\r\n+                           regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"text\", \"string\", \"text\", \"keyword\"],\r\n+                           regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"text\", \"keyword\"],\r\n+                           regex: /^(\\s*participant\\s+)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\r\n+                           regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\r\n+                       }]\r\n+                   };\r\n+               };\r\n+               r.inherits(s, i),\r\n+               t.SequencebrampHighlightRules = s;\r\n+       }\r\n+      ),\r\n+define(\"ace/mode/sequencebramp\",\r\n+       [\"require\", \"exports\", \"module\", \"ace/lib/oop\", \"ace/mode/text\", \"ace/mode/sequencebramp_highlight_rules\", \"ace/mode/folding/sequencebramp\"],\r\n+       function(e, t, n) {\r\n+           \"use strict\";\r\n+           var r = e(\"../lib/oop\"),\r\n+               i = e(\"./text\").Mode,\r\n+               s = e(\"./sequencebramp_highlight_rules\").SequencebrampHighlightRules,\r\n+               u = function() {\r\n+                   this.HighlightRules = s\r\n+               };\r\n+           r.inherits(u, i),\r\n+           function() {\r\n+               this.type = \"text\",\r\n+               this.$id = \"ace/mode/sequencebramp\"\r\n+           }\r\n+               .call(u.prototype),\r\n+           t.Mode = u\r\n+       }\r\n+      )\r",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 61,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "a9b718a409b03bffd2d3354b239d10aa66f87818",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Expected an assignment or function call and instead saw an expression.<br>Missing semicolon.",
+        "created_at": "2017-10-01T23:31:38Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r142044145",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/142044145"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r142044145"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/142044146",
+        "pull_request_review_id": 66350450,
+        "id": 142044146,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MjA0NDE0Ng==",
+        "diff_hunk": "@@ -0,0 +1,61 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\",\r\n+       [\"require\", \"exports\", \"module\", \"ace/lib/oop\"],\r\n+       function(e, t, n) {\r\n+           \"use strict\";\r\n+           var r = e(\"../lib/oop\"),\r\n+               i = e(\"./text_highlight_rules\").TextHighlightRules,\r\n+               s = function() {\r\n+                   function t(e) {\r\n+                       var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\r\n+                       return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\";\r\n+                   }\r\n+                   this.$rules = {\r\n+                       start: [{\r\n+                           token: \"comment\",\r\n+                           regex: /^\\s*#.*/\r\n+                       }, {\r\n+                           token: [\"text\", \"string\"],\r\n+                           regex: /^(\\s*title:)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           // this doesn't handle commas well\r\n+                           token: [\"text\", \"keyword\", \"text\", \"string\"],\r\n+                           regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"text\", \"string\", \"text\", \"keyword\"],\r\n+                           regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"text\", \"keyword\"],\r\n+                           regex: /^(\\s*participant\\s+)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\r\n+                           regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\r\n+                       }]\r\n+                   };\r\n+               };\r\n+               r.inherits(s, i),\r\n+               t.SequencebrampHighlightRules = s;\r\n+       }\r\n+      ),\r\n+define(\"ace/mode/sequencebramp\",\r\n+       [\"require\", \"exports\", \"module\", \"ace/lib/oop\", \"ace/mode/text\", \"ace/mode/sequencebramp_highlight_rules\", \"ace/mode/folding/sequencebramp\"],\r\n+       function(e, t, n) {\r\n+           \"use strict\";\r\n+           var r = e(\"../lib/oop\"),\r\n+               i = e(\"./text\").Mode,\r\n+               s = e(\"./sequencebramp_highlight_rules\").SequencebrampHighlightRules,\r\n+               u = function() {\r\n+                   this.HighlightRules = s\r\n+               };\r\n+           r.inherits(u, i),\r\n+           function() {\r\n+               this.type = \"text\",\r\n+               this.$id = \"ace/mode/sequencebramp\"\r\n+           }\r\n+               .call(u.prototype),\r\n+           t.Mode = u\r",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 59,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "a9b718a409b03bffd2d3354b239d10aa66f87818",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Expected an assignment or function call and instead saw an expression.<br>Missing semicolon.",
+        "created_at": "2017-10-01T23:31:38Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r142044146",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/142044146"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r142044146"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/142044147",
+        "pull_request_review_id": 66350450,
+        "id": 142044147,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MjA0NDE0Nw==",
+        "diff_hunk": "@@ -0,0 +1,61 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\",\r\n+       [\"require\", \"exports\", \"module\", \"ace/lib/oop\"],\r\n+       function(e, t, n) {\r\n+           \"use strict\";\r\n+           var r = e(\"../lib/oop\"),\r\n+               i = e(\"./text_highlight_rules\").TextHighlightRules,\r\n+               s = function() {\r\n+                   function t(e) {\r\n+                       var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\r\n+                       return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\";\r\n+                   }\r\n+                   this.$rules = {\r\n+                       start: [{\r\n+                           token: \"comment\",\r\n+                           regex: /^\\s*#.*/\r\n+                       }, {\r\n+                           token: [\"text\", \"string\"],\r\n+                           regex: /^(\\s*title:)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           // this doesn't handle commas well\r\n+                           token: [\"text\", \"keyword\", \"text\", \"string\"],\r\n+                           regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"text\", \"string\", \"text\", \"keyword\"],\r\n+                           regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"text\", \"keyword\"],\r\n+                           regex: /^(\\s*participant\\s+)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\r\n+                           regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\r\n+                       }]\r\n+                   };\r\n+               };\r\n+               r.inherits(s, i),\r\n+               t.SequencebrampHighlightRules = s;\r\n+       }\r\n+      ),\r\n+define(\"ace/mode/sequencebramp\",\r\n+       [\"require\", \"exports\", \"module\", \"ace/lib/oop\", \"ace/mode/text\", \"ace/mode/sequencebramp_highlight_rules\", \"ace/mode/folding/sequencebramp\"],\r\n+       function(e, t, n) {\r\n+           \"use strict\";\r\n+           var r = e(\"../lib/oop\"),\r\n+               i = e(\"./text\").Mode,\r\n+               s = e(\"./sequencebramp_highlight_rules\").SequencebrampHighlightRules,\r\n+               u = function() {\r\n+                   this.HighlightRules = s\r",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 51,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "a9b718a409b03bffd2d3354b239d10aa66f87818",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Missing semicolon.",
+        "created_at": "2017-10-01T23:31:38Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r142044147",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/142044147"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r142044147"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/142044148",
+        "pull_request_review_id": 66350450,
+        "id": 142044148,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MjA0NDE0OA==",
+        "diff_hunk": "@@ -0,0 +1,61 @@\n+define(\"ace/mode/sequencebramp_highlight_rules\",\r\n+       [\"require\", \"exports\", \"module\", \"ace/lib/oop\"],\r\n+       function(e, t, n) {\r\n+           \"use strict\";\r\n+           var r = e(\"../lib/oop\"),\r\n+               i = e(\"./text_highlight_rules\").TextHighlightRules,\r\n+               s = function() {\r\n+                   function t(e) {\r\n+                       var t = /\\w/.test(e) ? \"\\\\b\" : \"(?:\\\\B|^)\";\r\n+                       return t + e + \"[^\" + e + \"].*?\" + e + \"(?![\\\\w*])\";\r\n+                   }\r\n+                   this.$rules = {\r\n+                       start: [{\r\n+                           token: \"comment\",\r\n+                           regex: /^\\s*#.*/\r\n+                       }, {\r\n+                           token: [\"text\", \"string\"],\r\n+                           regex: /^(\\s*title:)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           // this doesn't handle commas well\r\n+                           token: [\"text\", \"keyword\", \"text\", \"string\"],\r\n+                           regex: /^(\\s*note\\s+(?:left\\s+of|right\\s+of|over)\\s+)(.*)(:)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"text\", \"string\", \"text\", \"keyword\"],\r\n+                           regex: /^(\\s*participant\\s+)(.*)(\\bas\\b)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"text\", \"keyword\"],\r\n+                           regex: /^(\\s*participant\\s+)(.*)/,\r\n+                           caseInsensitive: true,\r\n+                       }, {\r\n+                           token: [\"keyword\", \"operator\", \"keyword\", \"text\", \"string\"],\r\n+                           regex: /^(\\s*.*)(-?->>?)(.*)(\\s*:\\s*)(.*)?$/,\r\n+                       }]\r\n+                   };\r\n+               };\r\n+               r.inherits(s, i),\r\n+               t.SequencebrampHighlightRules = s;\r",
+        "path": "src/mode-sequencebramp.js",
+        "position": null,
+        "original_position": 40,
+        "commit_id": "74f1d3cce9cc6eb10155d41e829fd0fda89f4368",
+        "original_commit_id": "a9b718a409b03bffd2d3354b239d10aa66f87818",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Expected an assignment or function call and instead saw an expression.",
+        "created_at": "2017-10-01T23:31:38Z",
+        "updated_at": "2017-10-01T23:43:41Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r142044148",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/142044148"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/181#discussion_r142044148"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/259643350",
+        "pull_request_review_id": 207174760,
+        "id": 259643350,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1OTY0MzM1MA==",
+        "diff_hunk": "@@ -230,69 +231,74 @@ _.extend(BaseTheme.prototype, {\n       }\n     }\n \n-    _.each(signals, _.bind(function(s) {\n-      // Indexes of the left and right actors involved\n-      var a;\n-      var b;\n-\n-      var bb = this.textBBox(s.message, font);\n+    function buildSignalLayout(signal) {\n+      var bb = theme.textBBox(signal.message, font);\n \n-      s.textBB = bb;\n-      s.width   = bb.width;\n-      s.height  = bb.height;\n+      signal.textBB = bb;\n+      signal.width = bb.width + (SIGNAL_MARGIN + SIGNAL_PADDING) * 2;\n+      signal.height = bb.height + (SIGNAL_MARGIN + SIGNAL_PADDING) * 2;\n \n-      var extraWidth = 0;\n+      if (signal.isSelf()) {\n+        // TODO Self signals need a min height\n+        a = signal.actorA.index;\n+        b = a + 1;\n+        signal.width += SELF_SIGNAL_WIDTH;\n+      } else {\n+        a = Math.min(signal.actorA.index, signal.actorB.index);\n+        b = Math.max(signal.actorA.index, signal.actorB.index);\n+      }\n \n-      if (s.type == 'Signal') {\n+      actorEnsureDistance(a, b, signal.width);\n+    }\n \n-        s.width  += (SIGNAL_MARGIN + SIGNAL_PADDING) * 2;\n-        s.height += (SIGNAL_MARGIN + SIGNAL_PADDING) * 2;\n+    function buildNoteLayout(signal) {\n+      var bb = theme.textBBox(signal.message, font);\n+\n+      signal.textBB = bb;\n+      signal.width = bb.width + (NOTE_MARGIN + NOTE_PADDING) * 2;\n+      signal.height = bb.height + (NOTE_MARGIN + NOTE_PADDING) * 2;\n+\n+      // HACK lets include the actor'signal padding\n+      var extraWidth = 2 * ACTOR_MARGIN;\n+\n+      if (signal.placement == PLACEMENT.LEFTOF) {\n+        b = signal.actor.index;\n+        a = b - 1;\n+        actorEnsureDistance(a, b, signal.width + extraWidth);\n+      } else if (signal.placement == PLACEMENT.RIGHTOF) {\n+        a = signal.actor.index;\n+        b = a + 1;\n+        actorEnsureDistance(a, b, signal.width + extraWidth);\n+      } else if (signal.placement == PLACEMENT.OVER && signal.hasManyActors()) {\n+        // Over multiple actors\n+        a = Math.min(signal.actor[0].index, signal.actor[1].index);\n+        b = Math.max(signal.actor[0].index, signal.actor[1].index);\n+\n+        // We don't need our padding, and we want to overlap\n+        extraWidth = -(NOTE_PADDING * 2 + NOTE_OVERLAP * 2);\n+        actorEnsureDistance(a, b, signal.width + extraWidth);\n+      } else if (signal.placement == PLACEMENT.OVER) {\n+        // Over single actor\n+        a = signal.actor.index;\n+        actorEnsureDistance(a - 1, a, signal.width / 2);\n+        actorEnsureDistance(a, a + 1, signal.width / 2);\n+      }\n+    }\n \n-        if (s.isSelf()) {\n-          // TODO Self signals need a min height\n-          a = s.actorA.index;\n-          b = a + 1;\n-          s.width += SELF_SIGNAL_WIDTH;\n-        } else {\n-          a = Math.min(s.actorA.index, s.actorB.index);\n-          b = Math.max(s.actorA.index, s.actorB.index);\n-        }\n+    var layoutBuilders = {\n+      Signal: buildSignalLayout,\n+      Note: buildNoteLayout\n+    }",
+        "path": "src/theme.js",
+        "position": null,
+        "original_position": 91,
+        "commit_id": "59b04387bad8c756c6425580cf5b7561b68bfafc",
+        "original_commit_id": "d90376882a81d16f5d464b4ff07293cae7803147",
+        "user": {
+            "login": "houndci-bot",
+            "id": 6697940,
+            "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/houndci-bot",
+            "html_url": "https://github.com/houndci-bot",
+            "followers_url": "https://api.github.com/users/houndci-bot/followers",
+            "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+            "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+            "repos_url": "https://api.github.com/users/houndci-bot/repos",
+            "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Missing semicolon.",
+        "created_at": "2019-02-24T22:07:17Z",
+        "updated_at": "2019-02-24T22:13:14Z",
+        "html_url": "https://github.com/bramp/js-sequence-diagrams/pull/211#discussion_r259643350",
+        "pull_request_url": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/211",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/comments/259643350"
+            },
+            "html": {
+                "href": "https://github.com/bramp/js-sequence-diagrams/pull/211#discussion_r259643350"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bramp/js-sequence-diagrams/pulls/211"
+            }
+        }
+    }
+]

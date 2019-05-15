@@ -1,0 +1,399 @@
+[
+    {
+        "url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/170417832",
+        "pull_request_review_id": 99109065,
+        "id": 170417832,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MDQxNzgzMg==",
+        "diff_hunk": "@@ -202,7 +202,9 @@ if err != nil {\n }\n defer file.Close()\n file.WriteString(\"Golang\u4e2d\u6587\u793e\u533a\u2014\u2014\u8fd9\u91cc\u662f\u591a\u4f59\u7684\")\n-n, err := file.WriteAt([]byte(\"Go\u8bed\u8a00\u4e2d\u6587\u7f51\"), 24)\n+n, err := file.WriteAt([]byte(\"Go\u8bed\u8a00\u4e2d\u6587\u7f51\u7684\"), 24)\n+// file.WriteString(\"Golang\u4e2d\u6587\u793e\u533a\u2014\u2014\u8fd9\u91cc\u662f\u591a\u4f59\")",
+        "path": "chapter01/01.1.md",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "092fb377ace6dd618c7dd54e47f0d3a1492c7b4b",
+        "original_commit_id": "092fb377ace6dd618c7dd54e47f0d3a1492c7b4b",
+        "user": {
+            "login": "polaris1119",
+            "id": 899673,
+            "node_id": "MDQ6VXNlcjg5OTY3Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/899673?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/polaris1119",
+            "html_url": "https://github.com/polaris1119",
+            "followers_url": "https://api.github.com/users/polaris1119/followers",
+            "following_url": "https://api.github.com/users/polaris1119/following{/other_user}",
+            "gists_url": "https://api.github.com/users/polaris1119/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/polaris1119/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/polaris1119/subscriptions",
+            "organizations_url": "https://api.github.com/users/polaris1119/orgs",
+            "repos_url": "https://api.github.com/users/polaris1119/repos",
+            "events_url": "https://api.github.com/users/polaris1119/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/polaris1119/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\u76f4\u63a5\u5220\u6389\u5427\uff0c\u522b\u6ce8\u91ca\u4e86\u3002\r\n\r\n\u53e6\u5916\uff0c\u4e0b\u9762\u7684\u5185\u5bb9\uff1a\r\n\r\n```\r\nfile.WriteString(\"Golang\u4e2d\u6587\u793e\u533a\u2014\u2014\u8fd9\u91cc\u662f\u591a\u4f59\u7684\") \u5f80\u6587\u4ef6\u4e2d\u5199\u5165 Golang\u4e2d\u6587\u793e\u533a\u2014\u2014\u8fd9\u91cc\u662f\u591a\u4f59\u7684\uff0c\u4e4b\u540e file.WriteAt([]byte(\"Go\u8bed\u8a00\u4e2d\u6587\u7f51\"), 24) \u5728\u6587\u4ef6\u6d41\u7684 offset=24 \u5904\u5199\u5165 Go\u8bed\u8a00\u4e2d\u6587\u7f51\uff08\u4f1a\u8986\u76d6\u8be5\u4f4d\u7f6e\u7684\u5185\u5bb9\uff09\u3002\r\n```\r\n\u4e5f\u76f8\u5e94\u505a\u4e0b\u4fee\u6539\u5427\u3002",
+        "created_at": "2018-02-24T10:16:53Z",
+        "updated_at": "2018-02-24T10:17:19Z",
+        "html_url": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/42#discussion_r170417832",
+        "pull_request_url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/42",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/170417832"
+            },
+            "html": {
+                "href": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/42#discussion_r170417832"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/42"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201904056",
+        "pull_request_review_id": 136496518,
+        "id": 201904056,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMTkwNDA1Ng==",
+        "diff_hunk": "@@ -106,9 +104,9 @@ var (\n )\n ```\n \n-\u4e5f\u5c31\u662f\u8bf4\uff0cStdin/Stdout/Stderr \u53ea\u662f\u4e09\u4e2a\u7279\u6b8a\u7684\u6587\u4ef6\uff08\u5373\u90fd\u662f os.File \u7684\u5b9e\u4f8b\uff09\uff0c\u81ea\u7136\u4e5f\u5b9e\u73b0\u4e86 io.Reader \u548c io.Writer\u3002\n+\u4e5f\u5c31\u662f\u8bf4\uff0cStdin/Stdout/Stderr \u53ea\u662f\u4e09\u4e2a\u7279\u6b8a\u7684\u6587\u4ef6\u7c7b\u578b\u7684\u6570\u636e\uff08\u5373\u90fd\u662f os.File \u7684\u5b9e\u4f8b\uff09\uff0c\u81ea\u7136\u4e5f\u5b9e\u73b0\u4e86 io.Reader \u548c io.Writer\u3002",
+        "path": "chapter01/01.1.md",
+        "position": null,
+        "original_position": 46,
+        "commit_id": "1ebd0f297c5c3b2058fcf4986850ad6d7137e77f",
+        "original_commit_id": "dca24a3888dd709b4432cf22ad3a5dc9c346f467",
+        "user": {
+            "login": "polaris1119",
+            "id": 899673,
+            "node_id": "MDQ6VXNlcjg5OTY3Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/899673?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/polaris1119",
+            "html_url": "https://github.com/polaris1119",
+            "followers_url": "https://api.github.com/users/polaris1119/followers",
+            "following_url": "https://api.github.com/users/polaris1119/following{/other_user}",
+            "gists_url": "https://api.github.com/users/polaris1119/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/polaris1119/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/polaris1119/subscriptions",
+            "organizations_url": "https://api.github.com/users/polaris1119/orgs",
+            "repos_url": "https://api.github.com/users/polaris1119/repos",
+            "events_url": "https://api.github.com/users/polaris1119/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/polaris1119/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\u53ea\u662f\u4e09\u4e2a\u7279\u6b8a\u7684\u6587\u4ef6\u7c7b\u578b\u7684\u6570\u636e -> \u6570\u636e\u662f\u4e0d\u662f\u4e0d\u5408\u9002\uff1f\u6362\u6210\u201c\u6807\u8bc6\u201d \u662f\u4e0d\u662f\u66f4\u597d\uff1f",
+        "created_at": "2018-07-12T04:05:57Z",
+        "updated_at": "2018-07-13T09:06:53Z",
+        "html_url": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201904056",
+        "pull_request_url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201904056"
+            },
+            "html": {
+                "href": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201904056"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201904574",
+        "pull_request_review_id": 136496518,
+        "id": 201904574,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMTkwNDU3NA==",
+        "diff_hunk": "@@ -348,32 +346,6 @@ type Closer interface {\n \n \u5b9e\u9645\u7f16\u7a0b\u4e2d\uff0c\u7ecf\u5e38\u5c06 Close \u65b9\u6cd5\u7684\u8c03\u7528\u653e\u5728 defer \u8bed\u53e5\u4e2d\u3002\n \n-**\u5c0f\u63d0\u793a**",
+        "path": "chapter01/01.1.md",
+        "position": null,
+        "original_position": 111,
+        "commit_id": "1ebd0f297c5c3b2058fcf4986850ad6d7137e77f",
+        "original_commit_id": "dca24a3888dd709b4432cf22ad3a5dc9c346f467",
+        "user": {
+            "login": "polaris1119",
+            "id": 899673,
+            "node_id": "MDQ6VXNlcjg5OTY3Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/899673?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/polaris1119",
+            "html_url": "https://github.com/polaris1119",
+            "followers_url": "https://api.github.com/users/polaris1119/followers",
+            "following_url": "https://api.github.com/users/polaris1119/following{/other_user}",
+            "gists_url": "https://api.github.com/users/polaris1119/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/polaris1119/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/polaris1119/subscriptions",
+            "organizations_url": "https://api.github.com/users/polaris1119/orgs",
+            "repos_url": "https://api.github.com/users/polaris1119/repos",
+            "events_url": "https://api.github.com/users/polaris1119/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/polaris1119/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\u6b64\u5904\u76ee\u7684\u5728\u4e8e\u63d0\u9192\u5e94\u8be5\u5148\u68c0\u67e5\u9519\u8bef\uff0c\u7136\u540e\u5728\u6267\u884c Close \u64cd\u4f5c\uff0c\u521d\u5b66\u8005\u5f88\u5bb9\u6613\u72af\u6b64\u9519\u8bef\u3002\u6240\u4ee5\uff0c\u6211\u89c9\u5f97\u8fd9\u4e2a\u8fd8\u662f\u4fdd\u7559\u3002",
+        "created_at": "2018-07-12T04:10:38Z",
+        "updated_at": "2018-07-13T09:06:53Z",
+        "html_url": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201904574",
+        "pull_request_url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201904574"
+            },
+            "html": {
+                "href": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201904574"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201905946",
+        "pull_request_review_id": 136498660,
+        "id": 201905946,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMTkwNTk0Ng==",
+        "diff_hunk": "@@ -348,32 +346,6 @@ type Closer interface {\n \n \u5b9e\u9645\u7f16\u7a0b\u4e2d\uff0c\u7ecf\u5e38\u5c06 Close \u65b9\u6cd5\u7684\u8c03\u7528\u653e\u5728 defer \u8bed\u53e5\u4e2d\u3002\n \n-**\u5c0f\u63d0\u793a**",
+        "path": "chapter01/01.1.md",
+        "position": null,
+        "original_position": 111,
+        "commit_id": "1ebd0f297c5c3b2058fcf4986850ad6d7137e77f",
+        "original_commit_id": "dca24a3888dd709b4432cf22ad3a5dc9c346f467",
+        "user": {
+            "login": "stamnug",
+            "id": 21006005,
+            "node_id": "MDQ6VXNlcjIxMDA2MDA1",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/21006005?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/stamnug",
+            "html_url": "https://github.com/stamnug",
+            "followers_url": "https://api.github.com/users/stamnug/followers",
+            "following_url": "https://api.github.com/users/stamnug/following{/other_user}",
+            "gists_url": "https://api.github.com/users/stamnug/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/stamnug/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/stamnug/subscriptions",
+            "organizations_url": "https://api.github.com/users/stamnug/orgs",
+            "repos_url": "https://api.github.com/users/stamnug/repos",
+            "events_url": "https://api.github.com/users/stamnug/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/stamnug/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\u6211\u4e0d\u8ba4\u4e3a\u8fd9\u662f\u4e00\u4e2a\u9519\u8bef...\u53ea\u662f\u4e2a\u4eba\u4e60\u60ef\u800c\u5df2        \u6211\u5e76\u6ca1\u6709\u53d1\u73b0\u5728\u54ea\u79cd\u60c5\u51b5\u4e0b defer\u653e\u5728\u9519\u8bef\u5224\u65ad\u524d\u9762\u4f1a\u6bd4\u653e\u5728\u540e\u9762\u9020\u6210\u66f4\u5927\u5371\u5bb3",
+        "created_at": "2018-07-12T04:24:25Z",
+        "updated_at": "2018-07-13T09:06:53Z",
+        "html_url": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201905946",
+        "pull_request_url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201905946"
+            },
+            "html": {
+                "href": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201905946"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48"
+            }
+        },
+        "in_reply_to_id": 201904574
+    },
+    {
+        "url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201963859",
+        "pull_request_review_id": 136565146,
+        "id": 201963859,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMTk2Mzg1OQ==",
+        "diff_hunk": "@@ -348,32 +346,6 @@ type Closer interface {\n \n \u5b9e\u9645\u7f16\u7a0b\u4e2d\uff0c\u7ecf\u5e38\u5c06 Close \u65b9\u6cd5\u7684\u8c03\u7528\u653e\u5728 defer \u8bed\u53e5\u4e2d\u3002\n \n-**\u5c0f\u63d0\u793a**",
+        "path": "chapter01/01.1.md",
+        "position": null,
+        "original_position": 111,
+        "commit_id": "1ebd0f297c5c3b2058fcf4986850ad6d7137e77f",
+        "original_commit_id": "dca24a3888dd709b4432cf22ad3a5dc9c346f467",
+        "user": {
+            "login": "polaris1119",
+            "id": 899673,
+            "node_id": "MDQ6VXNlcjg5OTY3Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/899673?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/polaris1119",
+            "html_url": "https://github.com/polaris1119",
+            "followers_url": "https://api.github.com/users/polaris1119/followers",
+            "following_url": "https://api.github.com/users/polaris1119/following{/other_user}",
+            "gists_url": "https://api.github.com/users/polaris1119/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/polaris1119/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/polaris1119/subscriptions",
+            "organizations_url": "https://api.github.com/users/polaris1119/orgs",
+            "repos_url": "https://api.github.com/users/polaris1119/repos",
+            "events_url": "https://api.github.com/users/polaris1119/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/polaris1119/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\u8fd9\u91cc file \u7684\u4f8b\u5b50\uff0c\u53ea\u662f\u5b9e\u73b0\u7684\u65f6\u5019\u505a\u4e86\u5904\u7406\uff0c\u4f46\u5b9e\u9645\u4e0a\uff0c\u5f88\u591a\u65f6\u5019\uff0cdefer \u653e\u5728\u9519\u8bef\u5224\u65ad\u524d\u5c31\u662f\u9519\u8bef\u7684\u3002\u6bd4\u5982 net/http \u4e2d Response \u7684 Body\uff1a\r\n\r\n```go\r\nfunc main() {\r\n    resp, err := http.Get(\"https://baidu.com2\")\r\n    defer resp.Body.Close()\r\n    if err != nil {\r\n        fmt.Println(err)\r\n    }\r\n}\r\n```\r\n\r\n\u6211\u8fd9\u91cc\u6545\u610f\u7f51\u5740\u9519\u4e86\uff0c\u5bfc\u81f4\u8bf7\u6c42\u9519\u8bef\uff0c\u8fd9\u4e2a\u65f6\u5019 resp \u662f nil\uff0c\u5982\u679c\u4e0d\u5148\u5224\u65ad err \u7684\u8bdd\uff0c\u5c31\u4f1a panic\u3002",
+        "created_at": "2018-07-12T09:13:38Z",
+        "updated_at": "2018-07-13T09:06:53Z",
+        "html_url": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201963859",
+        "pull_request_url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201963859"
+            },
+            "html": {
+                "href": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201963859"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48"
+            }
+        },
+        "in_reply_to_id": 201904574
+    },
+    {
+        "url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201969819",
+        "pull_request_review_id": 136572169,
+        "id": 201969819,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMTk2OTgxOQ==",
+        "diff_hunk": "@@ -348,32 +346,6 @@ type Closer interface {\n \n \u5b9e\u9645\u7f16\u7a0b\u4e2d\uff0c\u7ecf\u5e38\u5c06 Close \u65b9\u6cd5\u7684\u8c03\u7528\u653e\u5728 defer \u8bed\u53e5\u4e2d\u3002\n \n-**\u5c0f\u63d0\u793a**",
+        "path": "chapter01/01.1.md",
+        "position": null,
+        "original_position": 111,
+        "commit_id": "1ebd0f297c5c3b2058fcf4986850ad6d7137e77f",
+        "original_commit_id": "dca24a3888dd709b4432cf22ad3a5dc9c346f467",
+        "user": {
+            "login": "stamnug",
+            "id": 21006005,
+            "node_id": "MDQ6VXNlcjIxMDA2MDA1",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/21006005?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/stamnug",
+            "html_url": "https://github.com/stamnug",
+            "followers_url": "https://api.github.com/users/stamnug/followers",
+            "following_url": "https://api.github.com/users/stamnug/following{/other_user}",
+            "gists_url": "https://api.github.com/users/stamnug/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/stamnug/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/stamnug/subscriptions",
+            "organizations_url": "https://api.github.com/users/stamnug/orgs",
+            "repos_url": "https://api.github.com/users/stamnug/repos",
+            "events_url": "https://api.github.com/users/stamnug/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/stamnug/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\u8fd9\u91cc\u7684\u9519\u8bef\u662f\u56e0\u4e3a\u6ca1\u6709\u5bf9err!=nil\u505a\u51fa\u6b63\u786e\u7684\u5904\u7406 \uff0c\u5728\u8fd9\u79cd\u60c5\u51b5\u4e0b  ..\u5373\u4f7f\u628adefer\u653e\u5230\u540e\u9762\uff0c\u4e5f\u8fd8\u662f\u4f1apanic.. \r\n\u903b\u8f91\u4e0a\u8bb2\uff0c\u53ca\u65f6\u68c0\u67e5\u9519\u8bef\u7684\u4e60\u60ef\u662f\u6b63\u786e\u7684.......\u8bed\u6cd5\u4e0a\u8bb2\uff0cdefer\u653e\u5728\u54ea\u91cc\u90fd\u662f\u4e00\u6837\u7684..\r\n\u539f\u6587\u662f\u8fd9\u6837\u7684\uff1a\u201c\u5f53\u6587\u4ef6 studygolang.txt \u4e0d\u5b58\u5728\u6216\u627e\u4e0d\u5230\u65f6\uff0cfile.Close() \u4f1a panic\uff0c\u56e0\u4e3a file \u662f nil\u3002\u56e0\u6b64\uff0c\u5e94\u8be5\u5c06 defer file.Close() \u653e\u5728\u9519\u8bef\u68c0\u67e5\u4e4b\u540e\u3002\u201d    \u53ef\u662f\u771f\u7684\u628adefer\u653e\u5230\u540e\u9762\u5c31\u6ca1\u9519\u4e86\u5417\uff1f",
+        "created_at": "2018-07-12T09:33:04Z",
+        "updated_at": "2018-07-13T09:06:53Z",
+        "html_url": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201969819",
+        "pull_request_url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201969819"
+            },
+            "html": {
+                "href": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201969819"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48"
+            }
+        },
+        "in_reply_to_id": 201904574
+    },
+    {
+        "url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201971233",
+        "pull_request_review_id": 136573681,
+        "id": 201971233,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMTk3MTIzMw==",
+        "diff_hunk": "@@ -348,32 +346,6 @@ type Closer interface {\n \n \u5b9e\u9645\u7f16\u7a0b\u4e2d\uff0c\u7ecf\u5e38\u5c06 Close \u65b9\u6cd5\u7684\u8c03\u7528\u653e\u5728 defer \u8bed\u53e5\u4e2d\u3002\n \n-**\u5c0f\u63d0\u793a**",
+        "path": "chapter01/01.1.md",
+        "position": null,
+        "original_position": 111,
+        "commit_id": "1ebd0f297c5c3b2058fcf4986850ad6d7137e77f",
+        "original_commit_id": "dca24a3888dd709b4432cf22ad3a5dc9c346f467",
+        "user": {
+            "login": "stamnug",
+            "id": 21006005,
+            "node_id": "MDQ6VXNlcjIxMDA2MDA1",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/21006005?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/stamnug",
+            "html_url": "https://github.com/stamnug",
+            "followers_url": "https://api.github.com/users/stamnug/followers",
+            "following_url": "https://api.github.com/users/stamnug/following{/other_user}",
+            "gists_url": "https://api.github.com/users/stamnug/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/stamnug/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/stamnug/subscriptions",
+            "organizations_url": "https://api.github.com/users/stamnug/orgs",
+            "repos_url": "https://api.github.com/users/stamnug/repos",
+            "events_url": "https://api.github.com/users/stamnug/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/stamnug/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\u552f\u4e00\u53ef\u80fd\u4f1a\u4e0d\u4e00\u6837\u7684\u60c5\u51b5\uff0c\u662f\u9519\u8bef\u68c0\u67e5\u548cClose\u90fd\u88abdefer\u4e86\u3002 \u4f46\u662f\u5018\u82e5\u771f\u662f\u8fd9\u6837\uff0cdefer close\u8fd8\u662f\u5e94\u8be5\u653e\u5728\u524d\u9762\u3002\u3002\u5148defer\u7684\u4f1a\u540e\u6267\u884c\u3002",
+        "created_at": "2018-07-12T09:37:14Z",
+        "updated_at": "2018-07-13T09:06:53Z",
+        "html_url": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201971233",
+        "pull_request_url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/201971233"
+            },
+            "html": {
+                "href": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r201971233"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48"
+            }
+        },
+        "in_reply_to_id": 201904574
+    },
+    {
+        "url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/202075781",
+        "pull_request_review_id": 136701620,
+        "id": 202075781,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMjA3NTc4MQ==",
+        "diff_hunk": "@@ -348,32 +346,6 @@ type Closer interface {\n \n \u5b9e\u9645\u7f16\u7a0b\u4e2d\uff0c\u7ecf\u5e38\u5c06 Close \u65b9\u6cd5\u7684\u8c03\u7528\u653e\u5728 defer \u8bed\u53e5\u4e2d\u3002\n \n-**\u5c0f\u63d0\u793a**",
+        "path": "chapter01/01.1.md",
+        "position": null,
+        "original_position": 111,
+        "commit_id": "1ebd0f297c5c3b2058fcf4986850ad6d7137e77f",
+        "original_commit_id": "dca24a3888dd709b4432cf22ad3a5dc9c346f467",
+        "user": {
+            "login": "polaris1119",
+            "id": 899673,
+            "node_id": "MDQ6VXNlcjg5OTY3Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/899673?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/polaris1119",
+            "html_url": "https://github.com/polaris1119",
+            "followers_url": "https://api.github.com/users/polaris1119/followers",
+            "following_url": "https://api.github.com/users/polaris1119/following{/other_user}",
+            "gists_url": "https://api.github.com/users/polaris1119/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/polaris1119/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/polaris1119/subscriptions",
+            "organizations_url": "https://api.github.com/users/polaris1119/orgs",
+            "repos_url": "https://api.github.com/users/polaris1119/repos",
+            "events_url": "https://api.github.com/users/polaris1119/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/polaris1119/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\u4e0d\u662f\u554a\uff0c\u5982\u679c\u5224\u65ad\u4e86 err\uff0c\u5728 err \u4e4b\u540e\u7684 defer Close \u5c31\u4e0d\u4f1a\u88ab\u6267\u884c\u5230\uff0c\u53c8\u5982\u4f55\u4f1a\u51fa\u9519\u5462\uff1f",
+        "created_at": "2018-07-12T15:20:40Z",
+        "updated_at": "2018-07-13T09:06:53Z",
+        "html_url": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r202075781",
+        "pull_request_url": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/comments/202075781"
+            },
+            "html": {
+                "href": "https://github.com/polaris1119/The-Golang-Standard-Library-by-Example/pull/48#discussion_r202075781"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/polaris1119/The-Golang-Standard-Library-by-Example/pulls/48"
+            }
+        },
+        "in_reply_to_id": 201904574
+    }
+]

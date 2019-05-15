@@ -1,0 +1,101 @@
+[
+    {
+        "url": "https://api.github.com/repos/hokein/electron-sample-apps/pulls/comments/139959490",
+        "pull_request_review_id": 63963136,
+        "id": 139959490,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzOTk1OTQ5MA==",
+        "diff_hunk": "@@ -2,6 +2,9 @@ const {app, BrowserWindow} = require('electron');\n \n let mainWindow;\n \n+// enable ignore-gpu-blacklist option",
+        "path": "webgl/main.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "26becdd10dbca8839359f2528093477dfc7c5698",
+        "original_commit_id": "40fefd5be50a4b9716d643245617c61233925e17",
+        "user": {
+            "login": "hokein",
+            "id": 2557445,
+            "node_id": "MDQ6VXNlcjI1NTc0NDU=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2557445?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hokein",
+            "html_url": "https://github.com/hokein",
+            "followers_url": "https://api.github.com/users/hokein/followers",
+            "following_url": "https://api.github.com/users/hokein/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hokein/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hokein/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hokein/subscriptions",
+            "organizations_url": "https://api.github.com/users/hokein/orgs",
+            "repos_url": "https://api.github.com/users/hokein/repos",
+            "events_url": "https://api.github.com/users/hokein/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hokein/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm fine with adding this option in the sample, but please add comment stating that this option would make electron/chromium less stable -- chromium blacklists some gpus because of some bugs of these gpus. ",
+        "created_at": "2017-09-20T12:52:50Z",
+        "updated_at": "2017-09-20T13:02:39Z",
+        "html_url": "https://github.com/hokein/electron-sample-apps/pull/50#discussion_r139959490",
+        "pull_request_url": "https://api.github.com/repos/hokein/electron-sample-apps/pulls/50",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hokein/electron-sample-apps/pulls/comments/139959490"
+            },
+            "html": {
+                "href": "https://github.com/hokein/electron-sample-apps/pull/50#discussion_r139959490"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hokein/electron-sample-apps/pulls/50"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hokein/electron-sample-apps/pulls/comments/139962037",
+        "pull_request_review_id": 63966051,
+        "id": 139962037,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzOTk2MjAzNw==",
+        "diff_hunk": "@@ -2,6 +2,9 @@ const {app, BrowserWindow} = require('electron');\n \n let mainWindow;\n \n+// enable ignore-gpu-blacklist option",
+        "path": "webgl/main.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "26becdd10dbca8839359f2528093477dfc7c5698",
+        "original_commit_id": "40fefd5be50a4b9716d643245617c61233925e17",
+        "user": {
+            "login": "cg-cnu",
+            "id": 2767425,
+            "node_id": "MDQ6VXNlcjI3Njc0MjU=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2767425?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/cg-cnu",
+            "html_url": "https://github.com/cg-cnu",
+            "followers_url": "https://api.github.com/users/cg-cnu/followers",
+            "following_url": "https://api.github.com/users/cg-cnu/following{/other_user}",
+            "gists_url": "https://api.github.com/users/cg-cnu/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/cg-cnu/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/cg-cnu/subscriptions",
+            "organizations_url": "https://api.github.com/users/cg-cnu/orgs",
+            "repos_url": "https://api.github.com/users/cg-cnu/repos",
+            "events_url": "https://api.github.com/users/cg-cnu/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/cg-cnu/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@hokein Added comments. Let me know if its ok! Thanks \ud83d\ude04 ",
+        "created_at": "2017-09-20T13:03:13Z",
+        "updated_at": "2017-09-20T13:03:14Z",
+        "html_url": "https://github.com/hokein/electron-sample-apps/pull/50#discussion_r139962037",
+        "pull_request_url": "https://api.github.com/repos/hokein/electron-sample-apps/pulls/50",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hokein/electron-sample-apps/pulls/comments/139962037"
+            },
+            "html": {
+                "href": "https://github.com/hokein/electron-sample-apps/pull/50#discussion_r139962037"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hokein/electron-sample-apps/pulls/50"
+            }
+        },
+        "in_reply_to_id": 139959490
+    }
+]

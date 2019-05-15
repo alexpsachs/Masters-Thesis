@@ -1,0 +1,149 @@
+[
+    {
+        "url": "https://api.github.com/repos/clojure/core.async/pulls/comments/5174938",
+        "pull_request_review_id": null,
+        "id": 5174938,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUxNzQ5Mzg=",
+        "diff_hunk": "@@ -38,34 +38,6 @@\n             (do (.splice takes idx 1)\n                 (recur idx)))))))\n \n-  impl/WritePort",
+        "path": "src/main/clojure/cljs/core/async/impl/channels.cljs",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "b24cb803845487d3cbe8851f69c40a0583604aed",
+        "original_commit_id": "ca2ba7747e86ffdbbce6181d455c4f29e8245076",
+        "user": {
+            "login": "brandonbloom",
+            "id": 119164,
+            "node_id": "MDQ6VXNlcjExOTE2NA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/119164?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/brandonbloom",
+            "html_url": "https://github.com/brandonbloom",
+            "followers_url": "https://api.github.com/users/brandonbloom/followers",
+            "following_url": "https://api.github.com/users/brandonbloom/following{/other_user}",
+            "gists_url": "https://api.github.com/users/brandonbloom/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/brandonbloom/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/brandonbloom/subscriptions",
+            "organizations_url": "https://api.github.com/users/brandonbloom/orgs",
+            "repos_url": "https://api.github.com/users/brandonbloom/repos",
+            "events_url": "https://api.github.com/users/brandonbloom/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/brandonbloom/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This didn't change. Only moved.\n",
+        "created_at": "2013-07-12T21:07:29Z",
+        "updated_at": "2013-07-12T21:15:01Z",
+        "html_url": "https://github.com/clojure/core.async/pull/20#discussion_r5174938",
+        "pull_request_url": "https://api.github.com/repos/clojure/core.async/pulls/20",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/clojure/core.async/pulls/comments/5174938"
+            },
+            "html": {
+                "href": "https://github.com/clojure/core.async/pull/20#discussion_r5174938"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/clojure/core.async/pulls/20"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/clojure/core.async/pulls/comments/5174950",
+        "pull_request_review_id": null,
+        "id": 5174950,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUxNzQ5NTA=",
+        "diff_hunk": "@@ -12,11 +12,11 @@\n   (take! [port fn1-handler] \"derefable val if taken, nil if take was enqueued\"))\n \n (defprotocol WritePort\n-  (put! [port val fn0-handler] \"derefable nil if put, nil if put was enqueued. Must throw on nil val.\"))\n-\n-(defprotocol Channel\n+  (put! [port val fn0-handler] \"derefable nil if put, nil if put was enqueued. Must throw on nil val.\")\n   (close! [chan]))\n \n+(defprotocol Channel)",
+        "path": "src/main/clojure/cljs/core/async/impl/protocols.cljs",
+        "position": 10,
+        "original_position": 10,
+        "commit_id": "b24cb803845487d3cbe8851f69c40a0583604aed",
+        "original_commit_id": "ca2ba7747e86ffdbbce6181d455c4f29e8245076",
+        "user": {
+            "login": "brandonbloom",
+            "id": 119164,
+            "node_id": "MDQ6VXNlcjExOTE2NA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/119164?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/brandonbloom",
+            "html_url": "https://github.com/brandonbloom",
+            "followers_url": "https://api.github.com/users/brandonbloom/followers",
+            "following_url": "https://api.github.com/users/brandonbloom/following{/other_user}",
+            "gists_url": "https://api.github.com/users/brandonbloom/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/brandonbloom/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/brandonbloom/subscriptions",
+            "organizations_url": "https://api.github.com/users/brandonbloom/orgs",
+            "repos_url": "https://api.github.com/users/brandonbloom/repos",
+            "events_url": "https://api.github.com/users/brandonbloom/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/brandonbloom/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This isn't in use any more. Should it stick around as a marker protocol?\n",
+        "created_at": "2013-07-12T21:08:06Z",
+        "updated_at": "2013-07-12T21:15:01Z",
+        "html_url": "https://github.com/clojure/core.async/pull/20#discussion_r5174950",
+        "pull_request_url": "https://api.github.com/repos/clojure/core.async/pulls/20",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/clojure/core.async/pulls/comments/5174950"
+            },
+            "html": {
+                "href": "https://github.com/clojure/core.async/pull/20#discussion_r5174950"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/clojure/core.async/pulls/20"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/clojure/core.async/pulls/comments/5175000",
+        "pull_request_review_id": null,
+        "id": 5175000,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUxNzUwMDA=",
+        "diff_hunk": "@@ -12,11 +12,11 @@\n   (take! [port fn1-handler] \"derefable val if taken, nil if take was enqueued\"))\n \n (defprotocol WritePort\n-  (put! [port val fn0-handler] \"derefable nil if put, nil if put was enqueued. Must throw on nil val.\"))\n-\n-(defprotocol Channel\n+  (put! [port val fn0-handler] \"derefable nil if put, nil if put was enqueued. Must throw on nil val.\")\n   (close! [chan]))\n \n+(defprotocol Channel)",
+        "path": "src/main/clojure/cljs/core/async/impl/protocols.cljs",
+        "position": 10,
+        "original_position": 10,
+        "commit_id": "b24cb803845487d3cbe8851f69c40a0583604aed",
+        "original_commit_id": "ca2ba7747e86ffdbbce6181d455c4f29e8245076",
+        "user": {
+            "login": "brandonbloom",
+            "id": 119164,
+            "node_id": "MDQ6VXNlcjExOTE2NA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/119164?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/brandonbloom",
+            "html_url": "https://github.com/brandonbloom",
+            "followers_url": "https://api.github.com/users/brandonbloom/followers",
+            "following_url": "https://api.github.com/users/brandonbloom/following{/other_user}",
+            "gists_url": "https://api.github.com/users/brandonbloom/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/brandonbloom/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/brandonbloom/subscriptions",
+            "organizations_url": "https://api.github.com/users/brandonbloom/orgs",
+            "repos_url": "https://api.github.com/users/brandonbloom/repos",
+            "events_url": "https://api.github.com/users/brandonbloom/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/brandonbloom/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This also raises the question of whether or not there should be type predicates for channels & ports.\n",
+        "created_at": "2013-07-12T21:11:37Z",
+        "updated_at": "2013-07-12T21:15:01Z",
+        "html_url": "https://github.com/clojure/core.async/pull/20#discussion_r5175000",
+        "pull_request_url": "https://api.github.com/repos/clojure/core.async/pulls/20",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/clojure/core.async/pulls/comments/5175000"
+            },
+            "html": {
+                "href": "https://github.com/clojure/core.async/pull/20#discussion_r5175000"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/clojure/core.async/pulls/20"
+            }
+        }
+    }
+]

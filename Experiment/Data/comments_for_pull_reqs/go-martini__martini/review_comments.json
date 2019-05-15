@@ -1,0 +1,2648 @@
+[
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7679354",
+        "pull_request_review_id": null,
+        "id": 7679354,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NzkzNTQ=",
+        "diff_hunk": "@@ -3,14 +3,25 @@ package martini\n import (\n \t\"log\"\n \t\"net/http\"\n+\t\"runtime\"\n \t\"time\"\n )\n \n+var logFormat = getLogFormat()\n+\n+func getLogFormat() string {",
+        "path": "logger.go",
+        "position": 10,
+        "original_position": 10,
+        "commit_id": "bb8f301940760c964afa8d985dfbcf812999f1c6",
+        "original_commit_id": "bb8f301940760c964afa8d985dfbcf812999f1c6",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "let's make this function a little more reusable. Call it something like `wrapGreen` or `wrapColor` or `emphasize` and have it take a format string to wrap.\n\nThis way I can do something like `wrapGreen(\"Hello world\")` and it will return \"\\033[32;1m Hello world \\033[0m\\n\".\n",
+        "created_at": "2013-11-15T00:57:01Z",
+        "updated_at": "2013-11-15T00:57:01Z",
+        "html_url": "https://github.com/go-martini/martini/pull/38#discussion_r7679354",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/38",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7679354"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/38#discussion_r7679354"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/38"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7679393",
+        "pull_request_review_id": null,
+        "id": 7679393,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NzkzOTM=",
+        "diff_hunk": "@@ -3,14 +3,25 @@ package martini\n import (\n \t\"log\"\n \t\"net/http\"\n+\t\"runtime\"\n \t\"time\"\n )\n \n+var logFormat = getLogFormat()\n+\n+func getLogFormat() string {\n+\tformat := \"Started %s %s\"\n+\tif runtime.GOOS != \"windows\" {\n+\t\treturn \"\\033[32;1m\" + format + \"\\033[0m\\n\"\n+\t}\n+\treturn format\n+}\n+\n // Logger returns a middleware handler that logs the request as it goes in and the response as it goes out.\n func Logger() Handler {\n \treturn func(res http.ResponseWriter, req *http.Request, c Context, log *log.Logger) {\n \t\tstart := time.Now()\n-\t\tlog.Printf(\"\\033[32;1mStarted %s %s\\033[0m\\n\", req.Method, req.URL.Path)\n+\t\tlog.Printf(logFormat, req.Method, req.URL.Path)",
+        "path": "logger.go",
+        "position": 23,
+        "original_position": 23,
+        "commit_id": "bb8f301940760c964afa8d985dfbcf812999f1c6",
+        "original_commit_id": "bb8f301940760c964afa8d985dfbcf812999f1c6",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "For the sake of simplicity we can just call the function directly here instead of storing it in a var. I would rather have cleaner code and optimize later (of this is ever a bottleneck)\n",
+        "created_at": "2013-11-15T00:59:01Z",
+        "updated_at": "2013-11-15T00:59:01Z",
+        "html_url": "https://github.com/go-martini/martini/pull/38#discussion_r7679393",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/38",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7679393"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/38#discussion_r7679393"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/38"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7698740",
+        "pull_request_review_id": null,
+        "id": 7698740,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2OTg3NDA=",
+        "diff_hunk": "@@ -0,0 +1,82 @@\n+//Package form implements a handler for post and get forms.\n+//\n+// For a full guide visit http://github.com/codegangsta/martini\n+//\n+//  package main\n+//\n+//  import (\n+//     \"github.com/codegangsta/martini\"\n+//     \"github.com/codegangsta/martini/form\"\n+//   )\n+//\n+//  type BlogPost struct{\n+//     Title string `form:\"title,required\"`\n+//     Content string `form:\"content\"`\n+//  }\n+//\n+//  func main() {\n+//    m := martini.Classic()\n+//\n+//    m.Get(\"/\",form.Form(&BlogPost{}) func(blogpost *BlogPost) string {\n+//      return blogpost.Title\n+//    })\n+//\n+//    m.Run()\n+//  }\n+package form\n+\n+import (\n+\t\"fmt\"\n+\t\"martini\"\n+\t\"net/http\"\n+\t\"reflect\"\n+\t\"strings\"\n+)\n+\n+//Avaiable error if a formfield which was set as required, wasn't present.\n+type RequireError struct {",
+        "path": "form/form.go",
+        "position": null,
+        "original_position": 37,
+        "commit_id": "62c3ae4eada81b55d192fcbd07bce3e9cceb3940",
+        "original_commit_id": "1147788aedd5b2e9881135e2386843523c869c97",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Lets call this type `Errors` and have it be a `map[string]string` instead of a `struct`\nThis way we can support multiple validation errors in the future. A simple `len()` check on the `form.Errors` service will allow us to check and see if there were any errors.\n",
+        "created_at": "2013-11-15T18:53:36Z",
+        "updated_at": "2013-11-16T08:19:02Z",
+        "html_url": "https://github.com/go-martini/martini/pull/43#discussion_r7698740",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7698740"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/43#discussion_r7698740"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7699006",
+        "pull_request_review_id": null,
+        "id": 7699006,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2OTkwMDY=",
+        "diff_hunk": "@@ -0,0 +1,82 @@\n+//Package form implements a handler for post and get forms.\n+//\n+// For a full guide visit http://github.com/codegangsta/martini\n+//\n+//  package main\n+//\n+//  import (\n+//     \"github.com/codegangsta/martini\"\n+//     \"github.com/codegangsta/martini/form\"\n+//   )\n+//\n+//  type BlogPost struct{\n+//     Title string `form:\"title,required\"`\n+//     Content string `form:\"content\"`\n+//  }\n+//\n+//  func main() {\n+//    m := martini.Classic()\n+//\n+//    m.Get(\"/\",form.Form(&BlogPost{}) func(blogpost *BlogPost) string {\n+//      return blogpost.Title\n+//    })\n+//\n+//    m.Run()\n+//  }\n+package form\n+\n+import (\n+\t\"fmt\"\n+\t\"martini\"\n+\t\"net/http\"\n+\t\"reflect\"\n+\t\"strings\"\n+)\n+\n+//Avaiable error if a formfield which was set as required, wasn't present.\n+type RequireError struct {",
+        "path": "form/form.go",
+        "position": null,
+        "original_position": 37,
+        "commit_id": "62c3ae4eada81b55d192fcbd07bce3e9cceb3940",
+        "original_commit_id": "1147788aedd5b2e9881135e2386843523c869c97",
+        "user": {
+            "login": "ioboi",
+            "id": 1333699,
+            "node_id": "MDQ6VXNlcjEzMzM2OTk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1333699?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ioboi",
+            "html_url": "https://github.com/ioboi",
+            "followers_url": "https://api.github.com/users/ioboi/followers",
+            "following_url": "https://api.github.com/users/ioboi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ioboi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ioboi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ioboi/subscriptions",
+            "organizations_url": "https://api.github.com/users/ioboi/orgs",
+            "repos_url": "https://api.github.com/users/ioboi/repos",
+            "events_url": "https://api.github.com/users/ioboi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ioboi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ok, good idea. I'll change that.\nBut how would you represent the require-errors in the new type?\n",
+        "created_at": "2013-11-15T19:02:11Z",
+        "updated_at": "2013-11-16T08:19:02Z",
+        "html_url": "https://github.com/go-martini/martini/pull/43#discussion_r7699006",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7699006"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/43#discussion_r7699006"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7705276",
+        "pull_request_review_id": null,
+        "id": 7705276,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3MDUyNzY=",
+        "diff_hunk": "@@ -0,0 +1,72 @@\n+//Package form implements a handler for post and get forms.\n+//\n+// For a full guide visit http://github.com/codegangsta/martini\n+//\n+//  package main\n+//\n+//  import (\n+//     \"github.com/codegangsta/martini\"\n+//     \"github.com/codegangsta/martini/form\"\n+//   )\n+//\n+//  type BlogPost struct{\n+//     Title string `form:\"title,required\"`\n+//     Content string `form:\"content\"`\n+//  }\n+//\n+//  func main() {\n+//    m := martini.Classic()\n+//\n+//    m.Get(\"/\",form.Form(&BlogPost{}) func(blogpost *BlogPost) string {\n+//      return blogpost.Title\n+//    })\n+//\n+//    m.Run()\n+//  }\n+package form\n+\n+import (\n+\t\"martini\"\n+\t\"net/http\"\n+\t\"reflect\"\n+\t\"strings\"\n+)\n+\n+const (\n+\tRequireErrors string = \"RequireErrors\" //Key for fields, seperated with a comma, which are marked as required but weren't present in the form.\n+)\n+\n+//Available errors. Use len() to check if any errors occured.\n+type Errors map[string]string\n+\n+//Create a new formhandler. Errors are available via form.Errors-Service.\n+func Form(formstruct interface{}) martini.Handler {\n+\treturn func(context martini.Context, req *http.Request) {\n+\t\treq.ParseForm()\n+\t\ttyp := reflect.TypeOf(formstruct).Elem()\n+\t\terrors := make(Errors)\n+\n+\t\tfor i := 0; i < typ.NumField(); i++ {\n+\t\t\tfield := typ.Field(i)\n+\t\t\tif tag := field.Tag.Get(\"form\"); tag != \"\" {\n+\t\t\t\targs := strings.Split(tag, \",\")\n+\t\t\t\tif len(args) > 0 {\n+\t\t\t\t\tval := req.Form.Get(args[0])\n+\t\t\t\t\treflect.ValueOf(formstruct).Elem().Field(i).SetString(val)\n+\t\t\t\t\tif len(args) > 1 {\n+\t\t\t\t\t\tif val == \"\" && strings.Contains(args[1], \"required\") {\n+\t\t\t\t\t\t\talreadyIn := errors[RequireErrors]\n+\t\t\t\t\t\t\tif len(alreadyIn) == 0 {\n+\t\t\t\t\t\t\t\terrors[RequireErrors] = args[0]",
+        "path": "form/form.go",
+        "position": null,
+        "original_position": 60,
+        "commit_id": "62c3ae4eada81b55d192fcbd07bce3e9cceb3940",
+        "original_commit_id": "17440029d4570af3020258007eb687f66d74b818",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "sorry. one last nit :( this is totally my bad, I didn't communicate clearly\n\nlets make the key for the map the field, and the value can be a string representing the error. This may need to be expanded later but I think that is the best way to go.\n",
+        "created_at": "2013-11-15T22:57:39Z",
+        "updated_at": "2013-11-16T08:19:02Z",
+        "html_url": "https://github.com/go-martini/martini/pull/43#discussion_r7705276",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7705276"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/43#discussion_r7705276"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7708781",
+        "pull_request_review_id": null,
+        "id": 7708781,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3MDg3ODE=",
+        "diff_hunk": "@@ -0,0 +1,72 @@\n+//Package form implements a handler for post and get forms.\n+//\n+// For a full guide visit http://github.com/codegangsta/martini\n+//\n+//  package main\n+//\n+//  import (\n+//     \"github.com/codegangsta/martini\"\n+//     \"github.com/codegangsta/martini/form\"\n+//   )\n+//\n+//  type BlogPost struct{\n+//     Title string `form:\"title,required\"`\n+//     Content string `form:\"content\"`\n+//  }\n+//\n+//  func main() {\n+//    m := martini.Classic()\n+//\n+//    m.Get(\"/\",form.Form(&BlogPost{}) func(blogpost *BlogPost) string {\n+//      return blogpost.Title\n+//    })\n+//\n+//    m.Run()\n+//  }\n+package form\n+\n+import (\n+\t\"martini\"\n+\t\"net/http\"\n+\t\"reflect\"\n+\t\"strings\"\n+)\n+\n+const (\n+\tRequireErrors string = \"RequireErrors\" //Key for fields, seperated with a comma, which are marked as required but weren't present in the form.\n+)\n+\n+//Available errors. Use len() to check if any errors occured.\n+type Errors map[string]string\n+\n+//Create a new formhandler. Errors are available via form.Errors-Service.\n+func Form(formstruct interface{}) martini.Handler {\n+\treturn func(context martini.Context, req *http.Request) {\n+\t\treq.ParseForm()\n+\t\ttyp := reflect.TypeOf(formstruct).Elem()\n+\t\terrors := make(Errors)\n+\n+\t\tfor i := 0; i < typ.NumField(); i++ {\n+\t\t\tfield := typ.Field(i)\n+\t\t\tif tag := field.Tag.Get(\"form\"); tag != \"\" {\n+\t\t\t\targs := strings.Split(tag, \",\")\n+\t\t\t\tif len(args) > 0 {\n+\t\t\t\t\tval := req.Form.Get(args[0])\n+\t\t\t\t\treflect.ValueOf(formstruct).Elem().Field(i).SetString(val)\n+\t\t\t\t\tif len(args) > 1 {\n+\t\t\t\t\t\tif val == \"\" && strings.Contains(args[1], \"required\") {\n+\t\t\t\t\t\t\talreadyIn := errors[RequireErrors]\n+\t\t\t\t\t\t\tif len(alreadyIn) == 0 {\n+\t\t\t\t\t\t\t\terrors[RequireErrors] = args[0]",
+        "path": "form/form.go",
+        "position": null,
+        "original_position": 60,
+        "commit_id": "62c3ae4eada81b55d192fcbd07bce3e9cceb3940",
+        "original_commit_id": "17440029d4570af3020258007eb687f66d74b818",
+        "user": {
+            "login": "ioboi",
+            "id": 1333699,
+            "node_id": "MDQ6VXNlcjEzMzM2OTk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1333699?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ioboi",
+            "html_url": "https://github.com/ioboi",
+            "followers_url": "https://api.github.com/users/ioboi/followers",
+            "following_url": "https://api.github.com/users/ioboi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ioboi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ioboi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ioboi/subscriptions",
+            "organizations_url": "https://api.github.com/users/ioboi/orgs",
+            "repos_url": "https://api.github.com/users/ioboi/repos",
+            "events_url": "https://api.github.com/users/ioboi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ioboi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "no problem :)\n",
+        "created_at": "2013-11-16T08:18:33Z",
+        "updated_at": "2013-11-16T08:19:02Z",
+        "html_url": "https://github.com/go-martini/martini/pull/43#discussion_r7708781",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7708781"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/43#discussion_r7708781"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7813206",
+        "pull_request_review_id": null,
+        "id": 7813206,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4MTMyMDY=",
+        "diff_hunk": "@@ -76,6 +76,13 @@ m.Get(\"/\", func() string {\n })\n ~~~\n \n+You can also optionally return a status code:\n+~~~ go\n+m.Get(\"/\", func() (int, string) {\n+  return 418, \"i'm a teapot\" // HTTP 418 : \"i'm a teapot\"",
+        "path": "README.md",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "c877be033320017a844057de81e4f03abc5f036f",
+        "original_commit_id": "8ca066484290dde8612980ae4586bc13cabe86df",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Nice teapot example ;)\n",
+        "created_at": "2013-11-21T01:39:24Z",
+        "updated_at": "2013-11-21T02:02:02Z",
+        "html_url": "https://github.com/go-martini/martini/pull/66#discussion_r7813206",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/66",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7813206"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/66#discussion_r7813206"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7813373",
+        "pull_request_review_id": null,
+        "id": 7813373,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4MTMzNzM=",
+        "diff_hunk": "@@ -135,7 +135,10 @@ func (r route) handle(c Context, res http.ResponseWriter) {\n \n \t\t// if the handler returned something, write it to\n \t\t// the http response\n-\t\tif len(vals) > 0 {\n+\t\tif len(vals) > 1 {",
+        "path": "router.go",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "c877be033320017a844057de81e4f03abc5f036f",
+        "original_commit_id": "8ca066484290dde8612980ae4586bc13cabe86df",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Add an `&& vals[0].Kind() == reflect.Int` otherwise the call to `Int()` will panic if this value is not an integer \n",
+        "created_at": "2013-11-21T01:46:26Z",
+        "updated_at": "2013-11-21T02:02:02Z",
+        "html_url": "https://github.com/go-martini/martini/pull/66#discussion_r7813373",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/66",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7813373"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/66#discussion_r7813373"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7813628",
+        "pull_request_review_id": null,
+        "id": 7813628,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4MTM2Mjg=",
+        "diff_hunk": "@@ -76,6 +76,13 @@ m.Get(\"/\", func() string {\n })\n ~~~\n \n+You can also optionally return a status code:\n+~~~ go\n+m.Get(\"/\", func() (int, string) {\n+  return 418, \"i'm a teapot\" // HTTP 418 : \"i'm a teapot\"",
+        "path": "README.md",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "c877be033320017a844057de81e4f03abc5f036f",
+        "original_commit_id": "8ca066484290dde8612980ae4586bc13cabe86df",
+        "user": {
+            "login": "noonat",
+            "id": 2610,
+            "node_id": "MDQ6VXNlcjI2MTA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/2610?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/noonat",
+            "html_url": "https://github.com/noonat",
+            "followers_url": "https://api.github.com/users/noonat/followers",
+            "following_url": "https://api.github.com/users/noonat/following{/other_user}",
+            "gists_url": "https://api.github.com/users/noonat/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/noonat/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/noonat/subscriptions",
+            "organizations_url": "https://api.github.com/users/noonat/orgs",
+            "repos_url": "https://api.github.com/users/noonat/repos",
+            "events_url": "https://api.github.com/users/noonat/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/noonat/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Short and stout! :tea:\n",
+        "created_at": "2013-11-21T02:02:37Z",
+        "updated_at": "2013-11-21T02:02:37Z",
+        "html_url": "https://github.com/go-martini/martini/pull/66#discussion_r7813628",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/66",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7813628"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/66#discussion_r7813628"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7813635",
+        "pull_request_review_id": null,
+        "id": 7813635,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4MTM2MzU=",
+        "diff_hunk": "@@ -135,7 +135,10 @@ func (r route) handle(c Context, res http.ResponseWriter) {\n \n \t\t// if the handler returned something, write it to\n \t\t// the http response\n-\t\tif len(vals) > 0 {\n+\t\tif len(vals) > 1 {",
+        "path": "router.go",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "c877be033320017a844057de81e4f03abc5f036f",
+        "original_commit_id": "8ca066484290dde8612980ae4586bc13cabe86df",
+        "user": {
+            "login": "noonat",
+            "id": 2610,
+            "node_id": "MDQ6VXNlcjI2MTA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/2610?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/noonat",
+            "html_url": "https://github.com/noonat",
+            "followers_url": "https://api.github.com/users/noonat/followers",
+            "following_url": "https://api.github.com/users/noonat/following{/other_user}",
+            "gists_url": "https://api.github.com/users/noonat/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/noonat/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/noonat/subscriptions",
+            "organizations_url": "https://api.github.com/users/noonat/orgs",
+            "repos_url": "https://api.github.com/users/noonat/repos",
+            "events_url": "https://api.github.com/users/noonat/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/noonat/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Fixed.\n",
+        "created_at": "2013-11-21T02:02:58Z",
+        "updated_at": "2013-11-21T02:02:58Z",
+        "html_url": "https://github.com/go-martini/martini/pull/66#discussion_r7813635",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/66",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7813635"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/66#discussion_r7813635"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7846569",
+        "pull_request_review_id": null,
+        "id": 7846569,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4NDY1Njk=",
+        "diff_hunk": "@@ -16,11 +20,20 @@ func main() {\n }\n ~~~\n \n-Install the package (**go 1.1** and greater is required):\n+Then install the Martini package (**go 1.1** and greater is required):\n ~~~\n go get github.com/codegangsta/martini",
+        "path": "README.md",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "551f6624f6c49f86ab22d0387dc15c0361118182",
+        "original_commit_id": "551f6624f6c49f86ab22d0387dc15c0361118182",
+        "user": {
+            "login": "cgarvis",
+            "id": 213125,
+            "node_id": "MDQ6VXNlcjIxMzEyNQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/213125?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/cgarvis",
+            "html_url": "https://github.com/cgarvis",
+            "followers_url": "https://api.github.com/users/cgarvis/followers",
+            "following_url": "https://api.github.com/users/cgarvis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/cgarvis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/cgarvis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/cgarvis/subscriptions",
+            "organizations_url": "https://api.github.com/users/cgarvis/orgs",
+            "repos_url": "https://api.github.com/users/cgarvis/repos",
+            "events_url": "https://api.github.com/users/cgarvis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/cgarvis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this really only needs to be `go get` since golang will look throuhg your code and download what it needs.\n",
+        "created_at": "2013-11-22T02:18:53Z",
+        "updated_at": "2013-11-22T02:18:53Z",
+        "html_url": "https://github.com/go-martini/martini/pull/74#discussion_r7846569",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/74",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7846569"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/74#discussion_r7846569"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/74"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7873790",
+        "pull_request_review_id": null,
+        "id": 7873790,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4NzM3OTA=",
+        "diff_hunk": "@@ -51,6 +51,36 @@ func Test_Martini_ServeHTTP(t *testing.T) {\n \texpect(t, response.Code, 400)\n }\n \n+func Test_Martini_Handlers(t *testing.T) {\n+\tresult := \"\"\n+\tresponse := httptest.NewRecorder()\n+\n+\tbatman := func(c Context) {\n+\t\tresult += \"batman!\"",
+        "path": "martini_test.go",
+        "position": 9,
+        "original_position": 9,
+        "commit_id": "7faaf5925d7937c31f389ed9c57624956dfc49bd",
+        "original_commit_id": "7faaf5925d7937c31f389ed9c57624956dfc49bd",
+        "user": {
+            "login": "noonat",
+            "id": 2610,
+            "node_id": "MDQ6VXNlcjI2MTA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/2610?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/noonat",
+            "html_url": "https://github.com/noonat",
+            "followers_url": "https://api.github.com/users/noonat/followers",
+            "following_url": "https://api.github.com/users/noonat/following{/other_user}",
+            "gists_url": "https://api.github.com/users/noonat/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/noonat/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/noonat/subscriptions",
+            "organizations_url": "https://api.github.com/users/noonat/orgs",
+            "repos_url": "https://api.github.com/users/noonat/repos",
+            "events_url": "https://api.github.com/users/noonat/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/noonat/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "[nanananana](https://www.youtube.com/watch?v=EtoMN_xi-AM)\n",
+        "created_at": "2013-11-23T01:11:28Z",
+        "updated_at": "2013-11-23T01:11:28Z",
+        "html_url": "https://github.com/go-martini/martini/pull/77#discussion_r7873790",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/77",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7873790"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/77#discussion_r7873790"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/77"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868384",
+        "pull_request_review_id": null,
+        "id": 7868384,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4NjgzODQ=",
+        "diff_hunk": "@@ -95,6 +96,31 @@ func Classic() *ClassicMartini {\n \treturn &ClassicMartini{m, r}\n }\n \n+// UrlFor returns the url for the given route name.\n+func (m *ClassicMartini) UrlFor(routeName string, params ...interface{}) string {\n+\tvar args []string\n+\tfor _, param := range params {\n+\t\tswitch v := param.(type) {\n+\t\tcase int:\n+\t\t\targs = append(args, fmt.Sprintf(\"%d\", v))",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "02bc497d930c000522f58f306dcf4cfac0213fb5",
+        "original_commit_id": "76621be62da152af48684eaccd77e85806ca83ec",
+        "user": {
+            "login": "icholy",
+            "id": 943597,
+            "node_id": "MDQ6VXNlcjk0MzU5Nw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/943597?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/icholy",
+            "html_url": "https://github.com/icholy",
+            "followers_url": "https://api.github.com/users/icholy/followers",
+            "following_url": "https://api.github.com/users/icholy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/icholy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/icholy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/icholy/subscriptions",
+            "organizations_url": "https://api.github.com/users/icholy/orgs",
+            "repos_url": "https://api.github.com/users/icholy/repos",
+            "events_url": "https://api.github.com/users/icholy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/icholy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Might want to use [strconv.FormatInt](http://golang.org/pkg/strconv/#FormatInt). It's faster.\n",
+        "created_at": "2013-11-22T20:40:44Z",
+        "updated_at": "2013-11-25T17:18:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/76#discussion_r7868384",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/76",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868384"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/76#discussion_r7868384"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868469",
+        "pull_request_review_id": null,
+        "id": 7868469,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4Njg0Njk=",
+        "diff_hunk": "@@ -95,6 +96,31 @@ func Classic() *ClassicMartini {\n \treturn &ClassicMartini{m, r}\n }\n \n+// UrlFor returns the url for the given route name.\n+func (m *ClassicMartini) UrlFor(routeName string, params ...interface{}) string {\n+\tvar args []string\n+\tfor _, param := range params {\n+\t\tswitch v := param.(type) {\n+\t\tcase int:\n+\t\t\targs = append(args, fmt.Sprintf(\"%d\", v))",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "02bc497d930c000522f58f306dcf4cfac0213fb5",
+        "original_commit_id": "76621be62da152af48684eaccd77e85806ca83ec",
+        "user": {
+            "login": "erizocosmico",
+            "id": 1312023,
+            "node_id": "MDQ6VXNlcjEzMTIwMjM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1312023?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/erizocosmico",
+            "html_url": "https://github.com/erizocosmico",
+            "followers_url": "https://api.github.com/users/erizocosmico/followers",
+            "following_url": "https://api.github.com/users/erizocosmico/following{/other_user}",
+            "gists_url": "https://api.github.com/users/erizocosmico/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/erizocosmico/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/erizocosmico/subscriptions",
+            "organizations_url": "https://api.github.com/users/erizocosmico/orgs",
+            "repos_url": "https://api.github.com/users/erizocosmico/repos",
+            "events_url": "https://api.github.com/users/erizocosmico/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/erizocosmico/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Done :-)\n",
+        "created_at": "2013-11-22T20:44:45Z",
+        "updated_at": "2013-11-25T17:18:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/76#discussion_r7868469",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/76",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868469"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/76#discussion_r7868469"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868820",
+        "pull_request_review_id": null,
+        "id": 7868820,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4Njg4MjA=",
+        "diff_hunk": "@@ -95,6 +96,31 @@ func Classic() *ClassicMartini {\n \treturn &ClassicMartini{m, r}\n }\n \n+// UrlFor returns the url for the given route name.\n+func (m *ClassicMartini) UrlFor(routeName string, params ...interface{}) string {",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "02bc497d930c000522f58f306dcf4cfac0213fb5",
+        "original_commit_id": "13cffe4bbd9ab19ca3124b1cd1deab33adabb6fd",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I would consider putting this in a service that would be mapped via the router. That way route handlers can get the service injected easily and not have to get a reference to *ClassicMartini. this also makes sense because named routes are directly tied to the router anyway\n",
+        "created_at": "2013-11-22T20:56:15Z",
+        "updated_at": "2013-11-25T17:18:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/76#discussion_r7868820",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/76",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868820"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/76#discussion_r7868820"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868889",
+        "pull_request_review_id": null,
+        "id": 7868889,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4Njg4ODk=",
+        "diff_hunk": "@@ -40,24 +43,24 @@ func NewRouter() Router {\n \treturn &router{notFound: http.NotFound}\n }\n \n-func (r *router) Get(pattern string, h ...Handler) {\n-\tr.addRoute(\"GET\", pattern, h)\n+func (r *router) Get(pattern string, h ...Handler) *route {",
+        "path": "router.go",
+        "position": null,
+        "original_position": 41,
+        "commit_id": "02bc497d930c000522f58f306dcf4cfac0213fb5",
+        "original_commit_id": "13cffe4bbd9ab19ca3124b1cd1deab33adabb6fd",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "For the sake of consistency lets create a `Route` interface and we can throw the `Name(string)` function on it\n",
+        "created_at": "2013-11-22T20:58:09Z",
+        "updated_at": "2013-11-25T17:18:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/76#discussion_r7868889",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/76",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868889"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/76#discussion_r7868889"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868897",
+        "pull_request_review_id": null,
+        "id": 7868897,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4Njg4OTc=",
+        "diff_hunk": "@@ -95,6 +96,31 @@ func Classic() *ClassicMartini {\n \treturn &ClassicMartini{m, r}\n }\n \n+// UrlFor returns the url for the given route name.\n+func (m *ClassicMartini) UrlFor(routeName string, params ...interface{}) string {",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "02bc497d930c000522f58f306dcf4cfac0213fb5",
+        "original_commit_id": "13cffe4bbd9ab19ca3124b1cd1deab33adabb6fd",
+        "user": {
+            "login": "erizocosmico",
+            "id": 1312023,
+            "node_id": "MDQ6VXNlcjEzMTIwMjM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1312023?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/erizocosmico",
+            "html_url": "https://github.com/erizocosmico",
+            "followers_url": "https://api.github.com/users/erizocosmico/followers",
+            "following_url": "https://api.github.com/users/erizocosmico/following{/other_user}",
+            "gists_url": "https://api.github.com/users/erizocosmico/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/erizocosmico/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/erizocosmico/subscriptions",
+            "organizations_url": "https://api.github.com/users/erizocosmico/orgs",
+            "repos_url": "https://api.github.com/users/erizocosmico/repos",
+            "events_url": "https://api.github.com/users/erizocosmico/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/erizocosmico/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You're right. It makes more sense to put this in a service. I will refactor it and commit the changes.\n",
+        "created_at": "2013-11-22T20:58:28Z",
+        "updated_at": "2013-11-25T17:18:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/76#discussion_r7868897",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/76",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868897"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/76#discussion_r7868897"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868951",
+        "pull_request_review_id": null,
+        "id": 7868951,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4Njg5NTE=",
+        "diff_hunk": "@@ -95,6 +96,31 @@ func Classic() *ClassicMartini {\n \treturn &ClassicMartini{m, r}\n }\n \n+// UrlFor returns the url for the given route name.\n+func (m *ClassicMartini) UrlFor(routeName string, params ...interface{}) string {",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "02bc497d930c000522f58f306dcf4cfac0213fb5",
+        "original_commit_id": "13cffe4bbd9ab19ca3124b1cd1deab33adabb6fd",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm not sure what a good name for the service will be. maybe `RouteHelper`?\n",
+        "created_at": "2013-11-22T20:59:47Z",
+        "updated_at": "2013-11-25T17:18:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/76#discussion_r7868951",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/76",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868951"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/76#discussion_r7868951"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868953",
+        "pull_request_review_id": null,
+        "id": 7868953,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4Njg5NTM=",
+        "diff_hunk": "@@ -40,24 +43,24 @@ func NewRouter() Router {\n \treturn &router{notFound: http.NotFound}\n }\n \n-func (r *router) Get(pattern string, h ...Handler) {\n-\tr.addRoute(\"GET\", pattern, h)\n+func (r *router) Get(pattern string, h ...Handler) *route {",
+        "path": "router.go",
+        "position": null,
+        "original_position": 41,
+        "commit_id": "02bc497d930c000522f58f306dcf4cfac0213fb5",
+        "original_commit_id": "13cffe4bbd9ab19ca3124b1cd1deab33adabb6fd",
+        "user": {
+            "login": "erizocosmico",
+            "id": 1312023,
+            "node_id": "MDQ6VXNlcjEzMTIwMjM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1312023?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/erizocosmico",
+            "html_url": "https://github.com/erizocosmico",
+            "followers_url": "https://api.github.com/users/erizocosmico/followers",
+            "following_url": "https://api.github.com/users/erizocosmico/following{/other_user}",
+            "gists_url": "https://api.github.com/users/erizocosmico/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/erizocosmico/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/erizocosmico/subscriptions",
+            "organizations_url": "https://api.github.com/users/erizocosmico/orgs",
+            "repos_url": "https://api.github.com/users/erizocosmico/repos",
+            "events_url": "https://api.github.com/users/erizocosmico/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/erizocosmico/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ok, I will make that change too. Which methods should I add to the interface other than the `Name(string)` method?\n",
+        "created_at": "2013-11-22T20:59:53Z",
+        "updated_at": "2013-11-25T17:18:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/76#discussion_r7868953",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/76",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868953"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/76#discussion_r7868953"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868985",
+        "pull_request_review_id": null,
+        "id": 7868985,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4Njg5ODU=",
+        "diff_hunk": "@@ -95,6 +96,31 @@ func Classic() *ClassicMartini {\n \treturn &ClassicMartini{m, r}\n }\n \n+// UrlFor returns the url for the given route name.\n+func (m *ClassicMartini) UrlFor(routeName string, params ...interface{}) string {",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "02bc497d930c000522f58f306dcf4cfac0213fb5",
+        "original_commit_id": "13cffe4bbd9ab19ca3124b1cd1deab33adabb6fd",
+        "user": {
+            "login": "erizocosmico",
+            "id": 1312023,
+            "node_id": "MDQ6VXNlcjEzMTIwMjM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1312023?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/erizocosmico",
+            "html_url": "https://github.com/erizocosmico",
+            "followers_url": "https://api.github.com/users/erizocosmico/followers",
+            "following_url": "https://api.github.com/users/erizocosmico/following{/other_user}",
+            "gists_url": "https://api.github.com/users/erizocosmico/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/erizocosmico/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/erizocosmico/subscriptions",
+            "organizations_url": "https://api.github.com/users/erizocosmico/orgs",
+            "repos_url": "https://api.github.com/users/erizocosmico/repos",
+            "events_url": "https://api.github.com/users/erizocosmico/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/erizocosmico/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`RouteHelper` seems right to me.\n",
+        "created_at": "2013-11-22T21:00:42Z",
+        "updated_at": "2013-11-25T17:18:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/76#discussion_r7868985",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/76",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7868985"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/76#discussion_r7868985"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7869016",
+        "pull_request_review_id": null,
+        "id": 7869016,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4NjkwMTY=",
+        "diff_hunk": "@@ -40,24 +43,24 @@ func NewRouter() Router {\n \treturn &router{notFound: http.NotFound}\n }\n \n-func (r *router) Get(pattern string, h ...Handler) {\n-\tr.addRoute(\"GET\", pattern, h)\n+func (r *router) Get(pattern string, h ...Handler) *route {",
+        "path": "router.go",
+        "position": null,
+        "original_position": 41,
+        "commit_id": "02bc497d930c000522f58f306dcf4cfac0213fb5",
+        "original_commit_id": "13cffe4bbd9ab19ca3124b1cd1deab33adabb6fd",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Name(string) is all we need for now. We can expand upon this later if needed\n",
+        "created_at": "2013-11-22T21:02:11Z",
+        "updated_at": "2013-11-25T17:18:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/76#discussion_r7869016",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/76",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7869016"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/76#discussion_r7869016"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7869446",
+        "pull_request_review_id": null,
+        "id": 7869446,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4Njk0NDY=",
+        "diff_hunk": "@@ -95,6 +96,31 @@ func Classic() *ClassicMartini {\n \treturn &ClassicMartini{m, r}\n }\n \n+// UrlFor returns the url for the given route name.\n+func (m *ClassicMartini) UrlFor(routeName string, params ...interface{}) string {",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "02bc497d930c000522f58f306dcf4cfac0213fb5",
+        "original_commit_id": "13cffe4bbd9ab19ca3124b1cd1deab33adabb6fd",
+        "user": {
+            "login": "erizocosmico",
+            "id": 1312023,
+            "node_id": "MDQ6VXNlcjEzMTIwMjM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1312023?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/erizocosmico",
+            "html_url": "https://github.com/erizocosmico",
+            "followers_url": "https://api.github.com/users/erizocosmico/followers",
+            "following_url": "https://api.github.com/users/erizocosmico/following{/other_user}",
+            "gists_url": "https://api.github.com/users/erizocosmico/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/erizocosmico/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/erizocosmico/subscriptions",
+            "organizations_url": "https://api.github.com/users/erizocosmico/orgs",
+            "repos_url": "https://api.github.com/users/erizocosmico/repos",
+            "events_url": "https://api.github.com/users/erizocosmico/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/erizocosmico/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "How do I get access to the router in a service? None of the mapped services give access to it.\n",
+        "created_at": "2013-11-22T21:22:46Z",
+        "updated_at": "2013-11-25T17:18:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/76#discussion_r7869446",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/76",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7869446"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/76#discussion_r7869446"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7869529",
+        "pull_request_review_id": null,
+        "id": 7869529,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc4Njk1Mjk=",
+        "diff_hunk": "@@ -95,6 +96,31 @@ func Classic() *ClassicMartini {\n \treturn &ClassicMartini{m, r}\n }\n \n+// UrlFor returns the url for the given route name.\n+func (m *ClassicMartini) UrlFor(routeName string, params ...interface{}) string {",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "02bc497d930c000522f58f306dcf4cfac0213fb5",
+        "original_commit_id": "13cffe4bbd9ab19ca3124b1cd1deab33adabb6fd",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I would say create a service that contains a reference to the router. You can create an map the service inside the `router.Handle` method similar to how `martini.Params` is mapped\n",
+        "created_at": "2013-11-22T21:26:22Z",
+        "updated_at": "2013-11-25T17:18:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/76#discussion_r7869529",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/76",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7869529"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/76#discussion_r7869529"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7988560",
+        "pull_request_review_id": null,
+        "id": 7988560,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5ODg1NjA=",
+        "diff_hunk": "@@ -27,7 +27,7 @@ func Static(path string) Handler {\n \t\tif fi.IsDir() {\n \n \t\t\t// redirect if missing trailing slash\n-\t\t\tif file[len(file)-1] != '/' {\n+\t\t\tif l := len(file); l != 0 && file[l-1] != '/' {",
+        "path": "static.go",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "9ad5ec065e23ff28f32c99ef614e1322e870c1be",
+        "original_commit_id": "2f9e623a167a08726b70d4be16ebcb015b704e5d",
+        "user": {
+            "login": "1631-",
+            "id": 6060443,
+            "node_id": "MDQ6VXNlcjYwNjA0NDM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/6060443?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/1631-",
+            "html_url": "https://github.com/1631-",
+            "followers_url": "https://api.github.com/users/1631-/followers",
+            "following_url": "https://api.github.com/users/1631-/following{/other_user}",
+            "gists_url": "https://api.github.com/users/1631-/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/1631-/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/1631-/subscriptions",
+            "organizations_url": "https://api.github.com/users/1631-/orgs",
+            "repos_url": "https://api.github.com/users/1631-/repos",
+            "events_url": "https://api.github.com/users/1631-/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/1631-/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "- I think this is related to another PR but I'll repeat here: perhaps just re-use `strings.HasSuffix`\n- Just a general stylistic issue: compare with the empty string, e.g. `file != \"\"` instead of comparing with the length of the string\n",
+        "created_at": "2013-11-28T16:26:06Z",
+        "updated_at": "2013-11-28T16:51:11Z",
+        "html_url": "https://github.com/go-martini/martini/pull/91#discussion_r7988560",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/91",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7988560"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/91#discussion_r7988560"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/91"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/7988634",
+        "pull_request_review_id": null,
+        "id": 7988634,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5ODg2MzQ=",
+        "diff_hunk": "@@ -27,7 +27,7 @@ func Static(path string) Handler {\n \t\tif fi.IsDir() {\n \n \t\t\t// redirect if missing trailing slash\n-\t\t\tif file[len(file)-1] != '/' {\n+\t\t\tif l := len(file); l != 0 && file[l-1] != '/' {",
+        "path": "static.go",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "9ad5ec065e23ff28f32c99ef614e1322e870c1be",
+        "original_commit_id": "2f9e623a167a08726b70d4be16ebcb015b704e5d",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yup. lets use strings.HasSuffix here. Much cleaner\n",
+        "created_at": "2013-11-28T16:29:35Z",
+        "updated_at": "2013-11-28T16:51:11Z",
+        "html_url": "https://github.com/go-martini/martini/pull/91#discussion_r7988634",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/91",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/7988634"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/91#discussion_r7988634"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/91"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8324381",
+        "pull_request_review_id": null,
+        "id": 8324381,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgzMjQzODE=",
+        "diff_hunk": "@@ -145,7 +145,7 @@ func newRoute(method string, pattern string, handlers []Handler) *route {\n \n func (r route) Match(method string, path string) (bool, map[string]string) {\n \t// add Any method matching support\n-\tif r.method != \"*\" && method != r.method {\n+\tif r.method != \"*\" && method != r.method && !(method == \"HEAD\" && r.method == \"GET\") {",
+        "path": "router.go",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "4da51c3a21fea47a2b5f0581c5afd370dd28a9bd",
+        "original_commit_id": "dc250a0ffad48788aa5c8e0d0257be535c73d209",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This line smells a bit. Would it be better to have a `MatchMethod(string) bool` on `Route`? This line will be much cleaner and we can have this logic displayed in an more digestible form\n",
+        "created_at": "2013-12-13T04:45:02Z",
+        "updated_at": "2013-12-15T14:19:45Z",
+        "html_url": "https://github.com/go-martini/martini/pull/118#discussion_r8324381",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/118",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8324381"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/118#discussion_r8324381"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/118"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8452943",
+        "pull_request_review_id": null,
+        "id": 8452943,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg0NTI5NDM=",
+        "diff_hunk": "@@ -84,7 +84,17 @@ func (r *router) Handle(res http.ResponseWriter, req *http.Request, context Cont\n \tfor _, route := range r.routes {\n \t\tok, vals := route.Match(req.Method, req.URL.Path)\n \t\tif ok {\n-\t\t\tparams := Params(vals)\n+\t\t\tvar params Params\n+\t\t\tp := context.Get(reflect.TypeOf(Params(nil)))\n+\t\t\tif p.IsValid() {",
+        "path": "router.go",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "f2d9595f45aa080dd2563d459284e5e4ee7a4b6c",
+        "original_commit_id": "f2d9595f45aa080dd2563d459284e5e4ee7a4b6c",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "no need to check valid and create a new map here. The zeroed value of a map should be fine\n",
+        "created_at": "2013-12-18T21:56:56Z",
+        "updated_at": "2013-12-18T21:56:56Z",
+        "html_url": "https://github.com/go-martini/martini/pull/129#discussion_r8452943",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/129",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8452943"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/129#discussion_r8452943"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/129"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8452916",
+        "pull_request_review_id": null,
+        "id": 8452916,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg0NTI5MTY=",
+        "diff_hunk": "@@ -84,7 +84,17 @@ func (r *router) Handle(res http.ResponseWriter, req *http.Request, context Cont\n \tfor _, route := range r.routes {\n \t\tok, vals := route.Match(req.Method, req.URL.Path)\n \t\tif ok {\n-\t\t\tparams := Params(vals)\n+\t\t\tvar params Params\n+\t\t\tp := context.Get(reflect.TypeOf(Params(nil)))",
+        "path": "router.go",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "f2d9595f45aa080dd2563d459284e5e4ee7a4b6c",
+        "original_commit_id": "f2d9595f45aa080dd2563d459284e5e4ee7a4b6c",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let's pull all this new code out into a function like `GetParams(Context)`. This function is already kinda complex so I would like to make it less so.\n",
+        "created_at": "2013-12-18T21:56:08Z",
+        "updated_at": "2013-12-18T21:57:22Z",
+        "html_url": "https://github.com/go-martini/martini/pull/129#discussion_r8452916",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/129",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8452916"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/129#discussion_r8452916"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/129"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8453899",
+        "pull_request_review_id": null,
+        "id": 8453899,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg0NTM4OTk=",
+        "diff_hunk": "@@ -13,11 +13,20 @@ type ReturnHandler func(http.ResponseWriter, []reflect.Value)\n \n func defaultReturnHandler() ReturnHandler {\n \treturn func(res http.ResponseWriter, vals []reflect.Value) {\n+\t\tvar responseVal reflect.Value\n \t\tif len(vals) > 1 && vals[0].Kind() == reflect.Int {\n \t\t\tres.WriteHeader(int(vals[0].Int()))\n-\t\t\tres.Write([]byte(vals[1].String()))\n+\t\t\tresponseVal = vals[1]\n \t\t} else if len(vals) > 0 {\n-\t\t\tres.Write([]byte(vals[0].String()))\n+\t\t\tresponseVal = vals[0]\n+\t\t}\n+\t\tif responseVal.Kind() == reflect.Interface || responseVal.Kind() == reflect.Ptr {\n+\t\t\tresponseVal = responseVal.Elem()",
+        "path": "return_handler.go",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "1c95539943f9c52e457635a4a86fa7a42af4b830",
+        "original_commit_id": "1c95539943f9c52e457635a4a86fa7a42af4b830",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What is the reasoning behind a dereference here? In what case are you returning a pointer to something?\n",
+        "created_at": "2013-12-18T22:21:39Z",
+        "updated_at": "2013-12-18T22:21:39Z",
+        "html_url": "https://github.com/go-martini/martini/pull/128#discussion_r8453899",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/128",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8453899"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/128#discussion_r8453899"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/128"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8454178",
+        "pull_request_review_id": null,
+        "id": 8454178,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg0NTQxNzg=",
+        "diff_hunk": "@@ -13,11 +13,20 @@ type ReturnHandler func(http.ResponseWriter, []reflect.Value)\n \n func defaultReturnHandler() ReturnHandler {\n \treturn func(res http.ResponseWriter, vals []reflect.Value) {\n+\t\tvar responseVal reflect.Value\n \t\tif len(vals) > 1 && vals[0].Kind() == reflect.Int {\n \t\t\tres.WriteHeader(int(vals[0].Int()))\n-\t\t\tres.Write([]byte(vals[1].String()))\n+\t\t\tresponseVal = vals[1]\n \t\t} else if len(vals) > 0 {\n-\t\t\tres.Write([]byte(vals[0].String()))\n+\t\t\tresponseVal = vals[0]\n+\t\t}\n+\t\tif responseVal.Kind() == reflect.Interface || responseVal.Kind() == reflect.Ptr {\n+\t\t\tresponseVal = responseVal.Elem()",
+        "path": "return_handler.go",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "1c95539943f9c52e457635a4a86fa7a42af4b830",
+        "original_commit_id": "1c95539943f9c52e457635a4a86fa7a42af4b830",
+        "user": {
+            "login": "nemosupremo",
+            "id": 940094,
+            "node_id": "MDQ6VXNlcjk0MDA5NA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/940094?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nemosupremo",
+            "html_url": "https://github.com/nemosupremo",
+            "followers_url": "https://api.github.com/users/nemosupremo/followers",
+            "following_url": "https://api.github.com/users/nemosupremo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nemosupremo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nemosupremo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nemosupremo/subscriptions",
+            "organizations_url": "https://api.github.com/users/nemosupremo/orgs",
+            "repos_url": "https://api.github.com/users/nemosupremo/repos",
+            "events_url": "https://api.github.com/users/nemosupremo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nemosupremo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I explained it in the PR, but I'll give you an example. If a user had a function that returned both a `string` or a `[]byte` (for whatever reason) they might use \n\n``` go\nm.Get(\"/\", func() interface{} {\n  if (true) {\n    return \"hello world\"\n  } else {\n    return []byte(\"hello world\")\n  }\n})\n```\n\nBy returning `interface{}` they are actually returning a pointer to a string/[]byte. Without this line, when `.String()` is called `<interface {} Value>` will be returned.\n",
+        "created_at": "2013-12-18T22:28:22Z",
+        "updated_at": "2013-12-18T22:28:22Z",
+        "html_url": "https://github.com/go-martini/martini/pull/128#discussion_r8454178",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/128",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8454178"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/128#discussion_r8454178"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/128"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8454437",
+        "pull_request_review_id": null,
+        "id": 8454437,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg0NTQ0Mzc=",
+        "diff_hunk": "@@ -13,11 +13,20 @@ type ReturnHandler func(http.ResponseWriter, []reflect.Value)\n \n func defaultReturnHandler() ReturnHandler {\n \treturn func(res http.ResponseWriter, vals []reflect.Value) {\n+\t\tvar responseVal reflect.Value\n \t\tif len(vals) > 1 && vals[0].Kind() == reflect.Int {\n \t\t\tres.WriteHeader(int(vals[0].Int()))\n-\t\t\tres.Write([]byte(vals[1].String()))\n+\t\t\tresponseVal = vals[1]\n \t\t} else if len(vals) > 0 {\n-\t\t\tres.Write([]byte(vals[0].String()))\n+\t\t\tresponseVal = vals[0]\n+\t\t}\n+\t\tif responseVal.Kind() == reflect.Interface || responseVal.Kind() == reflect.Ptr {\n+\t\t\tresponseVal = responseVal.Elem()",
+        "path": "return_handler.go",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "1c95539943f9c52e457635a4a86fa7a42af4b830",
+        "original_commit_id": "1c95539943f9c52e457635a4a86fa7a42af4b830",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Awesome. I'm putting together some test coverage on this.\n",
+        "created_at": "2013-12-18T22:36:15Z",
+        "updated_at": "2013-12-18T22:36:15Z",
+        "html_url": "https://github.com/go-martini/martini/pull/128#discussion_r8454437",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/128",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8454437"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/128#discussion_r8454437"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/128"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8537607",
+        "pull_request_review_id": null,
+        "id": 8537607,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg1Mzc2MDc=",
+        "diff_hunk": "@@ -140,3 +141,48 @@ func Test_ResponseWriter_CloseNotify(t *testing.T) {\n \t}\n \texpect(t, closed, true)\n }\n+\n+func Test_ResponseWriter_Flusher(t *testing.T) {\n+\n+\trec := httptest.NewRecorder()\n+\trw := NewResponseWriter(rec)\n+\n+\t_, ok := rw.(http.Flusher)\n+\texpect(t, ok, true)\n+}\n+\n+func Test_ResponseWriter_FlusherHandler(t *testing.T) {\n+\n+\t// New martini instance\n+\tm := Classic()\n+\n+\tm.Get(\"/events\", func(w http.ResponseWriter, r *http.Request) {",
+        "path": "response_writer_test.go",
+        "position": 27,
+        "original_position": 27,
+        "commit_id": "063dfcd8b0f64f4e2c97f0bc27fa422969baa23b",
+        "original_commit_id": "9d55f6e2291d315634bd7ecd191297f03c7f5246",
+        "user": {
+            "login": "davecheney",
+            "id": 7171,
+            "node_id": "MDQ6VXNlcjcxNzE=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/7171?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/davecheney",
+            "html_url": "https://github.com/davecheney",
+            "followers_url": "https://api.github.com/users/davecheney/followers",
+            "following_url": "https://api.github.com/users/davecheney/following{/other_user}",
+            "gists_url": "https://api.github.com/users/davecheney/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/davecheney/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/davecheney/subscriptions",
+            "organizations_url": "https://api.github.com/users/davecheney/orgs",
+            "repos_url": "https://api.github.com/users/davecheney/repos",
+            "events_url": "https://api.github.com/users/davecheney/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/davecheney/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why can't the function just be\n\n... func( w martini.ResponseWriter, ...) \n\nThen\n\ntype ResponseWriter {\n    http.ResponseWriter\n    http.Flusher\n}\n\nThen the middleware can take care of converting one to the other. \n",
+        "created_at": "2013-12-24T00:54:30Z",
+        "updated_at": "2013-12-26T22:49:48Z",
+        "html_url": "https://github.com/go-martini/martini/pull/138#discussion_r8537607",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/138",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8537607"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/138#discussion_r8537607"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/138"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8537923",
+        "pull_request_review_id": null,
+        "id": 8537923,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg1Mzc5MjM=",
+        "diff_hunk": "@@ -140,3 +141,48 @@ func Test_ResponseWriter_CloseNotify(t *testing.T) {\n \t}\n \texpect(t, closed, true)\n }\n+\n+func Test_ResponseWriter_Flusher(t *testing.T) {\n+\n+\trec := httptest.NewRecorder()\n+\trw := NewResponseWriter(rec)\n+\n+\t_, ok := rw.(http.Flusher)\n+\texpect(t, ok, true)\n+}\n+\n+func Test_ResponseWriter_FlusherHandler(t *testing.T) {\n+\n+\t// New martini instance\n+\tm := Classic()\n+\n+\tm.Get(\"/events\", func(w http.ResponseWriter, r *http.Request) {",
+        "path": "response_writer_test.go",
+        "position": 27,
+        "original_position": 27,
+        "commit_id": "063dfcd8b0f64f4e2c97f0bc27fa422969baa23b",
+        "original_commit_id": "9d55f6e2291d315634bd7ecd191297f03c7f5246",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@davecheney it is kinda a leaky part of how the martini service mapping works. Since it is common for middleware to override responsewriter, mapping to `martini.ResponseWriter` would require that overwriters map both types, http.ReponseWriter and martini.ResponseWriter. It is kind of kludgy, but I think It will avoid more confusion to just use http.ResponseWriter.\n\nMaybe in the near future we can allow for injection via implementers instead of concrete types and direct interfaces only. There is still a bit to think through on this subject\n",
+        "created_at": "2013-12-24T01:40:08Z",
+        "updated_at": "2013-12-26T22:49:48Z",
+        "html_url": "https://github.com/go-martini/martini/pull/138#discussion_r8537923",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/138",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8537923"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/138#discussion_r8537923"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/138"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8539015",
+        "pull_request_review_id": null,
+        "id": 8539015,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg1MzkwMTU=",
+        "diff_hunk": "@@ -140,3 +141,48 @@ func Test_ResponseWriter_CloseNotify(t *testing.T) {\n \t}\n \texpect(t, closed, true)\n }\n+\n+func Test_ResponseWriter_Flusher(t *testing.T) {\n+\n+\trec := httptest.NewRecorder()\n+\trw := NewResponseWriter(rec)\n+\n+\t_, ok := rw.(http.Flusher)\n+\texpect(t, ok, true)\n+}\n+\n+func Test_ResponseWriter_FlusherHandler(t *testing.T) {\n+\n+\t// New martini instance\n+\tm := Classic()\n+\n+\tm.Get(\"/events\", func(w http.ResponseWriter, r *http.Request) {",
+        "path": "response_writer_test.go",
+        "position": 27,
+        "original_position": 27,
+        "commit_id": "063dfcd8b0f64f4e2c97f0bc27fa422969baa23b",
+        "original_commit_id": "9d55f6e2291d315634bd7ecd191297f03c7f5246",
+        "user": {
+            "login": "melito",
+            "id": 957,
+            "node_id": "MDQ6VXNlcjk1Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/957?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/melito",
+            "html_url": "https://github.com/melito",
+            "followers_url": "https://api.github.com/users/melito/followers",
+            "following_url": "https://api.github.com/users/melito/following{/other_user}",
+            "gists_url": "https://api.github.com/users/melito/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/melito/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/melito/subscriptions",
+            "organizations_url": "https://api.github.com/users/melito/orgs",
+            "repos_url": "https://api.github.com/users/melito/repos",
+            "events_url": "https://api.github.com/users/melito/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/melito/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@davecheney \n\nIt never occurred to me to use martini.ResponseWriter\nNot sure why....\n\nIf I had to guess I'd say that the martini examples, std lib familiarity, and promise of \"ful compatibility with the http.HandlerFunc interface\" are to blame.\n\nComing from someone fairly new to the framework, I personally feel that if I try to use a http.ResponseWriter it should behave how one would outside of martini.  Just my two cents\n",
+        "created_at": "2013-12-24T04:06:23Z",
+        "updated_at": "2013-12-26T22:49:48Z",
+        "html_url": "https://github.com/go-martini/martini/pull/138#discussion_r8539015",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/138",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8539015"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/138#discussion_r8539015"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/138"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8608606",
+        "pull_request_review_id": null,
+        "id": 8608606,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MDg2MDY=",
+        "diff_hunk": "@@ -11,6 +11,10 @@ import (\n func Static(directory string) Handler {\n \tdir := http.Dir(directory)\n \treturn func(res http.ResponseWriter, req *http.Request, log *log.Logger) {\n+\t\tif req.Method != \"GET\" {\n+\t\t\tres.WriteHeader(http.StatusNotFound)",
+        "path": "static.go",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "2f3982be2f5669ca054284ea497b04bb629e3219",
+        "original_commit_id": "2f3982be2f5669ca054284ea497b04bb629e3219",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We need to return here. I am adding it now.\n",
+        "created_at": "2014-01-02T06:24:36Z",
+        "updated_at": "2014-01-02T06:24:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/143#discussion_r8608606",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/143",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8608606"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/143#discussion_r8608606"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/143"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8608617",
+        "pull_request_review_id": null,
+        "id": 8608617,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MDg2MTc=",
+        "diff_hunk": "@@ -11,6 +11,10 @@ import (\n func Static(directory string) Handler {\n \tdir := http.Dir(directory)\n \treturn func(res http.ResponseWriter, req *http.Request, log *log.Logger) {\n+\t\tif req.Method != \"GET\" {\n+\t\t\tres.WriteHeader(http.StatusNotFound)",
+        "path": "static.go",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "2f3982be2f5669ca054284ea497b04bb629e3219",
+        "original_commit_id": "2f3982be2f5669ca054284ea497b04bb629e3219",
+        "user": {
+            "login": "jeyb",
+            "id": 142833,
+            "node_id": "MDQ6VXNlcjE0MjgzMw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/142833?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jeyb",
+            "html_url": "https://github.com/jeyb",
+            "followers_url": "https://api.github.com/users/jeyb/followers",
+            "following_url": "https://api.github.com/users/jeyb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jeyb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jeyb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jeyb/subscriptions",
+            "organizations_url": "https://api.github.com/users/jeyb/orgs",
+            "repos_url": "https://api.github.com/users/jeyb/repos",
+            "events_url": "https://api.github.com/users/jeyb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jeyb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ah yes, good catch. Thanks.\n",
+        "created_at": "2014-01-02T06:28:38Z",
+        "updated_at": "2014-01-02T06:28:38Z",
+        "html_url": "https://github.com/go-martini/martini/pull/143#discussion_r8608617",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/143",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8608617"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/143#discussion_r8608617"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/143"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8729700",
+        "pull_request_review_id": null,
+        "id": 8729700,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg3Mjk3MDA=",
+        "diff_hunk": "@@ -9,12 +9,14 @@ import (\n // Logger returns a middleware handler that logs the request as it goes in and the response as it goes out.\n func Logger() Handler {\n \treturn func(res http.ResponseWriter, req *http.Request, c Context, log *log.Logger) {\n-\t\tstart := time.Now()\n-\t\tlog.Printf(\"Started %s %s\", req.Method, req.URL.Path)\n+\t\tif !c.Written() {",
+        "path": "logger.go",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "34e5f8e0ea4d19910f4099fa20318c25d388b987",
+        "original_commit_id": "023e107217c633706168970356f697683f70bfd7",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What is the purpose of this call here? With how Martini works, this handler shouldn't be called if the context is written right?\n",
+        "created_at": "2014-01-08T16:33:50Z",
+        "updated_at": "2014-01-09T09:07:45Z",
+        "html_url": "https://github.com/go-martini/martini/pull/147#discussion_r8729700",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/147",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8729700"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/147#discussion_r8729700"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/147"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8729816",
+        "pull_request_review_id": null,
+        "id": 8729816,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg3Mjk4MTY=",
+        "diff_hunk": "@@ -9,12 +9,14 @@ import (\n // Logger returns a middleware handler that logs the request as it goes in and the response as it goes out.\n func Logger() Handler {\n \treturn func(res http.ResponseWriter, req *http.Request, c Context, log *log.Logger) {\n-\t\tstart := time.Now()\n-\t\tlog.Printf(\"Started %s %s\", req.Method, req.URL.Path)\n+\t\tif !c.Written() {",
+        "path": "logger.go",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "34e5f8e0ea4d19910f4099fa20318c25d388b987",
+        "original_commit_id": "023e107217c633706168970356f697683f70bfd7",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I just ran your newly added test without this check and it still passes\n",
+        "created_at": "2014-01-08T16:37:12Z",
+        "updated_at": "2014-01-09T09:07:45Z",
+        "html_url": "https://github.com/go-martini/martini/pull/147#discussion_r8729816",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/147",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8729816"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/147#discussion_r8729816"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/147"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8729894",
+        "pull_request_review_id": null,
+        "id": 8729894,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg3Mjk4OTQ=",
+        "diff_hunk": "@@ -7,9 +7,32 @@ import (\n \t\"strings\"\n )\n \n+type StaticOptions struct {\n+\tSkipLogging    bool\n+\tSkipServeIndex bool\n+\tIndexFile      string\n+}\n+\n+func prepareStaticOptions(options []StaticOptions) StaticOptions {",
+        "path": "static.go",
+        "position": null,
+        "original_position": 10,
+        "commit_id": "34e5f8e0ea4d19910f4099fa20318c25d388b987",
+        "original_commit_id": "023e107217c633706168970356f697683f70bfd7",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let's keep this consistent to how we prepare options in the render middleware https://github.com/codegangsta/martini-contrib/blob/master/render/render.go#L126-L141\n",
+        "created_at": "2014-01-08T16:39:28Z",
+        "updated_at": "2014-01-09T09:07:45Z",
+        "html_url": "https://github.com/go-martini/martini/pull/147#discussion_r8729894",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/147",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8729894"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/147#discussion_r8729894"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/147"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8729906",
+        "pull_request_review_id": null,
+        "id": 8729906,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg3Mjk5MDY=",
+        "diff_hunk": "@@ -7,9 +7,32 @@ import (\n \t\"strings\"\n )\n \n+type StaticOptions struct {",
+        "path": "static.go",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "34e5f8e0ea4d19910f4099fa20318c25d388b987",
+        "original_commit_id": "023e107217c633706168970356f697683f70bfd7",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This will need godoc documentation\n",
+        "created_at": "2014-01-08T16:39:39Z",
+        "updated_at": "2014-01-09T09:07:45Z",
+        "html_url": "https://github.com/go-martini/martini/pull/147#discussion_r8729906",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/147",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8729906"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/147#discussion_r8729906"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/147"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8730041",
+        "pull_request_review_id": null,
+        "id": 8730041,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg3MzAwNDE=",
+        "diff_hunk": "@@ -7,9 +7,32 @@ import (\n \t\"strings\"\n )\n \n+type StaticOptions struct {\n+\tSkipLogging    bool\n+\tSkipServeIndex bool\n+\tIndexFile      string\n+}\n+\n+func prepareStaticOptions(options []StaticOptions) StaticOptions {\n+\tif len(options) > 0 {\n+\t\t// Default index file to serve should be index.html\n+\t\tif options[0].IndexFile == \"\" {\n+\t\t\toptions[0].IndexFile = \"index.html\"\n+\t\t}\n+\t\treturn options[0]\n+\t}\n+\treturn StaticOptions{\n+\t\tSkipLogging:    false,        // Logging is on by default\n+\t\tSkipServeIndex: false,        // Try to serve index.html by default",
+        "path": "static.go",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "34e5f8e0ea4d19910f4099fa20318c25d388b987",
+        "original_commit_id": "023e107217c633706168970356f697683f70bfd7",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Instead of having this option would it be okay to have the zero value of `IndexFile` act as a way to skip index?\n",
+        "created_at": "2014-01-08T16:43:12Z",
+        "updated_at": "2014-01-09T09:07:45Z",
+        "html_url": "https://github.com/go-martini/martini/pull/147#discussion_r8730041",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/147",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8730041"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/147#discussion_r8730041"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/147"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8736004",
+        "pull_request_review_id": null,
+        "id": 8736004,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg3MzYwMDQ=",
+        "diff_hunk": "@@ -7,9 +7,32 @@ import (\n \t\"strings\"\n )\n \n+type StaticOptions struct {\n+\tSkipLogging    bool\n+\tSkipServeIndex bool\n+\tIndexFile      string\n+}\n+\n+func prepareStaticOptions(options []StaticOptions) StaticOptions {\n+\tif len(options) > 0 {\n+\t\t// Default index file to serve should be index.html\n+\t\tif options[0].IndexFile == \"\" {\n+\t\t\toptions[0].IndexFile = \"index.html\"\n+\t\t}\n+\t\treturn options[0]\n+\t}\n+\treturn StaticOptions{\n+\t\tSkipLogging:    false,        // Logging is on by default\n+\t\tSkipServeIndex: false,        // Try to serve index.html by default",
+        "path": "static.go",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "34e5f8e0ea4d19910f4099fa20318c25d388b987",
+        "original_commit_id": "023e107217c633706168970356f697683f70bfd7",
+        "user": {
+            "login": "JamesClonk",
+            "id": 3172084,
+            "node_id": "MDQ6VXNlcjMxNzIwODQ=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/3172084?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JamesClonk",
+            "html_url": "https://github.com/JamesClonk",
+            "followers_url": "https://api.github.com/users/JamesClonk/followers",
+            "following_url": "https://api.github.com/users/JamesClonk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JamesClonk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JamesClonk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JamesClonk/subscriptions",
+            "organizations_url": "https://api.github.com/users/JamesClonk/orgs",
+            "repos_url": "https://api.github.com/users/JamesClonk/repos",
+            "events_url": "https://api.github.com/users/JamesClonk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JamesClonk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I tried to, but the problem is that since in prepareStaticOptions() I already check for the zero value (and set it to \"index.html\" as default value if it is) it can never be the zero value. It's either something or index.html.\nAny other way to make this work? I can't figure it out, so I left the bool flag for now..\n",
+        "created_at": "2014-01-08T19:32:56Z",
+        "updated_at": "2014-01-09T09:07:45Z",
+        "html_url": "https://github.com/go-martini/martini/pull/147#discussion_r8736004",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/147",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8736004"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/147#discussion_r8736004"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/147"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/8736047",
+        "pull_request_review_id": null,
+        "id": 8736047,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg3MzYwNDc=",
+        "diff_hunk": "@@ -9,12 +9,14 @@ import (\n // Logger returns a middleware handler that logs the request as it goes in and the response as it goes out.\n func Logger() Handler {\n \treturn func(res http.ResponseWriter, req *http.Request, c Context, log *log.Logger) {\n-\t\tstart := time.Now()\n-\t\tlog.Printf(\"Started %s %s\", req.Method, req.URL.Path)\n+\t\tif !c.Written() {",
+        "path": "logger.go",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "34e5f8e0ea4d19910f4099fa20318c25d388b987",
+        "original_commit_id": "023e107217c633706168970356f697683f70bfd7",
+        "user": {
+            "login": "JamesClonk",
+            "id": 3172084,
+            "node_id": "MDQ6VXNlcjMxNzIwODQ=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/3172084?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JamesClonk",
+            "html_url": "https://github.com/JamesClonk",
+            "followers_url": "https://api.github.com/users/JamesClonk/followers",
+            "following_url": "https://api.github.com/users/JamesClonk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JamesClonk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JamesClonk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JamesClonk/subscriptions",
+            "organizations_url": "https://api.github.com/users/JamesClonk/orgs",
+            "repos_url": "https://api.github.com/users/JamesClonk/repos",
+            "events_url": "https://api.github.com/users/JamesClonk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JamesClonk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Haha, yeah. I noticed that now too. Doh!\nRemoved it. ;)\n",
+        "created_at": "2014-01-08T19:34:14Z",
+        "updated_at": "2014-01-09T09:07:45Z",
+        "html_url": "https://github.com/go-martini/martini/pull/147#discussion_r8736047",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/147",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/8736047"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/147#discussion_r8736047"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/147"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/10354757",
+        "pull_request_review_id": null,
+        "id": 10354757,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMzU0NzU3",
+        "diff_hunk": "@@ -97,13 +97,14 @@ type ClassicMartini struct {\n \tRouter\n }\n \n-// Classic creates a classic Martini with some basic default middleware - martini.Logger, martini.Recovery, and martini.Static.\n+// Classic creates a classic Martini with some basic default middleware - martini.Logger, martini.Recovery, martini.Static and martini.Routes.",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "61e76c9eb345896fe17d2abfc4509198c7b35515",
+        "original_commit_id": "5e9091d74cf11590955708230063a0b6708ef10f",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "martini.Routes is actually not a middleware, it is a service. something like \"martini.Routes is mapped as a service.\" would be a better clarification\n",
+        "created_at": "2014-03-06T18:52:25Z",
+        "updated_at": "2014-03-07T01:00:47Z",
+        "html_url": "https://github.com/go-martini/martini/pull/194#discussion_r10354757",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/194",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/10354757"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/194#discussion_r10354757"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/194"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/10354803",
+        "pull_request_review_id": null,
+        "id": 10354803,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMzU0ODAz",
+        "diff_hunk": "@@ -43,6 +45,13 @@ type router struct {\n }\n \n // NewRouter creates a new Router instance.\n+// If you aren't using ClassicMartini, then you can add Routes middleware with:",
+        "path": "router.go",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "61e76c9eb345896fe17d2abfc4509198c7b35515",
+        "original_commit_id": "5e9091d74cf11590955708230063a0b6708ef10f",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\"... add the Routes **service** with:...\"\n",
+        "created_at": "2014-03-06T18:53:15Z",
+        "updated_at": "2014-03-07T01:00:47Z",
+        "html_url": "https://github.com/go-martini/martini/pull/194#discussion_r10354803",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/194",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/10354803"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/194#discussion_r10354803"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/194"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/12380755",
+        "pull_request_review_id": null,
+        "id": 12380755,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzgwNzU1",
+        "diff_hunk": "@@ -2,7 +2,9 @@\n \n Martini is a powerful package for quickly writing modular web applications/services in Golang.\n \n-Language Translations: [Simplified Chinese (zh_CN)](translations/README_zh_cn.md)\n+Language Translations:\n+- [Simplified Chinese (zh_CN)](translations/README_zh_cn.md)\n+- [\ud55c\uad6d\uc5b4 \ubc88\uc5ed](translations/README_zh_cn.md)",
+        "path": "README.md",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "ffe39cdd14279cfff7a869979c1f8f13c365e3d4",
+        "original_commit_id": "f4b026719dd9a0cd2e779e9e5e1291f63330040b",
+        "user": {
+            "login": "yosssi",
+            "id": 1583973,
+            "node_id": "MDQ6VXNlcjE1ODM5NzM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1583973?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/yosssi",
+            "html_url": "https://github.com/yosssi",
+            "followers_url": "https://api.github.com/users/yosssi/followers",
+            "following_url": "https://api.github.com/users/yosssi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/yosssi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/yosssi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/yosssi/subscriptions",
+            "organizations_url": "https://api.github.com/users/yosssi/orgs",
+            "repos_url": "https://api.github.com/users/yosssi/repos",
+            "events_url": "https://api.github.com/users/yosssi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/yosssi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@RexK I think this `translations/README_zh_cn.md` should be `translations/README_ko_kr.md`.\n",
+        "created_at": "2014-05-07T14:48:04Z",
+        "updated_at": "2014-05-08T13:50:57Z",
+        "html_url": "https://github.com/go-martini/martini/pull/260#discussion_r12380755",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/260",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/12380755"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/260#discussion_r12380755"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/260"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/12381724",
+        "pull_request_review_id": null,
+        "id": 12381724,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzgxNzI0",
+        "diff_hunk": "@@ -2,7 +2,9 @@\n \n Martini is a powerful package for quickly writing modular web applications/services in Golang.\n \n-Language Translations: [Simplified Chinese (zh_CN)](translations/README_zh_cn.md)\n+Language Translations:\n+- [Simplified Chinese (zh_CN)](translations/README_zh_cn.md)\n+- [\ud55c\uad6d\uc5b4 \ubc88\uc5ed](translations/README_zh_cn.md)",
+        "path": "README.md",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "ffe39cdd14279cfff7a869979c1f8f13c365e3d4",
+        "original_commit_id": "f4b026719dd9a0cd2e779e9e5e1291f63330040b",
+        "user": {
+            "login": "rexk",
+            "id": 2611273,
+            "node_id": "MDQ6VXNlcjI2MTEyNzM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2611273?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rexk",
+            "html_url": "https://github.com/rexk",
+            "followers_url": "https://api.github.com/users/rexk/followers",
+            "following_url": "https://api.github.com/users/rexk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rexk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rexk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rexk/subscriptions",
+            "organizations_url": "https://api.github.com/users/rexk/orgs",
+            "repos_url": "https://api.github.com/users/rexk/repos",
+            "events_url": "https://api.github.com/users/rexk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rexk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@yosssi, Oops, you are right! I cam gonna change that.\n",
+        "created_at": "2014-05-07T15:02:35Z",
+        "updated_at": "2014-05-08T13:50:57Z",
+        "html_url": "https://github.com/go-martini/martini/pull/260#discussion_r12381724",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/260",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/12381724"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/260#discussion_r12381724"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/260"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/14380720",
+        "pull_request_review_id": null,
+        "id": 14380720,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MzgwNzIw",
+        "diff_hunk": "@@ -24,9 +25,20 @@ func setENV(e string) {\n \n func init() {\n \tsetENV(os.Getenv(\"MARTINI_ENV\"))\n+\n \tpath, err := filepath.Abs(os.Args[0])\n \tif err != nil {\n \t\tpanic(err)\n \t}\n-\tRoot = filepath.Dir(path)\n+\t// In the dev mode when used commands `go test`, `go run` determining Root\n+\t// by a first argument is incorrect, because binary is putted into a temp directory.\n+\t// In these cases used a current directory as martini.Root\n+\tif strings.Contains(path, \"go-build\") && (strings.Contains(path, \"command-line-arguments\") || strings.Contains(path, \"_test\")) {",
+        "path": "env.go",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "645f663866be3b2b110e8934dbb503ba5473d3c6",
+        "original_commit_id": "645f663866be3b2b110e8934dbb503ba5473d3c6",
+        "user": {
+            "login": "codegangsta",
+            "id": 178316,
+            "node_id": "MDQ6VXNlcjE3ODMxNg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/178316?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/codegangsta",
+            "html_url": "https://github.com/codegangsta",
+            "followers_url": "https://api.github.com/users/codegangsta/followers",
+            "following_url": "https://api.github.com/users/codegangsta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/codegangsta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/codegangsta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/codegangsta/subscriptions",
+            "organizations_url": "https://api.github.com/users/codegangsta/orgs",
+            "repos_url": "https://api.github.com/users/codegangsta/repos",
+            "events_url": "https://api.github.com/users/codegangsta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/codegangsta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hrm. This seems a little strange to be looking for strings in the path here. Is there any other way for us to know that martini is being run with go run?\n",
+        "created_at": "2014-06-30T23:01:11Z",
+        "updated_at": "2014-06-30T23:01:11Z",
+        "html_url": "https://github.com/go-martini/martini/pull/279#discussion_r14380720",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/279",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/14380720"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/279#discussion_r14380720"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/279"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/19661823",
+        "pull_request_review_id": null,
+        "id": 19661823,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NjYxODIz",
+        "diff_hunk": "@@ -0,0 +1,28 @@\n+package martini\n+\n+import \"net/http\"\n+\n+// NewSlash return a middleware to take care of lash slash.\n+// When x is true always add last slash, false remove.\n+func NewSlash(x bool) Handler {",
+        "path": "slash.go",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "ef79b1507dcad20d7a92ea8ee18f51973fcb5e39",
+        "original_commit_id": "1ba6ba7eb3e650fd9ae0579f21ea1fc6cccf2ce3",
+        "user": {
+            "login": "erizocosmico",
+            "id": 1312023,
+            "node_id": "MDQ6VXNlcjEzMTIwMjM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1312023?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/erizocosmico",
+            "html_url": "https://github.com/erizocosmico",
+            "followers_url": "https://api.github.com/users/erizocosmico/followers",
+            "following_url": "https://api.github.com/users/erizocosmico/following{/other_user}",
+            "gists_url": "https://api.github.com/users/erizocosmico/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/erizocosmico/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/erizocosmico/subscriptions",
+            "organizations_url": "https://api.github.com/users/erizocosmico/orgs",
+            "repos_url": "https://api.github.com/users/erizocosmico/repos",
+            "events_url": "https://api.github.com/users/erizocosmico/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/erizocosmico/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "x is not a very descriptive name for the variable.\n",
+        "created_at": "2014-10-31T11:25:13Z",
+        "updated_at": "2014-10-31T12:39:21Z",
+        "html_url": "https://github.com/go-martini/martini/pull/313#discussion_r19661823",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/313",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/19661823"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/313#discussion_r19661823"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/313"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/19661828",
+        "pull_request_review_id": null,
+        "id": 19661828,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NjYxODI4",
+        "diff_hunk": "@@ -0,0 +1,28 @@\n+package martini\n+\n+import \"net/http\"\n+\n+// NewSlash return a middleware to take care of lash slash.",
+        "path": "slash.go",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "ef79b1507dcad20d7a92ea8ee18f51973fcb5e39",
+        "original_commit_id": "1ba6ba7eb3e650fd9ae0579f21ea1fc6cccf2ce3",
+        "user": {
+            "login": "erizocosmico",
+            "id": 1312023,
+            "node_id": "MDQ6VXNlcjEzMTIwMjM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1312023?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/erizocosmico",
+            "html_url": "https://github.com/erizocosmico",
+            "followers_url": "https://api.github.com/users/erizocosmico/followers",
+            "following_url": "https://api.github.com/users/erizocosmico/following{/other_user}",
+            "gists_url": "https://api.github.com/users/erizocosmico/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/erizocosmico/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/erizocosmico/subscriptions",
+            "organizations_url": "https://api.github.com/users/erizocosmico/orgs",
+            "repos_url": "https://api.github.com/users/erizocosmico/repos",
+            "events_url": "https://api.github.com/users/erizocosmico/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/erizocosmico/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Typo. \"last\" instead of \"lash\".\n",
+        "created_at": "2014-10-31T11:25:28Z",
+        "updated_at": "2014-10-31T12:39:21Z",
+        "html_url": "https://github.com/go-martini/martini/pull/313#discussion_r19661828",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/313",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/19661828"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/313#discussion_r19661828"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/313"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/19425121",
+        "pull_request_review_id": null,
+        "id": 19425121,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDI1MTIx",
+        "diff_hunk": "@@ -18,20 +18,77 @@\n package martini\n \n import (\n+\t\"errors\"\n \t\"log\"\n+\t\"net\"\n \t\"net/http\"\n \t\"os\"\n \t\"reflect\"\n+\t\"time\"\n \n \t\"github.com/codegangsta/inject\"\n )\n \n+// wraps a Listener and adds a channel to allow user to indicate the desire to shut down\n+type stoppableListener struct {\n+\t*net.TCPListener\n+\t// This channel only exists to indicate the need to shut down (by closing it).\n+\t// No messages are actually passed over it.\n+\tstop chan int\n+}\n+\n+var stoppedError = errors.New(\"Listener stopped.\")\n+\n+// wrap Listener in a StoppableListener\n+func newStoppableListener(l net.Listener) (*stoppableListener, error) {\n+\ttcpL, ok := l.(*net.TCPListener)\n+\tif !ok {\n+\t\treturn nil, errors.New(\"Cannot wrap listener\")\n+\t}\n+\tretval := &stoppableListener{}\n+\tretval.TCPListener = tcpL\n+\tretval.stop = make(chan int)\n+\n+\treturn retval, nil\n+}\n+\n+// Hide the listener's Accept() method to incorporate stop checks\n+func (sl *stoppableListener) Accept() (net.Conn, error) {\n+\tfor {\n+\t\t// set a time out for our acccept operation\n+\t\tsl.SetDeadline(time.Now().Add(time.Second))\n+\n+\t\t// accept\n+\t\tnewConn, err := sl.TCPListener.Accept()\n+\n+\t\t// check to see if we've been told to stop\n+\t\tselect {\n+\t\tcase <-sl.stop:\n+\t\t\treturn nil, stoppedError\n+\t\tdefault:\n+\t\t\t// channel still open, continue as normal\n+\t\t}\n+\t\tif err != nil {\n+\t\t\tnetErr, ok := err.(net.Error)\n+\t\t\tif ok && netErr.Timeout() && netErr.Temporary() {\n+\t\t\t\tcontinue\n+\t\t\t}\n+\t\t}\n+\t\treturn newConn, err\n+\t}\n+}\n+\n+func (sl *stoppableListener) Stop() {\n+\tclose(sl.stop)\n+}",
+        "path": "martini.go",
+        "position": 66,
+        "original_position": 66,
+        "commit_id": "c97199f5e5fe72250adfddbbe6a5b82afd41db6c",
+        "original_commit_id": "0d45d21d175e4ce3dd77204f22c5d5b67de91ce0",
+        "user": {
+            "login": "ssoroka-se",
+            "id": 7669584,
+            "node_id": "MDQ6VXNlcjc2Njk1ODQ=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/7669584?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ssoroka-se",
+            "html_url": "https://github.com/ssoroka-se",
+            "followers_url": "https://api.github.com/users/ssoroka-se/followers",
+            "following_url": "https://api.github.com/users/ssoroka-se/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ssoroka-se/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ssoroka-se/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ssoroka-se/subscriptions",
+            "organizations_url": "https://api.github.com/users/ssoroka-se/orgs",
+            "repos_url": "https://api.github.com/users/ssoroka-se/repos",
+            "events_url": "https://api.github.com/users/ssoroka-se/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ssoroka-se/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Should this be in it's own file. stoppable_listener.go or something?\n",
+        "created_at": "2014-10-27T18:14:10Z",
+        "updated_at": "2015-01-07T19:42:39Z",
+        "html_url": "https://github.com/go-martini/martini/pull/310#discussion_r19425121",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/310",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/19425121"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/310#discussion_r19425121"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/310"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/52866865",
+        "pull_request_review_id": null,
+        "id": 52866865,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUyODY2ODY1",
+        "diff_hunk": "@@ -57,6 +57,12 @@ func (m *Martini) Action(handler Handler) {\n \tm.action = handler\n }\n \n+// Action sets the logger",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "86d09511dd823ed31e0831ec763b54502237bbc0",
+        "original_commit_id": "70f17d289f9ca20ff7beed9ab501b163b0cd5e42",
+        "user": {
+            "login": "erizocosmico",
+            "id": 1312023,
+            "node_id": "MDQ6VXNlcjEzMTIwMjM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1312023?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/erizocosmico",
+            "html_url": "https://github.com/erizocosmico",
+            "followers_url": "https://api.github.com/users/erizocosmico/followers",
+            "following_url": "https://api.github.com/users/erizocosmico/following{/other_user}",
+            "gists_url": "https://api.github.com/users/erizocosmico/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/erizocosmico/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/erizocosmico/subscriptions",
+            "organizations_url": "https://api.github.com/users/erizocosmico/orgs",
+            "repos_url": "https://api.github.com/users/erizocosmico/repos",
+            "events_url": "https://api.github.com/users/erizocosmico/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/erizocosmico/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Should be `Logger sets the logger`. Anyway, I'd name the method `SetLogger`. By the name, `Logger` suggests that it's a getter.\n",
+        "created_at": "2016-02-15T07:31:23Z",
+        "updated_at": "2016-02-15T07:44:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/393#discussion_r52866865",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/393",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/52866865"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/393#discussion_r52866865"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/393"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/52867155",
+        "pull_request_review_id": null,
+        "id": 52867155,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUyODY3MTU1",
+        "diff_hunk": "@@ -57,6 +57,12 @@ func (m *Martini) Action(handler Handler) {\n \tm.action = handler\n }\n \n+// Action sets the logger",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "86d09511dd823ed31e0831ec763b54502237bbc0",
+        "original_commit_id": "70f17d289f9ca20ff7beed9ab501b163b0cd5e42",
+        "user": {
+            "login": "ovr",
+            "id": 572096,
+            "node_id": "MDQ6VXNlcjU3MjA5Ng==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/572096?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ovr",
+            "html_url": "https://github.com/ovr",
+            "followers_url": "https://api.github.com/users/ovr/followers",
+            "following_url": "https://api.github.com/users/ovr/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ovr/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ovr/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ovr/subscriptions",
+            "organizations_url": "https://api.github.com/users/ovr/orgs",
+            "repos_url": "https://api.github.com/users/ovr/repos",
+            "events_url": "https://api.github.com/users/ovr/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ovr/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@mvader \nhttps://github.com/ovr/martini/blob/70f17d289f9ca20ff7beed9ab501b163b0cd5e42/martini.go#L55\nSo I named method like `Logger` via I saw `Action` method (it is another setter)\n\nIf it's needed I can change this (Logger -> SetLogger)...\n",
+        "created_at": "2016-02-15T07:36:56Z",
+        "updated_at": "2016-02-15T07:44:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/393#discussion_r52867155",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/393",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/52867155"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/393#discussion_r52867155"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/393"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-martini/martini/pulls/comments/52867305",
+        "pull_request_review_id": null,
+        "id": 52867305,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUyODY3MzA1",
+        "diff_hunk": "@@ -57,6 +57,12 @@ func (m *Martini) Action(handler Handler) {\n \tm.action = handler\n }\n \n+// Action sets the logger",
+        "path": "martini.go",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "86d09511dd823ed31e0831ec763b54502237bbc0",
+        "original_commit_id": "70f17d289f9ca20ff7beed9ab501b163b0cd5e42",
+        "user": {
+            "login": "erizocosmico",
+            "id": 1312023,
+            "node_id": "MDQ6VXNlcjEzMTIwMjM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1312023?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/erizocosmico",
+            "html_url": "https://github.com/erizocosmico",
+            "followers_url": "https://api.github.com/users/erizocosmico/followers",
+            "following_url": "https://api.github.com/users/erizocosmico/following{/other_user}",
+            "gists_url": "https://api.github.com/users/erizocosmico/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/erizocosmico/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/erizocosmico/subscriptions",
+            "organizations_url": "https://api.github.com/users/erizocosmico/orgs",
+            "repos_url": "https://api.github.com/users/erizocosmico/repos",
+            "events_url": "https://api.github.com/users/erizocosmico/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/erizocosmico/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ok, fair enough, just replace the `Action` with `Logger` in the comment and LGTM\n",
+        "created_at": "2016-02-15T07:39:19Z",
+        "updated_at": "2016-02-15T07:44:36Z",
+        "html_url": "https://github.com/go-martini/martini/pull/393#discussion_r52867305",
+        "pull_request_url": "https://api.github.com/repos/go-martini/martini/pulls/393",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/comments/52867305"
+            },
+            "html": {
+                "href": "https://github.com/go-martini/martini/pull/393#discussion_r52867305"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-martini/martini/pulls/393"
+            }
+        }
+    }
+]

@@ -1,0 +1,1129 @@
+[
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/4186253",
+        "pull_request_review_id": null,
+        "id": 4186253,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODYyNTM=",
+        "diff_hunk": "@@ -35,12 +35,11 @@ Internet Explorer 7 or lower.\n Please be aware that you need to stop playing videos or audio manually after\n hiding the modal.\n \n-There is an event that is fired on the modal itself after the modal is show\n-which is called `cssmodal:show` and an event after the modal is hidden called\n-`cssmodal:hide`.\n+There is an event `cssmodal:show` fired on the modal itself after",
+        "path": "README.md",
+        "position": 36,
+        "original_position": 36,
+        "commit_id": "b360aab0edfa86a3f97daa3fdb907b296b0c5413",
+        "original_commit_id": "b360aab0edfa86a3f97daa3fdb907b296b0c5413",
+        "user": {
+            "login": "anselmh",
+            "id": 399345,
+            "node_id": "MDQ6VXNlcjM5OTM0NQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/399345?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/anselmh",
+            "html_url": "https://github.com/anselmh",
+            "followers_url": "https://api.github.com/users/anselmh/followers",
+            "following_url": "https://api.github.com/users/anselmh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/anselmh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/anselmh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/anselmh/subscriptions",
+            "organizations_url": "https://api.github.com/users/anselmh/orgs",
+            "repos_url": "https://api.github.com/users/anselmh/repos",
+            "events_url": "https://api.github.com/users/anselmh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/anselmh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I like this description over the initial.\n",
+        "created_at": "2013-05-12T19:25:09Z",
+        "updated_at": "2013-05-12T19:25:09Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/30#discussion_r4186253",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/30",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/4186253"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/30#discussion_r4186253"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/9602701",
+        "pull_request_review_id": null,
+        "id": 9602701,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk2MDI3MDE=",
+        "diff_hunk": "@@ -0,0 +1,41 @@\n+/*\n+ * CSS Modal Plugin for HTML5 Video (play/pause)\n+ * Author: Anselm Hannemann\n+ * Date: 2014-02-04\n+ */\n+\n+(function (global) {\n+\n+\t'use strict';\n+\n+\tvar CSSModal = global.CSSModal;\n+\n+\t// If CSS Modal is still undefined, throw an error\n+\tif (!CSSModal) {\n+\t\tthrow new Error('Error: CSSModal is not loaded.');\n+\t}\n+\n+\tvar videos;\n+\n+\t// Enables Auto-Play when calling modal\n+\tCSSModal.on('cssmodal:show', document, function (event) {\n+\t\t// Fetch all video elements in active modal\n+\t\tvideos = CSSModal.activeElement.querySelectorAll('video');\n+\n+\t\tif (videos.length > 0) {\n+\t\t\t// Play first video in modal\n+\t\t\tvideos[0].play();\n+\t\t}\n+\t});\n+\n+\t// If modal is closed, pause all videos\n+\tCSSModal.on('cssmodal:hide', document, function (event) {\n+\t\tif (videos.length > 0) {\n+\t\t\t// Pause all videos in active modal\n+\t\t\tfor (var i = 0; i < videos.length; i++) {",
+        "path": "plugins/html5video.js",
+        "position": null,
+        "original_position": 35,
+        "commit_id": "7969aefca4b7794a44875ee0a1a73bd3e001ffaf",
+        "original_commit_id": "3beb9e217564e1c3c2d9f4cb5c04d6bef816d322",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please init variable at top of function.\n",
+        "created_at": "2014-02-10T21:28:51Z",
+        "updated_at": "2014-02-11T22:16:02Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/94#discussion_r9602701",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/94",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/9602701"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/94#discussion_r9602701"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/94"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834192",
+        "pull_request_review_id": null,
+        "id": 12834192,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM0MTky",
+        "diff_hunk": "@@ -0,0 +1,118 @@\n+/*global describe, it, expect, Event, waits, runs*/\n+(function ($) {\n+\n+\t'use strict';\n+\n+\t// Testing if the modal works in general\n+\tdescribe('Gallery plugin', function () {\n+\n+\t\tit('can open a modal', function () {\n+\t\t\truns(function () {\n+\t\t\t\tvar element = $('ul > li').eq(1).find('a').get(0);\n+\t\t\t\tvar event = new Event('click', {'cancelable': true});\n+\t\t\t\telement.dispatchEvent(event);\n+\n+\t\t\t\tsetTimeout(function () {",
+        "path": "test/spec/gallery-spec.js",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "f629a8af3d50c59ac366682dbeb6b5450ada6b59",
+        "original_commit_id": "5c5758dd6659218cb5b6cda7b03f56cf25d03154",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can you please look into this again? Does it work with setTimeout?\n",
+        "created_at": "2014-05-20T09:21:40Z",
+        "updated_at": "2014-05-20T09:45:17Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/115#discussion_r12834192",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/115",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834192"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/115#discussion_r12834192"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/115"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834234",
+        "pull_request_review_id": null,
+        "id": 12834234,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM0MjM0",
+        "diff_hunk": "@@ -0,0 +1,243 @@\n+/*\n+ * CSS Modal Plugin for displaying an image gallery\n+ * Author: Jonathan Wei\u00df\n+ * Date: 2014-05-15\n+ */\n+\n+(function (global) {\n+\t'use strict';\n+\n+\t/**\n+\t * Main modal object\n+\t */\n+\tvar CSSModal = global.CSSModal;\n+\tvar _$prev, _$next, _$detailView, _$activeElement;\n+\tvar _items = [];\n+\tvar _currentItem = 0;\n+\tvar _api = {};\n+\tvar _options = {};\n+\tvar _defaultOptions = {\n+\t\tendless: true\n+\t};\n+\n+\t/**\n+\t * Shows the content previous to the current item\n+\t * @param  {Object} event The incoming touch/click event\n+\t * @return {void}\n+\t */\n+\tvar showPrevious = function (event) {\n+\t\tevent.preventDefault();\n+\t\tevent.stopPropagation();\n+\n+\t\tif (_currentItem === 0) {\n+\t\t\tif(_options.endless) {",
+        "path": "plugins/gallery.js",
+        "position": null,
+        "original_position": 33,
+        "commit_id": "f629a8af3d50c59ac366682dbeb6b5450ada6b59",
+        "original_commit_id": "5c5758dd6659218cb5b6cda7b03f56cf25d03154",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please add a space.\n",
+        "created_at": "2014-05-20T09:22:52Z",
+        "updated_at": "2014-05-20T09:45:17Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/115#discussion_r12834234",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/115",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834234"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/115#discussion_r12834234"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/115"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834272",
+        "pull_request_review_id": null,
+        "id": 12834272,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM0Mjcy",
+        "diff_hunk": "@@ -0,0 +1,243 @@\n+/*\n+ * CSS Modal Plugin for displaying an image gallery\n+ * Author: Jonathan Wei\u00df\n+ * Date: 2014-05-15\n+ */\n+\n+(function (global) {\n+\t'use strict';\n+\n+\t/**\n+\t * Main modal object\n+\t */\n+\tvar CSSModal = global.CSSModal;\n+\tvar _$prev, _$next, _$detailView, _$activeElement;",
+        "path": "plugins/gallery.js",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "f629a8af3d50c59ac366682dbeb6b5450ada6b59",
+        "original_commit_id": "5c5758dd6659218cb5b6cda7b03f56cf25d03154",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please init each var on a new line.\n",
+        "created_at": "2014-05-20T09:23:55Z",
+        "updated_at": "2014-05-20T09:45:17Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/115#discussion_r12834272",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/115",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834272"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/115#discussion_r12834272"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/115"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834295",
+        "pull_request_review_id": null,
+        "id": 12834295,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM0Mjk1",
+        "diff_hunk": "@@ -0,0 +1,243 @@\n+/*\n+ * CSS Modal Plugin for displaying an image gallery\n+ * Author: Jonathan Wei\u00df\n+ * Date: 2014-05-15\n+ */\n+\n+(function (global) {\n+\t'use strict';\n+\n+\t/**\n+\t * Main modal object\n+\t */\n+\tvar CSSModal = global.CSSModal;\n+\tvar _$prev, _$next, _$detailView, _$activeElement;",
+        "path": "plugins/gallery.js",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "f629a8af3d50c59ac366682dbeb6b5450ada6b59",
+        "original_commit_id": "5c5758dd6659218cb5b6cda7b03f56cf25d03154",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Do we want to use $ as a prefix for non-jQuery objects in this case?\n",
+        "created_at": "2014-05-20T09:24:36Z",
+        "updated_at": "2014-05-20T09:45:17Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/115#discussion_r12834295",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/115",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834295"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/115#discussion_r12834295"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/115"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834309",
+        "pull_request_review_id": null,
+        "id": 12834309,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM0MzA5",
+        "diff_hunk": "@@ -0,0 +1,243 @@\n+/*\n+ * CSS Modal Plugin for displaying an image gallery\n+ * Author: Jonathan Wei\u00df\n+ * Date: 2014-05-15\n+ */\n+\n+(function (global) {\n+\t'use strict';\n+\n+\t/**\n+\t * Main modal object\n+\t */\n+\tvar CSSModal = global.CSSModal;\n+\tvar _$prev, _$next, _$detailView, _$activeElement;\n+\tvar _items = [];\n+\tvar _currentItem = 0;\n+\tvar _api = {};\n+\tvar _options = {};\n+\tvar _defaultOptions = {\n+\t\tendless: true\n+\t};\n+\n+\t/**\n+\t * Shows the content previous to the current item\n+\t * @param  {Object} event The incoming touch/click event\n+\t * @return {void}\n+\t */\n+\tvar showPrevious = function (event) {\n+\t\tevent.preventDefault();\n+\t\tevent.stopPropagation();\n+\n+\t\tif (_currentItem === 0) {\n+\t\t\tif(_options.endless) {\n+\t\t\t\t_currentItem = (_items.length - 1);\n+\t\t\t} else {\n+\t\t\t\t_currentItem = 0;\n+\t\t\t}\n+\t\t} else {\n+\t\t\t_currentItem--;\n+\t\t}\n+\n+\t\tsetActiveItem(_currentItem);\n+\t};\n+\n+\t/**\n+\t * Shows the content next to the current item\n+\t * @param  {Object} event The incoming touch/click event\n+\t * @return {void}\n+\t */\n+\tvar showNext = function (event) {\n+\t\tevent.preventDefault();\n+\t\tevent.stopPropagation();\n+\n+\t\tif (_currentItem === (_items.length - 1)) {\n+\t\t\tif(_options.endless) {",
+        "path": "plugins/gallery.js",
+        "position": null,
+        "original_position": 55,
+        "commit_id": "f629a8af3d50c59ac366682dbeb6b5450ada6b59",
+        "original_commit_id": "5c5758dd6659218cb5b6cda7b03f56cf25d03154",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please add a space.\n",
+        "created_at": "2014-05-20T09:25:10Z",
+        "updated_at": "2014-05-20T09:45:17Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/115#discussion_r12834309",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/115",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834309"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/115#discussion_r12834309"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/115"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834327",
+        "pull_request_review_id": null,
+        "id": 12834327,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM0MzI3",
+        "diff_hunk": "@@ -0,0 +1,243 @@\n+/*\n+ * CSS Modal Plugin for displaying an image gallery\n+ * Author: Jonathan Wei\u00df\n+ * Date: 2014-05-15\n+ */\n+\n+(function (global) {\n+\t'use strict';\n+\n+\t/**\n+\t * Main modal object\n+\t */\n+\tvar CSSModal = global.CSSModal;\n+\tvar _$prev, _$next, _$detailView, _$activeElement;\n+\tvar _items = [];\n+\tvar _currentItem = 0;\n+\tvar _api = {};\n+\tvar _options = {};\n+\tvar _defaultOptions = {\n+\t\tendless: true\n+\t};\n+\n+\t/**\n+\t * Shows the content previous to the current item\n+\t * @param  {Object} event The incoming touch/click event\n+\t * @return {void}\n+\t */\n+\tvar showPrevious = function (event) {\n+\t\tevent.preventDefault();\n+\t\tevent.stopPropagation();\n+\n+\t\tif (_currentItem === 0) {\n+\t\t\tif(_options.endless) {\n+\t\t\t\t_currentItem = (_items.length - 1);\n+\t\t\t} else {\n+\t\t\t\t_currentItem = 0;\n+\t\t\t}\n+\t\t} else {\n+\t\t\t_currentItem--;\n+\t\t}\n+\n+\t\tsetActiveItem(_currentItem);\n+\t};\n+\n+\t/**\n+\t * Shows the content next to the current item\n+\t * @param  {Object} event The incoming touch/click event\n+\t * @return {void}\n+\t */\n+\tvar showNext = function (event) {",
+        "path": "plugins/gallery.js",
+        "position": 77,
+        "original_position": 50,
+        "commit_id": "f629a8af3d50c59ac366682dbeb6b5450ada6b59",
+        "original_commit_id": "5c5758dd6659218cb5b6cda7b03f56cf25d03154",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can we encorporate `showNext` and `showPrevious` in one method maybe?\n",
+        "created_at": "2014-05-20T09:25:37Z",
+        "updated_at": "2014-05-20T09:45:17Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/115#discussion_r12834327",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/115",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834327"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/115#discussion_r12834327"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/115"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834355",
+        "pull_request_review_id": null,
+        "id": 12834355,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM0MzU1",
+        "diff_hunk": "@@ -0,0 +1,243 @@\n+/*\n+ * CSS Modal Plugin for displaying an image gallery\n+ * Author: Jonathan Wei\u00df\n+ * Date: 2014-05-15\n+ */\n+\n+(function (global) {\n+\t'use strict';\n+\n+\t/**\n+\t * Main modal object\n+\t */\n+\tvar CSSModal = global.CSSModal;\n+\tvar _$prev, _$next, _$detailView, _$activeElement;\n+\tvar _items = [];\n+\tvar _currentItem = 0;\n+\tvar _api = {};\n+\tvar _options = {};\n+\tvar _defaultOptions = {\n+\t\tendless: true\n+\t};\n+\n+\t/**\n+\t * Shows the content previous to the current item\n+\t * @param  {Object} event The incoming touch/click event\n+\t * @return {void}\n+\t */\n+\tvar showPrevious = function (event) {\n+\t\tevent.preventDefault();\n+\t\tevent.stopPropagation();\n+\n+\t\tif (_currentItem === 0) {\n+\t\t\tif(_options.endless) {\n+\t\t\t\t_currentItem = (_items.length - 1);\n+\t\t\t} else {\n+\t\t\t\t_currentItem = 0;\n+\t\t\t}\n+\t\t} else {\n+\t\t\t_currentItem--;\n+\t\t}\n+\n+\t\tsetActiveItem(_currentItem);\n+\t};\n+\n+\t/**\n+\t * Shows the content next to the current item\n+\t * @param  {Object} event The incoming touch/click event\n+\t * @return {void}\n+\t */\n+\tvar showNext = function (event) {\n+\t\tevent.preventDefault();\n+\t\tevent.stopPropagation();\n+\n+\t\tif (_currentItem === (_items.length - 1)) {\n+\t\t\tif(_options.endless) {\n+\t\t\t\t_currentItem = 0;\n+\t\t\t}\n+\t\t} else {\n+\t\t\t_currentItem++;\n+\t\t}\n+\n+\t\tsetActiveItem(_currentItem);\n+\t};\n+\n+\t/**\n+\t * Returns the detail image element\n+\t * @param  {Object} $element The current CSS Modal instance\n+\t * @return {Object} The detail image\n+\t */\n+\tvar _getDetailView = function ($element) {\n+\t\tvar $container = $element.getElementsByClassName('modal-detail')[0];",
+        "path": "plugins/gallery.js",
+        "position": null,
+        "original_position": 71,
+        "commit_id": "f629a8af3d50c59ac366682dbeb6b5450ada6b59",
+        "original_commit_id": "5c5758dd6659218cb5b6cda7b03f56cf25d03154",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can we check if `$container` exists before returning it?\n",
+        "created_at": "2014-05-20T09:26:21Z",
+        "updated_at": "2014-05-20T09:45:17Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/115#discussion_r12834355",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/115",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834355"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/115#discussion_r12834355"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/115"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834540",
+        "pull_request_review_id": null,
+        "id": 12834540,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM0NTQw",
+        "diff_hunk": "@@ -0,0 +1,243 @@\n+/*\n+ * CSS Modal Plugin for displaying an image gallery\n+ * Author: Jonathan Wei\u00df\n+ * Date: 2014-05-15\n+ */\n+\n+(function (global) {\n+\t'use strict';\n+\n+\t/**\n+\t * Main modal object\n+\t */\n+\tvar CSSModal = global.CSSModal;\n+\tvar _$prev, _$next, _$detailView, _$activeElement;",
+        "path": "plugins/gallery.js",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "f629a8af3d50c59ac366682dbeb6b5450ada6b59",
+        "original_commit_id": "5c5758dd6659218cb5b6cda7b03f56cf25d03154",
+        "user": {
+            "login": "jonathanweiss",
+            "id": 39352,
+            "node_id": "MDQ6VXNlcjM5MzUy",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/39352?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jonathanweiss",
+            "html_url": "https://github.com/jonathanweiss",
+            "followers_url": "https://api.github.com/users/jonathanweiss/followers",
+            "following_url": "https://api.github.com/users/jonathanweiss/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jonathanweiss/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jonathanweiss/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jonathanweiss/subscriptions",
+            "organizations_url": "https://api.github.com/users/jonathanweiss/orgs",
+            "repos_url": "https://api.github.com/users/jonathanweiss/repos",
+            "events_url": "https://api.github.com/users/jonathanweiss/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jonathanweiss/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I thought $ is also used for DOM nodes - but I can also remove the $\u2026\n",
+        "created_at": "2014-05-20T09:32:37Z",
+        "updated_at": "2014-05-20T09:45:17Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/115#discussion_r12834540",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/115",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12834540"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/115#discussion_r12834540"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/115"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12835280",
+        "pull_request_review_id": null,
+        "id": 12835280,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM1Mjgw",
+        "diff_hunk": "@@ -0,0 +1,243 @@\n+/*\n+ * CSS Modal Plugin for displaying an image gallery\n+ * Author: Jonathan Wei\u00df\n+ * Date: 2014-05-15\n+ */\n+\n+(function (global) {\n+\t'use strict';\n+\n+\t/**\n+\t * Main modal object\n+\t */\n+\tvar CSSModal = global.CSSModal;\n+\tvar _$prev, _$next, _$detailView, _$activeElement;",
+        "path": "plugins/gallery.js",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "f629a8af3d50c59ac366682dbeb6b5450ada6b59",
+        "original_commit_id": "5c5758dd6659218cb5b6cda7b03f56cf25d03154",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Mh, I am ok with it, if it is a convention. Haven't seen it before though.\n",
+        "created_at": "2014-05-20T09:40:09Z",
+        "updated_at": "2014-05-20T09:45:17Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/115#discussion_r12835280",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/115",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12835280"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/115#discussion_r12835280"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/115"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12835860",
+        "pull_request_review_id": null,
+        "id": 12835860,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODM1ODYw",
+        "diff_hunk": "@@ -0,0 +1,118 @@\n+/*global describe, it, expect, Event, waits, runs*/\n+(function ($) {\n+\n+\t'use strict';\n+\n+\t// Testing if the modal works in general\n+\tdescribe('Gallery plugin', function () {\n+\n+\t\tit('can open a modal', function () {\n+\t\t\truns(function () {\n+\t\t\t\tvar element = $('ul > li').eq(1).find('a').get(0);\n+\t\t\t\tvar event = new Event('click', {'cancelable': true});\n+\t\t\t\telement.dispatchEvent(event);\n+\n+\t\t\t\tsetTimeout(function () {",
+        "path": "test/spec/gallery-spec.js",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "f629a8af3d50c59ac366682dbeb6b5450ada6b59",
+        "original_commit_id": "5c5758dd6659218cb5b6cda7b03f56cf25d03154",
+        "user": {
+            "login": "jonathanweiss",
+            "id": 39352,
+            "node_id": "MDQ6VXNlcjM5MzUy",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/39352?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jonathanweiss",
+            "html_url": "https://github.com/jonathanweiss",
+            "followers_url": "https://api.github.com/users/jonathanweiss/followers",
+            "following_url": "https://api.github.com/users/jonathanweiss/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jonathanweiss/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jonathanweiss/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jonathanweiss/subscriptions",
+            "organizations_url": "https://api.github.com/users/jonathanweiss/orgs",
+            "repos_url": "https://api.github.com/users/jonathanweiss/repos",
+            "events_url": "https://api.github.com/users/jonathanweiss/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jonathanweiss/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yep. I need the timeout since the element is faded in.\n",
+        "created_at": "2014-05-20T09:44:01Z",
+        "updated_at": "2014-05-20T09:45:17Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/115#discussion_r12835860",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/115",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/12835860"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/115#discussion_r12835860"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/115"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13001603",
+        "pull_request_review_id": null,
+        "id": 13001603,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDAxNjAz",
+        "diff_hunk": "@@ -78,13 +64,24 @@\n \t\t * @param modal {string} id of modal that the event is triggered on\n \t\t */\n \t\ttrigger: function (event, modal) {\n-\t\t\tvar eventTrigger = new CustomEvent(event,{\n-\t\t\t\tdetail: {\n-\t\t\t\t\t'modal': modal\n-\t\t\t\t}\n-\t\t\t});\n+\t\t\tvar eventTrigger;\n+\n+\t\t\tif (window.bean) {\n+\t\t\t\teventTrigger = {",
+        "path": "modal.js",
+        "position": null,
+        "original_position": 66,
+        "commit_id": "95d4e5deba10e28bc570d91e937d5b7530b43fb2",
+        "original_commit_id": "5d88b8faf9d7671f596ac83b95abe02eb7861436",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Maybe we can use a new variable for this object and reuse it later in both if's?\n",
+        "created_at": "2014-05-23T14:40:14Z",
+        "updated_at": "2014-05-23T20:08:00Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/124#discussion_r13001603",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/124",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13001603"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/124#discussion_r13001603"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/124"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13001643",
+        "pull_request_review_id": null,
+        "id": 13001643,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDAxNjQz",
+        "diff_hunk": "@@ -187,17 +187,19 @@\n \t};\n \n \tvar getHorizontalOffset = function () {\n+        var innerWidth = global.innerWidth ? global.innerWidth : document.body.clientWidth;",
+        "path": "plugins/modal-resize.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "95d4e5deba10e28bc570d91e937d5b7530b43fb2",
+        "original_commit_id": "5d88b8faf9d7671f596ac83b95abe02eb7861436",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Indention is wrong.\n",
+        "created_at": "2014-05-23T14:41:06Z",
+        "updated_at": "2014-05-23T20:08:00Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/124#discussion_r13001643",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/124",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13001643"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/124#discussion_r13001643"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/124"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13001670",
+        "pull_request_review_id": null,
+        "id": 13001670,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDAxNjcw",
+        "diff_hunk": "@@ -187,17 +187,19 @@\n \t};\n \n \tvar getHorizontalOffset = function () {\n+        var innerWidth = global.innerWidth ? global.innerWidth : document.body.clientWidth;",
+        "path": "plugins/modal-resize.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "95d4e5deba10e28bc570d91e937d5b7530b43fb2",
+        "original_commit_id": "5d88b8faf9d7671f596ac83b95abe02eb7861436",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Also \n\n```\nvar innerWidth = global.innerWidth || document.body.clientWidth\n```\n\nmight be a bit more elegant.\n",
+        "created_at": "2014-05-23T14:41:42Z",
+        "updated_at": "2014-05-23T20:08:00Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/124#discussion_r13001670",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/124",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13001670"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/124#discussion_r13001670"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/124"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13001691",
+        "pull_request_review_id": null,
+        "id": 13001691,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMDAxNjkx",
+        "diff_hunk": "@@ -187,17 +187,19 @@\n \t};\n \n \tvar getHorizontalOffset = function () {\n+        var innerWidth = global.innerWidth ? global.innerWidth : document.body.clientWidth;\n \t\tvar element = CSSModal.activeElement.querySelector('.modal-inner');\n \t\tvar elementWidth = parseInt(global.getComputedStyle(element).getPropertyValue('width'), 10);\n-\t\tvar offset = (global.innerWidth - elementWidth) / 2;\n+\t\tvar offset = (innerWidth - elementWidth) / 2;\n \n \t\treturn offset;\n \t};\n \n \tvar getVerticalOffset = function () {\n+        var innerHeight = global.innerHeight ? global.innerWidth : document.body.clientHeight;",
+        "path": "plugins/modal-resize.js",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "95d4e5deba10e28bc570d91e937d5b7530b43fb2",
+        "original_commit_id": "5d88b8faf9d7671f596ac83b95abe02eb7861436",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "See above.\n",
+        "created_at": "2014-05-23T14:42:00Z",
+        "updated_at": "2014-05-23T20:08:00Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/124#discussion_r13001691",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/124",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13001691"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/124#discussion_r13001691"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/124"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13387747",
+        "pull_request_review_id": null,
+        "id": 13387747,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMzg3NzQ3",
+        "diff_hunk": "@@ -366,6 +372,7 @@\n \t// Expose modal for loaders that implement the Node module pattern.\n \tif (typeof module === 'object' && module && typeof module.exports === 'object') {\n \t\tmodule.exports = modal;\n+\t\tmodal.init();",
+        "path": "modal.js",
+        "position": 76,
+        "original_position": 76,
+        "commit_id": "0d4f3b236b6576c4dc9f35d0a03d940c69ab7e50",
+        "original_commit_id": "84460772deefff6b31809535bfc1506744d86503",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This won't work I guess. Can we not evoke the modal.init()-function in case we export the module? Same goes for the case when we make CSSModal publicly available on the global space. Maybe we should document this?\nAny objections?\n",
+        "created_at": "2014-06-04T14:13:05Z",
+        "updated_at": "2014-06-04T14:25:18Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/140#discussion_r13387747",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/140",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13387747"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/140#discussion_r13387747"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/140"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13388006",
+        "pull_request_review_id": null,
+        "id": 13388006,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMzg4MDA2",
+        "diff_hunk": "@@ -366,6 +372,7 @@\n \t// Expose modal for loaders that implement the Node module pattern.\n \tif (typeof module === 'object' && module && typeof module.exports === 'object') {\n \t\tmodule.exports = modal;\n+\t\tmodal.init();",
+        "path": "modal.js",
+        "position": 76,
+        "original_position": 76,
+        "commit_id": "0d4f3b236b6576c4dc9f35d0a03d940c69ab7e50",
+        "original_commit_id": "84460772deefff6b31809535bfc1506744d86503",
+        "user": {
+            "login": "jonathanweiss",
+            "id": 39352,
+            "node_id": "MDQ6VXNlcjM5MzUy",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/39352?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jonathanweiss",
+            "html_url": "https://github.com/jonathanweiss",
+            "followers_url": "https://api.github.com/users/jonathanweiss/followers",
+            "following_url": "https://api.github.com/users/jonathanweiss/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jonathanweiss/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jonathanweiss/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jonathanweiss/subscriptions",
+            "organizations_url": "https://api.github.com/users/jonathanweiss/orgs",
+            "repos_url": "https://api.github.com/users/jonathanweiss/repos",
+            "events_url": "https://api.github.com/users/jonathanweiss/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jonathanweiss/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The later case (`} else if (typeof global === 'object' && typeof global.document === 'object') {`) works well. I'm not sure about how module.exports though\u2026 We could document that one must call modal.init() before using the modal in a Node / Browserify environment.\n",
+        "created_at": "2014-06-04T14:17:07Z",
+        "updated_at": "2014-06-04T14:25:18Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/140#discussion_r13388006",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/140",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/13388006"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/140#discussion_r13388006"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/140"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/18240750",
+        "pull_request_review_id": null,
+        "id": 18240750,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4MjQwNzUw",
+        "diff_hunk": "@@ -164,8 +164,8 @@\n \t\t\t\treturn;\n \t\t\t}\n \n-\t\t\tvar firstTabbableElement = allTabbableElements[0];\n-\t\t\tvar lastTabbableElement = allTabbableElements[allTabbableElements.length - 1];\n+\t\t\tvar firstTabbableElement = modal.getFirstElementVisible(allTabbableElements),\n+\t\t\t\tlastTabbableElement = modal.getLastElementVisible(allTabbableElements);",
+        "path": "modal.js",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "bc3eae83a456c1ecdcc40621e7364bb510783b83",
+        "original_commit_id": "09202f731c814261616d71dcd32d1a783cc674f3",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please use multiple `var` declarations here.\n",
+        "created_at": "2014-09-30T19:25:21Z",
+        "updated_at": "2014-10-01T08:13:35Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/159#discussion_r18240750",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/159",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/18240750"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/159#discussion_r18240750"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/159"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/18240768",
+        "pull_request_review_id": null,
+        "id": 18240768,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4MjQwNzY4",
+        "diff_hunk": "@@ -196,6 +196,65 @@\n \t\t},\n \n \t\t/*\n+\t\t * Return the first visible element of a nodeList\n+\t\t *\n+\t\t * @param nodeList The nodelist to parse\n+\t\t * @return {*}\n+\t\t */\n+\t\tgetFirstElementVisible: function (nodeList) {\n+\t\t\tvar nodeListLength = nodeList.length;\n+\t\t\t// If the first item is not visible",
+        "path": "modal.js",
+        "position": null,
+        "original_position": 22,
+        "commit_id": "bc3eae83a456c1ecdcc40621e7364bb510783b83",
+        "original_commit_id": "09202f731c814261616d71dcd32d1a783cc674f3",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please add a new line before the comment.\n",
+        "created_at": "2014-09-30T19:25:47Z",
+        "updated_at": "2014-10-01T08:13:35Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/159#discussion_r18240768",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/159",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/18240768"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/159#discussion_r18240768"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/159"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/18240822",
+        "pull_request_review_id": null,
+        "id": 18240822,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4MjQwODIy",
+        "diff_hunk": "@@ -196,6 +196,65 @@\n \t\t},\n \n \t\t/*\n+\t\t * Return the first visible element of a nodeList\n+\t\t *\n+\t\t * @param nodeList The nodelist to parse\n+\t\t * @return {*}",
+        "path": "modal.js",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "bc3eae83a456c1ecdcc40621e7364bb510783b83",
+        "original_commit_id": "09202f731c814261616d71dcd32d1a783cc674f3",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please add a comment like this`@return {Node|null} Returns a specific node or null if element not visible`.\n",
+        "created_at": "2014-09-30T19:26:45Z",
+        "updated_at": "2014-10-01T08:13:35Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/159#discussion_r18240822",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/159",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/18240822"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/159#discussion_r18240822"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/159"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/18240848",
+        "pull_request_review_id": null,
+        "id": 18240848,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4MjQwODQ4",
+        "diff_hunk": "@@ -196,6 +196,65 @@\n \t\t},\n \n \t\t/*\n+\t\t * Return the first visible element of a nodeList\n+\t\t *\n+\t\t * @param nodeList The nodelist to parse\n+\t\t * @return {*}\n+\t\t */\n+\t\tgetFirstElementVisible: function (nodeList) {\n+\t\t\tvar nodeListLength = nodeList.length;\n+\t\t\t// If the first item is not visible\n+\t\t\tif (!modal.isElementVisible(nodeList[0])) {\n+\t\t\t\tfor (var i = 1; i < nodeListLength - 1; i++) {\n+\t\t\t\t\t// Iterate elements in the NodeList, return the first visible\n+\t\t\t\t\tif (modal.isElementVisible(nodeList[i])) {\n+\t\t\t\t\t\treturn nodeList[i];\n+\t\t\t\t\t}\n+\t\t\t\t}\n+\t\t\t} else {\n+\t\t\t\treturn nodeList[0];\n+\t\t\t}\n+\n+\t\t\treturn null;\n+\t\t},\n+\n+\t\t/*\n+\t\t * Return the last visible element of a nodeList\n+\t\t *\n+\t\t * @param nodeList The nodelist to parse\n+\t\t * @return {*}",
+        "path": "modal.js",
+        "position": null,
+        "original_position": 41,
+        "commit_id": "bc3eae83a456c1ecdcc40621e7364bb510783b83",
+        "original_commit_id": "09202f731c814261616d71dcd32d1a783cc674f3",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Just the same cosmetics in this function as above.\n",
+        "created_at": "2014-09-30T19:27:23Z",
+        "updated_at": "2014-10-01T08:13:35Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/159#discussion_r18240848",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/159",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/18240848"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/159#discussion_r18240848"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/159"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/drublic/css-modal/pulls/comments/18240858",
+        "pull_request_review_id": null,
+        "id": 18240858,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4MjQwODU4",
+        "diff_hunk": "@@ -196,6 +196,65 @@\n \t\t},\n \n \t\t/*\n+\t\t * Return the first visible element of a nodeList\n+\t\t *\n+\t\t * @param nodeList The nodelist to parse\n+\t\t * @return {*}\n+\t\t */\n+\t\tgetFirstElementVisible: function (nodeList) {\n+\t\t\tvar nodeListLength = nodeList.length;\n+\t\t\t// If the first item is not visible\n+\t\t\tif (!modal.isElementVisible(nodeList[0])) {\n+\t\t\t\tfor (var i = 1; i < nodeListLength - 1; i++) {\n+\t\t\t\t\t// Iterate elements in the NodeList, return the first visible\n+\t\t\t\t\tif (modal.isElementVisible(nodeList[i])) {\n+\t\t\t\t\t\treturn nodeList[i];\n+\t\t\t\t\t}\n+\t\t\t\t}\n+\t\t\t} else {\n+\t\t\t\treturn nodeList[0];\n+\t\t\t}\n+\n+\t\t\treturn null;\n+\t\t},\n+\n+\t\t/*\n+\t\t * Return the last visible element of a nodeList\n+\t\t *\n+\t\t * @param nodeList The nodelist to parse\n+\t\t * @return {*}\n+\t\t */\n+\t\tgetLastElementVisible: function (nodeList) {\n+\t\t\tvar nodeListLength = nodeList.length,\n+\t\t\t\tlastTabbableElement = nodeList[nodeListLength - 1];\n+\t\t\t// If the last item is not visible\n+\t\t\tif (!modal.isElementVisible(lastTabbableElement)) {\n+\t\t\t\tfor (var i = nodeListLength - 1; i >= 0; i--) {\n+\t\t\t\t\t// Iterate elements in the NodeList, return the first visible\n+\t\t\t\t\tif (modal.isElementVisible(nodeList[i])) {\n+\t\t\t\t\t\treturn nodeList[i];\n+\t\t\t\t\t}\n+\t\t\t\t}\n+\t\t\t} else {\n+\t\t\t\treturn lastTabbableElement;\n+\t\t\t}\n+\n+\t\t\treturn null;\n+\t\t},\n+\n+\t\t/*\n+\t\t * Convenience function to check if an element is visible\n+\t\t *\n+\t\t * Test idea taken from jquery 1.3.2 source code",
+        "path": "modal.js",
+        "position": 68,
+        "original_position": 64,
+        "commit_id": "bc3eae83a456c1ecdcc40621e7364bb510783b83",
+        "original_commit_id": "09202f731c814261616d71dcd32d1a783cc674f3",
+        "user": {
+            "login": "drublic",
+            "id": 502487,
+            "node_id": "MDQ6VXNlcjUwMjQ4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/502487?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/drublic",
+            "html_url": "https://github.com/drublic",
+            "followers_url": "https://api.github.com/users/drublic/followers",
+            "following_url": "https://api.github.com/users/drublic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/drublic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/drublic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/drublic/subscriptions",
+            "organizations_url": "https://api.github.com/users/drublic/orgs",
+            "repos_url": "https://api.github.com/users/drublic/repos",
+            "events_url": "https://api.github.com/users/drublic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/drublic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Great lookup.\n",
+        "created_at": "2014-09-30T19:27:30Z",
+        "updated_at": "2014-10-01T08:13:35Z",
+        "html_url": "https://github.com/drublic/css-modal/pull/159#discussion_r18240858",
+        "pull_request_url": "https://api.github.com/repos/drublic/css-modal/pulls/159",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/comments/18240858"
+            },
+            "html": {
+                "href": "https://github.com/drublic/css-modal/pull/159#discussion_r18240858"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/drublic/css-modal/pulls/159"
+            }
+        }
+    }
+]

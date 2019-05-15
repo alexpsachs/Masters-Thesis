@@ -1,0 +1,51 @@
+[
+    {
+        "url": "https://api.github.com/repos/njdehoog/NHBalancedFlowLayout/pulls/comments/9713775",
+        "pull_request_review_id": null,
+        "id": 9713775,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3MTM3NzU=",
+        "diff_hunk": "@@ -214,6 +214,12 @@ - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind\n     } else if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {\n         attributes.frame = [self footerFrameForSection:indexPath.section];\n     }\n+    \n+    if(CGRectIsEmpty(attributes.frame))",
+        "path": "NHBalancedFlowLayout/NHBalancedFlowLayout.m",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "caba9921de0e6d0b83ea9b4e3f784ac4be292f17",
+        "original_commit_id": "caba9921de0e6d0b83ea9b4e3f784ac4be292f17",
+        "user": {
+            "login": "njdehoog",
+            "id": 1107150,
+            "node_id": "MDQ6VXNlcjExMDcxNTA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1107150?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/njdehoog",
+            "html_url": "https://github.com/njdehoog",
+            "followers_url": "https://api.github.com/users/njdehoog/followers",
+            "following_url": "https://api.github.com/users/njdehoog/following{/other_user}",
+            "gists_url": "https://api.github.com/users/njdehoog/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/njdehoog/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/njdehoog/subscriptions",
+            "organizations_url": "https://api.github.com/users/njdehoog/orgs",
+            "repos_url": "https://api.github.com/users/njdehoog/repos",
+            "events_url": "https://api.github.com/users/njdehoog/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/njdehoog/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Does this prevent the crash for you? Can you explain what goes wrong and why you have to perform this check here?\n",
+        "created_at": "2014-02-13T15:50:45Z",
+        "updated_at": "2014-02-13T15:50:45Z",
+        "html_url": "https://github.com/njdehoog/NHBalancedFlowLayout/pull/15#discussion_r9713775",
+        "pull_request_url": "https://api.github.com/repos/njdehoog/NHBalancedFlowLayout/pulls/15",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/njdehoog/NHBalancedFlowLayout/pulls/comments/9713775"
+            },
+            "html": {
+                "href": "https://github.com/njdehoog/NHBalancedFlowLayout/pull/15#discussion_r9713775"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/njdehoog/NHBalancedFlowLayout/pulls/15"
+            }
+        }
+    }
+]

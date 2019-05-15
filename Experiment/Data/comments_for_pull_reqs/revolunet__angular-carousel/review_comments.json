@@ -1,0 +1,492 @@
+[
+    {
+        "url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/4207889",
+        "pull_request_review_id": null,
+        "id": 4207889,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyMDc4ODk=",
+        "diff_hunk": "@@ -197,80 +197,58 @@ angular.module('angular-carousel', [])\n             initialPosition = false;\n           };\n \n-          var transformEvent = function(event) {\n-            /* allow mouseEvent + touchEvent */\n-            if ((typeof event.originalEvent !== 'undefined') && event.originalEvent.touches > 0)\n-              event = event.originalEvent.touches[0];\n-            else if ((typeof event.touches !== 'undefined') && event.touches.length > 0)\n-              event = event.touches[0];\n-            else if ((typeof event.changedTouches !== 'undefined') && event.changedTouches.length > 0)\n-              event = event.changedTouches[0];\n-            return event;\n-          };\n-\n-          var swipeStart = function(event) {\n-            /* capture initial event position */\n-            event = transformEvent(event);\n-            if (swiping === 0) {\n-              swiping = 1;\n-              startX = event.clientX;\n-            }\n-            $document.bind('mouseup', swipeEnd);",
+        "path": "src/angular-carousel.js",
+        "position": 38,
+        "original_position": 38,
+        "commit_id": "ea32a59ee117fdfa6a6793438b23a8d7e94660ae",
+        "original_commit_id": "ea32a59ee117fdfa6a6793438b23a8d7e94660ae",
+        "user": {
+            "login": "revolunet",
+            "id": 124937,
+            "node_id": "MDQ6VXNlcjEyNDkzNw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/124937?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/revolunet",
+            "html_url": "https://github.com/revolunet",
+            "followers_url": "https://api.github.com/users/revolunet/followers",
+            "following_url": "https://api.github.com/users/revolunet/following{/other_user}",
+            "gists_url": "https://api.github.com/users/revolunet/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/revolunet/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/revolunet/subscriptions",
+            "organizations_url": "https://api.github.com/users/revolunet/orgs",
+            "repos_url": "https://api.github.com/users/revolunet/repos",
+            "events_url": "https://api.github.com/users/revolunet/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/revolunet/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this was useful when using the carousel on desktop; when the user mousemove then mouseup out of the carousel area, we still move the slides. do you think we can restore that and just extract the `end` function below ?\n",
+        "created_at": "2013-05-14T05:12:44Z",
+        "updated_at": "2013-05-14T05:12:44Z",
+        "html_url": "https://github.com/revolunet/angular-carousel/pull/10#discussion_r4207889",
+        "pull_request_url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/10",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/4207889"
+            },
+            "html": {
+                "href": "https://github.com/revolunet/angular-carousel/pull/10#discussion_r4207889"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/10"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/6504426",
+        "pull_request_review_id": null,
+        "id": 6504426,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY1MDQ0MjY=",
+        "diff_hunk": "@@ -2,7 +2,7 @@\n   \"author\": \"revolunet\",\n   \"name\": \"angular-carousel\",\n   \"description\": \"Mobile friendly AngularJS carousel\",\n-  \"version\": \"0.0.8\",",
+        "path": "bower.json",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "4bd94c46598ca57beeb0eed4ecddf5e7b6b1fa97",
+        "original_commit_id": "6ef26342415162bf1affa7fd513ebc0f7b330c38",
+        "user": {
+            "login": "revolunet",
+            "id": 124937,
+            "node_id": "MDQ6VXNlcjEyNDkzNw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/124937?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/revolunet",
+            "html_url": "https://github.com/revolunet",
+            "followers_url": "https://api.github.com/users/revolunet/followers",
+            "following_url": "https://api.github.com/users/revolunet/following{/other_user}",
+            "gists_url": "https://api.github.com/users/revolunet/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/revolunet/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/revolunet/subscriptions",
+            "organizations_url": "https://api.github.com/users/revolunet/orgs",
+            "repos_url": "https://api.github.com/users/revolunet/repos",
+            "events_url": "https://api.github.com/users/revolunet/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/revolunet/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Here should be 0.0.9 i guess\n",
+        "created_at": "2013-09-22T05:06:11Z",
+        "updated_at": "2013-09-24T01:15:35Z",
+        "html_url": "https://github.com/revolunet/angular-carousel/pull/47#discussion_r6504426",
+        "pull_request_url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/47",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/6504426"
+            },
+            "html": {
+                "href": "https://github.com/revolunet/angular-carousel/pull/47#discussion_r6504426"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/47"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/6504428",
+        "pull_request_review_id": null,
+        "id": 6504428,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY1MDQ0Mjg=",
+        "diff_hunk": "@@ -178,7 +178,7 @@ <h3 data-ng-bind-html-unsafe=\"'Discover sports (slide ' + (currentSport + 1) + '\n \n \n     <br><br><br>\n-    <script src=\"//code.angularjs.org/1.1.5/angular.js\"></script>\n+    <script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js\"></script>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "4bd94c46598ca57beeb0eed4ecddf5e7b6b1fa97",
+        "original_commit_id": "6ef26342415162bf1affa7fd513ebc0f7b330c38",
+        "user": {
+            "login": "revolunet",
+            "id": 124937,
+            "node_id": "MDQ6VXNlcjEyNDkzNw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/124937?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/revolunet",
+            "html_url": "https://github.com/revolunet",
+            "followers_url": "https://api.github.com/users/revolunet/followers",
+            "following_url": "https://api.github.com/users/revolunet/following{/other_user}",
+            "gists_url": "https://api.github.com/users/revolunet/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/revolunet/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/revolunet/subscriptions",
+            "organizations_url": "https://api.github.com/users/revolunet/orgs",
+            "repos_url": "https://api.github.com/users/revolunet/repos",
+            "events_url": "https://api.github.com/users/revolunet/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/revolunet/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please use double slash prefix so we dont have mixed content alerts on some browsers\n",
+        "created_at": "2013-09-22T05:07:47Z",
+        "updated_at": "2013-09-24T01:15:35Z",
+        "html_url": "https://github.com/revolunet/angular-carousel/pull/47#discussion_r6504428",
+        "pull_request_url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/47",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/6504428"
+            },
+            "html": {
+                "href": "https://github.com/revolunet/angular-carousel/pull/47#discussion_r6504428"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/47"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/9021846",
+        "pull_request_review_id": null,
+        "id": 9021846,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkwMjE4NDY=",
+        "diff_hunk": "@@ -123,13 +135,14 @@ module.exports = function(grunt) {\n   grunt.loadNpmTasks('grunt-contrib-jshint');\n   grunt.loadNpmTasks('grunt-contrib-concat');\n   grunt.loadNpmTasks('grunt-contrib-uglify');\n+  grunt.loadNpmTasks('grunt-contrib-sass');\n   grunt.loadNpmTasks('grunt-contrib-cssmin');\n   grunt.loadNpmTasks('grunt-contrib-connect');\n   grunt.loadNpmTasks('grunt-contrib-watch');\n   grunt.loadNpmTasks('grunt-karma');\n \n   // Build task.\n-  grunt.registerTask('build', ['jshint', 'concat', 'uglify', 'autoprefixer', 'cssmin']);\n+  grunt.registerTask('build', ['jshint', 'concat', 'uglify', 'autoprefixer', 'sass', 'cssmin']);",
+        "path": "Gruntfile.js",
+        "position": null,
+        "original_position": 47,
+        "commit_id": "df4356067eef391d031d33f761272e1a45e709ce",
+        "original_commit_id": "7dce74e8bb8f213711939ad5a96d55021a49fb84",
+        "user": {
+            "login": "revolunet",
+            "id": 124937,
+            "node_id": "MDQ6VXNlcjEyNDkzNw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/124937?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/revolunet",
+            "html_url": "https://github.com/revolunet",
+            "followers_url": "https://api.github.com/users/revolunet/followers",
+            "following_url": "https://api.github.com/users/revolunet/following{/other_user}",
+            "gists_url": "https://api.github.com/users/revolunet/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/revolunet/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/revolunet/subscriptions",
+            "organizations_url": "https://api.github.com/users/revolunet/orgs",
+            "repos_url": "https://api.github.com/users/revolunet/repos",
+            "events_url": "https://api.github.com/users/revolunet/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/revolunet/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "i think autoprefixer should be added after sass\n",
+        "created_at": "2014-01-20T23:05:01Z",
+        "updated_at": "2014-01-20T23:49:34Z",
+        "html_url": "https://github.com/revolunet/angular-carousel/pull/98#discussion_r9021846",
+        "pull_request_url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/98",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/9021846"
+            },
+            "html": {
+                "href": "https://github.com/revolunet/angular-carousel/pull/98#discussion_r9021846"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/20754671",
+        "pull_request_review_id": null,
+        "id": 20754671,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwNzU0Njcx",
+        "diff_hunk": "@@ -534,7 +534,9 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach\n \n                             scope[deepWatch?'$watch':'$watchCollection'](repeatCollection, function(newValue, oldValue) {\n                                 //console.log('repeatCollection', currentSlides);\n+                                if(currentSlides) {",
+        "path": "dist/angular-carousel.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "c5242494c0aef6282479bc84b38c9c172d953c0a",
+        "original_commit_id": "c5242494c0aef6282479bc84b38c9c172d953c0a",
+        "user": {
+            "login": "justinsa",
+            "id": 1533050,
+            "node_id": "MDQ6VXNlcjE1MzMwNTA=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1533050?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/justinsa",
+            "html_url": "https://github.com/justinsa",
+            "followers_url": "https://api.github.com/users/justinsa/followers",
+            "following_url": "https://api.github.com/users/justinsa/following{/other_user}",
+            "gists_url": "https://api.github.com/users/justinsa/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/justinsa/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/justinsa/subscriptions",
+            "organizations_url": "https://api.github.com/users/justinsa/orgs",
+            "repos_url": "https://api.github.com/users/justinsa/repos",
+            "events_url": "https://api.github.com/users/justinsa/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/justinsa/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is incomplete logic and makes the statement it wraps partially moot: `(currentSlides || newValue)` will never execute the `newValue` statement. Either this if statement should be changed to: `if (currentSlides || newValue) {`, which is likely what you intended or the inner statement should be changed to: `currentSlides.slice()`.\n",
+        "created_at": "2014-11-22T04:42:01Z",
+        "updated_at": "2014-11-22T04:42:01Z",
+        "html_url": "https://github.com/revolunet/angular-carousel/pull/262#discussion_r20754671",
+        "pull_request_url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/262",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/20754671"
+            },
+            "html": {
+                "href": "https://github.com/revolunet/angular-carousel/pull/262#discussion_r20754671"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/262"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/20754678",
+        "pull_request_review_id": null,
+        "id": 20754678,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwNzU0Njc4",
+        "diff_hunk": "@@ -534,7 +534,9 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach\n \n                             scope[deepWatch?'$watch':'$watchCollection'](repeatCollection, function(newValue, oldValue) {\n                                 //console.log('repeatCollection', currentSlides);\n+                                if(currentSlides) {",
+        "path": "dist/angular-carousel.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "c5242494c0aef6282479bc84b38c9c172d953c0a",
+        "original_commit_id": "c5242494c0aef6282479bc84b38c9c172d953c0a",
+        "user": {
+            "login": "justinsa",
+            "id": 1533050,
+            "node_id": "MDQ6VXNlcjE1MzMwNTA=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1533050?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/justinsa",
+            "html_url": "https://github.com/justinsa",
+            "followers_url": "https://api.github.com/users/justinsa/followers",
+            "following_url": "https://api.github.com/users/justinsa/following{/other_user}",
+            "gists_url": "https://api.github.com/users/justinsa/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/justinsa/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/justinsa/subscriptions",
+            "organizations_url": "https://api.github.com/users/justinsa/orgs",
+            "repos_url": "https://api.github.com/users/justinsa/repos",
+            "events_url": "https://api.github.com/users/justinsa/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/justinsa/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Additionally, you have failed to preserve the indentation style. The inner scope of the if statement should indent 4 spaces.\n",
+        "created_at": "2014-11-22T04:42:45Z",
+        "updated_at": "2014-11-22T04:42:45Z",
+        "html_url": "https://github.com/revolunet/angular-carousel/pull/262#discussion_r20754678",
+        "pull_request_url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/262",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/20754678"
+            },
+            "html": {
+                "href": "https://github.com/revolunet/angular-carousel/pull/262#discussion_r20754678"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/262"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/21682663",
+        "pull_request_review_id": null,
+        "id": 21682663,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNjgyNjYz",
+        "diff_hunk": "@@ -359,6 +350,24 @@\n                             angular.forEach(getSlidesDOM(), function(node, index) {\n                                 currentSlides.push({id: index});\n                             });\n+\n+                            if(iAttributes.rnCarouselControls!==undefined) {\n+                                // dont use a directive for this\n+                                var tpl = '<div class=\"rn-carousel-controls\">\\n' +\n+                                    '  <span class=\"rn-carousel-control rn-carousel-control-prev\" ng-click=\"prevSlide()\" ng-if=\"carouselIndex > 0\"></span>\\n' +\n+                                    '  <span class=\"rn-carousel-control rn-carousel-control-next\" ng-click=\"nextSlide()\" ng-if=\"carouselIndex < ' + (currentSlides.length - 1) + '\"></span>\\n' +\n+                                    '</div>';\n+                                iElement.append($compile(angular.element(tpl))(scope));\n+                            }\n+                        } else {\n+                            if(iAttributes.rnCarouselControls!==undefined) {",
+        "path": "src/directives/rn-carousel.js",
+        "position": null,
+        "original_position": 30,
+        "commit_id": "76c135aecfba79bfd23b7faa93619c04aef9138d",
+        "original_commit_id": "ec82edc64ee33693ce0ca012af6f53b8a2b43ea8",
+        "user": {
+            "login": "justinsa",
+            "id": 1533050,
+            "node_id": "MDQ6VXNlcjE1MzMwNTA=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1533050?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/justinsa",
+            "html_url": "https://github.com/justinsa",
+            "followers_url": "https://api.github.com/users/justinsa/followers",
+            "following_url": "https://api.github.com/users/justinsa/following{/other_user}",
+            "gists_url": "https://api.github.com/users/justinsa/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/justinsa/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/justinsa/subscriptions",
+            "organizations_url": "https://api.github.com/users/justinsa/orgs",
+            "repos_url": "https://api.github.com/users/justinsa/repos",
+            "events_url": "https://api.github.com/users/justinsa/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/justinsa/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Copy-paste code is bad thing. Create a private function that does this and then call it in both of these locations:\n\n``` JAVASCRIPT\nvar applyCarouselControls = function (attribute, element, scope) {\n  if(attribute !== undefined) {\n    // dont use a directive for this\n    var tpl = '<div class=\"rn-carousel-controls\">\\n' +\n      '  <span class=\"rn-carousel-control rn-carousel-control-prev\" ng-click=\"prevSlide()\" ng-if=\"carouselIndex > 0\"></span>\\n' +\n      '  <span class=\"rn-carousel-control rn-carousel-control-next\" ng-click=\"nextSlide()\" ng-if=\"carouselIndex < ' + (currentSlides.length - 1) + '\"></span>\\n' +\n      '</div>';\n    iElement.append($compile(angular.element(tpl))(scope));\n  }\n};\n```\n\nthen your call is:\n\n``` JAVASCRIPT\napplyCarouselControls(iAttributes.rnCarouselControls, iElement, scope);\n```\n",
+        "created_at": "2014-12-11T15:27:06Z",
+        "updated_at": "2014-12-11T16:31:51Z",
+        "html_url": "https://github.com/revolunet/angular-carousel/pull/272#discussion_r21682663",
+        "pull_request_url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/272",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/21682663"
+            },
+            "html": {
+                "href": "https://github.com/revolunet/angular-carousel/pull/272#discussion_r21682663"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/272"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/22289830",
+        "pull_request_review_id": null,
+        "id": 22289830,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMjg5ODMw",
+        "diff_hunk": "@@ -1136,7 +1119,9 @@ angular.module('angular-carousel.shifty', [])\n       module.exports = Tweenable;\n     } else if (typeof define === 'function' && define.amd) {\n       // AMD\n+      debugger;",
+        "path": "dist/angular-carousel.js",
+        "position": 116,
+        "original_position": 116,
+        "commit_id": "71dca9931740cd4ef829ab802ec06c807eb5924a",
+        "original_commit_id": "71dca9931740cd4ef829ab802ec06c807eb5924a",
+        "user": {
+            "login": "revolunet",
+            "id": 124937,
+            "node_id": "MDQ6VXNlcjEyNDkzNw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/124937?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/revolunet",
+            "html_url": "https://github.com/revolunet",
+            "followers_url": "https://api.github.com/users/revolunet/followers",
+            "following_url": "https://api.github.com/users/revolunet/following{/other_user}",
+            "gists_url": "https://api.github.com/users/revolunet/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/revolunet/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/revolunet/subscriptions",
+            "organizations_url": "https://api.github.com/users/revolunet/orgs",
+            "repos_url": "https://api.github.com/users/revolunet/repos",
+            "events_url": "https://api.github.com/users/revolunet/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/revolunet/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "looks like an error, right ?\n",
+        "created_at": "2014-12-26T23:19:03Z",
+        "updated_at": "2014-12-26T23:19:03Z",
+        "html_url": "https://github.com/revolunet/angular-carousel/pull/269#discussion_r22289830",
+        "pull_request_url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/269",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/22289830"
+            },
+            "html": {
+                "href": "https://github.com/revolunet/angular-carousel/pull/269#discussion_r22289830"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/269"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/51617818",
+        "pull_request_review_id": null,
+        "id": 51617818,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUxNjE3ODE4",
+        "diff_hunk": "@@ -329,7 +330,12 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach\n                         }\n \n                         scope.nextSlide = function(slideOptions) {\n-                            var index = scope.carouselIndex + 1;\n+                            var index;\n+                            if(isNaN(slidesPerClickLimit) === false && currentSlides.length - scope.carouselIndex + slidesPerClickLimit >= slidesPerClickLimit && currentSlides.length/slidesPerClickLimit > 1) {\n+                                index = scope.carouselIndex + slidesPerClickLimit;\n+                            } else {\n+                                index = scope.carouselIndex + 1;",
+        "path": "dist/angular-carousel.js",
+        "position": 27,
+        "original_position": 27,
+        "commit_id": "3c655ea6f92bbc4408a7c2237b2514147545deea",
+        "original_commit_id": "3c655ea6f92bbc4408a7c2237b2514147545deea",
+        "user": {
+            "login": "extempl",
+            "id": 447059,
+            "node_id": "MDQ6VXNlcjQ0NzA1OQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/447059?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/extempl",
+            "html_url": "https://github.com/extempl",
+            "followers_url": "https://api.github.com/users/extempl/followers",
+            "following_url": "https://api.github.com/users/extempl/following{/other_user}",
+            "gists_url": "https://api.github.com/users/extempl/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/extempl/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/extempl/subscriptions",
+            "organizations_url": "https://api.github.com/users/extempl/orgs",
+            "repos_url": "https://api.github.com/users/extempl/repos",
+            "events_url": "https://api.github.com/users/extempl/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/extempl/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No need in else `+ 1`, just use default `1` value for `slidesPerClickLimit`\n",
+        "created_at": "2016-02-02T19:07:44Z",
+        "updated_at": "2016-02-02T19:07:44Z",
+        "html_url": "https://github.com/revolunet/angular-carousel/pull/368#discussion_r51617818",
+        "pull_request_url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/368",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/51617818"
+            },
+            "html": {
+                "href": "https://github.com/revolunet/angular-carousel/pull/368#discussion_r51617818"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/368"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/51617714",
+        "pull_request_review_id": null,
+        "id": 51617714,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUxNjE3NzE0",
+        "diff_hunk": "@@ -292,7 +292,8 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach\n                             intialState = true,\n                             animating = false,\n                             mouseUpBound = false,\n-                            locked = false;\n+                            locked = false,\n+                            slidesPerClickLimit = parseInt(iAttributes.rnCarouselItemsPerSlide);",
+        "path": "dist/angular-carousel.js",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "3c655ea6f92bbc4408a7c2237b2514147545deea",
+        "original_commit_id": "3c655ea6f92bbc4408a7c2237b2514147545deea",
+        "user": {
+            "login": "extempl",
+            "id": 447059,
+            "node_id": "MDQ6VXNlcjQ0NzA1OQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/447059?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/extempl",
+            "html_url": "https://github.com/extempl",
+            "followers_url": "https://api.github.com/users/extempl/followers",
+            "following_url": "https://api.github.com/users/extempl/following{/other_user}",
+            "gists_url": "https://api.github.com/users/extempl/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/extempl/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/extempl/subscriptions",
+            "organizations_url": "https://api.github.com/users/extempl/orgs",
+            "repos_url": "https://api.github.com/users/extempl/repos",
+            "events_url": "https://api.github.com/users/extempl/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/extempl/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`slidesPerClickLimit = parseInt(iAttributes.rnCarouselItemsPerSlide) || 1;`\nAlso, I'd move it to defaultOptions.\n",
+        "created_at": "2016-02-02T19:07:05Z",
+        "updated_at": "2016-02-02T19:09:27Z",
+        "html_url": "https://github.com/revolunet/angular-carousel/pull/368#discussion_r51617714",
+        "pull_request_url": "https://api.github.com/repos/revolunet/angular-carousel/pulls/368",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/comments/51617714"
+            },
+            "html": {
+                "href": "https://github.com/revolunet/angular-carousel/pull/368#discussion_r51617714"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/revolunet/angular-carousel/pulls/368"
+            }
+        }
+    }
+]

@@ -1,0 +1,149 @@
+[
+    {
+        "url": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/comments/32893003",
+        "pull_request_review_id": null,
+        "id": 32893003,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyODkzMDAz",
+        "diff_hunk": "@@ -21,16 +21,20 @@ defmodule Ping do\n   Ping a single IP address and return true if there is a response.\"\n   \"\"\"\n   def ping(ip) do\n-    result = System.cmd(ping_cmd(ip))\n-    not Regex.match?(~r/100(\\.0)?% packet loss/, result)\n+    # return code should be handled somehow with pattern matching\n+    {cmd_output, _} = System.cmd(\"ping\", ping_args(ip))\n+    valid_output = \"1 packets transmitted, 1 packets received, 0.0% packet loss\"\n+    String.contains?(cmd_output, valid_output)",
+        "path": "09-ping.exs",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "3245c1ab2621d90e5eb47bb05c3273442454f350",
+        "original_commit_id": "5b3fa09aaab9ea0f9da82706f8641deb61532ff7",
+        "user": {
+            "login": "seven1m",
+            "id": 669,
+            "node_id": "MDQ6VXNlcjY2OQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/669?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/seven1m",
+            "html_url": "https://github.com/seven1m",
+            "followers_url": "https://api.github.com/users/seven1m/followers",
+            "following_url": "https://api.github.com/users/seven1m/following{/other_user}",
+            "gists_url": "https://api.github.com/users/seven1m/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/seven1m/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/seven1m/subscriptions",
+            "organizations_url": "https://api.github.com/users/seven1m/orgs",
+            "repos_url": "https://api.github.com/users/seven1m/repos",
+            "events_url": "https://api.github.com/users/seven1m/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/seven1m/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why remove the regex approach? Seems it would be more platform independent and less reliant on that one output format.\n",
+        "created_at": "2015-06-21T12:14:24Z",
+        "updated_at": "2015-06-21T13:21:10Z",
+        "html_url": "https://github.com/seven1m/30-days-of-elixir/pull/13#discussion_r32893003",
+        "pull_request_url": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/13",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/comments/32893003"
+            },
+            "html": {
+                "href": "https://github.com/seven1m/30-days-of-elixir/pull/13#discussion_r32893003"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/13"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/comments/38531480",
+        "pull_request_review_id": null,
+        "id": 38531480,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTMxNDgw",
+        "diff_hunk": "@@ -1,4 +1,3 @@\n-# http://elixir-lang.org/docs/stable/elixir/Dict.html",
+        "path": "05-map.exs",
+        "position": 1,
+        "original_position": 1,
+        "commit_id": "8972e5eea09578bce02cea627fe540e43211f5a3",
+        "original_commit_id": "8972e5eea09578bce02cea627fe540e43211f5a3",
+        "user": {
+            "login": "eddwardo",
+            "id": 1431465,
+            "node_id": "MDQ6VXNlcjE0MzE0NjU=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1431465?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/eddwardo",
+            "html_url": "https://github.com/eddwardo",
+            "followers_url": "https://api.github.com/users/eddwardo/followers",
+            "following_url": "https://api.github.com/users/eddwardo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/eddwardo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/eddwardo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/eddwardo/subscriptions",
+            "organizations_url": "https://api.github.com/users/eddwardo/orgs",
+            "repos_url": "https://api.github.com/users/eddwardo/repos",
+            "events_url": "https://api.github.com/users/eddwardo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/eddwardo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why is this removed?\n",
+        "created_at": "2015-09-02T13:35:11Z",
+        "updated_at": "2015-09-02T13:35:11Z",
+        "html_url": "https://github.com/seven1m/30-days-of-elixir/pull/21#discussion_r38531480",
+        "pull_request_url": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/21",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/comments/38531480"
+            },
+            "html": {
+                "href": "https://github.com/seven1m/30-days-of-elixir/pull/21#discussion_r38531480"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/comments/38531674",
+        "pull_request_review_id": null,
+        "id": 38531674,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTMxNjc0",
+        "diff_hunk": "@@ -1,4 +1,3 @@\n-# http://elixir-lang.org/docs/stable/elixir/Dict.html",
+        "path": "05-map.exs",
+        "position": 1,
+        "original_position": 1,
+        "commit_id": "8972e5eea09578bce02cea627fe540e43211f5a3",
+        "original_commit_id": "8972e5eea09578bce02cea627fe540e43211f5a3",
+        "user": {
+            "login": "larrylv",
+            "id": 531650,
+            "node_id": "MDQ6VXNlcjUzMTY1MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/531650?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/larrylv",
+            "html_url": "https://github.com/larrylv",
+            "followers_url": "https://api.github.com/users/larrylv/followers",
+            "following_url": "https://api.github.com/users/larrylv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/larrylv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/larrylv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/larrylv/subscriptions",
+            "organizations_url": "https://api.github.com/users/larrylv/orgs",
+            "repos_url": "https://api.github.com/users/larrylv/repos",
+            "events_url": "https://api.github.com/users/larrylv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/larrylv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Because only `Map` in the file.\n",
+        "created_at": "2015-09-02T13:37:08Z",
+        "updated_at": "2015-09-02T13:37:08Z",
+        "html_url": "https://github.com/seven1m/30-days-of-elixir/pull/21#discussion_r38531674",
+        "pull_request_url": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/21",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/comments/38531674"
+            },
+            "html": {
+                "href": "https://github.com/seven1m/30-days-of-elixir/pull/21#discussion_r38531674"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/seven1m/30-days-of-elixir/pulls/21"
+            }
+        }
+    }
+]

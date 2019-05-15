@@ -1,0 +1,492 @@
+[
+    {
+        "url": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/5921660",
+        "pull_request_review_id": null,
+        "id": 5921660,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MjE2NjA=",
+        "diff_hunk": "@@ -19,41 +19,33 @@ module.provider('progressbar', function () {\n \n     this.$get = ['$document', '$window', function ($document, $window) {\n         var count = this.count,\n-            height = this.height,\n-            color = this.color,\n+            height, color, computedStyle,\n             $body = $document.find('body'),\n-        // Create elements that is needed\n+            // Create elements that is needed\n             progressbarContainer = angular.element('<div class=\"progressbar-container\"></div>'),\n-            progressbar = angular.element('<div class=\"progressbar\"></div>'),\n+            progressbar = angular.element('<div class=\"progressbar\"></div>');\n \n-        //Add CSS3 styles for transition smoothing\n-            css = document.createElement(\"style\");\n-        css.type = \"text/css\";\n-        css.innerHTML = \".progressbar {-webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}\";\n-        document.body.appendChild(css);\n+        //Add progressbar to progressbar-container and progressbar-container\n+        // to body\n+        progressbarContainer.append(progressbar);\n+        $body.append(progressbarContainer);\n \n-        //Styling for the progressbar-container\n-        progressbarContainer.css('position', 'fixed');\n-        progressbarContainer.css('margin', '0');\n-        progressbarContainer.css('padding', '0');\n-        progressbarContainer.css('top', '0px');\n-        progressbarContainer.css('left', '0px');\n-        progressbarContainer.css('right', '0px');\n-        progressbarContainer.css('z-index', '99999');\n+        //Set height and color from CSS\n+        if($window.getComputedStyle){\n+            computedStyle = $window.getComputedStyle(progressbar[0]);\n+        }else{\n+            //IE8 fix\n+            computedStyle = progressbar[0].currentStyle;\n+        }\n+        color = this.color = computedStyle.backgroundColor || this.color;\n+        height = this.height = computedStyle.height || this.height;\n \n         //Styling for the progressbar itself\n         progressbar.css('height', height);\n         progressbar.css('box-shadow', '0px 0px 10px 0px ' + color);",
+        "path": "ngProgress.js",
+        "position": null,
+        "original_position": 44,
+        "commit_id": "b25382975ed4eece7a7a67a397a2904d163f923c",
+        "original_commit_id": "8f588d99039f9696b1bffd8051aeea433dff7b29",
+        "user": {
+            "login": "voronianski",
+            "id": 974035,
+            "node_id": "MDQ6VXNlcjk3NDAzNQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/974035?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/voronianski",
+            "html_url": "https://github.com/voronianski",
+            "followers_url": "https://api.github.com/users/voronianski/followers",
+            "following_url": "https://api.github.com/users/voronianski/following{/other_user}",
+            "gists_url": "https://api.github.com/users/voronianski/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/voronianski/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/voronianski/subscriptions",
+            "organizations_url": "https://api.github.com/users/voronianski/orgs",
+            "repos_url": "https://api.github.com/users/voronianski/repos",
+            "events_url": "https://api.github.com/users/voronianski/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/voronianski/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@MrOrz i think all css stuff should be extracted\n",
+        "created_at": "2013-08-22T11:24:03Z",
+        "updated_at": "2013-08-31T08:40:29Z",
+        "html_url": "https://github.com/victorb/ngProgress/pull/6#discussion_r5921660",
+        "pull_request_url": "https://api.github.com/repos/victorb/ngProgress/pulls/6",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/5921660"
+            },
+            "html": {
+                "href": "https://github.com/victorb/ngProgress/pull/6#discussion_r5921660"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/6"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/6224866",
+        "pull_request_review_id": null,
+        "id": 6224866,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYyMjQ4NjY=",
+        "diff_hunk": "@@ -22,39 +23,41 @@ module.provider('progressbar', function () {\n             height = this.height,\n             color = this.color,\n             $body = $document.find('body'),\n-        // Create elements that is needed\n+            // Create elements that is needed\n             progressbarContainer = angular.element('<div class=\"progressbar-container\"></div>'),\n-            progressbar = angular.element('<div class=\"progressbar\"></div>'),\n+            progressbar = angular.element('<div class=\"progressbar\"></div>');\n \n-        //Add CSS3 styles for transition smoothing\n-            css = document.createElement(\"style\");\n-        css.type = \"text/css\";\n-        css.innerHTML = \".progressbar {-webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}\";\n-        document.body.appendChild(css);\n-\n-        //Styling for the progressbar-container\n-        progressbarContainer.css('position', 'fixed');\n-        progressbarContainer.css('margin', '0');\n-        progressbarContainer.css('padding', '0');\n-        progressbarContainer.css('top', '0px');\n-        progressbarContainer.css('left', '0px');\n-        progressbarContainer.css('right', '0px');\n-        progressbarContainer.css('z-index', '99999');\n-\n-        //Styling for the progressbar itself\n-        progressbar.css('height', height);\n-        progressbar.css('box-shadow', '0px 0px 10px 0px ' + color);\n-        progressbar.css('width', count + '%');\n-        progressbar.css('margin', '0');\n-        progressbar.css('padding', '0');\n-        progressbar.css('background-color', color);\n-        progressbar.css('z-index', '99998');\n-\n-        //Add progressbar to progressbar-container and progressbar-container\n+        // Add progressbar to progressbar-container and progressbar-container\n         // to body\n         progressbarContainer.append(progressbar);\n         $body.append(progressbarContainer);\n \n+        // Styling for the progressbar itself\n+        if(this.autoStyle){\n+            progressbarContainer.css({\n+                position: 'fixed',\n+                margin: 0,\n+                padding: 0,\n+                top: 0,\n+                left: 0,\n+                right: 0,\n+                'z-index': 99999\n+            });\n+            progressbar.css({\n+                height: height,\n+                width:  count + '%',\n+                'background-color': color,\n+                color: color,\n+                'box-shadow': '0 0 10px 0',\n+                margin: 0,\n+                padding: 0,\n+                'z-index': 99998,\n+                '-webkit-transition': 'all 0.5s ease-in-out',\n+                '-moz-transition': 'all 0.5s ease-in-out',\n+                '-o-transition': 'all 0.5s ease-in-out',\n+                'transition': 'all 0.5s ease-in-out'\n+            });\n+        }",
+        "path": "ngProgress.js",
+        "position": 73,
+        "original_position": 73,
+        "commit_id": "b25382975ed4eece7a7a67a397a2904d163f923c",
+        "original_commit_id": "b25382975ed4eece7a7a67a397a2904d163f923c",
+        "user": {
+            "login": "victorb",
+            "id": 459764,
+            "node_id": "MDQ6VXNlcjQ1OTc2NA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/459764?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/victorb",
+            "html_url": "https://github.com/victorb",
+            "followers_url": "https://api.github.com/users/victorb/followers",
+            "following_url": "https://api.github.com/users/victorb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/victorb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/victorb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/victorb/subscriptions",
+            "organizations_url": "https://api.github.com/users/victorb/orgs",
+            "repos_url": "https://api.github.com/users/victorb/repos",
+            "events_url": "https://api.github.com/users/victorb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/victorb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If returning the element itself from the provider, could the developer maybe use css to set wanted properties himself instead of doing it this way with the progressbarContainer.css()?\n",
+        "created_at": "2013-09-07T14:52:00Z",
+        "updated_at": "2013-09-07T14:52:00Z",
+        "html_url": "https://github.com/victorb/ngProgress/pull/6#discussion_r6224866",
+        "pull_request_url": "https://api.github.com/repos/victorb/ngProgress/pulls/6",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/6224866"
+            },
+            "html": {
+                "href": "https://github.com/victorb/ngProgress/pull/6#discussion_r6224866"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/6"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/6225092",
+        "pull_request_review_id": null,
+        "id": 6225092,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYyMjUwOTI=",
+        "diff_hunk": "@@ -22,39 +23,41 @@ module.provider('progressbar', function () {\n             height = this.height,\n             color = this.color,\n             $body = $document.find('body'),\n-        // Create elements that is needed\n+            // Create elements that is needed\n             progressbarContainer = angular.element('<div class=\"progressbar-container\"></div>'),\n-            progressbar = angular.element('<div class=\"progressbar\"></div>'),\n+            progressbar = angular.element('<div class=\"progressbar\"></div>');\n \n-        //Add CSS3 styles for transition smoothing\n-            css = document.createElement(\"style\");\n-        css.type = \"text/css\";\n-        css.innerHTML = \".progressbar {-webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}\";\n-        document.body.appendChild(css);\n-\n-        //Styling for the progressbar-container\n-        progressbarContainer.css('position', 'fixed');\n-        progressbarContainer.css('margin', '0');\n-        progressbarContainer.css('padding', '0');\n-        progressbarContainer.css('top', '0px');\n-        progressbarContainer.css('left', '0px');\n-        progressbarContainer.css('right', '0px');\n-        progressbarContainer.css('z-index', '99999');\n-\n-        //Styling for the progressbar itself\n-        progressbar.css('height', height);\n-        progressbar.css('box-shadow', '0px 0px 10px 0px ' + color);\n-        progressbar.css('width', count + '%');\n-        progressbar.css('margin', '0');\n-        progressbar.css('padding', '0');\n-        progressbar.css('background-color', color);\n-        progressbar.css('z-index', '99998');\n-\n-        //Add progressbar to progressbar-container and progressbar-container\n+        // Add progressbar to progressbar-container and progressbar-container\n         // to body\n         progressbarContainer.append(progressbar);\n         $body.append(progressbarContainer);\n \n+        // Styling for the progressbar itself\n+        if(this.autoStyle){\n+            progressbarContainer.css({\n+                position: 'fixed',\n+                margin: 0,\n+                padding: 0,\n+                top: 0,\n+                left: 0,\n+                right: 0,\n+                'z-index': 99999\n+            });\n+            progressbar.css({\n+                height: height,\n+                width:  count + '%',\n+                'background-color': color,\n+                color: color,\n+                'box-shadow': '0 0 10px 0',\n+                margin: 0,\n+                padding: 0,\n+                'z-index': 99998,\n+                '-webkit-transition': 'all 0.5s ease-in-out',\n+                '-moz-transition': 'all 0.5s ease-in-out',\n+                '-o-transition': 'all 0.5s ease-in-out',\n+                'transition': 'all 0.5s ease-in-out'\n+            });\n+        }",
+        "path": "ngProgress.js",
+        "position": 73,
+        "original_position": 73,
+        "commit_id": "b25382975ed4eece7a7a67a397a2904d163f923c",
+        "original_commit_id": "b25382975ed4eece7a7a67a397a2904d163f923c",
+        "user": {
+            "login": "MrOrz",
+            "id": 108608,
+            "node_id": "MDQ6VXNlcjEwODYwOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/108608?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/MrOrz",
+            "html_url": "https://github.com/MrOrz",
+            "followers_url": "https://api.github.com/users/MrOrz/followers",
+            "following_url": "https://api.github.com/users/MrOrz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/MrOrz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/MrOrz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/MrOrz/subscriptions",
+            "organizations_url": "https://api.github.com/users/MrOrz/orgs",
+            "repos_url": "https://api.github.com/users/MrOrz/repos",
+            "events_url": "https://api.github.com/users/MrOrz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/MrOrz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Oh yeah, it would be great if the element is available from inside the provider!\n",
+        "created_at": "2013-09-07T16:56:12Z",
+        "updated_at": "2013-09-07T16:56:12Z",
+        "html_url": "https://github.com/victorb/ngProgress/pull/6#discussion_r6225092",
+        "pull_request_url": "https://api.github.com/repos/victorb/ngProgress/pulls/6",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/6225092"
+            },
+            "html": {
+                "href": "https://github.com/victorb/ngProgress/pull/6#discussion_r6225092"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/6"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/6240747",
+        "pull_request_review_id": null,
+        "id": 6240747,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYyNDA3NDc=",
+        "diff_hunk": "@@ -274,7 +274,7 @@\n <!-- <script src=\"src/module.js\"></script>\n <script src=\"src/directive.js\"></script>\n <script src=\"src/provider.js\"></script> -->\n-<script src=\"ngProgress.js\"></script>\n+<script src=\"build/ngProgress.js\"></script>",
+        "path": "example/index.html",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "4d294f90c345e0c2ee5b3c931e915ae120acc49a",
+        "original_commit_id": "b3bcf65e0d457d14ea1e997fde0ad95faad76637",
+        "user": {
+            "login": "victorb",
+            "id": 459764,
+            "node_id": "MDQ6VXNlcjQ1OTc2NA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/459764?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/victorb",
+            "html_url": "https://github.com/victorb",
+            "followers_url": "https://api.github.com/users/victorb/followers",
+            "following_url": "https://api.github.com/users/victorb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/victorb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/victorb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/victorb/subscriptions",
+            "organizations_url": "https://api.github.com/users/victorb/orgs",
+            "repos_url": "https://api.github.com/users/victorb/repos",
+            "events_url": "https://api.github.com/users/victorb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/victorb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Since this moved into example/, it should be ../build/ngProgress.js, right?\n",
+        "created_at": "2013-09-09T15:21:03Z",
+        "updated_at": "2013-09-09T15:41:17Z",
+        "html_url": "https://github.com/victorb/ngProgress/pull/16#discussion_r6240747",
+        "pull_request_url": "https://api.github.com/repos/victorb/ngProgress/pulls/16",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/6240747"
+            },
+            "html": {
+                "href": "https://github.com/victorb/ngProgress/pull/16#discussion_r6240747"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/16"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/6240813",
+        "pull_request_review_id": null,
+        "id": 6240813,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYyNDA4MTM=",
+        "diff_hunk": "@@ -1,6 +1,6 @@\n {\n   \"name\": \"ngprogress\",\n-  \"version\": \"0.0.3\",\n+  \"version\": \"1.0.0\",\n   \"main\": \"ngProgress.js\",",
+        "path": "bower.json",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "4d294f90c345e0c2ee5b3c931e915ae120acc49a",
+        "original_commit_id": "b3bcf65e0d457d14ea1e997fde0ad95faad76637",
+        "user": {
+            "login": "victorb",
+            "id": 459764,
+            "node_id": "MDQ6VXNlcjQ1OTc2NA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/459764?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/victorb",
+            "html_url": "https://github.com/victorb",
+            "followers_url": "https://api.github.com/users/victorb/followers",
+            "following_url": "https://api.github.com/users/victorb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/victorb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/victorb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/victorb/subscriptions",
+            "organizations_url": "https://api.github.com/users/victorb/orgs",
+            "repos_url": "https://api.github.com/users/victorb/repos",
+            "events_url": "https://api.github.com/users/victorb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/victorb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is possibly pointing at the wrong file as well.\n",
+        "created_at": "2013-09-09T15:22:45Z",
+        "updated_at": "2013-09-09T15:41:17Z",
+        "html_url": "https://github.com/victorb/ngProgress/pull/16#discussion_r6240813",
+        "pull_request_url": "https://api.github.com/repos/victorb/ngProgress/pulls/16",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/6240813"
+            },
+            "html": {
+                "href": "https://github.com/victorb/ngProgress/pull/16#discussion_r6240813"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/16"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/16782121",
+        "pull_request_review_id": null,
+        "id": 16782121,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2NzgyMTIx",
+        "diff_hunk": "@@ -152,14 +152,31 @@ angular.module('ngProgress.provider', ['ngProgress.directive'])\n                         }, 500);\n                     }, 1000);\n                     return count;\n+                },\n+                //set the parent of the directive, sometimes body is not sufficient\n+                setParent: function(newParent) {\n+                    if(newParent === null || newParent === undefined) {\n+                        throw new Error('Provide a valid parent of type HTMLElement');\n+                    }\n+                    \n+                    if(parent !== null && parent !== undefined) {\n+                        parent.removeChild(progressbarEl[0]);",
+        "path": "src/provider.js",
+        "position": 27,
+        "original_position": 27,
+        "commit_id": "c9639c68de2c2a1fd64d2b3ac129078d72de4fb3",
+        "original_commit_id": "c9639c68de2c2a1fd64d2b3ac129078d72de4fb3",
+        "user": {
+            "login": "dasois",
+            "id": 3832690,
+            "node_id": "MDQ6VXNlcjM4MzI2OTA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3832690?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dasois",
+            "html_url": "https://github.com/dasois",
+            "followers_url": "https://api.github.com/users/dasois/followers",
+            "following_url": "https://api.github.com/users/dasois/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dasois/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dasois/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dasois/subscriptions",
+            "organizations_url": "https://api.github.com/users/dasois/orgs",
+            "repos_url": "https://api.github.com/users/dasois/repos",
+            "events_url": "https://api.github.com/users/dasois/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dasois/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I have a bad feeling about 'parent', because it will presumably pollute the global space. That is a general code issue that we have though....\n",
+        "created_at": "2014-08-27T15:21:02Z",
+        "updated_at": "2014-08-27T15:21:28Z",
+        "html_url": "https://github.com/victorb/ngProgress/pull/50#discussion_r16782121",
+        "pull_request_url": "https://api.github.com/repos/victorb/ngProgress/pulls/50",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/16782121"
+            },
+            "html": {
+                "href": "https://github.com/victorb/ngProgress/pull/50#discussion_r16782121"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/50"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/16787030",
+        "pull_request_review_id": null,
+        "id": 16787030,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2Nzg3MDMw",
+        "diff_hunk": "@@ -152,14 +152,31 @@ angular.module('ngProgress.provider', ['ngProgress.directive'])\n                         }, 500);\n                     }, 1000);\n                     return count;\n+                },\n+                //set the parent of the directive, sometimes body is not sufficient\n+                setParent: function(newParent) {\n+                    if(newParent === null || newParent === undefined) {\n+                        throw new Error('Provide a valid parent of type HTMLElement');\n+                    }\n+                    \n+                    if(parent !== null && parent !== undefined) {\n+                        parent.removeChild(progressbarEl[0]);",
+        "path": "src/provider.js",
+        "position": 27,
+        "original_position": 27,
+        "commit_id": "c9639c68de2c2a1fd64d2b3ac129078d72de4fb3",
+        "original_commit_id": "c9639c68de2c2a1fd64d2b3ac129078d72de4fb3",
+        "user": {
+            "login": "gngeorgiev",
+            "id": 2229435,
+            "node_id": "MDQ6VXNlcjIyMjk0MzU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/2229435?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/gngeorgiev",
+            "html_url": "https://github.com/gngeorgiev",
+            "followers_url": "https://api.github.com/users/gngeorgiev/followers",
+            "following_url": "https://api.github.com/users/gngeorgiev/following{/other_user}",
+            "gists_url": "https://api.github.com/users/gngeorgiev/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/gngeorgiev/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/gngeorgiev/subscriptions",
+            "organizations_url": "https://api.github.com/users/gngeorgiev/orgs",
+            "repos_url": "https://api.github.com/users/gngeorgiev/repos",
+            "events_url": "https://api.github.com/users/gngeorgiev/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/gngeorgiev/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The `parent` variable is limited to the scope of the function, however I can change its name if you see fit.\n",
+        "created_at": "2014-08-27T16:28:37Z",
+        "updated_at": "2014-08-27T16:28:37Z",
+        "html_url": "https://github.com/victorb/ngProgress/pull/50#discussion_r16787030",
+        "pull_request_url": "https://api.github.com/repos/victorb/ngProgress/pulls/50",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/16787030"
+            },
+            "html": {
+                "href": "https://github.com/victorb/ngProgress/pull/50#discussion_r16787030"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/50"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/16788195",
+        "pull_request_review_id": null,
+        "id": 16788195,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2Nzg4MTk1",
+        "diff_hunk": "@@ -152,14 +152,31 @@ angular.module('ngProgress.provider', ['ngProgress.directive'])\n                         }, 500);\n                     }, 1000);\n                     return count;\n+                },\n+                //set the parent of the directive, sometimes body is not sufficient\n+                setParent: function(newParent) {\n+                    if(newParent === null || newParent === undefined) {\n+                        throw new Error('Provide a valid parent of type HTMLElement');\n+                    }\n+                    \n+                    if(parent !== null && parent !== undefined) {\n+                        parent.removeChild(progressbarEl[0]);",
+        "path": "src/provider.js",
+        "position": 27,
+        "original_position": 27,
+        "commit_id": "c9639c68de2c2a1fd64d2b3ac129078d72de4fb3",
+        "original_commit_id": "c9639c68de2c2a1fd64d2b3ac129078d72de4fb3",
+        "user": {
+            "login": "dasois",
+            "id": 3832690,
+            "node_id": "MDQ6VXNlcjM4MzI2OTA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3832690?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dasois",
+            "html_url": "https://github.com/dasois",
+            "followers_url": "https://api.github.com/users/dasois/followers",
+            "following_url": "https://api.github.com/users/dasois/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dasois/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dasois/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dasois/subscriptions",
+            "organizations_url": "https://api.github.com/users/dasois/orgs",
+            "repos_url": "https://api.github.com/users/dasois/repos",
+            "events_url": "https://api.github.com/users/dasois/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dasois/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Oh you're right, I overlooked something! Alright then, thanks for the contribution!\n",
+        "created_at": "2014-08-27T16:47:25Z",
+        "updated_at": "2014-08-27T16:47:25Z",
+        "html_url": "https://github.com/victorb/ngProgress/pull/50#discussion_r16788195",
+        "pull_request_url": "https://api.github.com/repos/victorb/ngProgress/pulls/50",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/16788195"
+            },
+            "html": {
+                "href": "https://github.com/victorb/ngProgress/pull/50#discussion_r16788195"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/50"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/16788611",
+        "pull_request_review_id": null,
+        "id": 16788611,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2Nzg4NjEx",
+        "diff_hunk": "@@ -152,14 +152,31 @@ angular.module('ngProgress.provider', ['ngProgress.directive'])\n                         }, 500);\n                     }, 1000);\n                     return count;\n+                },\n+                //set the parent of the directive, sometimes body is not sufficient\n+                setParent: function(newParent) {\n+                    if(newParent === null || newParent === undefined) {\n+                        throw new Error('Provide a valid parent of type HTMLElement');\n+                    }\n+                    \n+                    if(parent !== null && parent !== undefined) {\n+                        parent.removeChild(progressbarEl[0]);",
+        "path": "src/provider.js",
+        "position": 27,
+        "original_position": 27,
+        "commit_id": "c9639c68de2c2a1fd64d2b3ac129078d72de4fb3",
+        "original_commit_id": "c9639c68de2c2a1fd64d2b3ac129078d72de4fb3",
+        "user": {
+            "login": "gngeorgiev",
+            "id": 2229435,
+            "node_id": "MDQ6VXNlcjIyMjk0MzU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/2229435?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/gngeorgiev",
+            "html_url": "https://github.com/gngeorgiev",
+            "followers_url": "https://api.github.com/users/gngeorgiev/followers",
+            "following_url": "https://api.github.com/users/gngeorgiev/following{/other_user}",
+            "gists_url": "https://api.github.com/users/gngeorgiev/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/gngeorgiev/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/gngeorgiev/subscriptions",
+            "organizations_url": "https://api.github.com/users/gngeorgiev/orgs",
+            "repos_url": "https://api.github.com/users/gngeorgiev/repos",
+            "events_url": "https://api.github.com/users/gngeorgiev/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/gngeorgiev/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Glad I could help!\n",
+        "created_at": "2014-08-27T16:54:21Z",
+        "updated_at": "2014-08-27T16:54:21Z",
+        "html_url": "https://github.com/victorb/ngProgress/pull/50#discussion_r16788611",
+        "pull_request_url": "https://api.github.com/repos/victorb/ngProgress/pulls/50",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/16788611"
+            },
+            "html": {
+                "href": "https://github.com/victorb/ngProgress/pull/50#discussion_r16788611"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/50"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/58907350",
+        "pull_request_review_id": null,
+        "id": 58907350,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4OTA3MzUw",
+        "diff_hunk": "@@ -1,6 +1,6 @@\n {\n   \"name\": \"ngprogress\",\n-    \"version\": \"1.1.2\",\n+    \"version\": \"1.1.3\",\n   \"description\": \"slim, site-wide progressbar for AngularJS\",\n   \"main\": \"ngProgress.js\",",
+        "path": "package.json",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "f27ebbf4217c16a2fc34542500ae41520f47f20a",
+        "original_commit_id": "f27ebbf4217c16a2fc34542500ae41520f47f20a",
+        "user": {
+            "login": "zakhenry",
+            "id": 721513,
+            "node_id": "MDQ6VXNlcjcyMTUxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/721513?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zakhenry",
+            "html_url": "https://github.com/zakhenry",
+            "followers_url": "https://api.github.com/users/zakhenry/followers",
+            "following_url": "https://api.github.com/users/zakhenry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zakhenry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zakhenry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zakhenry/subscriptions",
+            "organizations_url": "https://api.github.com/users/zakhenry/orgs",
+            "repos_url": "https://api.github.com/users/zakhenry/repos",
+            "events_url": "https://api.github.com/users/zakhenry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zakhenry/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This pr fixed the `bower.json`, but not `package.json`. With bower being replaced by npm for a lot of devs this is an issue with module resolution.\n",
+        "created_at": "2016-04-07T17:02:54Z",
+        "updated_at": "2016-04-07T17:02:54Z",
+        "html_url": "https://github.com/victorb/ngProgress/pull/77#discussion_r58907350",
+        "pull_request_url": "https://api.github.com/repos/victorb/ngProgress/pulls/77",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/comments/58907350"
+            },
+            "html": {
+                "href": "https://github.com/victorb/ngProgress/pull/77#discussion_r58907350"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/victorb/ngProgress/pulls/77"
+            }
+        }
+    }
+]

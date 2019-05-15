@@ -1,0 +1,739 @@
+[
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/539397",
+        "pull_request_review_id": null,
+        "id": 539397,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzOTM5Nw==",
+        "diff_hunk": "@@ -1,9 +1,8 @@\n {% extends \"admin/base_site.html\" %}\n-{% load adminmedia %}\n {% load i18n %}\n {% block javascripts %}\n     {{ block.super }}\n-    <script type=\"text/javascript\" src=\"{% admin_media_prefix %}js/documentation.js\"></script>",
+        "path": "grappelli/templates/admin_doc/view_index.html",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "2278cd37ba118f13dcb9cdb747bf1c8ea1c22681",
+        "original_commit_id": "69ca8b7670a06718c306038f3e73ff877e73172f",
+        "user": {
+            "login": "h3",
+            "id": 102919,
+            "node_id": "MDQ6VXNlcjEwMjkxOQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/102919?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/h3",
+            "html_url": "https://github.com/h3",
+            "followers_url": "https://api.github.com/users/h3/followers",
+            "following_url": "https://api.github.com/users/h3/following{/other_user}",
+            "gists_url": "https://api.github.com/users/h3/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/h3/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/h3/subscriptions",
+            "organizations_url": "https://api.github.com/users/h3/orgs",
+            "repos_url": "https://api.github.com/users/h3/repos",
+            "events_url": "https://api.github.com/users/h3/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/h3/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The file documentation.js is nowhere to be found .. is it still needed or just missing ?\n",
+        "created_at": "2012-03-09T15:45:24Z",
+        "updated_at": "2012-03-09T20:34:40Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/92#discussion_r539397",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/92",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/539397"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/92#discussion_r539397"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/92"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/2342327",
+        "pull_request_review_id": null,
+        "id": 2342327,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzNDIzMjc=",
+        "diff_hunk": "@@ -4,112 +4,109 @@\n import operator\n \n # DJANGO IMPORTS\n-from django.http import HttpResponse, HttpResponseForbidden, HttpResponseNotFound\n+from django.http import HttpResponse\n from django.db import models\n from django.db.models.query import QuerySet\n from django.views.decorators.cache import never_cache\n+from django.views.generic import View\n from django.utils.translation import ugettext as _\n-from django.utils.translation import ungettext\n from django.utils.encoding import smart_str\n import django.utils.simplejson as simplejson\n+from django.core.exceptions import PermissionDenied\n \n # GRAPPELLI IMPORTS\n from grappelli.settings import AUTOCOMPLETE_LIMIT\n \n \n-def returnattr(obj, attr):\n-    if callable(getattr(obj, attr)):\n-        return getattr(obj, attr)()\n-    return getattr(obj, attr)\n-\n-\n def get_label(f):\n     if getattr(f, \"related_label\", None):\n         return f.related_label()\n     return f.__unicode__()\n \n \n-@never_cache\n-def related_lookup(request):\n-    if not (request.user.is_active and request.user.is_staff):\n-        return HttpResponseForbidden('<h1>Permission denied</h1>')\n-    data = []\n-    if request.method == 'GET':\n-        if request.GET.has_key('object_id') and request.GET.has_key('app_label') and request.GET.has_key('model_name'):\n-            object_id = request.GET.get('object_id')\n-            app_label = request.GET.get('app_label')\n-            model_name = request.GET.get('model_name')\n-            if object_id:\n-                try:\n-                    model = models.get_model(app_label, model_name)\n-                    obj = model.objects.get(pk=object_id)\n-                    data.append({\"value\":obj.id,\"label\":get_label(obj)})\n-                    return HttpResponse(simplejson.dumps(data), mimetype='application/javascript')\n-                except:\n-                    pass\n-    data = [{\"value\":None,\"label\":\"\"}]\n-    return HttpResponse(simplejson.dumps(data), mimetype='application/javascript')\n-\n-\n-@never_cache\n-def m2m_lookup(request):\n-    if not (request.user.is_active and request.user.is_staff):\n-        return HttpResponseForbidden('<h1>Permission denied</h1>')\n-    data = []\n-    if request.method == 'GET':\n-        if request.GET.has_key('object_id') and request.GET.has_key('app_label') and request.GET.has_key('model_name'):\n-            object_ids = request.GET.get('object_id').split(',')\n-            app_label = request.GET.get('app_label')\n-            model_name = request.GET.get('model_name')\n-            model = models.get_model(app_label, model_name)\n-            data = []\n-            if len(object_ids):\n-                for obj_id in object_ids:\n-                    if obj_id:\n-                        try:\n-                            obj = model.objects.get(pk=obj_id)\n-                            data.append({\"value\":obj.pk,\"label\":get_label(obj)})\n-                        except model.DoesNotExist:\n-                            data.append({\"value\":obj_id,\"label\":_(\"?\")})\n-            return HttpResponse(simplejson.dumps(data), mimetype='application/javascript')\n-    data = [{\"value\":None,\"label\":\"\"}]\n-    return HttpResponse(simplejson.dumps(data), mimetype='application/javascript')\n-\n-\n-@never_cache\n-def autocomplete_lookup(request):\n-    if not (request.user.is_active and request.user.is_staff):\n-        return HttpResponseForbidden('<h1>Permission denied</h1>')\n-    data = []\n-    if request.method == 'GET':\n-        if request.GET.has_key('term') and request.GET.has_key('app_label') and request.GET.has_key('model_name'):\n-            term = request.GET.get(\"term\")\n-            app_label = request.GET.get('app_label')\n-            model_name = request.GET.get('model_name')\n-            model = models.get_model(app_label, model_name)\n-            filters = {}\n-            # FILTER\n-            if request.GET.get('query_string', None):\n-                for item in request.GET.get('query_string').split(\"&\"):\n-                    if item.split(\"=\")[0] != \"t\":\n-                        filters[smart_str(item.split(\"=\")[0])]=smart_str(item.split(\"=\")[1])\n-            # SEARCH\n-            qs = model._default_manager.filter(**filters)\n-            for bit in term.split():\n-                search = [models.Q(**{smart_str(item):smart_str(bit)}) for item in model.autocomplete_search_fields()]\n-                search_qs = QuerySet(model)\n-                search_qs.dup_select_related(qs)\n-                search_qs = search_qs.filter(reduce(operator.or_, search))\n-                qs = qs & search_qs\n-            data = [{\"value\":f.pk,\"label\":get_label(f)} for f in qs[:AUTOCOMPLETE_LIMIT]]\n-            label = ungettext(\n-                '%(counter)s result',\n-                '%(counter)s results',\n-                len(data)) % {\n-                'counter': len(data),\n-            }\n-            return HttpResponse(simplejson.dumps(data), mimetype='application/javascript')\n-    data = [{\"value\":None,\"label\":_(\"Server error\")}]",
+        "path": "grappelli/views/related.py",
+        "position": 112,
+        "original_position": 112,
+        "commit_id": "414e5d044c9fbefc7b09725e2d18c3a2ab39f7a4",
+        "original_commit_id": "414e5d044c9fbefc7b09725e2d18c3a2ab39f7a4",
+        "user": {
+            "login": "BertrandBordage",
+            "id": 1119169,
+            "node_id": "MDQ6VXNlcjExMTkxNjk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1119169?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/BertrandBordage",
+            "html_url": "https://github.com/BertrandBordage",
+            "followers_url": "https://api.github.com/users/BertrandBordage/followers",
+            "following_url": "https://api.github.com/users/BertrandBordage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/BertrandBordage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/BertrandBordage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/BertrandBordage/subscriptions",
+            "organizations_url": "https://api.github.com/users/BertrandBordage/orgs",
+            "repos_url": "https://api.github.com/users/BertrandBordage/repos",
+            "events_url": "https://api.github.com/users/BertrandBordage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/BertrandBordage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@sehmaschine This was the returned value when nothing was found\u2026\n",
+        "created_at": "2012-12-06T22:16:10Z",
+        "updated_at": "2012-12-06T22:16:10Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/239#discussion_r2342327",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/239",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/2342327"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/239#discussion_r2342327"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/239"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/2342328",
+        "pull_request_review_id": null,
+        "id": 2342328,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzNDIzMjg=",
+        "diff_hunk": "@@ -4,112 +4,109 @@\n import operator\n \n # DJANGO IMPORTS\n-from django.http import HttpResponse, HttpResponseForbidden, HttpResponseNotFound\n+from django.http import HttpResponse\n from django.db import models\n from django.db.models.query import QuerySet\n from django.views.decorators.cache import never_cache\n+from django.views.generic import View\n from django.utils.translation import ugettext as _\n-from django.utils.translation import ungettext\n from django.utils.encoding import smart_str\n import django.utils.simplejson as simplejson\n+from django.core.exceptions import PermissionDenied\n \n # GRAPPELLI IMPORTS\n from grappelli.settings import AUTOCOMPLETE_LIMIT\n \n \n-def returnattr(obj, attr):\n-    if callable(getattr(obj, attr)):\n-        return getattr(obj, attr)()\n-    return getattr(obj, attr)\n-\n-\n def get_label(f):\n     if getattr(f, \"related_label\", None):\n         return f.related_label()\n     return f.__unicode__()\n \n \n-@never_cache\n-def related_lookup(request):\n-    if not (request.user.is_active and request.user.is_staff):\n-        return HttpResponseForbidden('<h1>Permission denied</h1>')\n-    data = []\n-    if request.method == 'GET':\n-        if request.GET.has_key('object_id') and request.GET.has_key('app_label') and request.GET.has_key('model_name'):\n-            object_id = request.GET.get('object_id')\n-            app_label = request.GET.get('app_label')\n-            model_name = request.GET.get('model_name')\n-            if object_id:\n-                try:\n-                    model = models.get_model(app_label, model_name)\n-                    obj = model.objects.get(pk=object_id)\n-                    data.append({\"value\":obj.id,\"label\":get_label(obj)})\n-                    return HttpResponse(simplejson.dumps(data), mimetype='application/javascript')\n-                except:\n-                    pass\n-    data = [{\"value\":None,\"label\":\"\"}]\n-    return HttpResponse(simplejson.dumps(data), mimetype='application/javascript')\n-\n-\n-@never_cache\n-def m2m_lookup(request):\n-    if not (request.user.is_active and request.user.is_staff):\n-        return HttpResponseForbidden('<h1>Permission denied</h1>')\n-    data = []\n-    if request.method == 'GET':\n-        if request.GET.has_key('object_id') and request.GET.has_key('app_label') and request.GET.has_key('model_name'):\n-            object_ids = request.GET.get('object_id').split(',')\n-            app_label = request.GET.get('app_label')\n-            model_name = request.GET.get('model_name')\n-            model = models.get_model(app_label, model_name)\n-            data = []\n-            if len(object_ids):\n-                for obj_id in object_ids:\n-                    if obj_id:\n-                        try:\n-                            obj = model.objects.get(pk=obj_id)\n-                            data.append({\"value\":obj.pk,\"label\":get_label(obj)})\n-                        except model.DoesNotExist:\n-                            data.append({\"value\":obj_id,\"label\":_(\"?\")})\n-            return HttpResponse(simplejson.dumps(data), mimetype='application/javascript')\n-    data = [{\"value\":None,\"label\":\"\"}]\n-    return HttpResponse(simplejson.dumps(data), mimetype='application/javascript')\n-\n-\n-@never_cache\n-def autocomplete_lookup(request):\n-    if not (request.user.is_active and request.user.is_staff):\n-        return HttpResponseForbidden('<h1>Permission denied</h1>')\n-    data = []\n-    if request.method == 'GET':\n-        if request.GET.has_key('term') and request.GET.has_key('app_label') and request.GET.has_key('model_name'):\n-            term = request.GET.get(\"term\")\n-            app_label = request.GET.get('app_label')\n-            model_name = request.GET.get('model_name')\n-            model = models.get_model(app_label, model_name)\n-            filters = {}\n-            # FILTER\n-            if request.GET.get('query_string', None):\n-                for item in request.GET.get('query_string').split(\"&\"):\n-                    if item.split(\"=\")[0] != \"t\":\n-                        filters[smart_str(item.split(\"=\")[0])]=smart_str(item.split(\"=\")[1])\n-            # SEARCH\n-            qs = model._default_manager.filter(**filters)\n-            for bit in term.split():\n-                search = [models.Q(**{smart_str(item):smart_str(bit)}) for item in model.autocomplete_search_fields()]\n-                search_qs = QuerySet(model)\n-                search_qs.dup_select_related(qs)\n-                search_qs = search_qs.filter(reduce(operator.or_, search))\n-                qs = qs & search_qs\n-            data = [{\"value\":f.pk,\"label\":get_label(f)} for f in qs[:AUTOCOMPLETE_LIMIT]]\n-            label = ungettext(\n-                '%(counter)s result',\n-                '%(counter)s results',\n-                len(data)) % {\n-                'counter': len(data),\n-            }\n-            return HttpResponse(simplejson.dumps(data), mimetype='application/javascript')\n-    data = [{\"value\":None,\"label\":_(\"Server error\")}]\n-    return HttpResponse(simplejson.dumps(data), mimetype='application/javascript')\n+def ajax_response(data):\n+    return HttpResponse(simplejson.dumps(data),\n+                        mimetype='application/javascript')\n+\n+\n+class M2MLookup(View):\n+    def check_user_permission(self):\n+        user = self.request.user\n+        if not (user.is_active and user.is_staff):\n+            raise PermissionDenied\n+\n+    def model_in_GET(self):\n+        GET = self.GET\n+        return 'app_label' in GET and 'model_name' in GET\n+\n+    def has_valid_request(self):\n+        return 'object_id' in self.GET and self.model_in_GET()\n+\n+    def get_model(self):\n+        GET = self.GET\n+        app_label = GET['app_label']\n+        model_name = GET['model_name']\n+        self.model = models.get_model(app_label, model_name)\n+        return self.model\n+\n+    def get_queryset(self):\n+        return self.model._default_manager.all()\n+\n+    def get_data(self):\n+        object_ids = self.GET['object_id'].split(',')\n+        data = []\n+        for object_id in (i for i in object_ids if i):\n+            try:\n+                object = self.get_queryset().get(pk=object_id)\n+                label = get_label(object)\n+            except self.model.DoesNotExist:\n+                label = _(\"?\")\n+            data.append({\"value\": object_id, \"label\": label})\n+        return data\n+\n+    @never_cache\n+    def get(self, request, *args, **kwargs):\n+        self.check_user_permission()\n+        self.GET = self.request.GET\n+\n+        if self.has_valid_request():\n+            self.get_model()\n+            data = self.get_data()\n+            if data:\n+                return ajax_response(data)\n+\n+        data = [{\"value\": None, \"label\": \"\"}]",
+        "path": "grappelli/views/related.py",
+        "position": 165,
+        "original_position": 165,
+        "commit_id": "414e5d044c9fbefc7b09725e2d18c3a2ab39f7a4",
+        "original_commit_id": "414e5d044c9fbefc7b09725e2d18c3a2ab39f7a4",
+        "user": {
+            "login": "BertrandBordage",
+            "id": 1119169,
+            "node_id": "MDQ6VXNlcjExMTkxNjk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1119169?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/BertrandBordage",
+            "html_url": "https://github.com/BertrandBordage",
+            "followers_url": "https://api.github.com/users/BertrandBordage/followers",
+            "following_url": "https://api.github.com/users/BertrandBordage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/BertrandBordage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/BertrandBordage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/BertrandBordage/subscriptions",
+            "organizations_url": "https://api.github.com/users/BertrandBordage/orgs",
+            "repos_url": "https://api.github.com/users/BertrandBordage/repos",
+            "events_url": "https://api.github.com/users/BertrandBordage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/BertrandBordage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@sehmaschine \u2026 And this is the default value for both M2MLookup and AutocompleteLookup.  I thought that would be correct to have an empty label, but if you say you experience a bug with this default value in AutocompleteLookup, this is what we have to change.\n",
+        "created_at": "2012-12-06T22:16:14Z",
+        "updated_at": "2012-12-06T22:16:14Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/239#discussion_r2342328",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/239",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/2342328"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/239#discussion_r2342328"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/239"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/2648782",
+        "pull_request_review_id": null,
+        "id": 2648782,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2NDg3ODI=",
+        "diff_hunk": "@@ -50,11 +50,12 @@ def get_queryset(self):\n     def get_data(self):\n         obj_id = self.GET['object_id']\n         data = []\n-        try:\n-            obj = self.get_queryset().get(pk=obj_id)\n-            data.append({\"value\": obj_id, \"label\": get_label(obj)})\n-        except self.model.DoesNotExist:\n-            data.append({\"value\": obj_id, \"label\": _(\"?\")})\n+        if obj_id:",
+        "path": "grappelli/views/related.py",
+        "position": 9,
+        "original_position": 9,
+        "commit_id": "9263baddb32cadba7aed871f905acc903fc23e6e",
+        "original_commit_id": "9263baddb32cadba7aed871f905acc903fc23e6e",
+        "user": {
+            "login": "BertrandBordage",
+            "id": 1119169,
+            "node_id": "MDQ6VXNlcjExMTkxNjk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1119169?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/BertrandBordage",
+            "html_url": "https://github.com/BertrandBordage",
+            "followers_url": "https://api.github.com/users/BertrandBordage/followers",
+            "following_url": "https://api.github.com/users/BertrandBordage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/BertrandBordage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/BertrandBordage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/BertrandBordage/subscriptions",
+            "organizations_url": "https://api.github.com/users/BertrandBordage/orgs",
+            "repos_url": "https://api.github.com/users/BertrandBordage/repos",
+            "events_url": "https://api.github.com/users/BertrandBordage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/BertrandBordage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This condition may not be the best solution, since get_data will only return `[]`.  I haven't tried, but something like this seems better:\n\n```\ndef get_data(self):\n    obj_id = self.GET['object_id']\n    try:\n        obj = self.get_queryset().get(pk=obj_id)\n    except (self.model.DoesNotExist, ValueError):  # ValueError when obj_id == ''\n        label = _('?')\n    else:\n        label = get_label(obj)\n    return [{'value': obj_id, 'label': label}]\n```\n",
+        "created_at": "2013-01-15T13:16:40Z",
+        "updated_at": "2013-01-15T13:16:40Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/272#discussion_r2648782",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/272",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/2648782"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/272#discussion_r2648782"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/272"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/3497664",
+        "pull_request_review_id": null,
+        "id": 3497664,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0OTc2NjQ=",
+        "diff_hunk": "@@ -99,6 +99,7 @@ def request_is_valid(self):\n         return 'term' in self.GET and 'app_label' in self.GET and 'model_name' in self.GET\n \n     def get_filtered_queryset(self, qs):\n+        from django.contrib.admin.util import prepare_lookup_value",
+        "path": "grappelli/views/related.py",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "004f9929899e27cb86a3318ec495447ba115569d",
+        "original_commit_id": "b52f25e2a101d409f073fbbaf5a16fb8318ac791",
+        "user": {
+            "login": "BertrandBordage",
+            "id": 1119169,
+            "node_id": "MDQ6VXNlcjExMTkxNjk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1119169?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/BertrandBordage",
+            "html_url": "https://github.com/BertrandBordage",
+            "followers_url": "https://api.github.com/users/BertrandBordage/followers",
+            "following_url": "https://api.github.com/users/BertrandBordage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/BertrandBordage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/BertrandBordage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/BertrandBordage/subscriptions",
+            "organizations_url": "https://api.github.com/users/BertrandBordage/orgs",
+            "repos_url": "https://api.github.com/users/BertrandBordage/repos",
+            "events_url": "https://api.github.com/users/BertrandBordage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/BertrandBordage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why is this import here?\n",
+        "created_at": "2013-03-22T21:16:50Z",
+        "updated_at": "2013-04-02T19:40:28Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/308#discussion_r3497664",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/308",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/3497664"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/308#discussion_r3497664"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/308"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/3497681",
+        "pull_request_review_id": null,
+        "id": 3497681,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0OTc2ODE=",
+        "diff_hunk": "@@ -99,6 +99,7 @@ def request_is_valid(self):\n         return 'term' in self.GET and 'app_label' in self.GET and 'model_name' in self.GET\n \n     def get_filtered_queryset(self, qs):\n+        from django.contrib.admin.util import prepare_lookup_value",
+        "path": "grappelli/views/related.py",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "004f9929899e27cb86a3318ec495447ba115569d",
+        "original_commit_id": "b52f25e2a101d409f073fbbaf5a16fb8318ac791",
+        "user": {
+            "login": "benjiec",
+            "id": 982245,
+            "node_id": "MDQ6VXNlcjk4MjI0NQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/982245?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjiec",
+            "html_url": "https://github.com/benjiec",
+            "followers_url": "https://api.github.com/users/benjiec/followers",
+            "following_url": "https://api.github.com/users/benjiec/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjiec/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjiec/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjiec/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjiec/orgs",
+            "repos_url": "https://api.github.com/users/benjiec/repos",
+            "events_url": "https://api.github.com/users/benjiec/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjiec/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "That's just my style, so I know why something is imported if it's only going to be used once in the file. But it can be moved to the top if you want it that way.\n",
+        "created_at": "2013-03-22T21:18:39Z",
+        "updated_at": "2013-04-02T19:40:28Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/308#discussion_r3497681",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/308",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/3497681"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/308#discussion_r3497681"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/308"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/3497948",
+        "pull_request_review_id": null,
+        "id": 3497948,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0OTc5NDg=",
+        "diff_hunk": "@@ -99,6 +99,7 @@ def request_is_valid(self):\n         return 'term' in self.GET and 'app_label' in self.GET and 'model_name' in self.GET\n \n     def get_filtered_queryset(self, qs):\n+        from django.contrib.admin.util import prepare_lookup_value",
+        "path": "grappelli/views/related.py",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "004f9929899e27cb86a3318ec495447ba115569d",
+        "original_commit_id": "b52f25e2a101d409f073fbbaf5a16fb8318ac791",
+        "user": {
+            "login": "BertrandBordage",
+            "id": 1119169,
+            "node_id": "MDQ6VXNlcjExMTkxNjk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1119169?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/BertrandBordage",
+            "html_url": "https://github.com/BertrandBordage",
+            "followers_url": "https://api.github.com/users/BertrandBordage/followers",
+            "following_url": "https://api.github.com/users/BertrandBordage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/BertrandBordage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/BertrandBordage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/BertrandBordage/subscriptions",
+            "organizations_url": "https://api.github.com/users/BertrandBordage/orgs",
+            "repos_url": "https://api.github.com/users/BertrandBordage/repos",
+            "events_url": "https://api.github.com/users/BertrandBordage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/BertrandBordage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "That's a nice idea, however it has a strong impact on performance since the import is done each time this method is called.\n\nHere is a small proof:\n\n``` python\n>>> from timeit import timeit\n>>> timeit(\"import re; re.compile('')\")\n1.2623980045318604\n>>> timeit(\"re.compile('')\", setup='import re')\n0.6012001037597656\n```\n\nIn the first `timeit`, we import a module and use one of its functions 1 million times.\nIn the second, the module is imported one time before executing the function 1 million times.\nAs you can see, the first one is 2 times slower than the second\u2026\nThis import should therefore be put between line 6 and line 7.\n\nConcerning the rest of the commit, I have never used `limit_choices_to` with grappelli, so I can't tell whether your commit is good to go.  But that sounds totally convincing.\n",
+        "created_at": "2013-03-22T21:39:25Z",
+        "updated_at": "2013-04-02T19:40:28Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/308#discussion_r3497948",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/308",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/3497948"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/308#discussion_r3497948"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/308"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/44125242",
+        "pull_request_review_id": null,
+        "id": 44125242,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MTI1MjQy",
+        "diff_hunk": "@@ -5,7 +5,7 @@\n \"\"\"\n \n # PYTHON IMPORTS\n-from __future__ import unicode_literals",
+        "path": "grappelli/dashboard/utils.py",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "04ba41732ab31b7cc072cfab7f4ca90323ffe8ed",
+        "original_commit_id": "68b33e7627d1c683d150fb7e885b9bb9bca579f1",
+        "user": {
+            "login": "jieter",
+            "id": 1470389,
+            "node_id": "MDQ6VXNlcjE0NzAzODk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1470389?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jieter",
+            "html_url": "https://github.com/jieter",
+            "followers_url": "https://api.github.com/users/jieter/followers",
+            "following_url": "https://api.github.com/users/jieter/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jieter/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jieter/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jieter/subscriptions",
+            "organizations_url": "https://api.github.com/users/jieter/orgs",
+            "repos_url": "https://api.github.com/users/jieter/repos",
+            "events_url": "https://api.github.com/users/jieter/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jieter/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why are you removing this import?\n",
+        "created_at": "2015-11-06T10:55:21Z",
+        "updated_at": "2015-11-30T06:50:42Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/683#discussion_r44125242",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/683",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/44125242"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/683#discussion_r44125242"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/683"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/44125550",
+        "pull_request_review_id": null,
+        "id": 44125550,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MTI1NTUw",
+        "diff_hunk": "@@ -5,7 +5,7 @@\n \"\"\"\n \n # PYTHON IMPORTS\n-from __future__ import unicode_literals",
+        "path": "grappelli/dashboard/utils.py",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "04ba41732ab31b7cc072cfab7f4ca90323ffe8ed",
+        "original_commit_id": "68b33e7627d1c683d150fb7e885b9bb9bca579f1",
+        "user": {
+            "login": "dhilipsiva",
+            "id": 502170,
+            "node_id": "MDQ6VXNlcjUwMjE3MA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/502170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dhilipsiva",
+            "html_url": "https://github.com/dhilipsiva",
+            "followers_url": "https://api.github.com/users/dhilipsiva/followers",
+            "following_url": "https://api.github.com/users/dhilipsiva/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dhilipsiva/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dhilipsiva/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dhilipsiva/subscriptions",
+            "organizations_url": "https://api.github.com/users/dhilipsiva/orgs",
+            "repos_url": "https://api.github.com/users/dhilipsiva/repos",
+            "events_url": "https://api.github.com/users/dhilipsiva/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dhilipsiva/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sorry was not intentional. `2to3` tool removed these imports. I will refactor this shortly.\n",
+        "created_at": "2015-11-06T10:58:30Z",
+        "updated_at": "2015-11-30T06:50:42Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/683#discussion_r44125550",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/683",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/44125550"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/683#discussion_r44125550"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/683"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/45220665",
+        "pull_request_review_id": null,
+        "id": 45220665,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MjIwNjY1",
+        "diff_hunk": "@@ -1,25 +1,7 @@\n-{% load l10n %}\n+{% load l10n grp_tags admin_statc %}\n \n-<script type=\"text/javascript\">\n-(function($) {\n-    var field;\n-    {% for field in prepopulated_fields %}\n-        field = {\n-            id: '#{{ field.field.auto_id }}',\n-            dependency_ids: [],\n-            dependency_list: [],\n-            maxLength: {{ field.field.field.max_length|default_if_none:\"50\"|unlocalize }}\n-        };\n-        {% for dependency in field.dependencies %}\n-        field['dependency_ids'].push('#{{ dependency.auto_id }}');\n-        field['dependency_list'].push('{{ dependency.name }}');\n-        {% endfor %}\n-        // mark prepopulated fields in the main form and stacked inlines\n-        $(field.id).addClass('prepopulated_field');\n-        $(field.id).data('dependency_ids', field['dependency_ids']);\n-        $(field.id).data('dependency_list', field['dependency_list']);\n-        // prepopulate\n-        $(field.id).prepopulate(field['dependency_ids'], field.maxLength);\n-    {% endfor %}\n-})(grp.jQuery);\n+<script type=\"text/javascript\"\n+        id=\"grapelli-prepopulated-fields-js-constants\"\n+        src=\"{% static \"grapelli/js/old_inlines/prepopulated_field_js.js\" %}\"\n+        data-prepopulated-fields=\"{% prepopulated_fields_json %}\">",
+        "path": "grappelli/templates/admin/prepopulated_fields_js.html",
+        "position": null,
+        "original_position": 29,
+        "commit_id": "7ffd5aee0777c61bd72515cf41a5cbfa8f59a16e",
+        "original_commit_id": "c966f552919ff7201dbb9c399adfa60a60339628",
+        "user": {
+            "login": "graingert",
+            "id": 413772,
+            "node_id": "MDQ6VXNlcjQxMzc3Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/413772?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/graingert",
+            "html_url": "https://github.com/graingert",
+            "followers_url": "https://api.github.com/users/graingert/followers",
+            "following_url": "https://api.github.com/users/graingert/following{/other_user}",
+            "gists_url": "https://api.github.com/users/graingert/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/graingert/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/graingert/subscriptions",
+            "organizations_url": "https://api.github.com/users/graingert/orgs",
+            "repos_url": "https://api.github.com/users/graingert/repos",
+            "events_url": "https://api.github.com/users/graingert/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/graingert/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "ah this needs to pass the `prepopulated_fields` variable\n",
+        "created_at": "2015-11-18T16:18:32Z",
+        "updated_at": "2015-12-06T16:33:26Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/686#discussion_r45220665",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/686",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/45220665"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/686#discussion_r45220665"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/686"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/49304394",
+        "pull_request_review_id": null,
+        "id": 49304394,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MzA0Mzk0",
+        "diff_hunk": "@@ -1,25 +1,7 @@\n-{% load l10n %}\n+{% load l10n grp_tags admin_statc %}\n \n-<script type=\"text/javascript\">\n-(function($) {\n-    var field;\n-    {% for field in prepopulated_fields %}\n-        field = {\n-            id: '#{{ field.field.auto_id }}',\n-            dependency_ids: [],\n-            dependency_list: [],\n-            maxLength: {{ field.field.field.max_length|default_if_none:\"50\"|unlocalize }}\n-        };\n-        {% for dependency in field.dependencies %}\n-        field['dependency_ids'].push('#{{ dependency.auto_id }}');\n-        field['dependency_list'].push('{{ dependency.name }}');\n-        {% endfor %}\n-        // mark prepopulated fields in the main form and stacked inlines\n-        $(field.id).addClass('prepopulated_field');\n-        $(field.id).data('dependency_ids', field['dependency_ids']);\n-        $(field.id).data('dependency_list', field['dependency_list']);\n-        // prepopulate\n-        $(field.id).prepopulate(field['dependency_ids'], field.maxLength);\n-    {% endfor %}\n-})(grp.jQuery);\n+<script type=\"text/javascript\"\n+        id=\"grapelli-prepopulated-fields-js-constants\"\n+        src=\"{% static \"grapelli/js/old_inlines/prepopulated_field_js.js\" %}\"\n+        data-prepopulated-fields=\"{% prepopulated_fields_json prepopulated_fields %}\">",
+        "path": "grappelli/templates/admin/prepopulated_fields_js.html",
+        "position": 29,
+        "original_position": 29,
+        "commit_id": "7ffd5aee0777c61bd72515cf41a5cbfa8f59a16e",
+        "original_commit_id": "7ffd5aee0777c61bd72515cf41a5cbfa8f59a16e",
+        "user": {
+            "login": "graingert",
+            "id": 413772,
+            "node_id": "MDQ6VXNlcjQxMzc3Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/413772?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/graingert",
+            "html_url": "https://github.com/graingert",
+            "followers_url": "https://api.github.com/users/graingert/followers",
+            "following_url": "https://api.github.com/users/graingert/following{/other_user}",
+            "gists_url": "https://api.github.com/users/graingert/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/graingert/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/graingert/subscriptions",
+            "organizations_url": "https://api.github.com/users/graingert/orgs",
+            "repos_url": "https://api.github.com/users/graingert/repos",
+            "events_url": "https://api.github.com/users/graingert/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/graingert/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this \"prepopulated_fields\" variable is no longer provided in django 1.10 https://github.com/django/django/pull/5567/files#diff-f0d8070818f4868f26ce6bec567b5bbdR23 but instead you get a json string of data that we can use directly here.\n",
+        "created_at": "2016-01-11T10:03:36Z",
+        "updated_at": "2016-01-11T10:49:47Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/686#discussion_r49304394",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/686",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/49304394"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/686#discussion_r49304394"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/686"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/134131565",
+        "pull_request_review_id": 57387662,
+        "id": 134131565,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNDEzMTU2NQ==",
+        "diff_hunk": "@@ -179,10 +182,7 @@\n                 updateRelatedObjectLinks(this);\n             }\n         });\n-        // GRAPPELLI CUSTOM\n-        /* triggering select means that update_lookup is triggered with\n-        generic autocompleted (which would empty the field) */",
+        "path": "grappelli/static/admin/js/admin/RelatedObjectLookups.js",
+        "position": 25,
+        "original_position": 25,
+        "commit_id": "dddbac4fcc2b35275983dce7728f09c97c5cf2df",
+        "original_commit_id": "dddbac4fcc2b35275983dce7728f09c97c5cf2df",
+        "user": {
+            "login": "AndreiHondrari",
+            "id": 6682318,
+            "node_id": "MDQ6VXNlcjY2ODIzMTg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/6682318?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/AndreiHondrari",
+            "html_url": "https://github.com/AndreiHondrari",
+            "followers_url": "https://api.github.com/users/AndreiHondrari/followers",
+            "following_url": "https://api.github.com/users/AndreiHondrari/following{/other_user}",
+            "gists_url": "https://api.github.com/users/AndreiHondrari/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/AndreiHondrari/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/AndreiHondrari/subscriptions",
+            "organizations_url": "https://api.github.com/users/AndreiHondrari/orgs",
+            "repos_url": "https://api.github.com/users/AndreiHondrari/repos",
+            "events_url": "https://api.github.com/users/AndreiHondrari/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/AndreiHondrari/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "apparently it does not empty it.",
+        "created_at": "2017-08-21T00:45:20Z",
+        "updated_at": "2017-08-21T00:45:20Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/819#discussion_r134131565",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/819",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/134131565"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/819#discussion_r134131565"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/819"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/135832719",
+        "pull_request_review_id": 59290371,
+        "id": 135832719,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNTgzMjcxOQ==",
+        "diff_hunk": "@@ -123,23 +123,28 @@ def classpath(obj):\n \n # FORMSETSORT FOR SORTABLE INLINES\n \n+\n @register.filter\n def formsetsort(formset, arg):\n     \"\"\"\n     Takes a list of formset dicts, returns that list sorted by the sortable field.\n     \"\"\"\n+\n     if arg:\n         sorted_list = []\n+        unsorted_list = []\n         for item in formset:\n-            position = item.form[arg].data\n-            if position and position != \"-1\":\n+            position = item.form[arg].value()\n+\n+            if isinstance(position, int) and item.original: # normal view\n+                sorted_list.append((position, item))\n+            elif position and item.form.cleaned_data:       # error validation view",
+        "path": "grappelli/templatetags/grp_tags.py",
+        "position": null,
+        "original_position": 21,
+        "commit_id": "21fb624409160b42553fac647b99be8f5d34833d",
+        "original_commit_id": "7066516f433fb9f8a26d0d42dfbd37b4bab34544",
+        "user": {
+            "login": "slurms",
+            "id": 1132361,
+            "node_id": "MDQ6VXNlcjExMzIzNjE=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1132361?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/slurms",
+            "html_url": "https://github.com/slurms",
+            "followers_url": "https://api.github.com/users/slurms/followers",
+            "following_url": "https://api.github.com/users/slurms/following{/other_user}",
+            "gists_url": "https://api.github.com/users/slurms/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/slurms/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/slurms/subscriptions",
+            "organizations_url": "https://api.github.com/users/slurms/orgs",
+            "repos_url": "https://api.github.com/users/slurms/repos",
+            "events_url": "https://api.github.com/users/slurms/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/slurms/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`item.form.cleaned_data` might not exist and could raise `AttributeError`. Perhaps `hasattr(item.form, 'cleaned_data')` might be better?",
+        "created_at": "2017-08-29T15:50:57Z",
+        "updated_at": "2017-08-31T10:26:28Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/812#discussion_r135832719",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/812",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/135832719"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/812#discussion_r135832719"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/812"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/136299806",
+        "pull_request_review_id": 59816992,
+        "id": 136299806,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNjI5OTgwNg==",
+        "diff_hunk": "@@ -123,23 +123,28 @@ def classpath(obj):\n \n # FORMSETSORT FOR SORTABLE INLINES\n \n+\n @register.filter\n def formsetsort(formset, arg):\n     \"\"\"\n     Takes a list of formset dicts, returns that list sorted by the sortable field.\n     \"\"\"\n+\n     if arg:\n         sorted_list = []\n+        unsorted_list = []\n         for item in formset:\n-            position = item.form[arg].data\n-            if position and position != \"-1\":\n+            position = item.form[arg].value()\n+\n+            if isinstance(position, int) and item.original: # normal view\n+                sorted_list.append((position, item))\n+            elif position and item.form.cleaned_data:       # error validation view",
+        "path": "grappelli/templatetags/grp_tags.py",
+        "position": null,
+        "original_position": 21,
+        "commit_id": "21fb624409160b42553fac647b99be8f5d34833d",
+        "original_commit_id": "7066516f433fb9f8a26d0d42dfbd37b4bab34544",
+        "user": {
+            "login": "kkoralsky",
+            "id": 15221499,
+            "node_id": "MDQ6VXNlcjE1MjIxNDk5",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/15221499?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kkoralsky",
+            "html_url": "https://github.com/kkoralsky",
+            "followers_url": "https://api.github.com/users/kkoralsky/followers",
+            "following_url": "https://api.github.com/users/kkoralsky/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kkoralsky/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kkoralsky/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kkoralsky/subscriptions",
+            "organizations_url": "https://api.github.com/users/kkoralsky/orgs",
+            "repos_url": "https://api.github.com/users/kkoralsky/repos",
+            "events_url": "https://api.github.com/users/kkoralsky/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kkoralsky/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "i fixed that. thanks",
+        "created_at": "2017-08-31T10:28:26Z",
+        "updated_at": "2017-08-31T10:28:26Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/812#discussion_r136299806",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/812",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/136299806"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/812#discussion_r136299806"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/812"
+            }
+        },
+        "in_reply_to_id": 135832719
+    },
+    {
+        "url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/243584258",
+        "pull_request_review_id": 187397686,
+        "id": 243584258,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MzU4NDI1OA==",
+        "diff_hunk": "@@ -179,10 +182,7 @@\n                 updateRelatedObjectLinks(this);\n             }\n         });\n-        // GRAPPELLI CUSTOM\n-        /* triggering select means that update_lookup is triggered with\n-        generic autocompleted (which would empty the field) */",
+        "path": "grappelli/static/admin/js/admin/RelatedObjectLookups.js",
+        "position": 25,
+        "original_position": 25,
+        "commit_id": "dddbac4fcc2b35275983dce7728f09c97c5cf2df",
+        "original_commit_id": "dddbac4fcc2b35275983dce7728f09c97c5cf2df",
+        "user": {
+            "login": "sehmaschine",
+            "id": 185432,
+            "node_id": "MDQ6VXNlcjE4NTQzMg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/185432?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sehmaschine",
+            "html_url": "https://github.com/sehmaschine",
+            "followers_url": "https://api.github.com/users/sehmaschine/followers",
+            "following_url": "https://api.github.com/users/sehmaschine/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sehmaschine/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sehmaschine/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sehmaschine/subscriptions",
+            "organizations_url": "https://api.github.com/users/sehmaschine/orgs",
+            "repos_url": "https://api.github.com/users/sehmaschine/repos",
+            "events_url": "https://api.github.com/users/sehmaschine/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sehmaschine/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "With my setup it does (with generic autocompletes).",
+        "created_at": "2018-12-21T13:44:05Z",
+        "updated_at": "2018-12-21T13:44:05Z",
+        "html_url": "https://github.com/sehmaschine/django-grappelli/pull/819#discussion_r243584258",
+        "pull_request_url": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/819",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/comments/243584258"
+            },
+            "html": {
+                "href": "https://github.com/sehmaschine/django-grappelli/pull/819#discussion_r243584258"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sehmaschine/django-grappelli/pulls/819"
+            }
+        },
+        "in_reply_to_id": 134131565
+    }
+]

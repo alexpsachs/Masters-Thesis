@@ -1,0 +1,149 @@
+[
+    {
+        "url": "https://api.github.com/repos/somerandomdude/Iconic/pulls/comments/295358",
+        "pull_request_review_id": null,
+        "id": 295358,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI5NTM1OA==",
+        "diff_hunk": "@@ -0,0 +1,104 @@\n+#!/usr/bin/env python\n+\n+import fontforge",
+        "path": "scripts/svg2fonts.py",
+        "position": 3,
+        "original_position": 3,
+        "commit_id": "a6de8b6074f871cb668ac2992d52acdd257710a6",
+        "original_commit_id": "a6de8b6074f871cb668ac2992d52acdd257710a6",
+        "user": {
+            "login": "yhourdel",
+            "id": 674825,
+            "node_id": "MDQ6VXNlcjY3NDgyNQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/674825?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/yhourdel",
+            "html_url": "https://github.com/yhourdel",
+            "followers_url": "https://api.github.com/users/yhourdel/followers",
+            "following_url": "https://api.github.com/users/yhourdel/following{/other_user}",
+            "gists_url": "https://api.github.com/users/yhourdel/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/yhourdel/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/yhourdel/subscriptions",
+            "organizations_url": "https://api.github.com/users/yhourdel/orgs",
+            "repos_url": "https://api.github.com/users/yhourdel/repos",
+            "events_url": "https://api.github.com/users/yhourdel/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/yhourdel/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this line requires \"python-fontforge\" that I installed with \"sudo apt-get install python-fontforge\"\n",
+        "created_at": "2011-12-14T23:47:45Z",
+        "updated_at": "2011-12-14T23:47:45Z",
+        "html_url": "https://github.com/somerandomdude/Iconic/pull/5#discussion_r295358",
+        "pull_request_url": "https://api.github.com/repos/somerandomdude/Iconic/pulls/5",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/somerandomdude/Iconic/pulls/comments/295358"
+            },
+            "html": {
+                "href": "https://github.com/somerandomdude/Iconic/pull/5#discussion_r295358"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/somerandomdude/Iconic/pulls/5"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/somerandomdude/Iconic/pulls/comments/295360",
+        "pull_request_review_id": null,
+        "id": 295360,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI5NTM2MA==",
+        "diff_hunk": "@@ -0,0 +1,104 @@\n+#!/usr/bin/env python\n+\n+import fontforge\n+\n+letters = [\n+\t[\"!\", \"home\"],\n+\t['\"', \"left_quote\"],\n+\t[\"#\", \"arrow_up_alt1\"],\n+\t[\"$\", \"arrow_right_alt1\"],\n+\t[\"%\", \"arrow_down_alt1\"],\n+\t[\"&\", \"move_horizontal_alt2\"],\n+\t[\"'\", \"left_quote_alt\"],\n+\t[\"(\", \"move_alt2\"],\n+\t[\")\", \"cursor\"],\n+\t[\"*\", \"move_vertical_alt2\"],\n+\t[\"+\", \"plus\"],\n+\t[\",\", \"headphones\"],\n+\t[\"-\", \"minus\"],\n+\t[\".\", \"read_more\"],\n+\t[\"/\", \"link\"],\n+\t[\"0\", \"lightbulb\"],\n+\t[\"1\", \"new_window\"],\n+\t[\"2\", \"dial\"],\n+\t[\"3\", \"arrow_up\"],\n+\t[\"4\", \"arrow_right\"],\n+\t[\"5\", \"arrow_down\"],\n+\t[\"6\", \"arrow_left\"],\n+\t[\"7\", \"move_horizontal\"],\n+\t[\"8\", \"move_vertical\"],\n+\t[\"9\", \"move\"],\n+\t[\":\", \"fullscreen\"],\n+\t[\";\", \"fullscreen_exit\"],\n+\t[\"<\", \"equalizer\"],\n+\t[\"=\", \"plus_alt\"],\n+\t[\">\", \"article\"],\n+\t[\"?\", \"image\"],\n+\t[\"@\", \"at\"],\n+\t[\"A\", \"calendar\"],\n+\t[\"E\", \"book_alt\"],\n+\t[\"J\", \"chat_alt_stroke\"],\n+\t[\"L\", \"lock_stroke\"],\n+\t[\"M\", \"mail\"],\n+\t[\"P\", \"pen\"],\n+\t[\"Q\", \"comment_alt2_stroke\"],\n+\t[\"V\", \"volume_mute\"],\n+\t[\"W\", \"cog\"],\n+\t[\"X\", \"x_alt\"],\n+\t[\"Y\", \"check_alt\"],\n+\t[\"Z\", \"beaker_alt\"],\n+\t[\"[\", \"spin\"],\n+\t[\"\\\\\", \"map_pin_stroke\"],\n+\t[\"]\", \"moon_stroke\"],\n+\t[\"^\", \"arrow_left_alt1\"],\n+\t[\"_\", \"minus_alt\"],\n+\t[\"`\", \"denied\"],\n+\t[\"a\", \"calendar_alt_stroke\"],\n+\t[\"b\", \"bolt\"],\n+\t[\"c\", \"clock\"],\n+\t[\"d\", \"document_stroke\"],\n+\t[\"e\", \"book\"],\n+\t[\"f\", \"magnifying_glass_alt\"],\n+\t[\"g\", \"tag_stroke\"],\n+\t[\"h\", \"heart_stroke\"],\n+\t[\"i\", \"info\"],\n+\t[\"j\", \"chat\"],\n+\t[\"k\", \"key_stroke\"],\n+\t[\"l\", \"unlock_stroke\"],\n+\t[\"m\", \"mail_alt\"],\n+\t[\"n\", \"iphone\"],\n+\t[\"o\", \"box\"],\n+\t[\"p\", \"pen_alt_stroke\"],\n+\t[\"q\", \"comment_stroke\"],\n+\t[\"r\", \"rss\"],\n+\t[\"s\", \"star\"],\n+\t[\"t\", \"trash_stroke\"],\n+\t[\"u\", \"user\"],\n+\t[\"v\", \"volume\"],\n+\t[\"w\", \"cog_alt\"],\n+\t[\"x\", \"x\"],\n+\t[\"y\", \"check\"],\n+\t[\"z\", \"beaker\"],\n+\t[\"{\", \"spin_alt\"],\n+\t[\"|\", \"pin\"],\n+\t[\"}\", \"sun\"],\n+\t[\"~\", \"eyedropper\"]",
+        "path": "scripts/svg2fonts.py",
+        "position": 85,
+        "original_position": 85,
+        "commit_id": "a6de8b6074f871cb668ac2992d52acdd257710a6",
+        "original_commit_id": "a6de8b6074f871cb668ac2992d52acdd257710a6",
+        "user": {
+            "login": "yhourdel",
+            "id": 674825,
+            "node_id": "MDQ6VXNlcjY3NDgyNQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/674825?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/yhourdel",
+            "html_url": "https://github.com/yhourdel",
+            "followers_url": "https://api.github.com/users/yhourdel/followers",
+            "following_url": "https://api.github.com/users/yhourdel/following{/other_user}",
+            "gists_url": "https://api.github.com/users/yhourdel/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/yhourdel/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/yhourdel/subscriptions",
+            "organizations_url": "https://api.github.com/users/yhourdel/orgs",
+            "repos_url": "https://api.github.com/users/yhourdel/repos",
+            "events_url": "https://api.github.com/users/yhourdel/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/yhourdel/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You can add the other icons here\n",
+        "created_at": "2011-12-14T23:48:16Z",
+        "updated_at": "2011-12-14T23:48:16Z",
+        "html_url": "https://github.com/somerandomdude/Iconic/pull/5#discussion_r295360",
+        "pull_request_url": "https://api.github.com/repos/somerandomdude/Iconic/pulls/5",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/somerandomdude/Iconic/pulls/comments/295360"
+            },
+            "html": {
+                "href": "https://github.com/somerandomdude/Iconic/pull/5#discussion_r295360"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/somerandomdude/Iconic/pulls/5"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/somerandomdude/Iconic/pulls/comments/298765",
+        "pull_request_review_id": null,
+        "id": 298765,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI5ODc2NQ==",
+        "diff_hunk": "@@ -0,0 +1,104 @@\n+#!/usr/bin/env python\n+\n+import fontforge\n+\n+letters = [\n+\t[\"!\", \"home\"],",
+        "path": "scripts/svg2fonts.py",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "a6de8b6074f871cb668ac2992d52acdd257710a6",
+        "original_commit_id": "a6de8b6074f871cb668ac2992d52acdd257710a6",
+        "user": {
+            "login": "yhourdel",
+            "id": 674825,
+            "node_id": "MDQ6VXNlcjY3NDgyNQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/674825?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/yhourdel",
+            "html_url": "https://github.com/yhourdel",
+            "followers_url": "https://api.github.com/users/yhourdel/followers",
+            "following_url": "https://api.github.com/users/yhourdel/following{/other_user}",
+            "gists_url": "https://api.github.com/users/yhourdel/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/yhourdel/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/yhourdel/subscriptions",
+            "organizations_url": "https://api.github.com/users/yhourdel/orgs",
+            "repos_url": "https://api.github.com/users/yhourdel/repos",
+            "events_url": "https://api.github.com/users/yhourdel/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/yhourdel/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Write [ord(\"!\"), \"home\"] here and on every line, then remove the \"ord\" call bellow and it will work just the same, except that you can now add directly a unicode code instead of having to write the corresponding char\n",
+        "created_at": "2011-12-16T07:12:05Z",
+        "updated_at": "2011-12-16T07:12:05Z",
+        "html_url": "https://github.com/somerandomdude/Iconic/pull/5#discussion_r298765",
+        "pull_request_url": "https://api.github.com/repos/somerandomdude/Iconic/pulls/5",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/somerandomdude/Iconic/pulls/comments/298765"
+            },
+            "html": {
+                "href": "https://github.com/somerandomdude/Iconic/pull/5#discussion_r298765"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/somerandomdude/Iconic/pulls/5"
+            }
+        }
+    }
+]

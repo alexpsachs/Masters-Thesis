@@ -1,0 +1,297 @@
+[
+    {
+        "url": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/13121078",
+        "pull_request_review_id": null,
+        "id": 13121078,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMTIxMDc4",
+        "diff_hunk": "@@ -37,8 +38,15 @@ var EXIF = (function() {\n         0x829D : \"FNumber\",                 // F number\n         0x8822 : \"ExposureProgram\",         // Exposure program\n         0x8824 : \"SpectralSensitivity\",     // Spectral sensitivity\n-        0x8827 : \"ISOSpeedRatings\",         // ISO speed rating\n+        // 0x8827 : \"ISOSpeedRatings\",             // ISO speed rating (from older exif spec)",
+        "path": "exif.js",
+        "position": 25,
+        "original_position": 25,
+        "commit_id": "ae5e41af9500a7ba64fe11ce0d34cf97a597ad66",
+        "original_commit_id": "ae5e41af9500a7ba64fe11ce0d34cf97a597ad66",
+        "user": {
+            "login": "sroze",
+            "id": 804625,
+            "node_id": "MDQ6VXNlcjgwNDYyNQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/804625?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sroze",
+            "html_url": "https://github.com/sroze",
+            "followers_url": "https://api.github.com/users/sroze/followers",
+            "following_url": "https://api.github.com/users/sroze/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sroze/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sroze/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sroze/subscriptions",
+            "organizations_url": "https://api.github.com/users/sroze/orgs",
+            "repos_url": "https://api.github.com/users/sroze/repos",
+            "events_url": "https://api.github.com/users/sroze/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sroze/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We can't remove an older exif attribute and simply replace it with the new one. We should deal with a version number.\n",
+        "created_at": "2014-05-28T08:51:35Z",
+        "updated_at": "2014-05-28T08:51:35Z",
+        "html_url": "https://github.com/exif-js/exif-js/pull/19#discussion_r13121078",
+        "pull_request_url": "https://api.github.com/repos/exif-js/exif-js/pulls/19",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/13121078"
+            },
+            "html": {
+                "href": "https://github.com/exif-js/exif-js/pull/19#discussion_r13121078"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/19"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/13177601",
+        "pull_request_review_id": null,
+        "id": 13177601,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMTc3NjAx",
+        "diff_hunk": "@@ -387,7 +387,7 @@ var EXIF = (function() {\n \n         while (offset < length) {\n             if (dataView.getUint8(offset) != 0xFF) {\n-                if (debug) console.log(\"Not a valid marker at offset \" + offset + \", found: \" + file.getByteAt(offset));",
+        "path": "exif.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "1c5eb29d1e9f3c284f20fd77431fc09fafbd581a",
+        "original_commit_id": "1c5eb29d1e9f3c284f20fd77431fc09fafbd581a",
+        "user": {
+            "login": "artyil",
+            "id": 6285831,
+            "node_id": "MDQ6VXNlcjYyODU4MzE=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6285831?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/artyil",
+            "html_url": "https://github.com/artyil",
+            "followers_url": "https://api.github.com/users/artyil/followers",
+            "following_url": "https://api.github.com/users/artyil/following{/other_user}",
+            "gists_url": "https://api.github.com/users/artyil/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/artyil/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/artyil/subscriptions",
+            "organizations_url": "https://api.github.com/users/artyil/orgs",
+            "repos_url": "https://api.github.com/users/artyil/repos",
+            "events_url": "https://api.github.com/users/artyil/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/artyil/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "**getByteAt** - this method belong to the previously implemented class BinaryFile\n",
+        "created_at": "2014-05-29T12:07:31Z",
+        "updated_at": "2014-05-29T12:07:44Z",
+        "html_url": "https://github.com/exif-js/exif-js/pull/22#discussion_r13177601",
+        "pull_request_url": "https://api.github.com/repos/exif-js/exif-js/pulls/22",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/13177601"
+            },
+            "html": {
+                "href": "https://github.com/exif-js/exif-js/pull/22#discussion_r13177601"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/22"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/73692910",
+        "pull_request_review_id": null,
+        "id": 73692910,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDczNjkyOTEw",
+        "diff_hunk": "@@ -1,3 +1,86 @@\n-#Exif.js\n+# Exif.js\n \n-A JavaScript library for reading EXIF meta data from JPEG image files.\n\\ No newline at end of file\n+A JavaScript library for reading [EXIF meta data](https://en.wikipedia.org/wiki/Exchangeable_image_file_format) from image files.\n+\n+You can use it on images in the browser, either from an image or a file input element. Both EXIF and IPTC metadata are retrieved.\n+This package can also be used in AMD or CommonJS environments.\n+\n+**Note**: The EXIF standard applies only to `.jpg` and `.tiff` images. EXIF logic in this package is based on the EXIF standard v2.2 ([JEITA CP-3451, included in this repo](/spec/Exif2-2.pdf)).\n+\n+## Install\n+Install `exif-js` through [NPM](https://www.npmjs.com/#getting-started):\n+\n+    npm install exif-js --save    \n+\n+Or [Bower](http://bower.io/):\n+\n+    bower install exif-js --save\n+\n+Then add a `script` tag in your an HTML in the [best position](http://stackoverflow.com/questions/436411/where-is-the-best-place-to-put-script-tags-in-html-markup) referencing your local file.\n+\n+    <script src=\"vendors/exif-js/exif-js\"></script>",
+        "path": "README.md",
+        "position": 24,
+        "original_position": 24,
+        "commit_id": "0a34f8dfc61542ff03141b039015f184d24de4cf",
+        "original_commit_id": "0a34f8dfc61542ff03141b039015f184d24de4cf",
+        "user": {
+            "login": "anthu",
+            "id": 760387,
+            "node_id": "MDQ6VXNlcjc2MDM4Nw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/760387?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/anthu",
+            "html_url": "https://github.com/anthu",
+            "followers_url": "https://api.github.com/users/anthu/followers",
+            "following_url": "https://api.github.com/users/anthu/following{/other_user}",
+            "gists_url": "https://api.github.com/users/anthu/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/anthu/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/anthu/subscriptions",
+            "organizations_url": "https://api.github.com/users/anthu/orgs",
+            "repos_url": "https://api.github.com/users/anthu/repos",
+            "events_url": "https://api.github.com/users/anthu/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/anthu/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "there is a typo , it propably should be:\n`\nvendors/exif-js/exif.js\n`\n(The last hyphen should be a dot)\n",
+        "created_at": "2016-08-05T13:37:45Z",
+        "updated_at": "2016-08-05T13:38:17Z",
+        "html_url": "https://github.com/exif-js/exif-js/pull/57#discussion_r73692910",
+        "pull_request_url": "https://api.github.com/repos/exif-js/exif-js/pulls/57",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/73692910"
+            },
+            "html": {
+                "href": "https://github.com/exif-js/exif-js/pull/57#discussion_r73692910"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/57"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/132282176",
+        "pull_request_review_id": 55346358,
+        "id": 132282176,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjI4MjE3Ng==",
+        "diff_hunk": "@@ -928,10 +928,10 @@\n     }\n \n     EXIF.getData = function(img, callback) {\n-        if ((self.Image && img instanceof self.Image)\n-            || (self.HTMLImageElement && img instanceof self.HTMLImageElement)\n-            && !img.complete)\n-            return false;\n+        const isImage = (self.Image && img instanceof self.Image)",
+        "path": "exif.js",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "bb86c2234758f575114bea09a8da9d203ecc9957",
+        "original_commit_id": "bb86c2234758f575114bea09a8da9d203ecc9957",
+        "user": {
+            "login": "diegocr",
+            "id": 734313,
+            "node_id": "MDQ6VXNlcjczNDMxMw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/734313?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diegocr",
+            "html_url": "https://github.com/diegocr",
+            "followers_url": "https://api.github.com/users/diegocr/followers",
+            "following_url": "https://api.github.com/users/diegocr/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diegocr/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diegocr/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diegocr/subscriptions",
+            "organizations_url": "https://api.github.com/users/diegocr/orgs",
+            "repos_url": "https://api.github.com/users/diegocr/repos",
+            "events_url": "https://api.github.com/users/diegocr/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diegocr/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "why `const`? you'll be breaking a few browsers using that.",
+        "created_at": "2017-08-09T19:26:20Z",
+        "updated_at": "2017-08-09T19:26:20Z",
+        "html_url": "https://github.com/exif-js/exif-js/pull/103#discussion_r132282176",
+        "pull_request_url": "https://api.github.com/repos/exif-js/exif-js/pulls/103",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/132282176"
+            },
+            "html": {
+                "href": "https://github.com/exif-js/exif-js/pull/103#discussion_r132282176"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/103"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/132284292",
+        "pull_request_review_id": 55348701,
+        "id": 132284292,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjI4NDI5Mg==",
+        "diff_hunk": "@@ -928,10 +928,10 @@\n     }\n \n     EXIF.getData = function(img, callback) {\n-        if ((self.Image && img instanceof self.Image)\n-            || (self.HTMLImageElement && img instanceof self.HTMLImageElement)\n-            && !img.complete)\n-            return false;\n+        const isImage = (self.Image && img instanceof self.Image)",
+        "path": "exif.js",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "bb86c2234758f575114bea09a8da9d203ecc9957",
+        "original_commit_id": "bb86c2234758f575114bea09a8da9d203ecc9957",
+        "user": {
+            "login": "YevheniiKravchenko",
+            "id": 1778432,
+            "node_id": "MDQ6VXNlcjE3Nzg0MzI=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1778432?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/YevheniiKravchenko",
+            "html_url": "https://github.com/YevheniiKravchenko",
+            "followers_url": "https://api.github.com/users/YevheniiKravchenko/followers",
+            "following_url": "https://api.github.com/users/YevheniiKravchenko/following{/other_user}",
+            "gists_url": "https://api.github.com/users/YevheniiKravchenko/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/YevheniiKravchenko/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/YevheniiKravchenko/subscriptions",
+            "organizations_url": "https://api.github.com/users/YevheniiKravchenko/orgs",
+            "repos_url": "https://api.github.com/users/YevheniiKravchenko/repos",
+            "events_url": "https://api.github.com/users/YevheniiKravchenko/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/YevheniiKravchenko/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`const` is now standard and best practice for variables declaration. And it's widely supported even without babel. http://caniuse.com/#search=const",
+        "created_at": "2017-08-09T19:36:16Z",
+        "updated_at": "2017-08-09T19:36:16Z",
+        "html_url": "https://github.com/exif-js/exif-js/pull/103#discussion_r132284292",
+        "pull_request_url": "https://api.github.com/repos/exif-js/exif-js/pulls/103",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/132284292"
+            },
+            "html": {
+                "href": "https://github.com/exif-js/exif-js/pull/103#discussion_r132284292"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/103"
+            }
+        },
+        "in_reply_to_id": 132282176
+    },
+    {
+        "url": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/186390954",
+        "pull_request_review_id": 117957706,
+        "id": 186390954,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NjM5MDk1NA==",
+        "diff_hunk": "@@ -468,7 +472,7 @@\n         }\n \n         var offset = 2,\n-            length = file.byteLength;\n+            length = file.byteLength-5; //we will check the 5 next bytes",
+        "path": "exif.js",
+        "position": 29,
+        "original_position": 29,
+        "commit_id": "ca090fbd409c7c76511604ef5b2639dfb5bb2248",
+        "original_commit_id": "ca090fbd409c7c76511604ef5b2639dfb5bb2248",
+        "user": {
+            "login": "jbzdak",
+            "id": 112872,
+            "node_id": "MDQ6VXNlcjExMjg3Mg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/112872?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jbzdak",
+            "html_url": "https://github.com/jbzdak",
+            "followers_url": "https://api.github.com/users/jbzdak/followers",
+            "following_url": "https://api.github.com/users/jbzdak/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jbzdak/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jbzdak/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jbzdak/subscriptions",
+            "organizations_url": "https://api.github.com/users/jbzdak/orgs",
+            "repos_url": "https://api.github.com/users/jbzdak/repos",
+            "events_url": "https://api.github.com/users/jbzdak/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jbzdak/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is unrelated change, bugfix I guess? (Just trying to understand this PR to evaluate using it in a project ;))",
+        "created_at": "2018-05-07T10:58:53Z",
+        "updated_at": "2018-05-07T10:58:53Z",
+        "html_url": "https://github.com/exif-js/exif-js/pull/146#discussion_r186390954",
+        "pull_request_url": "https://api.github.com/repos/exif-js/exif-js/pulls/146",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/comments/186390954"
+            },
+            "html": {
+                "href": "https://github.com/exif-js/exif-js/pull/146#discussion_r186390954"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/exif-js/exif-js/pulls/146"
+            }
+        }
+    }
+]

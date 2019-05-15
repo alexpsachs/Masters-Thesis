@@ -1,0 +1,149 @@
+[
+    {
+        "url": "https://api.github.com/repos/bfirsh/jsnes/pulls/comments/153392177",
+        "pull_request_review_id": 79388306,
+        "id": 153392177,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MzM5MjE3Nw==",
+        "diff_hunk": "@@ -0,0 +1,124 @@\n+\n+var GG = function(nes) {\n+  this.nes = nes;",
+        "path": "src/gg.js",
+        "position": null,
+        "original_position": 3,
+        "commit_id": "2f3eef3311826ea151f8cd1692e8171b10976fd3",
+        "original_commit_id": "62f451333ad8f8d2a8f87d2ffc0096fe474f9998",
+        "user": {
+            "login": "bfirsh",
+            "id": 40906,
+            "node_id": "MDQ6VXNlcjQwOTA2",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/40906?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bfirsh",
+            "html_url": "https://github.com/bfirsh",
+            "followers_url": "https://api.github.com/users/bfirsh/followers",
+            "following_url": "https://api.github.com/users/bfirsh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bfirsh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bfirsh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bfirsh/subscriptions",
+            "organizations_url": "https://api.github.com/users/bfirsh/orgs",
+            "repos_url": "https://api.github.com/users/bfirsh/repos",
+            "events_url": "https://api.github.com/users/bfirsh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bfirsh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`this.nes` is unused, I think, so can be removed.",
+        "created_at": "2017-11-28T04:18:08Z",
+        "updated_at": "2017-11-29T01:12:58Z",
+        "html_url": "https://github.com/bfirsh/jsnes/pull/89#discussion_r153392177",
+        "pull_request_url": "https://api.github.com/repos/bfirsh/jsnes/pulls/89",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bfirsh/jsnes/pulls/comments/153392177"
+            },
+            "html": {
+                "href": "https://github.com/bfirsh/jsnes/pull/89#discussion_r153392177"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bfirsh/jsnes/pulls/89"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bfirsh/jsnes/pulls/comments/153392411",
+        "pull_request_review_id": 79388548,
+        "id": 153392411,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MzM5MjQxMQ==",
+        "diff_hunk": "@@ -0,0 +1,124 @@\n+\n+var GG = function(nes) {",
+        "path": "src/gg.js",
+        "position": null,
+        "original_position": 2,
+        "commit_id": "2f3eef3311826ea151f8cd1692e8171b10976fd3",
+        "original_commit_id": "62f451333ad8f8d2a8f87d2ffc0096fe474f9998",
+        "user": {
+            "login": "bfirsh",
+            "id": 40906,
+            "node_id": "MDQ6VXNlcjQwOTA2",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/40906?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bfirsh",
+            "html_url": "https://github.com/bfirsh",
+            "followers_url": "https://api.github.com/users/bfirsh/followers",
+            "following_url": "https://api.github.com/users/bfirsh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bfirsh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bfirsh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bfirsh/subscriptions",
+            "organizations_url": "https://api.github.com/users/bfirsh/orgs",
+            "repos_url": "https://api.github.com/users/bfirsh/repos",
+            "events_url": "https://api.github.com/users/bfirsh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bfirsh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No need to abbreviate - `GameGenie` is much clearer.",
+        "created_at": "2017-11-28T04:20:17Z",
+        "updated_at": "2017-11-29T01:12:58Z",
+        "html_url": "https://github.com/bfirsh/jsnes/pull/89#discussion_r153392411",
+        "pull_request_url": "https://api.github.com/repos/bfirsh/jsnes/pulls/89",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bfirsh/jsnes/pulls/comments/153392411"
+            },
+            "html": {
+                "href": "https://github.com/bfirsh/jsnes/pull/89#discussion_r153392411"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bfirsh/jsnes/pulls/89"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/bfirsh/jsnes/pulls/comments/153392468",
+        "pull_request_review_id": 79388548,
+        "id": 153392468,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MzM5MjQ2OA==",
+        "diff_hunk": "@@ -34,6 +35,7 @@ var NES = function(opts) {\n   this.cpu = new CPU(this);\n   this.ppu = new PPU(this);\n   this.papu = new PAPU(this);\n+  this.gg = new GG(this);",
+        "path": "src/nes.js",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "2f3eef3311826ea151f8cd1692e8171b10976fd3",
+        "original_commit_id": "62f451333ad8f8d2a8f87d2ffc0096fe474f9998",
+        "user": {
+            "login": "bfirsh",
+            "id": 40906,
+            "node_id": "MDQ6VXNlcjQwOTA2",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/40906?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bfirsh",
+            "html_url": "https://github.com/bfirsh",
+            "followers_url": "https://api.github.com/users/bfirsh/followers",
+            "following_url": "https://api.github.com/users/bfirsh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bfirsh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bfirsh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bfirsh/subscriptions",
+            "organizations_url": "https://api.github.com/users/bfirsh/orgs",
+            "repos_url": "https://api.github.com/users/bfirsh/repos",
+            "events_url": "https://api.github.com/users/bfirsh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bfirsh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "As above, can be `this.gameGenie`",
+        "created_at": "2017-11-28T04:20:52Z",
+        "updated_at": "2017-11-29T01:12:58Z",
+        "html_url": "https://github.com/bfirsh/jsnes/pull/89#discussion_r153392468",
+        "pull_request_url": "https://api.github.com/repos/bfirsh/jsnes/pulls/89",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/bfirsh/jsnes/pulls/comments/153392468"
+            },
+            "html": {
+                "href": "https://github.com/bfirsh/jsnes/pull/89#discussion_r153392468"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/bfirsh/jsnes/pulls/89"
+            }
+        }
+    }
+]

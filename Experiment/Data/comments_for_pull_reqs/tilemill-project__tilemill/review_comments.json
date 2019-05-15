@@ -1,0 +1,248 @@
+[
+    {
+        "url": "https://api.github.com/repos/tilemill-project/tilemill/pulls/comments/1072637",
+        "pull_request_review_id": null,
+        "id": 1072637,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNzI2Mzc=",
+        "diff_hunk": "@@ -511,7 +509,9 @@ function fields(opts) {\n \n // Generate combined template from templates.\n function template(opts) {\n-    opts = opts || {};\n+    if (!opts || !opts.layer || (!opts.template_teaser && !opts.template_full && !opts.template_location))\n+        return \"\";",
+        "path": "models/Project.server.bones",
+        "position": 27,
+        "original_position": 27,
+        "commit_id": "558283f0c9a54cb2895f955e1ef8f5144f42ce13",
+        "original_commit_id": "558283f0c9a54cb2895f955e1ef8f5144f42ce13",
+        "user": {
+            "login": "ansis",
+            "id": 1421652,
+            "node_id": "MDQ6VXNlcjE0MjE2NTI=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1421652?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ansis",
+            "html_url": "https://github.com/ansis",
+            "followers_url": "https://api.github.com/users/ansis/followers",
+            "following_url": "https://api.github.com/users/ansis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ansis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ansis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ansis/subscriptions",
+            "organizations_url": "https://api.github.com/users/ansis/orgs",
+            "repos_url": "https://api.github.com/users/ansis/repos",
+            "events_url": "https://api.github.com/users/ansis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ansis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I couldn't figure out why returning `undefined` wouldn't unset it completely. I think it worked when reading, but not saving. `\"\"` should work fine though.\n",
+        "created_at": "2012-06-28T22:23:21Z",
+        "updated_at": "2012-06-28T22:23:21Z",
+        "html_url": "https://github.com/tilemill-project/tilemill/pull/1547#discussion_r1072637",
+        "pull_request_url": "https://api.github.com/repos/tilemill-project/tilemill/pulls/1547",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tilemill-project/tilemill/pulls/comments/1072637"
+            },
+            "html": {
+                "href": "https://github.com/tilemill-project/tilemill/pull/1547#discussion_r1072637"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tilemill-project/tilemill/pulls/1547"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tilemill-project/tilemill/pulls/comments/60327159",
+        "pull_request_review_id": null,
+        "id": 60327159,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYwMzI3MTU5",
+        "diff_hunk": "@@ -7,6 +7,7 @@ var mkdirp = require('../lib/fsutil.js').mkdirp;\n var rm = require('../lib/fsutil.js').rm;\n var carto = require('carto');\n var mapnik = require('mapnik');\n+yaml = require('js-yaml');",
+        "path": "models/Project.server.bones",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "42549ba3dbd6cde6cb9fd01de374ec8d853c352c",
+        "original_commit_id": "7ea2cd4c112d8d5e074ca5a68975477b215cf3fd",
+        "user": {
+            "login": "springmeyer",
+            "id": 20300,
+            "node_id": "MDQ6VXNlcjIwMzAw",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/20300?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/springmeyer",
+            "html_url": "https://github.com/springmeyer",
+            "followers_url": "https://api.github.com/users/springmeyer/followers",
+            "following_url": "https://api.github.com/users/springmeyer/following{/other_user}",
+            "gists_url": "https://api.github.com/users/springmeyer/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/springmeyer/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/springmeyer/subscriptions",
+            "organizations_url": "https://api.github.com/users/springmeyer/orgs",
+            "repos_url": "https://api.github.com/users/springmeyer/repos",
+            "events_url": "https://api.github.com/users/springmeyer/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/springmeyer/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "needs a `var`\n",
+        "created_at": "2016-04-19T23:02:24Z",
+        "updated_at": "2016-04-19T23:27:11Z",
+        "html_url": "https://github.com/tilemill-project/tilemill/pull/2552#discussion_r60327159",
+        "pull_request_url": "https://api.github.com/repos/tilemill-project/tilemill/pulls/2552",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tilemill-project/tilemill/pulls/comments/60327159"
+            },
+            "html": {
+                "href": "https://github.com/tilemill-project/tilemill/pull/2552#discussion_r60327159"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tilemill-project/tilemill/pulls/2552"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tilemill-project/tilemill/pulls/comments/257829532",
+        "pull_request_review_id": 204955831,
+        "id": 257829532,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NzgyOTUzMg==",
+        "diff_hunk": "@@ -5,14 +5,15 @@ tag: Installation\n title: Building from source\n permalink: /docs/source/\n ---\n+<span style=\"color:red\">WARNING:</span> These instructions have not been tested since TileMill v0.10.1 and may be slightly out of date. For building from source on Mac OS, you should [go here for up to date instructions](/tilemill/docs/mac-install).\n \n This documentation covers TileMill installation from source. This document is intended for users wishing to run TileMill on platforms other than [Ubuntu](/tilemill/docs/linux-install), [Mac OS X](/tilemill/docs/mac-install), or [Windows](/tilemill/docs/win-install) (like other linux distributions), or for developers wishing to get a TileMill development version (aka. TileMill \"master\") running on Ubuntu or Mac OS X. For most users, the [installation instructions]({{site.baseurl}}/docs/install) will be more appropriate.\n \n ## Careful with versions\n \n Before continuing decide whether you want to install the latest TileMill development code or whether you would like to install the latest stable TileMill release. Depending on what you choose then a different Node.js and/or Mapnik version will likely be required. Because TileMill relies heavily on Node.js and Mapnik, and both are very fast moving projects, you should pay special attention to this.\n \n-The instructions below assume you are going to install TileMill \"master\" - the latest in-development TileMill code from [github](https://github.com/mapbox/tilemill/). If you wish to install a specific TileMill version, then please see the [Changelog](/tilemill/changelog) for details about which version of Node.js and Mapnik were used successfully at the time of release, but don't hesitate to ask for advise in the [TileMill support forum](http://support.mapbox.com/discussions/tilemill/).\n+The instructions below assume you are going to install TileMill \"master\" - the latest in-development TileMill code from [github](https://github.com/tilemill-project/tilemill/). If you wish to install a specific TileMill version, then please see the [Changelog](/tilemill/changelog) for details about which version of Node.js and Mapnik were used successfully at the time of release, but don't hesitate to ask for advise in the [TileMill support forum](http://support.mapbox.com/discussions/tilemill/).",
+        "path": "_posts/docs/0201-01-01-code.md",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "26469620a8bdce8f49f9ee918e85d3da9509d97c",
+        "original_commit_id": "5668da0509d4ed8dc90d288a5aafdb4eee5851ea",
+        "user": {
+            "login": "csytsma",
+            "id": 128836,
+            "node_id": "MDQ6VXNlcjEyODgzNg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/128836?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/csytsma",
+            "html_url": "https://github.com/csytsma",
+            "followers_url": "https://api.github.com/users/csytsma/followers",
+            "following_url": "https://api.github.com/users/csytsma/following{/other_user}",
+            "gists_url": "https://api.github.com/users/csytsma/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/csytsma/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/csytsma/subscriptions",
+            "organizations_url": "https://api.github.com/users/csytsma/orgs",
+            "repos_url": "https://api.github.com/users/csytsma/repos",
+            "events_url": "https://api.github.com/users/csytsma/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/csytsma/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "```suggestion\r\nThe instructions below assume you are going to install TileMill \"master\" - the latest in-development TileMill code from [github](https://github.com/tilemill-project/tilemill/). If you wish to install a specific TileMill version, then please see the [Changelog](/tilemill/changelog) for details about which version of Node.js and Mapnik were used successfully at the time of release.\r\n```",
+        "created_at": "2019-02-18T21:19:58Z",
+        "updated_at": "2019-02-19T04:37:51Z",
+        "html_url": "https://github.com/tilemill-project/tilemill/pull/2669#discussion_r257829532",
+        "pull_request_url": "https://api.github.com/repos/tilemill-project/tilemill/pulls/2669",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tilemill-project/tilemill/pulls/comments/257829532"
+            },
+            "html": {
+                "href": "https://github.com/tilemill-project/tilemill/pull/2669#discussion_r257829532"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tilemill-project/tilemill/pulls/2669"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tilemill-project/tilemill/pulls/comments/257829640",
+        "pull_request_review_id": 204955965,
+        "id": 257829640,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NzgyOTY0MA==",
+        "diff_hunk": "@@ -5,14 +5,15 @@ tag: Installation\n title: Building from source\n permalink: /docs/source/\n ---\n+<span style=\"color:red\">WARNING:</span> These instructions have not been tested since TileMill v0.10.1 and may be slightly out of date. For building from source on Mac OS, you should [go here for up to date instructions](/tilemill/docs/mac-install).\n \n This documentation covers TileMill installation from source. This document is intended for users wishing to run TileMill on platforms other than [Ubuntu](/tilemill/docs/linux-install), [Mac OS X](/tilemill/docs/mac-install), or [Windows](/tilemill/docs/win-install) (like other linux distributions), or for developers wishing to get a TileMill development version (aka. TileMill \"master\") running on Ubuntu or Mac OS X. For most users, the [installation instructions]({{site.baseurl}}/docs/install) will be more appropriate.\n \n ## Careful with versions\n \n Before continuing decide whether you want to install the latest TileMill development code or whether you would like to install the latest stable TileMill release. Depending on what you choose then a different Node.js and/or Mapnik version will likely be required. Because TileMill relies heavily on Node.js and Mapnik, and both are very fast moving projects, you should pay special attention to this.\n \n-The instructions below assume you are going to install TileMill \"master\" - the latest in-development TileMill code from [github](https://github.com/mapbox/tilemill/). If you wish to install a specific TileMill version, then please see the [Changelog](/tilemill/changelog) for details about which version of Node.js and Mapnik were used successfully at the time of release, but don't hesitate to ask for advise in the [TileMill support forum](http://support.mapbox.com/discussions/tilemill/).\n+The instructions below assume you are going to install TileMill \"master\" - the latest in-development TileMill code from [github](https://github.com/tilemill-project/tilemill/). If you wish to install a specific TileMill version, then please see the [Changelog](/tilemill/changelog) for details about which version of Node.js and Mapnik were used successfully at the time of release, but don't hesitate to ask for advise in the [TileMill support forum](http://support.mapbox.com/discussions/tilemill/).",
+        "path": "_posts/docs/0201-01-01-code.md",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "26469620a8bdce8f49f9ee918e85d3da9509d97c",
+        "original_commit_id": "5668da0509d4ed8dc90d288a5aafdb4eee5851ea",
+        "user": {
+            "login": "csytsma",
+            "id": 128836,
+            "node_id": "MDQ6VXNlcjEyODgzNg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/128836?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/csytsma",
+            "html_url": "https://github.com/csytsma",
+            "followers_url": "https://api.github.com/users/csytsma/followers",
+            "following_url": "https://api.github.com/users/csytsma/following{/other_user}",
+            "gists_url": "https://api.github.com/users/csytsma/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/csytsma/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/csytsma/subscriptions",
+            "organizations_url": "https://api.github.com/users/csytsma/orgs",
+            "repos_url": "https://api.github.com/users/csytsma/repos",
+            "events_url": "https://api.github.com/users/csytsma/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/csytsma/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Support forum no longer exists.",
+        "created_at": "2019-02-18T21:20:30Z",
+        "updated_at": "2019-02-19T04:37:51Z",
+        "html_url": "https://github.com/tilemill-project/tilemill/pull/2669#discussion_r257829640",
+        "pull_request_url": "https://api.github.com/repos/tilemill-project/tilemill/pulls/2669",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tilemill-project/tilemill/pulls/comments/257829640"
+            },
+            "html": {
+                "href": "https://github.com/tilemill-project/tilemill/pull/2669#discussion_r257829640"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tilemill-project/tilemill/pulls/2669"
+            }
+        },
+        "in_reply_to_id": 257829532
+    },
+    {
+        "url": "https://api.github.com/repos/tilemill-project/tilemill/pulls/comments/257830441",
+        "pull_request_review_id": 204957014,
+        "id": 257830441,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NzgzMDQ0MQ==",
+        "diff_hunk": "@@ -21,6 +34,12 @@ TileMill for Mac OS X is meant to be run as a desktop-style application.\n \n ## Windows\n \n+### V1.0.0 and later\n+\n+TileMill has not been tested on Windows. It should run fine, but you will need to build it from source, do an npm start to start the TileMill server, and then go to localhost:20009 to start the client.",
+        "path": "_posts/docs/reference/0204-02-01-usage.md",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "26469620a8bdce8f49f9ee918e85d3da9509d97c",
+        "original_commit_id": "19704cd0bded39bc30e1de6ce6f8c8d56ccd415e",
+        "user": {
+            "login": "csytsma",
+            "id": 128836,
+            "node_id": "MDQ6VXNlcjEyODgzNg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/128836?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/csytsma",
+            "html_url": "https://github.com/csytsma",
+            "followers_url": "https://api.github.com/users/csytsma/followers",
+            "following_url": "https://api.github.com/users/csytsma/following{/other_user}",
+            "gists_url": "https://api.github.com/users/csytsma/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/csytsma/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/csytsma/subscriptions",
+            "organizations_url": "https://api.github.com/users/csytsma/orgs",
+            "repos_url": "https://api.github.com/users/csytsma/repos",
+            "events_url": "https://api.github.com/users/csytsma/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/csytsma/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "```suggestion\r\nTileMill has not been tested on Windows. It should run fine, but you will need to install it from source, do an npm start to start the TileMill server, and then go to localhost:20009 to start the client.\r\n```",
+        "created_at": "2019-02-18T21:24:56Z",
+        "updated_at": "2019-02-19T04:37:51Z",
+        "html_url": "https://github.com/tilemill-project/tilemill/pull/2669#discussion_r257830441",
+        "pull_request_url": "https://api.github.com/repos/tilemill-project/tilemill/pulls/2669",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tilemill-project/tilemill/pulls/comments/257830441"
+            },
+            "html": {
+                "href": "https://github.com/tilemill-project/tilemill/pull/2669#discussion_r257830441"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tilemill-project/tilemill/pulls/2669"
+            }
+        }
+    }
+]

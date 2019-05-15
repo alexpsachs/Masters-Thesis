@@ -1,0 +1,1869 @@
+[
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/15527315",
+        "pull_request_review_id": null,
+        "id": 15527315,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NTI3MzE1",
+        "diff_hunk": "@@ -0,0 +1,4 @@\n+{\n+  \"a\": true,\n+  \"a\": false\n+}",
+        "path": "test/parse-cases/objects/duplicate-keys.json",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "26bcea4219deeed3180d06a2a7b85d4c2e2120b7",
+        "original_commit_id": "201fad0e825e72823df67859379fb9cc75d5b346",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Minor: 4-spaces here too.\n",
+        "created_at": "2014-07-29T14:48:28Z",
+        "updated_at": "2014-07-29T16:10:01Z",
+        "html_url": "https://github.com/json5/json5/pull/59#discussion_r15527315",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/59",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/15527315"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/59#discussion_r15527315"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/59"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/15527092",
+        "pull_request_review_id": null,
+        "id": 15527092,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NTI3MDky",
+        "diff_hunk": "@@ -0,0 +1,5 @@\n+{\n+ \f   // An invalid form feed character (\\x0c) has been entered before this comment.\n+    // Be careful not to delete it.\n+  \"a\": true",
+        "path": "test/parse-cases/misc/invalid-whitespace.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "c1469a754130911614b06764c906be037a7dffca",
+        "original_commit_id": "488bded980b8b4d32c41ea98e1a6824eec0bac93",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Minor: let's standardize on 4-spaces. I know some of the test files use 2, sorry about that. =)\n",
+        "created_at": "2014-07-29T14:45:00Z",
+        "updated_at": "2014-07-29T22:51:30Z",
+        "html_url": "https://github.com/json5/json5/pull/60#discussion_r15527092",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/60",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/15527092"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/60#discussion_r15527092"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/60"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/15525837",
+        "pull_request_review_id": null,
+        "id": 15525837,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NTI1ODM3",
+        "diff_hunk": "@@ -211,6 +219,10 @@ JSON5.parse = (function () {\n                                 uffff = uffff * 16 + hex;\n                             }\n                             string += String.fromCharCode(uffff);\n+                        } else if (ch === '\\r') {\n+                            if (peek() === '\\n') {\n+                              next();\n+                            }",
+        "path": "lib/json5.js",
+        "position": null,
+        "original_position": 22,
+        "commit_id": "5850d6e9631eec06999f86000d78072f9f2232ef",
+        "original_commit_id": "11aa00e99d4e7f0eeecc2c870161b98fa94e94bb",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "A few questions about this:\n1. Why do you need to see whether a `\\n` is the next character? Is `\\r` by itself not enough to ignore?\n2. Why is this within the `if (ch === '\\\\')` block? Isn't this looking at carriage returns only after an escaped backslash? Why not put this further down, next to the regular `ch === '\\n'` check?\n",
+        "created_at": "2014-07-29T14:28:15Z",
+        "updated_at": "2014-07-30T02:41:24Z",
+        "html_url": "https://github.com/json5/json5/pull/58#discussion_r15525837",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/58",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/15525837"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/58#discussion_r15525837"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/58"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/15526588",
+        "pull_request_review_id": null,
+        "id": 15526588,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NTI2NTg4",
+        "diff_hunk": "@@ -211,6 +219,10 @@ JSON5.parse = (function () {\n                                 uffff = uffff * 16 + hex;\n                             }\n                             string += String.fromCharCode(uffff);\n+                        } else if (ch === '\\r') {\n+                            if (peek() === '\\n') {\n+                              next();\n+                            }",
+        "path": "lib/json5.js",
+        "position": null,
+        "original_position": 22,
+        "commit_id": "5850d6e9631eec06999f86000d78072f9f2232ef",
+        "original_commit_id": "11aa00e99d4e7f0eeecc2c870161b98fa94e94bb",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ah, ignore the second question; I understand. I forgot that our multi-line strings require a backslash escape, so this needs to come after that. =)\n\nStill curious about the first q.\n",
+        "created_at": "2014-07-29T14:38:08Z",
+        "updated_at": "2014-07-30T02:41:24Z",
+        "html_url": "https://github.com/json5/json5/pull/58#discussion_r15526588",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/58",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/15526588"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/58#discussion_r15526588"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/58"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/15526655",
+        "pull_request_review_id": null,
+        "id": 15526655,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NTI2NjU1",
+        "diff_hunk": "@@ -211,6 +219,10 @@ JSON5.parse = (function () {\n                                 uffff = uffff * 16 + hex;\n                             }\n                             string += String.fromCharCode(uffff);\n+                        } else if (ch === '\\r') {\n+                            if (peek() === '\\n') {\n+                              next();\n+                            }",
+        "path": "lib/json5.js",
+        "position": null,
+        "original_position": 22,
+        "commit_id": "5850d6e9631eec06999f86000d78072f9f2232ef",
+        "original_commit_id": "11aa00e99d4e7f0eeecc2c870161b98fa94e94bb",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "And btw, if `\\r` by itself should be accepted too, then you might not need this block of code at all (nor `peek` of course). See the `escapee` dictionary up top (if you haven't already) where `\\n` is handled.\n",
+        "created_at": "2014-07-29T14:39:04Z",
+        "updated_at": "2014-07-30T02:41:24Z",
+        "html_url": "https://github.com/json5/json5/pull/58#discussion_r15526655",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/58",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/15526655"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/58#discussion_r15526655"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/58"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/15562494",
+        "pull_request_review_id": null,
+        "id": 15562494,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NTYyNDk0",
+        "diff_hunk": "@@ -0,0 +1,4 @@\n+# Since we're testing different representations of new lines,\n+# treat all tests in this folder as binary files.\n+\n+* binary",
+        "path": "test/parse-cases/new-lines/.gitattributes",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "5850d6e9631eec06999f86000d78072f9f2232ef",
+        "original_commit_id": "9c9c4b124053695d7d5219c5d1f875bb80a48648",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Nice, both this and the editorconfig.\n",
+        "created_at": "2014-07-30T01:08:17Z",
+        "updated_at": "2014-07-30T02:41:24Z",
+        "html_url": "https://github.com/json5/json5/pull/58#discussion_r15562494",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/58",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/15562494"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/58#discussion_r15562494"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/58"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/16492777",
+        "pull_request_review_id": null,
+        "id": 16492777,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2NDkyNzc3",
+        "diff_hunk": "@@ -23,13 +23,14 @@ JSON5.parse = (function () {\n             \"'\":  \"'\",\n             '\"':  '\"',\n             '\\\\': '\\\\',\n-            '/':  '/',",
+        "path": "lib/json5.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "c33ad4a1202a5346eceea4b76954bba12f9ff6a6",
+        "original_commit_id": "c33ad4a1202a5346eceea4b76954bba12f9ff6a6",
+        "user": {
+            "login": "jordanbtucker",
+            "id": 468153,
+            "node_id": "MDQ6VXNlcjQ2ODE1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/468153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jordanbtucker",
+            "html_url": "https://github.com/jordanbtucker",
+            "followers_url": "https://api.github.com/users/jordanbtucker/followers",
+            "following_url": "https://api.github.com/users/jordanbtucker/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jordanbtucker/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jordanbtucker/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jordanbtucker/subscriptions",
+            "organizations_url": "https://api.github.com/users/jordanbtucker/orgs",
+            "repos_url": "https://api.github.com/users/jordanbtucker/repos",
+            "events_url": "https://api.github.com/users/jordanbtucker/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jordanbtucker/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm not sure why Crockford included this superfluous escape.\n",
+        "created_at": "2014-08-20T17:59:55Z",
+        "updated_at": "2014-08-20T17:59:55Z",
+        "html_url": "https://github.com/json5/json5/pull/75#discussion_r16492777",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/75",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/16492777"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/75#discussion_r16492777"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/75"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/16494167",
+        "pull_request_review_id": null,
+        "id": 16494167,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2NDk0MTY3",
+        "diff_hunk": "@@ -23,13 +23,14 @@ JSON5.parse = (function () {\n             \"'\":  \"'\",\n             '\"':  '\"',\n             '\\\\': '\\\\',\n-            '/':  '/',",
+        "path": "lib/json5.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "c33ad4a1202a5346eceea4b76954bba12f9ff6a6",
+        "original_commit_id": "c33ad4a1202a5346eceea4b76954bba12f9ff6a6",
+        "user": {
+            "login": "rlidwka",
+            "id": 999113,
+            "node_id": "MDQ6VXNlcjk5OTExMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/999113?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rlidwka",
+            "html_url": "https://github.com/rlidwka",
+            "followers_url": "https://api.github.com/users/rlidwka/followers",
+            "following_url": "https://api.github.com/users/rlidwka/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rlidwka/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rlidwka/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rlidwka/subscriptions",
+            "organizations_url": "https://api.github.com/users/rlidwka/orgs",
+            "repos_url": "https://api.github.com/users/rlidwka/repos",
+            "events_url": "https://api.github.com/users/rlidwka/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rlidwka/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "it's for `</script>`\n",
+        "created_at": "2014-08-20T18:18:59Z",
+        "updated_at": "2014-08-20T18:18:59Z",
+        "html_url": "https://github.com/json5/json5/pull/75#discussion_r16494167",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/75",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/16494167"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/75#discussion_r16494167"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/75"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/16494545",
+        "pull_request_review_id": null,
+        "id": 16494545,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2NDk0NTQ1",
+        "diff_hunk": "@@ -23,13 +23,14 @@ JSON5.parse = (function () {\n             \"'\":  \"'\",\n             '\"':  '\"',\n             '\\\\': '\\\\',\n-            '/':  '/',",
+        "path": "lib/json5.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "c33ad4a1202a5346eceea4b76954bba12f9ff6a6",
+        "original_commit_id": "c33ad4a1202a5346eceea4b76954bba12f9ff6a6",
+        "user": {
+            "login": "jordanbtucker",
+            "id": 468153,
+            "node_id": "MDQ6VXNlcjQ2ODE1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/468153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jordanbtucker",
+            "html_url": "https://github.com/jordanbtucker",
+            "followers_url": "https://api.github.com/users/jordanbtucker/followers",
+            "following_url": "https://api.github.com/users/jordanbtucker/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jordanbtucker/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jordanbtucker/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jordanbtucker/subscriptions",
+            "organizations_url": "https://api.github.com/users/jordanbtucker/orgs",
+            "repos_url": "https://api.github.com/users/jordanbtucker/repos",
+            "events_url": "https://api.github.com/users/jordanbtucker/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jordanbtucker/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ah, makes sense. Thanks.\n",
+        "created_at": "2014-08-20T18:24:03Z",
+        "updated_at": "2014-08-20T18:24:03Z",
+        "html_url": "https://github.com/json5/json5/pull/75#discussion_r16494545",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/75",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/16494545"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/75#discussion_r16494545"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/75"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/19842619",
+        "pull_request_review_id": null,
+        "id": 19842619,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5ODQyNjE5",
+        "diff_hunk": "@@ -7,6 +7,7 @@\n     description: 'JSON for the ES5 era.',\n     keywords: ['json', 'es5'],\n     author: 'Aseem Kishore <aseem.kishore@gmail.com>',\n+\tlicense: 'MIT',",
+        "path": "package.json5",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "e716f303a82d67f4c84fab91eb89301c683d8c94",
+        "original_commit_id": "e716f303a82d67f4c84fab91eb89301c683d8c94",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Looks like you just need to update this tab to (four) spaces, and then happy to merge!\n",
+        "created_at": "2014-11-04T22:44:17Z",
+        "updated_at": "2014-11-04T22:44:17Z",
+        "html_url": "https://github.com/json5/json5/pull/79#discussion_r19842619",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/79",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/19842619"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/79#discussion_r19842619"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/79"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/19842899",
+        "pull_request_review_id": null,
+        "id": 19842899,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5ODQyODk5",
+        "diff_hunk": "@@ -7,6 +7,7 @@\n     description: 'JSON for the ES5 era.',\n     keywords: ['json', 'es5'],\n     author: 'Aseem Kishore <aseem.kishore@gmail.com>',\n+\tlicense: 'MIT',",
+        "path": "package.json5",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "e716f303a82d67f4c84fab91eb89301c683d8c94",
+        "original_commit_id": "e716f303a82d67f4c84fab91eb89301c683d8c94",
+        "user": {
+            "login": "michaelsanford",
+            "id": 1800499,
+            "node_id": "MDQ6VXNlcjE4MDA0OTk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1800499?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/michaelsanford",
+            "html_url": "https://github.com/michaelsanford",
+            "followers_url": "https://api.github.com/users/michaelsanford/followers",
+            "following_url": "https://api.github.com/users/michaelsanford/following{/other_user}",
+            "gists_url": "https://api.github.com/users/michaelsanford/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/michaelsanford/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/michaelsanford/subscriptions",
+            "organizations_url": "https://api.github.com/users/michaelsanford/orgs",
+            "repos_url": "https://api.github.com/users/michaelsanford/repos",
+            "events_url": "https://api.github.com/users/michaelsanford/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/michaelsanford/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ah, `vi` was heartless...didn't notice.\n",
+        "created_at": "2014-11-04T22:47:18Z",
+        "updated_at": "2014-11-04T22:47:18Z",
+        "html_url": "https://github.com/json5/json5/pull/79#discussion_r19842899",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/79",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/19842899"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/79#discussion_r19842899"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/79"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/23123625",
+        "pull_request_review_id": null,
+        "id": 23123625,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzMTIzNjI1",
+        "diff_hunk": "@@ -178,8 +177,8 @@ like the native ES5 `JSON` object.\n \n To use from Node:\n \n-```\n-npm install json5\n+```sh\n+$ npm install json5",
+        "path": "README.md",
+        "position": 77,
+        "original_position": 77,
+        "commit_id": "9a51eff0a48ae4a4bbc84ed710776ccb30fc1c02",
+        "original_commit_id": "9a51eff0a48ae4a4bbc84ed710776ccb30fc1c02",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The lack of `$` in these bash snippets was actually intentional: it lets you copy-paste directly.\n\n(There have been some fun blog posts written on this topic, and I just spent an unreasonable amount of time trying to find one, but couldn't. Hard to search for them...)\n\nSo would you mind reverting the additions of `$` in these snippets? Thanks!\n",
+        "created_at": "2015-01-17T07:42:31Z",
+        "updated_at": "2015-01-17T07:42:31Z",
+        "html_url": "https://github.com/json5/json5/pull/83#discussion_r23123625",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/83",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/23123625"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/83#discussion_r23123625"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/83"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/23123627",
+        "pull_request_review_id": null,
+        "id": 23123627,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzMTIzNjI3",
+        "diff_hunk": "@@ -251,7 +250,7 @@ tests, and ensure that `npm test` continues to pass.\n \n ## License\n \n-MIT License. \u00a9 2012 Aseem Kishore, and [others](\n+MIT License \u00a9 2012-2014 Aseem Kishore, and [others](",
+        "path": "README.md",
+        "position": 137,
+        "original_position": 137,
+        "commit_id": "9a51eff0a48ae4a4bbc84ed710776ccb30fc1c02",
+        "original_commit_id": "9a51eff0a48ae4a4bbc84ed710776ccb30fc1c02",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Man, this is my fault since I missed your PR, but heck, may as well make this 2015 now. =D\n",
+        "created_at": "2015-01-17T07:43:00Z",
+        "updated_at": "2015-01-17T07:43:00Z",
+        "html_url": "https://github.com/json5/json5/pull/83#discussion_r23123627",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/83",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/23123627"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/83#discussion_r23123627"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/83"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/24338616",
+        "pull_request_review_id": null,
+        "id": 24338616,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MzM4NjE2",
+        "diff_hunk": "@@ -12,13 +12,15 @@ var Path = require('path');\n \n var USAGE = [\n     'Usage: json5 -c path/to/file.json5 ...',\n-    'Compiles JSON5 files into sibling JSON files with the same basenames.',\n+    '    Compiles JSON5 files into sibling JSON files with the same basenames.',\n+    'or:  json5 --validate path/to/file.json5 ...',\n+    '    Validates JSON5 files'\n ].join('\\n');\n \n-// if valid, args look like [node, json5, -c, file1, file2, ...]\n+// if valid, args look like [node, json5, -c || -t, file1, file2, ...]\n var args = process.argv;\n \n-if (args.length < 4 || args[2] !== '-c') {\n+if (args[2] === '-c' || args[2] === '--validate' && args.length < 4) {",
+        "path": "lib/cli.js",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "0b7186c23aaeaf9e9f8dd3cc11529b03097b7e1c",
+        "original_commit_id": "0b7186c23aaeaf9e9f8dd3cc11529b03097b7e1c",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Instead of referencing `args[2]` in multiple spots, let's add a variable to save it, e.g. `cmd` after `args`.\n",
+        "created_at": "2015-02-09T16:02:59Z",
+        "updated_at": "2015-02-09T16:02:59Z",
+        "html_url": "https://github.com/json5/json5/pull/84#discussion_r24338616",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/84",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/24338616"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/84#discussion_r24338616"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/84"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/24338668",
+        "pull_request_review_id": null,
+        "id": 24338668,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MzM4NjY4",
+        "diff_hunk": "@@ -12,13 +12,15 @@ var Path = require('path');\n \n var USAGE = [\n     'Usage: json5 -c path/to/file.json5 ...',\n-    'Compiles JSON5 files into sibling JSON files with the same basenames.',\n+    '    Compiles JSON5 files into sibling JSON files with the same basenames.',\n+    'or:  json5 --validate path/to/file.json5 ...',\n+    '    Validates JSON5 files'\n ].join('\\n');\n \n-// if valid, args look like [node, json5, -c, file1, file2, ...]\n+// if valid, args look like [node, json5, -c || -t, file1, file2, ...]\n var args = process.argv;\n \n-if (args.length < 4 || args[2] !== '-c') {\n+if (args[2] === '-c' || args[2] === '--validate' && args.length < 4) {",
+        "path": "lib/cli.js",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "0b7186c23aaeaf9e9f8dd3cc11529b03097b7e1c",
+        "original_commit_id": "0b7186c23aaeaf9e9f8dd3cc11529b03097b7e1c",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Also, is this boolean logic right? I thought `&&` takes precedence over `||`, so you might need to wrap the `-c || --validate` check in parentheses.\n",
+        "created_at": "2015-02-09T16:03:36Z",
+        "updated_at": "2015-02-09T16:03:36Z",
+        "html_url": "https://github.com/json5/json5/pull/84#discussion_r24338668",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/84",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/24338668"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/84#discussion_r24338668"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/84"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/24338734",
+        "pull_request_review_id": null,
+        "id": 24338734,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MzM4NzM0",
+        "diff_hunk": "@@ -34,8 +36,13 @@ files.forEach(function (file) {\n \n     var json5 = FS.readFileSync(path, 'utf8');\n     var obj = JSON5.parse(json5);\n-    var json = JSON.stringify(obj, null, 4); // 4 spaces; TODO configurable?\n-\n-    path = Path.join(dirname, basename + '.json');\n-    FS.writeFileSync(path, json, 'utf8');\n+    // if we are here for validation, we'll just output things are OK.\n+    if(args[2] === '--validate') {\n+      console.log('\\t\\x1b[32;1m' + file + ' is valid.\\x1b[0m');\n+    } else {\n+      var json = JSON.stringify(obj, null, 4); // 4 spaces; TODO configurable?\n+\n+      path = Path.join(dirname, basename + '.json');\n+      FS.writeFileSync(path, json, 'utf8');\n+    }",
+        "path": "lib/cli.js",
+        "position": 35,
+        "original_position": 35,
+        "commit_id": "0b7186c23aaeaf9e9f8dd3cc11529b03097b7e1c",
+        "original_commit_id": "0b7186c23aaeaf9e9f8dd3cc11529b03097b7e1c",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Code style: this file uses 4-space indentation.\n",
+        "created_at": "2015-02-09T16:04:25Z",
+        "updated_at": "2015-02-09T16:04:25Z",
+        "html_url": "https://github.com/json5/json5/pull/84#discussion_r24338734",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/84",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/24338734"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/84#discussion_r24338734"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/84"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/24338964",
+        "pull_request_review_id": null,
+        "id": 24338964,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MzM4OTY0",
+        "diff_hunk": "@@ -34,8 +36,13 @@ files.forEach(function (file) {\n \n     var json5 = FS.readFileSync(path, 'utf8');\n     var obj = JSON5.parse(json5);\n-    var json = JSON.stringify(obj, null, 4); // 4 spaces; TODO configurable?\n-\n-    path = Path.join(dirname, basename + '.json');\n-    FS.writeFileSync(path, json, 'utf8');\n+    // if we are here for validation, we'll just output things are OK.\n+    if(args[2] === '--validate') {\n+      console.log('\\t\\x1b[32;1m' + file + ' is valid.\\x1b[0m');",
+        "path": "lib/cli.js",
+        "position": 29,
+        "original_position": 29,
+        "commit_id": "0b7186c23aaeaf9e9f8dd3cc11529b03097b7e1c",
+        "original_commit_id": "0b7186c23aaeaf9e9f8dd3cc11529b03097b7e1c",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What does the output look like for an invalid file? I assume `JSON5.parse` will throw an error, so you'll just get the stack trace. But that doesn't seem any different from what you reported in https://github.com/aseemk/json5/issues/72#issuecomment-59616865?\n\nThe fix, I _think_, would be to wrap the whole `FS.readFileSync` + `JSON5.parse` in a try/catch, and in the catch, log \"<file> is invalid\" along w/ the error `stack` trace. (But important: re-throw the error if compiling.)\n",
+        "created_at": "2015-02-09T16:06:37Z",
+        "updated_at": "2015-02-09T16:06:37Z",
+        "html_url": "https://github.com/json5/json5/pull/84#discussion_r24338964",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/84",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/24338964"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/84#discussion_r24338964"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/84"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/24339005",
+        "pull_request_review_id": null,
+        "id": 24339005,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MzM5MDA1",
+        "diff_hunk": "@@ -34,8 +36,13 @@ files.forEach(function (file) {\n \n     var json5 = FS.readFileSync(path, 'utf8');\n     var obj = JSON5.parse(json5);\n-    var json = JSON.stringify(obj, null, 4); // 4 spaces; TODO configurable?\n-\n-    path = Path.join(dirname, basename + '.json');\n-    FS.writeFileSync(path, json, 'utf8');\n+    // if we are here for validation, we'll just output things are OK.\n+    if(args[2] === '--validate') {\n+      console.log('\\t\\x1b[32;1m' + file + ' is valid.\\x1b[0m');",
+        "path": "lib/cli.js",
+        "position": 29,
+        "original_position": 29,
+        "commit_id": "0b7186c23aaeaf9e9f8dd3cc11529b03097b7e1c",
+        "original_commit_id": "0b7186c23aaeaf9e9f8dd3cc11529b03097b7e1c",
+        "user": {
+            "login": "aseemk",
+            "id": 537838,
+            "node_id": "MDQ6VXNlcjUzNzgzOA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/537838?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aseemk",
+            "html_url": "https://github.com/aseemk",
+            "followers_url": "https://api.github.com/users/aseemk/followers",
+            "following_url": "https://api.github.com/users/aseemk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aseemk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aseemk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aseemk/subscriptions",
+            "organizations_url": "https://api.github.com/users/aseemk/orgs",
+            "repos_url": "https://api.github.com/users/aseemk/repos",
+            "events_url": "https://api.github.com/users/aseemk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aseemk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Also minor code style: `if (` instead of `if(`.\n",
+        "created_at": "2015-02-09T16:06:58Z",
+        "updated_at": "2015-02-09T16:06:58Z",
+        "html_url": "https://github.com/json5/json5/pull/84#discussion_r24339005",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/84",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/24339005"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/84#discussion_r24339005"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/84"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/41613996",
+        "pull_request_review_id": null,
+        "id": 41613996,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxNjEzOTk2",
+        "diff_hunk": "@@ -178,8 +177,8 @@ like the native ES5 `JSON` object.\n \n To use from Node:\n \n-```\n-npm install json5\n+```sh\n+$ npm install json5",
+        "path": "README.md",
+        "position": 77,
+        "original_position": 77,
+        "commit_id": "9a51eff0a48ae4a4bbc84ed710776ccb30fc1c02",
+        "original_commit_id": "9a51eff0a48ae4a4bbc84ed710776ccb30fc1c02",
+        "user": {
+            "login": "gasi",
+            "id": 49583,
+            "node_id": "MDQ6VXNlcjQ5NTgz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/49583?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/gasi",
+            "html_url": "https://github.com/gasi",
+            "followers_url": "https://api.github.com/users/gasi/followers",
+            "following_url": "https://api.github.com/users/gasi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/gasi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/gasi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/gasi/subscriptions",
+            "organizations_url": "https://api.github.com/users/gasi/orgs",
+            "repos_url": "https://api.github.com/users/gasi/repos",
+            "events_url": "https://api.github.com/users/gasi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/gasi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@jordanbtucker What about this comment? :eyes: \n",
+        "created_at": "2015-10-09T09:47:45Z",
+        "updated_at": "2015-10-09T09:47:45Z",
+        "html_url": "https://github.com/json5/json5/pull/83#discussion_r41613996",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/83",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/41613996"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/83#discussion_r41613996"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/83"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/41643370",
+        "pull_request_review_id": null,
+        "id": 41643370,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxNjQzMzcw",
+        "diff_hunk": "@@ -178,8 +177,8 @@ like the native ES5 `JSON` object.\n \n To use from Node:\n \n-```\n-npm install json5\n+```sh\n+$ npm install json5",
+        "path": "README.md",
+        "position": 77,
+        "original_position": 77,
+        "commit_id": "9a51eff0a48ae4a4bbc84ed710776ccb30fc1c02",
+        "original_commit_id": "9a51eff0a48ae4a4bbc84ed710776ccb30fc1c02",
+        "user": {
+            "login": "jordanbtucker",
+            "id": 468153,
+            "node_id": "MDQ6VXNlcjQ2ODE1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/468153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jordanbtucker",
+            "html_url": "https://github.com/jordanbtucker",
+            "followers_url": "https://api.github.com/users/jordanbtucker/followers",
+            "following_url": "https://api.github.com/users/jordanbtucker/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jordanbtucker/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jordanbtucker/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jordanbtucker/subscriptions",
+            "organizations_url": "https://api.github.com/users/jordanbtucker/orgs",
+            "repos_url": "https://api.github.com/users/jordanbtucker/repos",
+            "events_url": "https://api.github.com/users/jordanbtucker/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jordanbtucker/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@gasi I fixed them in post rather than wait for the submitter to fix. See cb2613e52523421a74e343c455ae463794761d1a.\n",
+        "created_at": "2015-10-09T15:31:12Z",
+        "updated_at": "2015-10-09T15:31:12Z",
+        "html_url": "https://github.com/json5/json5/pull/83#discussion_r41643370",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/83",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/41643370"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/83#discussion_r41643370"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/83"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/41683843",
+        "pull_request_review_id": null,
+        "id": 41683843,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxNjgzODQz",
+        "diff_hunk": "@@ -178,8 +177,8 @@ like the native ES5 `JSON` object.\n \n To use from Node:\n \n-```\n-npm install json5\n+```sh\n+$ npm install json5",
+        "path": "README.md",
+        "position": 77,
+        "original_position": 77,
+        "commit_id": "9a51eff0a48ae4a4bbc84ed710776ccb30fc1c02",
+        "original_commit_id": "9a51eff0a48ae4a4bbc84ed710776ccb30fc1c02",
+        "user": {
+            "login": "gasi",
+            "id": 49583,
+            "node_id": "MDQ6VXNlcjQ5NTgz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/49583?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/gasi",
+            "html_url": "https://github.com/gasi",
+            "followers_url": "https://api.github.com/users/gasi/followers",
+            "following_url": "https://api.github.com/users/gasi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/gasi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/gasi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/gasi/subscriptions",
+            "organizations_url": "https://api.github.com/users/gasi/orgs",
+            "repos_url": "https://api.github.com/users/gasi/repos",
+            "events_url": "https://api.github.com/users/gasi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/gasi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": ":+1: \n",
+        "created_at": "2015-10-09T22:17:36Z",
+        "updated_at": "2015-10-09T22:17:36Z",
+        "html_url": "https://github.com/json5/json5/pull/83#discussion_r41683843",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/83",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/41683843"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/83#discussion_r41683843"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/83"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/47426379",
+        "pull_request_review_id": null,
+        "id": 47426379,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3NDI2Mzc5",
+        "diff_hunk": "@@ -59,14 +71,20 @@ JSON5.parse = (function () {\n // If a c parameter is provided, verify that it matches the current character.\n \n             if (c && c !== ch) {\n-                error(\"Expected '\" + c + \"' instead of '\" + ch + \"'\");\n+                error(\"Expected \" + renderChar(c) + \" instead of \" + renderChar(ch));\n             }\n \n // Get the next character. When there are no more characters,\n // return the empty string.\n \n             ch = text.charAt(at);\n-            at += 1;\n+            at++;\n+            columnNumber++;\n+            var ch2 = text.charAt(at);\n+            if (ch === '\\n' || ch === '\\u2028' || ch === '\\u2029' || ch === '\\r' && ch2 !== '\\n') {",
+        "path": "lib/json5.js",
+        "position": null,
+        "original_position": 61,
+        "commit_id": "01b0df7202ab41b351da2281b1a94e7d98d8f085",
+        "original_commit_id": "f90fc76b4816324d1cd8bb7991032bb396e350cc",
+        "user": {
+            "login": "jordanbtucker",
+            "id": 468153,
+            "node_id": "MDQ6VXNlcjQ2ODE1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/468153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jordanbtucker",
+            "html_url": "https://github.com/jordanbtucker",
+            "followers_url": "https://api.github.com/users/jordanbtucker/followers",
+            "following_url": "https://api.github.com/users/jordanbtucker/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jordanbtucker/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jordanbtucker/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jordanbtucker/subscriptions",
+            "organizations_url": "https://api.github.com/users/jordanbtucker/orgs",
+            "repos_url": "https://api.github.com/users/jordanbtucker/repos",
+            "events_url": "https://api.github.com/users/jordanbtucker/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jordanbtucker/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let's use `peek()` here instead of `ch2`. No need to introduce a one-time variable.\n",
+        "created_at": "2015-12-12T03:38:25Z",
+        "updated_at": "2015-12-12T16:02:31Z",
+        "html_url": "https://github.com/json5/json5/pull/101#discussion_r47426379",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/101",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/47426379"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/101#discussion_r47426379"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/101"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/47426938",
+        "pull_request_review_id": null,
+        "id": 47426938,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3NDI2OTM4",
+        "diff_hunk": "@@ -59,14 +71,20 @@ JSON5.parse = (function () {\n // If a c parameter is provided, verify that it matches the current character.\n \n             if (c && c !== ch) {\n-                error(\"Expected '\" + c + \"' instead of '\" + ch + \"'\");\n+                error(\"Expected \" + renderChar(c) + \" instead of \" + renderChar(ch));\n             }\n \n // Get the next character. When there are no more characters,\n // return the empty string.\n \n             ch = text.charAt(at);\n-            at += 1;\n+            at++;\n+            columnNumber++;\n+            var ch2 = text.charAt(at);\n+            if (ch === '\\n' || ch === '\\u2028' || ch === '\\u2029' || ch === '\\r' && ch2 !== '\\n') {",
+        "path": "lib/json5.js",
+        "position": null,
+        "original_position": 61,
+        "commit_id": "01b0df7202ab41b351da2281b1a94e7d98d8f085",
+        "original_commit_id": "f90fc76b4816324d1cd8bb7991032bb396e350cc",
+        "user": {
+            "login": "jordanbtucker",
+            "id": 468153,
+            "node_id": "MDQ6VXNlcjQ2ODE1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/468153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jordanbtucker",
+            "html_url": "https://github.com/jordanbtucker",
+            "followers_url": "https://api.github.com/users/jordanbtucker/followers",
+            "following_url": "https://api.github.com/users/jordanbtucker/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jordanbtucker/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jordanbtucker/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jordanbtucker/subscriptions",
+            "organizations_url": "https://api.github.com/users/jordanbtucker/orgs",
+            "repos_url": "https://api.github.com/users/jordanbtucker/repos",
+            "events_url": "https://api.github.com/users/jordanbtucker/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jordanbtucker/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Also, `\\r` by itself is a valid new line.\n",
+        "created_at": "2015-12-12T04:29:04Z",
+        "updated_at": "2015-12-12T16:02:31Z",
+        "html_url": "https://github.com/json5/json5/pull/101#discussion_r47426938",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/101",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/47426938"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/101#discussion_r47426938"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/101"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/47433226",
+        "pull_request_review_id": null,
+        "id": 47433226,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3NDMzMjI2",
+        "diff_hunk": "@@ -59,14 +71,20 @@ JSON5.parse = (function () {\n // If a c parameter is provided, verify that it matches the current character.\n \n             if (c && c !== ch) {\n-                error(\"Expected '\" + c + \"' instead of '\" + ch + \"'\");\n+                error(\"Expected \" + renderChar(c) + \" instead of \" + renderChar(ch));\n             }\n \n // Get the next character. When there are no more characters,\n // return the empty string.\n \n             ch = text.charAt(at);\n-            at += 1;\n+            at++;\n+            columnNumber++;\n+            var ch2 = text.charAt(at);\n+            if (ch === '\\n' || ch === '\\u2028' || ch === '\\u2029' || ch === '\\r' && ch2 !== '\\n') {",
+        "path": "lib/json5.js",
+        "position": null,
+        "original_position": 61,
+        "commit_id": "01b0df7202ab41b351da2281b1a94e7d98d8f085",
+        "original_commit_id": "f90fc76b4816324d1cd8bb7991032bb396e350cc",
+        "user": {
+            "login": "amb26",
+            "id": 561418,
+            "node_id": "MDQ6VXNlcjU2MTQxOA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/561418?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/amb26",
+            "html_url": "https://github.com/amb26",
+            "followers_url": "https://api.github.com/users/amb26/followers",
+            "following_url": "https://api.github.com/users/amb26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/amb26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/amb26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/amb26/subscriptions",
+            "organizations_url": "https://api.github.com/users/amb26/orgs",
+            "repos_url": "https://api.github.com/users/amb26/repos",
+            "events_url": "https://api.github.com/users/amb26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/amb26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The rule here is simply taken from the ES5 LineTerminatorSequence production - https://es5.github.io/#x7.3 - we do indeed recognise \\r as a valid newline as the test case verified, but we need to ensure not to recognise \\r\\n as two newlines.\n",
+        "created_at": "2015-12-12T16:02:05Z",
+        "updated_at": "2015-12-12T16:02:31Z",
+        "html_url": "https://github.com/json5/json5/pull/101#discussion_r47433226",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/101",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/47433226"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/101#discussion_r47433226"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/101"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/55927224",
+        "pull_request_review_id": null,
+        "id": 55927224,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1OTI3MjI0",
+        "diff_hunk": "@@ -124,9 +125,9 @@ JSON5.parse = (function () {\n             return key;\n         },\n \n-        number = function () {\n+        _number = function () {",
+        "path": "lib/json5.js",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "91e71656e19dbdfda565373ba8b75091df469077",
+        "original_commit_id": "28c21379c6266d39f965e18d64af4fb8acf64fdb",
+        "user": {
+            "login": "jordanbtucker",
+            "id": 468153,
+            "node_id": "MDQ6VXNlcjQ2ODE1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/468153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jordanbtucker",
+            "html_url": "https://github.com/jordanbtucker",
+            "followers_url": "https://api.github.com/users/jordanbtucker/followers",
+            "following_url": "https://api.github.com/users/jordanbtucker/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jordanbtucker/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jordanbtucker/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jordanbtucker/subscriptions",
+            "organizations_url": "https://api.github.com/users/jordanbtucker/orgs",
+            "repos_url": "https://api.github.com/users/jordanbtucker/repos",
+            "events_url": "https://api.github.com/users/jordanbtucker/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jordanbtucker/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'd like to use a better name than `_number` here. Let's come up with a names that describe the difference between `number()` and `_number()`.\n",
+        "created_at": "2016-03-12T20:30:39Z",
+        "updated_at": "2016-03-13T13:48:49Z",
+        "html_url": "https://github.com/json5/json5/pull/111#discussion_r55927224",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/111",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/55927224"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/111#discussion_r55927224"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/111"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/55934931",
+        "pull_request_review_id": null,
+        "id": 55934931,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1OTM0OTMx",
+        "diff_hunk": "@@ -124,9 +125,9 @@ JSON5.parse = (function () {\n             return key;\n         },\n \n-        number = function () {\n+        _number = function () {",
+        "path": "lib/json5.js",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "91e71656e19dbdfda565373ba8b75091df469077",
+        "original_commit_id": "28c21379c6266d39f965e18d64af4fb8acf64fdb",
+        "user": {
+            "login": "XGHeaven",
+            "id": 9291212,
+            "node_id": "MDQ6VXNlcjkyOTEyMTI=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9291212?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/XGHeaven",
+            "html_url": "https://github.com/XGHeaven",
+            "followers_url": "https://api.github.com/users/XGHeaven/followers",
+            "following_url": "https://api.github.com/users/XGHeaven/following{/other_user}",
+            "gists_url": "https://api.github.com/users/XGHeaven/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/XGHeaven/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/XGHeaven/subscriptions",
+            "organizations_url": "https://api.github.com/users/XGHeaven/orgs",
+            "repos_url": "https://api.github.com/users/XGHeaven/repos",
+            "events_url": "https://api.github.com/users/XGHeaven/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/XGHeaven/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "How about `numberLiteral` instead of `_number`?\n",
+        "created_at": "2016-03-13T10:20:15Z",
+        "updated_at": "2016-03-13T13:48:49Z",
+        "html_url": "https://github.com/json5/json5/pull/111#discussion_r55934931",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/111",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/55934931"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/111#discussion_r55934931"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/111"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/80831826",
+        "pull_request_review_id": 1858218,
+        "id": 80831826,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgwODMxODI2",
+        "diff_hunk": "@@ -19,7 +19,12 @@ var Path = require('path');\n // http://mxr.mozilla.org/mozilla-central/source/js/src/tests/ecma_5/JSON/\n \n var dirsPath = Path.resolve(__dirname, 'parse-cases');\n-var dirs = FS.readdirSync(dirsPath);\n+var dirs = FS.readdirSync(dirsPath).filter(function(fn) {\n+  if (fn.startsWith('.')) {",
+        "path": "test/parse.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "d1ff1ca6a2db5056a2ec06ff84594a95a51913b8",
+        "original_commit_id": "d7ec4a950949a3908149854386e1b838cb5cb95d",
+        "user": {
+            "login": "jordanbtucker",
+            "id": 468153,
+            "node_id": "MDQ6VXNlcjQ2ODE1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/468153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jordanbtucker",
+            "html_url": "https://github.com/jordanbtucker",
+            "followers_url": "https://api.github.com/users/jordanbtucker/followers",
+            "following_url": "https://api.github.com/users/jordanbtucker/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jordanbtucker/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jordanbtucker/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jordanbtucker/subscriptions",
+            "organizations_url": "https://api.github.com/users/jordanbtucker/orgs",
+            "repos_url": "https://api.github.com/users/jordanbtucker/repos",
+            "events_url": "https://api.github.com/users/jordanbtucker/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jordanbtucker/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is why Travis CI is failing for Node 0.10 and 0.12. String.prototype.startsWith wasn't added until ES2015.\n",
+        "created_at": "2016-09-28T02:00:59Z",
+        "updated_at": "2016-09-28T16:16:13Z",
+        "html_url": "https://github.com/json5/json5/pull/131#discussion_r80831826",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/131",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/80831826"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/131#discussion_r80831826"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/131"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/80942123",
+        "pull_request_review_id": 1959250,
+        "id": 80942123,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgwOTQyMTIz",
+        "diff_hunk": "@@ -19,7 +19,12 @@ var Path = require('path');\n // http://mxr.mozilla.org/mozilla-central/source/js/src/tests/ecma_5/JSON/\n \n var dirsPath = Path.resolve(__dirname, 'parse-cases');\n-var dirs = FS.readdirSync(dirsPath);\n+var dirs = FS.readdirSync(dirsPath).filter(function(fn) {\n+  if (fn.startsWith('.')) {",
+        "path": "test/parse.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "d1ff1ca6a2db5056a2ec06ff84594a95a51913b8",
+        "original_commit_id": "d7ec4a950949a3908149854386e1b838cb5cb95d",
+        "user": {
+            "login": "ianloic",
+            "id": 604,
+            "node_id": "MDQ6VXNlcjYwNA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/604?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ianloic",
+            "html_url": "https://github.com/ianloic",
+            "followers_url": "https://api.github.com/users/ianloic/followers",
+            "following_url": "https://api.github.com/users/ianloic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ianloic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ianloic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ianloic/subscriptions",
+            "organizations_url": "https://api.github.com/users/ianloic/orgs",
+            "repos_url": "https://api.github.com/users/ianloic/repos",
+            "events_url": "https://api.github.com/users/ianloic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ianloic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You can replace line 23 with:\n\n```\n  if (fn.substr(0, 1) == '.') {\n```\n\nto support older versions of JS. String.substr is close to 20 years old now :)\n",
+        "created_at": "2016-09-28T15:15:43Z",
+        "updated_at": "2016-09-28T16:16:13Z",
+        "html_url": "https://github.com/json5/json5/pull/131#discussion_r80942123",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/131",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/80942123"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/131#discussion_r80942123"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/131"
+            }
+        },
+        "in_reply_to_id": 80831826
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/80943752",
+        "pull_request_review_id": 1960809,
+        "id": 80943752,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgwOTQzNzUy",
+        "diff_hunk": "@@ -19,7 +19,12 @@ var Path = require('path');\n // http://mxr.mozilla.org/mozilla-central/source/js/src/tests/ecma_5/JSON/\n \n var dirsPath = Path.resolve(__dirname, 'parse-cases');\n-var dirs = FS.readdirSync(dirsPath);\n+var dirs = FS.readdirSync(dirsPath).filter(function(fn) {\n+  if (fn.startsWith('.')) {",
+        "path": "test/parse.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "d1ff1ca6a2db5056a2ec06ff84594a95a51913b8",
+        "original_commit_id": "d7ec4a950949a3908149854386e1b838cb5cb95d",
+        "user": {
+            "login": "ianloic",
+            "id": 604,
+            "node_id": "MDQ6VXNlcjYwNA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/604?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ianloic",
+            "html_url": "https://github.com/ianloic",
+            "followers_url": "https://api.github.com/users/ianloic/followers",
+            "following_url": "https://api.github.com/users/ianloic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ianloic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ianloic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ianloic/subscriptions",
+            "organizations_url": "https://api.github.com/users/ianloic/orgs",
+            "repos_url": "https://api.github.com/users/ianloic/repos",
+            "events_url": "https://api.github.com/users/ianloic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ianloic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I made the change in my tree FWIW:\nhttps://github.com/ianloic/json5/commit/65fc0bbe2118a5da192ad7b34238d07227677b39\n",
+        "created_at": "2016-09-28T15:22:24Z",
+        "updated_at": "2016-09-28T16:16:13Z",
+        "html_url": "https://github.com/json5/json5/pull/131#discussion_r80943752",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/131",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/80943752"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/131#discussion_r80943752"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/131"
+            }
+        },
+        "in_reply_to_id": 80831826
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/80947993",
+        "pull_request_review_id": 1964750,
+        "id": 80947993,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgwOTQ3OTkz",
+        "diff_hunk": "@@ -19,7 +19,12 @@ var Path = require('path');\n // http://mxr.mozilla.org/mozilla-central/source/js/src/tests/ecma_5/JSON/\n \n var dirsPath = Path.resolve(__dirname, 'parse-cases');\n-var dirs = FS.readdirSync(dirsPath);\n+var dirs = FS.readdirSync(dirsPath).filter(function(fn) {\n+  if (fn.startsWith('.')) {",
+        "path": "test/parse.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "d1ff1ca6a2db5056a2ec06ff84594a95a51913b8",
+        "original_commit_id": "d7ec4a950949a3908149854386e1b838cb5cb95d",
+        "user": {
+            "login": "jordanbtucker",
+            "id": 468153,
+            "node_id": "MDQ6VXNlcjQ2ODE1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/468153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jordanbtucker",
+            "html_url": "https://github.com/jordanbtucker",
+            "followers_url": "https://api.github.com/users/jordanbtucker/followers",
+            "following_url": "https://api.github.com/users/jordanbtucker/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jordanbtucker/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jordanbtucker/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jordanbtucker/subscriptions",
+            "organizations_url": "https://api.github.com/users/jordanbtucker/orgs",
+            "repos_url": "https://api.github.com/users/jordanbtucker/repos",
+            "events_url": "https://api.github.com/users/jordanbtucker/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jordanbtucker/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@ianloic Thanks for the fix. Making changes to your tree is perfect since I can merge those in and you still get credit for the commits.\n",
+        "created_at": "2016-09-28T15:39:19Z",
+        "updated_at": "2016-09-28T16:16:13Z",
+        "html_url": "https://github.com/json5/json5/pull/131#discussion_r80947993",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/131",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/80947993"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/131#discussion_r80947993"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/131"
+            }
+        },
+        "in_reply_to_id": 80831826
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/80952220",
+        "pull_request_review_id": 1968819,
+        "id": 80952220,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgwOTUyMjIw",
+        "diff_hunk": "@@ -19,7 +19,12 @@ var Path = require('path');\n // http://mxr.mozilla.org/mozilla-central/source/js/src/tests/ecma_5/JSON/\n \n var dirsPath = Path.resolve(__dirname, 'parse-cases');\n-var dirs = FS.readdirSync(dirsPath);\n+var dirs = FS.readdirSync(dirsPath).filter(function(fn) {\n+  if (fn.startsWith('.')) {",
+        "path": "test/parse.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "d1ff1ca6a2db5056a2ec06ff84594a95a51913b8",
+        "original_commit_id": "d7ec4a950949a3908149854386e1b838cb5cb95d",
+        "user": {
+            "login": "ianloic",
+            "id": 604,
+            "node_id": "MDQ6VXNlcjYwNA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/604?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ianloic",
+            "html_url": "https://github.com/ianloic",
+            "followers_url": "https://api.github.com/users/ianloic/followers",
+            "following_url": "https://api.github.com/users/ianloic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ianloic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ianloic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ianloic/subscriptions",
+            "organizations_url": "https://api.github.com/users/ianloic/orgs",
+            "repos_url": "https://api.github.com/users/ianloic/repos",
+            "events_url": "https://api.github.com/users/ianloic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ianloic/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@jordanbtucker I don't need credit - especially for these little things. I've just been moving around the code y'all have already written.\n",
+        "created_at": "2016-09-28T15:55:57Z",
+        "updated_at": "2016-09-28T16:16:13Z",
+        "html_url": "https://github.com/json5/json5/pull/131#discussion_r80952220",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/131",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/80952220"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/131#discussion_r80952220"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/131"
+            }
+        },
+        "in_reply_to_id": 80831826
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/95224809",
+        "pull_request_review_id": 15772937,
+        "id": 95224809,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk1MjI0ODA5",
+        "diff_hunk": "@@ -393,6 +450,36 @@ JSON5.parse = (function () {\n             error(\"Unexpected \" + renderChar(ch));\n         },\n \n+        isOperator = function(ch) {\n+            return operator.indexOf(ch) >= 0;\n+        },\n+\n+        // return op1 > op2\n+        operatorPrivilege = function(op1, op2) {",
+        "path": "lib/json5.js",
+        "position": 99,
+        "original_position": 99,
+        "commit_id": "91e71656e19dbdfda565373ba8b75091df469077",
+        "original_commit_id": "91e71656e19dbdfda565373ba8b75091df469077",
+        "user": {
+            "login": "amb26",
+            "id": 561418,
+            "node_id": "MDQ6VXNlcjU2MTQxOA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/561418?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/amb26",
+            "html_url": "https://github.com/amb26",
+            "followers_url": "https://api.github.com/users/amb26/followers",
+            "following_url": "https://api.github.com/users/amb26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/amb26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/amb26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/amb26/subscriptions",
+            "organizations_url": "https://api.github.com/users/amb26/orgs",
+            "repos_url": "https://api.github.com/users/amb26/repos",
+            "events_url": "https://api.github.com/users/amb26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/amb26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "More usual term here is \"Precedence\" ",
+        "created_at": "2017-01-09T19:13:10Z",
+        "updated_at": "2017-01-09T19:13:10Z",
+        "html_url": "https://github.com/json5/json5/pull/111#discussion_r95224809",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/111",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/95224809"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/111#discussion_r95224809"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/111"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/95225509",
+        "pull_request_review_id": 15773672,
+        "id": 95225509,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk1MjI1NTA5",
+        "diff_hunk": "@@ -43,6 +43,7 @@ JSON5.parse = (function () {\n             '\\xA0',\n             '\\uFEFF'\n         ],\n+        operator = ['+', '-', '*', '/'],",
+        "path": "lib/json5.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "91e71656e19dbdfda565373ba8b75091df469077",
+        "original_commit_id": "91e71656e19dbdfda565373ba8b75091df469077",
+        "user": {
+            "login": "amb26",
+            "id": 561418,
+            "node_id": "MDQ6VXNlcjU2MTQxOA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/561418?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/amb26",
+            "html_url": "https://github.com/amb26",
+            "followers_url": "https://api.github.com/users/amb26/followers",
+            "following_url": "https://api.github.com/users/amb26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/amb26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/amb26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/amb26/subscriptions",
+            "organizations_url": "https://api.github.com/users/amb26/orgs",
+            "repos_url": "https://api.github.com/users/amb26/repos",
+            "events_url": "https://api.github.com/users/amb26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/amb26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why not support all operators which could legitimately operate on constants - therefore including !, ^, &, &&, |, and ||. I think there's no reason to exclude boolean constants from this work - therefore supporting true/false in addition to the numbers which have been already supported.",
+        "created_at": "2017-01-09T19:16:35Z",
+        "updated_at": "2017-01-09T19:16:48Z",
+        "html_url": "https://github.com/json5/json5/pull/111#discussion_r95225509",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/111",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/95225509"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/111#discussion_r95225509"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/111"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/95226348",
+        "pull_request_review_id": 15774573,
+        "id": 95226348,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk1MjI2MzQ4",
+        "diff_hunk": "@@ -43,6 +43,7 @@ JSON5.parse = (function () {\n             '\\xA0',\n             '\\uFEFF'\n         ],\n+        operator = ['+', '-', '*', '/'],",
+        "path": "lib/json5.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "91e71656e19dbdfda565373ba8b75091df469077",
+        "original_commit_id": "91e71656e19dbdfda565373ba8b75091df469077",
+        "user": {
+            "login": "amb26",
+            "id": 561418,
+            "node_id": "MDQ6VXNlcjU2MTQxOA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/561418?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/amb26",
+            "html_url": "https://github.com/amb26",
+            "followers_url": "https://api.github.com/users/amb26/followers",
+            "following_url": "https://api.github.com/users/amb26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/amb26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/amb26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/amb26/subscriptions",
+            "organizations_url": "https://api.github.com/users/amb26/orgs",
+            "repos_url": "https://api.github.com/users/amb26/repos",
+            "events_url": "https://api.github.com/users/amb26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/amb26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Support for arbitrary grouping using () would also round out this feature and make it more useful.",
+        "created_at": "2017-01-09T19:20:54Z",
+        "updated_at": "2017-01-09T19:20:54Z",
+        "html_url": "https://github.com/json5/json5/pull/111#discussion_r95226348",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/111",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/95226348"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/111#discussion_r95226348"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/111"
+            }
+        },
+        "in_reply_to_id": 95225509
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/55927331",
+        "pull_request_review_id": null,
+        "id": 55927331,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1OTI3MzMx",
+        "diff_hunk": "@@ -350,6 +396,17 @@ JSON5.parse = (function () {\n             }\n         },\n \n+        space = function () {\n+// like `white`, but this only skip whitespace\n+            while(ch) {\n+                if (~ws.indexOf(ch)) {",
+        "path": "lib/json5.js",
+        "position": null,
+        "original_position": 79,
+        "commit_id": "91e71656e19dbdfda565373ba8b75091df469077",
+        "original_commit_id": "28c21379c6266d39f965e18d64af4fb8acf64fdb",
+        "user": {
+            "login": "jordanbtucker",
+            "id": 468153,
+            "node_id": "MDQ6VXNlcjQ2ODE1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/468153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jordanbtucker",
+            "html_url": "https://github.com/jordanbtucker",
+            "followers_url": "https://api.github.com/users/jordanbtucker/followers",
+            "following_url": "https://api.github.com/users/jordanbtucker/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jordanbtucker/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jordanbtucker/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jordanbtucker/subscriptions",
+            "organizations_url": "https://api.github.com/users/jordanbtucker/orgs",
+            "repos_url": "https://api.github.com/users/jordanbtucker/repos",
+            "events_url": "https://api.github.com/users/jordanbtucker/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jordanbtucker/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I know that `~-1 == 0 == false` but I don't see this used very often, so let's simplify this to `ws.indexOf(ch) >= 0` for readability.\n",
+        "created_at": "2016-03-12T20:38:33Z",
+        "updated_at": "2018-03-11T21:19:23Z",
+        "html_url": "https://github.com/json5/json5/pull/111#discussion_r55927331",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/111",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/55927331"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/111#discussion_r55927331"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/111"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/55927332",
+        "pull_request_review_id": null,
+        "id": 55927332,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1OTI3MzMy",
+        "diff_hunk": "@@ -393,6 +450,36 @@ JSON5.parse = (function () {\n             error(\"Unexpected \" + renderChar(ch));\n         },\n \n+        isOperator = function(ch) {\n+            return !!~operator.indexOf(ch);",
+        "path": "lib/json5.js",
+        "position": null,
+        "original_position": 95,
+        "commit_id": "91e71656e19dbdfda565373ba8b75091df469077",
+        "original_commit_id": "28c21379c6266d39f965e18d64af4fb8acf64fdb",
+        "user": {
+            "login": "jordanbtucker",
+            "id": 468153,
+            "node_id": "MDQ6VXNlcjQ2ODE1Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/468153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jordanbtucker",
+            "html_url": "https://github.com/jordanbtucker",
+            "followers_url": "https://api.github.com/users/jordanbtucker/followers",
+            "following_url": "https://api.github.com/users/jordanbtucker/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jordanbtucker/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jordanbtucker/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jordanbtucker/subscriptions",
+            "organizations_url": "https://api.github.com/users/jordanbtucker/orgs",
+            "repos_url": "https://api.github.com/users/jordanbtucker/repos",
+            "events_url": "https://api.github.com/users/jordanbtucker/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jordanbtucker/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Again, let's use `operator.indexOf(ch) >= 0`.\n",
+        "created_at": "2016-03-12T20:38:34Z",
+        "updated_at": "2018-03-11T21:19:23Z",
+        "html_url": "https://github.com/json5/json5/pull/111#discussion_r55927332",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/111",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/55927332"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/111#discussion_r55927332"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/111"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/55934937",
+        "pull_request_review_id": null,
+        "id": 55934937,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1OTM0OTM3",
+        "diff_hunk": "@@ -350,6 +396,17 @@ JSON5.parse = (function () {\n             }\n         },\n \n+        space = function () {\n+// like `white`, but this only skip whitespace\n+            while(ch) {\n+                if (~ws.indexOf(ch)) {",
+        "path": "lib/json5.js",
+        "position": null,
+        "original_position": 79,
+        "commit_id": "91e71656e19dbdfda565373ba8b75091df469077",
+        "original_commit_id": "28c21379c6266d39f965e18d64af4fb8acf64fdb",
+        "user": {
+            "login": "XGHeaven",
+            "id": 9291212,
+            "node_id": "MDQ6VXNlcjkyOTEyMTI=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9291212?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/XGHeaven",
+            "html_url": "https://github.com/XGHeaven",
+            "followers_url": "https://api.github.com/users/XGHeaven/followers",
+            "following_url": "https://api.github.com/users/XGHeaven/following{/other_user}",
+            "gists_url": "https://api.github.com/users/XGHeaven/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/XGHeaven/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/XGHeaven/subscriptions",
+            "organizations_url": "https://api.github.com/users/XGHeaven/orgs",
+            "repos_url": "https://api.github.com/users/XGHeaven/repos",
+            "events_url": "https://api.github.com/users/XGHeaven/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/XGHeaven/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ok...\n",
+        "created_at": "2016-03-13T10:20:53Z",
+        "updated_at": "2018-03-11T21:19:23Z",
+        "html_url": "https://github.com/json5/json5/pull/111#discussion_r55934937",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/111",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/55934937"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/111#discussion_r55934937"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/111"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/json5/json5/pulls/comments/280989835",
+        "pull_request_review_id": 233745419,
+        "id": 280989835,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4MDk4OTgzNQ==",
+        "diff_hunk": "@@ -3,4 +3,9 @@ node_js:\n   - \"11\"\n   - \"10\"\n   - \"8\"\n-  - \"6\"\n+before_install:\n+  - curl -L https://unpkg.com/@pnpm/self-installer | PNPM_VERSION=next node",
+        "path": ".travis.yml",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "ece4b4e5050e5e69a02c898e2ce6d0487800789c",
+        "original_commit_id": "ece4b4e5050e5e69a02c898e2ce6d0487800789c",
+        "user": {
+            "login": "zkochan",
+            "id": 1927579,
+            "node_id": "MDQ6VXNlcjE5Mjc1Nzk=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1927579?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zkochan",
+            "html_url": "https://github.com/zkochan",
+            "followers_url": "https://api.github.com/users/zkochan/followers",
+            "following_url": "https://api.github.com/users/zkochan/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zkochan/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zkochan/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zkochan/subscriptions",
+            "organizations_url": "https://api.github.com/users/zkochan/orgs",
+            "repos_url": "https://api.github.com/users/zkochan/repos",
+            "events_url": "https://api.github.com/users/zkochan/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zkochan/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This may be rewritten into the following, when pnpm v3.3.0 will be latest:\r\n\r\n```\r\ncurl -L https://unpkg.com/@pnpm/self-installer node\r\n```",
+        "created_at": "2019-05-04T17:49:26Z",
+        "updated_at": "2019-05-04T17:49:26Z",
+        "html_url": "https://github.com/json5/json5/pull/198#discussion_r280989835",
+        "pull_request_url": "https://api.github.com/repos/json5/json5/pulls/198",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/comments/280989835"
+            },
+            "html": {
+                "href": "https://github.com/json5/json5/pull/198#discussion_r280989835"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/json5/json5/pulls/198"
+            }
+        }
+    }
+]

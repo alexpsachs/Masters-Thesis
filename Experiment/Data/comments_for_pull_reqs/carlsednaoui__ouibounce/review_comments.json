@@ -1,0 +1,247 @@
+[
+    {
+        "url": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/comments/19378042",
+        "pull_request_review_id": null,
+        "id": 19378042,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5Mzc4MDQy",
+        "diff_hunk": "@@ -103,7 +104,11 @@ function ouibounce(el, config) {\n       cookieDomain = ';domain=' + options.cookieDomain;\n     }\n \n-    document.cookie = 'viewedOuibounceModal=true' + cookieExpire + cookieDomain + sitewide;\n+    if (typeof options.cookieName !== 'undefined') {",
+        "path": "source/ouibounce.js",
+        "position": 40,
+        "original_position": 40,
+        "commit_id": "3d6ee63948779a9dfc536c65f17bca342a36c591",
+        "original_commit_id": "cd11fc7267994955e7fafd87a5e36d1870655117",
+        "user": {
+            "login": "carlsednaoui",
+            "id": 791818,
+            "node_id": "MDQ6VXNlcjc5MTgxOA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/791818?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/carlsednaoui",
+            "html_url": "https://github.com/carlsednaoui",
+            "followers_url": "https://api.github.com/users/carlsednaoui/followers",
+            "following_url": "https://api.github.com/users/carlsednaoui/following{/other_user}",
+            "gists_url": "https://api.github.com/users/carlsednaoui/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/carlsednaoui/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/carlsednaoui/subscriptions",
+            "organizations_url": "https://api.github.com/users/carlsednaoui/orgs",
+            "repos_url": "https://api.github.com/users/carlsednaoui/repos",
+            "events_url": "https://api.github.com/users/carlsednaoui/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/carlsednaoui/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@jdeniau shouldn't this be `if (typeof options.cookieName === 'undefined') {` use `viewedOuibounceModal`. Otherwise use options.cookieName?\n",
+        "created_at": "2014-10-25T23:02:06Z",
+        "updated_at": "2014-10-26T09:31:23Z",
+        "html_url": "https://github.com/carlsednaoui/ouibounce/pull/68#discussion_r19378042",
+        "pull_request_url": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/68",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/comments/19378042"
+            },
+            "html": {
+                "href": "https://github.com/carlsednaoui/ouibounce/pull/68#discussion_r19378042"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/comments/19380135",
+        "pull_request_review_id": null,
+        "id": 19380135,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5MzgwMTM1",
+        "diff_hunk": "@@ -103,7 +104,11 @@ function ouibounce(el, config) {\n       cookieDomain = ';domain=' + options.cookieDomain;\n     }\n \n-    document.cookie = 'viewedOuibounceModal=true' + cookieExpire + cookieDomain + sitewide;\n+    if (typeof options.cookieName !== 'undefined') {",
+        "path": "source/ouibounce.js",
+        "position": 40,
+        "original_position": 40,
+        "commit_id": "3d6ee63948779a9dfc536c65f17bca342a36c591",
+        "original_commit_id": "cd11fc7267994955e7fafd87a5e36d1870655117",
+        "user": {
+            "login": "jdeniau",
+            "id": 1398469,
+            "node_id": "MDQ6VXNlcjEzOTg0Njk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1398469?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jdeniau",
+            "html_url": "https://github.com/jdeniau",
+            "followers_url": "https://api.github.com/users/jdeniau/followers",
+            "following_url": "https://api.github.com/users/jdeniau/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jdeniau/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jdeniau/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jdeniau/subscriptions",
+            "organizations_url": "https://api.github.com/users/jdeniau/orgs",
+            "repos_url": "https://api.github.com/users/jdeniau/repos",
+            "events_url": "https://api.github.com/users/jdeniau/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jdeniau/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You are totally right.\n\nIt's fixed.\n",
+        "created_at": "2014-10-26T09:31:55Z",
+        "updated_at": "2014-10-26T09:31:55Z",
+        "html_url": "https://github.com/carlsednaoui/ouibounce/pull/68#discussion_r19380135",
+        "pull_request_url": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/68",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/comments/19380135"
+            },
+            "html": {
+                "href": "https://github.com/carlsednaoui/ouibounce/pull/68#discussion_r19380135"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/comments/19381533",
+        "pull_request_review_id": null,
+        "id": 19381533,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5MzgxNTMz",
+        "diff_hunk": "@@ -103,7 +104,11 @@ function ouibounce(el, config) {\n       cookieDomain = ';domain=' + options.cookieDomain;\n     }\n \n-    document.cookie = 'viewedOuibounceModal=true' + cookieExpire + cookieDomain + sitewide;\n+    if (typeof options.cookieName !== 'undefined') {",
+        "path": "source/ouibounce.js",
+        "position": 40,
+        "original_position": 40,
+        "commit_id": "3d6ee63948779a9dfc536c65f17bca342a36c591",
+        "original_commit_id": "cd11fc7267994955e7fafd87a5e36d1870655117",
+        "user": {
+            "login": "carlsednaoui",
+            "id": 791818,
+            "node_id": "MDQ6VXNlcjc5MTgxOA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/791818?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/carlsednaoui",
+            "html_url": "https://github.com/carlsednaoui",
+            "followers_url": "https://api.github.com/users/carlsednaoui/followers",
+            "following_url": "https://api.github.com/users/carlsednaoui/following{/other_user}",
+            "gists_url": "https://api.github.com/users/carlsednaoui/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/carlsednaoui/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/carlsednaoui/subscriptions",
+            "organizations_url": "https://api.github.com/users/carlsednaoui/orgs",
+            "repos_url": "https://api.github.com/users/carlsednaoui/repos",
+            "events_url": "https://api.github.com/users/carlsednaoui/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/carlsednaoui/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks! :hamburger: \n",
+        "created_at": "2014-10-26T15:13:55Z",
+        "updated_at": "2014-10-26T15:13:55Z",
+        "html_url": "https://github.com/carlsednaoui/ouibounce/pull/68#discussion_r19381533",
+        "pull_request_url": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/68",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/comments/19381533"
+            },
+            "html": {
+                "href": "https://github.com/carlsednaoui/ouibounce/pull/68#discussion_r19381533"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/comments/179612545",
+        "pull_request_review_id": 109891988,
+        "id": 179612545,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3OTYxMjU0NQ==",
+        "diff_hunk": "@@ -82,7 +82,7 @@ function ouibounce(el, custom_config) {\n   // You can use ouibounce without passing an element\n   // https://github.com/carlsednaoui/ouibounce/issues/30\n   function fire() {\n-    if (isDisabled()) { return; }\n+    if (isDisabled() || supressed) { return; }",
+        "path": "source/ouibounce.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "f730f1c5e5a49350bbf698da3f83abd6bffee986",
+        "original_commit_id": "f730f1c5e5a49350bbf698da3f83abd6bffee986",
+        "user": {
+            "login": "patrick-mcdougle",
+            "id": 1392496,
+            "node_id": "MDQ6VXNlcjEzOTI0OTY=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1392496?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/patrick-mcdougle",
+            "html_url": "https://github.com/patrick-mcdougle",
+            "followers_url": "https://api.github.com/users/patrick-mcdougle/followers",
+            "following_url": "https://api.github.com/users/patrick-mcdougle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/patrick-mcdougle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/patrick-mcdougle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/patrick-mcdougle/subscriptions",
+            "organizations_url": "https://api.github.com/users/patrick-mcdougle/orgs",
+            "repos_url": "https://api.github.com/users/patrick-mcdougle/repos",
+            "events_url": "https://api.github.com/users/patrick-mcdougle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/patrick-mcdougle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "IMO, supressed should be a part of the isDisabled function. It's easier to read that way.\r\n\r\n```\r\nfunction isDisabled() {\r\n    return supressed || (checkCookieValue(cookieName, 'true') && !aggressive);\r\n}\r\n```",
+        "created_at": "2018-04-05T21:57:43Z",
+        "updated_at": "2018-04-05T21:57:54Z",
+        "html_url": "https://github.com/carlsednaoui/ouibounce/pull/110#discussion_r179612545",
+        "pull_request_url": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/110",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/comments/179612545"
+            },
+            "html": {
+                "href": "https://github.com/carlsednaoui/ouibounce/pull/110#discussion_r179612545"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/110"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/comments/179612716",
+        "pull_request_review_id": 109892188,
+        "id": 179612716,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3OTYxMjcxNg==",
+        "diff_hunk": "@@ -123,11 +123,18 @@ function ouibounce(el, custom_config) {\n     _html.removeEventListener('keydown', handleKeydown);\n   }\n \n+  var supressed;",
+        "path": "source/ouibounce.js",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "f730f1c5e5a49350bbf698da3f83abd6bffee986",
+        "original_commit_id": "f730f1c5e5a49350bbf698da3f83abd6bffee986",
+        "user": {
+            "login": "patrick-mcdougle",
+            "id": 1392496,
+            "node_id": "MDQ6VXNlcjEzOTI0OTY=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1392496?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/patrick-mcdougle",
+            "html_url": "https://github.com/patrick-mcdougle",
+            "followers_url": "https://api.github.com/users/patrick-mcdougle/followers",
+            "following_url": "https://api.github.com/users/patrick-mcdougle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/patrick-mcdougle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/patrick-mcdougle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/patrick-mcdougle/subscriptions",
+            "organizations_url": "https://api.github.com/users/patrick-mcdougle/orgs",
+            "repos_url": "https://api.github.com/users/patrick-mcdougle/repos",
+            "events_url": "https://api.github.com/users/patrick-mcdougle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/patrick-mcdougle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This should probably be up with the other variables near the top and initialized to false.",
+        "created_at": "2018-04-05T21:58:28Z",
+        "updated_at": "2018-04-05T21:58:28Z",
+        "html_url": "https://github.com/carlsednaoui/ouibounce/pull/110#discussion_r179612716",
+        "pull_request_url": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/110",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/comments/179612716"
+            },
+            "html": {
+                "href": "https://github.com/carlsednaoui/ouibounce/pull/110#discussion_r179612716"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/carlsednaoui/ouibounce/pulls/110"
+            }
+        }
+    }
+]

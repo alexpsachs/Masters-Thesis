@@ -1,0 +1,100 @@
+[
+    {
+        "url": "https://api.github.com/repos/ericdrowell/KineticJS/pulls/comments/1073618",
+        "pull_request_review_id": null,
+        "id": 1073618,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNzM2MTg=",
+        "diff_hunk": "@@ -12,19 +12,30 @@ Kinetic.Text = function(config) {\n         fontFamily: 'Calibri',\n         text: '',\n         fontSize: 12,\n-        align: 'left',\n-        verticalAlign: 'top',\n         padding: 0,\n-        fontStyle: 'normal',\n+        fontStyle: {",
+        "path": "src/shapes/Text.js",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "f58d41eda91e1c6c58d92f6f3b2f8a91d51f5165",
+        "original_commit_id": "f58d41eda91e1c6c58d92f6f3b2f8a91d51f5165",
+        "user": {
+            "login": "Delapouite",
+            "id": 39315,
+            "node_id": "MDQ6VXNlcjM5MzE1",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/39315?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Delapouite",
+            "html_url": "https://github.com/Delapouite",
+            "followers_url": "https://api.github.com/users/Delapouite/followers",
+            "following_url": "https://api.github.com/users/Delapouite/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Delapouite/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Delapouite/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Delapouite/subscriptions",
+            "organizations_url": "https://api.github.com/users/Delapouite/orgs",
+            "repos_url": "https://api.github.com/users/Delapouite/repos",
+            "events_url": "https://api.github.com/users/Delapouite/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Delapouite/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This shortcut seems handy at first, but unfortunately it breaks compatibility with the standard CSS font specifier. For example underline belongs to text-decoration, not font-style.\n",
+        "created_at": "2012-06-29T02:07:47Z",
+        "updated_at": "2012-06-29T02:07:47Z",
+        "html_url": "https://github.com/ericdrowell/KineticJS/pull/27#discussion_r1073618",
+        "pull_request_url": "https://api.github.com/repos/ericdrowell/KineticJS/pulls/27",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ericdrowell/KineticJS/pulls/comments/1073618"
+            },
+            "html": {
+                "href": "https://github.com/ericdrowell/KineticJS/pull/27#discussion_r1073618"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ericdrowell/KineticJS/pulls/27"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ericdrowell/KineticJS/pulls/comments/12314563",
+        "pull_request_review_id": null,
+        "id": 12314563,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzE0NTYz",
+        "diff_hunk": "@@ -552,20 +552,29 @@ var Kinetic = {};\n // if the module has no dependencies, the above pattern can be simplified to\n ( function(root, factory) {\n     if( typeof exports === 'object') {\n-        // Node. Does not work with strict CommonJS, but\n-        // only CommonJS-like enviroments that support module.exports,\n-        // like Node.\n-        var Canvas = require('canvas');\n-        var jsdom = require('jsdom').jsdom;\n-        var doc = jsdom('<!DOCTYPE html><html><head></head><body></body></html>');\n-\n         var KineticJS = factory();\n \n-        Kinetic.document = doc;\n-        Kinetic.window = Kinetic.document.createWindow();\n-        Kinetic.window.Image = Canvas.Image;\n+        // runtime-check for browserify\n+        if(global.window === global) {\n+            Kinetic.document = global.document;\n+            Kinetic.window = global;\n+        } else {\n+            // Node. Does not work with strict CommonJS, but\n+            // only CommonJS-like enviroments that support module.exports,\n+            // like Node.\n+\n+            // We break the names to trick the browserify compiler\n+            var Canvas = require('can'+'vas');",
+        "path": "kinetic.js",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "d7a1282b0bff04bf2bd79159ebc49b368b66c851",
+        "original_commit_id": "dad95b309bae2a2ae6a9937e00e9334d9aeaae4a",
+        "user": {
+            "login": "lavrton",
+            "id": 1443320,
+            "node_id": "MDQ6VXNlcjE0NDMzMjA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1443320?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/lavrton",
+            "html_url": "https://github.com/lavrton",
+            "followers_url": "https://api.github.com/users/lavrton/followers",
+            "following_url": "https://api.github.com/users/lavrton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/lavrton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/lavrton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/lavrton/subscriptions",
+            "organizations_url": "https://api.github.com/users/lavrton/orgs",
+            "repos_url": "https://api.github.com/users/lavrton/repos",
+            "events_url": "https://api.github.com/users/lavrton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/lavrton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Very dirty. Are there any other ways?\n",
+        "created_at": "2014-05-06T08:28:13Z",
+        "updated_at": "2014-05-06T17:43:31Z",
+        "html_url": "https://github.com/ericdrowell/KineticJS/pull/918#discussion_r12314563",
+        "pull_request_url": "https://api.github.com/repos/ericdrowell/KineticJS/pulls/918",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ericdrowell/KineticJS/pulls/comments/12314563"
+            },
+            "html": {
+                "href": "https://github.com/ericdrowell/KineticJS/pull/918#discussion_r12314563"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ericdrowell/KineticJS/pulls/918"
+            }
+        }
+    }
+]

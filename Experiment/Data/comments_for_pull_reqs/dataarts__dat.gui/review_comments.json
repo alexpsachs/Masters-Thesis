@@ -1,0 +1,1088 @@
+[
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/13999953",
+        "pull_request_review_id": null,
+        "id": 13999953,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzOTk5OTUz",
+        "diff_hunk": "@@ -464,8 +464,7 @@ define([\n \n     hide = !hide;\n     common.each(hideable_guis, function(gui) {\n-      gui.domElement.style.zIndex = hide ? -999 : 999;\n-      gui.domElement.style.opacity = hide ? 0 : 1;\n+      gui.domElement.style.display = hide ? 'none' : 'fixed';",
+        "path": "src/dat/gui/GUI.js",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "7df4cea83d228fad9e9a8cc8b67055c7c2c93581",
+        "original_commit_id": "7df4cea83d228fad9e9a8cc8b67055c7c2c93581",
+        "user": {
+            "login": "mrdoob",
+            "id": 97088,
+            "node_id": "MDQ6VXNlcjk3MDg4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/97088?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mrdoob",
+            "html_url": "https://github.com/mrdoob",
+            "followers_url": "https://api.github.com/users/mrdoob/followers",
+            "following_url": "https://api.github.com/users/mrdoob/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mrdoob/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mrdoob/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mrdoob/subscriptions",
+            "organizations_url": "https://api.github.com/users/mrdoob/orgs",
+            "repos_url": "https://api.github.com/users/mrdoob/repos",
+            "events_url": "https://api.github.com/users/mrdoob/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mrdoob/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Shouldn't it be `'none' : '';`?\n",
+        "created_at": "2014-06-19T23:16:53Z",
+        "updated_at": "2014-06-19T23:16:53Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/43#discussion_r13999953",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/13999953"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/43#discussion_r13999953"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/14000658",
+        "pull_request_review_id": null,
+        "id": 14000658,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MDAwNjU4",
+        "diff_hunk": "@@ -464,8 +464,7 @@ define([\n \n     hide = !hide;\n     common.each(hideable_guis, function(gui) {\n-      gui.domElement.style.zIndex = hide ? -999 : 999;\n-      gui.domElement.style.opacity = hide ? 0 : 1;\n+      gui.domElement.style.display = hide ? 'none' : 'fixed';",
+        "path": "src/dat/gui/GUI.js",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "7df4cea83d228fad9e9a8cc8b67055c7c2c93581",
+        "original_commit_id": "7df4cea83d228fad9e9a8cc8b67055c7c2c93581",
+        "user": {
+            "login": "tkellen",
+            "id": 1004324,
+            "node_id": "MDQ6VXNlcjEwMDQzMjQ=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1004324?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tkellen",
+            "html_url": "https://github.com/tkellen",
+            "followers_url": "https://api.github.com/users/tkellen/followers",
+            "following_url": "https://api.github.com/users/tkellen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tkellen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tkellen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tkellen/subscriptions",
+            "organizations_url": "https://api.github.com/users/tkellen/orgs",
+            "repos_url": "https://api.github.com/users/tkellen/repos",
+            "events_url": "https://api.github.com/users/tkellen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tkellen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Isn't the display mode by default fixed?\n",
+        "created_at": "2014-06-19T23:38:23Z",
+        "updated_at": "2014-06-19T23:38:23Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/43#discussion_r14000658",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/14000658"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/43#discussion_r14000658"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/14002350",
+        "pull_request_review_id": null,
+        "id": 14002350,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MDAyMzUw",
+        "diff_hunk": "@@ -464,8 +464,7 @@ define([\n \n     hide = !hide;\n     common.each(hideable_guis, function(gui) {\n-      gui.domElement.style.zIndex = hide ? -999 : 999;\n-      gui.domElement.style.opacity = hide ? 0 : 1;\n+      gui.domElement.style.display = hide ? 'none' : 'fixed';",
+        "path": "src/dat/gui/GUI.js",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "7df4cea83d228fad9e9a8cc8b67055c7c2c93581",
+        "original_commit_id": "7df4cea83d228fad9e9a8cc8b67055c7c2c93581",
+        "user": {
+            "login": "mrdoob",
+            "id": 97088,
+            "node_id": "MDQ6VXNlcjk3MDg4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/97088?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mrdoob",
+            "html_url": "https://github.com/mrdoob",
+            "followers_url": "https://api.github.com/users/mrdoob/followers",
+            "following_url": "https://api.github.com/users/mrdoob/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mrdoob/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mrdoob/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mrdoob/subscriptions",
+            "organizations_url": "https://api.github.com/users/mrdoob/orgs",
+            "repos_url": "https://api.github.com/users/mrdoob/repos",
+            "events_url": "https://api.github.com/users/mrdoob/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mrdoob/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "![screenshot from 2014-06-20 02 34 16](https://cloud.githubusercontent.com/assets/97088/3335360/a7699dfc-f812-11e3-866d-a437383446f2.png)\n",
+        "created_at": "2014-06-20T00:34:37Z",
+        "updated_at": "2014-06-20T00:34:37Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/43#discussion_r14002350",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/14002350"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/43#discussion_r14002350"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/91635333",
+        "pull_request_review_id": 12146162,
+        "id": 91635333,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkxNjM1MzMz",
+        "diff_hunk": "@@ -71,6 +70,12 @@ $button-height: 20px;\n       cursor: pointer;\n       text-align: center;\n       background-color: #000;\n+      &.close-top {\n+        position:relative;",
+        "path": "src/dat/gui/_structure.scss",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "351165a2bc280e777cb2c61bc03b08a5c14e57f5",
+        "original_commit_id": "9540dd1c2ff38fa5786f0a502d83e50c51e767ef",
+        "user": {
+            "login": "satazor",
+            "id": 1017236,
+            "node_id": "MDQ6VXNlcjEwMTcyMzY=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1017236?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/satazor",
+            "html_url": "https://github.com/satazor",
+            "followers_url": "https://api.github.com/users/satazor/followers",
+            "following_url": "https://api.github.com/users/satazor/following{/other_user}",
+            "gists_url": "https://api.github.com/users/satazor/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/satazor/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/satazor/subscriptions",
+            "organizations_url": "https://api.github.com/users/satazor/orgs",
+            "repos_url": "https://api.github.com/users/satazor/repos",
+            "events_url": "https://api.github.com/users/satazor/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/satazor/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I guess you should add a space after `:`",
+        "created_at": "2016-12-09T00:03:10Z",
+        "updated_at": "2016-12-09T11:35:04Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/122#discussion_r91635333",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/122",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/91635333"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/122#discussion_r91635333"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/122"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/91701985",
+        "pull_request_review_id": 12212500,
+        "id": 91701985,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkxNzAxOTg1",
+        "diff_hunk": "@@ -71,6 +70,12 @@ $button-height: 20px;\n       cursor: pointer;\n       text-align: center;\n       background-color: #000;\n+      &.close-top {\n+        position:relative;",
+        "path": "src/dat/gui/_structure.scss",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "351165a2bc280e777cb2c61bc03b08a5c14e57f5",
+        "original_commit_id": "9540dd1c2ff38fa5786f0a502d83e50c51e767ef",
+        "user": {
+            "login": "bruno-quintela",
+            "id": 5947256,
+            "node_id": "MDQ6VXNlcjU5NDcyNTY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/5947256?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bruno-quintela",
+            "html_url": "https://github.com/bruno-quintela",
+            "followers_url": "https://api.github.com/users/bruno-quintela/followers",
+            "following_url": "https://api.github.com/users/bruno-quintela/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bruno-quintela/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bruno-quintela/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bruno-quintela/subscriptions",
+            "organizations_url": "https://api.github.com/users/bruno-quintela/orgs",
+            "repos_url": "https://api.github.com/users/bruno-quintela/repos",
+            "events_url": "https://api.github.com/users/bruno-quintela/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bruno-quintela/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I guess I should, my bad :)",
+        "created_at": "2016-12-09T11:37:58Z",
+        "updated_at": "2016-12-09T11:37:58Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/122#discussion_r91701985",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/122",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/91701985"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/122#discussion_r91701985"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/122"
+            }
+        },
+        "in_reply_to_id": 91635333
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185169998",
+        "pull_request_review_id": 116505455,
+        "id": 185169998,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NTE2OTk5OA==",
+        "diff_hunk": "@@ -1285,255 +1285,255 @@ var FunctionController = function (_Controller) {\n }(Controller);\n \n var ColorController = function (_Controller) {\n-  inherits(ColorController, _Controller);",
+        "path": "build/dat.gui.js",
+        "position": null,
+        "original_position": 19,
+        "commit_id": "c381fb1736167f189808411bd1793103372957c9",
+        "original_commit_id": "93eba55ad12fbd8311907fdb5bb916fd1ddb10b3",
+        "user": {
+            "login": "efokschaner",
+            "id": 1409112,
+            "node_id": "MDQ6VXNlcjE0MDkxMTI=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1409112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/efokschaner",
+            "html_url": "https://github.com/efokschaner",
+            "followers_url": "https://api.github.com/users/efokschaner/followers",
+            "following_url": "https://api.github.com/users/efokschaner/following{/other_user}",
+            "gists_url": "https://api.github.com/users/efokschaner/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/efokschaner/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/efokschaner/subscriptions",
+            "organizations_url": "https://api.github.com/users/efokschaner/orgs",
+            "repos_url": "https://api.github.com/users/efokschaner/repos",
+            "events_url": "https://api.github.com/users/efokschaner/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/efokschaner/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Seems my build toolchain put more indent in here, i'll look into making this diff less bad.",
+        "created_at": "2018-05-01T05:44:43Z",
+        "updated_at": "2018-05-04T00:58:14Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185169998",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/184",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185169998"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185169998"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/184"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185170063",
+        "pull_request_review_id": 116505514,
+        "id": 185170063,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NTE3MDA2Mw==",
+        "diff_hunk": "@@ -1285,255 +1285,255 @@ var FunctionController = function (_Controller) {\n }(Controller);\n \n var ColorController = function (_Controller) {\n-  inherits(ColorController, _Controller);",
+        "path": "build/dat.gui.js",
+        "position": null,
+        "original_position": 19,
+        "commit_id": "c381fb1736167f189808411bd1793103372957c9",
+        "original_commit_id": "93eba55ad12fbd8311907fdb5bb916fd1ddb10b3",
+        "user": {
+            "login": "efokschaner",
+            "id": 1409112,
+            "node_id": "MDQ6VXNlcjE0MDkxMTI=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1409112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/efokschaner",
+            "html_url": "https://github.com/efokschaner",
+            "followers_url": "https://api.github.com/users/efokschaner/followers",
+            "following_url": "https://api.github.com/users/efokschaner/following{/other_user}",
+            "gists_url": "https://api.github.com/users/efokschaner/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/efokschaner/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/efokschaner/subscriptions",
+            "organizations_url": "https://api.github.com/users/efokschaner/orgs",
+            "repos_url": "https://api.github.com/users/efokschaner/repos",
+            "events_url": "https://api.github.com/users/efokschaner/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/efokschaner/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "In the meantime, GH can ignore whitespace in the diff: https://github.com/dataarts/dat.gui/pull/184/files?w=1",
+        "created_at": "2018-05-01T05:45:30Z",
+        "updated_at": "2018-05-04T00:58:14Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185170063",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/184",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185170063"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185170063"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/184"
+            }
+        },
+        "in_reply_to_id": 185169998
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185172047",
+        "pull_request_review_id": 116507612,
+        "id": 185172047,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NTE3MjA0Nw==",
+        "diff_hunk": "@@ -1285,255 +1285,255 @@ var FunctionController = function (_Controller) {\n }(Controller);\n \n var ColorController = function (_Controller) {\n-  inherits(ColorController, _Controller);",
+        "path": "build/dat.gui.js",
+        "position": null,
+        "original_position": 19,
+        "commit_id": "c381fb1736167f189808411bd1793103372957c9",
+        "original_commit_id": "93eba55ad12fbd8311907fdb5bb916fd1ddb10b3",
+        "user": {
+            "login": "efokschaner",
+            "id": 1409112,
+            "node_id": "MDQ6VXNlcjE0MDkxMTI=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1409112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/efokschaner",
+            "html_url": "https://github.com/efokschaner",
+            "followers_url": "https://api.github.com/users/efokschaner/followers",
+            "following_url": "https://api.github.com/users/efokschaner/following{/other_user}",
+            "gists_url": "https://api.github.com/users/efokschaner/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/efokschaner/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/efokschaner/subscriptions",
+            "organizations_url": "https://api.github.com/users/efokschaner/orgs",
+            "repos_url": "https://api.github.com/users/efokschaner/repos",
+            "events_url": "https://api.github.com/users/efokschaner/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/efokschaner/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is quite odd, as its not consistently doing 4 spaces, the rest of the file is 2. I tried explicitly specifying 2 spaces and it didn't fix it. Actually made the diff worse. I think it's not worth trying to figure out what rollup / babel madness is causing this as it's generated code. Are you ok with this indentation inconsistency here?",
+        "created_at": "2018-05-01T06:12:12Z",
+        "updated_at": "2018-05-04T00:58:14Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185172047",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/184",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185172047"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185172047"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/184"
+            }
+        },
+        "in_reply_to_id": 185169998
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185172417",
+        "pull_request_review_id": 116508017,
+        "id": 185172417,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NTE3MjQxNw==",
+        "diff_hunk": "@@ -23,6 +23,7 @@ const banner = fs.readFileSync(path.join(__dirname, 'licenseBanner.txt'));\n export default {\n   input: 'src/dat/index.js',\n   output: [{\n+    exports: 'named',",
+        "path": "rollup.config.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "c381fb1736167f189808411bd1793103372957c9",
+        "original_commit_id": "93eba55ad12fbd8311907fdb5bb916fd1ddb10b3",
+        "user": {
+            "login": "efokschaner",
+            "id": 1409112,
+            "node_id": "MDQ6VXNlcjE0MDkxMTI=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1409112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/efokschaner",
+            "html_url": "https://github.com/efokschaner",
+            "followers_url": "https://api.github.com/users/efokschaner/followers",
+            "following_url": "https://api.github.com/users/efokschaner/following{/other_user}",
+            "gists_url": "https://api.github.com/users/efokschaner/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/efokschaner/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/efokschaner/subscriptions",
+            "organizations_url": "https://api.github.com/users/efokschaner/orgs",
+            "repos_url": "https://api.github.com/users/efokschaner/repos",
+            "events_url": "https://api.github.com/users/efokschaner/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/efokschaner/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "See https://rollupjs.org/guide/en#output-exports-exports for docs on this option. Without it, rollup warns we're mixing named and default exports, and this option basically says \"yeah that's fine\".",
+        "created_at": "2018-05-01T06:17:03Z",
+        "updated_at": "2018-05-04T00:58:14Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185172417",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/184",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185172417"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185172417"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/184"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185663633",
+        "pull_request_review_id": 117098873,
+        "id": 185663633,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NTY2MzYzMw==",
+        "diff_hunk": "@@ -44,7 +44,7 @@\n     \"rollup-plugin-node-resolve\": \"^3.0.2\",\n     \"rollup-plugin-sass\": \"^0.5.3\",\n     \"rollup-plugin-uglify\": \"^2.0.1\",\n-    \"serve\": \"^6.4.8\"\n+    \"serve\": \"^6.4.8 <6.5.4\"",
+        "path": "package.json",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "c381fb1736167f189808411bd1793103372957c9",
+        "original_commit_id": "93eba55ad12fbd8311907fdb5bb916fd1ddb10b3",
+        "user": {
+            "login": "efokschaner",
+            "id": 1409112,
+            "node_id": "MDQ6VXNlcjE0MDkxMTI=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1409112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/efokschaner",
+            "html_url": "https://github.com/efokschaner",
+            "followers_url": "https://api.github.com/users/efokschaner/followers",
+            "following_url": "https://api.github.com/users/efokschaner/following{/other_user}",
+            "gists_url": "https://api.github.com/users/efokschaner/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/efokschaner/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/efokschaner/subscriptions",
+            "organizations_url": "https://api.github.com/users/efokschaner/orgs",
+            "repos_url": "https://api.github.com/users/efokschaner/repos",
+            "events_url": "https://api.github.com/users/efokschaner/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/efokschaner/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "dat.gui's build system is not currently compatible with node 8 or above due to the version of node-sass used by rollup so I built it with node 7. However \"serve\" lost compatibility with node 7 in 6.5.4 so clamped it back down.",
+        "created_at": "2018-05-02T23:04:35Z",
+        "updated_at": "2018-05-04T00:58:14Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185663633",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/184",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185663633"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185663633"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/184"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185966284",
+        "pull_request_review_id": 117466454,
+        "id": 185966284,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NTk2NjI4NA==",
+        "diff_hunk": "@@ -25,7 +25,7 @@ $ npm install --save dat.gui\n const dat = require('dat.gui');\n \n // ES6:\n-import dat from 'dat.gui';\n+import * as dat from 'dat.gui';",
+        "path": "README.md",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "c381fb1736167f189808411bd1793103372957c9",
+        "original_commit_id": "93eba55ad12fbd8311907fdb5bb916fd1ddb10b3",
+        "user": {
+            "login": "donmccurdy",
+            "id": 1848368,
+            "node_id": "MDQ6VXNlcjE4NDgzNjg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1848368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/donmccurdy",
+            "html_url": "https://github.com/donmccurdy",
+            "followers_url": "https://api.github.com/users/donmccurdy/followers",
+            "following_url": "https://api.github.com/users/donmccurdy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/donmccurdy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/donmccurdy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/donmccurdy/subscriptions",
+            "organizations_url": "https://api.github.com/users/donmccurdy/orgs",
+            "repos_url": "https://api.github.com/users/donmccurdy/repos",
+            "events_url": "https://api.github.com/users/donmccurdy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/donmccurdy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If I'm reading right, shouldn't both `import dat` and `import * as dat` work now?",
+        "created_at": "2018-05-03T23:55:04Z",
+        "updated_at": "2018-05-04T00:58:14Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185966284",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/184",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185966284"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185966284"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/184"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185966561",
+        "pull_request_review_id": 117466719,
+        "id": 185966561,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NTk2NjU2MQ==",
+        "diff_hunk": "@@ -44,7 +44,7 @@\n     \"rollup-plugin-node-resolve\": \"^3.0.2\",\n     \"rollup-plugin-sass\": \"^0.5.3\",\n     \"rollup-plugin-uglify\": \"^2.0.1\",\n-    \"serve\": \"^6.4.8\"\n+    \"serve\": \"^6.4.8 <6.5.4\"",
+        "path": "package.json",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "c381fb1736167f189808411bd1793103372957c9",
+        "original_commit_id": "93eba55ad12fbd8311907fdb5bb916fd1ddb10b3",
+        "user": {
+            "login": "donmccurdy",
+            "id": 1848368,
+            "node_id": "MDQ6VXNlcjE4NDgzNjg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1848368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/donmccurdy",
+            "html_url": "https://github.com/donmccurdy",
+            "followers_url": "https://api.github.com/users/donmccurdy/followers",
+            "following_url": "https://api.github.com/users/donmccurdy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/donmccurdy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/donmccurdy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/donmccurdy/subscriptions",
+            "organizations_url": "https://api.github.com/users/donmccurdy/orgs",
+            "repos_url": "https://api.github.com/users/donmccurdy/repos",
+            "events_url": "https://api.github.com/users/donmccurdy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/donmccurdy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Interesting... that's `rollup-plugin-sass` I suppose with the old version I suppose?",
+        "created_at": "2018-05-03T23:56:38Z",
+        "updated_at": "2018-05-04T00:58:14Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185966561",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/184",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185966561"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185966561"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/184"
+            }
+        },
+        "in_reply_to_id": 185663633
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185966648",
+        "pull_request_review_id": 117466817,
+        "id": 185966648,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NTk2NjY0OA==",
+        "diff_hunk": "@@ -1285,255 +1285,255 @@ var FunctionController = function (_Controller) {\n }(Controller);\n \n var ColorController = function (_Controller) {\n-  inherits(ColorController, _Controller);",
+        "path": "build/dat.gui.js",
+        "position": null,
+        "original_position": 19,
+        "commit_id": "c381fb1736167f189808411bd1793103372957c9",
+        "original_commit_id": "93eba55ad12fbd8311907fdb5bb916fd1ddb10b3",
+        "user": {
+            "login": "donmccurdy",
+            "id": 1848368,
+            "node_id": "MDQ6VXNlcjE4NDgzNjg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1848368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/donmccurdy",
+            "html_url": "https://github.com/donmccurdy",
+            "followers_url": "https://api.github.com/users/donmccurdy/followers",
+            "following_url": "https://api.github.com/users/donmccurdy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/donmccurdy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/donmccurdy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/donmccurdy/subscriptions",
+            "organizations_url": "https://api.github.com/users/donmccurdy/orgs",
+            "repos_url": "https://api.github.com/users/donmccurdy/repos",
+            "events_url": "https://api.github.com/users/donmccurdy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/donmccurdy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let's just remove the `build/*` files from the PR, can compile them at next release.",
+        "created_at": "2018-05-03T23:57:13Z",
+        "updated_at": "2018-05-04T00:58:14Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185966648",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/184",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185966648"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185966648"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/184"
+            }
+        },
+        "in_reply_to_id": 185169998
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185966814",
+        "pull_request_review_id": 117467007,
+        "id": 185966814,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NTk2NjgxNA==",
+        "diff_hunk": "@@ -25,7 +25,7 @@ $ npm install --save dat.gui\n const dat = require('dat.gui');\n \n // ES6:\n-import dat from 'dat.gui';\n+import * as dat from 'dat.gui';",
+        "path": "README.md",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "c381fb1736167f189808411bd1793103372957c9",
+        "original_commit_id": "93eba55ad12fbd8311907fdb5bb916fd1ddb10b3",
+        "user": {
+            "login": "donmccurdy",
+            "id": 1848368,
+            "node_id": "MDQ6VXNlcjE4NDgzNjg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1848368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/donmccurdy",
+            "html_url": "https://github.com/donmccurdy",
+            "followers_url": "https://api.github.com/users/donmccurdy/followers",
+            "following_url": "https://api.github.com/users/donmccurdy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/donmccurdy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/donmccurdy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/donmccurdy/subscriptions",
+            "organizations_url": "https://api.github.com/users/donmccurdy/orgs",
+            "repos_url": "https://api.github.com/users/donmccurdy/repos",
+            "events_url": "https://api.github.com/users/donmccurdy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/donmccurdy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Oh, I see you said this above. Sounds good to recommend the tree-shaking-friendly syntax.",
+        "created_at": "2018-05-03T23:58:21Z",
+        "updated_at": "2018-05-04T00:58:14Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185966814",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/184",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185966814"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185966814"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/184"
+            }
+        },
+        "in_reply_to_id": 185966284
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185974378",
+        "pull_request_review_id": 117475463,
+        "id": 185974378,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NTk3NDM3OA==",
+        "diff_hunk": "@@ -44,7 +44,7 @@\n     \"rollup-plugin-node-resolve\": \"^3.0.2\",\n     \"rollup-plugin-sass\": \"^0.5.3\",\n     \"rollup-plugin-uglify\": \"^2.0.1\",\n-    \"serve\": \"^6.4.8\"\n+    \"serve\": \"^6.4.8 <6.5.4\"",
+        "path": "package.json",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "c381fb1736167f189808411bd1793103372957c9",
+        "original_commit_id": "93eba55ad12fbd8311907fdb5bb916fd1ddb10b3",
+        "user": {
+            "login": "efokschaner",
+            "id": 1409112,
+            "node_id": "MDQ6VXNlcjE0MDkxMTI=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1409112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/efokschaner",
+            "html_url": "https://github.com/efokschaner",
+            "followers_url": "https://api.github.com/users/efokschaner/followers",
+            "following_url": "https://api.github.com/users/efokschaner/following{/other_user}",
+            "gists_url": "https://api.github.com/users/efokschaner/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/efokschaner/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/efokschaner/subscriptions",
+            "organizations_url": "https://api.github.com/users/efokschaner/orgs",
+            "repos_url": "https://api.github.com/users/efokschaner/repos",
+            "events_url": "https://api.github.com/users/efokschaner/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/efokschaner/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yeah, although I'm sure there are newer versions that are compatible for building with node 8 it's just a matter of doing the necessary upgrades to package json and / or the lockfile and then verifying.",
+        "created_at": "2018-05-04T01:08:31Z",
+        "updated_at": "2018-05-04T01:08:52Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185974378",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/184",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/185974378"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/184#discussion_r185974378"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/184"
+            }
+        },
+        "in_reply_to_id": 185663633
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/267817653",
+        "pull_request_review_id": 217317917,
+        "id": 267817653,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2NzgxNzY1Mw==",
+        "diff_hunk": "@@ -1,10 +1,18 @@\n # dat.GUI\n-A lightweight graphical user interface for changing variables in JavaScript. \n+@MacroMan's fork with extra features\n+\n+A lightweight graphical user interface for changing variables in JavaScript.\n \n Get started with dat.GUI by reading the [tutorial](http://workshop.chromeexperiments.com/examples/gui)\n or the [API documentation](API.md).\n \n \n+## MacroMan's extra features\n+* hide/show methods on GUI instances\n+* hide/show methods on Controllers",
+        "path": "README.md",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "021c38f119c495d1275e3597ddb15270750930cd",
+        "original_commit_id": "021c38f119c495d1275e3597ddb15270750930cd",
+        "user": {
+            "login": "donmccurdy",
+            "id": 1848368,
+            "node_id": "MDQ6VXNlcjE4NDgzNjg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1848368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/donmccurdy",
+            "html_url": "https://github.com/donmccurdy",
+            "followers_url": "https://api.github.com/users/donmccurdy/followers",
+            "following_url": "https://api.github.com/users/donmccurdy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/donmccurdy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/donmccurdy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/donmccurdy/subscriptions",
+            "organizations_url": "https://api.github.com/users/donmccurdy/orgs",
+            "repos_url": "https://api.github.com/users/donmccurdy/repos",
+            "events_url": "https://api.github.com/users/donmccurdy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/donmccurdy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It's fine if you'd like to add this in the Changelog, but I'm not sure these changes make sense to merge in the official repo right?",
+        "created_at": "2019-03-21T15:35:07Z",
+        "updated_at": "2019-03-21T15:36:26Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/213#discussion_r267817653",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/213",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/267817653"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/213#discussion_r267817653"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/213"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/267818056",
+        "pull_request_review_id": 217317917,
+        "id": 267818056,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2NzgxODA1Ng==",
+        "diff_hunk": "@@ -54,6 +54,22 @@ class Controller {\n     this.__onFinishChange = undefined;\n   }\n \n+  /**\n+  * Hides the controller on it's parent GUI.\n+  */\n+  hide() {\n+    this.domElement.parentNode.parentNode.style.display = 'none';\n+    return this;\n+  }\n+\n+  /**\n+  * Shows the controller on it's parent GUI.\n+  */\n+  show() {\n+    this.domElement.parentNode.parentNode.style.display = '';\n+    return this;\n+  }",
+        "path": "src/dat/controllers/Controller.js",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "021c38f119c495d1275e3597ddb15270750930cd",
+        "original_commit_id": "021c38f119c495d1275e3597ddb15270750930cd",
+        "user": {
+            "login": "donmccurdy",
+            "id": 1848368,
+            "node_id": "MDQ6VXNlcjE4NDgzNjg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1848368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/donmccurdy",
+            "html_url": "https://github.com/donmccurdy",
+            "followers_url": "https://api.github.com/users/donmccurdy/followers",
+            "following_url": "https://api.github.com/users/donmccurdy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/donmccurdy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/donmccurdy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/donmccurdy/subscriptions",
+            "organizations_url": "https://api.github.com/users/donmccurdy/orgs",
+            "repos_url": "https://api.github.com/users/donmccurdy/repos",
+            "events_url": "https://api.github.com/users/donmccurdy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/donmccurdy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm not sure about having a per-controller show/hide feature... Do you mind putting this part in a separate PR?",
+        "created_at": "2019-03-21T15:35:56Z",
+        "updated_at": "2019-03-21T15:36:26Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/213#discussion_r267818056",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/213",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/267818056"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/213#discussion_r267818056"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/213"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/269464472",
+        "pull_request_review_id": 219340432,
+        "id": 269464472,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2OTQ2NDQ3Mg==",
+        "diff_hunk": "@@ -1,10 +1,18 @@\n # dat.GUI\n-A lightweight graphical user interface for changing variables in JavaScript. \n+@MacroMan's fork with extra features\n+\n+A lightweight graphical user interface for changing variables in JavaScript.\n \n Get started with dat.GUI by reading the [tutorial](http://workshop.chromeexperiments.com/examples/gui)\n or the [API documentation](API.md).\n \n \n+## MacroMan's extra features\n+* hide/show methods on GUI instances\n+* hide/show methods on Controllers",
+        "path": "README.md",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "021c38f119c495d1275e3597ddb15270750930cd",
+        "original_commit_id": "021c38f119c495d1275e3597ddb15270750930cd",
+        "user": {
+            "login": "MacroMan",
+            "id": 1306658,
+            "node_id": "MDQ6VXNlcjEzMDY2NTg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1306658?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/MacroMan",
+            "html_url": "https://github.com/MacroMan",
+            "followers_url": "https://api.github.com/users/MacroMan/followers",
+            "following_url": "https://api.github.com/users/MacroMan/following{/other_user}",
+            "gists_url": "https://api.github.com/users/MacroMan/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/MacroMan/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/MacroMan/subscriptions",
+            "organizations_url": "https://api.github.com/users/MacroMan/orgs",
+            "repos_url": "https://api.github.com/users/MacroMan/repos",
+            "events_url": "https://api.github.com/users/MacroMan/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/MacroMan/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I didn't realise my further commits would also go into this PR, sorry.\r\nI will close this one and open another with just the suggested edits in a new PR.",
+        "created_at": "2019-03-27T09:15:49Z",
+        "updated_at": "2019-03-27T09:15:49Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/213#discussion_r269464472",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/213",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/269464472"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/213#discussion_r269464472"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/213"
+            }
+        },
+        "in_reply_to_id": 267817653
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/284076642",
+        "pull_request_review_id": 237596015,
+        "id": 284076642,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NDA3NjY0Mg==",
+        "diff_hunk": "@@ -455,6 +456,8 @@ const GUI = function(pars) {\n   }\n };\n \n+GUI.CustomController = CustomController;",
+        "path": "src/dat/gui/GUI.js",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "3f46a3094376f9af3479f899e63c9bb6b69c3313",
+        "original_commit_id": "3f46a3094376f9af3479f899e63c9bb6b69c3313",
+        "user": {
+            "login": "donmccurdy",
+            "id": 1848368,
+            "node_id": "MDQ6VXNlcjE4NDgzNjg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1848368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/donmccurdy",
+            "html_url": "https://github.com/donmccurdy",
+            "followers_url": "https://api.github.com/users/donmccurdy/followers",
+            "following_url": "https://api.github.com/users/donmccurdy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/donmccurdy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/donmccurdy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/donmccurdy/subscriptions",
+            "organizations_url": "https://api.github.com/users/donmccurdy/orgs",
+            "repos_url": "https://api.github.com/users/donmccurdy/repos",
+            "events_url": "https://api.github.com/users/donmccurdy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/donmccurdy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let's not assign this to the `GUI` object. Instead we can export `CustomController` from the module, so it can be used as:\r\n\r\n```js\r\nimport { GUI, controllers } from 'dat.gui';\r\n\r\nclass FooController extends controllers.CustomController {}\r\n```\r\nSee https://github.com/dataarts/dat.gui/blob/master/src/dat/index.js.",
+        "created_at": "2019-05-15T03:38:46Z",
+        "updated_at": "2019-05-15T03:45:59Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/232#discussion_r284076642",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/232",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/284076642"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/232#discussion_r284076642"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/232"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/284076874",
+        "pull_request_review_id": 237596015,
+        "id": 284076874,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NDA3Njg3NA==",
+        "diff_hunk": "@@ -0,0 +1,28 @@\n+/**\n+ * dat-gui JavaScript Controller Library\n+ * http://code.google.com/p/dat-gui\n+ *\n+ * Copyright 2011 Data Arts Team, Google Creative Lab\n+ *\n+ * Licensed under the Apache License, Version 2.0 (the \"License\");\n+ * you may not use this file except in compliance with the License.\n+ * You may obtain a copy of the License at\n+ *\n+ * http://www.apache.org/licenses/LICENSE-2.0\n+ */\n+import Controller from './Controller';\n+\n+/**\n+ * @class Represents a custom controller.\n+ * @param {Object} object\n+ * @param {string} property\n+ */\n+class CustomController extends Controller{\n+  constructor(object, property) {\n+    super(object, property);\n+\n+    object.constructor( this );",
+        "path": "src/dat/controllers/CustomController.js",
+        "position": 24,
+        "original_position": 24,
+        "commit_id": "3f46a3094376f9af3479f899e63c9bb6b69c3313",
+        "original_commit_id": "3f46a3094376f9af3479f899e63c9bb6b69c3313",
+        "user": {
+            "login": "donmccurdy",
+            "id": 1848368,
+            "node_id": "MDQ6VXNlcjE4NDgzNjg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1848368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/donmccurdy",
+            "html_url": "https://github.com/donmccurdy",
+            "followers_url": "https://api.github.com/users/donmccurdy/followers",
+            "following_url": "https://api.github.com/users/donmccurdy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/donmccurdy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/donmccurdy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/donmccurdy/subscriptions",
+            "organizations_url": "https://api.github.com/users/donmccurdy/orgs",
+            "repos_url": "https://api.github.com/users/donmccurdy/repos",
+            "events_url": "https://api.github.com/users/donmccurdy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/donmccurdy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm not sure what this line is doing?",
+        "created_at": "2019-05-15T03:40:50Z",
+        "updated_at": "2019-05-15T03:45:59Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/232#discussion_r284076874",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/232",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/284076874"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/232#discussion_r284076874"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/232"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/284077141",
+        "pull_request_review_id": 237596015,
+        "id": 284077141,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NDA3NzE0MQ==",
+        "diff_hunk": "@@ -557,6 +561,27 @@ common.extend(\n     },\n \n     /**\n+     * Adds a new custom controller to the GUI.\n+     *\n+     * @param object\n+     * @param property\n+     * @returns {Controller} The controller that was added to the GUI.\n+     * @instance\n+     *\n+     */\n+    addCustomController: function(object, property) {\n+    \treturn add(\n+\t\t  this,\n+\t\t  object,\n+\t\t  property,\n+\t\t  {\n+\t\t  \tcustom: true,",
+        "path": "src/dat/gui/GUI.js",
+        "position": 43,
+        "original_position": 43,
+        "commit_id": "3f46a3094376f9af3479f899e63c9bb6b69c3313",
+        "original_commit_id": "3f46a3094376f9af3479f899e63c9bb6b69c3313",
+        "user": {
+            "login": "donmccurdy",
+            "id": 1848368,
+            "node_id": "MDQ6VXNlcjE4NDgzNjg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1848368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/donmccurdy",
+            "html_url": "https://github.com/donmccurdy",
+            "followers_url": "https://api.github.com/users/donmccurdy/followers",
+            "following_url": "https://api.github.com/users/donmccurdy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/donmccurdy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/donmccurdy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/donmccurdy/subscriptions",
+            "organizations_url": "https://api.github.com/users/donmccurdy/orgs",
+            "repos_url": "https://api.github.com/users/donmccurdy/repos",
+            "events_url": "https://api.github.com/users/donmccurdy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/donmccurdy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Do we need the `custom: true` parameter, if we can already check that the object is an instance of CustomController?",
+        "created_at": "2019-05-15T03:43:02Z",
+        "updated_at": "2019-05-15T03:45:59Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/232#discussion_r284077141",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/232",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/284077141"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/232#discussion_r284077141"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/232"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/284077274",
+        "pull_request_review_id": 237596015,
+        "id": 284077274,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NDA3NzI3NA==",
+        "diff_hunk": "@@ -557,6 +561,27 @@ common.extend(\n     },\n \n     /**\n+     * Adds a new custom controller to the GUI.\n+     *\n+     * @param object\n+     * @param property\n+     * @returns {Controller} The controller that was added to the GUI.\n+     * @instance\n+     *\n+     */\n+    addCustomController: function(object, property) {",
+        "path": "src/dat/gui/GUI.js",
+        "position": 37,
+        "original_position": 37,
+        "commit_id": "3f46a3094376f9af3479f899e63c9bb6b69c3313",
+        "original_commit_id": "3f46a3094376f9af3479f899e63c9bb6b69c3313",
+        "user": {
+            "login": "donmccurdy",
+            "id": 1848368,
+            "node_id": "MDQ6VXNlcjE4NDgzNjg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1848368?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/donmccurdy",
+            "html_url": "https://github.com/donmccurdy",
+            "followers_url": "https://api.github.com/users/donmccurdy/followers",
+            "following_url": "https://api.github.com/users/donmccurdy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/donmccurdy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/donmccurdy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/donmccurdy/subscriptions",
+            "organizations_url": "https://api.github.com/users/donmccurdy/orgs",
+            "repos_url": "https://api.github.com/users/donmccurdy/repos",
+            "events_url": "https://api.github.com/users/donmccurdy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/donmccurdy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "To keep this simple, maybe let's only support `gui.add( controller )` for now?",
+        "created_at": "2019-05-15T03:44:11Z",
+        "updated_at": "2019-05-15T03:45:59Z",
+        "html_url": "https://github.com/dataarts/dat.gui/pull/232#discussion_r284077274",
+        "pull_request_url": "https://api.github.com/repos/dataarts/dat.gui/pulls/232",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/comments/284077274"
+            },
+            "html": {
+                "href": "https://github.com/dataarts/dat.gui/pull/232#discussion_r284077274"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dataarts/dat.gui/pulls/232"
+            }
+        }
+    }
+]

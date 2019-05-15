@@ -1,0 +1,794 @@
+[
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/75212521",
+        "pull_request_review_id": null,
+        "id": 75212521,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1MjEyNTIx",
+        "diff_hunk": "@@ -29,26 +29,20 @@ System.config({\n \n System.import('systemjs.config.js')\n   .then(function () {\n-    return Promise.all([\n-      System.import('@angular/core/testing'),\n-      System.import('@angular/platform-browser-dynamic/testing')\n-    ])\n-  })\n-  .then(function (providers) {\n-    var testing = providers[0];\n-    var testingBrowser = providers[1];\n-\n-    testing.setBaseTestProviders(\n-      testingBrowser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,\n-      testingBrowser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS);\n-\n-  })\n-  .then(function() {\n-    // Finally, load all spec files.\n-    // This will run the tests directly.\n-    return Promise.all(\n-      allSpecFiles.map(function (moduleName) {\n-        return System.import(moduleName);\n-      }));\n-  })\n-  .then(__karma__.start, __karma__.error);\n+    System.import('@angular/core/testing')\n+      .then(function (coreTesting) {",
+        "path": "karma-test-shim.js",
+        "position": null,
+        "original_position": 28,
+        "commit_id": "8fb696f25a861df6949a29eb1915f275cf71aff1",
+        "original_commit_id": "e9fea60f822fe52710bbd79784c90a6ae24b5fda",
+        "user": {
+            "login": "filipesilva",
+            "id": 4172079,
+            "node_id": "MDQ6VXNlcjQxNzIwNzk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/4172079?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/filipesilva",
+            "html_url": "https://github.com/filipesilva",
+            "followers_url": "https://api.github.com/users/filipesilva/followers",
+            "following_url": "https://api.github.com/users/filipesilva/following{/other_user}",
+            "gists_url": "https://api.github.com/users/filipesilva/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/filipesilva/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/filipesilva/subscriptions",
+            "organizations_url": "https://api.github.com/users/filipesilva/orgs",
+            "repos_url": "https://api.github.com/users/filipesilva/repos",
+            "events_url": "https://api.github.com/users/filipesilva/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/filipesilva/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can you separate these into a similar setup as before? It's usually nicer to see:\n\n```\nSystem.import('systemjs.config.js')\n  .then(() => Promise.all([\n      System.import('@angular/core/testing'),\n      System.import('@angular/platform-browser-dynamic/testing')\n    ]))\n  .then((providers) => {\n    var coreTesting = providers[0];\n    var browserTesting = providers[1];\n    coreTesting.TestBed.initTestEnvironment(\n            browserTesting.BrowserDynamicTestingModule, \n            browserTesting.platformBrowserDynamicTesting());\n\n  })\n  .then(function () {\n  // Finally, load all spec files.\n  // This will run the tests directly.\n  return Promise.all(\n    allSpecFiles.map(function (moduleName) {\n      return System.import(moduleName);\n    }));\n  })\n  .then(__karma__.start, __karma__.error);\n```\n",
+        "created_at": "2016-08-17T21:38:55Z",
+        "updated_at": "2016-08-17T21:41:48Z",
+        "html_url": "https://github.com/angular/quickstart/pull/184#discussion_r75212521",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/184",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/75212521"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/184#discussion_r75212521"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/184"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/77113227",
+        "pull_request_review_id": null,
+        "id": 77113227,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3MTEzMjI3",
+        "diff_hunk": "@@ -2,61 +2,53 @@\n  * System configuration for Angular 2 samples\n  * Adjust as necessary for your application needs.\n  */\n-(function(global) {\n-\n-  // map tells the System loader where to look for things\n-  var map = {\n-    'app':                        'app', // 'dist',\n-\n-    '@angular':                   'node_modules/@angular',\n-    'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',\n-    'rxjs':                       'node_modules/rxjs'\n-  };\n-\n-  // packages tells the System loader how to load when no filename and/or no extension\n-  var packages = {\n-    'app':                        { main: 'main.js',  defaultExtension: 'js' },\n-    'rxjs':                       { defaultExtension: 'js' },\n-    'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },\n-  };\n-\n-  var ngPackageNames = [\n-    'common',\n-    'compiler',\n-    'core',\n-    'forms',\n-    'http',\n-    'platform-browser',\n-    'platform-browser-dynamic',\n-    'router',\n-    'router-deprecated',\n-    'upgrade',\n-  ];\n-\n-  // Individual files (~300 requests):\n-  function packIndex(pkgName) {\n-    packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };\n-  }\n-\n-  // Bundled (~40 requests):\n-  function packUmd(pkgName) {\n-    packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };\n-  }\n-\n-  // Most environments should use UMD; some (Karma) need the individual index files\n-  var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;\n-\n-  // Add package entries for angular packages\n-  ngPackageNames.forEach(setPackageConfig);\n-\n-  // No umd for router yet\n-  packages['@angular/router'] = { main: 'index.js', defaultExtension: 'js' };\n-\n-  var config = {\n-    map: map,\n-    packages: packages\n-  };\n-\n-  System.config(config);\n-\n+(function (global) {\n+  System.config({\n+    paths: {\n+      // paths serve as alias\n+      'npm:': 'node_modules/'\n+    },\n+    // map tells the System loader where to look for things\n+    map: {\n+      // our app is within the app folder\n+      app: 'app',\n+\n+      // angular bundles\n+      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',\n+      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',\n+      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',\n+      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',\n+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',\n+      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',\n+      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',\n+      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',\n+\n+      // angular testing umd bundles\n+      '@angular/core/testing': 'npm:@angular/core/bundles/core-testing.umd.js',\n+      '@angular/common/testing': 'npm:@angular/common/bundles/common-testing.umd.js',\n+      '@angular/compiler/testing': 'npm:@angular/compiler/bundles/compiler-testing.umd.js',\n+      '@angular/platform-browser/testing': 'npm:@angular/platform-browser/bundles/platform-browser-testing.umd.js',\n+      '@angular/platform-browser-dynamic/testing': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',\n+      '@angular/http/testing': 'npm:@angular/http/bundles/http-testing.umd.js',\n+      '@angular/router/testing': 'npm:@angular/router/bundles/router-testing.umd.js',\n+      '@angular/forms/testing': 'npm:@angular/forms/bundles/forms-testing.umd.js',",
+        "path": "systemjs.config.js",
+        "position": 90,
+        "original_position": 90,
+        "commit_id": "0b647deb561b250c3bf6c89834b5d8d970b8e7a0",
+        "original_commit_id": "0b647deb561b250c3bf6c89834b5d8d970b8e7a0",
+        "user": {
+            "login": "IgorMinar",
+            "id": 216296,
+            "node_id": "MDQ6VXNlcjIxNjI5Ng==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/216296?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/IgorMinar",
+            "html_url": "https://github.com/IgorMinar",
+            "followers_url": "https://api.github.com/users/IgorMinar/followers",
+            "following_url": "https://api.github.com/users/IgorMinar/following{/other_user}",
+            "gists_url": "https://api.github.com/users/IgorMinar/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/IgorMinar/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/IgorMinar/subscriptions",
+            "organizations_url": "https://api.github.com/users/IgorMinar/orgs",
+            "repos_url": "https://api.github.com/users/IgorMinar/repos",
+            "events_url": "https://api.github.com/users/IgorMinar/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/IgorMinar/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "there is no forms testing bundle but there is also no harm in leaving this in in case we add one in the future.\n",
+        "created_at": "2016-09-01T04:43:57Z",
+        "updated_at": "2016-09-01T04:43:57Z",
+        "html_url": "https://github.com/angular/quickstart/pull/202#discussion_r77113227",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/202",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/77113227"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/202#discussion_r77113227"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/202"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/82257708",
+        "pull_request_review_id": 3178171,
+        "id": 82257708,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyMjU3NzA4",
+        "diff_hunk": "@@ -58,7 +55,12 @@\n     \"karma-jasmine\": \"^1.0.2\",\n     \"karma-jasmine-html-reporter\": \"^0.2.2\",\n     \"protractor\": \"^3.3.0\",\n-    \"rimraf\": \"^2.5.4\"\n+    \"rimraf\": \"^2.5.4\",\n+\n+    \"@types/core-js\": \"^0.9.34\",\n+    \"@types/jasmine\": \"^2.5.35\",\n+    \"@types/node\": \"^6.0.45\",\n+    \"@types/protractor\": \"^1.5.20\"",
+        "path": "package.json",
+        "position": null,
+        "original_position": 31,
+        "commit_id": "e9a542dcea2ebeea30830207af57f82b0c1ac3ce",
+        "original_commit_id": "14b8ddd38652d22153aeb6160239a315af28d3ab",
+        "user": {
+            "login": "andriybuday",
+            "id": 3521768,
+            "node_id": "MDQ6VXNlcjM1MjE3Njg=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3521768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/andriybuday",
+            "html_url": "https://github.com/andriybuday",
+            "followers_url": "https://api.github.com/users/andriybuday/followers",
+            "following_url": "https://api.github.com/users/andriybuday/following{/other_user}",
+            "gists_url": "https://api.github.com/users/andriybuday/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/andriybuday/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/andriybuday/subscriptions",
+            "organizations_url": "https://api.github.com/users/andriybuday/orgs",
+            "repos_url": "https://api.github.com/users/andriybuday/repos",
+            "events_url": "https://api.github.com/users/andriybuday/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/andriybuday/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Compilation didn't work until after I added this: \"@types/selenium-webdriver\": \"2.44.26\"\nI verified twice. Also it looks like latest version of \"@types/selenium-webdriver\" isn't working either.\n",
+        "created_at": "2016-10-06T18:49:15Z",
+        "updated_at": "2016-10-11T14:01:36Z",
+        "html_url": "https://github.com/angular/quickstart/pull/157#discussion_r82257708",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/157",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/82257708"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/157#discussion_r82257708"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/157"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/82275254",
+        "pull_request_review_id": 3194784,
+        "id": 82275254,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyMjc1MjU0",
+        "diff_hunk": "@@ -58,7 +55,12 @@\n     \"karma-jasmine\": \"^1.0.2\",\n     \"karma-jasmine-html-reporter\": \"^0.2.2\",\n     \"protractor\": \"^3.3.0\",\n-    \"rimraf\": \"^2.5.4\"\n+    \"rimraf\": \"^2.5.4\",\n+\n+    \"@types/core-js\": \"^0.9.34\",\n+    \"@types/jasmine\": \"^2.5.35\",\n+    \"@types/node\": \"^6.0.45\",\n+    \"@types/protractor\": \"^1.5.20\"",
+        "path": "package.json",
+        "position": null,
+        "original_position": 31,
+        "commit_id": "e9a542dcea2ebeea30830207af57f82b0c1ac3ce",
+        "original_commit_id": "14b8ddd38652d22153aeb6160239a315af28d3ab",
+        "user": {
+            "login": "filipesilva",
+            "id": 4172079,
+            "node_id": "MDQ6VXNlcjQxNzIwNzk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/4172079?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/filipesilva",
+            "html_url": "https://github.com/filipesilva",
+            "followers_url": "https://api.github.com/users/filipesilva/followers",
+            "following_url": "https://api.github.com/users/filipesilva/following{/other_user}",
+            "gists_url": "https://api.github.com/users/filipesilva/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/filipesilva/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/filipesilva/subscriptions",
+            "organizations_url": "https://api.github.com/users/filipesilva/orgs",
+            "repos_url": "https://api.github.com/users/filipesilva/repos",
+            "events_url": "https://api.github.com/users/filipesilva/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/filipesilva/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Good catch, thanks!\n",
+        "created_at": "2016-10-06T20:19:27Z",
+        "updated_at": "2016-10-11T14:01:36Z",
+        "html_url": "https://github.com/angular/quickstart/pull/157#discussion_r82275254",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/157",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/82275254"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/157#discussion_r82275254"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/157"
+            }
+        },
+        "in_reply_to_id": 82257708
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/97395026",
+        "pull_request_review_id": 18003002,
+        "id": 97395026,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3Mzk1MDI2",
+        "diff_hunk": "@@ -115,7 +115,7 @@ with excellent support for Angular apps that use routing.\n \n Here are the test related scripts:\n * `npm test` - compiles, runs and watches the karma unit tests\n-* `npm run e2e` - run protractor e2e tests, written in JavaScript (*e2e-spec.js)\n+* `npm run e2e` - compiles and run protractor e2e tests, written in JavaScript (*e2e-spec.js)",
+        "path": "README.md",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "ab4b109724242608067595d27675fe3d396f6d55",
+        "user": {
+            "login": "Foxandxss",
+            "id": 1087957,
+            "node_id": "MDQ6VXNlcjEwODc5NTc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1087957?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Foxandxss",
+            "html_url": "https://github.com/Foxandxss",
+            "followers_url": "https://api.github.com/users/Foxandxss/followers",
+            "following_url": "https://api.github.com/users/Foxandxss/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Foxandxss/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Foxandxss/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Foxandxss/subscriptions",
+            "organizations_url": "https://api.github.com/users/Foxandxss/orgs",
+            "repos_url": "https://api.github.com/users/Foxandxss/repos",
+            "events_url": "https://api.github.com/users/Foxandxss/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Foxandxss/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Aren't them typescript now?",
+        "created_at": "2017-01-23T19:23:22Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r97395026",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/97395026"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r97395026"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/97395098",
+        "pull_request_review_id": 18003002,
+        "id": 97395098,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3Mzk1MDk4",
+        "diff_hunk": "@@ -128,9 +128,9 @@ These tools are configured for specific conventions described below.\n We recommend that you shut down one before starting another.*\n \n ### Unit Tests\n-TypeScript unit-tests are usually in the `app` folder. Their filenames must end in `.spec`.\n+TypeScript unit-tests are usually in the `src/app` folder. Their filenames must end in `.spec`.",
+        "path": "README.md",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "ab4b109724242608067595d27675fe3d396f6d55",
+        "user": {
+            "login": "Foxandxss",
+            "id": 1087957,
+            "node_id": "MDQ6VXNlcjEwODc5NTc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1087957?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Foxandxss",
+            "html_url": "https://github.com/Foxandxss",
+            "followers_url": "https://api.github.com/users/Foxandxss/followers",
+            "following_url": "https://api.github.com/users/Foxandxss/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Foxandxss/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Foxandxss/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Foxandxss/subscriptions",
+            "organizations_url": "https://api.github.com/users/Foxandxss/orgs",
+            "repos_url": "https://api.github.com/users/Foxandxss/repos",
+            "events_url": "https://api.github.com/users/Foxandxss/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Foxandxss/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Shouldn't they end on `.spec.ts`?",
+        "created_at": "2017-01-23T19:23:42Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r97395098",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/97395098"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r97395098"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/97395426",
+        "pull_request_review_id": 18003002,
+        "id": 97395426,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3Mzk1NDI2",
+        "diff_hunk": "@@ -156,7 +156,7 @@ we configured protractor to find them.\n \n Thereafter, run them with `npm run e2e`.\n \n-That command first compiles, then simultaneously starts the Http-Server at `localhost:8080`\n+That command first compiles, then simultaneously starts the Http-Server at `localhost:3000`",
+        "path": "README.md",
+        "position": null,
+        "original_position": 35,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "ab4b109724242608067595d27675fe3d396f6d55",
+        "user": {
+            "login": "Foxandxss",
+            "id": 1087957,
+            "node_id": "MDQ6VXNlcjEwODc5NTc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1087957?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Foxandxss",
+            "html_url": "https://github.com/Foxandxss",
+            "followers_url": "https://api.github.com/users/Foxandxss/followers",
+            "following_url": "https://api.github.com/users/Foxandxss/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Foxandxss/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Foxandxss/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Foxandxss/subscriptions",
+            "organizations_url": "https://api.github.com/users/Foxandxss/orgs",
+            "repos_url": "https://api.github.com/users/Foxandxss/repos",
+            "events_url": "https://api.github.com/users/Foxandxss/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Foxandxss/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "it is not `http-server` anymore, even if lite-server is a http server, I guess we could remove the - in there.",
+        "created_at": "2017-01-23T19:25:08Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r97395426",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/97395426"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r97395426"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/97395714",
+        "pull_request_review_id": 18003002,
+        "id": 97395714,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3Mzk1NzE0",
+        "diff_hunk": "@@ -147,7 +147,7 @@ restart it. No worries; it's pretty quick.\n \n ### End-to-end (E2E) Tests\n \n-E2E tests are in the `e2e` directory, side by side with the `app` folder.\n+E2E tests are in the `e2e` directory, side by side with the `src` folder.",
+        "path": "README.md",
+        "position": 63,
+        "original_position": 26,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "ab4b109724242608067595d27675fe3d396f6d55",
+        "user": {
+            "login": "Foxandxss",
+            "id": 1087957,
+            "node_id": "MDQ6VXNlcjEwODc5NTc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1087957?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Foxandxss",
+            "html_url": "https://github.com/Foxandxss",
+            "followers_url": "https://api.github.com/users/Foxandxss/followers",
+            "following_url": "https://api.github.com/users/Foxandxss/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Foxandxss/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Foxandxss/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Foxandxss/subscriptions",
+            "organizations_url": "https://api.github.com/users/Foxandxss/orgs",
+            "repos_url": "https://api.github.com/users/Foxandxss/repos",
+            "events_url": "https://api.github.com/users/Foxandxss/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Foxandxss/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I see them in an `e2e` folder and still same folder after this PR.",
+        "created_at": "2017-01-23T19:26:29Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r97395714",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/97395714"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r97395714"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/97506562",
+        "pull_request_review_id": 18116840,
+        "id": 97506562,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3NTA2NTYy",
+        "diff_hunk": "@@ -115,7 +115,7 @@ with excellent support for Angular apps that use routing.\n \n Here are the test related scripts:\n * `npm test` - compiles, runs and watches the karma unit tests\n-* `npm run e2e` - run protractor e2e tests, written in JavaScript (*e2e-spec.js)\n+* `npm run e2e` - compiles and run protractor e2e tests, written in JavaScript (*e2e-spec.js)",
+        "path": "README.md",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "ab4b109724242608067595d27675fe3d396f6d55",
+        "user": {
+            "login": "filipesilva",
+            "id": 4172079,
+            "node_id": "MDQ6VXNlcjQxNzIwNzk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/4172079?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/filipesilva",
+            "html_url": "https://github.com/filipesilva",
+            "followers_url": "https://api.github.com/users/filipesilva/followers",
+            "following_url": "https://api.github.com/users/filipesilva/following{/other_user}",
+            "gists_url": "https://api.github.com/users/filipesilva/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/filipesilva/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/filipesilva/subscriptions",
+            "organizations_url": "https://api.github.com/users/filipesilva/orgs",
+            "repos_url": "https://api.github.com/users/filipesilva/repos",
+            "events_url": "https://api.github.com/users/filipesilva/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/filipesilva/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes, and that means they need to be compiled. However what I actually wanted to say here (and didn't do it very well) is that running the command also compiles your app. ",
+        "created_at": "2017-01-24T09:42:05Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r97506562",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/97506562"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r97506562"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        },
+        "in_reply_to_id": 97395026
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/97506731",
+        "pull_request_review_id": 18117026,
+        "id": 97506731,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3NTA2NzMx",
+        "diff_hunk": "@@ -128,9 +128,9 @@ These tools are configured for specific conventions described below.\n We recommend that you shut down one before starting another.*\n \n ### Unit Tests\n-TypeScript unit-tests are usually in the `app` folder. Their filenames must end in `.spec`.\n+TypeScript unit-tests are usually in the `src/app` folder. Their filenames must end in `.spec`.",
+        "path": "README.md",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "ab4b109724242608067595d27675fe3d396f6d55",
+        "user": {
+            "login": "filipesilva",
+            "id": 4172079,
+            "node_id": "MDQ6VXNlcjQxNzIwNzk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/4172079?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/filipesilva",
+            "html_url": "https://github.com/filipesilva",
+            "followers_url": "https://api.github.com/users/filipesilva/followers",
+            "following_url": "https://api.github.com/users/filipesilva/following{/other_user}",
+            "gists_url": "https://api.github.com/users/filipesilva/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/filipesilva/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/filipesilva/subscriptions",
+            "organizations_url": "https://api.github.com/users/filipesilva/orgs",
+            "repos_url": "https://api.github.com/users/filipesilva/repos",
+            "events_url": "https://api.github.com/users/filipesilva/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/filipesilva/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Fixed",
+        "created_at": "2017-01-24T09:42:48Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r97506731",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/97506731"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r97506731"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        },
+        "in_reply_to_id": 97395098
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/97506999",
+        "pull_request_review_id": 18117305,
+        "id": 97506999,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3NTA2OTk5",
+        "diff_hunk": "@@ -115,7 +115,7 @@ with excellent support for Angular apps that use routing.\n \n Here are the test related scripts:\n * `npm test` - compiles, runs and watches the karma unit tests\n-* `npm run e2e` - run protractor e2e tests, written in JavaScript (*e2e-spec.js)\n+* `npm run e2e` - compiles and run protractor e2e tests, written in JavaScript (*e2e-spec.js)",
+        "path": "README.md",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "ab4b109724242608067595d27675fe3d396f6d55",
+        "user": {
+            "login": "filipesilva",
+            "id": 4172079,
+            "node_id": "MDQ6VXNlcjQxNzIwNzk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/4172079?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/filipesilva",
+            "html_url": "https://github.com/filipesilva",
+            "followers_url": "https://api.github.com/users/filipesilva/followers",
+            "following_url": "https://api.github.com/users/filipesilva/following{/other_user}",
+            "gists_url": "https://api.github.com/users/filipesilva/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/filipesilva/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/filipesilva/subscriptions",
+            "organizations_url": "https://api.github.com/users/filipesilva/orgs",
+            "repos_url": "https://api.github.com/users/filipesilva/repos",
+            "events_url": "https://api.github.com/users/filipesilva/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/filipesilva/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sorry I missed what you really meant. Fixed.",
+        "created_at": "2017-01-24T09:44:13Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r97506999",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/97506999"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r97506999"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        },
+        "in_reply_to_id": 97395026
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/97507177",
+        "pull_request_review_id": 18117506,
+        "id": 97507177,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3NTA3MTc3",
+        "diff_hunk": "@@ -147,7 +147,7 @@ restart it. No worries; it's pretty quick.\n \n ### End-to-end (E2E) Tests\n \n-E2E tests are in the `e2e` directory, side by side with the `app` folder.\n+E2E tests are in the `e2e` directory, side by side with the `src` folder.",
+        "path": "README.md",
+        "position": 63,
+        "original_position": 26,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "ab4b109724242608067595d27675fe3d396f6d55",
+        "user": {
+            "login": "filipesilva",
+            "id": 4172079,
+            "node_id": "MDQ6VXNlcjQxNzIwNzk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/4172079?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/filipesilva",
+            "html_url": "https://github.com/filipesilva",
+            "followers_url": "https://api.github.com/users/filipesilva/followers",
+            "following_url": "https://api.github.com/users/filipesilva/following{/other_user}",
+            "gists_url": "https://api.github.com/users/filipesilva/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/filipesilva/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/filipesilva/subscriptions",
+            "organizations_url": "https://api.github.com/users/filipesilva/orgs",
+            "repos_url": "https://api.github.com/users/filipesilva/repos",
+            "events_url": "https://api.github.com/users/filipesilva/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/filipesilva/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The paragraph says they are in the `e2e` folder, and that it is a sibling folder to `src`. Did you misread or am I missing something?",
+        "created_at": "2017-01-24T09:45:23Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r97507177",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/97507177"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r97507177"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        },
+        "in_reply_to_id": 97395714
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/97507531",
+        "pull_request_review_id": 18117850,
+        "id": 97507531,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3NTA3NTMx",
+        "diff_hunk": "@@ -156,7 +156,7 @@ we configured protractor to find them.\n \n Thereafter, run them with `npm run e2e`.\n \n-That command first compiles, then simultaneously starts the Http-Server at `localhost:8080`\n+That command first compiles, then simultaneously starts the Http-Server at `localhost:3000`",
+        "path": "README.md",
+        "position": null,
+        "original_position": 35,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "ab4b109724242608067595d27675fe3d396f6d55",
+        "user": {
+            "login": "filipesilva",
+            "id": 4172079,
+            "node_id": "MDQ6VXNlcjQxNzIwNzk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/4172079?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/filipesilva",
+            "html_url": "https://github.com/filipesilva",
+            "followers_url": "https://api.github.com/users/filipesilva/followers",
+            "following_url": "https://api.github.com/users/filipesilva/following{/other_user}",
+            "gists_url": "https://api.github.com/users/filipesilva/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/filipesilva/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/filipesilva/subscriptions",
+            "organizations_url": "https://api.github.com/users/filipesilva/orgs",
+            "repos_url": "https://api.github.com/users/filipesilva/repos",
+            "events_url": "https://api.github.com/users/filipesilva/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/filipesilva/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Fixed by putting the package name explicitly.",
+        "created_at": "2017-01-24T09:47:02Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r97507531",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/97507531"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r97507531"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        },
+        "in_reply_to_id": 97395426
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/97519044",
+        "pull_request_review_id": 18129741,
+        "id": 97519044,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3NTE5MDQ0",
+        "diff_hunk": "@@ -147,7 +147,7 @@ restart it. No worries; it's pretty quick.\n \n ### End-to-end (E2E) Tests\n \n-E2E tests are in the `e2e` directory, side by side with the `app` folder.\n+E2E tests are in the `e2e` directory, side by side with the `src` folder.",
+        "path": "README.md",
+        "position": 63,
+        "original_position": 26,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "ab4b109724242608067595d27675fe3d396f6d55",
+        "user": {
+            "login": "Foxandxss",
+            "id": 1087957,
+            "node_id": "MDQ6VXNlcjEwODc5NTc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1087957?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Foxandxss",
+            "html_url": "https://github.com/Foxandxss",
+            "followers_url": "https://api.github.com/users/Foxandxss/followers",
+            "following_url": "https://api.github.com/users/Foxandxss/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Foxandxss/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Foxandxss/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Foxandxss/subscriptions",
+            "organizations_url": "https://api.github.com/users/Foxandxss/orgs",
+            "repos_url": "https://api.github.com/users/Foxandxss/repos",
+            "events_url": "https://api.github.com/users/Foxandxss/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Foxandxss/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I completely misread. Sorry",
+        "created_at": "2017-01-24T10:47:11Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r97519044",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/97519044"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r97519044"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        },
+        "in_reply_to_id": 97395714
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/99129191",
+        "pull_request_review_id": 19794490,
+        "id": 99129191,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk5MTI5MTkx",
+        "diff_hunk": "@@ -30,7 +30,6 @@\n     // packages tells the System loader how to load when no filename and/or no extension\n     packages: {\n       app: {\n-        main: './main.js',",
+        "path": "src/systemjs.config.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "96ff19e627d5875258de70b5fa6cb373c647649e",
+        "user": {
+            "login": "Foxandxss",
+            "id": 1087957,
+            "node_id": "MDQ6VXNlcjEwODc5NTc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1087957?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Foxandxss",
+            "html_url": "https://github.com/Foxandxss",
+            "followers_url": "https://api.github.com/users/Foxandxss/followers",
+            "following_url": "https://api.github.com/users/Foxandxss/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Foxandxss/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Foxandxss/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Foxandxss/subscriptions",
+            "organizations_url": "https://api.github.com/users/Foxandxss/orgs",
+            "repos_url": "https://api.github.com/users/Foxandxss/repos",
+            "events_url": "https://api.github.com/users/Foxandxss/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Foxandxss/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "what do we gain by removing this? I mean, if we are not importing \"app\" anymore, shouldn't we remove the entire app node?",
+        "created_at": "2017-02-02T14:25:43Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r99129191",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/99129191"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r99129191"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/angular/quickstart/pulls/comments/99130918",
+        "pull_request_review_id": 19796262,
+        "id": 99130918,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk5MTMwOTE4",
+        "diff_hunk": "@@ -30,7 +30,6 @@\n     // packages tells the System loader how to load when no filename and/or no extension\n     packages: {\n       app: {\n-        main: './main.js',",
+        "path": "src/systemjs.config.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "f42165ca7ff99ad1ee9e64ebedd93bf6b2f99cbc",
+        "original_commit_id": "96ff19e627d5875258de70b5fa6cb373c647649e",
+        "user": {
+            "login": "filipesilva",
+            "id": 4172079,
+            "node_id": "MDQ6VXNlcjQxNzIwNzk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/4172079?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/filipesilva",
+            "html_url": "https://github.com/filipesilva",
+            "followers_url": "https://api.github.com/users/filipesilva/followers",
+            "following_url": "https://api.github.com/users/filipesilva/following{/other_user}",
+            "gists_url": "https://api.github.com/users/filipesilva/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/filipesilva/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/filipesilva/subscriptions",
+            "organizations_url": "https://api.github.com/users/filipesilva/orgs",
+            "repos_url": "https://api.github.com/users/filipesilva/repos",
+            "events_url": "https://api.github.com/users/filipesilva/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/filipesilva/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Doesn't work without that:\r\n![image](https://cloud.githubusercontent.com/assets/4172079/22553432/95d6ffea-e954-11e6-9b62-dfea57679d8e.png)\r\n",
+        "created_at": "2017-02-02T14:33:42Z",
+        "updated_at": "2017-02-02T16:43:34Z",
+        "html_url": "https://github.com/angular/quickstart/pull/362#discussion_r99130918",
+        "pull_request_url": "https://api.github.com/repos/angular/quickstart/pulls/362",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/comments/99130918"
+            },
+            "html": {
+                "href": "https://github.com/angular/quickstart/pull/362#discussion_r99130918"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/angular/quickstart/pulls/362"
+            }
+        },
+        "in_reply_to_id": 99129191
+    }
+]

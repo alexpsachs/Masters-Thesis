@@ -1,0 +1,541 @@
+[
+    {
+        "url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/20776501",
+        "pull_request_review_id": null,
+        "id": 20776501,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwNzc2NTAx",
+        "diff_hunk": "@@ -472,4 +479,114 @@ seagull.config(function ($translateProvider) {\n     is_official: '\u5b98\u65b9\u93e1\u50cf',\n     is_automated: '\u81ea\u52d5\u69cb\u5efa\u93e1\u50cf'\n   });\n+\n+  /* Translate into German */\n+  $translateProvider.translations('de-de', {\n+    // Index html\n+    seagull: 'Seagull',\n+    containers: 'Container',\n+    images: 'Images',\n+    configuration: 'Einstellungen',\n+    dockerhub: 'DockerHub',\n+    more: 'Mehr',\n+    zh_cn: '\u7b80\u4f53\u4e2d\u6587',\n+    zh_hant: '\u7e41\u9ad4\u4e2d\u6587',\n+    en_us: 'English',\n+    de_de: 'Deutsch',\n+    need_help: 'Hilfe',\n+    // Home page\n+    error_to_load_data_from_docker_daemon_please_check_seagull_and_configuration: 'Beim Laden von Daten vom Docker-Dienst trat ein Fehler auf. Bitte \u00fcberpr\u00fcfe Seagull und die Einstellungen.',\n+    period: '.',\n+    the_best_friend_of_docker: 'der beste Freund von Docker',\n+    im_using: 'Ich nutze',\n+    with_kernel: 'mit Kernel',\n+    and_docker: 'und Docker',\n+    the_docker_daemon_has: 'Der Docker-Dienst hat',\n+    running_stopped_containers_and: 'laufende/gestoppte Container und aktuell',\n+    images_now: 'Images',\n+    docker_is_an_open_platform_for_distributed_application_for_developers_and_sysadmins: 'Docker ist eine offene Plattform f\u00fcr verteilte Anwendungen f\u00fcr Entwickler und Administratoren',\n+    and_seagull_provides_a_friendly_web_ui_to_monitor_docker: 'und Seagull stellt eine angenehme Web-Oberfl\u00e4che zum Verwalten von Docker zur Verf\u00fcgung.',\n+    github: 'Github',\n+    go_now: 'Hier lang!',\n+    learn_more: 'Erfahre mehr',\n+    containers_page_display_all_running_and_stopped_docker_containers: 'Die Container-Seite zeigt alle laufenden und gestoppten Docker-Container an.',\n+    images_page_display_all_docker_images_to_start_stop_and_delete: 'Die Images-Seite zeigt alle Docker-Images an und erm\u00f6glicht das Starten, Stoppen und L\u00f6schen von Images.',\n+    configuration_page_display_all_your_docker_environment_and_settings:'Die Einstellungsseite zeigt die gesamte Docker-Umgebung und deren Einstellungen an.',\n+    seagull_is_open_source_in_Github_welcome_to_contribution_and_issues: 'Seagull ist Open-Source und auf Github verf\u00fcgbar. Mitarbeit und Fehlermeldungen sind gerne gesehen.',\n+    // Containers page\n+    search: 'Suche',\n+    filter: 'Filter',\n+    all: 'Alle',\n+    no_docker_container: 'Keine Docker-Container!',\n+    id: 'ID',\n+    names: 'Namen',\n+    image: 'Image',\n+    command: 'Befehl',\n+    created: 'Erstellt',\n+    status: 'Status',\n+    ports: 'Ports',\n+    operation: 'Anweisung',\n+    // Images page\n+    no_docker_image: 'Kein Docker-Image!',\n+    repotags: 'Bezeichnung (Tag)',\n+    virtualsize: 'Virtuelle Gr\u00f6\u00dfe',\n+    delete: 'L\u00f6schen',\n+    // Container page\n+    container: 'Container',\n+    start: 'Start',\n+    stop: 'Anhalten',\n+    refresh: 'Aktualisieren',\n+    no_such_container: 'Kein solcher Container!',\n+    attribute: 'Attribute',\n+    value: 'Wert',\n+    name: 'Name',\n+    running: 'Laufend',\n+    startedat: 'Gestartet am',\n+    publishallports: 'Alle Ports freigeben',\n+    links: 'Links',\n+    openstdin: 'Stdin offen halten',\n+    uid: 'UID',\n+    pid: 'PID',\n+    c: 'C',\n+    stime: 'STIME',\n+    tty: 'TTY',\n+    time: 'TIME',\n+    cmd: 'CMD',\n+    // Image page\n+    no_such_image: 'Kein solches Image!',\n+    author: 'Author',",
+        "path": "static/js/app.js",
+        "position": null,
+        "original_position": 107,
+        "commit_id": "9ff8ffbf9d73c0f91a1e22c29aed1cd2bb475c0d",
+        "original_commit_id": "203904104c9953ffafe55a76e55d18806550966b",
+        "user": {
+            "login": "rkusa",
+            "id": 409021,
+            "node_id": "MDQ6VXNlcjQwOTAyMQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/409021?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rkusa",
+            "html_url": "https://github.com/rkusa",
+            "followers_url": "https://api.github.com/users/rkusa/followers",
+            "following_url": "https://api.github.com/users/rkusa/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rkusa/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rkusa/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rkusa/subscriptions",
+            "organizations_url": "https://api.github.com/users/rkusa/orgs",
+            "repos_url": "https://api.github.com/users/rkusa/repos",
+            "events_url": "https://api.github.com/users/rkusa/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rkusa/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Autor\n",
+        "created_at": "2014-11-24T08:17:17Z",
+        "updated_at": "2014-11-24T08:35:38Z",
+        "html_url": "https://github.com/tobegit3hub/seagull/pull/19#discussion_r20776501",
+        "pull_request_url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/19",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/20776501"
+            },
+            "html": {
+                "href": "https://github.com/tobegit3hub/seagull/pull/19#discussion_r20776501"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/19"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/20776526",
+        "pull_request_review_id": null,
+        "id": 20776526,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwNzc2NTI2",
+        "diff_hunk": "@@ -472,4 +479,114 @@ seagull.config(function ($translateProvider) {\n     is_official: '\u5b98\u65b9\u93e1\u50cf',\n     is_automated: '\u81ea\u52d5\u69cb\u5efa\u93e1\u50cf'\n   });\n+\n+  /* Translate into German */\n+  $translateProvider.translations('de-de', {\n+    // Index html\n+    seagull: 'Seagull',\n+    containers: 'Container',\n+    images: 'Images',\n+    configuration: 'Einstellungen',\n+    dockerhub: 'DockerHub',\n+    more: 'Mehr',\n+    zh_cn: '\u7b80\u4f53\u4e2d\u6587',\n+    zh_hant: '\u7e41\u9ad4\u4e2d\u6587',\n+    en_us: 'English',\n+    de_de: 'Deutsch',\n+    need_help: 'Hilfe',\n+    // Home page\n+    error_to_load_data_from_docker_daemon_please_check_seagull_and_configuration: 'Beim Laden von Daten vom Docker-Dienst trat ein Fehler auf. Bitte \u00fcberpr\u00fcfe Seagull und die Einstellungen.',\n+    period: '.',\n+    the_best_friend_of_docker: 'der beste Freund von Docker',\n+    im_using: 'Ich nutze',\n+    with_kernel: 'mit Kernel',\n+    and_docker: 'und Docker',\n+    the_docker_daemon_has: 'Der Docker-Dienst hat',\n+    running_stopped_containers_and: 'laufende/gestoppte Container und aktuell',\n+    images_now: 'Images',\n+    docker_is_an_open_platform_for_distributed_application_for_developers_and_sysadmins: 'Docker ist eine offene Plattform f\u00fcr verteilte Anwendungen f\u00fcr Entwickler und Administratoren',\n+    and_seagull_provides_a_friendly_web_ui_to_monitor_docker: 'und Seagull stellt eine angenehme Web-Oberfl\u00e4che zum Verwalten von Docker zur Verf\u00fcgung.',\n+    github: 'Github',\n+    go_now: 'Hier lang!',\n+    learn_more: 'Erfahre mehr',\n+    containers_page_display_all_running_and_stopped_docker_containers: 'Die Container-Seite zeigt alle laufenden und gestoppten Docker-Container an.',\n+    images_page_display_all_docker_images_to_start_stop_and_delete: 'Die Images-Seite zeigt alle Docker-Images an und erm\u00f6glicht das Starten, Stoppen und L\u00f6schen von Images.',\n+    configuration_page_display_all_your_docker_environment_and_settings:'Die Einstellungsseite zeigt die gesamte Docker-Umgebung und deren Einstellungen an.',\n+    seagull_is_open_source_in_Github_welcome_to_contribution_and_issues: 'Seagull ist Open-Source und auf Github verf\u00fcgbar. Mitarbeit und Fehlermeldungen sind gerne gesehen.',\n+    // Containers page\n+    search: 'Suche',\n+    filter: 'Filter',\n+    all: 'Alle',\n+    no_docker_container: 'Keine Docker-Container!',\n+    id: 'ID',\n+    names: 'Namen',\n+    image: 'Image',\n+    command: 'Befehl',\n+    created: 'Erstellt',\n+    status: 'Status',\n+    ports: 'Ports',\n+    operation: 'Anweisung',\n+    // Images page\n+    no_docker_image: 'Kein Docker-Image!',\n+    repotags: 'Bezeichnung (Tag)',\n+    virtualsize: 'Virtuelle Gr\u00f6\u00dfe',\n+    delete: 'L\u00f6schen',\n+    // Container page\n+    container: 'Container',\n+    start: 'Start',",
+        "path": "static/js/app.js",
+        "position": null,
+        "original_position": 86,
+        "commit_id": "9ff8ffbf9d73c0f91a1e22c29aed1cd2bb475c0d",
+        "original_commit_id": "203904104c9953ffafe55a76e55d18806550966b",
+        "user": {
+            "login": "rkusa",
+            "id": 409021,
+            "node_id": "MDQ6VXNlcjQwOTAyMQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/409021?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rkusa",
+            "html_url": "https://github.com/rkusa",
+            "followers_url": "https://api.github.com/users/rkusa/followers",
+            "following_url": "https://api.github.com/users/rkusa/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rkusa/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rkusa/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rkusa/subscriptions",
+            "organizations_url": "https://api.github.com/users/rkusa/orgs",
+            "repos_url": "https://api.github.com/users/rkusa/repos",
+            "events_url": "https://api.github.com/users/rkusa/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rkusa/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Maybe `Starten` instead of `Start` (for consistency, since `stop` \u2192 `Anhalten`)\n",
+        "created_at": "2014-11-24T08:18:05Z",
+        "updated_at": "2014-11-24T08:35:38Z",
+        "html_url": "https://github.com/tobegit3hub/seagull/pull/19#discussion_r20776526",
+        "pull_request_url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/19",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/20776526"
+            },
+            "html": {
+                "href": "https://github.com/tobegit3hub/seagull/pull/19#discussion_r20776526"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/19"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/20776648",
+        "pull_request_review_id": null,
+        "id": 20776648,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwNzc2NjQ4",
+        "diff_hunk": "@@ -472,4 +479,114 @@ seagull.config(function ($translateProvider) {\n     is_official: '\u5b98\u65b9\u93e1\u50cf',\n     is_automated: '\u81ea\u52d5\u69cb\u5efa\u93e1\u50cf'\n   });\n+\n+  /* Translate into German */\n+  $translateProvider.translations('de-de', {\n+    // Index html\n+    seagull: 'Seagull',\n+    containers: 'Container',\n+    images: 'Images',\n+    configuration: 'Einstellungen',\n+    dockerhub: 'DockerHub',\n+    more: 'Mehr',\n+    zh_cn: '\u7b80\u4f53\u4e2d\u6587',\n+    zh_hant: '\u7e41\u9ad4\u4e2d\u6587',\n+    en_us: 'English',\n+    de_de: 'Deutsch',\n+    need_help: 'Hilfe',\n+    // Home page\n+    error_to_load_data_from_docker_daemon_please_check_seagull_and_configuration: 'Beim Laden von Daten vom Docker-Dienst trat ein Fehler auf. Bitte \u00fcberpr\u00fcfe Seagull und die Einstellungen.',\n+    period: '.',\n+    the_best_friend_of_docker: 'der beste Freund von Docker',\n+    im_using: 'Ich nutze',\n+    with_kernel: 'mit Kernel',\n+    and_docker: 'und Docker',\n+    the_docker_daemon_has: 'Der Docker-Dienst hat',\n+    running_stopped_containers_and: 'laufende/gestoppte Container und aktuell',\n+    images_now: 'Images',\n+    docker_is_an_open_platform_for_distributed_application_for_developers_and_sysadmins: 'Docker ist eine offene Plattform f\u00fcr verteilte Anwendungen f\u00fcr Entwickler und Administratoren',\n+    and_seagull_provides_a_friendly_web_ui_to_monitor_docker: 'und Seagull stellt eine angenehme Web-Oberfl\u00e4che zum Verwalten von Docker zur Verf\u00fcgung.',\n+    github: 'Github',\n+    go_now: 'Hier lang!',\n+    learn_more: 'Erfahre mehr',\n+    containers_page_display_all_running_and_stopped_docker_containers: 'Die Container-Seite zeigt alle laufenden und gestoppten Docker-Container an.',\n+    images_page_display_all_docker_images_to_start_stop_and_delete: 'Die Images-Seite zeigt alle Docker-Images an und erm\u00f6glicht das Starten, Stoppen und L\u00f6schen von Images.',\n+    configuration_page_display_all_your_docker_environment_and_settings:'Die Einstellungsseite zeigt die gesamte Docker-Umgebung und deren Einstellungen an.',\n+    seagull_is_open_source_in_Github_welcome_to_contribution_and_issues: 'Seagull ist Open-Source und auf Github verf\u00fcgbar. Mitarbeit und Fehlermeldungen sind gerne gesehen.',\n+    // Containers page\n+    search: 'Suche',\n+    filter: 'Filter',\n+    all: 'Alle',\n+    no_docker_container: 'Keine Docker-Container!',\n+    id: 'ID',\n+    names: 'Namen',\n+    image: 'Image',\n+    command: 'Befehl',\n+    created: 'Erstellt',\n+    status: 'Status',\n+    ports: 'Ports',\n+    operation: 'Anweisung',\n+    // Images page\n+    no_docker_image: 'Kein Docker-Image!',\n+    repotags: 'Bezeichnung (Tag)',\n+    virtualsize: 'Virtuelle Gr\u00f6\u00dfe',\n+    delete: 'L\u00f6schen',\n+    // Container page\n+    container: 'Container',\n+    start: 'Start',\n+    stop: 'Anhalten',\n+    refresh: 'Aktualisieren',\n+    no_such_container: 'Kein solcher Container!',\n+    attribute: 'Attribute',\n+    value: 'Wert',\n+    name: 'Name',\n+    running: 'Laufend',\n+    startedat: 'Gestartet am',\n+    publishallports: 'Alle Ports freigeben',\n+    links: 'Links',\n+    openstdin: 'Stdin offen halten',\n+    uid: 'UID',\n+    pid: 'PID',\n+    c: 'C',\n+    stime: 'STIME',\n+    tty: 'TTY',\n+    time: 'TIME',\n+    cmd: 'CMD',\n+    // Image page\n+    no_such_image: 'Kein solches Image!',\n+    author: 'Author',",
+        "path": "static/js/app.js",
+        "position": null,
+        "original_position": 107,
+        "commit_id": "9ff8ffbf9d73c0f91a1e22c29aed1cd2bb475c0d",
+        "original_commit_id": "203904104c9953ffafe55a76e55d18806550966b",
+        "user": {
+            "login": "MorrisJobke",
+            "id": 245432,
+            "node_id": "MDQ6VXNlcjI0NTQzMg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/245432?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/MorrisJobke",
+            "html_url": "https://github.com/MorrisJobke",
+            "followers_url": "https://api.github.com/users/MorrisJobke/followers",
+            "following_url": "https://api.github.com/users/MorrisJobke/following{/other_user}",
+            "gists_url": "https://api.github.com/users/MorrisJobke/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/MorrisJobke/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/MorrisJobke/subscriptions",
+            "organizations_url": "https://api.github.com/users/MorrisJobke/orgs",
+            "repos_url": "https://api.github.com/users/MorrisJobke/repos",
+            "events_url": "https://api.github.com/users/MorrisJobke/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/MorrisJobke/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "-.- I could have bet it is typed with `h`\n",
+        "created_at": "2014-11-24T08:22:22Z",
+        "updated_at": "2014-11-24T08:35:38Z",
+        "html_url": "https://github.com/tobegit3hub/seagull/pull/19#discussion_r20776648",
+        "pull_request_url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/19",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/20776648"
+            },
+            "html": {
+                "href": "https://github.com/tobegit3hub/seagull/pull/19#discussion_r20776648"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/19"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/21666779",
+        "pull_request_review_id": null,
+        "id": 21666779,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNjY2Nzc5",
+        "diff_hunk": "@@ -174,6 +174,11 @@ seagull.controller('IndexController', function ($scope, $rootScope, $translate,\n      return $translate.use() == \"de-de\";\n   }\n \n+  /* Determine it is German or not */",
+        "path": "static/js/app.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "28a844350ae96a1c6a0d22171574ce050d489cae",
+        "original_commit_id": "36ccbe6b4697da594bbd1b9d13e3a88e60e9d525",
+        "user": {
+            "login": "tobegit3hub",
+            "id": 2715000,
+            "node_id": "MDQ6VXNlcjI3MTUwMDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2715000?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tobegit3hub",
+            "html_url": "https://github.com/tobegit3hub",
+            "followers_url": "https://api.github.com/users/tobegit3hub/followers",
+            "following_url": "https://api.github.com/users/tobegit3hub/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tobegit3hub/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tobegit3hub/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tobegit3hub/subscriptions",
+            "organizations_url": "https://api.github.com/users/tobegit3hub/orgs",
+            "repos_url": "https://api.github.com/users/tobegit3hub/repos",
+            "events_url": "https://api.github.com/users/tobegit3hub/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tobegit3hub/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The comment should change to French :smiley: \n",
+        "created_at": "2014-12-11T09:57:42Z",
+        "updated_at": "2014-12-12T19:13:18Z",
+        "html_url": "https://github.com/tobegit3hub/seagull/pull/26#discussion_r21666779",
+        "pull_request_url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/26",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/21666779"
+            },
+            "html": {
+                "href": "https://github.com/tobegit3hub/seagull/pull/26#discussion_r21666779"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/26"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/23006739",
+        "pull_request_review_id": null,
+        "id": 23006739,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzMDA2NzM5",
+        "diff_hunk": "@@ -28,7 +28,9 @@ _cgo_gotypes.go\n _cgo_export.*\n \n _testmain.go\n-\n+Dockerfile",
+        "path": ".gitignore",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "f5fb21b3d12b94604add0c26f664117ff3294b3b",
+        "original_commit_id": "f5fb21b3d12b94604add0c26f664117ff3294b3b",
+        "user": {
+            "login": "tobegit3hub",
+            "id": 2715000,
+            "node_id": "MDQ6VXNlcjI3MTUwMDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2715000?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tobegit3hub",
+            "html_url": "https://github.com/tobegit3hub",
+            "followers_url": "https://api.github.com/users/tobegit3hub/followers",
+            "following_url": "https://api.github.com/users/tobegit3hub/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tobegit3hub/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tobegit3hub/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tobegit3hub/subscriptions",
+            "organizations_url": "https://api.github.com/users/tobegit3hub/orgs",
+            "repos_url": "https://api.github.com/users/tobegit3hub/repos",
+            "events_url": "https://api.github.com/users/tobegit3hub/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tobegit3hub/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think we should keep these in git repository :smiley: \n",
+        "created_at": "2015-01-15T12:38:40Z",
+        "updated_at": "2015-01-15T12:38:40Z",
+        "html_url": "https://github.com/tobegit3hub/seagull/pull/35#discussion_r23006739",
+        "pull_request_url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/35",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/23006739"
+            },
+            "html": {
+                "href": "https://github.com/tobegit3hub/seagull/pull/35#discussion_r23006739"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/35"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/23006818",
+        "pull_request_review_id": null,
+        "id": 23006818,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzMDA2ODE4",
+        "diff_hunk": "@@ -184,15 +184,26 @@ seagull.controller('IndexController', function ($scope, $rootScope, $translate,\n \n   /* The default server is local */\n   $scope.currentServer = \"Local\"; // TODO: Use cookies or something to store them\n-  $scope.servers = [\"Local\"];\n+  \n+    \n+    if(localStorage.servers){\n+        $scope.servers = JSON.parse(localStorage.servers);\n+        \n+    }\n+    else{\n+        $scope.servers = [\"Local\"];\n+        \n+    }\n+    \n+  $scope.json_servers;\n   $rootScope.canonicalServer = canonicalizeServer($scope.currentServer);\n-  $scope.notCurrentServers = [];\n+  $scope.notCurrentServers = $scope.servers;",
+        "path": "static/js/app.js",
+        "position": 19,
+        "original_position": 19,
+        "commit_id": "f5fb21b3d12b94604add0c26f664117ff3294b3b",
+        "original_commit_id": "f5fb21b3d12b94604add0c26f664117ff3294b3b",
+        "user": {
+            "login": "tobegit3hub",
+            "id": 2715000,
+            "node_id": "MDQ6VXNlcjI3MTUwMDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2715000?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tobegit3hub",
+            "html_url": "https://github.com/tobegit3hub",
+            "followers_url": "https://api.github.com/users/tobegit3hub/followers",
+            "following_url": "https://api.github.com/users/tobegit3hub/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tobegit3hub/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tobegit3hub/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tobegit3hub/subscriptions",
+            "organizations_url": "https://api.github.com/users/tobegit3hub/orgs",
+            "repos_url": "https://api.github.com/users/tobegit3hub/repos",
+            "events_url": "https://api.github.com/users/tobegit3hub/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tobegit3hub/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Here we should remove the `$scope.currentServer`.\n",
+        "created_at": "2015-01-15T12:40:10Z",
+        "updated_at": "2015-01-15T12:40:10Z",
+        "html_url": "https://github.com/tobegit3hub/seagull/pull/35#discussion_r23006818",
+        "pull_request_url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/35",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/23006818"
+            },
+            "html": {
+                "href": "https://github.com/tobegit3hub/seagull/pull/35#discussion_r23006818"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/35"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/23006941",
+        "pull_request_review_id": null,
+        "id": 23006941,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzMDA2OTQx",
+        "diff_hunk": "@@ -201,18 +212,21 @@ seagull.controller('IndexController', function ($scope, $rootScope, $translate,\n   $scope.addServer = function (newServer) {\n \n     /* Check if we can access the new server */\n-    $http.get(canonicalizeServer(newServer) + '/_ping').success(function(data) {\n-      if (data === \"OK\") {\n+    //$http.get(canonicalizeServer(newServer) + '/_ping').success(function(data) {\n+      //if (data === \"OK\") {\n         alert_success(\"Add server \" + newServer);\n-\n+    \n         $scope.servers.push(newServer)\n+        $scope.json_servers = JSON.stringify($scope.servers);\n+        localStorage.setItem(\"servers\", $scope.json_servers);\n+        console.log(JSON.parse(localStorage.servers));",
+        "path": "static/js/app.js",
+        "position": 44,
+        "original_position": 44,
+        "commit_id": "f5fb21b3d12b94604add0c26f664117ff3294b3b",
+        "original_commit_id": "f5fb21b3d12b94604add0c26f664117ff3294b3b",
+        "user": {
+            "login": "tobegit3hub",
+            "id": 2715000,
+            "node_id": "MDQ6VXNlcjI3MTUwMDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2715000?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tobegit3hub",
+            "html_url": "https://github.com/tobegit3hub",
+            "followers_url": "https://api.github.com/users/tobegit3hub/followers",
+            "following_url": "https://api.github.com/users/tobegit3hub/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tobegit3hub/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tobegit3hub/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tobegit3hub/subscriptions",
+            "organizations_url": "https://api.github.com/users/tobegit3hub/orgs",
+            "repos_url": "https://api.github.com/users/tobegit3hub/repos",
+            "events_url": "https://api.github.com/users/tobegit3hub/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tobegit3hub/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Remove the debug code when it's finished.\n",
+        "created_at": "2015-01-15T12:42:05Z",
+        "updated_at": "2015-01-15T12:42:05Z",
+        "html_url": "https://github.com/tobegit3hub/seagull/pull/35#discussion_r23006941",
+        "pull_request_url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/35",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/23006941"
+            },
+            "html": {
+                "href": "https://github.com/tobegit3hub/seagull/pull/35#discussion_r23006941"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/35"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/52855477",
+        "pull_request_review_id": null,
+        "id": 52855477,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUyODU1NDc3",
+        "diff_hunk": "@@ -0,0 +1,22 @@\n+FROM alpine:3.3\n+MAINTAINER tobe \"tobeg3oogle@gmail.com\"\n+MAINTAINER Florin Patan \"florinpatan@gmail.com\"\n+\n+ARG BINARY_FILE\n+\n+# DNS stuff\n+RUN echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf",
+        "path": "seagull.docker",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "6443831cb7d36bd96dfb6a2e7ca86c4260e296a6",
+        "original_commit_id": "6443831cb7d36bd96dfb6a2e7ca86c4260e296a6",
+        "user": {
+            "login": "tobegit3hub",
+            "id": 2715000,
+            "node_id": "MDQ6VXNlcjI3MTUwMDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2715000?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tobegit3hub",
+            "html_url": "https://github.com/tobegit3hub",
+            "followers_url": "https://api.github.com/users/tobegit3hub/followers",
+            "following_url": "https://api.github.com/users/tobegit3hub/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tobegit3hub/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tobegit3hub/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tobegit3hub/subscriptions",
+            "organizations_url": "https://api.github.com/users/tobegit3hub/orgs",
+            "repos_url": "https://api.github.com/users/tobegit3hub/repos",
+            "events_url": "https://api.github.com/users/tobegit3hub/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tobegit3hub/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is it necessary for alpine image?\n",
+        "created_at": "2016-02-15T02:50:14Z",
+        "updated_at": "2016-02-15T02:50:14Z",
+        "html_url": "https://github.com/tobegit3hub/seagull/pull/62#discussion_r52855477",
+        "pull_request_url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/62",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/52855477"
+            },
+            "html": {
+                "href": "https://github.com/tobegit3hub/seagull/pull/62#discussion_r52855477"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/62"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/52855496",
+        "pull_request_review_id": null,
+        "id": 52855496,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUyODU1NDk2",
+        "diff_hunk": "@@ -0,0 +1,22 @@\n+FROM alpine:3.3\n+MAINTAINER tobe \"tobeg3oogle@gmail.com\"\n+MAINTAINER Florin Patan \"florinpatan@gmail.com\"\n+\n+ARG BINARY_FILE\n+\n+# DNS stuff\n+RUN echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf\n+\n+# SSL certs\n+RUN apk add --update ca-certificates \\",
+        "path": "seagull.docker",
+        "position": 11,
+        "original_position": 11,
+        "commit_id": "6443831cb7d36bd96dfb6a2e7ca86c4260e296a6",
+        "original_commit_id": "6443831cb7d36bd96dfb6a2e7ca86c4260e296a6",
+        "user": {
+            "login": "tobegit3hub",
+            "id": 2715000,
+            "node_id": "MDQ6VXNlcjI3MTUwMDA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2715000?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tobegit3hub",
+            "html_url": "https://github.com/tobegit3hub",
+            "followers_url": "https://api.github.com/users/tobegit3hub/followers",
+            "following_url": "https://api.github.com/users/tobegit3hub/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tobegit3hub/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tobegit3hub/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tobegit3hub/subscriptions",
+            "organizations_url": "https://api.github.com/users/tobegit3hub/orgs",
+            "repos_url": "https://api.github.com/users/tobegit3hub/repos",
+            "events_url": "https://api.github.com/users/tobegit3hub/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tobegit3hub/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "And is it necessary for apk?\n",
+        "created_at": "2016-02-15T02:50:55Z",
+        "updated_at": "2016-02-15T02:50:55Z",
+        "html_url": "https://github.com/tobegit3hub/seagull/pull/62#discussion_r52855496",
+        "pull_request_url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/62",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/52855496"
+            },
+            "html": {
+                "href": "https://github.com/tobegit3hub/seagull/pull/62#discussion_r52855496"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/62"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/52869106",
+        "pull_request_review_id": null,
+        "id": 52869106,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUyODY5MTA2",
+        "diff_hunk": "@@ -0,0 +1,22 @@\n+FROM alpine:3.3\n+MAINTAINER tobe \"tobeg3oogle@gmail.com\"\n+MAINTAINER Florin Patan \"florinpatan@gmail.com\"\n+\n+ARG BINARY_FILE\n+\n+# DNS stuff\n+RUN echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf\n+\n+# SSL certs\n+RUN apk add --update ca-certificates \\",
+        "path": "seagull.docker",
+        "position": 11,
+        "original_position": 11,
+        "commit_id": "6443831cb7d36bd96dfb6a2e7ca86c4260e296a6",
+        "original_commit_id": "6443831cb7d36bd96dfb6a2e7ca86c4260e296a6",
+        "user": {
+            "login": "dlsniper",
+            "id": 607868,
+            "node_id": "MDQ6VXNlcjYwNzg2OA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/607868?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dlsniper",
+            "html_url": "https://github.com/dlsniper",
+            "followers_url": "https://api.github.com/users/dlsniper/followers",
+            "following_url": "https://api.github.com/users/dlsniper/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dlsniper/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dlsniper/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dlsniper/subscriptions",
+            "organizations_url": "https://api.github.com/users/dlsniper/orgs",
+            "repos_url": "https://api.github.com/users/dlsniper/repos",
+            "events_url": "https://api.github.com/users/dlsniper/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dlsniper/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We can skip it for now. This would be useful to allow for ssl connections to binary, so maybe it can be added back when say a self-signed certificate or a user generated certificate will be allowed. I'll update accordingly.\n",
+        "created_at": "2016-02-15T08:08:07Z",
+        "updated_at": "2016-02-15T08:08:07Z",
+        "html_url": "https://github.com/tobegit3hub/seagull/pull/62#discussion_r52869106",
+        "pull_request_url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/62",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/52869106"
+            },
+            "html": {
+                "href": "https://github.com/tobegit3hub/seagull/pull/62#discussion_r52869106"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/62"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/52869197",
+        "pull_request_review_id": null,
+        "id": 52869197,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUyODY5MTk3",
+        "diff_hunk": "@@ -0,0 +1,22 @@\n+FROM alpine:3.3\n+MAINTAINER tobe \"tobeg3oogle@gmail.com\"\n+MAINTAINER Florin Patan \"florinpatan@gmail.com\"\n+\n+ARG BINARY_FILE\n+\n+# DNS stuff\n+RUN echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf",
+        "path": "seagull.docker",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "6443831cb7d36bd96dfb6a2e7ca86c4260e296a6",
+        "original_commit_id": "6443831cb7d36bd96dfb6a2e7ca86c4260e296a6",
+        "user": {
+            "login": "dlsniper",
+            "id": 607868,
+            "node_id": "MDQ6VXNlcjYwNzg2OA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/607868?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dlsniper",
+            "html_url": "https://github.com/dlsniper",
+            "followers_url": "https://api.github.com/users/dlsniper/followers",
+            "following_url": "https://api.github.com/users/dlsniper/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dlsniper/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dlsniper/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dlsniper/subscriptions",
+            "organizations_url": "https://api.github.com/users/dlsniper/orgs",
+            "repos_url": "https://api.github.com/users/dlsniper/repos",
+            "events_url": "https://api.github.com/users/dlsniper/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dlsniper/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes, I've seen many recommendation for it. Not sure if it still appllies with the Go only dns resolver. \n",
+        "created_at": "2016-02-15T08:09:22Z",
+        "updated_at": "2016-02-15T08:09:22Z",
+        "html_url": "https://github.com/tobegit3hub/seagull/pull/62#discussion_r52869197",
+        "pull_request_url": "https://api.github.com/repos/tobegit3hub/seagull/pulls/62",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/comments/52869197"
+            },
+            "html": {
+                "href": "https://github.com/tobegit3hub/seagull/pull/62#discussion_r52869197"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tobegit3hub/seagull/pulls/62"
+            }
+        }
+    }
+]

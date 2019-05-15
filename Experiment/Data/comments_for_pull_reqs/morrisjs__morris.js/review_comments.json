@@ -1,0 +1,149 @@
+[
+    {
+        "url": "https://api.github.com/repos/morrisjs/morris.js/pulls/comments/2023341",
+        "pull_request_review_id": null,
+        "id": 2023341,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMjMzNDE=",
+        "diff_hunk": "@@ -130,6 +130,7 @@ class Morris.Bar extends Morris.Grid\n   # @private\n   drawHover: ->\n     # hover labels\n+    @prevHilight = null",
+        "path": "lib/morris.bar.coffee",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "6cbfbb6b383f0640b0969fe03ceb73e09e1ad733",
+        "original_commit_id": "6cbfbb6b383f0640b0969fe03ceb73e09e1ad733",
+        "user": {
+            "login": "tiraeth",
+            "id": 52669,
+            "node_id": "MDQ6VXNlcjUyNjY5",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/52669?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tiraeth",
+            "html_url": "https://github.com/tiraeth",
+            "followers_url": "https://api.github.com/users/tiraeth/followers",
+            "following_url": "https://api.github.com/users/tiraeth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tiraeth/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tiraeth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tiraeth/subscriptions",
+            "organizations_url": "https://api.github.com/users/tiraeth/orgs",
+            "repos_url": "https://api.github.com/users/tiraeth/repos",
+            "events_url": "https://api.github.com/users/tiraeth/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tiraeth/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Strange behaviour was noticed by me. Without this line, after updating the data (by clicking on the chart), `@hilight` method was called and the hover was displayed in upper-left corner. With this line, everything works as it should.\n",
+        "created_at": "2012-11-03T10:19:10Z",
+        "updated_at": "2012-11-03T10:19:10Z",
+        "html_url": "https://github.com/morrisjs/morris.js/pull/106#discussion_r2023341",
+        "pull_request_url": "https://api.github.com/repos/morrisjs/morris.js/pulls/106",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/morrisjs/morris.js/pulls/comments/2023341"
+            },
+            "html": {
+                "href": "https://github.com/morrisjs/morris.js/pull/106#discussion_r2023341"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/morrisjs/morris.js/pulls/106"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/morrisjs/morris.js/pulls/comments/8556247",
+        "pull_request_review_id": null,
+        "id": 8556247,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg1NTYyNDc=",
+        "diff_hunk": "@@ -0,0 +1,259 @@\n+Morris.isUniform = (array, value, compare) ->\n+  value = value ? array[0]\n+  compare = compare ? (a, b) -> a == b\n+  return true if array.length == 0\n+  for el in array\n+    return false if not compare(el, value)\n+  return true\n+\n+class Morris.Pie extends Morris.EventEmitter\n+  pieDefaults:\n+    colors: [\n+      '#0B62A4'\n+      '#3980B5'\n+      '#679DC6'\n+      '#95BBD7'\n+      '#B0CCE1'\n+      '#095791'\n+      '#095085'\n+      '#083E67'\n+      '#052C48'\n+      '#042135'\n+    ]\n+    idKey: \"label\"\n+    stroke: \"#FFFFFF\"\n+    strokeWidth: 3\n+    sort: false\n+    formatter: Morris.commas\n+    showLabel: \"hover\"\n+    drawOut: 5\n+    minSectorAngle: 5\n+  \n+  constructor: (options) ->\n+    if not (this instanceof Morris.Pie)\n+      return new Morris.Pie(options)\n+    \n+    if typeof options.element is 'string'\n+      @el = $ document.getElementById(options.element)\n+    else\n+      @el = $ options.element\n+    \n+    if @el is null or @el.length == 0\n+      throw new Error(\"Container element not found.\")\n+    \n+    if options.data is undefined or options.data.length is 0",
+        "path": "lib/morris.pie.coffee",
+        "position": 44,
+        "original_position": 44,
+        "commit_id": "da0a2ba1ad9fc6a75f42d8fd760d8e20c233e8b5",
+        "original_commit_id": "da0a2ba1ad9fc6a75f42d8fd760d8e20c233e8b5",
+        "user": {
+            "login": "sudodoki",
+            "id": 1506905,
+            "node_id": "MDQ6VXNlcjE1MDY5MDU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1506905?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sudodoki",
+            "html_url": "https://github.com/sudodoki",
+            "followers_url": "https://api.github.com/users/sudodoki/followers",
+            "following_url": "https://api.github.com/users/sudodoki/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sudodoki/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sudodoki/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sudodoki/subscriptions",
+            "organizations_url": "https://api.github.com/users/sudodoki/orgs",
+            "repos_url": "https://api.github.com/users/sudodoki/repos",
+            "events_url": "https://api.github.com/users/sudodoki/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sudodoki/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This isn't great since if we're going to create Pie chart with initial options and only then set data using setData() & call redraw() we will get Exception while trying to access `@options` object since it wasn't initialized in constructor. I do realise the same code was before that in Donut class.\n",
+        "created_at": "2013-12-26T14:49:03Z",
+        "updated_at": "2013-12-26T14:49:03Z",
+        "html_url": "https://github.com/morrisjs/morris.js/pull/149#discussion_r8556247",
+        "pull_request_url": "https://api.github.com/repos/morrisjs/morris.js/pulls/149",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/morrisjs/morris.js/pulls/comments/8556247"
+            },
+            "html": {
+                "href": "https://github.com/morrisjs/morris.js/pull/149#discussion_r8556247"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/morrisjs/morris.js/pulls/149"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/morrisjs/morris.js/pulls/comments/31171865",
+        "pull_request_review_id": null,
+        "id": 31171865,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxMTcxODY1",
+        "diff_hunk": "@@ -277,7 +279,11 @@ class Morris.Bar extends Morris.Grid\n   # @private\n   hoverContentForRow: (index) ->\n     row = @data[index]\n-    content = $(\"<div class='morris-hover-row-label'>\").text(row.label)\n+    if typeof @options.hoverLabelFormatter is 'function'\n+      lable = @options.hoverLabelFormatter(row)",
+        "path": "lib/morris.bar.coffee",
+        "position": 33,
+        "original_position": 33,
+        "commit_id": "91a947b20ff7e5052033218e4782cb75236e75e6",
+        "original_commit_id": "91a947b20ff7e5052033218e4782cb75236e75e6",
+        "user": {
+            "login": "AHilyard",
+            "id": 12298785,
+            "node_id": "MDQ6VXNlcjEyMjk4Nzg1",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/12298785?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/AHilyard",
+            "html_url": "https://github.com/AHilyard",
+            "followers_url": "https://api.github.com/users/AHilyard/followers",
+            "following_url": "https://api.github.com/users/AHilyard/following{/other_user}",
+            "gists_url": "https://api.github.com/users/AHilyard/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/AHilyard/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/AHilyard/subscriptions",
+            "organizations_url": "https://api.github.com/users/AHilyard/orgs",
+            "repos_url": "https://api.github.com/users/AHilyard/repos",
+            "events_url": "https://api.github.com/users/AHilyard/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/AHilyard/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Should this variable not be named \"label\"?\n",
+        "created_at": "2015-05-27T19:38:47Z",
+        "updated_at": "2015-05-27T19:38:47Z",
+        "html_url": "https://github.com/morrisjs/morris.js/pull/585#discussion_r31171865",
+        "pull_request_url": "https://api.github.com/repos/morrisjs/morris.js/pulls/585",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/morrisjs/morris.js/pulls/comments/31171865"
+            },
+            "html": {
+                "href": "https://github.com/morrisjs/morris.js/pull/585#discussion_r31171865"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/morrisjs/morris.js/pulls/585"
+            }
+        }
+    }
+]

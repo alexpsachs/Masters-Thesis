@@ -1,0 +1,1668 @@
+[
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11262871",
+        "pull_request_review_id": null,
+        "id": 11262871,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjYyODcx",
+        "diff_hunk": "@@ -67,6 +67,20 @@ class PackageResolverTest {\n     assertThat(androidCommand).containsExactly('update build-tools-19.0.3')\n   }\n \n+  @FixtureName(\"up-to-date-platform-tools\")\n+  @Test public void upToDatePlatformToolsRecognized() {\n+    project.apply plugin: 'android'\n+    packageResolver.resolvePlatformTools()\n+    assertThat(androidCommand).isEmpty()\n+  }\n+\n+  @FixtureName(\"missing-platform-tools\")\n+  @Test public void missingPlatformToolsAreDownloaded() {",
+        "path": "src/test/groovy/com/jakewharton/sdkmanager/internal/PackageResolverTest.groovy",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "2509ed3303aed7eecf11dd5d32da55be2ef3f670",
+        "original_commit_id": "e6fa6c43b33c51c09dcaabafcd1e1ce123b62403",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is the failing test on Travis. I'll try to build locally in a bit here and see if it happens for me.\n",
+        "created_at": "2014-04-03T17:35:51Z",
+        "updated_at": "2014-04-03T18:07:29Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11262871",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11262871"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11262871"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11262897",
+        "pull_request_review_id": null,
+        "id": 11262897,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjYyODk3",
+        "diff_hunk": "@@ -67,19 +76,48 @@ class PackageResolver {\n     }\n   }\n \n+  def resolvePlatformTools() {\n+    if (platformToolsDir.exists()) {\n+      log.debug 'Platform tools found!'\n+      return\n+    }\n+\n+    log.lifecycle \"Platform tools missing. Downloading...\"\n+\n+    def code = androidCommand.update \"platform-tools\"\n+    if (code != 0) {\n+      throw new StopExecutionException(\"Platform tools download failed with code $code.\")\n+    }\n+  }\n+\n   def resolveCompileVersion() {\n     String compileVersion = project.android.compileSdkVersion\n     log.debug \"Compile API version: $compileVersion\"\n \n-    def compileVersionDir = new File(platformsDir, compileVersion)\n-    if (compileVersionDir.exists()) {\n+    if (compileVersion.contains(GOOGLE_API_PREFIX)) {\n+      // the google SDK requires the base android SDK as a prerequisite, but",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": null,
+        "original_position": 67,
+        "commit_id": "2509ed3303aed7eecf11dd5d32da55be2ef3f670",
+        "original_commit_id": "e6fa6c43b33c51c09dcaabafcd1e1ce123b62403",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: capitalize \"The\"\n",
+        "created_at": "2014-04-03T17:36:14Z",
+        "updated_at": "2014-04-03T18:07:29Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11262897",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11262897"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11262897"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11262917",
+        "pull_request_review_id": null,
+        "id": 11262917,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjYyOTE3",
+        "diff_hunk": "@@ -67,19 +76,48 @@ class PackageResolver {\n     }\n   }\n \n+  def resolvePlatformTools() {\n+    if (platformToolsDir.exists()) {\n+      log.debug 'Platform tools found!'\n+      return\n+    }\n+\n+    log.lifecycle \"Platform tools missing. Downloading...\"\n+\n+    def code = androidCommand.update \"platform-tools\"\n+    if (code != 0) {\n+      throw new StopExecutionException(\"Platform tools download failed with code $code.\")\n+    }\n+  }\n+\n   def resolveCompileVersion() {\n     String compileVersion = project.android.compileSdkVersion\n     log.debug \"Compile API version: $compileVersion\"\n \n-    def compileVersionDir = new File(platformsDir, compileVersion)\n-    if (compileVersionDir.exists()) {\n+    if (compileVersion.contains(GOOGLE_API_PREFIX)) {",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": null,
+        "original_position": 66,
+        "commit_id": "2509ed3303aed7eecf11dd5d32da55be2ef3f670",
+        "original_commit_id": "e6fa6c43b33c51c09dcaabafcd1e1ce123b62403",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`startsWith`\n",
+        "created_at": "2014-04-03T17:36:33Z",
+        "updated_at": "2014-04-03T18:07:29Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11262917",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11262917"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11262917"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11262961",
+        "pull_request_review_id": null,
+        "id": 11262961,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjYyOTYx",
+        "diff_hunk": "@@ -67,19 +76,48 @@ class PackageResolver {\n     }\n   }\n \n+  def resolvePlatformTools() {\n+    if (platformToolsDir.exists()) {\n+      log.debug 'Platform tools found!'\n+      return\n+    }\n+\n+    log.lifecycle \"Platform tools missing. Downloading...\"\n+\n+    def code = androidCommand.update \"platform-tools\"\n+    if (code != 0) {\n+      throw new StopExecutionException(\"Platform tools download failed with code $code.\")\n+    }\n+  }\n+\n   def resolveCompileVersion() {\n     String compileVersion = project.android.compileSdkVersion\n     log.debug \"Compile API version: $compileVersion\"\n \n-    def compileVersionDir = new File(platformsDir, compileVersion)\n-    if (compileVersionDir.exists()) {\n+    if (compileVersion.contains(GOOGLE_API_PREFIX)) {\n+      // the google SDK requires the base android SDK as a prerequisite, but\n+      // the SDK manager won't follow dependencies automatically.\n+      def baseVersion = compileVersion.replace(GOOGLE_API_PREFIX, \"android-\")\n+      installIfMissing(platformsDir, baseVersion)\n+\n+      def addonVersion = compileVersion.replace(GOOGLE_API_PREFIX, \"addon-google_apis-google-\")\n+      installIfMissing(addonsDir, addonVersion);\n+",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": null,
+        "original_position": 74,
+        "commit_id": "2509ed3303aed7eecf11dd5d32da55be2ef3f670",
+        "original_commit_id": "e6fa6c43b33c51c09dcaabafcd1e1ce123b62403",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "kill empty line :)\n",
+        "created_at": "2014-04-03T17:37:33Z",
+        "updated_at": "2014-04-03T18:07:29Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11262961",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11262961"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11262961"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11262991",
+        "pull_request_review_id": null,
+        "id": 11262991,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjYyOTkx",
+        "diff_hunk": "@@ -67,19 +76,48 @@ class PackageResolver {\n     }\n   }\n \n+  def resolvePlatformTools() {\n+    if (platformToolsDir.exists()) {\n+      log.debug 'Platform tools found!'\n+      return\n+    }\n+\n+    log.lifecycle \"Platform tools missing. Downloading...\"\n+\n+    def code = androidCommand.update \"platform-tools\"\n+    if (code != 0) {\n+      throw new StopExecutionException(\"Platform tools download failed with code $code.\")\n+    }\n+  }\n+\n   def resolveCompileVersion() {\n     String compileVersion = project.android.compileSdkVersion\n     log.debug \"Compile API version: $compileVersion\"\n \n-    def compileVersionDir = new File(platformsDir, compileVersion)\n-    if (compileVersionDir.exists()) {\n+    if (compileVersion.contains(GOOGLE_API_PREFIX)) {\n+      // the google SDK requires the base android SDK as a prerequisite, but\n+      // the SDK manager won't follow dependencies automatically.\n+      def baseVersion = compileVersion.replace(GOOGLE_API_PREFIX, \"android-\")\n+      installIfMissing(platformsDir, baseVersion)\n+\n+      def addonVersion = compileVersion.replace(GOOGLE_API_PREFIX, \"addon-google_apis-google-\")\n+      installIfMissing(addonsDir, addonVersion);\n+\n+    } else {\n+      installIfMissing(platformsDir, compileVersion);\n+    }\n+  }\n+\n+  def installIfMissing(baseDir, version) {\n+    def existingDir = new File(baseDir, version)\n+    if (existingDir.exists()) {\n       log.debug 'Compilation API found!'",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": null,
+        "original_position": 83,
+        "commit_id": "2509ed3303aed7eecf11dd5d32da55be2ef3f670",
+        "original_commit_id": "e6fa6c43b33c51c09dcaabafcd1e1ce123b62403",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Since this can be called with multiple arguments now, let's add the version to this string.\n\n``` java\n\"Compilation API $version found!\"\n```\n",
+        "created_at": "2014-04-03T17:37:59Z",
+        "updated_at": "2014-04-03T18:07:29Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11262991",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11262991"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11262991"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11263015",
+        "pull_request_review_id": null,
+        "id": 11263015,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjYzMDE1",
+        "diff_hunk": "@@ -89,6 +103,28 @@ class PackageResolverTest {\n     assertThat(androidCommand).containsExactly('update android-19')\n   }\n \n+  @FixtureName(\"up-to-date-google-compilation-api\")\n+  @Test public void googleCompilationApiRecognized() {\n+    project.apply plugin: 'android'\n+    project.android {\n+      compileSdkVersion \"Google Inc.:Google APIs:19\"\n+    }\n+\n+    packageResolver.resolveCompileVersion()\n+    assertThat(androidCommand).isEmpty()\n+  }\n+\n+  @FixtureName(\"missing-compilation-api\")\n+  @Test public void googleCompilationApiIsDownloaded() {\n+    project.apply plugin: 'android'\n+    project.android {\n+      compileSdkVersion \"Google Inc.:Google APIs:19\"\n+    }\n+\n+    packageResolver.resolveCompileVersion()\n+    assertThat(androidCommand).containsExactly('update android-19', 'update addon-google_apis-google-19')",
+        "path": "src/test/groovy/com/jakewharton/sdkmanager/internal/PackageResolverTest.groovy",
+        "position": 44,
+        "original_position": 44,
+        "commit_id": "2509ed3303aed7eecf11dd5d32da55be2ef3f670",
+        "original_commit_id": "e6fa6c43b33c51c09dcaabafcd1e1ce123b62403",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "awesome!\n",
+        "created_at": "2014-04-03T17:38:33Z",
+        "updated_at": "2014-04-03T18:07:29Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11263015",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11263015"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11263015"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11263137",
+        "pull_request_review_id": null,
+        "id": 11263137,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjYzMTM3",
+        "diff_hunk": "@@ -67,19 +76,48 @@ class PackageResolver {\n     }\n   }\n \n+  def resolvePlatformTools() {\n+    if (platformToolsDir.exists()) {\n+      log.debug 'Platform tools found!'\n+      return\n+    }\n+\n+    log.lifecycle \"Platform tools missing. Downloading...\"\n+\n+    def code = androidCommand.update \"platform-tools\"\n+    if (code != 0) {\n+      throw new StopExecutionException(\"Platform tools download failed with code $code.\")\n+    }\n+  }\n+\n   def resolveCompileVersion() {\n     String compileVersion = project.android.compileSdkVersion\n     log.debug \"Compile API version: $compileVersion\"\n \n-    def compileVersionDir = new File(platformsDir, compileVersion)\n-    if (compileVersionDir.exists()) {\n+    if (compileVersion.contains(GOOGLE_API_PREFIX)) {\n+      // the google SDK requires the base android SDK as a prerequisite, but\n+      // the SDK manager won't follow dependencies automatically.\n+      def baseVersion = compileVersion.replace(GOOGLE_API_PREFIX, \"android-\")\n+      installIfMissing(platformsDir, baseVersion)\n+\n+      def addonVersion = compileVersion.replace(GOOGLE_API_PREFIX, \"addon-google_apis-google-\")\n+      installIfMissing(addonsDir, addonVersion);\n+\n+    } else {\n+      installIfMissing(platformsDir, compileVersion);\n+    }\n+  }\n+\n+  def installIfMissing(baseDir, version) {\n+    def existingDir = new File(baseDir, version)\n+    if (existingDir.exists()) {\n       log.debug 'Compilation API found!'",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": null,
+        "original_position": 83,
+        "commit_id": "2509ed3303aed7eecf11dd5d32da55be2ef3f670",
+        "original_commit_id": "e6fa6c43b33c51c09dcaabafcd1e1ce123b62403",
+        "user": {
+            "login": "tominsam",
+            "id": 8482,
+            "node_id": "MDQ6VXNlcjg0ODI=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/8482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tominsam",
+            "html_url": "https://github.com/tominsam",
+            "followers_url": "https://api.github.com/users/tominsam/followers",
+            "following_url": "https://api.github.com/users/tominsam/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tominsam/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tominsam/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tominsam/subscriptions",
+            "organizations_url": "https://api.github.com/users/tominsam/orgs",
+            "repos_url": "https://api.github.com/users/tominsam/repos",
+            "events_url": "https://api.github.com/users/tominsam/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tominsam/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It's a common enough pattern in the file that I'm tempted to call it in every other place in this file that needs to install a package. Abstract out \"Compilation API\" to another parameter. Maybe too far?\n",
+        "created_at": "2014-04-03T17:41:28Z",
+        "updated_at": "2014-04-03T18:07:29Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11263137",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11263137"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11263137"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11263344",
+        "pull_request_review_id": null,
+        "id": 11263344,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjYzMzQ0",
+        "diff_hunk": "@@ -67,19 +76,48 @@ class PackageResolver {\n     }\n   }\n \n+  def resolvePlatformTools() {\n+    if (platformToolsDir.exists()) {\n+      log.debug 'Platform tools found!'\n+      return\n+    }\n+\n+    log.lifecycle \"Platform tools missing. Downloading...\"\n+\n+    def code = androidCommand.update \"platform-tools\"\n+    if (code != 0) {\n+      throw new StopExecutionException(\"Platform tools download failed with code $code.\")\n+    }\n+  }\n+\n   def resolveCompileVersion() {\n     String compileVersion = project.android.compileSdkVersion\n     log.debug \"Compile API version: $compileVersion\"\n \n-    def compileVersionDir = new File(platformsDir, compileVersion)\n-    if (compileVersionDir.exists()) {\n+    if (compileVersion.contains(GOOGLE_API_PREFIX)) {\n+      // the google SDK requires the base android SDK as a prerequisite, but\n+      // the SDK manager won't follow dependencies automatically.\n+      def baseVersion = compileVersion.replace(GOOGLE_API_PREFIX, \"android-\")\n+      installIfMissing(platformsDir, baseVersion)\n+\n+      def addonVersion = compileVersion.replace(GOOGLE_API_PREFIX, \"addon-google_apis-google-\")\n+      installIfMissing(addonsDir, addonVersion);\n+\n+    } else {\n+      installIfMissing(platformsDir, compileVersion);\n+    }\n+  }\n+\n+  def installIfMissing(baseDir, version) {\n+    def existingDir = new File(baseDir, version)\n+    if (existingDir.exists()) {\n       log.debug 'Compilation API found!'",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": null,
+        "original_position": 83,
+        "commit_id": "2509ed3303aed7eecf11dd5d32da55be2ef3f670",
+        "original_commit_id": "e6fa6c43b33c51c09dcaabafcd1e1ce123b62403",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I like that, but save it for a follow-up PR>\n",
+        "created_at": "2014-04-03T17:46:23Z",
+        "updated_at": "2014-04-03T18:07:29Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11263344",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11263344"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11263344"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11264319",
+        "pull_request_review_id": null,
+        "id": 11264319,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjY0MzE5",
+        "diff_hunk": "@@ -67,21 +76,48 @@ class PackageResolver {\n     }\n   }\n \n+  def resolvePlatformTools() {\n+    if (platformToolsDir.exists()) {\n+      log.debug 'Platform tools found!'\n+      return\n+    }\n+\n+    log.lifecycle \"Platform tools missing. Downloading...\"\n+\n+    def code = androidCommand.update \"platform-tools\"\n+    if (code != 0) {\n+      throw new StopExecutionException(\"Platform tools download failed with code $code.\")\n+    }\n+  }\n+\n   def resolveCompileVersion() {\n     String compileVersion = project.android.compileSdkVersion\n     log.debug \"Compile API version: $compileVersion\"\n \n-    def compileVersionDir = new File(platformsDir, compileVersion)\n-    if (compileVersionDir.exists()) {\n-      log.debug 'Compilation API found!'\n+    if (compileVersion.startsWith(GOOGLE_API_PREFIX)) {\n+      // The google SDK requires the base android SDK as a prerequisite, but\n+      // the SDK manager won't follow dependencies automatically.\n+      def baseVersion = compileVersion.replace(GOOGLE_API_PREFIX, \"android-\")\n+      installIfMissing(platformsDir, baseVersion)\n+      def addonVersion = compileVersion.replace(GOOGLE_API_PREFIX, \"addon-google_apis-google-\")\n+      installIfMissing(addonsDir, addonVersion);\n+    } else {\n+      installIfMissing(platformsDir, compileVersion);\n+    }\n+  }\n+\n+  def installIfMissing(baseDir, version) {\n+    def existingDir = new File(baseDir, version)\n+    if (existingDir.exists()) {\n+      log.debug 'Compilation API $version found!'",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": null,
+        "original_position": 82,
+        "commit_id": "2509ed3303aed7eecf11dd5d32da55be2ef3f670",
+        "original_commit_id": "be05dc561f51c09166aa954257cdaf80f838d716",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think this needs to be double quotes for Groovy to do the variable replacement.\n",
+        "created_at": "2014-04-03T18:06:34Z",
+        "updated_at": "2014-04-03T18:07:29Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11264319",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11264319"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/12#discussion_r11264319"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/12"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11840380",
+        "pull_request_review_id": null,
+        "id": 11840380,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExODQwMzgw",
+        "diff_hunk": "@@ -40,5 +37,31 @@ interface AndroidCommand {\n \n       return process.waitFor()\n     }\n+\n+    def generateCommand(String filter) {\n+        // -a == all\n+        // -u == no UI\n+        // -t == filter\n+        // -s == no HTTPS\n+        // --proxy-host == hostname of a proxy server\n+        // --proxy-port == port of a proxy server\n+        String proxyHost = java.lang.System.getProperty(\"http.proxyHost\", null);\n+        String proxyPort = java.lang.System.getProperty(\"http.proxyPort\", null);",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/AndroidCommand.groovy",
+        "position": null,
+        "original_position": 25,
+        "commit_id": "f0372ae671c54bfe9d58358af41555fd11140ec3",
+        "original_commit_id": "912425fb22f2f72487ab57b3e30ee600617154ea",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This should be using the `System` class I created and have it passed into the constructor. This will allow testing to verify this behavior works correctly.\n",
+        "created_at": "2014-04-22T06:54:04Z",
+        "updated_at": "2014-04-22T08:02:55Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/21#discussion_r11840380",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/21",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/11840380"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/21#discussion_r11840380"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/18689618",
+        "pull_request_review_id": null,
+        "id": 18689618,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4Njg5NjE4",
+        "diff_hunk": "@@ -1,9 +1,11 @@\n buildscript {\n   repositories {\n+    jcenter()",
+        "path": "build.gradle",
+        "position": 3,
+        "original_position": 3,
+        "commit_id": "6b20563ab4ff6aa51ad4320888d0dfc3442c0f07",
+        "original_commit_id": "6b20563ab4ff6aa51ad4320888d0dfc3442c0f07",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why?\n",
+        "created_at": "2014-10-10T05:58:40Z",
+        "updated_at": "2014-10-10T05:58:40Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/53#discussion_r18689618",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/53",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/18689618"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/53#discussion_r18689618"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/53"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/18689648",
+        "pull_request_review_id": null,
+        "id": 18689648,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4Njg5NjQ4",
+        "diff_hunk": "@@ -1,9 +1,11 @@\n buildscript {\n   repositories {\n+    jcenter()",
+        "path": "build.gradle",
+        "position": 3,
+        "original_position": 3,
+        "commit_id": "6b20563ab4ff6aa51ad4320888d0dfc3442c0f07",
+        "original_commit_id": "6b20563ab4ff6aa51ad4320888d0dfc3442c0f07",
+        "user": {
+            "login": "jaredsburrows",
+            "id": 1739848,
+            "node_id": "MDQ6VXNlcjE3Mzk4NDg=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1739848?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsburrows",
+            "html_url": "https://github.com/jaredsburrows",
+            "followers_url": "https://api.github.com/users/jaredsburrows/followers",
+            "following_url": "https://api.github.com/users/jaredsburrows/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsburrows/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsburrows/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsburrows/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsburrows/orgs",
+            "repos_url": "https://api.github.com/users/jaredsburrows/repos",
+            "events_url": "https://api.github.com/users/jaredsburrows/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsburrows/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why add \"jcenter()\"? When adding 'classpath 'org.gradle.api.plugins:gradle-nexus-plugin:0.7.1', it was not finding it in mavenCentral.\n",
+        "created_at": "2014-10-10T06:00:55Z",
+        "updated_at": "2014-10-10T06:00:55Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/53#discussion_r18689648",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/53",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/18689648"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/53#discussion_r18689648"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/53"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/18689658",
+        "pull_request_review_id": null,
+        "id": 18689658,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4Njg5NjU4",
+        "diff_hunk": "@@ -1,9 +1,11 @@\n buildscript {\n   repositories {\n+    jcenter()",
+        "path": "build.gradle",
+        "position": 3,
+        "original_position": 3,
+        "commit_id": "6b20563ab4ff6aa51ad4320888d0dfc3442c0f07",
+        "original_commit_id": "6b20563ab4ff6aa51ad4320888d0dfc3442c0f07",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Nothing like a nice fractured ecosystem. Sigh.\n",
+        "created_at": "2014-10-10T06:01:40Z",
+        "updated_at": "2014-10-10T06:01:40Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/53#discussion_r18689658",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/53",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/18689658"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/53#discussion_r18689658"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/53"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/18689677",
+        "pull_request_review_id": null,
+        "id": 18689677,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4Njg5Njc3",
+        "diff_hunk": "@@ -1,9 +1,11 @@\n buildscript {\n   repositories {\n+    jcenter()",
+        "path": "build.gradle",
+        "position": 3,
+        "original_position": 3,
+        "commit_id": "6b20563ab4ff6aa51ad4320888d0dfc3442c0f07",
+        "original_commit_id": "6b20563ab4ff6aa51ad4320888d0dfc3442c0f07",
+        "user": {
+            "login": "jaredsburrows",
+            "id": 1739848,
+            "node_id": "MDQ6VXNlcjE3Mzk4NDg=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1739848?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jaredsburrows",
+            "html_url": "https://github.com/jaredsburrows",
+            "followers_url": "https://api.github.com/users/jaredsburrows/followers",
+            "following_url": "https://api.github.com/users/jaredsburrows/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jaredsburrows/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jaredsburrows/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jaredsburrows/subscriptions",
+            "organizations_url": "https://api.github.com/users/jaredsburrows/orgs",
+            "repos_url": "https://api.github.com/users/jaredsburrows/repos",
+            "events_url": "https://api.github.com/users/jaredsburrows/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jaredsburrows/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hah. I understand.\n",
+        "created_at": "2014-10-10T06:03:04Z",
+        "updated_at": "2014-10-10T06:03:04Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/53#discussion_r18689677",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/53",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/18689677"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/53#discussion_r18689677"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/53"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/19994790",
+        "pull_request_review_id": null,
+        "id": 19994790,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5OTk0Nzkw",
+        "diff_hunk": "@@ -40,7 +39,7 @@ class PackageResolver {\n   PackageResolver(Project project, File sdk, AndroidCommand androidCommand) {\n     this.sdk = sdk\n     this.project = project\n-    this.androidCommand = androidCommand\n+    this.androidCommand = androidCommandFull",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "ef4dbdacfee97a64ea89557ce8e9c77a561f5d4b",
+        "original_commit_id": "a984d8aba70e3151e4a3793201122ca644a51aed",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Seems like an erroneous edit.\n",
+        "created_at": "2014-11-07T05:07:57Z",
+        "updated_at": "2014-11-07T15:19:09Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/58#discussion_r19994790",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/58",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/19994790"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/58#discussion_r19994790"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/58"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24216499",
+        "pull_request_review_id": null,
+        "id": 24216499,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MjE2NDk5",
+        "diff_hunk": "@@ -7,12 +8,9 @@ import org.gradle.api.logging.Logger\n import org.gradle.api.logging.Logging\n import org.gradle.api.tasks.StopExecutionException\n \n-import static com.android.SdkConstants.FD_BUILD_TOOLS\n-import static com.android.SdkConstants.FD_EXTRAS\n-import static com.android.SdkConstants.FD_M2_REPOSITORY\n-import static com.android.SdkConstants.FD_PLATFORMS\n-import static com.android.SdkConstants.FD_ADDONS\n-import static com.android.SdkConstants.FD_PLATFORM_TOOLS\n+import java.util.regex.Pattern\n+\n+import static com.android.SdkConstants.*",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": null,
+        "original_position": 19,
+        "commit_id": "b70040bc4f0f34e7f1bcf8c46a988c168076527c",
+        "original_commit_id": "dff3079edde2f6fc699447e7d81f3f51de7a8f61",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "no star imports please\n",
+        "created_at": "2015-02-06T01:21:50Z",
+        "updated_at": "2015-02-06T03:45:14Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24216499",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24216499"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24216499"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24216577",
+        "pull_request_review_id": null,
+        "id": 24216577,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MjE2NTc3",
+        "diff_hunk": "@@ -194,6 +193,72 @@ class PackageResolver {\n     }\n   }\n \n+  def resolveEmulator() {\n+    def emulatorVersion = project.sdkManager.emulatorVersion\n+    if (emulatorVersion == null) {\n+      log.debug 'No emulator defined'\n+      return\n+    }\n+\n+    def emulatorArchitecture = project.sdkManager.emulatorArchitecture\n+    if (emulatorArchitecture == null) {\n+      emulatorArchitecture = 'armeabi-v7a'\n+      log.debug 'No architecture specified, defaulting to armeabi-v7a'\n+    }\n+\n+    log.debug \"Found emulator: $emulatorVersion $emulatorArchitecture\"\n+\n+    def emulatorDir = new File(sdk, FD_SYSTEM_IMAGES + \"/$emulatorVersion/$emulatorArchitecture\")\n+    def alternativeEmulatorDir = new File(sdk, FD_SYSTEM_IMAGES + \"/$emulatorVersion/default/$emulatorArchitecture\")\n+    def emulatorPackage = \"sys-img-$emulatorArchitecture-$emulatorVersion\"\n+    def needsDownload = false\n+    if (!folderExists(emulatorDir) && !folderExists(alternativeEmulatorDir)) {\n+      needsDownload = true\n+      log.lifecycle \"Emulator $emulatorVersion $emulatorArchitecture missing. Downloading...\"\n+    } else {\n+      def emulatorPropertiesFile = new File(emulatorDir, 'source.properties')",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": 58,
+        "original_position": 58,
+        "commit_id": "b70040bc4f0f34e7f1bcf8c46a988c168076527c",
+        "original_commit_id": "dff3079edde2f6fc699447e7d81f3f51de7a8f61",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This shouldn't be defined in this block. What if the other branch was taken?\n",
+        "created_at": "2015-02-06T01:23:29Z",
+        "updated_at": "2015-02-06T03:45:14Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24216577",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24216577"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24216577"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24216647",
+        "pull_request_review_id": null,
+        "id": 24216647,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MjE2NjQ3",
+        "diff_hunk": "@@ -194,6 +193,72 @@ class PackageResolver {\n     }\n   }\n \n+  def resolveEmulator() {\n+    def emulatorVersion = project.sdkManager.emulatorVersion\n+    if (emulatorVersion == null) {\n+      log.debug 'No emulator defined'\n+      return\n+    }\n+\n+    def emulatorArchitecture = project.sdkManager.emulatorArchitecture\n+    if (emulatorArchitecture == null) {\n+      emulatorArchitecture = 'armeabi-v7a'\n+      log.debug 'No architecture specified, defaulting to armeabi-v7a'\n+    }\n+\n+    log.debug \"Found emulator: $emulatorVersion $emulatorArchitecture\"\n+\n+    def emulatorDir = new File(sdk, FD_SYSTEM_IMAGES + \"/$emulatorVersion/$emulatorArchitecture\")\n+    def alternativeEmulatorDir = new File(sdk, FD_SYSTEM_IMAGES + \"/$emulatorVersion/default/$emulatorArchitecture\")\n+    def emulatorPackage = \"sys-img-$emulatorArchitecture-$emulatorVersion\"\n+    def needsDownload = false\n+    if (!folderExists(emulatorDir) && !folderExists(alternativeEmulatorDir)) {\n+      needsDownload = true\n+      log.lifecycle \"Emulator $emulatorVersion $emulatorArchitecture missing. Downloading...\"\n+    } else {\n+      def emulatorPropertiesFile = new File(emulatorDir, 'source.properties')",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": 58,
+        "original_position": 58,
+        "commit_id": "b70040bc4f0f34e7f1bcf8c46a988c168076527c",
+        "original_commit_id": "dff3079edde2f6fc699447e7d81f3f51de7a8f61",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Doing this is very thorough! It should be much easier if I ever get around to #32.\n",
+        "created_at": "2015-02-06T01:25:26Z",
+        "updated_at": "2015-02-06T03:45:14Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24216647",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24216647"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24216647"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24220748",
+        "pull_request_review_id": null,
+        "id": 24220748,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MjIwNzQ4",
+        "diff_hunk": "@@ -194,6 +193,72 @@ class PackageResolver {\n     }\n   }\n \n+  def resolveEmulator() {\n+    def emulatorVersion = project.sdkManager.emulatorVersion\n+    if (emulatorVersion == null) {\n+      log.debug 'No emulator defined'\n+      return\n+    }\n+\n+    def emulatorArchitecture = project.sdkManager.emulatorArchitecture\n+    if (emulatorArchitecture == null) {\n+      emulatorArchitecture = 'armeabi-v7a'\n+      log.debug 'No architecture specified, defaulting to armeabi-v7a'\n+    }\n+\n+    log.debug \"Found emulator: $emulatorVersion $emulatorArchitecture\"\n+\n+    def emulatorDir = new File(sdk, FD_SYSTEM_IMAGES + \"/$emulatorVersion/$emulatorArchitecture\")\n+    def alternativeEmulatorDir = new File(sdk, FD_SYSTEM_IMAGES + \"/$emulatorVersion/default/$emulatorArchitecture\")\n+    def emulatorPackage = \"sys-img-$emulatorArchitecture-$emulatorVersion\"\n+    def needsDownload = false\n+    if (!folderExists(emulatorDir) && !folderExists(alternativeEmulatorDir)) {\n+      needsDownload = true\n+      log.lifecycle \"Emulator $emulatorVersion $emulatorArchitecture missing. Downloading...\"\n+    } else {\n+      def emulatorPropertiesFile = new File(emulatorDir, 'source.properties')",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": 58,
+        "original_position": 58,
+        "commit_id": "b70040bc4f0f34e7f1bcf8c46a988c168076527c",
+        "original_commit_id": "dff3079edde2f6fc699447e7d81f3f51de7a8f61",
+        "user": {
+            "login": "lkorth",
+            "id": 1163999,
+            "node_id": "MDQ6VXNlcjExNjM5OTk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1163999?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/lkorth",
+            "html_url": "https://github.com/lkorth",
+            "followers_url": "https://api.github.com/users/lkorth/followers",
+            "following_url": "https://api.github.com/users/lkorth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/lkorth/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/lkorth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/lkorth/subscriptions",
+            "organizations_url": "https://api.github.com/users/lkorth/orgs",
+            "repos_url": "https://api.github.com/users/lkorth/repos",
+            "events_url": "https://api.github.com/users/lkorth/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/lkorth/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Are you referring to the definition of `emulatorPropertiesFile`? It's only used in that block and no where outside of it.\n",
+        "created_at": "2015-02-06T03:33:26Z",
+        "updated_at": "2015-02-06T03:45:14Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24220748",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24220748"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24220748"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24220779",
+        "pull_request_review_id": null,
+        "id": 24220779,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MjIwNzc5",
+        "diff_hunk": "@@ -194,6 +193,72 @@ class PackageResolver {\n     }\n   }\n \n+  def resolveEmulator() {\n+    def emulatorVersion = project.sdkManager.emulatorVersion\n+    if (emulatorVersion == null) {\n+      log.debug 'No emulator defined'\n+      return\n+    }\n+\n+    def emulatorArchitecture = project.sdkManager.emulatorArchitecture\n+    if (emulatorArchitecture == null) {\n+      emulatorArchitecture = 'armeabi-v7a'\n+      log.debug 'No architecture specified, defaulting to armeabi-v7a'\n+    }\n+\n+    log.debug \"Found emulator: $emulatorVersion $emulatorArchitecture\"\n+\n+    def emulatorDir = new File(sdk, FD_SYSTEM_IMAGES + \"/$emulatorVersion/$emulatorArchitecture\")\n+    def alternativeEmulatorDir = new File(sdk, FD_SYSTEM_IMAGES + \"/$emulatorVersion/default/$emulatorArchitecture\")\n+    def emulatorPackage = \"sys-img-$emulatorArchitecture-$emulatorVersion\"\n+    def needsDownload = false\n+    if (!folderExists(emulatorDir) && !folderExists(alternativeEmulatorDir)) {\n+      needsDownload = true\n+      log.lifecycle \"Emulator $emulatorVersion $emulatorArchitecture missing. Downloading...\"\n+    } else {\n+      def emulatorPropertiesFile = new File(emulatorDir, 'source.properties')",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": 58,
+        "original_position": 58,
+        "commit_id": "b70040bc4f0f34e7f1bcf8c46a988c168076527c",
+        "original_commit_id": "dff3079edde2f6fc699447e7d81f3f51de7a8f61",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Oh, right. There's one less `}` than I thought.\n",
+        "created_at": "2015-02-06T03:34:37Z",
+        "updated_at": "2015-02-06T03:45:14Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24220779",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24220779"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24220779"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24220962",
+        "pull_request_review_id": null,
+        "id": 24220962,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MjIwOTYy",
+        "diff_hunk": "@@ -7,12 +8,9 @@ import org.gradle.api.logging.Logger\n import org.gradle.api.logging.Logging\n import org.gradle.api.tasks.StopExecutionException\n \n-import static com.android.SdkConstants.FD_BUILD_TOOLS\n-import static com.android.SdkConstants.FD_EXTRAS\n-import static com.android.SdkConstants.FD_M2_REPOSITORY\n-import static com.android.SdkConstants.FD_PLATFORMS\n-import static com.android.SdkConstants.FD_ADDONS\n-import static com.android.SdkConstants.FD_PLATFORM_TOOLS\n+import java.util.regex.Pattern\n+\n+import static com.android.SdkConstants.*",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": null,
+        "original_position": 19,
+        "commit_id": "b70040bc4f0f34e7f1bcf8c46a988c168076527c",
+        "original_commit_id": "dff3079edde2f6fc699447e7d81f3f51de7a8f61",
+        "user": {
+            "login": "lkorth",
+            "id": 1163999,
+            "node_id": "MDQ6VXNlcjExNjM5OTk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1163999?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/lkorth",
+            "html_url": "https://github.com/lkorth",
+            "followers_url": "https://api.github.com/users/lkorth/followers",
+            "following_url": "https://api.github.com/users/lkorth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/lkorth/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/lkorth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/lkorth/subscriptions",
+            "organizations_url": "https://api.github.com/users/lkorth/orgs",
+            "repos_url": "https://api.github.com/users/lkorth/repos",
+            "events_url": "https://api.github.com/users/lkorth/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/lkorth/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ah, IDE got me, fixing.\n",
+        "created_at": "2015-02-06T03:43:01Z",
+        "updated_at": "2015-02-06T03:45:14Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24220962",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24220962"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/45#discussion_r24220962"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/45"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24628876",
+        "pull_request_review_id": null,
+        "id": 24628876,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0NjI4ODc2",
+        "diff_hunk": "@@ -59,7 +59,7 @@ dependencies {\n }\n \n group = 'com.jakewharton.sdkmanager'\n-version = '0.12.1-SNAPSHOT'\n+version = '0.12.2-SNAPSHOT'",
+        "path": "build.gradle",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "5403cb6ac843b85544dbff0f00118bc327b282be",
+        "original_commit_id": "d469bcf79e79864ea790174bc381349f33f3b5cc",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Revert\n",
+        "created_at": "2015-02-12T22:51:32Z",
+        "updated_at": "2015-02-13T18:42:33Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/69#discussion_r24628876",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/69",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24628876"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/69#discussion_r24628876"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/69"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24628988",
+        "pull_request_review_id": null,
+        "id": 24628988,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0NjI4OTg4",
+        "diff_hunk": "@@ -5,47 +5,29 @@ import org.gradle.api.logging.Logger\n import org.gradle.api.logging.Logging\n import org.rauschig.jarchivelib.ArchiverFactory\n \n-import static com.android.SdkConstants.PLATFORM_DARWIN\n-import static com.android.SdkConstants.PLATFORM_LINUX\n-import static com.android.SdkConstants.PLATFORM_WINDOWS\n-import static com.android.SdkConstants.currentPlatform\n import static org.rauschig.jarchivelib.ArchiveFormat.TAR\n import static org.rauschig.jarchivelib.ArchiveFormat.ZIP\n import static org.rauschig.jarchivelib.CompressionType.GZIP\n \n /** Manages platform-specific SDK downloads. */\n-enum SdkDownload {\n-  WINDOWS('windows','zip'),\n-  LINUX('linux', 'tgz'),\n-  DARWIN('macosx', 'zip');\n-\n-  static SdkDownload get() {\n-    switch (currentPlatform()) {\n-      case PLATFORM_WINDOWS:\n-        return WINDOWS\n-      case PLATFORM_LINUX:\n-        return LINUX\n-      case PLATFORM_DARWIN:\n-        return DARWIN\n-      default:\n-        throw new IllegalStateException(\"Unknown platform.\")\n-    }\n-  }\n-\n-  final static SDK_VERSION_MAJOR = 24;\n-\n+class SdkDownload implements Downloader {\n+  final String baseUrl\n+  final String sdkMajorVersion\n   final Logger log = Logging.getLogger SdkDownload\n-  final String suffix\n-  final String ext\n+  final SdkPlatform platform\n+\n+  private String getExt() { return platform.ext }\n+  private String getSuffix() { return platform.suffix }\n \n-  SdkDownload(String suffix, String ext) {\n-    this.suffix = suffix\n-    this.ext = ext\n+  SdkDownload(platform = SdkPlatform.get(), baseUrl = SdkResolver.DEFAULT_SDK_URL, sdkVersion = SdkResolver.DEFAULT_SDK_VERSION) {",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/SdkDownload.groovy",
+        "position": null,
+        "original_position": 47,
+        "commit_id": "5403cb6ac843b85544dbff0f00118bc327b282be",
+        "original_commit_id": "d469bcf79e79864ea790174bc381349f33f3b5cc",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Line too long. Should wrap at 100\n",
+        "created_at": "2015-02-12T22:52:06Z",
+        "updated_at": "2015-02-13T18:42:33Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/69#discussion_r24628988",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/69",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24628988"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/69#discussion_r24628988"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/69"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24629725",
+        "pull_request_review_id": null,
+        "id": 24629725,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0NjI5NzI1",
+        "diff_hunk": "@@ -14,9 +14,15 @@ import static com.android.SdkConstants.currentPlatform\n class SdkResolver {\n   static File resolve(Project project) {\n     boolean isWindows = currentPlatform() == PLATFORM_WINDOWS\n-    return new SdkResolver(project, new System.Real(), new Downloader.Real(), isWindows).resolve()\n+    def baseUrl = project.hasProperty('sdkBaseUrl') ? project.property('sdkBaseUrl') : DEFAULT_SDK_URL\n+    def sdkVersion = project.hasProperty('sdkVersion') ? project.property('sdkVersion') : DEFAULT_SDK_VERSION",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/SdkResolver.groovy",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "5403cb6ac843b85544dbff0f00118bc327b282be",
+        "original_commit_id": "d469bcf79e79864ea790174bc381349f33f3b5cc",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why have two mechanisms for the same thing?\n",
+        "created_at": "2015-02-12T22:58:25Z",
+        "updated_at": "2015-02-13T18:42:33Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/69#discussion_r24629725",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/69",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/24629725"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/69#discussion_r24629725"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/69"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/44115279",
+        "pull_request_review_id": null,
+        "id": 44115279,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MTE1Mjc5",
+        "diff_hunk": "@@ -32,7 +32,7 @@ enum SdkDownload {\n     }\n   }\n \n-  final static SDK_VERSION_MAJOR = 24.2;\n+  final static SDK_VERSION_MAJOR = 24.4.1;",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/SdkDownload.groovy",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "60e24af818953e00a305c4fea3f332e0b9f04fc3",
+        "original_commit_id": "442141e871240ddb3e11ffdd995889bad48c2682",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is not a valid literal. You need to surround it with quotes.\n",
+        "created_at": "2015-11-06T08:50:50Z",
+        "updated_at": "2015-11-06T20:45:33Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/93#discussion_r44115279",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/93",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/44115279"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/93#discussion_r44115279"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/93"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/44185482",
+        "pull_request_review_id": null,
+        "id": 44185482,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MTg1NDgy",
+        "diff_hunk": "@@ -32,7 +32,7 @@ enum SdkDownload {\n     }\n   }\n \n-  final static SDK_VERSION_MAJOR = 24.2;\n+  final static SDK_VERSION_MAJOR = 24.4.1;",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/SdkDownload.groovy",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "60e24af818953e00a305c4fea3f332e0b9f04fc3",
+        "original_commit_id": "442141e871240ddb3e11ffdd995889bad48c2682",
+        "user": {
+            "login": "FabianFrank",
+            "id": 691152,
+            "node_id": "MDQ6VXNlcjY5MTE1Mg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/691152?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/FabianFrank",
+            "html_url": "https://github.com/FabianFrank",
+            "followers_url": "https://api.github.com/users/FabianFrank/followers",
+            "following_url": "https://api.github.com/users/FabianFrank/following{/other_user}",
+            "gists_url": "https://api.github.com/users/FabianFrank/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/FabianFrank/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/FabianFrank/subscriptions",
+            "organizations_url": "https://api.github.com/users/FabianFrank/orgs",
+            "repos_url": "https://api.github.com/users/FabianFrank/repos",
+            "events_url": "https://api.github.com/users/FabianFrank/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/FabianFrank/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@JakeWharton thanks, just pushed a fix \n",
+        "created_at": "2015-11-06T20:44:35Z",
+        "updated_at": "2015-11-06T20:45:33Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/93#discussion_r44185482",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/93",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/44185482"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/93#discussion_r44185482"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/93"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/45186431",
+        "pull_request_review_id": null,
+        "id": 45186431,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTg2NDMx",
+        "diff_hunk": "@@ -134,6 +142,11 @@ class PackageResolver {\n   }\n \n   def resolveSupportLibraryRepository() {\n+\n+    project.repositories.maven {\n+      url = androidRepositoryDir",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "8faad79e3972525fe8a5600f562cac92392686fd",
+        "original_commit_id": "8faad79e3972525fe8a5600f562cac92392686fd",
+        "user": {
+            "login": "plastiv",
+            "id": 179550,
+            "node_id": "MDQ6VXNlcjE3OTU1MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/179550?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/plastiv",
+            "html_url": "https://github.com/plastiv",
+            "followers_url": "https://api.github.com/users/plastiv/followers",
+            "following_url": "https://api.github.com/users/plastiv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/plastiv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/plastiv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/plastiv/subscriptions",
+            "organizations_url": "https://api.github.com/users/plastiv/orgs",
+            "repos_url": "https://api.github.com/users/plastiv/repos",
+            "events_url": "https://api.github.com/users/plastiv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/plastiv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I have moved adding android repository url above dependency scan routine.\nThis is necessary because now we are not just parsing strings at the `build.gradle` file, but gradle actually tries to resolve dependencies. And to be able to resolve the \"up-to-date\" case gradle needs m2repository link to resolve support library if it's repository is present.\n",
+        "created_at": "2015-11-18T11:06:39Z",
+        "updated_at": "2015-11-18T11:06:39Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/98#discussion_r45186431",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/98",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/45186431"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/98#discussion_r45186431"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/45186501",
+        "pull_request_review_id": null,
+        "id": 45186501,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTg2NTAx",
+        "diff_hunk": "@@ -143,15 +156,11 @@ class PackageResolver {\n \n     log.debug \"Found support library dependencies: $supportDeps\"\n \n-    project.repositories.maven {\n-      url = androidRepositoryDir\n-    }\n-\n     def needsDownload = false;\n     if (!folderExists(androidRepositoryDir)) {\n       needsDownload = true\n       log.lifecycle 'Support library repository missing. Downloading...'\n-    } else if (!dependenciesAvailable(supportDeps)) {\n+    } else if (supportDeps.count { it instanceof UnresolvedDependencyResult } > 0) {",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": 40,
+        "original_position": 40,
+        "commit_id": "8faad79e3972525fe8a5600f562cac92392686fd",
+        "original_commit_id": "8faad79e3972525fe8a5600f562cac92392686fd",
+        "user": {
+            "login": "plastiv",
+            "id": 179550,
+            "node_id": "MDQ6VXNlcjE3OTU1MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/179550?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/plastiv",
+            "html_url": "https://github.com/plastiv",
+            "followers_url": "https://api.github.com/users/plastiv/followers",
+            "following_url": "https://api.github.com/users/plastiv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/plastiv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/plastiv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/plastiv/subscriptions",
+            "organizations_url": "https://api.github.com/users/plastiv/orgs",
+            "repos_url": "https://api.github.com/users/plastiv/repos",
+            "events_url": "https://api.github.com/users/plastiv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/plastiv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We can trust gradle resolving mechanism that if it thinks that dependency is resolved, then we are all set. No need to make additional check.\n",
+        "created_at": "2015-11-18T11:07:41Z",
+        "updated_at": "2015-11-18T11:07:52Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/98#discussion_r45186501",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/98",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/45186501"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/98#discussion_r45186501"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/45186654",
+        "pull_request_review_id": null,
+        "id": 45186654,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTg2NjU0",
+        "diff_hunk": "@@ -279,11 +288,12 @@ class PackageResolver {\n   }\n \n   def findDependenciesStartingWith(String prefix) {\n-    def deps = []\n+    def deps = new HashSet()\n     for (Configuration configuration : project.configurations) {\n-      for (Dependency dependency : configuration.dependencies) {\n-        if (dependency.group != null && dependency.group.startsWith(prefix)) {\n-          deps.add dependency\n+      ResolutionResult result = configuration.getIncoming().getResolutionResult()",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": 54,
+        "original_position": 54,
+        "commit_id": "8faad79e3972525fe8a5600f562cac92392686fd",
+        "original_commit_id": "8faad79e3972525fe8a5600f562cac92392686fd",
+        "user": {
+            "login": "plastiv",
+            "id": 179550,
+            "node_id": "MDQ6VXNlcjE3OTU1MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/179550?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/plastiv",
+            "html_url": "https://github.com/plastiv",
+            "followers_url": "https://api.github.com/users/plastiv/followers",
+            "following_url": "https://api.github.com/users/plastiv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/plastiv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/plastiv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/plastiv/subscriptions",
+            "organizations_url": "https://api.github.com/users/plastiv/orgs",
+            "repos_url": "https://api.github.com/users/plastiv/repos",
+            "events_url": "https://api.github.com/users/plastiv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/plastiv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This line will make internet connection if necessary. Is there any way to limit configurations scope or make a batch resolution? Will this call be cached at the daemon level?\n",
+        "created_at": "2015-11-18T11:09:19Z",
+        "updated_at": "2015-11-18T11:09:19Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/98#discussion_r45186654",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/98",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/45186654"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/98#discussion_r45186654"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/45186820",
+        "pull_request_review_id": null,
+        "id": 45186820,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTg2ODIw",
+        "diff_hunk": "@@ -229,6 +265,24 @@ class PackageResolverTest {\n   }\n \n   @FixtureName(\"outdated-android-m2repository\")\n+  @Test public void outdatedIndirectSupportLibraryRepositoryIsDownloaded() {\n+    project.apply plugin: 'com.android.application'\n+\n+    def localMaven = new File(fixture.getRoot(), \"localMaven\")\n+    assertThat(localMaven).exists()\n+    project.repositories.maven {\n+      url = localMaven",
+        "path": "src/test/groovy/com/jakewharton/sdkmanager/internal/PackageResolverTest.groovy",
+        "position": 60,
+        "original_position": 60,
+        "commit_id": "8faad79e3972525fe8a5600f562cac92392686fd",
+        "original_commit_id": "8faad79e3972525fe8a5600f562cac92392686fd",
+        "user": {
+            "login": "plastiv",
+            "id": 179550,
+            "node_id": "MDQ6VXNlcjE3OTU1MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/179550?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/plastiv",
+            "html_url": "https://github.com/plastiv",
+            "followers_url": "https://api.github.com/users/plastiv/followers",
+            "following_url": "https://api.github.com/users/plastiv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/plastiv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/plastiv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/plastiv/subscriptions",
+            "organizations_url": "https://api.github.com/users/plastiv/orgs",
+            "repos_url": "https://api.github.com/users/plastiv/repos",
+            "events_url": "https://api.github.com/users/plastiv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/plastiv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "To avoid making internet connection at the tests. I have created localMaven repo with nested library.\nBad thing I had to copy-paste it through \"up-to-date\", \"missing\", \"outdated\" fixtures.\n",
+        "created_at": "2015-11-18T11:11:01Z",
+        "updated_at": "2015-11-18T11:11:01Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/98#discussion_r45186820",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/98",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/45186820"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/98#discussion_r45186820"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/56728318",
+        "pull_request_review_id": null,
+        "id": 56728318,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU2NzI4MzE4",
+        "diff_hunk": "@@ -5,13 +5,13 @@ buildscript {\n   }\n   \n   dependencies {\n-    classpath 'org.gradle.api.plugins:gradle-nexus-plugin:0.7.1'\n+    classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'\n   }\n }\n \n apply plugin: 'groovy'\n apply plugin: 'maven'\n-apply plugin: 'nexus'\n+apply plugin: 'com.bmuschko.nexus'",
+        "path": "build.gradle",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "cf97499cc3e38bf54dd36a549121a0e82341ab9b",
+        "original_commit_id": "55a2b3213cce7d101858de540bb30d7dc2aa5dbc",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why is this included in the PR?\n",
+        "created_at": "2016-03-18T21:59:44Z",
+        "updated_at": "2016-03-19T07:20:26Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/110#discussion_r56728318",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/110",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/56728318"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/110#discussion_r56728318"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/110"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/56745576",
+        "pull_request_review_id": null,
+        "id": 56745576,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU2NzQ1NTc2",
+        "diff_hunk": "@@ -5,13 +5,13 @@ buildscript {\n   }\n   \n   dependencies {\n-    classpath 'org.gradle.api.plugins:gradle-nexus-plugin:0.7.1'\n+    classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'\n   }\n }\n \n apply plugin: 'groovy'\n apply plugin: 'maven'\n-apply plugin: 'nexus'\n+apply plugin: 'com.bmuschko.nexus'",
+        "path": "build.gradle",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "cf97499cc3e38bf54dd36a549121a0e82341ab9b",
+        "original_commit_id": "55a2b3213cce7d101858de540bb30d7dc2aa5dbc",
+        "user": {
+            "login": "sschuberth",
+            "id": 349154,
+            "node_id": "MDQ6VXNlcjM0OTE1NA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/349154?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sschuberth",
+            "html_url": "https://github.com/sschuberth",
+            "followers_url": "https://api.github.com/users/sschuberth/followers",
+            "following_url": "https://api.github.com/users/sschuberth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sschuberth/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sschuberth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sschuberth/subscriptions",
+            "organizations_url": "https://api.github.com/users/sschuberth/orgs",
+            "repos_url": "https://api.github.com/users/sschuberth/repos",
+            "events_url": "https://api.github.com/users/sschuberth/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sschuberth/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hmm, odd. When I first tried, `./gradlew check` did not even start to execute because Gradle could not download `gradle-nexus-plugin-0.7.1`. I just tried again, and now it works. Probably some temporary network hiccup. Anyway version 0.7.1 seems quite outdated and / or the version scheme seems to have changed. [Bintray search](https://bintray.com/search?query=gradle-nexus-plugin) shows `org.gradle.api.plugins:gradle-nexus-plugin:0.3` or `com.bmuschko:gradle-nexus-plugin:2.3.1` to be the latest version (both from Benjamin Muschko), but the latter has a more recent release date. Strangely enough, I do not see version 0.7.1 on Bintray.\n\nI'll update the commit message to not say anymore that it did not work without this change.\n",
+        "created_at": "2016-03-19T07:18:45Z",
+        "updated_at": "2016-03-19T07:20:26Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/110#discussion_r56745576",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/110",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/56745576"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/110#discussion_r56745576"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/110"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/56751046",
+        "pull_request_review_id": null,
+        "id": 56751046,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU2NzUxMDQ2",
+        "diff_hunk": "@@ -5,13 +5,13 @@ buildscript {\n   }\n   \n   dependencies {\n-    classpath 'org.gradle.api.plugins:gradle-nexus-plugin:0.7.1'\n+    classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'\n   }\n }\n \n apply plugin: 'groovy'\n apply plugin: 'maven'\n-apply plugin: 'nexus'\n+apply plugin: 'com.bmuschko.nexus'",
+        "path": "build.gradle",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "cf97499cc3e38bf54dd36a549121a0e82341ab9b",
+        "original_commit_id": "55a2b3213cce7d101858de540bb30d7dc2aa5dbc",
+        "user": {
+            "login": "JakeWharton",
+            "id": 66577,
+            "node_id": "MDQ6VXNlcjY2NTc3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66577?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JakeWharton",
+            "html_url": "https://github.com/JakeWharton",
+            "followers_url": "https://api.github.com/users/JakeWharton/followers",
+            "following_url": "https://api.github.com/users/JakeWharton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JakeWharton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JakeWharton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JakeWharton/subscriptions",
+            "organizations_url": "https://api.github.com/users/JakeWharton/orgs",
+            "repos_url": "https://api.github.com/users/JakeWharton/repos",
+            "events_url": "https://api.github.com/users/JakeWharton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JakeWharton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Huh. Weird.\n",
+        "created_at": "2016-03-19T16:18:50Z",
+        "updated_at": "2016-03-19T16:18:50Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/110#discussion_r56751046",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/110",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/56751046"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/110#discussion_r56751046"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/110"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/57302551",
+        "pull_request_review_id": null,
+        "id": 57302551,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU3MzAyNTUx",
+        "diff_hunk": "@@ -62,6 +66,43 @@ class PackageResolver {\n     resolvePlayServiceRepository()\n   }\n \n+  def resolveTools() {\n+    if (!folderExists(toolsDir)) {\n+      throw new StopExecutionException('SDK tools not found!')\n+    }\n+\n+    def sourcePropsFile = new File(toolsDir, 'source.properties')\n+    if (!sourcePropsFile.canRead()) {\n+      throw new StopExecutionException('Could not read source.properties inside SDK tools dir!')\n+    }\n+\n+    def props = new Properties()\n+    props.load(new FileInputStream(sourcePropsFile))\n+\n+    def revision = props.getProperty('Pkg.Revision')\n+    if (revision == null) {\n+      throw new StopExecutionException('Could not get property Pkg.Revision from SDK tools!')\n+    }\n+\n+    def revisionParts = revision.split('\\\\.')\n+    if (revisionParts == null || revisionParts.length == 0) {\n+      throw new StopExecutionException('Could not handle property Pkg.Revision from SDK tools!')\n+    }\n+\n+    // TODO how to replace hard-coded constant?",
+        "path": "src/main/groovy/com/jakewharton/sdkmanager/internal/PackageResolver.groovy",
+        "position": 59,
+        "original_position": 59,
+        "commit_id": "13103356a508335ade17f7ebbfbea81df4fe8b7c",
+        "original_commit_id": "13103356a508335ade17f7ebbfbea81df4fe8b7c",
+        "user": {
+            "login": "sschuberth",
+            "id": 349154,
+            "node_id": "MDQ6VXNlcjM0OTE1NA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/349154?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sschuberth",
+            "html_url": "https://github.com/sschuberth",
+            "followers_url": "https://api.github.com/users/sschuberth/followers",
+            "following_url": "https://api.github.com/users/sschuberth/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sschuberth/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sschuberth/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sschuberth/subscriptions",
+            "organizations_url": "https://api.github.com/users/sschuberth/orgs",
+            "repos_url": "https://api.github.com/users/sschuberth/repos",
+            "events_url": "https://api.github.com/users/sschuberth/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sschuberth/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "FYI, my PR #111 avoids the need for a hard-coded constant by looking at the version from the list of available updates.\n",
+        "created_at": "2016-03-24T11:09:43Z",
+        "updated_at": "2016-03-24T11:09:43Z",
+        "html_url": "https://github.com/JakeWharton/sdk-manager-plugin/pull/44#discussion_r57302551",
+        "pull_request_url": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/44",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/comments/57302551"
+            },
+            "html": {
+                "href": "https://github.com/JakeWharton/sdk-manager-plugin/pull/44#discussion_r57302551"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JakeWharton/sdk-manager-plugin/pulls/44"
+            }
+        }
+    }
+]

@@ -1,0 +1,51 @@
+[
+    {
+        "url": "https://api.github.com/repos/nathansearles/Slides/pulls/comments/14767432",
+        "pull_request_review_id": null,
+        "id": 14767432,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0NzY3NDMy",
+        "diff_hunk": "@@ -516,7 +594,7 @@\n         # Stop/pause slideshow on mouse enter\n         slidesContainer.bind \"mouseenter\", =>\n           clearTimeout @data.restartDelay\n-\t\t\t\t\t$.data this, \"restartDelay\", null",
+        "path": "source/jquery.slides.coffee",
+        "position": 103,
+        "original_position": 103,
+        "commit_id": "8357087b83e5cfa8bb1e6469adb12293bcf25c06",
+        "original_commit_id": "acb9fdde08f263f0043863610b0a23e37e50f11b",
+        "user": {
+            "login": "charlesbaynham",
+            "id": 4397637,
+            "node_id": "MDQ6VXNlcjQzOTc2Mzc=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/4397637?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/charlesbaynham",
+            "html_url": "https://github.com/charlesbaynham",
+            "followers_url": "https://api.github.com/users/charlesbaynham/followers",
+            "following_url": "https://api.github.com/users/charlesbaynham/following{/other_user}",
+            "gists_url": "https://api.github.com/users/charlesbaynham/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/charlesbaynham/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/charlesbaynham/subscriptions",
+            "organizations_url": "https://api.github.com/users/charlesbaynham/orgs",
+            "repos_url": "https://api.github.com/users/charlesbaynham/repos",
+            "events_url": "https://api.github.com/users/charlesbaynham/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/charlesbaynham/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This was from a previous commit. On mac, it was stopping coffee-script from compiling.\n",
+        "created_at": "2014-07-10T14:08:55Z",
+        "updated_at": "2014-09-18T14:45:01Z",
+        "html_url": "https://github.com/nathansearles/Slides/pull/578#discussion_r14767432",
+        "pull_request_url": "https://api.github.com/repos/nathansearles/Slides/pulls/578",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nathansearles/Slides/pulls/comments/14767432"
+            },
+            "html": {
+                "href": "https://github.com/nathansearles/Slides/pull/578#discussion_r14767432"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nathansearles/Slides/pulls/578"
+            }
+        }
+    }
+]

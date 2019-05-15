@@ -1,0 +1,1082 @@
+[
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/544818",
+        "pull_request_review_id": null,
+        "id": 544818,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU0NDgxOA==",
+        "diff_hunk": "@@ -4,6 +4,14 @@ class MailCatcher\n       e.preventDefault()\n       @loadMessage $(e.currentTarget).attr 'data-message-id'\n \n+    $('input[name=search]').live 'keyup', (e) =>\n+      e.preventDefault()\n+      console.log(e)",
+        "path": "public/javascripts/application.coffee",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "193005663801b5d8ebff58f11e53f7d20197e733",
+        "original_commit_id": "cee3ed232f02f6857411b510c190145a5266697d",
+        "user": {
+            "login": "sj26",
+            "id": 14028,
+            "node_id": "MDQ6VXNlcjE0MDI4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/14028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sj26",
+            "html_url": "https://github.com/sj26",
+            "followers_url": "https://api.github.com/users/sj26/followers",
+            "following_url": "https://api.github.com/users/sj26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sj26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sj26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sj26/subscriptions",
+            "organizations_url": "https://api.github.com/users/sj26/orgs",
+            "repos_url": "https://api.github.com/users/sj26/repos",
+            "events_url": "https://api.github.com/users/sj26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sj26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Woops!\n",
+        "created_at": "2012-03-12T10:53:23Z",
+        "updated_at": "2012-03-12T10:56:06Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/39#discussion_r544818",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/39",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/544818"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/39#discussion_r544818"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/39"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/1962561",
+        "pull_request_review_id": null,
+        "id": 1962561,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NjI1NjE=",
+        "diff_hunk": "@@ -59,26 +59,55 @@ class MailCatcher\n             alert 'Error while quitting.'\n \n     key 'up', =>\n-      id = @selectedMessage() || 1\n-      id -=  1  if id > 1\n-      @loadMessage(id)\n+      if @selectedMessage()\n+        @loadMessage $('#messages tr.selected')?.prev()?.data('message-id')\n+      else\n+        @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key 'down', =>\n-      id = @selectedMessage() || @messagesCount()\n-      id += 1 if id < @messagesCount()\n-      @loadMessage(id)\n+      if @selectedMessage()\n+        @loadMessage $('#messages tr.selected')?.next()?.data('message-id')\n+      else\n+        @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key '\u2318+up, ctrl+up', =>\n-      @loadMessage(1)\n+      @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key '\u2318+down, ctrl+down', =>\n-      @loadMessage @messagesCount()\n+      @loadMessage $('#messages tbody tr[data-message-id]:last')?.data('message-id')\n+      false\n \n     key 'left', =>\n       @openTab @previousTab()\n+      false\n \n     key 'right', =>\n       @openTab @nextTab()\n+      false\n+\n+    key 'backspace, delete', =>\n+      id = @selectedMessage()\n+      if id?\n+        $.ajax\n+          url: '/messages/' + id\n+          type: 'DELETE'\n+          success: =>\n+            messageRow = $('#messages tbody tr[data-message-id=\"'+id+'\"]')",
+        "path": "public/javascripts/application.coffee",
+        "position": null,
+        "original_position": 48,
+        "commit_id": "b3a4e86a48b118a9e90811ee9be04e2aea3bb68d",
+        "original_commit_id": "81cb465357538ac8dc46bae915e24cb57a259d15",
+        "user": {
+            "login": "sj26",
+            "id": 14028,
+            "node_id": "MDQ6VXNlcjE0MDI4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/14028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sj26",
+            "html_url": "https://github.com/sj26",
+            "followers_url": "https://api.github.com/users/sj26/followers",
+            "following_url": "https://api.github.com/users/sj26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sj26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sj26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sj26/subscriptions",
+            "organizations_url": "https://api.github.com/users/sj26/orgs",
+            "repos_url": "https://api.github.com/users/sj26/repos",
+            "events_url": "https://api.github.com/users/sj26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sj26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "In coffeescript you can interpolate: `$(\"#messages tbody tr[data-message-id=#{id}]\")`\n",
+        "created_at": "2012-10-29T02:49:56Z",
+        "updated_at": "2012-10-29T23:02:47Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/66#discussion_r1962561",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/66",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/1962561"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/66#discussion_r1962561"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/1962562",
+        "pull_request_review_id": null,
+        "id": 1962562,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NjI1NjI=",
+        "diff_hunk": "@@ -59,26 +59,55 @@ class MailCatcher\n             alert 'Error while quitting.'\n \n     key 'up', =>\n-      id = @selectedMessage() || 1\n-      id -=  1  if id > 1\n-      @loadMessage(id)\n+      if @selectedMessage()\n+        @loadMessage $('#messages tr.selected')?.prev()?.data('message-id')\n+      else\n+        @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key 'down', =>\n-      id = @selectedMessage() || @messagesCount()\n-      id += 1 if id < @messagesCount()\n-      @loadMessage(id)\n+      if @selectedMessage()\n+        @loadMessage $('#messages tr.selected')?.next()?.data('message-id')\n+      else\n+        @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key '\u2318+up, ctrl+up', =>\n-      @loadMessage(1)\n+      @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key '\u2318+down, ctrl+down', =>\n-      @loadMessage @messagesCount()\n+      @loadMessage $('#messages tbody tr[data-message-id]:last')?.data('message-id')\n+      false\n \n     key 'left', =>\n       @openTab @previousTab()\n+      false\n \n     key 'right', =>\n       @openTab @nextTab()\n+      false\n+\n+    key 'backspace, delete', =>\n+      id = @selectedMessage()\n+      if id?\n+        $.ajax\n+          url: '/messages/' + id\n+          type: 'DELETE'\n+          success: =>\n+            messageRow = $('#messages tbody tr[data-message-id=\"'+id+'\"]')\n+            switchTo = messageRow.next()?.data('message-id') || messageRow.prev()?.data('message-id')",
+        "path": "public/javascripts/application.coffee",
+        "position": null,
+        "original_position": 49,
+        "commit_id": "b3a4e86a48b118a9e90811ee9be04e2aea3bb68d",
+        "original_commit_id": "81cb465357538ac8dc46bae915e24cb57a259d15",
+        "user": {
+            "login": "sj26",
+            "id": 14028,
+            "node_id": "MDQ6VXNlcjE0MDI4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/14028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sj26",
+            "html_url": "https://github.com/sj26",
+            "followers_url": "https://api.github.com/users/sj26/followers",
+            "following_url": "https://api.github.com/users/sj26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sj26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sj26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sj26/subscriptions",
+            "organizations_url": "https://api.github.com/users/sj26/orgs",
+            "repos_url": "https://api.github.com/users/sj26/repos",
+            "events_url": "https://api.github.com/users/sj26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sj26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`.next()` and `.prev()` just return jquery objects, so they'll never be null\u2014no need to guard them. \n",
+        "created_at": "2012-10-29T02:51:18Z",
+        "updated_at": "2012-10-29T23:02:47Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/66#discussion_r1962562",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/66",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/1962562"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/66#discussion_r1962562"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/1962567",
+        "pull_request_review_id": null,
+        "id": 1962567,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NjI1Njc=",
+        "diff_hunk": "@@ -59,26 +59,55 @@ class MailCatcher\n             alert 'Error while quitting.'\n \n     key 'up', =>\n-      id = @selectedMessage() || 1\n-      id -=  1  if id > 1\n-      @loadMessage(id)\n+      if @selectedMessage()\n+        @loadMessage $('#messages tr.selected')?.prev()?.data('message-id')\n+      else\n+        @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key 'down', =>\n-      id = @selectedMessage() || @messagesCount()\n-      id += 1 if id < @messagesCount()\n-      @loadMessage(id)\n+      if @selectedMessage()\n+        @loadMessage $('#messages tr.selected')?.next()?.data('message-id')\n+      else\n+        @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key '\u2318+up, ctrl+up', =>\n-      @loadMessage(1)\n+      @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key '\u2318+down, ctrl+down', =>\n-      @loadMessage @messagesCount()\n+      @loadMessage $('#messages tbody tr[data-message-id]:last')?.data('message-id')\n+      false\n \n     key 'left', =>\n       @openTab @previousTab()\n+      false\n \n     key 'right', =>\n       @openTab @nextTab()\n+      false\n+\n+    key 'backspace, delete', =>\n+      id = @selectedMessage()\n+      if id?\n+        $.ajax\n+          url: '/messages/' + id\n+          type: 'DELETE'\n+          success: =>\n+            messageRow = $('#messages tbody tr[data-message-id=\"'+id+'\"]')\n+            switchTo = messageRow.next()?.data('message-id') || messageRow.prev()?.data('message-id')",
+        "path": "public/javascripts/application.coffee",
+        "position": null,
+        "original_position": 49,
+        "commit_id": "b3a4e86a48b118a9e90811ee9be04e2aea3bb68d",
+        "original_commit_id": "81cb465357538ac8dc46bae915e24cb57a259d15",
+        "user": {
+            "login": "sj26",
+            "id": 14028,
+            "node_id": "MDQ6VXNlcjE0MDI4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/14028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sj26",
+            "html_url": "https://github.com/sj26",
+            "followers_url": "https://api.github.com/users/sj26/followers",
+            "following_url": "https://api.github.com/users/sj26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sj26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sj26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sj26/subscriptions",
+            "organizations_url": "https://api.github.com/users/sj26/orgs",
+            "repos_url": "https://api.github.com/users/sj26/repos",
+            "events_url": "https://api.github.com/users/sj26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sj26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Same with most of the selectors earlier in the key handlers.\n",
+        "created_at": "2012-10-29T02:53:22Z",
+        "updated_at": "2012-10-29T23:02:47Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/66#discussion_r1962567",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/66",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/1962567"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/66#discussion_r1962567"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/1962575",
+        "pull_request_review_id": null,
+        "id": 1962575,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NjI1NzU=",
+        "diff_hunk": "@@ -59,26 +59,55 @@ class MailCatcher\n             alert 'Error while quitting.'\n \n     key 'up', =>\n-      id = @selectedMessage() || 1\n-      id -=  1  if id > 1\n-      @loadMessage(id)\n+      if @selectedMessage()\n+        @loadMessage $('#messages tr.selected')?.prev()?.data('message-id')\n+      else\n+        @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key 'down', =>\n-      id = @selectedMessage() || @messagesCount()\n-      id += 1 if id < @messagesCount()\n-      @loadMessage(id)\n+      if @selectedMessage()\n+        @loadMessage $('#messages tr.selected')?.next()?.data('message-id')\n+      else\n+        @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key '\u2318+up, ctrl+up', =>\n-      @loadMessage(1)\n+      @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key '\u2318+down, ctrl+down', =>\n-      @loadMessage @messagesCount()\n+      @loadMessage $('#messages tbody tr[data-message-id]:last')?.data('message-id')\n+      false\n \n     key 'left', =>\n       @openTab @previousTab()\n+      false\n \n     key 'right', =>\n       @openTab @nextTab()\n+      false\n+\n+    key 'backspace, delete', =>\n+      id = @selectedMessage()\n+      if id?\n+        $.ajax\n+          url: '/messages/' + id\n+          type: 'DELETE'\n+          success: =>\n+            messageRow = $('#messages tbody tr[data-message-id=\"'+id+'\"]')\n+            switchTo = messageRow.next()?.data('message-id') || messageRow.prev()?.data('message-id')\n+            messageRow.remove()\n+            if switchTo\n+              @loadMessage switchTo\n+            else\n+              $('#message .metadata dd').empty()\n+              $('#message .metadata .attachments').hide()\n+              $('#message iframe').attr 'src', 'about:blank'",
+        "path": "public/javascripts/application.coffee",
+        "position": null,
+        "original_position": 56,
+        "commit_id": "b3a4e86a48b118a9e90811ee9be04e2aea3bb68d",
+        "original_commit_id": "81cb465357538ac8dc46bae915e24cb57a259d15",
+        "user": {
+            "login": "sj26",
+            "id": 14028,
+            "node_id": "MDQ6VXNlcjE0MDI4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/14028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sj26",
+            "html_url": "https://github.com/sj26",
+            "followers_url": "https://api.github.com/users/sj26/followers",
+            "following_url": "https://api.github.com/users/sj26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sj26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sj26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sj26/subscriptions",
+            "organizations_url": "https://api.github.com/users/sj26/orgs",
+            "repos_url": "https://api.github.com/users/sj26/repos",
+            "events_url": "https://api.github.com/users/sj26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sj26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Might be time to extract this into a method, perhaps `unselectMessage`?\n",
+        "created_at": "2012-10-29T02:56:20Z",
+        "updated_at": "2012-10-29T23:02:47Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/66#discussion_r1962575",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/66",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/1962575"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/66#discussion_r1962575"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/1972910",
+        "pull_request_review_id": null,
+        "id": 1972910,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzI5MTA=",
+        "diff_hunk": "@@ -59,26 +59,55 @@ class MailCatcher\n             alert 'Error while quitting.'\n \n     key 'up', =>\n-      id = @selectedMessage() || 1\n-      id -=  1  if id > 1\n-      @loadMessage(id)\n+      if @selectedMessage()\n+        @loadMessage $('#messages tr.selected')?.prev()?.data('message-id')\n+      else\n+        @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key 'down', =>\n-      id = @selectedMessage() || @messagesCount()\n-      id += 1 if id < @messagesCount()\n-      @loadMessage(id)\n+      if @selectedMessage()\n+        @loadMessage $('#messages tr.selected')?.next()?.data('message-id')\n+      else\n+        @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key '\u2318+up, ctrl+up', =>\n-      @loadMessage(1)\n+      @loadMessage $('#messages tbody tr[data-message-id]:first')?.data('message-id')\n+      false\n \n     key '\u2318+down, ctrl+down', =>\n-      @loadMessage @messagesCount()\n+      @loadMessage $('#messages tbody tr[data-message-id]:last')?.data('message-id')\n+      false\n \n     key 'left', =>\n       @openTab @previousTab()\n+      false\n \n     key 'right', =>\n       @openTab @nextTab()\n+      false\n+\n+    key 'backspace, delete', =>\n+      id = @selectedMessage()\n+      if id?\n+        $.ajax\n+          url: '/messages/' + id\n+          type: 'DELETE'\n+          success: =>\n+            messageRow = $('#messages tbody tr[data-message-id=\"'+id+'\"]')",
+        "path": "public/javascripts/application.coffee",
+        "position": null,
+        "original_position": 48,
+        "commit_id": "b3a4e86a48b118a9e90811ee9be04e2aea3bb68d",
+        "original_commit_id": "81cb465357538ac8dc46bae915e24cb57a259d15",
+        "user": {
+            "login": "toy",
+            "id": 18144,
+            "node_id": "MDQ6VXNlcjE4MTQ0",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/18144?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/toy",
+            "html_url": "https://github.com/toy",
+            "followers_url": "https://api.github.com/users/toy/followers",
+            "following_url": "https://api.github.com/users/toy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/toy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/toy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/toy/subscriptions",
+            "organizations_url": "https://api.github.com/users/toy/orgs",
+            "repos_url": "https://api.github.com/users/toy/repos",
+            "events_url": "https://api.github.com/users/toy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/toy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I forget about interpolation in coffeescript and just copied how it was in loadMessage, I'll fix it now\n",
+        "created_at": "2012-10-29T22:26:04Z",
+        "updated_at": "2012-10-29T23:02:47Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/66#discussion_r1972910",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/66",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/1972910"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/66#discussion_r1972910"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/5259363",
+        "pull_request_review_id": null,
+        "id": 5259363,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUyNTkzNjM=",
+        "diff_hunk": "@@ -252,6 +252,23 @@ class MailCatcher\n     if id?\n       $('#message iframe').attr \"src\", \"/messages/#{id}.#{format}\"\n \n+      app = this\n+      $('#message iframe').load ( -> app.decorateMessageBody format )",
+        "path": "public/javascripts/application.coffee",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "2f5c2ff01cbdb98b1437f7ed2ffa910631c5ac93",
+        "original_commit_id": "ffb4ec4e4c5230ad384b660030980ec54517759f",
+        "user": {
+            "login": "sj26",
+            "id": 14028,
+            "node_id": "MDQ6VXNlcjE0MDI4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/14028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sj26",
+            "html_url": "https://github.com/sj26",
+            "followers_url": "https://api.github.com/users/sj26/followers",
+            "following_url": "https://api.github.com/users/sj26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sj26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sj26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sj26/subscriptions",
+            "organizations_url": "https://api.github.com/users/sj26/orgs",
+            "repos_url": "https://api.github.com/users/sj26/repos",
+            "events_url": "https://api.github.com/users/sj26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sj26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This would be better as just:\n\n``` coffee\n      $('#message iframe').load => @decorateMessageBody(format)\n```\n\nAnd this is [attaching an onload handler](http://api.jquery.com/load-event/), so we only need to do it once. Move it up into the MailCatcher::constructor. Then you'll need to sniff the format in the decorateMessageBody function instead of using the closed variable.\n",
+        "created_at": "2013-07-18T01:46:56Z",
+        "updated_at": "2013-07-28T21:02:08Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/97#discussion_r5259363",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/97",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/5259363"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/97#discussion_r5259363"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/6368713",
+        "pull_request_review_id": null,
+        "id": 6368713,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYzNjg3MTM=",
+        "diff_hunk": "@@ -48,7 +48,7 @@ class MailCatcher::Web < Sinatra::Base\n         \"formats\" => [\n           \"source\",\n           (\"html\" if MailCatcher::Mail.message_has_html? id),\n-          (\"plain\" if MailCatcher::Mail.message_has_plain? id),\n+          (\"plain\" if MailCatcher::Mail.message_has_plain? id)",
+        "path": "lib/mail_catcher/web.rb",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "2f5c2ff01cbdb98b1437f7ed2ffa910631c5ac93",
+        "original_commit_id": "2f5c2ff01cbdb98b1437f7ed2ffa910631c5ac93",
+        "user": {
+            "login": "sj26",
+            "id": 14028,
+            "node_id": "MDQ6VXNlcjE0MDI4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/14028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sj26",
+            "html_url": "https://github.com/sj26",
+            "followers_url": "https://api.github.com/users/sj26/followers",
+            "following_url": "https://api.github.com/users/sj26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sj26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sj26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sj26/subscriptions",
+            "organizations_url": "https://api.github.com/users/sj26/orgs",
+            "repos_url": "https://api.github.com/users/sj26/repos",
+            "events_url": "https://api.github.com/users/sj26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sj26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Leaving the comma on the end prevents diff cruft.\n",
+        "created_at": "2013-09-16T00:23:11Z",
+        "updated_at": "2013-09-16T00:23:11Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/97#discussion_r6368713",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/97",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/6368713"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/97#discussion_r6368713"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/23021223",
+        "pull_request_review_id": null,
+        "id": 23021223,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzMDIxMjIz",
+        "diff_hunk": "@@ -0,0 +1,20 @@\n+FROM ubuntu:trusty\n+MAINTAINER Paul Bowsher <paul.bowsher@gmail.com>\n+\n+RUN apt-get update\n+RUN apt-get install -y sqlite3 libsqlite3-dev git build-essential\n+RUN apt-get install -y ruby-dev libssl-dev\n+RUN apt-get install -y nodejs",
+        "path": "Dockerfile",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "18655f41f28373a93c0931f5e13f3ae3c4d703d5",
+        "original_commit_id": "1ab18c821d6be83fe40c76961fa33982686f4f93",
+        "user": {
+            "login": "thaJeztah",
+            "id": 1804568,
+            "node_id": "MDQ6VXNlcjE4MDQ1Njg=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1804568?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thaJeztah",
+            "html_url": "https://github.com/thaJeztah",
+            "followers_url": "https://api.github.com/users/thaJeztah/followers",
+            "following_url": "https://api.github.com/users/thaJeztah/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thaJeztah/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thaJeztah/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thaJeztah/subscriptions",
+            "organizations_url": "https://api.github.com/users/thaJeztah/orgs",
+            "repos_url": "https://api.github.com/users/thaJeztah/repos",
+            "events_url": "https://api.github.com/users/thaJeztah/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thaJeztah/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "These RUN statements should probably be combined to reduce the number of layers produced and keep image-size down.\n",
+        "created_at": "2015-01-15T16:20:15Z",
+        "updated_at": "2015-01-15T16:30:50Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/158#discussion_r23021223",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/158",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/23021223"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/158#discussion_r23021223"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/158"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/23021487",
+        "pull_request_review_id": null,
+        "id": 23021487,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzMDIxNDg3",
+        "diff_hunk": "@@ -0,0 +1,20 @@\n+FROM ubuntu:trusty\n+MAINTAINER Paul Bowsher <paul.bowsher@gmail.com>\n+\n+RUN apt-get update\n+RUN apt-get install -y sqlite3 libsqlite3-dev git build-essential\n+RUN apt-get install -y ruby-dev libssl-dev\n+RUN apt-get install -y nodejs",
+        "path": "Dockerfile",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "18655f41f28373a93c0931f5e13f3ae3c4d703d5",
+        "original_commit_id": "1ab18c821d6be83fe40c76961fa33982686f4f93",
+        "user": {
+            "login": "boffbowsh",
+            "id": 18276,
+            "node_id": "MDQ6VXNlcjE4Mjc2",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/18276?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/boffbowsh",
+            "html_url": "https://github.com/boffbowsh",
+            "followers_url": "https://api.github.com/users/boffbowsh/followers",
+            "following_url": "https://api.github.com/users/boffbowsh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/boffbowsh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/boffbowsh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/boffbowsh/subscriptions",
+            "organizations_url": "https://api.github.com/users/boffbowsh/orgs",
+            "repos_url": "https://api.github.com/users/boffbowsh/repos",
+            "events_url": "https://api.github.com/users/boffbowsh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/boffbowsh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Done\n",
+        "created_at": "2015-01-15T16:23:07Z",
+        "updated_at": "2015-01-15T16:30:50Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/158#discussion_r23021487",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/158",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/23021487"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/158#discussion_r23021487"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/158"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/23021492",
+        "pull_request_review_id": null,
+        "id": 23021492,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzMDIxNDky",
+        "diff_hunk": "@@ -0,0 +1,20 @@\n+FROM ubuntu:trusty\n+MAINTAINER Paul Bowsher <paul.bowsher@gmail.com>\n+\n+RUN apt-get update\n+RUN apt-get install -y sqlite3 libsqlite3-dev git build-essential\n+RUN apt-get install -y ruby-dev libssl-dev\n+RUN apt-get install -y nodejs\n+\n+RUN gem install bundler --no-ri --no-rdoc\n+\n+ADD . /app\n+WORKDIR /app\n+\n+RUN bundle install\n+RUN bundle exec rake assets\n+\n+EXPOSE 1025\n+EXPOSE 1080\n+\n+ENTRYPOINT [\"bundle\", \"exec\", \"mailcatcher\", \"--ip\", \"0.0.0.0\", \"-f\"]",
+        "path": "Dockerfile",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "18655f41f28373a93c0931f5e13f3ae3c4d703d5",
+        "original_commit_id": "1ab18c821d6be83fe40c76961fa33982686f4f93",
+        "user": {
+            "login": "thaJeztah",
+            "id": 1804568,
+            "node_id": "MDQ6VXNlcjE4MDQ1Njg=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1804568?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thaJeztah",
+            "html_url": "https://github.com/thaJeztah",
+            "followers_url": "https://api.github.com/users/thaJeztah/followers",
+            "following_url": "https://api.github.com/users/thaJeztah/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thaJeztah/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thaJeztah/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thaJeztah/subscriptions",
+            "organizations_url": "https://api.github.com/users/thaJeztah/orgs",
+            "repos_url": "https://api.github.com/users/thaJeztah/repos",
+            "events_url": "https://api.github.com/users/thaJeztah/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thaJeztah/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Perhaps:\n\n```\nENTRYPOINT [\"bundle\", \"exec\", \"mailcatcher\", \"-f\"]\nCMD [\"--ip\", \"0.0.0.0\"]\n```\n",
+        "created_at": "2015-01-15T16:23:12Z",
+        "updated_at": "2015-01-15T16:30:50Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/158#discussion_r23021492",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/158",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/23021492"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/158#discussion_r23021492"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/158"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/60824452",
+        "pull_request_review_id": null,
+        "id": 60824452,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYwODI0NDUy",
+        "diff_hunk": "@@ -2,6 +2,7 @@ source \"https://rubygems.org\"\n \n gemspec\n \n+gem 'mime-types', '~> 2.99' if RUBY_VERSION < '2.0'",
+        "path": "Gemfile",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "11a4284f6feffbaf190cbcc1aefbd03901ac3276",
+        "original_commit_id": "5158773eedcd5cf72ee7039404a643fe783f349e",
+        "user": {
+            "login": "sj26",
+            "id": 14028,
+            "node_id": "MDQ6VXNlcjE0MDI4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/14028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sj26",
+            "html_url": "https://github.com/sj26",
+            "followers_url": "https://api.github.com/users/sj26/followers",
+            "following_url": "https://api.github.com/users/sj26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sj26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sj26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sj26/subscriptions",
+            "organizations_url": "https://api.github.com/users/sj26/orgs",
+            "repos_url": "https://api.github.com/users/sj26/repos",
+            "events_url": "https://api.github.com/users/sj26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sj26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Good idea!\n\nWe can probably just depend on mime types being `< 3`, and we'll want to make sure that the ruby version isn't a string comparison. I'll merge with a couple of extra commits.\n",
+        "created_at": "2016-04-23T07:06:28Z",
+        "updated_at": "2016-04-23T07:14:41Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/286#discussion_r60824452",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/286",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/60824452"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/286#discussion_r60824452"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/286"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/60839476",
+        "pull_request_review_id": null,
+        "id": 60839476,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYwODM5NDc2",
+        "diff_hunk": "@@ -2,6 +2,7 @@ source \"https://rubygems.org\"\n \n gemspec\n \n+gem 'mime-types', '~> 2.99' if RUBY_VERSION < '2.0'",
+        "path": "Gemfile",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "11a4284f6feffbaf190cbcc1aefbd03901ac3276",
+        "original_commit_id": "5158773eedcd5cf72ee7039404a643fe783f349e",
+        "user": {
+            "login": "sgerrand",
+            "id": 203366,
+            "node_id": "MDQ6VXNlcjIwMzM2Ng==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/203366?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sgerrand",
+            "html_url": "https://github.com/sgerrand",
+            "followers_url": "https://api.github.com/users/sgerrand/followers",
+            "following_url": "https://api.github.com/users/sgerrand/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sgerrand/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sgerrand/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sgerrand/subscriptions",
+            "organizations_url": "https://api.github.com/users/sgerrand/orgs",
+            "repos_url": "https://api.github.com/users/sgerrand/repos",
+            "events_url": "https://api.github.com/users/sgerrand/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sgerrand/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "> we'll want to make sure that the ruby version isn't a string comparison\n\nWhat do you propose as an alternative?\n",
+        "created_at": "2016-04-24T06:01:02Z",
+        "updated_at": "2016-04-24T06:01:02Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/286#discussion_r60839476",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/286",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/60839476"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/286#discussion_r60839476"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/286"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/60842848",
+        "pull_request_review_id": null,
+        "id": 60842848,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYwODQyODQ4",
+        "diff_hunk": "@@ -2,6 +2,7 @@ source \"https://rubygems.org\"\n \n gemspec\n \n+gem 'mime-types', '~> 2.99' if RUBY_VERSION < '2.0'",
+        "path": "Gemfile",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "11a4284f6feffbaf190cbcc1aefbd03901ac3276",
+        "original_commit_id": "5158773eedcd5cf72ee7039404a643fe783f349e",
+        "user": {
+            "login": "sj26",
+            "id": 14028,
+            "node_id": "MDQ6VXNlcjE0MDI4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/14028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sj26",
+            "html_url": "https://github.com/sj26",
+            "followers_url": "https://api.github.com/users/sj26/followers",
+            "following_url": "https://api.github.com/users/sj26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sj26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sj26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sj26/subscriptions",
+            "organizations_url": "https://api.github.com/users/sj26/orgs",
+            "repos_url": "https://api.github.com/users/sj26/repos",
+            "events_url": "https://api.github.com/users/sj26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sj26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "See the [Gemfile now on master](https://github.com/sj26/mailcatcher/blob/master/Gemfile). :-)\n",
+        "created_at": "2016-04-24T11:09:15Z",
+        "updated_at": "2016-04-24T11:09:15Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/286#discussion_r60842848",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/286",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/60842848"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/286#discussion_r60842848"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/286"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/194209894",
+        "pull_request_review_id": 127347973,
+        "id": 194209894,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDIwOTg5NA==",
+        "diff_hunk": "@@ -42,13 +42,16 @@ def read_example(name)\n \n   def deliver_example(name, options={})\n     deliver(read_example(name), options)\n+    navigate",
+        "path": "spec/acceptance_spec.rb",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "a02743021cd6f13d365257514cb51c948360cac7",
+        "original_commit_id": "0177b4531224f1b095c3edb177c9138e05e32c5a",
+        "user": {
+            "login": "sj26",
+            "id": 14028,
+            "node_id": "MDQ6VXNlcjE0MDI4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/14028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sj26",
+            "html_url": "https://github.com/sj26",
+            "followers_url": "https://api.github.com/users/sj26/followers",
+            "following_url": "https://api.github.com/users/sj26/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sj26/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sj26/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sj26/subscriptions",
+            "organizations_url": "https://api.github.com/users/sj26/orgs",
+            "repos_url": "https://api.github.com/users/sj26/repos",
+            "events_url": "https://api.github.com/users/sj26/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sj26/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This doesn't navigate because it should test that websocket/polling updates are working.",
+        "created_at": "2018-06-09T01:25:13Z",
+        "updated_at": "2018-06-09T01:25:59Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/381#discussion_r194209894",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/381",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/194209894"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/381#discussion_r194209894"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/381"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/199911209",
+        "pull_request_review_id": 134122881,
+        "id": 199911209,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5OTkxMTIwOQ==",
+        "diff_hunk": "@@ -157,4 +157,13 @@ def delete_message!(message_id)\n     @delete_messages_query.execute(message_id) and\n     @delete_message_parts_query.execute(message_id)\n   end\n+\n+  def delete_older_messages!(max_mail_to_keep = MailCatcher::options[:max_mail_to_keep])\n+    return if max_mail_to_keep == -1",
+        "path": "lib/mail_catcher/mail.rb",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "e884fe4a18e579e550a99c465de4f7615c6f0c32",
+        "original_commit_id": "1c6781e706a8a580c3b0d1ae7bd3ca279fd8982b",
+        "user": {
+            "login": "kbrock",
+            "id": 1930,
+            "node_id": "MDQ6VXNlcjE5MzA=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1930?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kbrock",
+            "html_url": "https://github.com/kbrock",
+            "followers_url": "https://api.github.com/users/kbrock/followers",
+            "following_url": "https://api.github.com/users/kbrock/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kbrock/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kbrock/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kbrock/subscriptions",
+            "organizations_url": "https://api.github.com/users/kbrock/orgs",
+            "repos_url": "https://api.github.com/users/kbrock/repos",
+            "events_url": "https://api.github.com/users/kbrock/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kbrock/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "maybe `return if max_mail_to_keep <= 0`",
+        "created_at": "2018-07-03T18:35:06Z",
+        "updated_at": "2018-07-09T14:51:39Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/375#discussion_r199911209",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/375",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/199911209"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/375#discussion_r199911209"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/375"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/200994703",
+        "pull_request_review_id": 135407866,
+        "id": 200994703,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMDk5NDcwMw==",
+        "diff_hunk": "@@ -157,4 +157,13 @@ def delete_message!(message_id)\n     @delete_messages_query.execute(message_id) and\n     @delete_message_parts_query.execute(message_id)\n   end\n+\n+  def delete_older_messages!(max_mail_to_keep = MailCatcher::options[:max_mail_to_keep])\n+    return if max_mail_to_keep == -1",
+        "path": "lib/mail_catcher/mail.rb",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "e884fe4a18e579e550a99c465de4f7615c6f0c32",
+        "original_commit_id": "1c6781e706a8a580c3b0d1ae7bd3ca279fd8982b",
+        "user": {
+            "login": "marcmillien",
+            "id": 2512238,
+            "node_id": "MDQ6VXNlcjI1MTIyMzg=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/2512238?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/marcmillien",
+            "html_url": "https://github.com/marcmillien",
+            "followers_url": "https://api.github.com/users/marcmillien/followers",
+            "following_url": "https://api.github.com/users/marcmillien/following{/other_user}",
+            "gists_url": "https://api.github.com/users/marcmillien/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/marcmillien/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/marcmillien/subscriptions",
+            "organizations_url": "https://api.github.com/users/marcmillien/orgs",
+            "repos_url": "https://api.github.com/users/marcmillien/repos",
+            "events_url": "https://api.github.com/users/marcmillien/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/marcmillien/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": ":+1: I change this",
+        "created_at": "2018-07-09T13:07:50Z",
+        "updated_at": "2018-07-09T14:51:39Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/375#discussion_r200994703",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/375",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/200994703"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/375#discussion_r200994703"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/375"
+            }
+        },
+        "in_reply_to_id": 199911209
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/223818173",
+        "pull_request_review_id": 163039148,
+        "id": 223818173,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMzgxODE3Mw==",
+        "diff_hunk": "@@ -157,4 +157,13 @@ def delete_message!(message_id)\n     @delete_messages_query.execute(message_id) and\n     @delete_message_parts_query.execute(message_id)\n   end\n+\n+  def delete_older_messages!(max_mail_to_keep = MailCatcher::options[:max_mail_to_keep])\n+    return if max_mail_to_keep <= 0\n+    @delete_older_messages_query ||= db.prepare \"DELETE FROM message WHERE id NOT IN (SELECT id FROM message ORDER BY created_at DESC LIMIT ?)\"\n+    @delete_older_message_parts_query ||= db.prepare \"DELETE FROM message_part WHERE id NOT IN (SELECT id FROM message_part ORDER BY created_at DESC LIMIT ?)\"",
+        "path": "lib/mail_catcher/mail.rb",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "e884fe4a18e579e550a99c465de4f7615c6f0c32",
+        "original_commit_id": "e884fe4a18e579e550a99c465de4f7615c6f0c32",
+        "user": {
+            "login": "kbrock",
+            "id": 1930,
+            "node_id": "MDQ6VXNlcjE5MzA=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1930?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kbrock",
+            "html_url": "https://github.com/kbrock",
+            "followers_url": "https://api.github.com/users/kbrock/followers",
+            "following_url": "https://api.github.com/users/kbrock/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kbrock/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kbrock/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kbrock/subscriptions",
+            "organizations_url": "https://api.github.com/users/kbrock/orgs",
+            "repos_url": "https://api.github.com/users/kbrock/repos",
+            "events_url": "https://api.github.com/users/kbrock/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kbrock/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Are the right records getting deleted here?\r\nShould this delete the same rows as the previous line?\r\n\r\n```sql\r\nDELETE from message_part\r\nWHERE message_id NOT IN (SELECT id from message ORDER BY created_at DESC LIMIT ?)\r\n```\r\n\r\n(or `ORDER BY id` if the previous `ORDER BY` change was made)",
+        "created_at": "2018-10-09T18:41:37Z",
+        "updated_at": "2018-10-09T18:54:20Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/375#discussion_r223818173",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/375",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/223818173"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/375#discussion_r223818173"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/375"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/223821289",
+        "pull_request_review_id": 163039148,
+        "id": 223821289,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMzgyMTI4OQ==",
+        "diff_hunk": "@@ -157,4 +157,13 @@ def delete_message!(message_id)\n     @delete_messages_query.execute(message_id) and\n     @delete_message_parts_query.execute(message_id)\n   end\n+\n+  def delete_older_messages!(max_mail_to_keep = MailCatcher::options[:max_mail_to_keep])\n+    return if max_mail_to_keep <= 0\n+    @delete_older_messages_query ||= db.prepare \"DELETE FROM message WHERE id NOT IN (SELECT id FROM message ORDER BY created_at DESC LIMIT ?)\"",
+        "path": "lib/mail_catcher/mail.rb",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "e884fe4a18e579e550a99c465de4f7615c6f0c32",
+        "original_commit_id": "e884fe4a18e579e550a99c465de4f7615c6f0c32",
+        "user": {
+            "login": "kbrock",
+            "id": 1930,
+            "node_id": "MDQ6VXNlcjE5MzA=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1930?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kbrock",
+            "html_url": "https://github.com/kbrock",
+            "followers_url": "https://api.github.com/users/kbrock/followers",
+            "following_url": "https://api.github.com/users/kbrock/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kbrock/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kbrock/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kbrock/subscriptions",
+            "organizations_url": "https://api.github.com/users/kbrock/orgs",
+            "repos_url": "https://api.github.com/users/kbrock/repos",
+            "events_url": "https://api.github.com/users/kbrock/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kbrock/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Since `id` is the primary key, it has an index. Can we `ORDER BY id`?\r\nAlso, dealing with just a single indexed column, most databases run much quicker, avoiding hitting the data page altogether.\r\nIt may be just a marginal savings though. So feel free to ignore",
+        "created_at": "2018-10-09T18:51:19Z",
+        "updated_at": "2018-10-09T18:54:20Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/375#discussion_r223821289",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/375",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/223821289"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/375#discussion_r223821289"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/375"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/224080492",
+        "pull_request_review_id": 163360957,
+        "id": 224080492,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNDA4MDQ5Mg==",
+        "diff_hunk": "@@ -157,4 +157,13 @@ def delete_message!(message_id)\n     @delete_messages_query.execute(message_id) and\n     @delete_message_parts_query.execute(message_id)\n   end\n+\n+  def delete_older_messages!(max_mail_to_keep = MailCatcher::options[:max_mail_to_keep])\n+    return if max_mail_to_keep <= 0\n+    @delete_older_messages_query ||= db.prepare \"DELETE FROM message WHERE id NOT IN (SELECT id FROM message ORDER BY created_at DESC LIMIT ?)\"\n+    @delete_older_message_parts_query ||= db.prepare \"DELETE FROM message_part WHERE id NOT IN (SELECT id FROM message_part ORDER BY created_at DESC LIMIT ?)\"",
+        "path": "lib/mail_catcher/mail.rb",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "e884fe4a18e579e550a99c465de4f7615c6f0c32",
+        "original_commit_id": "e884fe4a18e579e550a99c465de4f7615c6f0c32",
+        "user": {
+            "login": "marcmillien",
+            "id": 2512238,
+            "node_id": "MDQ6VXNlcjI1MTIyMzg=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/2512238?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/marcmillien",
+            "html_url": "https://github.com/marcmillien",
+            "followers_url": "https://api.github.com/users/marcmillien/followers",
+            "following_url": "https://api.github.com/users/marcmillien/following{/other_user}",
+            "gists_url": "https://api.github.com/users/marcmillien/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/marcmillien/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/marcmillien/subscriptions",
+            "organizations_url": "https://api.github.com/users/marcmillien/orgs",
+            "repos_url": "https://api.github.com/users/marcmillien/repos",
+            "events_url": "https://api.github.com/users/marcmillien/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/marcmillien/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You are right, I change this :).",
+        "created_at": "2018-10-10T13:42:21Z",
+        "updated_at": "2018-10-10T13:42:22Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/375#discussion_r224080492",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/375",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/224080492"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/375#discussion_r224080492"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/375"
+            }
+        },
+        "in_reply_to_id": 223818173
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/234425664",
+        "pull_request_review_id": 176072157,
+        "id": 234425664,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzNDQyNTY2NA==",
+        "diff_hunk": "@@ -219,7 +227,10 @@ def run! options=nil\n           else\n             puts \"*** MailCatcher is now running as a daemon that cannot be quit.\"\n           end\n-          Process.daemon\n+          # when daemonize redirect standard input, standard output and standard error to /dev/null\n+          $stdin.reopen \"/dev/null\"",
+        "path": "lib/mail_catcher.rb",
+        "position": 49,
+        "original_position": 21,
+        "commit_id": "43fd4f2e6495c8765c3cc5f7138b0a148ba24d2f",
+        "original_commit_id": "94344178dc528eafc94fb53b35a2b68c30a6d4d7",
+        "user": {
+            "login": "TomFreudenberg",
+            "id": 410087,
+            "node_id": "MDQ6VXNlcjQxMDA4Nw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/410087?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/TomFreudenberg",
+            "html_url": "https://github.com/TomFreudenberg",
+            "followers_url": "https://api.github.com/users/TomFreudenberg/followers",
+            "following_url": "https://api.github.com/users/TomFreudenberg/following{/other_user}",
+            "gists_url": "https://api.github.com/users/TomFreudenberg/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/TomFreudenberg/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/TomFreudenberg/subscriptions",
+            "organizations_url": "https://api.github.com/users/TomFreudenberg/orgs",
+            "repos_url": "https://api.github.com/users/TomFreudenberg/repos",
+            "events_url": "https://api.github.com/users/TomFreudenberg/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/TomFreudenberg/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "re-routing stdin, stdout and stderr was former handled by Process.daemon.\r\nRead at https://ruby-doc.org/core-2.1.0/Process.html#method-c-daemon\r\nSecond paramter (noclose = nil)\r\n",
+        "created_at": "2018-11-18T00:27:20Z",
+        "updated_at": "2018-11-29T11:26:56Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/386#discussion_r234425664",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/386",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/234425664"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/386#discussion_r234425664"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/386"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/234425694",
+        "pull_request_review_id": 176072195,
+        "id": 234425694,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzNDQyNTY5NA==",
+        "diff_hunk": "@@ -179,6 +179,14 @@ def run! options=nil\n     # Stash them away for later\n     @@options = options\n \n+    # daemonize mode, reap the child automatically to prevent zombie\n+    if options[:daemon] && pid = fork\n+      Process.detach(pid)\n+      # wait a second to make sure that all output is send before exit\n+      sleep 2",
+        "path": "lib/mail_catcher.rb",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "43fd4f2e6495c8765c3cc5f7138b0a148ba24d2f",
+        "original_commit_id": "94344178dc528eafc94fb53b35a2b68c30a6d4d7",
+        "user": {
+            "login": "TomFreudenberg",
+            "id": 410087,
+            "node_id": "MDQ6VXNlcjQxMDA4Nw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/410087?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/TomFreudenberg",
+            "html_url": "https://github.com/TomFreudenberg",
+            "followers_url": "https://api.github.com/users/TomFreudenberg/followers",
+            "following_url": "https://api.github.com/users/TomFreudenberg/following{/other_user}",
+            "gists_url": "https://api.github.com/users/TomFreudenberg/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/TomFreudenberg/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/TomFreudenberg/subscriptions",
+            "organizations_url": "https://api.github.com/users/TomFreudenberg/orgs",
+            "repos_url": "https://api.github.com/users/TomFreudenberg/repos",
+            "events_url": "https://api.github.com/users/TomFreudenberg/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/TomFreudenberg/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If not sleeping a second the output from command line is printed too fast so that the output of starting mailcatcher will follow later. That confuses the user.",
+        "created_at": "2018-11-18T00:29:27Z",
+        "updated_at": "2018-11-29T11:26:56Z",
+        "html_url": "https://github.com/sj26/mailcatcher/pull/386#discussion_r234425694",
+        "pull_request_url": "https://api.github.com/repos/sj26/mailcatcher/pulls/386",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/comments/234425694"
+            },
+            "html": {
+                "href": "https://github.com/sj26/mailcatcher/pull/386#discussion_r234425694"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/sj26/mailcatcher/pulls/386"
+            }
+        }
+    }
+]

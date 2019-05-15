@@ -1,0 +1,345 @@
+[
+    {
+        "url": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2267984",
+        "pull_request_review_id": null,
+        "id": 2267984,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNjc5ODQ=",
+        "diff_hunk": "@@ -67,15 +67,15 @@\n             that.$element[0].offsetWidth // force reflow\n           }\n \n-          //this mobile part is custom, im too lasy to extend this feature for this",
+        "path": "syte/static/js/libs/bootstrap-modal.js",
+        "position": 41,
+        "original_position": 41,
+        "commit_id": "ea4b7521b2bf4f7b010d8565568c75136a7f1c28",
+        "original_commit_id": "547c59d022670098701157f9ae9a0d4a046d5e99",
+        "user": {
+            "login": "eventh",
+            "id": 719672,
+            "node_id": "MDQ6VXNlcjcxOTY3Mg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/719672?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/eventh",
+            "html_url": "https://github.com/eventh",
+            "followers_url": "https://api.github.com/users/eventh/followers",
+            "following_url": "https://api.github.com/users/eventh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/eventh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/eventh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/eventh/subscriptions",
+            "organizations_url": "https://api.github.com/users/eventh/orgs",
+            "repos_url": "https://api.github.com/users/eventh/repos",
+            "events_url": "https://api.github.com/users/eventh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/eventh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This line and the next two are custom lines added by Syte, which I believe you must manually add when upgrading bootstrap-modal.\n",
+        "created_at": "2012-11-29T17:51:11Z",
+        "updated_at": "2013-01-05T02:38:22Z",
+        "html_url": "https://github.com/rigoneri/syte/pull/168#discussion_r2267984",
+        "pull_request_url": "https://api.github.com/repos/rigoneri/syte/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2267984"
+            },
+            "html": {
+                "href": "https://github.com/rigoneri/syte/pull/168#discussion_r2267984"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2268022",
+        "pull_request_review_id": null,
+        "id": 2268022,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNjgwMjI=",
+        "diff_hunk": "@@ -1,12 +1,12 @@\n-Django==1.4\n+Django==1.4.2\n certifi==0.0.8\n-chardet==1.0.1\n-oauthlib==0.1.3\n-pyasn1==0.1.3\n-requests==0.12.1\n-rsa==3.0.1\n+chardet==2.1.1\n+oauthlib==0.3.4\n+pyasn1==0.1.4\n+requests==0.14.2",
+        "path": "requirements.txt",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "ea4b7521b2bf4f7b010d8565568c75136a7f1c28",
+        "original_commit_id": "547c59d022670098701157f9ae9a0d4a046d5e99",
+        "user": {
+            "login": "eventh",
+            "id": 719672,
+            "node_id": "MDQ6VXNlcjcxOTY3Mg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/719672?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/eventh",
+            "html_url": "https://github.com/eventh",
+            "followers_url": "https://api.github.com/users/eventh/followers",
+            "following_url": "https://api.github.com/users/eventh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/eventh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/eventh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/eventh/subscriptions",
+            "organizations_url": "https://api.github.com/users/eventh/orgs",
+            "repos_url": "https://api.github.com/users/eventh/repos",
+            "events_url": "https://api.github.com/users/eventh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/eventh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If you upgrade requests (which I agree is a good idea) many of the other requirements list in this file becomes unnecessary. I don't remember which ones, but should be easy enough to figure out and purge.\n",
+        "created_at": "2012-11-29T17:54:09Z",
+        "updated_at": "2013-01-05T02:38:22Z",
+        "html_url": "https://github.com/rigoneri/syte/pull/168#discussion_r2268022",
+        "pull_request_url": "https://api.github.com/repos/rigoneri/syte/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2268022"
+            },
+            "html": {
+                "href": "https://github.com/rigoneri/syte/pull/168#discussion_r2268022"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2273044",
+        "pull_request_review_id": null,
+        "id": 2273044,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNzMwNDQ=",
+        "diff_hunk": "@@ -1,12 +1,12 @@\n-Django==1.4\n+Django==1.4.2\n certifi==0.0.8\n-chardet==1.0.1\n-oauthlib==0.1.3\n-pyasn1==0.1.3\n-requests==0.12.1\n-rsa==3.0.1\n+chardet==2.1.1\n+oauthlib==0.3.4\n+pyasn1==0.1.4\n+requests==0.14.2",
+        "path": "requirements.txt",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "ea4b7521b2bf4f7b010d8565568c75136a7f1c28",
+        "original_commit_id": "547c59d022670098701157f9ae9a0d4a046d5e99",
+        "user": {
+            "login": "hassankhan",
+            "id": 1781985,
+            "node_id": "MDQ6VXNlcjE3ODE5ODU=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1781985?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hassankhan",
+            "html_url": "https://github.com/hassankhan",
+            "followers_url": "https://api.github.com/users/hassankhan/followers",
+            "following_url": "https://api.github.com/users/hassankhan/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hassankhan/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hassankhan/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hassankhan/subscriptions",
+            "organizations_url": "https://api.github.com/users/hassankhan/orgs",
+            "repos_url": "https://api.github.com/users/hassankhan/repos",
+            "events_url": "https://api.github.com/users/hassankhan/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hassankhan/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "How would I go about checking? I checked Requests' requirements, and they're not on this list. \n",
+        "created_at": "2012-11-29T23:53:04Z",
+        "updated_at": "2013-01-05T02:38:22Z",
+        "html_url": "https://github.com/rigoneri/syte/pull/168#discussion_r2273044",
+        "pull_request_url": "https://api.github.com/repos/rigoneri/syte/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2273044"
+            },
+            "html": {
+                "href": "https://github.com/rigoneri/syte/pull/168#discussion_r2273044"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2439698",
+        "pull_request_review_id": null,
+        "id": 2439698,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0Mzk2OTg=",
+        "diff_hunk": "@@ -1,12 +1,12 @@\n-Django==1.4\n+Django==1.4.2\n certifi==0.0.8\n-chardet==1.0.1\n-oauthlib==0.1.3\n-pyasn1==0.1.3\n-requests==0.12.1\n-rsa==3.0.1\n+chardet==2.1.1\n+oauthlib==0.3.4\n+pyasn1==0.1.4\n+requests==0.14.2",
+        "path": "requirements.txt",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "ea4b7521b2bf4f7b010d8565568c75136a7f1c28",
+        "original_commit_id": "547c59d022670098701157f9ae9a0d4a046d5e99",
+        "user": {
+            "login": "eventh",
+            "id": 719672,
+            "node_id": "MDQ6VXNlcjcxOTY3Mg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/719672?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/eventh",
+            "html_url": "https://github.com/eventh",
+            "followers_url": "https://api.github.com/users/eventh/followers",
+            "following_url": "https://api.github.com/users/eventh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/eventh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/eventh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/eventh/subscriptions",
+            "organizations_url": "https://api.github.com/users/eventh/orgs",
+            "repos_url": "https://api.github.com/users/eventh/repos",
+            "events_url": "https://api.github.com/users/eventh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/eventh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hey, sorry for taking so long to answer.\n\nIf you compare setup.py of the old and new version of requests:\n\nv1.0.2: https://github.com/kennethreitz/requests/blob/master/setup.py\nv0.12.1: https://github.com/kennethreitz/requests/blob/bca920c1c1a96e191ec7f9fcaec5f53e46edf08e/setup.py\n\nThis suggest you can remove certifi, chardet, and oauthlib.\nYou might also be able, for unrelated reasons, remove rsa and pyasn1.\n\nYou will need to actually try and remove these, and then test that things still work though. In case any of the other requirements depend on these packages.\n",
+        "created_at": "2012-12-17T19:55:36Z",
+        "updated_at": "2013-01-05T02:38:22Z",
+        "html_url": "https://github.com/rigoneri/syte/pull/168#discussion_r2439698",
+        "pull_request_url": "https://api.github.com/repos/rigoneri/syte/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2439698"
+            },
+            "html": {
+                "href": "https://github.com/rigoneri/syte/pull/168#discussion_r2439698"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2495527",
+        "pull_request_review_id": null,
+        "id": 2495527,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0OTU1Mjc=",
+        "diff_hunk": "@@ -1,12 +1,12 @@\n-Django==1.4\n+Django==1.4.2\n certifi==0.0.8\n-chardet==1.0.1\n-oauthlib==0.1.3\n-pyasn1==0.1.3\n-requests==0.12.1\n-rsa==3.0.1\n+chardet==2.1.1\n+oauthlib==0.3.4\n+pyasn1==0.1.4\n+requests==0.14.2",
+        "path": "requirements.txt",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "ea4b7521b2bf4f7b010d8565568c75136a7f1c28",
+        "original_commit_id": "547c59d022670098701157f9ae9a0d4a046d5e99",
+        "user": {
+            "login": "hassankhan",
+            "id": 1781985,
+            "node_id": "MDQ6VXNlcjE3ODE5ODU=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1781985?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hassankhan",
+            "html_url": "https://github.com/hassankhan",
+            "followers_url": "https://api.github.com/users/hassankhan/followers",
+            "following_url": "https://api.github.com/users/hassankhan/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hassankhan/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hassankhan/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hassankhan/subscriptions",
+            "organizations_url": "https://api.github.com/users/hassankhan/orgs",
+            "repos_url": "https://api.github.com/users/hassankhan/repos",
+            "events_url": "https://api.github.com/users/hassankhan/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hassankhan/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "While we're still on this topic, why does psycopg2 still need to be a requirement? Syte itself doesn't use PostgreSQL anywhere, does it?\n",
+        "created_at": "2012-12-23T05:06:03Z",
+        "updated_at": "2013-01-05T02:38:22Z",
+        "html_url": "https://github.com/rigoneri/syte/pull/168#discussion_r2495527",
+        "pull_request_url": "https://api.github.com/repos/rigoneri/syte/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2495527"
+            },
+            "html": {
+                "href": "https://github.com/rigoneri/syte/pull/168#discussion_r2495527"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2604167",
+        "pull_request_review_id": null,
+        "id": 2604167,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2MDQxNjc=",
+        "diff_hunk": "@@ -8,6 +8,7 @@\n @import 'modals.less';\n @import 'profiles.less';\n @import 'code.less';\n+@import 'emojify.less';",
+        "path": "syte/static/less/styles.less",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "ea4b7521b2bf4f7b010d8565568c75136a7f1c28",
+        "original_commit_id": "ea4b7521b2bf4f7b010d8565568c75136a7f1c28",
+        "user": {
+            "login": "rigoneri",
+            "id": 377322,
+            "node_id": "MDQ6VXNlcjM3NzMyMg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/377322?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rigoneri",
+            "html_url": "https://github.com/rigoneri",
+            "followers_url": "https://api.github.com/users/rigoneri/followers",
+            "following_url": "https://api.github.com/users/rigoneri/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rigoneri/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rigoneri/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rigoneri/subscriptions",
+            "organizations_url": "https://api.github.com/users/rigoneri/orgs",
+            "repos_url": "https://api.github.com/users/rigoneri/repos",
+            "events_url": "https://api.github.com/users/rigoneri/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rigoneri/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Did you forget to add this file? I'm going to remove this for now... So if you want to add it back just wait for some commits I'll make today and make a separate pull request!\n",
+        "created_at": "2013-01-10T12:51:38Z",
+        "updated_at": "2013-01-10T12:51:38Z",
+        "html_url": "https://github.com/rigoneri/syte/pull/168#discussion_r2604167",
+        "pull_request_url": "https://api.github.com/repos/rigoneri/syte/pulls/168",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2604167"
+            },
+            "html": {
+                "href": "https://github.com/rigoneri/syte/pull/168#discussion_r2604167"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2604651",
+        "pull_request_review_id": null,
+        "id": 2604651,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2MDQ2NTE=",
+        "diff_hunk": "@@ -8,6 +8,7 @@\n @import 'modals.less';\n @import 'profiles.less';\n @import 'code.less';\n+@import 'emojify.less';",
+        "path": "syte/static/less/styles.less",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "ea4b7521b2bf4f7b010d8565568c75136a7f1c28",
+        "original_commit_id": "ea4b7521b2bf4f7b010d8565568c75136a7f1c28",
+        "user": {
+            "login": "hassankhan",
+            "id": 1781985,
+            "node_id": "MDQ6VXNlcjE3ODE5ODU=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1781985?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hassankhan",
+            "html_url": "https://github.com/hassankhan",
+            "followers_url": "https://api.github.com/users/hassankhan/followers",
+            "following_url": "https://api.github.com/users/hassankhan/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hassankhan/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hassankhan/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hassankhan/subscriptions",
+            "organizations_url": "https://api.github.com/users/hassankhan/orgs",
+            "repos_url": "https://api.github.com/users/hassankhan/repos",
+            "events_url": "https://api.github.com/users/hassankhan/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hassankhan/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ahh yes, sorry, that's my own custom file which shouldn't be there.\n",
+        "created_at": "2013-01-10T13:43:08Z",
+        "updated_at": "2013-01-10T13:43:08Z",
+        "html_url": "https://github.com/rigoneri/syte/pull/168#discussion_r2604651",
+        "pull_request_url": "https://api.github.com/repos/rigoneri/syte/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/comments/2604651"
+            },
+            "html": {
+                "href": "https://github.com/rigoneri/syte/pull/168#discussion_r2604651"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/rigoneri/syte/pulls/168"
+            }
+        }
+    }
+]

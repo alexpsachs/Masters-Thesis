@@ -1,0 +1,198 @@
+[
+    {
+        "url": "https://api.github.com/repos/adamzap/landslide/pulls/comments/24688",
+        "pull_request_review_id": null,
+        "id": 24688,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0Njg4",
+        "diff_hunk": "@@ -255,6 +255,8 @@ class Generator(object):\n         \"\"\"\n         find = re.search(r'(<h(\\d+?).*?>(.+?)</h\\d>)\\s?(.+)?', slide_src,\n                          re.DOTALL | re.UNICODE)\n+        presenter_notes = None",
+        "path": "src/landslide/generator.py",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "7f038839fc9ab001edf48baae8261f7241542a4c",
+        "original_commit_id": "7f038839fc9ab001edf48baae8261f7241542a4c",
+        "user": {
+            "login": "n1k0",
+            "id": 41547,
+            "node_id": "MDQ6VXNlcjQxNTQ3",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/41547?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/n1k0",
+            "html_url": "https://github.com/n1k0",
+            "followers_url": "https://api.github.com/users/n1k0/followers",
+            "following_url": "https://api.github.com/users/n1k0/following{/other_user}",
+            "gists_url": "https://api.github.com/users/n1k0/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/n1k0/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/n1k0/subscriptions",
+            "organizations_url": "https://api.github.com/users/n1k0/orgs",
+            "repos_url": "https://api.github.com/users/n1k0/repos",
+            "events_url": "https://api.github.com/users/n1k0/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/n1k0/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This should really be handled within a macro imho (but great work overall though)\n",
+        "created_at": "2011-05-01T09:48:59Z",
+        "updated_at": "2011-05-01T09:48:59Z",
+        "html_url": "https://github.com/adamzap/landslide/pull/43#discussion_r24688",
+        "pull_request_url": "https://api.github.com/repos/adamzap/landslide/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/adamzap/landslide/pulls/comments/24688"
+            },
+            "html": {
+                "href": "https://github.com/adamzap/landslide/pull/43#discussion_r24688"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/adamzap/landslide/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/adamzap/landslide/pulls/comments/731915",
+        "pull_request_review_id": null,
+        "id": 731915,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDczMTkxNQ==",
+        "diff_hunk": "@@ -52,6 +52,20 @@ def run(self):\n directives.register_directive('code-block', Pygments)\n \n \n+class Notes(Directive):\n+    required_arguments = 0\n+    optional_arguments = 0\n+    has_content = True\n+\n+    def run(self):\n+        self.assert_has_content()\n+        text = '<br>'.join(self.content)\n+        return [nodes.raw('', '<h3>presenter notes</h3><p>%s</p>' % text,",
+        "path": "src/landslide/rst.py",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "71329ba9dfec942ad6b2485f6b39e158fe0fe09f",
+        "original_commit_id": "71329ba9dfec942ad6b2485f6b39e158fe0fe09f",
+        "user": {
+            "login": "stefanor",
+            "id": 442117,
+            "node_id": "MDQ6VXNlcjQ0MjExNw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/442117?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/stefanor",
+            "html_url": "https://github.com/stefanor",
+            "followers_url": "https://api.github.com/users/stefanor/followers",
+            "following_url": "https://api.github.com/users/stefanor/following{/other_user}",
+            "gists_url": "https://api.github.com/users/stefanor/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/stefanor/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/stefanor/subscriptions",
+            "organizations_url": "https://api.github.com/users/stefanor/orgs",
+            "repos_url": "https://api.github.com/users/stefanor/repos",
+            "events_url": "https://api.github.com/users/stefanor/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/stefanor/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is clearly pretty broken. You can't just treat rst source as HTML.\n",
+        "created_at": "2012-04-25T11:25:01Z",
+        "updated_at": "2012-04-25T11:25:01Z",
+        "html_url": "https://github.com/adamzap/landslide/pull/108#discussion_r731915",
+        "pull_request_url": "https://api.github.com/repos/adamzap/landslide/pulls/108",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/adamzap/landslide/pulls/comments/731915"
+            },
+            "html": {
+                "href": "https://github.com/adamzap/landslide/pull/108#discussion_r731915"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/adamzap/landslide/pulls/108"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/adamzap/landslide/pulls/comments/772124",
+        "pull_request_review_id": null,
+        "id": 772124,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3MjEyNA==",
+        "diff_hunk": "@@ -95,6 +95,13 @@ def _parse_options():\n         default=False)\n \n     parser.add_option(\n+        \"-P\", \"--no-presenter-notes\",\n+        action=\"store_false\",\n+        dest=\"presenter_notes\",\n+        help=\"Don't include presenter notes in the output\",\n+        default=False)",
+        "path": "src/landslide/main.py",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "f1bcfed580631c31829cbbc0068f7290df3f86c3",
+        "original_commit_id": "cddad98f45304faa7d0a7e6f10f3b73a243f879f",
+        "user": {
+            "login": "adamzap",
+            "id": 101698,
+            "node_id": "MDQ6VXNlcjEwMTY5OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/101698?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adamzap",
+            "html_url": "https://github.com/adamzap",
+            "followers_url": "https://api.github.com/users/adamzap/followers",
+            "following_url": "https://api.github.com/users/adamzap/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adamzap/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adamzap/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adamzap/subscriptions",
+            "organizations_url": "https://api.github.com/users/adamzap/orgs",
+            "repos_url": "https://api.github.com/users/adamzap/repos",
+            "events_url": "https://api.github.com/users/adamzap/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adamzap/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Shouldn't this be `default=True`?\n\nThe tests still pass because you're testing the generator object and the bug is in the option parsing step.\n\nOtherwise this patch looks great.\n\nThanks\n",
+        "created_at": "2012-05-04T02:45:13Z",
+        "updated_at": "2012-05-04T06:45:16Z",
+        "html_url": "https://github.com/adamzap/landslide/pull/107#discussion_r772124",
+        "pull_request_url": "https://api.github.com/repos/adamzap/landslide/pulls/107",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/adamzap/landslide/pulls/comments/772124"
+            },
+            "html": {
+                "href": "https://github.com/adamzap/landslide/pull/107#discussion_r772124"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/adamzap/landslide/pulls/107"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/adamzap/landslide/pulls/comments/772620",
+        "pull_request_review_id": null,
+        "id": 772620,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3MjYyMA==",
+        "diff_hunk": "@@ -95,6 +95,13 @@ def _parse_options():\n         default=False)\n \n     parser.add_option(\n+        \"-P\", \"--no-presenter-notes\",\n+        action=\"store_false\",\n+        dest=\"presenter_notes\",\n+        help=\"Don't include presenter notes in the output\",\n+        default=False)",
+        "path": "src/landslide/main.py",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "f1bcfed580631c31829cbbc0068f7290df3f86c3",
+        "original_commit_id": "cddad98f45304faa7d0a7e6f10f3b73a243f879f",
+        "user": {
+            "login": "aaugustin",
+            "id": 788910,
+            "node_id": "MDQ6VXNlcjc4ODkxMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/788910?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aaugustin",
+            "html_url": "https://github.com/aaugustin",
+            "followers_url": "https://api.github.com/users/aaugustin/followers",
+            "following_url": "https://api.github.com/users/aaugustin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aaugustin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aaugustin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aaugustin/subscriptions",
+            "organizations_url": "https://api.github.com/users/aaugustin/orgs",
+            "repos_url": "https://api.github.com/users/aaugustin/repos",
+            "events_url": "https://api.github.com/users/aaugustin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aaugustin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Good catch, the default should be True.\n",
+        "created_at": "2012-05-04T06:43:35Z",
+        "updated_at": "2012-05-04T06:45:16Z",
+        "html_url": "https://github.com/adamzap/landslide/pull/107#discussion_r772620",
+        "pull_request_url": "https://api.github.com/repos/adamzap/landslide/pulls/107",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/adamzap/landslide/pulls/comments/772620"
+            },
+            "html": {
+                "href": "https://github.com/adamzap/landslide/pull/107#discussion_r772620"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/adamzap/landslide/pulls/107"
+            }
+        }
+    }
+]

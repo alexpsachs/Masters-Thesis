@@ -1,0 +1,1570 @@
+[
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/18616067",
+        "pull_request_review_id": null,
+        "id": 18616067,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4NjE2MDY3",
+        "diff_hunk": "@@ -37,6 +37,11 @@ class Railtie < Rails::Railtie\n           self.class_eval do\n             include ::Cell::RailsExtensions::ActionView\n           end\n+\n+          #include assert helpers (image_path, font_path, ect)\n+          ViewModel.class_eval do\n+            include ActionView::Helpers::AssetTagHelper",
+        "path": "lib/cell/railtie.rb",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "17d57e202eebbc1ca7e9dd33c7e7acbc9cd35757",
+        "original_commit_id": "17d57e202eebbc1ca7e9dd33c7e7acbc9cd35757",
+        "user": {
+            "login": "apotonick",
+            "id": 10406,
+            "node_id": "MDQ6VXNlcjEwNDA2",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/10406?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/apotonick",
+            "html_url": "https://github.com/apotonick",
+            "followers_url": "https://api.github.com/users/apotonick/followers",
+            "following_url": "https://api.github.com/users/apotonick/following{/other_user}",
+            "gists_url": "https://api.github.com/users/apotonick/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/apotonick/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/apotonick/subscriptions",
+            "organizations_url": "https://api.github.com/users/apotonick/orgs",
+            "repos_url": "https://api.github.com/users/apotonick/repos",
+            "events_url": "https://api.github.com/users/apotonick/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/apotonick/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Feel free to add more!\n",
+        "created_at": "2014-10-08T22:10:19Z",
+        "updated_at": "2014-10-08T22:10:19Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/233#discussion_r18616067",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/233",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/18616067"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/233#discussion_r18616067"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/233"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/31340387",
+        "pull_request_review_id": null,
+        "id": 31340387,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxMzQwMzg3",
+        "diff_hunk": "@@ -0,0 +1,16 @@\n+module Cell::I18n\n+\n+  def t(*args)\n+    options   = args.last.is_a?(Hash) ? args.pop.dup : {}\n+    key       = args.shift\n+    cell_name = self.class.to_s.delete('Cell').underscore",
+        "path": "lib/cell/i18n.rb",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "73ebd2ed782cae1c94b7ded2f654c736fa26514a",
+        "original_commit_id": "ea4b0b1a49c21493a93476d62343f8cca7cbbbc8",
+        "user": {
+            "login": "mherold",
+            "id": 56357,
+            "node_id": "MDQ6VXNlcjU2MzU3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/56357?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mherold",
+            "html_url": "https://github.com/mherold",
+            "followers_url": "https://api.github.com/users/mherold/followers",
+            "following_url": "https://api.github.com/users/mherold/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mherold/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mherold/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mherold/subscriptions",
+            "organizations_url": "https://api.github.com/users/mherold/orgs",
+            "repos_url": "https://api.github.com/users/mherold/repos",
+            "events_url": "https://api.github.com/users/mherold/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mherold/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is deleting too much from the name (e.g. `'MenuCell'.delete('Cell') # => 'Mnu'`) ... I'd suggest e.g. `gsub(/Cell\\Z/, '')` instead.\n",
+        "created_at": "2015-05-29T16:28:33Z",
+        "updated_at": "2015-06-09T15:29:57Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/279#discussion_r31340387",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/279",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/31340387"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/279#discussion_r31340387"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/279"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/32025479",
+        "pull_request_review_id": null,
+        "id": 32025479,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyMDI1NDc5",
+        "diff_hunk": "@@ -0,0 +1,16 @@\n+module Cell::I18n\n+\n+  def t(*args)\n+    options   = args.last.is_a?(Hash) ? args.pop.dup : {}\n+    key       = args.shift\n+    cell_name = self.class.to_s.delete('Cell').underscore",
+        "path": "lib/cell/i18n.rb",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "73ebd2ed782cae1c94b7ded2f654c736fa26514a",
+        "original_commit_id": "ea4b0b1a49c21493a93476d62343f8cca7cbbbc8",
+        "user": {
+            "login": "mbajur",
+            "id": 581569,
+            "node_id": "MDQ6VXNlcjU4MTU2OQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/581569?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mbajur",
+            "html_url": "https://github.com/mbajur",
+            "followers_url": "https://api.github.com/users/mbajur/followers",
+            "following_url": "https://api.github.com/users/mbajur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mbajur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mbajur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mbajur/subscriptions",
+            "organizations_url": "https://api.github.com/users/mbajur/orgs",
+            "repos_url": "https://api.github.com/users/mbajur/repos",
+            "events_url": "https://api.github.com/users/mbajur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mbajur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "yeah, that's exactly what i've done locally but forgot to send a PR for that. thanks\n",
+        "created_at": "2015-06-09T15:26:54Z",
+        "updated_at": "2015-06-09T15:29:57Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/279#discussion_r32025479",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/279",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/32025479"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/279#discussion_r32025479"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/279"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/42005701",
+        "pull_request_review_id": null,
+        "id": 42005701,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyMDA1NzAx",
+        "diff_hunk": "@@ -21,10 +21,13 @@ class Songs < Cell::Concept\n \n   # ViewModel.cell returns the cell instance.\n   it { Cell::ViewModel.cell(\"public_test/song\").must_be_instance_of SongCell }\n+  it { Cell::ViewModel.cell(PublicTest::SongCell).must_be_instance_of SongCell }\n \n   # Concept.cell simply camelizes the string before constantizing.\n   it { Cell::Concept.cell(\"public_test/songs\").must_be_instance_of Songs }\n \n+  it { Cell::Concept.cell(Songs).must_be_instance_of Songs }",
+        "path": "test/public_test.rb",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "c2571c603e6664c7e3d2af42d6420c2888319a66",
+        "original_commit_id": "a24bd45d9c270f7c40ad7ad06aeee41d43527450",
+        "user": {
+            "login": "timoschilling",
+            "id": 165599,
+            "node_id": "MDQ6VXNlcjE2NTU5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/165599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/timoschilling",
+            "html_url": "https://github.com/timoschilling",
+            "followers_url": "https://api.github.com/users/timoschilling/followers",
+            "following_url": "https://api.github.com/users/timoschilling/following{/other_user}",
+            "gists_url": "https://api.github.com/users/timoschilling/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/timoschilling/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/timoschilling/subscriptions",
+            "organizations_url": "https://api.github.com/users/timoschilling/orgs",
+            "repos_url": "https://api.github.com/users/timoschilling/repos",
+            "events_url": "https://api.github.com/users/timoschilling/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/timoschilling/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think this should be\n\n``` ruby\nit { Cell::Concept.cell(PublicTest::Songs).must_be_instance_of Songs }\n```\n",
+        "created_at": "2015-10-14T15:06:18Z",
+        "updated_at": "2015-10-14T15:29:30Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/336#discussion_r42005701",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/336",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/42005701"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/336#discussion_r42005701"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/336"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/42009150",
+        "pull_request_review_id": null,
+        "id": 42009150,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyMDA5MTUw",
+        "diff_hunk": "@@ -21,10 +21,13 @@ class Songs < Cell::Concept\n \n   # ViewModel.cell returns the cell instance.\n   it { Cell::ViewModel.cell(\"public_test/song\").must_be_instance_of SongCell }\n+  it { Cell::ViewModel.cell(PublicTest::SongCell).must_be_instance_of SongCell }\n \n   # Concept.cell simply camelizes the string before constantizing.\n   it { Cell::Concept.cell(\"public_test/songs\").must_be_instance_of Songs }\n \n+  it { Cell::Concept.cell(Songs).must_be_instance_of Songs }",
+        "path": "test/public_test.rb",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "c2571c603e6664c7e3d2af42d6420c2888319a66",
+        "original_commit_id": "a24bd45d9c270f7c40ad7ad06aeee41d43527450",
+        "user": {
+            "login": "smathy",
+            "id": 50139,
+            "node_id": "MDQ6VXNlcjUwMTM5",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/50139?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/smathy",
+            "html_url": "https://github.com/smathy",
+            "followers_url": "https://api.github.com/users/smathy/followers",
+            "following_url": "https://api.github.com/users/smathy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/smathy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/smathy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/smathy/subscriptions",
+            "organizations_url": "https://api.github.com/users/smathy/orgs",
+            "repos_url": "https://api.github.com/users/smathy/repos",
+            "events_url": "https://api.github.com/users/smathy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/smathy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yep, better :)\n",
+        "created_at": "2015-10-14T15:29:39Z",
+        "updated_at": "2015-10-14T15:29:39Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/336#discussion_r42009150",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/336",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/42009150"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/336#discussion_r42009150"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/336"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/48938577",
+        "pull_request_review_id": null,
+        "id": 48938577,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4OTM4NTc3",
+        "diff_hunk": "@@ -4,24 +4,27 @@ def self.included(includer)\n   end\n \n   module Property\n-    def property(name, *args)\n-      super.tap do # super defines #title\n-        mod = Module.new do\n-          define_method(name) do |options={}|\n-            value = super() # call the original #title.\n-            return value unless value.is_a?(String)\n-            return value if options[:escape] == false\n-            escape!(value)\n+    def property *names\n+      super.tap do\n+        prepend Module.new {",
+        "path": "lib/cell/escaped.rb",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "4b44f6c28ce29feeb3b3407bb45121c313b8ec0f",
+        "original_commit_id": "6aa3b6651e28c1e81c2495dca60d7d8303be1248",
+        "user": {
+            "login": "apotonick",
+            "id": 10406,
+            "node_id": "MDQ6VXNlcjEwNDA2",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/10406?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/apotonick",
+            "html_url": "https://github.com/apotonick",
+            "followers_url": "https://api.github.com/users/apotonick/followers",
+            "following_url": "https://api.github.com/users/apotonick/following{/other_user}",
+            "gists_url": "https://api.github.com/users/apotonick/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/apotonick/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/apotonick/subscriptions",
+            "organizations_url": "https://api.github.com/users/apotonick/orgs",
+            "repos_url": "https://api.github.com/users/apotonick/repos",
+            "events_url": "https://api.github.com/users/apotonick/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/apotonick/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let me prepare the `Escaped` module a bit for you.\n\nSome suggestions for PRs:\n- Try to stay in line with the author's style (e.g. I don't like `def property *names` without brackets).\n- Don't use shit features like `prepend` - that was only added to Ruby because Rails messed up. You can achieve the same with well-tested and working Ruby mechanisms.\n- Add tests when you change things.\n\nThanks!\n",
+        "created_at": "2016-01-06T09:10:04Z",
+        "updated_at": "2016-01-06T09:31:13Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/362#discussion_r48938577",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/362",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/48938577"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/362#discussion_r48938577"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/362"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/48938879",
+        "pull_request_review_id": null,
+        "id": 48938879,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4OTM4ODc5",
+        "diff_hunk": "@@ -4,24 +4,27 @@ def self.included(includer)\n   end\n \n   module Property\n-    def property(name, *args)\n-      super.tap do # super defines #title\n-        mod = Module.new do\n-          define_method(name) do |options={}|\n-            value = super() # call the original #title.\n-            return value unless value.is_a?(String)\n-            return value if options[:escape] == false\n-            escape!(value)\n+    def property *names\n+      super.tap do\n+        prepend Module.new {",
+        "path": "lib/cell/escaped.rb",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "4b44f6c28ce29feeb3b3407bb45121c313b8ec0f",
+        "original_commit_id": "6aa3b6651e28c1e81c2495dca60d7d8303be1248",
+        "user": {
+            "login": "zlobz",
+            "id": 5259797,
+            "node_id": "MDQ6VXNlcjUyNTk3OTc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/5259797?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zlobz",
+            "html_url": "https://github.com/zlobz",
+            "followers_url": "https://api.github.com/users/zlobz/followers",
+            "following_url": "https://api.github.com/users/zlobz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zlobz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zlobz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zlobz/subscriptions",
+            "organizations_url": "https://api.github.com/users/zlobz/orgs",
+            "repos_url": "https://api.github.com/users/zlobz/repos",
+            "events_url": "https://api.github.com/users/zlobz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zlobz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why do you not like prepend?\n",
+        "created_at": "2016-01-06T09:15:10Z",
+        "updated_at": "2016-01-06T09:31:13Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/362#discussion_r48938879",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/362",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/48938879"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/362#discussion_r48938879"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/362"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/49047602",
+        "pull_request_review_id": null,
+        "id": 49047602,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MDQ3NjAy",
+        "diff_hunk": "@@ -30,7 +30,7 @@ def create(prefix, view, options)\n     # {[\"comment/row/views\", comment/views\"][\"show.haml\"] => \"Tpl:comment/view/show.haml\"}\n     class Cache\n       def initialize\n-        @store = {}\n+        @store = Hash.new({})",
+        "path": "lib/cell/templates.rb",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "bd9e2b4dd8ecbdd4df59b6fefc68d3e77a85fc3d",
+        "original_commit_id": "bd9e2b4dd8ecbdd4df59b6fefc68d3e77a85fc3d",
+        "user": {
+            "login": "jlogsdon",
+            "id": 88460,
+            "node_id": "MDQ6VXNlcjg4NDYw",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/88460?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jlogsdon",
+            "html_url": "https://github.com/jlogsdon",
+            "followers_url": "https://api.github.com/users/jlogsdon/followers",
+            "following_url": "https://api.github.com/users/jlogsdon/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jlogsdon/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jlogsdon/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jlogsdon/subscriptions",
+            "organizations_url": "https://api.github.com/users/jlogsdon/orgs",
+            "repos_url": "https://api.github.com/users/jlogsdon/repos",
+            "events_url": "https://api.github.com/users/jlogsdon/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jlogsdon/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is problematic as the default here is a single instance of `{}` and is reused for _all_ calls. The block form exists to work around this issue.\n\n``` ruby\nirb(main):001:0> store = Hash.new({})\n=> {}\nirb(main):002:0> store[:foo][:bar] = 1\n=> 1\nirb(main):003:0> store[:baz]\n=> {:bar=>1}\n```\n",
+        "created_at": "2016-01-07T07:27:40Z",
+        "updated_at": "2016-01-07T07:27:40Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/352#discussion_r49047602",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/352",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/49047602"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/352#discussion_r49047602"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/352"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/49048135",
+        "pull_request_review_id": null,
+        "id": 49048135,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MDQ4MTM1",
+        "diff_hunk": "@@ -30,7 +30,7 @@ def create(prefix, view, options)\n     # {[\"comment/row/views\", comment/views\"][\"show.haml\"] => \"Tpl:comment/view/show.haml\"}\n     class Cache\n       def initialize\n-        @store = {}\n+        @store = Hash.new({})",
+        "path": "lib/cell/templates.rb",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "bd9e2b4dd8ecbdd4df59b6fefc68d3e77a85fc3d",
+        "original_commit_id": "bd9e2b4dd8ecbdd4df59b6fefc68d3e77a85fc3d",
+        "user": {
+            "login": "apotonick",
+            "id": 10406,
+            "node_id": "MDQ6VXNlcjEwNDA2",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/10406?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/apotonick",
+            "html_url": "https://github.com/apotonick",
+            "followers_url": "https://api.github.com/users/apotonick/followers",
+            "following_url": "https://api.github.com/users/apotonick/following{/other_user}",
+            "gists_url": "https://api.github.com/users/apotonick/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/apotonick/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/apotonick/subscriptions",
+            "organizations_url": "https://api.github.com/users/apotonick/orgs",
+            "repos_url": "https://api.github.com/users/apotonick/repos",
+            "events_url": "https://api.github.com/users/apotonick/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/apotonick/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Oh fuck, is that true? I didn't know that! That's pretty hectic. @timoschilling - why do you introduce such bugs in our gem? :laughing: \n",
+        "created_at": "2016-01-07T07:41:37Z",
+        "updated_at": "2016-01-07T07:41:37Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/352#discussion_r49048135",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/352",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/49048135"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/352#discussion_r49048135"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/352"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53314647",
+        "pull_request_review_id": null,
+        "id": 53314647,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE0NjQ3",
+        "diff_hunk": "@@ -5,8 +5,23 @@ class Concept < Cell::ViewModel\n \n     # TODO: this should be in Helper or something. this should be the only entry point from controller/view.\n     class << self\n-      def class_from_cell_name(name)\n-        name.camelize.constantize\n+      def class_from_cell_name(name, controller)\n+        @cell_class ||= begin\n+          supports_path = controller.supports_path?\n+          routes  = controller.respond_to?(:_routes)  && controller._routes\n+          helpers = controller.respond_to?(:_helpers) && controller._helpers\n+\n+          Class.new(name.camelize.constantize) do",
+        "path": "lib/cell/concept.rb",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "timoschilling",
+            "id": 165599,
+            "node_id": "MDQ6VXNlcjE2NTU5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/165599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/timoschilling",
+            "html_url": "https://github.com/timoschilling",
+            "followers_url": "https://api.github.com/users/timoschilling/followers",
+            "following_url": "https://api.github.com/users/timoschilling/following{/other_user}",
+            "gists_url": "https://api.github.com/users/timoschilling/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/timoschilling/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/timoschilling/subscriptions",
+            "organizations_url": "https://api.github.com/users/timoschilling/orgs",
+            "repos_url": "https://api.github.com/users/timoschilling/repos",
+            "events_url": "https://api.github.com/users/timoschilling/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/timoschilling/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Anonym classes are a bad practise and make it hard to debug.\n",
+        "created_at": "2016-02-18T13:44:41Z",
+        "updated_at": "2016-02-18T13:44:41Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53314647",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53314647"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53314647"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53314910",
+        "pull_request_review_id": null,
+        "id": 53314910,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE0OTEw",
+        "diff_hunk": "@@ -5,8 +5,23 @@ class Concept < Cell::ViewModel\n \n     # TODO: this should be in Helper or something. this should be the only entry point from controller/view.\n     class << self\n-      def class_from_cell_name(name)\n-        name.camelize.constantize\n+      def class_from_cell_name(name, controller)",
+        "path": "lib/cell/concept.rb",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "timoschilling",
+            "id": 165599,
+            "node_id": "MDQ6VXNlcjE2NTU5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/165599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/timoschilling",
+            "html_url": "https://github.com/timoschilling",
+            "followers_url": "https://api.github.com/users/timoschilling/followers",
+            "following_url": "https://api.github.com/users/timoschilling/following{/other_user}",
+            "gists_url": "https://api.github.com/users/timoschilling/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/timoschilling/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/timoschilling/subscriptions",
+            "organizations_url": "https://api.github.com/users/timoschilling/orgs",
+            "repos_url": "https://api.github.com/users/timoschilling/repos",
+            "events_url": "https://api.github.com/users/timoschilling/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/timoschilling/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this is a code duplication to `ViewModel.class_from_cell_name`\n",
+        "created_at": "2016-02-18T13:47:02Z",
+        "updated_at": "2016-02-18T13:47:02Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53314910",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53314910"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53314910"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53314999",
+        "pull_request_review_id": null,
+        "id": 53314999,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE0OTk5",
+        "diff_hunk": "@@ -2,12 +2,28 @@\n module Cell\n   module RailsExtensions\n     module ActionController\n-      def cell(name, model=nil, options={}, &block)\n-        ::Cell::ViewModel.cell(name, model, options.merge(controller: self), &block)\n+      def cell(name, model=nil, options={})\n+        ::Cell::ViewModel.cell(name, model, options.merge(controller: self)).tap do |cell|\n+          if block_given?\n+            if cell.is_a?(::Cell::CellCollection)\n+              cell.cells.each { |c| yield c }\n+            else\n+              yield cell\n+            end\n+          end\n+        end\n       end\n \n-      def concept(name, model=nil, options={}, &block)\n-        ::Cell::Concept.cell(name, model, options.merge(controller: self), &block)\n+      def concept(name, model=nil, options={})\n+        ::Cell::Concept.cell(name, model, options.merge(controller: self)) do |concept|\n+          if block_given?\n+            if concept.is_a?(::Cell::CellCollection)\n+              concept.cells.each { |c| yield c }\n+            else\n+              yield concept\n+            end\n+          end\n+        end",
+        "path": "lib/cell/rails.rb",
+        "position": 29,
+        "original_position": 29,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "timoschilling",
+            "id": 165599,
+            "node_id": "MDQ6VXNlcjE2NTU5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/165599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/timoschilling",
+            "html_url": "https://github.com/timoschilling",
+            "followers_url": "https://api.github.com/users/timoschilling/followers",
+            "following_url": "https://api.github.com/users/timoschilling/following{/other_user}",
+            "gists_url": "https://api.github.com/users/timoschilling/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/timoschilling/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/timoschilling/subscriptions",
+            "organizations_url": "https://api.github.com/users/timoschilling/orgs",
+            "repos_url": "https://api.github.com/users/timoschilling/repos",
+            "events_url": "https://api.github.com/users/timoschilling/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/timoschilling/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`cell` and `concept` have to much duplicated code\n",
+        "created_at": "2016-02-18T13:47:53Z",
+        "updated_at": "2016-02-18T13:47:53Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53314999",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53314999"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53314999"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53315157",
+        "pull_request_review_id": null,
+        "id": 53315157,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE1MTU3",
+        "diff_hunk": "@@ -0,0 +1,28 @@\n+module Cell\n+  class CellCollection\n+\n+    attr_reader :collection, :cells\n+    alias_method :model, :collection\n+\n+    def initialize(collection=nil, options={}, klass)\n+      @collection = collection\n+      @collection_join = options.delete(:collection_join)\n+      @cells = collection.collect { |model| klass.build(model, options) }\n+    end\n+\n+    def call(state=:show, *args)\n+      content = call_cells(state, *args)\n+      content.join @collection_join\n+    end\n+\n+    def to_s\n+      call\n+    end\n+\n+  private\n+    # Calls collection of cells.\n+    def call_cells(state, *args) # private.\n+      cells.collect { |cell| cell.call(state, *args) }\n+    end\n+  end\n+end",
+        "path": "lib/cell/cell_collection.rb",
+        "position": 28,
+        "original_position": 28,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "timoschilling",
+            "id": 165599,
+            "node_id": "MDQ6VXNlcjE2NTU5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/165599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/timoschilling",
+            "html_url": "https://github.com/timoschilling",
+            "followers_url": "https://api.github.com/users/timoschilling/followers",
+            "following_url": "https://api.github.com/users/timoschilling/following{/other_user}",
+            "gists_url": "https://api.github.com/users/timoschilling/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/timoschilling/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/timoschilling/subscriptions",
+            "organizations_url": "https://api.github.com/users/timoschilling/orgs",
+            "repos_url": "https://api.github.com/users/timoschilling/repos",
+            "events_url": "https://api.github.com/users/timoschilling/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/timoschilling/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this implementation is to slow\n",
+        "created_at": "2016-02-18T13:49:04Z",
+        "updated_at": "2016-02-18T13:49:04Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53315157",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53315157"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53315157"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53315967",
+        "pull_request_review_id": null,
+        "id": 53315967,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE1OTY3",
+        "diff_hunk": "@@ -0,0 +1,28 @@\n+module Cell\n+  class CellCollection\n+\n+    attr_reader :collection, :cells\n+    alias_method :model, :collection\n+\n+    def initialize(collection=nil, options={}, klass)\n+      @collection = collection\n+      @collection_join = options.delete(:collection_join)\n+      @cells = collection.collect { |model| klass.build(model, options) }\n+    end\n+\n+    def call(state=:show, *args)\n+      content = call_cells(state, *args)\n+      content.join @collection_join\n+    end\n+\n+    def to_s\n+      call\n+    end\n+\n+  private\n+    # Calls collection of cells.\n+    def call_cells(state, *args) # private.\n+      cells.collect { |cell| cell.call(state, *args) }\n+    end\n+  end\n+end",
+        "path": "lib/cell/cell_collection.rb",
+        "position": 28,
+        "original_position": 28,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "timoschilling",
+            "id": 165599,
+            "node_id": "MDQ6VXNlcjE2NTU5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/165599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/timoschilling",
+            "html_url": "https://github.com/timoschilling",
+            "followers_url": "https://api.github.com/users/timoschilling/followers",
+            "following_url": "https://api.github.com/users/timoschilling/following{/other_user}",
+            "gists_url": "https://api.github.com/users/timoschilling/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/timoschilling/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/timoschilling/subscriptions",
+            "organizations_url": "https://api.github.com/users/timoschilling/orgs",
+            "repos_url": "https://api.github.com/users/timoschilling/repos",
+            "events_url": "https://api.github.com/users/timoschilling/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/timoschilling/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You should not mix different things into one PR. Your collection stuff has nothing to do with the helper stuff\n",
+        "created_at": "2016-02-18T13:56:34Z",
+        "updated_at": "2016-02-18T13:56:34Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53315967",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53315967"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53315967"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53316566",
+        "pull_request_review_id": null,
+        "id": 53316566,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE2NTY2",
+        "diff_hunk": "@@ -5,8 +5,23 @@ class Concept < Cell::ViewModel\n \n     # TODO: this should be in Helper or something. this should be the only entry point from controller/view.\n     class << self\n-      def class_from_cell_name(name)\n-        name.camelize.constantize\n+      def class_from_cell_name(name, controller)\n+        @cell_class ||= begin\n+          supports_path = controller.supports_path?\n+          routes  = controller.respond_to?(:_routes)  && controller._routes\n+          helpers = controller.respond_to?(:_helpers) && controller._helpers\n+\n+          Class.new(name.camelize.constantize) do\n+            if routes\n+              include routes.url_helpers(supports_path)\n+              include routes.mounted_helpers\n+            end\n+\n+            if helpers\n+              include helpers",
+        "path": "lib/cell/concept.rb",
+        "position": 19,
+        "original_position": 19,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "timoschilling",
+            "id": 165599,
+            "node_id": "MDQ6VXNlcjE2NTU5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/165599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/timoschilling",
+            "html_url": "https://github.com/timoschilling",
+            "followers_url": "https://api.github.com/users/timoschilling/followers",
+            "following_url": "https://api.github.com/users/timoschilling/following{/other_user}",
+            "gists_url": "https://api.github.com/users/timoschilling/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/timoschilling/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/timoschilling/subscriptions",
+            "organizations_url": "https://api.github.com/users/timoschilling/orgs",
+            "repos_url": "https://api.github.com/users/timoschilling/repos",
+            "events_url": "https://api.github.com/users/timoschilling/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/timoschilling/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This includes should not happen for all cells. You should build a `Cell::Rails::Helpers::Url` module. Which can be included into each cell, where a url helper is really needed.\n",
+        "created_at": "2016-02-18T14:01:40Z",
+        "updated_at": "2016-02-18T14:03:23Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53316566",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53316566"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53316566"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53316949",
+        "pull_request_review_id": null,
+        "id": 53316949,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE2OTQ5",
+        "diff_hunk": "@@ -5,8 +5,23 @@ class Concept < Cell::ViewModel\n \n     # TODO: this should be in Helper or something. this should be the only entry point from controller/view.\n     class << self\n-      def class_from_cell_name(name)\n-        name.camelize.constantize\n+      def class_from_cell_name(name, controller)",
+        "path": "lib/cell/concept.rb",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "hazah",
+            "id": 620001,
+            "node_id": "MDQ6VXNlcjYyMDAwMQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/620001?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hazah",
+            "html_url": "https://github.com/hazah",
+            "followers_url": "https://api.github.com/users/hazah/followers",
+            "following_url": "https://api.github.com/users/hazah/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hazah/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hazah/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hazah/subscriptions",
+            "organizations_url": "https://api.github.com/users/hazah/orgs",
+            "repos_url": "https://api.github.com/users/hazah/repos",
+            "events_url": "https://api.github.com/users/hazah/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hazah/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Refactoring steps are to follow. I am no fan of duplicate code.\n",
+        "created_at": "2016-02-18T14:04:57Z",
+        "updated_at": "2016-02-18T14:04:57Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53316949",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53316949"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53316949"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53316997",
+        "pull_request_review_id": null,
+        "id": 53316997,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE2OTk3",
+        "diff_hunk": "@@ -2,12 +2,28 @@\n module Cell\n   module RailsExtensions\n     module ActionController\n-      def cell(name, model=nil, options={}, &block)\n-        ::Cell::ViewModel.cell(name, model, options.merge(controller: self), &block)\n+      def cell(name, model=nil, options={})\n+        ::Cell::ViewModel.cell(name, model, options.merge(controller: self)).tap do |cell|\n+          if block_given?\n+            if cell.is_a?(::Cell::CellCollection)\n+              cell.cells.each { |c| yield c }\n+            else\n+              yield cell\n+            end\n+          end\n+        end\n       end\n \n-      def concept(name, model=nil, options={}, &block)\n-        ::Cell::Concept.cell(name, model, options.merge(controller: self), &block)\n+      def concept(name, model=nil, options={})\n+        ::Cell::Concept.cell(name, model, options.merge(controller: self)) do |concept|\n+          if block_given?\n+            if concept.is_a?(::Cell::CellCollection)\n+              concept.cells.each { |c| yield c }\n+            else\n+              yield concept\n+            end\n+          end\n+        end",
+        "path": "lib/cell/rails.rb",
+        "position": 29,
+        "original_position": 29,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "hazah",
+            "id": 620001,
+            "node_id": "MDQ6VXNlcjYyMDAwMQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/620001?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hazah",
+            "html_url": "https://github.com/hazah",
+            "followers_url": "https://api.github.com/users/hazah/followers",
+            "following_url": "https://api.github.com/users/hazah/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hazah/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hazah/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hazah/subscriptions",
+            "organizations_url": "https://api.github.com/users/hazah/orgs",
+            "repos_url": "https://api.github.com/users/hazah/repos",
+            "events_url": "https://api.github.com/users/hazah/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hazah/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Refactoring steps are to follow. I am no fan of duplicate code.\n",
+        "created_at": "2016-02-18T14:05:14Z",
+        "updated_at": "2016-02-18T14:05:14Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53316997",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53316997"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53316997"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53317187",
+        "pull_request_review_id": null,
+        "id": 53317187,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE3MTg3",
+        "diff_hunk": "@@ -0,0 +1,28 @@\n+module Cell\n+  class CellCollection\n+\n+    attr_reader :collection, :cells\n+    alias_method :model, :collection\n+\n+    def initialize(collection=nil, options={}, klass)\n+      @collection = collection\n+      @collection_join = options.delete(:collection_join)\n+      @cells = collection.collect { |model| klass.build(model, options) }\n+    end\n+\n+    def call(state=:show, *args)\n+      content = call_cells(state, *args)\n+      content.join @collection_join\n+    end\n+\n+    def to_s\n+      call\n+    end\n+\n+  private\n+    # Calls collection of cells.\n+    def call_cells(state, *args) # private.\n+      cells.collect { |cell| cell.call(state, *args) }\n+    end\n+  end\n+end",
+        "path": "lib/cell/cell_collection.rb",
+        "position": 28,
+        "original_position": 28,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "hazah",
+            "id": 620001,
+            "node_id": "MDQ6VXNlcjYyMDAwMQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/620001?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hazah",
+            "html_url": "https://github.com/hazah",
+            "followers_url": "https://api.github.com/users/hazah/followers",
+            "following_url": "https://api.github.com/users/hazah/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hazah/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hazah/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hazah/subscriptions",
+            "organizations_url": "https://api.github.com/users/hazah/orgs",
+            "repos_url": "https://api.github.com/users/hazah/repos",
+            "events_url": "https://api.github.com/users/hazah/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hazah/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You are right. It was a late night and it slipped by. Thanks.\n",
+        "created_at": "2016-02-18T14:06:59Z",
+        "updated_at": "2016-02-18T14:06:59Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53317187",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53317187"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53317187"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53317231",
+        "pull_request_review_id": null,
+        "id": 53317231,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE3MjMx",
+        "diff_hunk": "@@ -0,0 +1,28 @@\n+module Cell\n+  class CellCollection",
+        "path": "lib/cell/cell_collection.rb",
+        "position": 2,
+        "original_position": 2,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "timoschilling",
+            "id": 165599,
+            "node_id": "MDQ6VXNlcjE2NTU5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/165599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/timoschilling",
+            "html_url": "https://github.com/timoschilling",
+            "followers_url": "https://api.github.com/users/timoschilling/followers",
+            "following_url": "https://api.github.com/users/timoschilling/following{/other_user}",
+            "gists_url": "https://api.github.com/users/timoschilling/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/timoschilling/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/timoschilling/subscriptions",
+            "organizations_url": "https://api.github.com/users/timoschilling/orgs",
+            "repos_url": "https://api.github.com/users/timoschilling/repos",
+            "events_url": "https://api.github.com/users/timoschilling/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/timoschilling/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "should be named `Cell::Collection`\n",
+        "created_at": "2016-02-18T14:07:25Z",
+        "updated_at": "2016-02-18T14:07:25Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53317231",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53317231"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53317231"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53317359",
+        "pull_request_review_id": null,
+        "id": 53317359,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE3MzU5",
+        "diff_hunk": "@@ -5,8 +5,23 @@ class Concept < Cell::ViewModel\n \n     # TODO: this should be in Helper or something. this should be the only entry point from controller/view.\n     class << self\n-      def class_from_cell_name(name)\n-        name.camelize.constantize\n+      def class_from_cell_name(name, controller)\n+        @cell_class ||= begin\n+          supports_path = controller.supports_path?\n+          routes  = controller.respond_to?(:_routes)  && controller._routes\n+          helpers = controller.respond_to?(:_helpers) && controller._helpers\n+\n+          Class.new(name.camelize.constantize) do",
+        "path": "lib/cell/concept.rb",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "hazah",
+            "id": 620001,
+            "node_id": "MDQ6VXNlcjYyMDAwMQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/620001?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hazah",
+            "html_url": "https://github.com/hazah",
+            "followers_url": "https://api.github.com/users/hazah/followers",
+            "following_url": "https://api.github.com/users/hazah/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hazah/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hazah/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hazah/subscriptions",
+            "organizations_url": "https://api.github.com/users/hazah/orgs",
+            "repos_url": "https://api.github.com/users/hazah/repos",
+            "events_url": "https://api.github.com/users/hazah/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hazah/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "While that is usually true, this implementation is found here: https://github.com/rails/rails/blob/master/actionview/lib/action_view/rendering.rb#L36\n\nThis is a rails core implementation. I used it because it's in the core, which means it is tested, and because it had been able to provide a pragmatic solution.\n",
+        "created_at": "2016-02-18T14:08:26Z",
+        "updated_at": "2016-02-18T14:08:26Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53317359",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53317359"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53317359"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53317704",
+        "pull_request_review_id": null,
+        "id": 53317704,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzE3NzA0",
+        "diff_hunk": "@@ -5,8 +5,23 @@ class Concept < Cell::ViewModel\n \n     # TODO: this should be in Helper or something. this should be the only entry point from controller/view.\n     class << self\n-      def class_from_cell_name(name)\n-        name.camelize.constantize\n+      def class_from_cell_name(name, controller)\n+        @cell_class ||= begin\n+          supports_path = controller.supports_path?\n+          routes  = controller.respond_to?(:_routes)  && controller._routes\n+          helpers = controller.respond_to?(:_helpers) && controller._helpers\n+\n+          Class.new(name.camelize.constantize) do\n+            if routes\n+              include routes.url_helpers(supports_path)\n+              include routes.mounted_helpers\n+            end\n+\n+            if helpers\n+              include helpers",
+        "path": "lib/cell/concept.rb",
+        "position": 19,
+        "original_position": 19,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "hazah",
+            "id": 620001,
+            "node_id": "MDQ6VXNlcjYyMDAwMQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/620001?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hazah",
+            "html_url": "https://github.com/hazah",
+            "followers_url": "https://api.github.com/users/hazah/followers",
+            "following_url": "https://api.github.com/users/hazah/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hazah/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hazah/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hazah/subscriptions",
+            "organizations_url": "https://api.github.com/users/hazah/orgs",
+            "repos_url": "https://api.github.com/users/hazah/repos",
+            "events_url": "https://api.github.com/users/hazah/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hazah/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes!\n",
+        "created_at": "2016-02-18T14:11:21Z",
+        "updated_at": "2016-02-18T14:11:21Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53317704",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53317704"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53317704"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53320057",
+        "pull_request_review_id": null,
+        "id": 53320057,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzIwMDU3",
+        "diff_hunk": "@@ -5,8 +5,23 @@ class Concept < Cell::ViewModel\n \n     # TODO: this should be in Helper or something. this should be the only entry point from controller/view.\n     class << self\n-      def class_from_cell_name(name)\n-        name.camelize.constantize\n+      def class_from_cell_name(name, controller)\n+        @cell_class ||= begin\n+          supports_path = controller.supports_path?\n+          routes  = controller.respond_to?(:_routes)  && controller._routes\n+          helpers = controller.respond_to?(:_helpers) && controller._helpers\n+\n+          Class.new(name.camelize.constantize) do",
+        "path": "lib/cell/concept.rb",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "timoschilling",
+            "id": 165599,
+            "node_id": "MDQ6VXNlcjE2NTU5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/165599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/timoschilling",
+            "html_url": "https://github.com/timoschilling",
+            "followers_url": "https://api.github.com/users/timoschilling/followers",
+            "following_url": "https://api.github.com/users/timoschilling/following{/other_user}",
+            "gists_url": "https://api.github.com/users/timoschilling/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/timoschilling/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/timoschilling/subscriptions",
+            "organizations_url": "https://api.github.com/users/timoschilling/orgs",
+            "repos_url": "https://api.github.com/users/timoschilling/repos",
+            "events_url": "https://api.github.com/users/timoschilling/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/timoschilling/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Coping code form ActionView to Cells shows you misunderstanding of Cells and OOP in general.\n",
+        "created_at": "2016-02-18T14:28:55Z",
+        "updated_at": "2016-02-18T14:28:55Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53320057",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53320057"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53320057"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53353696",
+        "pull_request_review_id": null,
+        "id": 53353696,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzUzNjk2",
+        "diff_hunk": "@@ -5,8 +5,23 @@ class Concept < Cell::ViewModel\n \n     # TODO: this should be in Helper or something. this should be the only entry point from controller/view.\n     class << self\n-      def class_from_cell_name(name)\n-        name.camelize.constantize\n+      def class_from_cell_name(name, controller)\n+        @cell_class ||= begin\n+          supports_path = controller.supports_path?\n+          routes  = controller.respond_to?(:_routes)  && controller._routes\n+          helpers = controller.respond_to?(:_helpers) && controller._helpers\n+\n+          Class.new(name.camelize.constantize) do",
+        "path": "lib/cell/concept.rb",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "hazah",
+            "id": 620001,
+            "node_id": "MDQ6VXNlcjYyMDAwMQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/620001?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hazah",
+            "html_url": "https://github.com/hazah",
+            "followers_url": "https://api.github.com/users/hazah/followers",
+            "following_url": "https://api.github.com/users/hazah/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hazah/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hazah/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hazah/subscriptions",
+            "organizations_url": "https://api.github.com/users/hazah/orgs",
+            "repos_url": "https://api.github.com/users/hazah/repos",
+            "events_url": "https://api.github.com/users/hazah/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hazah/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "> you misunderstanding of Cells and OOP in general\n\nA rather sweeping assumption. The framework itself (Rails), like all frameworks, utilizes multiple paradigms to begin with, not just OO. Each paradigm solves a problem domain. OO does not address the issue of cross cutting concerns, which is addressed by AO. \n\nThis isn't a question of misunderstanding OOP, nor Cells. This is a question of purity of ideology standing in the way of practicality. The fact that there's no alternative provided, optional or otherwise is misguided. Again, if the \"pure OO design\" forces your users to circumvent it, what is the gain?\n\nYes, \"helpers are shit\", I read the memo. But without them Rails is useless with or without cells without extensive adjustments. If the framework is actually supported, then the whole framework should be supported. It makes no sense to just ignore the ugly bits and at the same time actively block any attempt to provide proper access to the underlying framework.\n",
+        "created_at": "2016-02-18T18:00:10Z",
+        "updated_at": "2016-02-18T18:00:10Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53353696",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53353696"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53353696"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53356477",
+        "pull_request_review_id": null,
+        "id": 53356477,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzU2NDc3",
+        "diff_hunk": "@@ -5,8 +5,23 @@ class Concept < Cell::ViewModel\n \n     # TODO: this should be in Helper or something. this should be the only entry point from controller/view.\n     class << self\n-      def class_from_cell_name(name)\n-        name.camelize.constantize\n+      def class_from_cell_name(name, controller)\n+        @cell_class ||= begin\n+          supports_path = controller.supports_path?\n+          routes  = controller.respond_to?(:_routes)  && controller._routes\n+          helpers = controller.respond_to?(:_helpers) && controller._helpers\n+\n+          Class.new(name.camelize.constantize) do",
+        "path": "lib/cell/concept.rb",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "apotonick",
+            "id": 10406,
+            "node_id": "MDQ6VXNlcjEwNDA2",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/10406?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/apotonick",
+            "html_url": "https://github.com/apotonick",
+            "followers_url": "https://api.github.com/users/apotonick/followers",
+            "following_url": "https://api.github.com/users/apotonick/following{/other_user}",
+            "gists_url": "https://api.github.com/users/apotonick/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/apotonick/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/apotonick/subscriptions",
+            "organizations_url": "https://api.github.com/users/apotonick/orgs",
+            "repos_url": "https://api.github.com/users/apotonick/repos",
+            "events_url": "https://api.github.com/users/apotonick/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/apotonick/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The problem here is that we _had_ all Rails helpers included in earlier Cells versions, and, believe it or not, but things broke everywhere and _I_ had to fix it. Since Cells 4.0, my life has gotten better because now people include what they need and find out how weird Rails helpers are on their own. :stuck_out_tongue_winking_eye: \n",
+        "created_at": "2016-02-18T18:18:22Z",
+        "updated_at": "2016-02-18T18:18:22Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53356477",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53356477"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53356477"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53357788",
+        "pull_request_review_id": null,
+        "id": 53357788,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMzU3Nzg4",
+        "diff_hunk": "@@ -5,8 +5,23 @@ class Concept < Cell::ViewModel\n \n     # TODO: this should be in Helper or something. this should be the only entry point from controller/view.\n     class << self\n-      def class_from_cell_name(name)\n-        name.camelize.constantize\n+      def class_from_cell_name(name, controller)\n+        @cell_class ||= begin\n+          supports_path = controller.supports_path?\n+          routes  = controller.respond_to?(:_routes)  && controller._routes\n+          helpers = controller.respond_to?(:_helpers) && controller._helpers\n+\n+          Class.new(name.camelize.constantize) do",
+        "path": "lib/cell/concept.rb",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "original_commit_id": "a6d2523e777592e86c5b742075c61718075b66a9",
+        "user": {
+            "login": "hazah",
+            "id": 620001,
+            "node_id": "MDQ6VXNlcjYyMDAwMQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/620001?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hazah",
+            "html_url": "https://github.com/hazah",
+            "followers_url": "https://api.github.com/users/hazah/followers",
+            "following_url": "https://api.github.com/users/hazah/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hazah/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hazah/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hazah/subscriptions",
+            "organizations_url": "https://api.github.com/users/hazah/orgs",
+            "repos_url": "https://api.github.com/users/hazah/repos",
+            "events_url": "https://api.github.com/users/hazah/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hazah/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "> believe it or not, but things broke everywhere and I had to fix it\n\nI believe it. \n\nI also think I'm attempting a different approach as well. Including them during initialization is definitely a big problem. This is why, like Rails itself, the approach is to do it during the request, when we already have a guaranteed inclusion order, and consistency with existing views. A Cell has a parallel role to an individual ActionView::Base object, so I think, that in the case of Rails, it also makes sense to instantiate them in a similar manner, and possibly avoiding the same pitfalls that plagued Cells in the past.\n",
+        "created_at": "2016-02-18T18:26:23Z",
+        "updated_at": "2016-02-18T18:26:23Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/379#discussion_r53357788",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/379",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/53357788"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/379#discussion_r53357788"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/379"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/67153659",
+        "pull_request_review_id": null,
+        "id": 67153659,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3MTUzNjU5",
+        "diff_hunk": "@@ -44,7 +44,13 @@ def property(*names)\n       #   SongCell.(collection: Song.all)\n       def call(model=nil, options={}, &block)\n         if model.is_a?(Hash) and array = model[:collection]\n-          return Collection.new(array, model.merge(options), self)\n+          merged_context = (model[:context] || {}).merge(options[:context] || {})\n+\n+          merged_options = model.merge(options)\n+          merged_options[:context] = merged_context if merged_context.any?\n+          merged_options = nil if merged_options.empty?",
+        "path": "lib/cell/view_model.rb",
+        "position": 9,
+        "original_position": 9,
+        "commit_id": "e5634e25b472d41913030eb82463b015f429f2ca",
+        "original_commit_id": "e5634e25b472d41913030eb82463b015f429f2ca",
+        "user": {
+            "login": "timoschilling",
+            "id": 165599,
+            "node_id": "MDQ6VXNlcjE2NTU5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/165599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/timoschilling",
+            "html_url": "https://github.com/timoschilling",
+            "followers_url": "https://api.github.com/users/timoschilling/followers",
+            "following_url": "https://api.github.com/users/timoschilling/following{/other_user}",
+            "gists_url": "https://api.github.com/users/timoschilling/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/timoschilling/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/timoschilling/subscriptions",
+            "organizations_url": "https://api.github.com/users/timoschilling/orgs",
+            "repos_url": "https://api.github.com/users/timoschilling/repos",
+            "events_url": "https://api.github.com/users/timoschilling/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/timoschilling/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This line is useless, `merged_options` always contains the `:collection` key.\n",
+        "created_at": "2016-06-15T12:43:21Z",
+        "updated_at": "2016-06-15T12:43:21Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/415#discussion_r67153659",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/415",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/67153659"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/415#discussion_r67153659"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/415"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/65260948",
+        "pull_request_review_id": null,
+        "id": 65260948,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY1MjYwOTQ4",
+        "diff_hunk": "@@ -34,15 +34,26 @@ class Songs < Cell::Concept\n   # ViewModel.cell(collection: []) renders cells.\n   it { Cell::ViewModel.cell(\"public_test/song\", collection: [Object, Module]).to_s.must_equal '[Object, {}][Module, {}]' }\n \n+  # DISCUSS: should cell.() be the default?\n   # ViewModel.cell(collection: []) renders cells with custom join.\n-  it { Cell::ViewModel.cell(\"public_test/song\", collection: [Object, Module], collection_join: '<br/>').to_s.must_equal '[Object, {}]<br/>[Module, {}]' }\n+  it do\n+\tGem::Deprecate::skip_during do\n+\t\tCell::ViewModel.cell(\"public_test/song\", collection: [Object, Module]).join('<br/>') do |cell|\n+          cell.()\n+        end.must_equal '[Object, {}]<br/>[Module, {}]'\n+\tend\n+  end",
+        "path": "test/public_test.rb",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "fb4612bb58feeebf1b038fe633b9d0002c418821",
+        "original_commit_id": "9b7c79b3657c88d908e9948e71eca8b9f4eb68f6",
+        "user": {
+            "login": "timoschilling",
+            "id": 165599,
+            "node_id": "MDQ6VXNlcjE2NTU5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/165599?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/timoschilling",
+            "html_url": "https://github.com/timoschilling",
+            "followers_url": "https://api.github.com/users/timoschilling/followers",
+            "following_url": "https://api.github.com/users/timoschilling/following{/other_user}",
+            "gists_url": "https://api.github.com/users/timoschilling/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/timoschilling/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/timoschilling/subscriptions",
+            "organizations_url": "https://api.github.com/users/timoschilling/orgs",
+            "repos_url": "https://api.github.com/users/timoschilling/repos",
+            "events_url": "https://api.github.com/users/timoschilling/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/timoschilling/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "the line intend is broken\n",
+        "created_at": "2016-05-31T20:55:20Z",
+        "updated_at": "2016-06-20T06:32:55Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/409#discussion_r65260948",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/409",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/65260948"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/409#discussion_r65260948"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/409"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/65316612",
+        "pull_request_review_id": null,
+        "id": 65316612,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY1MzE2NjEy",
+        "diff_hunk": "@@ -34,15 +34,26 @@ class Songs < Cell::Concept\n   # ViewModel.cell(collection: []) renders cells.\n   it { Cell::ViewModel.cell(\"public_test/song\", collection: [Object, Module]).to_s.must_equal '[Object, {}][Module, {}]' }\n \n+  # DISCUSS: should cell.() be the default?\n   # ViewModel.cell(collection: []) renders cells with custom join.\n-  it { Cell::ViewModel.cell(\"public_test/song\", collection: [Object, Module], collection_join: '<br/>').to_s.must_equal '[Object, {}]<br/>[Module, {}]' }\n+  it do\n+\tGem::Deprecate::skip_during do\n+\t\tCell::ViewModel.cell(\"public_test/song\", collection: [Object, Module]).join('<br/>') do |cell|\n+          cell.()\n+        end.must_equal '[Object, {}]<br/>[Module, {}]'\n+\tend\n+  end",
+        "path": "test/public_test.rb",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "fb4612bb58feeebf1b038fe633b9d0002c418821",
+        "original_commit_id": "9b7c79b3657c88d908e9948e71eca8b9f4eb68f6",
+        "user": {
+            "login": "Scharrels",
+            "id": 551762,
+            "node_id": "MDQ6VXNlcjU1MTc2Mg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/551762?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Scharrels",
+            "html_url": "https://github.com/Scharrels",
+            "followers_url": "https://api.github.com/users/Scharrels/followers",
+            "following_url": "https://api.github.com/users/Scharrels/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Scharrels/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Scharrels/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Scharrels/subscriptions",
+            "organizations_url": "https://api.github.com/users/Scharrels/orgs",
+            "repos_url": "https://api.github.com/users/Scharrels/repos",
+            "events_url": "https://api.github.com/users/Scharrels/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Scharrels/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Oops. Tnx, fixed :)\n",
+        "created_at": "2016-06-01T07:54:29Z",
+        "updated_at": "2016-06-20T06:32:55Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/409#discussion_r65316612",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/409",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/65316612"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/409#discussion_r65316612"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/409"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/67624784",
+        "pull_request_review_id": null,
+        "id": 67624784,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3NjI0Nzg0",
+        "diff_hunk": "@@ -2,25 +2,19 @@ module Cell\n   class Collection\n     def initialize(ary, options, cell_class)\n       options.delete(:collection)\n-      @method     = options.delete(:method)           # TODO: remove in 5.0.\n-      @join       = options.delete(:collection_join)  # TODO: remove in 5.0.\n+      self.method = options.delete(:method)                   if options.include?(:method)          # TODO: remove in 5.0.",
+        "path": "lib/cell/collection.rb",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "fb4612bb58feeebf1b038fe633b9d0002c418821",
+        "original_commit_id": "03230766bfb8eefd2fc2884109e43ff8069facda",
+        "user": {
+            "login": "apotonick",
+            "id": 10406,
+            "node_id": "MDQ6VXNlcjEwNDA2",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/10406?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/apotonick",
+            "html_url": "https://github.com/apotonick",
+            "followers_url": "https://api.github.com/users/apotonick/followers",
+            "following_url": "https://api.github.com/users/apotonick/following{/other_user}",
+            "gists_url": "https://api.github.com/users/apotonick/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/apotonick/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/apotonick/subscriptions",
+            "organizations_url": "https://api.github.com/users/apotonick/orgs",
+            "repos_url": "https://api.github.com/users/apotonick/repos",
+            "events_url": "https://api.github.com/users/apotonick/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/apotonick/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "So much code just to turn off some testing noise? \ud83e\udd13\n",
+        "created_at": "2016-06-19T22:10:13Z",
+        "updated_at": "2016-06-20T06:32:55Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/409#discussion_r67624784",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/409",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/67624784"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/409#discussion_r67624784"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/409"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/67640736",
+        "pull_request_review_id": null,
+        "id": 67640736,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3NjQwNzM2",
+        "diff_hunk": "@@ -2,25 +2,19 @@ module Cell\n   class Collection\n     def initialize(ary, options, cell_class)\n       options.delete(:collection)\n-      @method     = options.delete(:method)           # TODO: remove in 5.0.\n-      @join       = options.delete(:collection_join)  # TODO: remove in 5.0.\n+      self.method = options.delete(:method)                   if options.include?(:method)          # TODO: remove in 5.0.",
+        "path": "lib/cell/collection.rb",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "fb4612bb58feeebf1b038fe633b9d0002c418821",
+        "original_commit_id": "03230766bfb8eefd2fc2884109e43ff8069facda",
+        "user": {
+            "login": "Scharrels",
+            "id": 551762,
+            "node_id": "MDQ6VXNlcjU1MTc2Mg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/551762?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Scharrels",
+            "html_url": "https://github.com/Scharrels",
+            "followers_url": "https://api.github.com/users/Scharrels/followers",
+            "following_url": "https://api.github.com/users/Scharrels/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Scharrels/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Scharrels/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Scharrels/subscriptions",
+            "organizations_url": "https://api.github.com/users/Scharrels/orgs",
+            "repos_url": "https://api.github.com/users/Scharrels/repos",
+            "events_url": "https://api.github.com/users/Scharrels/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Scharrels/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Note that these if statements replace the `deprecate_options!` method call below. In the end, less code will be executed when deprecated options are not used, and about the same amount of code will be executed when deprecated options are used.\n",
+        "created_at": "2016-06-20T06:25:03Z",
+        "updated_at": "2016-06-20T06:32:55Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/409#discussion_r67640736",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/409",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/67640736"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/409#discussion_r67640736"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/409"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/86086491",
+        "pull_request_review_id": 6761658,
+        "id": 86086491,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MDg2NDkx",
+        "diff_hunk": "@@ -68,24 +68,39 @@ def show\n   end\n \n   class LayoutCell < Cell::ViewModel\n+    include Cell::Builder\n+\n+    builds { |_, context:, **| SpecialLayoutCell if context.to_h.fetch(:special_layout, false) }\n+\n     self.view_paths = ['test/fixtures']\n   end\n+\n+  class SpecialLayoutCell < LayoutCell\n+  end\n end\n \n class ExternalLayoutTest < Minitest::Spec\n   it do\n     Comment::ShowCell.new(nil, layout: Comment::LayoutCell, context: { beer: true }).\n-      ().must_equal \"$layout.erb{$show.erb, {:beer=>true}\\n$show.erb, {:beer=>true}\\n, {:beer=>true}}\\n\"\n+      ().must_equal \"$layout.erb{Comment::LayoutCell, $show.erb, {:beer=>true}\\n$show.erb, {:beer=>true}\\n, {:beer=>true}}\\n\"\n   end\n \n   # collection :layout\n   it do\n     Cell::ViewModel.cell(\"comment/show\", collection: [Object, Module], layout: Comment::LayoutCell).().\n-      must_equal \"$layout.erb{$show.erb, nil\n+      must_equal \"$layout.erb{Comment::LayoutCell, $show.erb, nil\n $show.erb, nil\n $show.erb, nil\n $show.erb, nil\n , nil}\n \"\n   end\n+\n+  it 'renders special layout if requested' do\n+    Comment::ShowCell.new(nil, layout: Comment::LayoutCell, context: { special_layout: true }).\n+      ().must_equal \"$layout.erb{Comment::SpecialLayoutCell, $show.erb, {:special_layout=>true}",
+        "path": "test/layout_test.rb",
+        "position": 36,
+        "original_position": 36,
+        "commit_id": "bbe8eecf02140238f045f4176674146d96e0f419",
+        "original_commit_id": "bbe8eecf02140238f045f4176674146d96e0f419",
+        "user": {
+            "login": "JelF",
+            "id": 861181,
+            "node_id": "MDQ6VXNlcjg2MTE4MQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/861181?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JelF",
+            "html_url": "https://github.com/JelF",
+            "followers_url": "https://api.github.com/users/JelF/followers",
+            "following_url": "https://api.github.com/users/JelF/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JelF/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JelF/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JelF/subscriptions",
+            "organizations_url": "https://api.github.com/users/JelF/orgs",
+            "repos_url": "https://api.github.com/users/JelF/repos",
+            "events_url": "https://api.github.com/users/JelF/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JelF/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "don't sure it's the best way to handle multiline strings. Should i better use heredoc and gsub extra spaces?\n",
+        "created_at": "2016-11-02T07:43:32Z",
+        "updated_at": "2016-11-02T07:43:32Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/432#discussion_r86086491",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/432",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/86086491"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/432#discussion_r86086491"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/432"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/trailblazer/cells/pulls/comments/177544210",
+        "pull_request_review_id": 107434156,
+        "id": 177544210,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3NzU0NDIxMA==",
+        "diff_hunk": "@@ -0,0 +1,44 @@\n+require 'test_helper'\n+\n+class InspectTest < Minitest::Spec\n+  class FakeModel\n+    def initialize(title)\n+      @title = title\n+    end\n+  end\n+\n+  def build_model\n+    InspectTest::FakeModel.new('Title')\n+  end\n+  # #inspect\n+  it do\n+    cell = Cell::ViewModel.(model_obj = build_model, options = { genre: \"Djent\" })",
+        "path": "test/inspect_test.rb",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "834aae90fe5028f0fc26e8da99391f71b89ba5c4",
+        "original_commit_id": "834aae90fe5028f0fc26e8da99391f71b89ba5c4",
+        "user": {
+            "login": "georgemillo",
+            "id": 2656485,
+            "node_id": "MDQ6VXNlcjI2NTY0ODU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/2656485?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/georgemillo",
+            "html_url": "https://github.com/georgemillo",
+            "followers_url": "https://api.github.com/users/georgemillo/followers",
+            "following_url": "https://api.github.com/users/georgemillo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/georgemillo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/georgemillo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/georgemillo/subscriptions",
+            "organizations_url": "https://api.github.com/users/georgemillo/orgs",
+            "repos_url": "https://api.github.com/users/georgemillo/repos",
+            "events_url": "https://api.github.com/users/georgemillo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/georgemillo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "+1 for the Djent reference :D ",
+        "created_at": "2018-03-27T19:25:20Z",
+        "updated_at": "2018-03-27T19:25:20Z",
+        "html_url": "https://github.com/trailblazer/cells/pull/399#discussion_r177544210",
+        "pull_request_url": "https://api.github.com/repos/trailblazer/cells/pulls/399",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/comments/177544210"
+            },
+            "html": {
+                "href": "https://github.com/trailblazer/cells/pull/399#discussion_r177544210"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/trailblazer/cells/pulls/399"
+            }
+        }
+    }
+]

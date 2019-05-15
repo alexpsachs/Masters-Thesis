@@ -1,0 +1,345 @@
+[
+    {
+        "url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17752",
+        "pull_request_review_id": null,
+        "id": 17752,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3NzUy",
+        "diff_hunk": "@@ -16,9 +16,9 @@\n // along with TLD.  If not, see <http://www.gnu.org/licenses/>.\n \n #include \"cv.h\"\n-#include \"highgui.h\"",
+        "path": "mex/lk.cpp",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "original_commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "user": {
+            "login": "bilderbuchi",
+            "id": 327442,
+            "node_id": "MDQ6VXNlcjMyNzQ0Mg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/327442?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bilderbuchi",
+            "html_url": "https://github.com/bilderbuchi",
+            "followers_url": "https://api.github.com/users/bilderbuchi/followers",
+            "following_url": "https://api.github.com/users/bilderbuchi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bilderbuchi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bilderbuchi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bilderbuchi/subscriptions",
+            "organizations_url": "https://api.github.com/users/bilderbuchi/orgs",
+            "repos_url": "https://api.github.com/users/bilderbuchi/repos",
+            "events_url": "https://api.github.com/users/bilderbuchi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bilderbuchi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "why did you remove this?\n",
+        "created_at": "2011-04-12T17:48:22Z",
+        "updated_at": "2011-04-12T17:48:22Z",
+        "html_url": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17752",
+        "pull_request_url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17752"
+            },
+            "html": {
+                "href": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17752"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17750",
+        "pull_request_review_id": null,
+        "id": 17750,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3NzUw",
+        "diff_hunk": "@@ -63,7 +63,23 @@ end\n \n if isunix\n     disp('Unix');\n-    % to come\n+    include = ' -I/usr/include/opencv/ -I/usr/include/'; % /opt/local -> /usr/local\n+    libpath = '/usr/lib/'; % /opt/local -> /usr/local\n+\n+    files = dir([libpath 'libcv.so']);",
+        "path": "compile.m",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "original_commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "user": {
+            "login": "bilderbuchi",
+            "id": 327442,
+            "node_id": "MDQ6VXNlcjMyNzQ0Mg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/327442?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bilderbuchi",
+            "html_url": "https://github.com/bilderbuchi",
+            "followers_url": "https://api.github.com/users/bilderbuchi/followers",
+            "following_url": "https://api.github.com/users/bilderbuchi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bilderbuchi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bilderbuchi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bilderbuchi/subscriptions",
+            "organizations_url": "https://api.github.com/users/bilderbuchi/orgs",
+            "repos_url": "https://api.github.com/users/bilderbuchi/repos",
+            "events_url": "https://api.github.com/users/bilderbuchi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bilderbuchi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Interestingly, here I had to say  \nfiles = [dir([libpath 'libcv.so']) dir([libpath 'libcxcore.so'])];\nto make it compile in matlab, ubuntu maverick 10.10 32bit. \nJust fyi, I don't yet know what to make of it.\n",
+        "created_at": "2011-04-12T17:47:04Z",
+        "updated_at": "2011-04-12T17:50:20Z",
+        "html_url": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17750",
+        "pull_request_url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17750"
+            },
+            "html": {
+                "href": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17750"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17838",
+        "pull_request_review_id": null,
+        "id": 17838,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3ODM4",
+        "diff_hunk": "@@ -16,9 +16,9 @@\n // along with TLD.  If not, see <http://www.gnu.org/licenses/>.\n \n #include \"cv.h\"\n-#include \"highgui.h\"",
+        "path": "mex/lk.cpp",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "original_commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "user": {
+            "login": "gzsombor",
+            "id": 66230,
+            "node_id": "MDQ6VXNlcjY2MjMw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66230?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/gzsombor",
+            "html_url": "https://github.com/gzsombor",
+            "followers_url": "https://api.github.com/users/gzsombor/followers",
+            "following_url": "https://api.github.com/users/gzsombor/following{/other_user}",
+            "gists_url": "https://api.github.com/users/gzsombor/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/gzsombor/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/gzsombor/subscriptions",
+            "organizations_url": "https://api.github.com/users/gzsombor/orgs",
+            "repos_url": "https://api.github.com/users/gzsombor/repos",
+            "events_url": "https://api.github.com/users/gzsombor/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/gzsombor/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Because there was no \"highgui.h\" in OpenCV 2.1, fortunately the code doesn't need it.\n",
+        "created_at": "2011-04-12T19:30:46Z",
+        "updated_at": "2011-04-12T19:30:46Z",
+        "html_url": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17838",
+        "pull_request_url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17838"
+            },
+            "html": {
+                "href": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17838"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17844",
+        "pull_request_review_id": null,
+        "id": 17844,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3ODQ0",
+        "diff_hunk": "@@ -63,7 +63,23 @@ end\n \n if isunix\n     disp('Unix');\n-    % to come\n+    include = ' -I/usr/include/opencv/ -I/usr/include/'; % /opt/local -> /usr/local\n+    libpath = '/usr/lib/'; % /opt/local -> /usr/local\n+\n+    files = dir([libpath 'libcv.so']);",
+        "path": "compile.m",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "original_commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "user": {
+            "login": "gzsombor",
+            "id": 66230,
+            "node_id": "MDQ6VXNlcjY2MjMw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66230?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/gzsombor",
+            "html_url": "https://github.com/gzsombor",
+            "followers_url": "https://api.github.com/users/gzsombor/followers",
+            "following_url": "https://api.github.com/users/gzsombor/following{/other_user}",
+            "gists_url": "https://api.github.com/users/gzsombor/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/gzsombor/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/gzsombor/subscriptions",
+            "organizations_url": "https://api.github.com/users/gzsombor/orgs",
+            "repos_url": "https://api.github.com/users/gzsombor/repos",
+            "events_url": "https://api.github.com/users/gzsombor/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/gzsombor/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "hmm, yes, interesting. What is failing when that libcxcore.so is missing ? Unfortunately I'm not able run the code yet, so it is possible that you are right, and that cvcore is needed to\n",
+        "created_at": "2011-04-12T19:32:15Z",
+        "updated_at": "2011-04-12T19:32:15Z",
+        "html_url": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17844",
+        "pull_request_url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17844"
+            },
+            "html": {
+                "href": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17844"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17857",
+        "pull_request_review_id": null,
+        "id": 17857,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3ODU3",
+        "diff_hunk": "@@ -16,9 +16,9 @@\n // along with TLD.  If not, see <http://www.gnu.org/licenses/>.\n \n #include \"cv.h\"\n-#include \"highgui.h\"",
+        "path": "mex/lk.cpp",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "original_commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "user": {
+            "login": "bilderbuchi",
+            "id": 327442,
+            "node_id": "MDQ6VXNlcjMyNzQ0Mg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/327442?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bilderbuchi",
+            "html_url": "https://github.com/bilderbuchi",
+            "followers_url": "https://api.github.com/users/bilderbuchi/followers",
+            "following_url": "https://api.github.com/users/bilderbuchi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bilderbuchi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bilderbuchi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bilderbuchi/subscriptions",
+            "organizations_url": "https://api.github.com/users/bilderbuchi/orgs",
+            "repos_url": "https://api.github.com/users/bilderbuchi/repos",
+            "events_url": "https://api.github.com/users/bilderbuchi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bilderbuchi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "you do know about the packages libhighgui2.1 and libhighgui-dev? (e.g. in ubuntu repo)\nOTOH, good to not include it if it's not needed. :-)\n",
+        "created_at": "2011-04-12T19:40:41Z",
+        "updated_at": "2011-04-12T19:41:17Z",
+        "html_url": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17857",
+        "pull_request_url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17857"
+            },
+            "html": {
+                "href": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17857"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17859",
+        "pull_request_review_id": null,
+        "id": 17859,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3ODU5",
+        "diff_hunk": "@@ -63,7 +63,23 @@ end\n \n if isunix\n     disp('Unix');\n-    % to come\n+    include = ' -I/usr/include/opencv/ -I/usr/include/'; % /opt/local -> /usr/local\n+    libpath = '/usr/lib/'; % /opt/local -> /usr/local\n+\n+    files = dir([libpath 'libcv.so']);",
+        "path": "compile.m",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "original_commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "user": {
+            "login": "bilderbuchi",
+            "id": 327442,
+            "node_id": "MDQ6VXNlcjMyNzQ0Mg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/327442?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bilderbuchi",
+            "html_url": "https://github.com/bilderbuchi",
+            "followers_url": "https://api.github.com/users/bilderbuchi/followers",
+            "following_url": "https://api.github.com/users/bilderbuchi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bilderbuchi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bilderbuchi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bilderbuchi/subscriptions",
+            "organizations_url": "https://api.github.com/users/bilderbuchi/orgs",
+            "repos_url": "https://api.github.com/users/bilderbuchi/repos",
+            "events_url": "https://api.github.com/users/bilderbuchi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bilderbuchi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "can't tell you right now, only got matlab at work. it was complaining about an undeclared function. a quick googling showed that said function was included in libcxcore.so, so including it solved it.\n",
+        "created_at": "2011-04-12T19:42:49Z",
+        "updated_at": "2011-04-12T19:42:49Z",
+        "html_url": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17859",
+        "pull_request_url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/17859"
+            },
+            "html": {
+                "href": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r17859"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/18167",
+        "pull_request_review_id": null,
+        "id": 18167,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4MTY3",
+        "diff_hunk": "@@ -63,7 +63,23 @@ end\n \n if isunix\n     disp('Unix');\n-    % to come\n+    include = ' -I/usr/include/opencv/ -I/usr/include/'; % /opt/local -> /usr/local\n+    libpath = '/usr/lib/'; % /opt/local -> /usr/local\n+\n+    files = dir([libpath 'libcv.so']);",
+        "path": "compile.m",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "original_commit_id": "1106178ac1d9b03e8e7f216373df3a16f5784edc",
+        "user": {
+            "login": "bilderbuchi",
+            "id": 327442,
+            "node_id": "MDQ6VXNlcjMyNzQ0Mg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/327442?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bilderbuchi",
+            "html_url": "https://github.com/bilderbuchi",
+            "followers_url": "https://api.github.com/users/bilderbuchi/followers",
+            "following_url": "https://api.github.com/users/bilderbuchi/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bilderbuchi/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bilderbuchi/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bilderbuchi/subscriptions",
+            "organizations_url": "https://api.github.com/users/bilderbuchi/orgs",
+            "repos_url": "https://api.github.com/users/bilderbuchi/repos",
+            "events_url": "https://api.github.com/users/bilderbuchi/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bilderbuchi/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "probably from a wrong opencv version. turns out current ubuntu package is only 2.1, not yet 2.2. \n",
+        "created_at": "2011-04-13T11:59:25Z",
+        "updated_at": "2011-04-13T11:59:25Z",
+        "html_url": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r18167",
+        "pull_request_url": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/comments/18167"
+            },
+            "html": {
+                "href": "https://github.com/zk00006/OpenTLD/pull/3#discussion_r18167"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/zk00006/OpenTLD/pulls/3"
+            }
+        }
+    }
+]

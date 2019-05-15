@@ -1,0 +1,541 @@
+[
+    {
+        "url": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1119414",
+        "pull_request_review_id": null,
+        "id": 1119414,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMTk0MTQ=",
+        "diff_hunk": "@@ -715,6 +715,7 @@ var GMaps = (function() {\n         origin: options.origin,\n         destination: options.destination,\n         travelMode: options.travelMode,\n+\t\twaypoints : options.waypoints,",
+        "path": "gmaps.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "3566be9008751b24cc40f69295c42cf9013c0567",
+        "original_commit_id": "3566be9008751b24cc40f69295c42cf9013c0567",
+        "user": {
+            "login": "hpneo",
+            "id": 611699,
+            "node_id": "MDQ6VXNlcjYxMTY5OQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/611699?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hpneo",
+            "html_url": "https://github.com/hpneo",
+            "followers_url": "https://api.github.com/users/hpneo/followers",
+            "following_url": "https://api.github.com/users/hpneo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hpneo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hpneo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hpneo/subscriptions",
+            "organizations_url": "https://api.github.com/users/hpneo/orgs",
+            "repos_url": "https://api.github.com/users/hpneo/repos",
+            "events_url": "https://api.github.com/users/hpneo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hpneo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think you must define a default value for waypoints in case you don't pass any waypoint in the options hash.\n",
+        "created_at": "2012-07-08T17:08:23Z",
+        "updated_at": "2012-07-08T17:08:23Z",
+        "html_url": "https://github.com/hpneo/gmaps/pull/66#discussion_r1119414",
+        "pull_request_url": "https://api.github.com/repos/hpneo/gmaps/pulls/66",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1119414"
+            },
+            "html": {
+                "href": "https://github.com/hpneo/gmaps/pull/66#discussion_r1119414"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503731",
+        "pull_request_review_id": null,
+        "id": 1503731,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MDM3MzE=",
+        "diff_hunk": "@@ -1171,7 +1183,7 @@ if(window.google && window.google.maps){\n           if (options.always) {\n             options.always();\n           }\n-        }, options.options);\n+        }, options);",
+        "path": "gmaps.js",
+        "position": null,
+        "original_position": 80,
+        "commit_id": "f42c98c8cfe54e5762033cb32240fadc3ac0743c",
+        "original_commit_id": "1d78c29d734885943e51e4083a640b17a4754e3b",
+        "user": {
+            "login": "hpneo",
+            "id": 611699,
+            "node_id": "MDQ6VXNlcjYxMTY5OQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/611699?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hpneo",
+            "html_url": "https://github.com/hpneo",
+            "followers_url": "https://api.github.com/users/hpneo/followers",
+            "following_url": "https://api.github.com/users/hpneo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hpneo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hpneo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hpneo/subscriptions",
+            "organizations_url": "https://api.github.com/users/hpneo/orgs",
+            "repos_url": "https://api.github.com/users/hpneo/repos",
+            "events_url": "https://api.github.com/users/hpneo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hpneo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think you must revert this change, since what I explained here: https://github.com/HPNeo/gmaps/pull/116#issuecomment-8180379\n",
+        "created_at": "2012-08-31T02:32:47Z",
+        "updated_at": "2012-09-12T21:36:34Z",
+        "html_url": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503731",
+        "pull_request_url": "https://api.github.com/repos/hpneo/gmaps/pulls/116",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503731"
+            },
+            "html": {
+                "href": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503731"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/116"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503753",
+        "pull_request_review_id": null,
+        "id": 1503753,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MDM3NTM=",
+        "diff_hunk": "@@ -305,16 +305,28 @@ if(window.google && window.google.maps){\n       this.createControl = function(options) {\n         var control = doc.createElement('div');\n \n-        control.style.cursor = 'pointer';\n-        control.style.fontFamily = 'Arial, sans-serif';\n-        control.style.fontSize = '13px';\n-        control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        if(!options.style) {\n+          control.style.cursor = 'pointer';\n+          control.style.fontFamily = 'Arial, sans-serif';\n+          control.style.fontSize = '13px';\n+          control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        } else {\n+          for(var option in options.style){\n+            control.style[option] = options.style[option];\n+          }\n+        }\n+",
+        "path": "gmaps.js",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "f42c98c8cfe54e5762033cb32240fadc3ac0743c",
+        "original_commit_id": "1d78c29d734885943e51e4083a640b17a4754e3b",
+        "user": {
+            "login": "hpneo",
+            "id": 611699,
+            "node_id": "MDQ6VXNlcjYxMTY5OQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/611699?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hpneo",
+            "html_url": "https://github.com/hpneo",
+            "followers_url": "https://api.github.com/users/hpneo/followers",
+            "following_url": "https://api.github.com/users/hpneo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hpneo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hpneo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hpneo/subscriptions",
+            "organizations_url": "https://api.github.com/users/hpneo/orgs",
+            "repos_url": "https://api.github.com/users/hpneo/repos",
+            "events_url": "https://api.github.com/users/hpneo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hpneo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "These default values are overridden with the values passed in `style` parameter. If you define just an item in `style`, you will lose these values. I think you are overthinking this feature.\n",
+        "created_at": "2012-08-31T02:40:02Z",
+        "updated_at": "2012-09-12T21:36:34Z",
+        "html_url": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503753",
+        "pull_request_url": "https://api.github.com/repos/hpneo/gmaps/pulls/116",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503753"
+            },
+            "html": {
+                "href": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503753"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/116"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503761",
+        "pull_request_review_id": null,
+        "id": 1503761,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MDM3NjE=",
+        "diff_hunk": "@@ -305,16 +305,28 @@ if(window.google && window.google.maps){\n       this.createControl = function(options) {\n         var control = doc.createElement('div');\n \n-        control.style.cursor = 'pointer';\n-        control.style.fontFamily = 'Arial, sans-serif';\n-        control.style.fontSize = '13px';\n-        control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        if(!options.style) {\n+          control.style.cursor = 'pointer';\n+          control.style.fontFamily = 'Arial, sans-serif';\n+          control.style.fontSize = '13px';\n+          control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        } else {\n+          for(var option in options.style){\n+            control.style[option] = options.style[option];\n+          }\n+        }\n+\n+        if(options.id) {\n+          control.id = options.id;\n+        }\n \n-        for(var option in options.style){\n-          control.style[option] = options.style[option];\n+        if(options.classes) {\n+          control.className = options.classes;\n         }\n \n-        control.textContent = options.text;\n+        if(options.text) {\n+          control.textContent = options.text;\n+        }\n ",
+        "path": "gmaps.js",
+        "position": null,
+        "original_position": 42,
+        "commit_id": "f42c98c8cfe54e5762033cb32240fadc3ac0743c",
+        "original_commit_id": "1d78c29d734885943e51e4083a640b17a4754e3b",
+        "user": {
+            "login": "hpneo",
+            "id": 611699,
+            "node_id": "MDQ6VXNlcjYxMTY5OQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/611699?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hpneo",
+            "html_url": "https://github.com/hpneo",
+            "followers_url": "https://api.github.com/users/hpneo/followers",
+            "following_url": "https://api.github.com/users/hpneo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hpneo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hpneo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hpneo/subscriptions",
+            "organizations_url": "https://api.github.com/users/hpneo/orgs",
+            "repos_url": "https://api.github.com/users/hpneo/repos",
+            "events_url": "https://api.github.com/users/hpneo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hpneo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I like `classes` and `id`. What do you think about inserting either text or image as control content? Maybe with `innerHTML`\n",
+        "created_at": "2012-08-31T02:43:19Z",
+        "updated_at": "2012-09-12T21:36:34Z",
+        "html_url": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503761",
+        "pull_request_url": "https://api.github.com/repos/hpneo/gmaps/pulls/116",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503761"
+            },
+            "html": {
+                "href": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503761"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/116"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503767",
+        "pull_request_review_id": null,
+        "id": 1503767,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MDM3Njc=",
+        "diff_hunk": "@@ -305,16 +305,28 @@ if(window.google && window.google.maps){\n       this.createControl = function(options) {\n         var control = doc.createElement('div');\n \n-        control.style.cursor = 'pointer';\n-        control.style.fontFamily = 'Arial, sans-serif';\n-        control.style.fontSize = '13px';\n-        control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        if(!options.style) {\n+          control.style.cursor = 'pointer';\n+          control.style.fontFamily = 'Arial, sans-serif';\n+          control.style.fontSize = '13px';\n+          control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        } else {\n+          for(var option in options.style){\n+            control.style[option] = options.style[option];\n+          }\n+        }\n+",
+        "path": "gmaps.js",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "f42c98c8cfe54e5762033cb32240fadc3ac0743c",
+        "original_commit_id": "1d78c29d734885943e51e4083a640b17a4754e3b",
+        "user": {
+            "login": "bradgreens",
+            "id": 284366,
+            "node_id": "MDQ6VXNlcjI4NDM2Ng==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/284366?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bradgreens",
+            "html_url": "https://github.com/bradgreens",
+            "followers_url": "https://api.github.com/users/bradgreens/followers",
+            "following_url": "https://api.github.com/users/bradgreens/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bradgreens/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bradgreens/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bradgreens/subscriptions",
+            "organizations_url": "https://api.github.com/users/bradgreens/orgs",
+            "repos_url": "https://api.github.com/users/bradgreens/repos",
+            "events_url": "https://api.github.com/users/bradgreens/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bradgreens/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The reason for my change is that if you don't explicitly override these un-documented defaults, you will accidentally receive the font styling and shadow styling without choice or knowledge of the defaults. For some users it would be time-consuming and laborious to have to manually override each default. \n\nWith my proposed solution, once the style property is passed by the developer they will be in complete control of all styles without having to read lines 308-311 of the library source code. I'm open to other ideas, but I hope I've illustrated my intention.\n",
+        "created_at": "2012-08-31T02:46:32Z",
+        "updated_at": "2012-09-12T21:36:34Z",
+        "html_url": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503767",
+        "pull_request_url": "https://api.github.com/repos/hpneo/gmaps/pulls/116",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503767"
+            },
+            "html": {
+                "href": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503767"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/116"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503787",
+        "pull_request_review_id": null,
+        "id": 1503787,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MDM3ODc=",
+        "diff_hunk": "@@ -305,16 +305,28 @@ if(window.google && window.google.maps){\n       this.createControl = function(options) {\n         var control = doc.createElement('div');\n \n-        control.style.cursor = 'pointer';\n-        control.style.fontFamily = 'Arial, sans-serif';\n-        control.style.fontSize = '13px';\n-        control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        if(!options.style) {\n+          control.style.cursor = 'pointer';\n+          control.style.fontFamily = 'Arial, sans-serif';\n+          control.style.fontSize = '13px';\n+          control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        } else {\n+          for(var option in options.style){\n+            control.style[option] = options.style[option];\n+          }\n+        }\n+\n+        if(options.id) {\n+          control.id = options.id;\n+        }\n \n-        for(var option in options.style){\n-          control.style[option] = options.style[option];\n+        if(options.classes) {\n+          control.className = options.classes;\n         }\n \n-        control.textContent = options.text;\n+        if(options.text) {\n+          control.textContent = options.text;\n+        }\n ",
+        "path": "gmaps.js",
+        "position": null,
+        "original_position": 42,
+        "commit_id": "f42c98c8cfe54e5762033cb32240fadc3ac0743c",
+        "original_commit_id": "1d78c29d734885943e51e4083a640b17a4754e3b",
+        "user": {
+            "login": "bradgreens",
+            "id": 284366,
+            "node_id": "MDQ6VXNlcjI4NDM2Ng==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/284366?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bradgreens",
+            "html_url": "https://github.com/bradgreens",
+            "followers_url": "https://api.github.com/users/bradgreens/followers",
+            "following_url": "https://api.github.com/users/bradgreens/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bradgreens/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bradgreens/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bradgreens/subscriptions",
+            "organizations_url": "https://api.github.com/users/bradgreens/orgs",
+            "repos_url": "https://api.github.com/users/bradgreens/repos",
+            "events_url": "https://api.github.com/users/bradgreens/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bradgreens/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think that's a good idea. With a content property, the developer could insert any amount of text, imagery or markup they saw fit.\n",
+        "created_at": "2012-08-31T02:54:58Z",
+        "updated_at": "2012-09-12T21:36:34Z",
+        "html_url": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503787",
+        "pull_request_url": "https://api.github.com/repos/hpneo/gmaps/pulls/116",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503787"
+            },
+            "html": {
+                "href": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503787"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/116"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503835",
+        "pull_request_review_id": null,
+        "id": 1503835,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MDM4MzU=",
+        "diff_hunk": "@@ -305,16 +305,28 @@ if(window.google && window.google.maps){\n       this.createControl = function(options) {\n         var control = doc.createElement('div');\n \n-        control.style.cursor = 'pointer';\n-        control.style.fontFamily = 'Arial, sans-serif';\n-        control.style.fontSize = '13px';\n-        control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        if(!options.style) {\n+          control.style.cursor = 'pointer';\n+          control.style.fontFamily = 'Arial, sans-serif';\n+          control.style.fontSize = '13px';\n+          control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        } else {\n+          for(var option in options.style){\n+            control.style[option] = options.style[option];\n+          }\n+        }\n+",
+        "path": "gmaps.js",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "f42c98c8cfe54e5762033cb32240fadc3ac0743c",
+        "original_commit_id": "1d78c29d734885943e51e4083a640b17a4754e3b",
+        "user": {
+            "login": "hpneo",
+            "id": 611699,
+            "node_id": "MDQ6VXNlcjYxMTY5OQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/611699?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hpneo",
+            "html_url": "https://github.com/hpneo",
+            "followers_url": "https://api.github.com/users/hpneo/followers",
+            "following_url": "https://api.github.com/users/hpneo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hpneo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hpneo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hpneo/subscriptions",
+            "organizations_url": "https://api.github.com/users/hpneo/orgs",
+            "repos_url": "https://api.github.com/users/hpneo/repos",
+            "events_url": "https://api.github.com/users/hpneo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hpneo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I could update the documentation with these default values, which, I think, are the style used in the other native map controls. I think it's more a documentation issue.\n",
+        "created_at": "2012-08-31T03:22:51Z",
+        "updated_at": "2012-09-12T21:36:34Z",
+        "html_url": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503835",
+        "pull_request_url": "https://api.github.com/repos/hpneo/gmaps/pulls/116",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503835"
+            },
+            "html": {
+                "href": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503835"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/116"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503860",
+        "pull_request_review_id": null,
+        "id": 1503860,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MDM4NjA=",
+        "diff_hunk": "@@ -305,16 +305,28 @@ if(window.google && window.google.maps){\n       this.createControl = function(options) {\n         var control = doc.createElement('div');\n \n-        control.style.cursor = 'pointer';\n-        control.style.fontFamily = 'Arial, sans-serif';\n-        control.style.fontSize = '13px';\n-        control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        if(!options.style) {\n+          control.style.cursor = 'pointer';\n+          control.style.fontFamily = 'Arial, sans-serif';\n+          control.style.fontSize = '13px';\n+          control.style.boxShadow = 'rgba(0, 0, 0, 0.398438) 0px 2px 4px';\n+        } else {\n+          for(var option in options.style){\n+            control.style[option] = options.style[option];\n+          }\n+        }\n+",
+        "path": "gmaps.js",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "f42c98c8cfe54e5762033cb32240fadc3ac0743c",
+        "original_commit_id": "1d78c29d734885943e51e4083a640b17a4754e3b",
+        "user": {
+            "login": "bradgreens",
+            "id": 284366,
+            "node_id": "MDQ6VXNlcjI4NDM2Ng==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/284366?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bradgreens",
+            "html_url": "https://github.com/bradgreens",
+            "followers_url": "https://api.github.com/users/bradgreens/followers",
+            "following_url": "https://api.github.com/users/bradgreens/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bradgreens/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bradgreens/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bradgreens/subscriptions",
+            "organizations_url": "https://api.github.com/users/bradgreens/orgs",
+            "repos_url": "https://api.github.com/users/bradgreens/repos",
+            "events_url": "https://api.github.com/users/bradgreens/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bradgreens/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Documentation would help. I will override the 4 styles almost every time because I use the library to customize the map.\n\nPerhaps a 'default' flag would be easier. The developer either accepts the native styles, or they write the styles they want. Overrides are extra work.\n\nI love the library btw, I was about to write one so I'm pretty interested in this.\n",
+        "created_at": "2012-08-31T03:36:21Z",
+        "updated_at": "2012-09-12T21:36:34Z",
+        "html_url": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503860",
+        "pull_request_url": "https://api.github.com/repos/hpneo/gmaps/pulls/116",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/1503860"
+            },
+            "html": {
+                "href": "https://github.com/hpneo/gmaps/pull/116#discussion_r1503860"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/116"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/3057654",
+        "pull_request_review_id": null,
+        "id": 3057654,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwNTc2NTQ=",
+        "diff_hunk": "@@ -1893,5 +1893,8 @@ if(window.google && window.google.maps){\n \n     return new_array;\n   };\n+}\n \n+else {\n+  throw 'Google Maps API is required. Please register the following JavaScript library http://maps.google.com/maps/api/js?sensor=true.'",
+        "path": "gmaps.js",
+        "position": 25,
+        "original_position": 25,
+        "commit_id": "739807402690b2ea2d5c6ed2a892855dfb57cfaa",
+        "original_commit_id": "739807402690b2ea2d5c6ed2a892855dfb57cfaa",
+        "user": {
+            "login": "frodsan",
+            "id": 840464,
+            "node_id": "MDQ6VXNlcjg0MDQ2NA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/840464?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/frodsan",
+            "html_url": "https://github.com/frodsan",
+            "followers_url": "https://api.github.com/users/frodsan/followers",
+            "following_url": "https://api.github.com/users/frodsan/following{/other_user}",
+            "gists_url": "https://api.github.com/users/frodsan/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/frodsan/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/frodsan/subscriptions",
+            "organizations_url": "https://api.github.com/users/frodsan/orgs",
+            "repos_url": "https://api.github.com/users/frodsan/repos",
+            "events_url": "https://api.github.com/users/frodsan/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/frodsan/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": ":gun: \n",
+        "created_at": "2013-02-19T06:58:43Z",
+        "updated_at": "2013-02-20T18:07:49Z",
+        "html_url": "https://github.com/hpneo/gmaps/pull/178#discussion_r3057654",
+        "pull_request_url": "https://api.github.com/repos/hpneo/gmaps/pulls/178",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/3057654"
+            },
+            "html": {
+                "href": "https://github.com/hpneo/gmaps/pull/178#discussion_r3057654"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/178"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/3074894",
+        "pull_request_review_id": null,
+        "id": 3074894,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwNzQ4OTQ=",
+        "diff_hunk": "@@ -37,7 +37,7 @@ if(window.google && window.google.maps){\n       };\n \n       if (typeof(this.el) === 'undefined' || this.el === null)\n-        throw 'No element defined';\n+        throw 'No element defined.';",
+        "path": "gmaps.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "f7e22314c458321356e7fe0f95a0bd58df6a1983",
+        "original_commit_id": "f26d9f7b87d56a512d77b778dff96178919cd404",
+        "user": {
+            "login": "hpneo",
+            "id": 611699,
+            "node_id": "MDQ6VXNlcjYxMTY5OQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/611699?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hpneo",
+            "html_url": "https://github.com/hpneo",
+            "followers_url": "https://api.github.com/users/hpneo/followers",
+            "following_url": "https://api.github.com/users/hpneo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hpneo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hpneo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hpneo/subscriptions",
+            "organizations_url": "https://api.github.com/users/hpneo/orgs",
+            "repos_url": "https://api.github.com/users/hpneo/repos",
+            "events_url": "https://api.github.com/users/hpneo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hpneo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think you should wrap this line with braces\n",
+        "created_at": "2013-02-20T03:49:03Z",
+        "updated_at": "2013-02-20T18:09:15Z",
+        "html_url": "https://github.com/hpneo/gmaps/pull/177#discussion_r3074894",
+        "pull_request_url": "https://api.github.com/repos/hpneo/gmaps/pulls/177",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/3074894"
+            },
+            "html": {
+                "href": "https://github.com/hpneo/gmaps/pull/177#discussion_r3074894"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/177"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/7976426",
+        "pull_request_review_id": null,
+        "id": 7976426,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NzY0MjY=",
+        "diff_hunk": "@@ -4,6 +4,7 @@ GMaps.js - A Javascript library that simplifies your life\n GMaps.js allows you to use the potential of Google Maps in a simple way. No more extensive documentation or large amount of code.\n \n Visit the examples in [hpneo.github.com/gmaps](http://hpneo.github.com/gmaps/)\n+Go to the API Documentation [hpneo.github.io/gmaps/documentation.html](http://hpneo.github.io/gmaps/documentation.html)",
+        "path": "README.md",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "dbc4425f1759e1011d72693f20384885a640fe23",
+        "original_commit_id": "dbc4425f1759e1011d72693f20384885a640fe23",
+        "user": {
+            "login": "iocron",
+            "id": 3641649,
+            "node_id": "MDQ6VXNlcjM2NDE2NDk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/3641649?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/iocron",
+            "html_url": "https://github.com/iocron",
+            "followers_url": "https://api.github.com/users/iocron/followers",
+            "following_url": "https://api.github.com/users/iocron/following{/other_user}",
+            "gists_url": "https://api.github.com/users/iocron/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/iocron/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/iocron/subscriptions",
+            "organizations_url": "https://api.github.com/users/iocron/orgs",
+            "repos_url": "https://api.github.com/users/iocron/repos",
+            "events_url": "https://api.github.com/users/iocron/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/iocron/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Because there is nowhere a quick way to get to the docs right now. A simple docs-link in the readme.md would solve that.\n",
+        "created_at": "2013-11-28T03:56:52Z",
+        "updated_at": "2013-11-28T03:56:52Z",
+        "html_url": "https://github.com/hpneo/gmaps/pull/272#discussion_r7976426",
+        "pull_request_url": "https://api.github.com/repos/hpneo/gmaps/pulls/272",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/comments/7976426"
+            },
+            "html": {
+                "href": "https://github.com/hpneo/gmaps/pull/272#discussion_r7976426"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hpneo/gmaps/pulls/272"
+            }
+        }
+    }
+]

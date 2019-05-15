@@ -1,0 +1,100 @@
+[
+    {
+        "url": "https://api.github.com/repos/junegunn/redis-stat/pulls/comments/48392942",
+        "pull_request_review_id": null,
+        "id": 48392942,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzkyOTQy",
+        "diff_hunk": "@@ -31,6 +31,7 @@ usage: redis-stat [HOST[:PORT] ...] [INTERVAL [COUNT]]\n         --no-color                   Suppress ANSI color codes\n         --csv=OUTPUT_CSV_FILE_PATH   Save the result in CSV format\n         --es=ELASTICSEARCH_URL       Send results to ElasticSearch: [http://]HOST[:PORT][/INDEX]\n+        --estags=ELASTICSEARCH_TAGS  List of comma seperated tags to add ro results sent to ElasticSearch: tag1,tag2",
+        "path": "README.md",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "934ef2187a660d3437b560dd2b6e729a54e2ef32",
+        "original_commit_id": "934ef2187a660d3437b560dd2b6e729a54e2ef32",
+        "user": {
+            "login": "junegunn",
+            "id": 700826,
+            "node_id": "MDQ6VXNlcjcwMDgyNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/700826?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/junegunn",
+            "html_url": "https://github.com/junegunn",
+            "followers_url": "https://api.github.com/users/junegunn/followers",
+            "following_url": "https://api.github.com/users/junegunn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/junegunn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/junegunn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/junegunn/subscriptions",
+            "organizations_url": "https://api.github.com/users/junegunn/orgs",
+            "repos_url": "https://api.github.com/users/junegunn/repos",
+            "events_url": "https://api.github.com/users/junegunn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/junegunn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "- \"add ro results\"? Maybe a typo?\n- The line is a bit to long. I think we can remove the trailing `: tag1,tag2` as it's already pretty obvious\n- Let's rename the option to `--es-tags`\n",
+        "created_at": "2015-12-24T02:44:24Z",
+        "updated_at": "2015-12-24T02:44:24Z",
+        "html_url": "https://github.com/junegunn/redis-stat/pull/46#discussion_r48392942",
+        "pull_request_url": "https://api.github.com/repos/junegunn/redis-stat/pulls/46",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/junegunn/redis-stat/pulls/comments/48392942"
+            },
+            "html": {
+                "href": "https://github.com/junegunn/redis-stat/pull/46#discussion_r48392942"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/junegunn/redis-stat/pulls/46"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/junegunn/redis-stat/pulls/comments/48393061",
+        "pull_request_review_id": null,
+        "id": 48393061,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzkzMDYx",
+        "diff_hunk": "@@ -43,7 +44,8 @@ def output info\n         :body  => entries.merge({\n           :@timestamp => format_time(time),\n           :host       => host,\n-          :at         => time.to_f\n+          :at         => time.to_f,\n+          :tags       => @tags",
+        "path": "lib/redis-stat/elasticsearch.rb",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "934ef2187a660d3437b560dd2b6e729a54e2ef32",
+        "original_commit_id": "934ef2187a660d3437b560dd2b6e729a54e2ef32",
+        "user": {
+            "login": "junegunn",
+            "id": 700826,
+            "node_id": "MDQ6VXNlcjcwMDgyNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/700826?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/junegunn",
+            "html_url": "https://github.com/junegunn",
+            "followers_url": "https://api.github.com/users/junegunn/followers",
+            "following_url": "https://api.github.com/users/junegunn/following{/other_user}",
+            "gists_url": "https://api.github.com/users/junegunn/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/junegunn/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/junegunn/subscriptions",
+            "organizations_url": "https://api.github.com/users/junegunn/orgs",
+            "repos_url": "https://api.github.com/users/junegunn/repos",
+            "events_url": "https://api.github.com/users/junegunn/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/junegunn/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is it okay that we leave `:tags` when the value is empty? i.e. Is nil entry automatically ignored? If not, we should either 1. filter out the `:tags` from the hash or 2. set it only when `@tags` is not nil.\n- `.select { |k, v| v }`\n  - This one is simpler, but can have different result on Ruby 1.8\n- `{ ... without :tags here ... }.tap { |hash| hash[:tags] = @tags if @tags }`\n",
+        "created_at": "2015-12-24T02:48:17Z",
+        "updated_at": "2015-12-24T02:48:17Z",
+        "html_url": "https://github.com/junegunn/redis-stat/pull/46#discussion_r48393061",
+        "pull_request_url": "https://api.github.com/repos/junegunn/redis-stat/pulls/46",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/junegunn/redis-stat/pulls/comments/48393061"
+            },
+            "html": {
+                "href": "https://github.com/junegunn/redis-stat/pull/46#discussion_r48393061"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/junegunn/redis-stat/pulls/46"
+            }
+        }
+    }
+]

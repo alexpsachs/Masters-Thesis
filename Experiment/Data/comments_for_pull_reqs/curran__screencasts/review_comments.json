@@ -1,0 +1,100 @@
+[
+    {
+        "url": "https://api.github.com/repos/curran/screencasts/pulls/comments/20403624",
+        "pull_request_review_id": null,
+        "id": 20403624,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwNDAzNjI0",
+        "diff_hunk": "@@ -2,4 +2,4 @@\n   <li ng-repeat=\"country in countries\">\n     <a href=\"#/{{country.name | encodeURI}}\">{{country.name}}</a>",
+        "path": "introToAngular/examples/snapshots/snapshot44/country-list.html",
+        "position": 2,
+        "original_position": 2,
+        "commit_id": "42d01a2c4b0767631971287f28aac113f47c2b99",
+        "original_commit_id": "42d01a2c4b0767631971287f28aac113f47c2b99",
+        "user": {
+            "login": "CoryReeve",
+            "id": 5092497,
+            "node_id": "MDQ6VXNlcjUwOTI0OTc=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/5092497?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CoryReeve",
+            "html_url": "https://github.com/CoryReeve",
+            "followers_url": "https://api.github.com/users/CoryReeve/followers",
+            "following_url": "https://api.github.com/users/CoryReeve/following{/other_user}",
+            "gists_url": "https://api.github.com/users/CoryReeve/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/CoryReeve/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/CoryReeve/subscriptions",
+            "organizations_url": "https://api.github.com/users/CoryReeve/orgs",
+            "repos_url": "https://api.github.com/users/CoryReeve/repos",
+            "events_url": "https://api.github.com/users/CoryReeve/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/CoryReeve/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "same here with ng-href: &lt;a ng-href=\"#/{{country.name | encodeURI}}\"&gt;\n",
+        "created_at": "2014-11-15T17:28:11Z",
+        "updated_at": "2014-11-15T17:28:43Z",
+        "html_url": "https://github.com/curran/screencasts/pull/6#discussion_r20403624",
+        "pull_request_url": "https://api.github.com/repos/curran/screencasts/pulls/6",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/curran/screencasts/pulls/comments/20403624"
+            },
+            "html": {
+                "href": "https://github.com/curran/screencasts/pull/6#discussion_r20403624"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/curran/screencasts/pulls/6"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/curran/screencasts/pulls/comments/20403620",
+        "pull_request_review_id": null,
+        "id": 20403620,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwNDAzNjIw",
+        "diff_hunk": "@@ -22,7 +22,7 @@\n       <tr ng-repeat=\"country in countries\">\n         <td>{{country.name}}</td>\n         <td>{{country.population}}</td>\n-        <td><img src=\"{{country.flagURL}}\" width=\"100\" /></td>\n+        <td><img src=\"{{country.flagURL}}\" width=\"100\"></td>",
+        "path": "introToAngular/examples/snapshots/snapshot27/index.html",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "42d01a2c4b0767631971287f28aac113f47c2b99",
+        "original_commit_id": "42d01a2c4b0767631971287f28aac113f47c2b99",
+        "user": {
+            "login": "CoryReeve",
+            "id": 5092497,
+            "node_id": "MDQ6VXNlcjUwOTI0OTc=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/5092497?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/CoryReeve",
+            "html_url": "https://github.com/CoryReeve",
+            "followers_url": "https://api.github.com/users/CoryReeve/followers",
+            "following_url": "https://api.github.com/users/CoryReeve/following{/other_user}",
+            "gists_url": "https://api.github.com/users/CoryReeve/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/CoryReeve/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/CoryReeve/subscriptions",
+            "organizations_url": "https://api.github.com/users/CoryReeve/orgs",
+            "repos_url": "https://api.github.com/users/CoryReeve/repos",
+            "events_url": "https://api.github.com/users/CoryReeve/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/CoryReeve/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "best to use ng-src if you're going to use Angular markup in the url: &lt;img ng-src=\"{{country.flagURL}}\" width=\"100\"&gt;\n",
+        "created_at": "2014-11-15T17:27:05Z",
+        "updated_at": "2014-11-15T17:29:52Z",
+        "html_url": "https://github.com/curran/screencasts/pull/6#discussion_r20403620",
+        "pull_request_url": "https://api.github.com/repos/curran/screencasts/pulls/6",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/curran/screencasts/pulls/comments/20403620"
+            },
+            "html": {
+                "href": "https://github.com/curran/screencasts/pull/6#discussion_r20403620"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/curran/screencasts/pulls/6"
+            }
+        }
+    }
+]

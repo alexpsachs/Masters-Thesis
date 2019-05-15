@@ -1,0 +1,100 @@
+[
+    {
+        "url": "https://api.github.com/repos/JoanZapata/android-pdfview/pulls/comments/39799995",
+        "pull_request_review_id": null,
+        "id": 39799995,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM5Nzk5OTk1",
+        "diff_hunk": "@@ -1073,6 +1082,7 @@ public void load() {\n             PDFView.this.maskPaint = new Paint();\r\n             PDFView.this.maskPaint.setColor(maskColor);\r\n             PDFView.this.maskPaint.setAlpha(maskAlpha);\r\n+            PDFView.this.setBackgroundPDF(background);\r",
+        "path": "android-pdfview/src/main/java/com/joanzapata/pdfview/PDFView.java",
+        "position": null,
+        "original_position": 43,
+        "commit_id": "5d9586ca557bd614f5a79e15e22d3a88cb1d02cc",
+        "original_commit_id": "7c68c74ff8b40bb17d4bff88fd1eb6c40937e832",
+        "user": {
+            "login": "fawaad",
+            "id": 10834942,
+            "node_id": "MDQ6VXNlcjEwODM0OTQy",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10834942?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fawaad",
+            "html_url": "https://github.com/fawaad",
+            "followers_url": "https://api.github.com/users/fawaad/followers",
+            "following_url": "https://api.github.com/users/fawaad/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fawaad/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fawaad/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fawaad/subscriptions",
+            "organizations_url": "https://api.github.com/users/fawaad/orgs",
+            "repos_url": "https://api.github.com/users/fawaad/repos",
+            "events_url": "https://api.github.com/users/fawaad/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fawaad/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Maybe something like `setPdfViewBackgroundColor(background)` instead? setBackgroundPDF isn't very intuitive.\n",
+        "created_at": "2015-09-17T21:14:48Z",
+        "updated_at": "2015-11-26T08:11:28Z",
+        "html_url": "https://github.com/JoanZapata/android-pdfview/pull/151#discussion_r39799995",
+        "pull_request_url": "https://api.github.com/repos/JoanZapata/android-pdfview/pulls/151",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JoanZapata/android-pdfview/pulls/comments/39799995"
+            },
+            "html": {
+                "href": "https://github.com/JoanZapata/android-pdfview/pull/151#discussion_r39799995"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JoanZapata/android-pdfview/pulls/151"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/JoanZapata/android-pdfview/pulls/comments/39824600",
+        "pull_request_review_id": null,
+        "id": 39824600,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM5ODI0NjAw",
+        "diff_hunk": "@@ -1073,6 +1082,7 @@ public void load() {\n             PDFView.this.maskPaint = new Paint();\r\n             PDFView.this.maskPaint.setColor(maskColor);\r\n             PDFView.this.maskPaint.setAlpha(maskAlpha);\r\n+            PDFView.this.setBackgroundPDF(background);\r",
+        "path": "android-pdfview/src/main/java/com/joanzapata/pdfview/PDFView.java",
+        "position": null,
+        "original_position": 43,
+        "commit_id": "5d9586ca557bd614f5a79e15e22d3a88cb1d02cc",
+        "original_commit_id": "7c68c74ff8b40bb17d4bff88fd1eb6c40937e832",
+        "user": {
+            "login": "lucas34",
+            "id": 7482647,
+            "node_id": "MDQ6VXNlcjc0ODI2NDc=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/7482647?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/lucas34",
+            "html_url": "https://github.com/lucas34",
+            "followers_url": "https://api.github.com/users/lucas34/followers",
+            "following_url": "https://api.github.com/users/lucas34/following{/other_user}",
+            "gists_url": "https://api.github.com/users/lucas34/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/lucas34/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/lucas34/subscriptions",
+            "organizations_url": "https://api.github.com/users/lucas34/orgs",
+            "repos_url": "https://api.github.com/users/lucas34/repos",
+            "events_url": "https://api.github.com/users/lucas34/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/lucas34/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I was not very inspired. \nThis name is more intuitive. I pushed\n",
+        "created_at": "2015-09-18T05:10:06Z",
+        "updated_at": "2015-11-26T08:11:28Z",
+        "html_url": "https://github.com/JoanZapata/android-pdfview/pull/151#discussion_r39824600",
+        "pull_request_url": "https://api.github.com/repos/JoanZapata/android-pdfview/pulls/151",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/JoanZapata/android-pdfview/pulls/comments/39824600"
+            },
+            "html": {
+                "href": "https://github.com/JoanZapata/android-pdfview/pull/151#discussion_r39824600"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/JoanZapata/android-pdfview/pulls/151"
+            }
+        }
+    }
+]

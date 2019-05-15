@@ -1,0 +1,346 @@
+[
+    {
+        "url": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/50542431",
+        "pull_request_review_id": null,
+        "id": 50542431,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUwNTQyNDMx",
+        "diff_hunk": "@@ -77,7 +77,8 @@ - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)\n     }\n     else if (buttonIndex == 3) // open web page\n     {\n-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@\"http://www.apple.com\"]];\n+        NSURL *url = [NSURL URLWithString:@\"http://www.apple.com\"];",
+        "path": "Examples/iPhone Custom UI Demo/Classes/iRateAppDelegate.m",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "2e1300850096805b4037a1c341ed8e4b7e1606dd",
+        "original_commit_id": "2e1300850096805b4037a1c341ed8e4b7e1606dd",
+        "user": {
+            "login": "nicklockwood",
+            "id": 546885,
+            "node_id": "MDQ6VXNlcjU0Njg4NQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/546885?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nicklockwood",
+            "html_url": "https://github.com/nicklockwood",
+            "followers_url": "https://api.github.com/users/nicklockwood/followers",
+            "following_url": "https://api.github.com/users/nicklockwood/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nicklockwood/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nicklockwood/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nicklockwood/subscriptions",
+            "organizations_url": "https://api.github.com/users/nicklockwood/orgs",
+            "repos_url": "https://api.github.com/users/nicklockwood/repos",
+            "events_url": "https://api.github.com/users/nicklockwood/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nicklockwood/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hard to see why this would prevent it from building o_O\n",
+        "created_at": "2016-01-22T14:34:19Z",
+        "updated_at": "2016-01-22T14:34:19Z",
+        "html_url": "https://github.com/nicklockwood/iRate/pull/233#discussion_r50542431",
+        "pull_request_url": "https://api.github.com/repos/nicklockwood/iRate/pulls/233",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/50542431"
+            },
+            "html": {
+                "href": "https://github.com/nicklockwood/iRate/pull/233#discussion_r50542431"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/233"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/50542451",
+        "pull_request_review_id": null,
+        "id": 50542451,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUwNTQyNDUx",
+        "diff_hunk": "@@ -693,7 +693,8 @@ - (void)checkForConnectivityInBackground\n \n         NSError *error = nil;\n         NSURLResponse *response = nil;\n-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:iTunesServiceURL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:REQUEST_TIMEOUT];\n+        NSURL *url = [NSURL URLWithString:iTunesServiceURL];",
+        "path": "iRate/iRate.m",
+        "position": 22,
+        "original_position": 22,
+        "commit_id": "2e1300850096805b4037a1c341ed8e4b7e1606dd",
+        "original_commit_id": "2e1300850096805b4037a1c341ed8e4b7e1606dd",
+        "user": {
+            "login": "nicklockwood",
+            "id": 546885,
+            "node_id": "MDQ6VXNlcjU0Njg4NQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/546885?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nicklockwood",
+            "html_url": "https://github.com/nicklockwood",
+            "followers_url": "https://api.github.com/users/nicklockwood/followers",
+            "following_url": "https://api.github.com/users/nicklockwood/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nicklockwood/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nicklockwood/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nicklockwood/subscriptions",
+            "organizations_url": "https://api.github.com/users/nicklockwood/orgs",
+            "repos_url": "https://api.github.com/users/nicklockwood/repos",
+            "events_url": "https://api.github.com/users/nicklockwood/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nicklockwood/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Or this...\n",
+        "created_at": "2016-01-22T14:34:35Z",
+        "updated_at": "2016-01-22T14:34:35Z",
+        "html_url": "https://github.com/nicklockwood/iRate/pull/233#discussion_r50542451",
+        "pull_request_url": "https://api.github.com/repos/nicklockwood/iRate/pulls/233",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/50542451"
+            },
+            "html": {
+                "href": "https://github.com/nicklockwood/iRate/pull/233#discussion_r50542451"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/233"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/50542830",
+        "pull_request_review_id": null,
+        "id": 50542830,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUwNTQyODMw",
+        "diff_hunk": "@@ -77,7 +77,8 @@ - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)\n     }\n     else if (buttonIndex == 3) // open web page\n     {\n-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@\"http://www.apple.com\"]];\n+        NSURL *url = [NSURL URLWithString:@\"http://www.apple.com\"];",
+        "path": "Examples/iPhone Custom UI Demo/Classes/iRateAppDelegate.m",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "2e1300850096805b4037a1c341ed8e4b7e1606dd",
+        "original_commit_id": "2e1300850096805b4037a1c341ed8e4b7e1606dd",
+        "user": {
+            "login": "delebedev",
+            "id": 829783,
+            "node_id": "MDQ6VXNlcjgyOTc4Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/829783?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/delebedev",
+            "html_url": "https://github.com/delebedev",
+            "followers_url": "https://api.github.com/users/delebedev/followers",
+            "following_url": "https://api.github.com/users/delebedev/following{/other_user}",
+            "gists_url": "https://api.github.com/users/delebedev/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/delebedev/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/delebedev/subscriptions",
+            "organizations_url": "https://api.github.com/users/delebedev/orgs",
+            "repos_url": "https://api.github.com/users/delebedev/repos",
+            "events_url": "https://api.github.com/users/delebedev/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/delebedev/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It is related to warning \"using nullable type in nonnull context\" thing\n",
+        "created_at": "2016-01-22T14:37:25Z",
+        "updated_at": "2016-01-22T14:37:25Z",
+        "html_url": "https://github.com/nicklockwood/iRate/pull/233#discussion_r50542830",
+        "pull_request_url": "https://api.github.com/repos/nicklockwood/iRate/pulls/233",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/50542830"
+            },
+            "html": {
+                "href": "https://github.com/nicklockwood/iRate/pull/233#discussion_r50542830"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/233"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/50542850",
+        "pull_request_review_id": null,
+        "id": 50542850,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUwNTQyODUw",
+        "diff_hunk": "@@ -693,7 +693,8 @@ - (void)checkForConnectivityInBackground\n \n         NSError *error = nil;\n         NSURLResponse *response = nil;\n-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:iTunesServiceURL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:REQUEST_TIMEOUT];\n+        NSURL *url = [NSURL URLWithString:iTunesServiceURL];",
+        "path": "iRate/iRate.m",
+        "position": 22,
+        "original_position": 22,
+        "commit_id": "2e1300850096805b4037a1c341ed8e4b7e1606dd",
+        "original_commit_id": "2e1300850096805b4037a1c341ed8e4b7e1606dd",
+        "user": {
+            "login": "delebedev",
+            "id": 829783,
+            "node_id": "MDQ6VXNlcjgyOTc4Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/829783?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/delebedev",
+            "html_url": "https://github.com/delebedev",
+            "followers_url": "https://api.github.com/users/delebedev/followers",
+            "following_url": "https://api.github.com/users/delebedev/following{/other_user}",
+            "gists_url": "https://api.github.com/users/delebedev/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/delebedev/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/delebedev/subscriptions",
+            "organizations_url": "https://api.github.com/users/delebedev/orgs",
+            "repos_url": "https://api.github.com/users/delebedev/repos",
+            "events_url": "https://api.github.com/users/delebedev/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/delebedev/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Same here :)\n",
+        "created_at": "2016-01-22T14:37:32Z",
+        "updated_at": "2016-01-22T14:37:32Z",
+        "html_url": "https://github.com/nicklockwood/iRate/pull/233#discussion_r50542850",
+        "pull_request_url": "https://api.github.com/repos/nicklockwood/iRate/pulls/233",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/50542850"
+            },
+            "html": {
+                "href": "https://github.com/nicklockwood/iRate/pull/233#discussion_r50542850"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/233"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/112828439",
+        "pull_request_review_id": 34174478,
+        "id": 112828439,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMjgyODQzOQ==",
+        "diff_hunk": "@@ -851,70 +851,73 @@ - (void)promptForRating\n         NSString *message = self.ratedAnyVersion? self.updateMessage: self.message;\n \n #if TARGET_OS_IPHONE\n-\n-        UIViewController *topController = [UIApplication sharedApplication].delegate.window.rootViewController;\n-        while (topController.presentedViewController)\n-        {\n-            topController = topController.presentedViewController;\n-        }\n-\n-        if ([UIAlertController class] && topController && self.useUIAlertControllerIfAvailable)\n-        {\n-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:self.messageTitle message:message preferredStyle:UIAlertControllerStyleAlert];\n-\n-            //rate action\n-            [alert addAction:[UIAlertAction actionWithTitle:self.rateButtonLabel style:UIAlertActionStyleDefault handler:^(__unused UIAlertAction *action) {\n-                [self didDismissAlert:alert withButtonAtIndex:0];\n-            }]];\n-\n-            //cancel action\n-            if ([self showCancelButton])\n+        float iOSVersion = [[UIDevice currentDevice].systemVersion floatValue];\n+        if(self.useStoreReviewController && iOSVersion >= __IPHONE_10_3) {",
+        "path": "iRate/iRate.m",
+        "position": null,
+        "original_position": 23,
+        "commit_id": "0e5c4dfc4a6102879f4f57ce201734894a7b3a73",
+        "original_commit_id": "e51a0140c0ea60fac87d537a5d46c6eb347e1b2d",
+        "user": {
+            "login": "sidan5",
+            "id": 1595490,
+            "node_id": "MDQ6VXNlcjE1OTU0OTA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1595490?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sidan5",
+            "html_url": "https://github.com/sidan5",
+            "followers_url": "https://api.github.com/users/sidan5/followers",
+            "following_url": "https://api.github.com/users/sidan5/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sidan5/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sidan5/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sidan5/subscriptions",
+            "organizations_url": "https://api.github.com/users/sidan5/orgs",
+            "repos_url": "https://api.github.com/users/sidan5/repos",
+            "events_url": "https://api.github.com/users/sidan5/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sidan5/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@EpicDraws Would be smarter to check if respondToSelector instead of iOS version...",
+        "created_at": "2017-04-23T08:39:25Z",
+        "updated_at": "2017-04-23T08:39:25Z",
+        "html_url": "https://github.com/nicklockwood/iRate/pull/283#discussion_r112828439",
+        "pull_request_url": "https://api.github.com/repos/nicklockwood/iRate/pulls/283",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/112828439"
+            },
+            "html": {
+                "href": "https://github.com/nicklockwood/iRate/pull/283#discussion_r112828439"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/283"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/120350936",
+        "pull_request_review_id": 42305146,
+        "id": 120350936,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMDM1MDkzNg==",
+        "diff_hunk": "@@ -139,7 +140,10 @@ typedef NS_ENUM(NSUInteger, iRateErrorCode)\n @property (nonatomic, copy) NSString *rateButtonLabel;\n \n //debugging and prompt overrides\n+#if STOREKIT_REVIEW_AVAILABLE",
+        "path": "iRate/iRate.h",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "52180977f186b5225034fb458cdf5607d803bce3",
+        "original_commit_id": "758716e34063513887bafec49e3f5dd44a581ffe",
+        "user": {
+            "login": "nicklockwood",
+            "id": 546885,
+            "node_id": "MDQ6VXNlcjU0Njg4NQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/546885?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nicklockwood",
+            "html_url": "https://github.com/nicklockwood",
+            "followers_url": "https://api.github.com/users/nicklockwood/followers",
+            "following_url": "https://api.github.com/users/nicklockwood/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nicklockwood/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nicklockwood/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nicklockwood/subscriptions",
+            "organizations_url": "https://api.github.com/users/nicklockwood/orgs",
+            "repos_url": "https://api.github.com/users/nicklockwood/repos",
+            "events_url": "https://api.github.com/users/nicklockwood/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nicklockwood/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This  shouldn't be compiled out otherwise code that sets it to NO won't compile on earlier iOS versions. It's fine that it does nothing if not supported - that's why the name includes \"IfAvailable\".",
+        "created_at": "2017-06-06T12:59:12Z",
+        "updated_at": "2017-06-06T15:48:17Z",
+        "html_url": "https://github.com/nicklockwood/iRate/pull/294#discussion_r120350936",
+        "pull_request_url": "https://api.github.com/repos/nicklockwood/iRate/pulls/294",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/120350936"
+            },
+            "html": {
+                "href": "https://github.com/nicklockwood/iRate/pull/294#discussion_r120350936"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/294"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/120400486",
+        "pull_request_review_id": 42360176,
+        "id": 120400486,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMDQwMDQ4Ng==",
+        "diff_hunk": "@@ -139,7 +140,10 @@ typedef NS_ENUM(NSUInteger, iRateErrorCode)\n @property (nonatomic, copy) NSString *rateButtonLabel;\n \n //debugging and prompt overrides\n+#if STOREKIT_REVIEW_AVAILABLE",
+        "path": "iRate/iRate.h",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "52180977f186b5225034fb458cdf5607d803bce3",
+        "original_commit_id": "758716e34063513887bafec49e3f5dd44a581ffe",
+        "user": {
+            "login": "selim1377",
+            "id": 4679369,
+            "node_id": "MDQ6VXNlcjQ2NzkzNjk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/4679369?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/selim1377",
+            "html_url": "https://github.com/selim1377",
+            "followers_url": "https://api.github.com/users/selim1377/followers",
+            "following_url": "https://api.github.com/users/selim1377/following{/other_user}",
+            "gists_url": "https://api.github.com/users/selim1377/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/selim1377/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/selim1377/subscriptions",
+            "organizations_url": "https://api.github.com/users/selim1377/orgs",
+            "repos_url": "https://api.github.com/users/selim1377/repos",
+            "events_url": "https://api.github.com/users/selim1377/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/selim1377/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks for that point. I updated the header file and keep the flag inside implementation",
+        "created_at": "2017-06-06T15:50:05Z",
+        "updated_at": "2017-06-06T15:50:05Z",
+        "html_url": "https://github.com/nicklockwood/iRate/pull/294#discussion_r120400486",
+        "pull_request_url": "https://api.github.com/repos/nicklockwood/iRate/pulls/294",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/comments/120400486"
+            },
+            "html": {
+                "href": "https://github.com/nicklockwood/iRate/pull/294#discussion_r120400486"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nicklockwood/iRate/pulls/294"
+            }
+        },
+        "in_reply_to_id": 120350936
+    }
+]

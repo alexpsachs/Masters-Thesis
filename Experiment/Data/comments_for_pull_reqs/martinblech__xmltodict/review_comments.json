@@ -1,0 +1,984 @@
+[
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/3020740",
+        "pull_request_review_id": null,
+        "id": 3020740,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwMjA3NDA=",
+        "diff_hunk": "@@ -75,6 +75,23 @@ def test_nested_semi_structured(self):\n                          {'a': {'#text': 'abcdef', 'b': {\n                              '#text': '123456', 'c': None}}})\n \n+    def test_skip_whitespace(self):\n+        xml = \"\"\"\n+        <root>\n+\n+\n+          <emptya>           </emptya>\n+          <emptyb attr=\"attrvalue\">\n+\n+\n+          </emptyb>\n+          <value>hello</value>\n+        </root>\n+        \"\"\"\n+        self.assertEqual(\n+            xmltodict.parse(xml),\n+            {'root': {'emptyb': {'@attr': 'attrvalue'}, 'value': 'hello'}})",
+        "path": "tests/test_xmltodict.py",
+        "position": null,
+        "original_position": 19,
+        "commit_id": "872b005551bc2059ab236fae2aff4f8e6ae030b6",
+        "original_commit_id": "0aeb9e34ccd74a75d00df773f09c1717385cca9d",
+        "user": {
+            "login": "martinblech",
+            "id": 78768,
+            "node_id": "MDQ6VXNlcjc4NzY4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/78768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martinblech",
+            "html_url": "https://github.com/martinblech",
+            "followers_url": "https://api.github.com/users/martinblech/followers",
+            "following_url": "https://api.github.com/users/martinblech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martinblech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martinblech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martinblech/subscriptions",
+            "organizations_url": "https://api.github.com/users/martinblech/orgs",
+            "repos_url": "https://api.github.com/users/martinblech/repos",
+            "events_url": "https://api.github.com/users/martinblech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martinblech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The expected value dict should also have a `'emptya': None`.\n",
+        "created_at": "2013-02-14T21:39:44Z",
+        "updated_at": "2013-02-14T21:53:12Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/16#discussion_r3020740",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/16",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/3020740"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/16#discussion_r3020740"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/16"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/3020745",
+        "pull_request_review_id": null,
+        "id": 3020745,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwMjA3NDU=",
+        "diff_hunk": "@@ -80,6 +80,8 @@ def endElement(self, name):\n                 raise ParsingInterrupted()\n         if len(self.stack):\n             item, data = self.item, self.data\n+            if data is not None:\n+                data = data.strip()",
+        "path": "xmltodict.py",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "872b005551bc2059ab236fae2aff4f8e6ae030b6",
+        "original_commit_id": "0aeb9e34ccd74a75d00df773f09c1717385cca9d",
+        "user": {
+            "login": "martinblech",
+            "id": 78768,
+            "node_id": "MDQ6VXNlcjc4NzY4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/78768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martinblech",
+            "html_url": "https://github.com/martinblech",
+            "followers_url": "https://api.github.com/users/martinblech/followers",
+            "following_url": "https://api.github.com/users/martinblech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martinblech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martinblech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martinblech/subscriptions",
+            "organizations_url": "https://api.github.com/users/martinblech/orgs",
+            "repos_url": "https://api.github.com/users/martinblech/repos",
+            "events_url": "https://api.github.com/users/martinblech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martinblech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This should actually be `data = data.strip() or None`\n",
+        "created_at": "2013-02-14T21:40:13Z",
+        "updated_at": "2013-02-14T21:53:12Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/16#discussion_r3020745",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/16",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/3020745"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/16#discussion_r3020745"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/16"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/3020989",
+        "pull_request_review_id": null,
+        "id": 3020989,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwMjA5ODk=",
+        "diff_hunk": "@@ -80,6 +80,8 @@ def endElement(self, name):\n                 raise ParsingInterrupted()\n         if len(self.stack):\n             item, data = self.item, self.data\n+            if data is not None:\n+                data = data.strip()",
+        "path": "xmltodict.py",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "872b005551bc2059ab236fae2aff4f8e6ae030b6",
+        "original_commit_id": "0aeb9e34ccd74a75d00df773f09c1717385cca9d",
+        "user": {
+            "login": "slestak",
+            "id": 79189,
+            "node_id": "MDQ6VXNlcjc5MTg5",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/79189?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/slestak",
+            "html_url": "https://github.com/slestak",
+            "followers_url": "https://api.github.com/users/slestak/followers",
+            "following_url": "https://api.github.com/users/slestak/following{/other_user}",
+            "gists_url": "https://api.github.com/users/slestak/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/slestak/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/slestak/subscriptions",
+            "organizations_url": "https://api.github.com/users/slestak/orgs",
+            "repos_url": "https://api.github.com/users/slestak/repos",
+            "events_url": "https://api.github.com/users/slestak/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/slestak/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "There we go.  The test passes now.  I am missing the point why we need data\n= data.strip or None(), since we already determined that data was not equal\nto None.\n\nOn Thu, Feb 14, 2013 at 4:40 PM, Mart\u00edn Blech notifications@github.comwrote:\n\n> In xmltodict.py:\n> \n> > @@ -80,6 +80,8 @@ def endElement(self, name):\n> >                  raise ParsingInterrupted()\n> >          if len(self.stack):\n> >              item, data = self.item, self.data\n> > -            if data is not None:\n> > -                data = data.strip()\n> \n> This should actually be data = data.strip() or None\n> \n> \u2014\n> Reply to this email directly or view it on GitHubhttps://github.com/martinblech/xmltodict/pull/16/files#r3020745.\n",
+        "created_at": "2013-02-14T21:54:24Z",
+        "updated_at": "2013-02-14T21:54:24Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/16#discussion_r3020989",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/16",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/3020989"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/16#discussion_r3020989"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/16"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/3021370",
+        "pull_request_review_id": null,
+        "id": 3021370,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwMjEzNzA=",
+        "diff_hunk": "@@ -80,6 +80,8 @@ def endElement(self, name):\n                 raise ParsingInterrupted()\n         if len(self.stack):\n             item, data = self.item, self.data\n+            if data is not None:\n+                data = data.strip()",
+        "path": "xmltodict.py",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "872b005551bc2059ab236fae2aff4f8e6ae030b6",
+        "original_commit_id": "0aeb9e34ccd74a75d00df773f09c1717385cca9d",
+        "user": {
+            "login": "martinblech",
+            "id": 78768,
+            "node_id": "MDQ6VXNlcjc4NzY4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/78768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martinblech",
+            "html_url": "https://github.com/martinblech",
+            "followers_url": "https://api.github.com/users/martinblech/followers",
+            "following_url": "https://api.github.com/users/martinblech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martinblech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martinblech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martinblech/subscriptions",
+            "organizations_url": "https://api.github.com/users/martinblech/orgs",
+            "repos_url": "https://api.github.com/users/martinblech/repos",
+            "events_url": "https://api.github.com/users/martinblech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martinblech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The `or None` part makes `data == None` in case `data.strip()` yields an empty string.\n",
+        "created_at": "2013-02-14T22:15:45Z",
+        "updated_at": "2013-02-14T22:15:45Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/16#discussion_r3021370",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/16",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/3021370"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/16#discussion_r3021370"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/16"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/4092635",
+        "pull_request_review_id": null,
+        "id": 4092635,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwOTI2MzU=",
+        "diff_hunk": "@@ -118,6 +120,21 @@ def push_data(self, item, key, data):\n             else:\n                 item[key] = [value, data]\n         except KeyError:\n+            if self.convert_known_types == True:\n+                if isinstance(data, dict):\n+                    try:\n+                        if data['@type'] == 'boolean':",
+        "path": "xmltodict.py",
+        "position": 30,
+        "original_position": 30,
+        "commit_id": "f263f29ec63e46f784f2bef9fa1d336fa58ade65",
+        "original_commit_id": "f263f29ec63e46f784f2bef9fa1d336fa58ade65",
+        "user": {
+            "login": "martinblech",
+            "id": 78768,
+            "node_id": "MDQ6VXNlcjc4NzY4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/78768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martinblech",
+            "html_url": "https://github.com/martinblech",
+            "followers_url": "https://api.github.com/users/martinblech/followers",
+            "following_url": "https://api.github.com/users/martinblech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martinblech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martinblech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martinblech/subscriptions",
+            "organizations_url": "https://api.github.com/users/martinblech/orgs",
+            "repos_url": "https://api.github.com/users/martinblech/repos",
+            "events_url": "https://api.github.com/users/martinblech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martinblech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think this is too use-case specific, not general enough. We can't assume that every node will have a `type` attribute, or that the only valid values will be `integer` and `boolean`.\n",
+        "created_at": "2013-05-06T13:33:56Z",
+        "updated_at": "2013-05-06T13:33:56Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/21#discussion_r4092635",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/21",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/4092635"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/21#discussion_r4092635"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/4092979",
+        "pull_request_review_id": null,
+        "id": 4092979,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwOTI5Nzk=",
+        "diff_hunk": "@@ -38,11 +38,12 @@ def __init__(self,\n                  xml_attribs=True,\n                  attr_prefix='@',\n                  cdata_key='#text',\n-                 force_cdata=False,\n+                 force_cdata=True,",
+        "path": "xmltodict.py",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "f263f29ec63e46f784f2bef9fa1d336fa58ade65",
+        "original_commit_id": "f263f29ec63e46f784f2bef9fa1d336fa58ade65",
+        "user": {
+            "login": "martinblech",
+            "id": 78768,
+            "node_id": "MDQ6VXNlcjc4NzY4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/78768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martinblech",
+            "html_url": "https://github.com/martinblech",
+            "followers_url": "https://api.github.com/users/martinblech/followers",
+            "following_url": "https://api.github.com/users/martinblech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martinblech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martinblech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martinblech/subscriptions",
+            "organizations_url": "https://api.github.com/users/martinblech/orgs",
+            "repos_url": "https://api.github.com/users/martinblech/repos",
+            "events_url": "https://api.github.com/users/martinblech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martinblech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think `False` is a better default in a more general scenario.\n",
+        "created_at": "2013-05-06T13:55:22Z",
+        "updated_at": "2013-05-06T13:55:22Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/21#discussion_r4092979",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/21",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/4092979"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/21#discussion_r4092979"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/4999963",
+        "pull_request_review_id": null,
+        "id": 4999963,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5OTk5NjM=",
+        "diff_hunk": "@@ -121,6 +121,36 @@ def push_data(self, item, key, data):\n             item[key] = data\n         return item\n \n+class _dictContentWriter(XMLGenerator):\n+    def __init__(self, out=None, encoding=\"iso-8859-1\"):\n+        self.stack = 0\n+        self.lastWrittenName = \"\"\n+        self.contentWritten = True\n+        XMLGenerator.__init__(self, out=None, encoding=\"iso-8859-1\")",
+        "path": "xmltodict.py",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "7ed6daa53f5e0a5fe2cc645d0482dfb0ebe25a34",
+        "original_commit_id": "7ed6daa53f5e0a5fe2cc645d0482dfb0ebe25a34",
+        "user": {
+            "login": "mattdodge",
+            "id": 797259,
+            "node_id": "MDQ6VXNlcjc5NzI1OQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/797259?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mattdodge",
+            "html_url": "https://github.com/mattdodge",
+            "followers_url": "https://api.github.com/users/mattdodge/followers",
+            "following_url": "https://api.github.com/users/mattdodge/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mattdodge/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mattdodge/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mattdodge/subscriptions",
+            "organizations_url": "https://api.github.com/users/mattdodge/orgs",
+            "repos_url": "https://api.github.com/users/mattdodge/repos",
+            "events_url": "https://api.github.com/users/mattdodge/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mattdodge/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This pull request is useful but unless you are printing to the console this line needs to get changed. Pass the parameters from the parent constructor rather than resetting them to None and iso-8859-1. In other words...\n\n```\nXMLGenerator.__init__(self, out=out, encoding=encoding)\n```\n",
+        "created_at": "2013-07-03T00:39:47Z",
+        "updated_at": "2013-07-03T00:39:58Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/24#discussion_r4999963",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/24",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/4999963"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/24#discussion_r4999963"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/28418076",
+        "pull_request_review_id": null,
+        "id": 28418076,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NDE4MDc2",
+        "diff_hunk": "@@ -221,3 +224,33 @@ def test_namespace_ignore(self):\n             },\n         }\n         self.assertEqual(parse(xml), d)\n+\n+\n+class StreamingGeneratorTests(unittest.TestCase):\n+    def test_generator(self):\n+        active_threads = threading.active_count()\n+        data = '<a x=\"y\"><b>1</b><b>2</b><b>3</b></a>'\n+        result = [item for path, item in parse(data, item_depth=2)]\n+        self.assertEqual(result, ['1', '2', '3'])\n+        self.assertEqual(threading.active_count(), active_threads)\n+\n+    def test_empty_generator(self):\n+        active_threads = threading.active_count()\n+        data = '<a x=\"y\"></a>'\n+        result = [item for path, item in parse(data, item_depth=2)]\n+        self.assertEqual(result, [])\n+        self.assertEqual(threading.active_count(), active_threads)\n+\n+    def test_exception_handling(self):\n+        active_threads = threading.active_count()\n+        g = parse('', item_depth=2)\n+        self.assertRaises(xml.parsers.expat.ExpatError, list, g)\n+        self.assertEqual(threading.active_count(), active_threads)\n+\n+    def test_incomplete_iteration(self):\n+        active_threads = threading.active_count()\n+        data = '<a x=\"y\"><b>1</b><b>2</b><b>3</b></a>'\n+        next(parse(data, item_depth=2))\n+        # TODO: unsolved issue, when parsing is not finished, but generator is\n+        # no logner used, a daemonic thread is left alive.\n+        self.assertEqual(threading.active_count(), active_threads + 1)",
+        "path": "tests/test_xmltodict.py",
+        "position": 40,
+        "original_position": 40,
+        "commit_id": "40f7d4a9ce15d6e17609795c6d01ce3275739133",
+        "original_commit_id": "40f7d4a9ce15d6e17609795c6d01ce3275739133",
+        "user": {
+            "login": "martinblech",
+            "id": 78768,
+            "node_id": "MDQ6VXNlcjc4NzY4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/78768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martinblech",
+            "html_url": "https://github.com/martinblech",
+            "followers_url": "https://api.github.com/users/martinblech/followers",
+            "following_url": "https://api.github.com/users/martinblech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martinblech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martinblech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martinblech/subscriptions",
+            "organizations_url": "https://api.github.com/users/martinblech/orgs",
+            "repos_url": "https://api.github.com/users/martinblech/repos",
+            "events_url": "https://api.github.com/users/martinblech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martinblech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Everything looks good to me except for this unsolved issue. We should fix this before considering it for a stable release.\n",
+        "created_at": "2015-04-15T13:22:05Z",
+        "updated_at": "2015-04-15T13:22:05Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/89#discussion_r28418076",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/89",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/28418076"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/89#discussion_r28418076"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/89"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/28419026",
+        "pull_request_review_id": null,
+        "id": 28419026,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NDE5MDI2",
+        "diff_hunk": "@@ -221,3 +224,33 @@ def test_namespace_ignore(self):\n             },\n         }\n         self.assertEqual(parse(xml), d)\n+\n+\n+class StreamingGeneratorTests(unittest.TestCase):\n+    def test_generator(self):\n+        active_threads = threading.active_count()\n+        data = '<a x=\"y\"><b>1</b><b>2</b><b>3</b></a>'\n+        result = [item for path, item in parse(data, item_depth=2)]\n+        self.assertEqual(result, ['1', '2', '3'])\n+        self.assertEqual(threading.active_count(), active_threads)\n+\n+    def test_empty_generator(self):\n+        active_threads = threading.active_count()\n+        data = '<a x=\"y\"></a>'\n+        result = [item for path, item in parse(data, item_depth=2)]\n+        self.assertEqual(result, [])\n+        self.assertEqual(threading.active_count(), active_threads)\n+\n+    def test_exception_handling(self):\n+        active_threads = threading.active_count()\n+        g = parse('', item_depth=2)\n+        self.assertRaises(xml.parsers.expat.ExpatError, list, g)\n+        self.assertEqual(threading.active_count(), active_threads)\n+\n+    def test_incomplete_iteration(self):\n+        active_threads = threading.active_count()\n+        data = '<a x=\"y\"><b>1</b><b>2</b><b>3</b></a>'\n+        next(parse(data, item_depth=2))\n+        # TODO: unsolved issue, when parsing is not finished, but generator is\n+        # no logner used, a daemonic thread is left alive.\n+        self.assertEqual(threading.active_count(), active_threads + 1)",
+        "path": "tests/test_xmltodict.py",
+        "position": 40,
+        "original_position": 40,
+        "commit_id": "40f7d4a9ce15d6e17609795c6d01ce3275739133",
+        "original_commit_id": "40f7d4a9ce15d6e17609795c6d01ce3275739133",
+        "user": {
+            "login": "sirex",
+            "id": 297583,
+            "node_id": "MDQ6VXNlcjI5NzU4Mw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/297583?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sirex",
+            "html_url": "https://github.com/sirex",
+            "followers_url": "https://api.github.com/users/sirex/followers",
+            "following_url": "https://api.github.com/users/sirex/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sirex/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sirex/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sirex/subscriptions",
+            "organizations_url": "https://api.github.com/users/sirex/orgs",
+            "repos_url": "https://api.github.com/users/sirex/repos",
+            "events_url": "https://api.github.com/users/sirex/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sirex/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@martinblech well this is very specific issue and only appears in cases when someone leaves many unfinished generators. I'm not sure what will happen if this incomplete generator gets garbage collected, maybe thread will also be removed?\n\nI would suggest to create new ticket for this and leave it open for now. Then if someone really falls into this issue, then we could look in to it. Maybe this is not an issue at all, if it turns out, that threads are also garbage collected.\n\nBy the way, @bzamecnik [said](https://github.com/martinblech/xmltodict/issues/88#issuecomment-92136002) that he is working on a solution without threads. Maybe he succeeded with that, @bzamecnik?\n",
+        "created_at": "2015-04-15T13:34:59Z",
+        "updated_at": "2015-04-15T13:34:59Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/89#discussion_r28419026",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/89",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/28419026"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/89#discussion_r28419026"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/89"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/28419269",
+        "pull_request_review_id": null,
+        "id": 28419269,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NDE5MjY5",
+        "diff_hunk": "@@ -221,3 +224,33 @@ def test_namespace_ignore(self):\n             },\n         }\n         self.assertEqual(parse(xml), d)\n+\n+\n+class StreamingGeneratorTests(unittest.TestCase):\n+    def test_generator(self):\n+        active_threads = threading.active_count()\n+        data = '<a x=\"y\"><b>1</b><b>2</b><b>3</b></a>'\n+        result = [item for path, item in parse(data, item_depth=2)]\n+        self.assertEqual(result, ['1', '2', '3'])\n+        self.assertEqual(threading.active_count(), active_threads)\n+\n+    def test_empty_generator(self):\n+        active_threads = threading.active_count()\n+        data = '<a x=\"y\"></a>'\n+        result = [item for path, item in parse(data, item_depth=2)]\n+        self.assertEqual(result, [])\n+        self.assertEqual(threading.active_count(), active_threads)\n+\n+    def test_exception_handling(self):\n+        active_threads = threading.active_count()\n+        g = parse('', item_depth=2)\n+        self.assertRaises(xml.parsers.expat.ExpatError, list, g)\n+        self.assertEqual(threading.active_count(), active_threads)\n+\n+    def test_incomplete_iteration(self):\n+        active_threads = threading.active_count()\n+        data = '<a x=\"y\"><b>1</b><b>2</b><b>3</b></a>'\n+        next(parse(data, item_depth=2))\n+        # TODO: unsolved issue, when parsing is not finished, but generator is\n+        # no logner used, a daemonic thread is left alive.\n+        self.assertEqual(threading.active_count(), active_threads + 1)",
+        "path": "tests/test_xmltodict.py",
+        "position": 40,
+        "original_position": 40,
+        "commit_id": "40f7d4a9ce15d6e17609795c6d01ce3275739133",
+        "original_commit_id": "40f7d4a9ce15d6e17609795c6d01ce3275739133",
+        "user": {
+            "login": "martinblech",
+            "id": 78768,
+            "node_id": "MDQ6VXNlcjc4NzY4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/78768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martinblech",
+            "html_url": "https://github.com/martinblech",
+            "followers_url": "https://api.github.com/users/martinblech/followers",
+            "following_url": "https://api.github.com/users/martinblech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martinblech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martinblech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martinblech/subscriptions",
+            "organizations_url": "https://api.github.com/users/martinblech/orgs",
+            "repos_url": "https://api.github.com/users/martinblech/repos",
+            "events_url": "https://api.github.com/users/martinblech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martinblech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@sirex I think threads don't get garbage collected, they just wait forever on `queue.join()`. I'm intrigued too about the solution without threads.\n",
+        "created_at": "2015-04-15T13:38:01Z",
+        "updated_at": "2015-04-15T13:38:01Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/89#discussion_r28419269",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/89",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/28419269"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/89#discussion_r28419269"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/89"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/28418827",
+        "pull_request_review_id": null,
+        "id": 28418827,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NDE4ODI3",
+        "diff_hunk": "@@ -2,6 +2,8 @@\n envlist = py27,py34,pypy,py26\n [testenv]\n deps =\n-  nose\n   coverage\n+  nose\n+  ordereddict\n+  unittest2",
+        "path": "tox.ini",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "ff2d9e8301541e77e8d42186a427ba4039fc15c4",
+        "original_commit_id": "699bacc9fa1189042970a8b46b7be6f84385bdf7",
+        "user": {
+            "login": "martinblech",
+            "id": 78768,
+            "node_id": "MDQ6VXNlcjc4NzY4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/78768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martinblech",
+            "html_url": "https://github.com/martinblech",
+            "followers_url": "https://api.github.com/users/martinblech/followers",
+            "following_url": "https://api.github.com/users/martinblech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martinblech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martinblech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martinblech/subscriptions",
+            "organizations_url": "https://api.github.com/users/martinblech/orgs",
+            "repos_url": "https://api.github.com/users/martinblech/repos",
+            "events_url": "https://api.github.com/users/martinblech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martinblech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@centralniak Why the new `unittest2` dependency? Are we using it for something?\n",
+        "created_at": "2015-04-15T13:31:58Z",
+        "updated_at": "2015-04-15T14:58:05Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/96#discussion_r28418827",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/96",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/28418827"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/96#discussion_r28418827"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/96"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/28427069",
+        "pull_request_review_id": null,
+        "id": 28427069,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NDI3MDY5",
+        "diff_hunk": "@@ -2,6 +2,8 @@\n envlist = py27,py34,pypy,py26\n [testenv]\n deps =\n-  nose\n   coverage\n+  nose\n+  ordereddict\n+  unittest2",
+        "path": "tox.ini",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "ff2d9e8301541e77e8d42186a427ba4039fc15c4",
+        "original_commit_id": "699bacc9fa1189042970a8b46b7be6f84385bdf7",
+        "user": {
+            "login": "centralniak",
+            "id": 365324,
+            "node_id": "MDQ6VXNlcjM2NTMyNA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/365324?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/centralniak",
+            "html_url": "https://github.com/centralniak",
+            "followers_url": "https://api.github.com/users/centralniak/followers",
+            "following_url": "https://api.github.com/users/centralniak/following{/other_user}",
+            "gists_url": "https://api.github.com/users/centralniak/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/centralniak/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/centralniak/subscriptions",
+            "organizations_url": "https://api.github.com/users/centralniak/orgs",
+            "repos_url": "https://api.github.com/users/centralniak/repos",
+            "events_url": "https://api.github.com/users/centralniak/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/centralniak/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Well spotted. It's not necessary. I'm amending my PR now. \n",
+        "created_at": "2015-04-15T14:57:56Z",
+        "updated_at": "2015-04-15T14:58:05Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/96#discussion_r28427069",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/96",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/28427069"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/96#discussion_r28427069"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/96"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/69642778",
+        "pull_request_review_id": null,
+        "id": 69642778,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NjQyNzc4",
+        "diff_hunk": "@@ -392,7 +394,10 @@ def unparse(input_dict, output=None, encoding='utf-8', full_document=True,\n     if output is None:\n         output = StringIO()\n         must_return = True\n-    content_handler = XMLGenerator(output, encoding)\n+    if pyver[0] > 3 or (pyver[0] == 3 and pyver[1] >= 2):",
+        "path": "xmltodict.py",
+        "position": null,
+        "original_position": 21,
+        "commit_id": "745c41342abdd55d224107fe776e805a0ebf1ead",
+        "original_commit_id": "14723d66a98900c9b9a5b5afcfb24802e5d516f7",
+        "user": {
+            "login": "martinblech",
+            "id": 78768,
+            "node_id": "MDQ6VXNlcjc4NzY4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/78768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martinblech",
+            "html_url": "https://github.com/martinblech",
+            "followers_url": "https://api.github.com/users/martinblech/followers",
+            "following_url": "https://api.github.com/users/martinblech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martinblech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martinblech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martinblech/subscriptions",
+            "organizations_url": "https://api.github.com/users/martinblech/orgs",
+            "repos_url": "https://api.github.com/users/martinblech/repos",
+            "events_url": "https://api.github.com/users/martinblech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martinblech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Don't compare to the version number, just use the new option and let it fail. This way, if someone is trying to use this option in an unsupported version of Python, it will fail on them explicitly instead of silently ignoring it.\n\n``` python\nif short_empty_elements:\n    content_handler = XMLGenerator(output, encoding, True)\nelse:\n    content_handler = XMLGenerator(output, encoding)\n```\n",
+        "created_at": "2016-07-05T21:37:26Z",
+        "updated_at": "2016-07-06T15:51:31Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/132#discussion_r69642778",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/132",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/69642778"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/132#discussion_r69642778"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/132"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/69757915",
+        "pull_request_review_id": null,
+        "id": 69757915,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NzU3OTE1",
+        "diff_hunk": "@@ -392,7 +394,10 @@ def unparse(input_dict, output=None, encoding='utf-8', full_document=True,\n     if output is None:\n         output = StringIO()\n         must_return = True\n-    content_handler = XMLGenerator(output, encoding)\n+    if pyver[0] > 3 or (pyver[0] == 3 and pyver[1] >= 2):",
+        "path": "xmltodict.py",
+        "position": null,
+        "original_position": 21,
+        "commit_id": "745c41342abdd55d224107fe776e805a0ebf1ead",
+        "original_commit_id": "14723d66a98900c9b9a5b5afcfb24802e5d516f7",
+        "user": {
+            "login": "zhanglei002",
+            "id": 4970552,
+            "node_id": "MDQ6VXNlcjQ5NzA1NTI=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/4970552?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zhanglei002",
+            "html_url": "https://github.com/zhanglei002",
+            "followers_url": "https://api.github.com/users/zhanglei002/followers",
+            "following_url": "https://api.github.com/users/zhanglei002/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zhanglei002/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zhanglei002/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zhanglei002/subscriptions",
+            "organizations_url": "https://api.github.com/users/zhanglei002/orgs",
+            "repos_url": "https://api.github.com/users/zhanglei002/repos",
+            "events_url": "https://api.github.com/users/zhanglei002/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zhanglei002/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks, this looks better!\n",
+        "created_at": "2016-07-06T15:52:31Z",
+        "updated_at": "2016-07-06T15:52:31Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/132#discussion_r69757915",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/132",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/69757915"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/132#discussion_r69757915"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/132"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/85047936",
+        "pull_request_review_id": 5786113,
+        "id": 85047936,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg1MDQ3OTM2",
+        "diff_hunk": "@@ -295,3 +297,76 @@ def force_list(path, key, value):\n             },\n         }\n         self.assertEqual(parse(xml, force_list=force_list, dict_constructor=dict), expectedResult)\n+\n+    def test_disable_entities_true_ignores_xmlbomb(self):\n+        xml = \"\"\"\n+        <!DOCTYPE xmlbomb [\n+            <!ENTITY a \"1234567890\" >\n+            <!ENTITY b \"&a;&a;&a;&a;&a;&a;&a;&a;\">\n+            <!ENTITY c \"&b;&b;&b;&b;&b;&b;&b;&b;\">\n+        ]>\n+        <bomb>&c;</bomb>\n+        \"\"\"\n+        expectedResult = {'bomb': None}\n+        try:\n+            parse_attempt = parse(xml, disable_entities=True)\n+        except expat.ExpatError:\n+            self.assertTrue(True)\n+        else:\n+            self.assertEqual(parse_attempt, expectedResult)\n+\n+    def test_disable_entities_false_returns_xmlbomb(self):\n+        xml = \"\"\"\n+        <!DOCTYPE xmlbomb [\n+            <!ENTITY a \"1234567890\" >\n+            <!ENTITY b \"&a;&a;&a;&a;&a;&a;&a;&a;\">\n+            <!ENTITY c \"&b;&b;&b;&b;&b;&b;&b;&b;\">\n+        ]>\n+        <bomb>&c;</bomb>\n+        \"\"\"\n+        bomb = \"1234567890\" * 64\n+        expectedResult = {'bomb': bomb}\n+        self.assertEqual(parse(xml, disable_entities=False), expectedResult)\n+\n+    def test_disable_entities_true_ignores_external_dtd(self):\n+        xml = \"\"\"\n+        <!DOCTYPE external [\n+            <!ENTITY ee SYSTEM \"http://www.python.org/\">\n+        ]>\n+        <root>&ee;</root>\n+        \"\"\"\n+        expectedResult = {'root': None}\n+        try:\n+            parse_attempt = parse(xml, disable_entities=True)\n+        except expat.ExpatError:\n+            self.assertTrue(True)\n+        else:\n+            self.assertEqual(parse_attempt, expectedResult)\n+\n+    def test_disable_entities_true_attempts_external_dtd(self):\n+        xml = \"\"\"\n+        <!DOCTYPE external [\n+            <!ENTITY ee SYSTEM \"http://www.python.org/\">\n+        ]>\n+        <root>&ee;</root>\n+        \"\"\"\n+        def raising_external_ref_handler(*args, **kwargs):\n+            parser = ParserCreate(*args, **kwargs)\n+            parser.ExternalEntityRefHandler = lambda *x: 0\n+            try:\n+                feature = \"http://apache.org/xml/features/disallow-doctype-decl\"\n+                parser._reader.setFeature(feature, True)\n+            except AttributeError:\n+                pass\n+            return parser\n+        expat.ParserCreate = raising_external_ref_handler\n+        # Using this try/catch because a TypeError is thrown before \n+        # the ExpatError, and Python 2.6 is confused by that.\n+        try:\n+            parse(xml, disable_entities=False, expat=expat)\n+        except expat.ExpatError:\n+            self.assertTrue(True)\n+        else:\n+            self.assertTrue(False)",
+        "path": "tests/test_xmltodict.py",
+        "position": 83,
+        "original_position": 83,
+        "commit_id": "2935115bfa419b7f3bde4fd5effce7c6482ad1c4",
+        "original_commit_id": "2935115bfa419b7f3bde4fd5effce7c6482ad1c4",
+        "user": {
+            "login": "martinblech",
+            "id": 78768,
+            "node_id": "MDQ6VXNlcjc4NzY4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/78768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martinblech",
+            "html_url": "https://github.com/martinblech",
+            "followers_url": "https://api.github.com/users/martinblech/followers",
+            "following_url": "https://api.github.com/users/martinblech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martinblech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martinblech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martinblech/subscriptions",
+            "organizations_url": "https://api.github.com/users/martinblech/orgs",
+            "repos_url": "https://api.github.com/users/martinblech/repos",
+            "events_url": "https://api.github.com/users/martinblech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martinblech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can you replace this whole try/except/else block with this instead?\n\n``` python\nwith self.assertRaises(expat.ExpatError):\n    parse(xml, disable_entities=False, expat=expat)\n```\n",
+        "created_at": "2016-10-26T04:30:10Z",
+        "updated_at": "2016-10-26T04:31:04Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/134#discussion_r85047936",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/134",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/85047936"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/134#discussion_r85047936"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/134"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/85051036",
+        "pull_request_review_id": 5788947,
+        "id": 85051036,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg1MDUxMDM2",
+        "diff_hunk": "@@ -295,3 +297,76 @@ def force_list(path, key, value):\n             },\n         }\n         self.assertEqual(parse(xml, force_list=force_list, dict_constructor=dict), expectedResult)\n+\n+    def test_disable_entities_true_ignores_xmlbomb(self):\n+        xml = \"\"\"\n+        <!DOCTYPE xmlbomb [\n+            <!ENTITY a \"1234567890\" >\n+            <!ENTITY b \"&a;&a;&a;&a;&a;&a;&a;&a;\">\n+            <!ENTITY c \"&b;&b;&b;&b;&b;&b;&b;&b;\">\n+        ]>\n+        <bomb>&c;</bomb>\n+        \"\"\"\n+        expectedResult = {'bomb': None}\n+        try:\n+            parse_attempt = parse(xml, disable_entities=True)\n+        except expat.ExpatError:\n+            self.assertTrue(True)\n+        else:\n+            self.assertEqual(parse_attempt, expectedResult)\n+\n+    def test_disable_entities_false_returns_xmlbomb(self):\n+        xml = \"\"\"\n+        <!DOCTYPE xmlbomb [\n+            <!ENTITY a \"1234567890\" >\n+            <!ENTITY b \"&a;&a;&a;&a;&a;&a;&a;&a;\">\n+            <!ENTITY c \"&b;&b;&b;&b;&b;&b;&b;&b;\">\n+        ]>\n+        <bomb>&c;</bomb>\n+        \"\"\"\n+        bomb = \"1234567890\" * 64\n+        expectedResult = {'bomb': bomb}\n+        self.assertEqual(parse(xml, disable_entities=False), expectedResult)\n+\n+    def test_disable_entities_true_ignores_external_dtd(self):\n+        xml = \"\"\"\n+        <!DOCTYPE external [\n+            <!ENTITY ee SYSTEM \"http://www.python.org/\">\n+        ]>\n+        <root>&ee;</root>\n+        \"\"\"\n+        expectedResult = {'root': None}\n+        try:\n+            parse_attempt = parse(xml, disable_entities=True)\n+        except expat.ExpatError:\n+            self.assertTrue(True)\n+        else:\n+            self.assertEqual(parse_attempt, expectedResult)\n+\n+    def test_disable_entities_true_attempts_external_dtd(self):\n+        xml = \"\"\"\n+        <!DOCTYPE external [\n+            <!ENTITY ee SYSTEM \"http://www.python.org/\">\n+        ]>\n+        <root>&ee;</root>\n+        \"\"\"\n+        def raising_external_ref_handler(*args, **kwargs):\n+            parser = ParserCreate(*args, **kwargs)\n+            parser.ExternalEntityRefHandler = lambda *x: 0\n+            try:\n+                feature = \"http://apache.org/xml/features/disallow-doctype-decl\"\n+                parser._reader.setFeature(feature, True)\n+            except AttributeError:\n+                pass\n+            return parser\n+        expat.ParserCreate = raising_external_ref_handler\n+        # Using this try/catch because a TypeError is thrown before \n+        # the ExpatError, and Python 2.6 is confused by that.\n+        try:\n+            parse(xml, disable_entities=False, expat=expat)\n+        except expat.ExpatError:\n+            self.assertTrue(True)\n+        else:\n+            self.assertTrue(False)",
+        "path": "tests/test_xmltodict.py",
+        "position": 83,
+        "original_position": 83,
+        "commit_id": "2935115bfa419b7f3bde4fd5effce7c6482ad1c4",
+        "original_commit_id": "2935115bfa419b7f3bde4fd5effce7c6482ad1c4",
+        "user": {
+            "login": "lindsay-stevens",
+            "id": 6345269,
+            "node_id": "MDQ6VXNlcjYzNDUyNjk=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/6345269?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/lindsay-stevens",
+            "html_url": "https://github.com/lindsay-stevens",
+            "followers_url": "https://api.github.com/users/lindsay-stevens/followers",
+            "following_url": "https://api.github.com/users/lindsay-stevens/following{/other_user}",
+            "gists_url": "https://api.github.com/users/lindsay-stevens/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/lindsay-stevens/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/lindsay-stevens/subscriptions",
+            "organizations_url": "https://api.github.com/users/lindsay-stevens/orgs",
+            "repos_url": "https://api.github.com/users/lindsay-stevens/repos",
+            "events_url": "https://api.github.com/users/lindsay-stevens/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/lindsay-stevens/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks for having a look at this :smile:\n\nThe comment in the lines just above it is (not very clearly) trying to say that the reason for this ugly try/except block test is that testing with assertRaises as suggested doesn't work with Python 2.6. \n\nIn this case, a TypeError gets thrown before the ExpatError of interest, and Py2.6's assertRaises gets confused by that (considers the test a failure, I think), whereas other Python versions and implemenations listed in tox don't have this problem.\n\nI think I tried using a tuple of (TypeError, expat.ExpatError) with assertRaises and also nesting two assertRaises context managers, but Py2.6 was having none of it. The code before you worked though.\n\nIf it'd help I could elaborate on the existing comment and add it to the PR?\n",
+        "created_at": "2016-10-26T05:22:22Z",
+        "updated_at": "2016-10-26T05:22:23Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/134#discussion_r85051036",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/134",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/85051036"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/134#discussion_r85051036"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/134"
+            }
+        },
+        "in_reply_to_id": 85047936
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/270197256",
+        "pull_request_review_id": 220271652,
+        "id": 270197256,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3MDE5NzI1Ng==",
+        "diff_hunk": "@@ -70,13 +70,16 @@ def __init__(self,\n         self.force_list = force_list\n \n     def _build_name(self, full_name):\n-        if not self.namespaces:\n+        if self.namespaces is None:",
+        "path": "xmltodict.py",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "c3fae916456b8f5e9bdc5d29e615a356005ba1c5",
+        "original_commit_id": "c3fae916456b8f5e9bdc5d29e615a356005ba1c5",
+        "user": {
+            "login": "nathanalderson",
+            "id": 2286768,
+            "node_id": "MDQ6VXNlcjIyODY3Njg=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/2286768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nathanalderson",
+            "html_url": "https://github.com/nathanalderson",
+            "followers_url": "https://api.github.com/users/nathanalderson/followers",
+            "following_url": "https://api.github.com/users/nathanalderson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nathanalderson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nathanalderson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nathanalderson/subscriptions",
+            "organizations_url": "https://api.github.com/users/nathanalderson/orgs",
+            "repos_url": "https://api.github.com/users/nathanalderson/repos",
+            "events_url": "https://api.github.com/users/nathanalderson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nathanalderson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Although a `defaultdict` essentially has infinite items, until an item is actually inserted (either explicitly or on first access), it has zero length and evaluates to `False`.",
+        "created_at": "2019-03-28T21:00:06Z",
+        "updated_at": "2019-03-28T21:11:01Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/211#discussion_r270197256",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/211",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/270197256"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/211#discussion_r270197256"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/211"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/270200621",
+        "pull_request_review_id": 220271652,
+        "id": 270200621,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3MDIwMDYyMQ==",
+        "diff_hunk": "@@ -70,13 +70,16 @@ def __init__(self,\n         self.force_list = force_list\n \n     def _build_name(self, full_name):\n-        if not self.namespaces:\n+        if self.namespaces is None:\n             return full_name\n         i = full_name.rfind(self.namespace_separator)\n         if i == -1:\n             return full_name\n         namespace, name = full_name[:i], full_name[i+1:]\n-        short_namespace = self.namespaces.get(namespace, namespace)\n+        try:\n+            short_namespace = self.namespaces[namespace]\n+        except KeyError:\n+            short_namespace = namespace",
+        "path": "xmltodict.py",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "c3fae916456b8f5e9bdc5d29e615a356005ba1c5",
+        "original_commit_id": "c3fae916456b8f5e9bdc5d29e615a356005ba1c5",
+        "user": {
+            "login": "nathanalderson",
+            "id": 2286768,
+            "node_id": "MDQ6VXNlcjIyODY3Njg=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/2286768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nathanalderson",
+            "html_url": "https://github.com/nathanalderson",
+            "followers_url": "https://api.github.com/users/nathanalderson/followers",
+            "following_url": "https://api.github.com/users/nathanalderson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nathanalderson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nathanalderson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nathanalderson/subscriptions",
+            "organizations_url": "https://api.github.com/users/nathanalderson/orgs",
+            "repos_url": "https://api.github.com/users/nathanalderson/repos",
+            "events_url": "https://api.github.com/users/nathanalderson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nathanalderson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "From the [documentation](https://docs.python.org/3.7/library/collections.html#collections.defaultdict) on `defaultdict`:\r\n\r\n> Note that `__missing__()` is not called for any operations besides `__getitem__()`. This means that `get()` will, like normal dictionaries, return `None` as a default rather than using `default_factory`.\r\n\r\nWhile a bit more verbose, this change uses `__getitem__()` instead of `get()`, so the `defaultdict` behaves as expected.",
+        "created_at": "2019-03-28T21:10:48Z",
+        "updated_at": "2019-03-28T21:11:01Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/211#discussion_r270200621",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/211",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/270200621"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/211#discussion_r270200621"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/211"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/271508656",
+        "pull_request_review_id": 221919000,
+        "id": 271508656,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3MTUwODY1Ng==",
+        "diff_hunk": "@@ -326,6 +327,10 @@ def parse(xml_input, encoding=None, expat=expat, process_namespaces=False,\n             parser.ExternalEntityRefHandler = lambda *x: 1\n     if hasattr(xml_input, 'read'):\n         parser.ParseFile(xml_input)\n+    elif isinstance(xml_input, GeneratorType):",
+        "path": "xmltodict.py",
+        "position": null,
+        "original_position": 21,
+        "commit_id": "2f97c66337424676f05cacb7f57bca9efc326c76",
+        "original_commit_id": "a61cd518af47080c2acb1c76f428a0c4b8fb2bc6",
+        "user": {
+            "login": "martinblech",
+            "id": 78768,
+            "node_id": "MDQ6VXNlcjc4NzY4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/78768?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/martinblech",
+            "html_url": "https://github.com/martinblech",
+            "followers_url": "https://api.github.com/users/martinblech/followers",
+            "following_url": "https://api.github.com/users/martinblech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/martinblech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/martinblech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/martinblech/subscriptions",
+            "organizations_url": "https://api.github.com/users/martinblech/orgs",
+            "repos_url": "https://api.github.com/users/martinblech/repos",
+            "events_url": "https://api.github.com/users/martinblech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/martinblech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can you use [`inspect.isgenerator()`](https://docs.python.org/3/library/inspect.html#inspect.isgenerator) instead?",
+        "created_at": "2019-04-02T21:46:52Z",
+        "updated_at": "2019-04-02T21:51:44Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/212#discussion_r271508656",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/212",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/271508656"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/212#discussion_r271508656"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/212"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/271511024",
+        "pull_request_review_id": 221921852,
+        "id": 271511024,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3MTUxMTAyNA==",
+        "diff_hunk": "@@ -326,6 +327,10 @@ def parse(xml_input, encoding=None, expat=expat, process_namespaces=False,\n             parser.ExternalEntityRefHandler = lambda *x: 1\n     if hasattr(xml_input, 'read'):\n         parser.ParseFile(xml_input)\n+    elif isinstance(xml_input, GeneratorType):",
+        "path": "xmltodict.py",
+        "position": null,
+        "original_position": 21,
+        "commit_id": "2f97c66337424676f05cacb7f57bca9efc326c76",
+        "original_commit_id": "a61cd518af47080c2acb1c76f428a0c4b8fb2bc6",
+        "user": {
+            "login": "xandey",
+            "id": 2954670,
+            "node_id": "MDQ6VXNlcjI5NTQ2NzA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/2954670?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/xandey",
+            "html_url": "https://github.com/xandey",
+            "followers_url": "https://api.github.com/users/xandey/followers",
+            "following_url": "https://api.github.com/users/xandey/following{/other_user}",
+            "gists_url": "https://api.github.com/users/xandey/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/xandey/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/xandey/subscriptions",
+            "organizations_url": "https://api.github.com/users/xandey/orgs",
+            "repos_url": "https://api.github.com/users/xandey/repos",
+            "events_url": "https://api.github.com/users/xandey/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/xandey/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sure think. I think this is what you meant.",
+        "created_at": "2019-04-02T21:54:52Z",
+        "updated_at": "2019-04-02T21:54:52Z",
+        "html_url": "https://github.com/martinblech/xmltodict/pull/212#discussion_r271511024",
+        "pull_request_url": "https://api.github.com/repos/martinblech/xmltodict/pulls/212",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/comments/271511024"
+            },
+            "html": {
+                "href": "https://github.com/martinblech/xmltodict/pull/212#discussion_r271511024"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/martinblech/xmltodict/pulls/212"
+            }
+        },
+        "in_reply_to_id": 271508656
+    }
+]

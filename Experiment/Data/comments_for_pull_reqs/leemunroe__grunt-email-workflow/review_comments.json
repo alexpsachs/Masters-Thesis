@@ -1,0 +1,934 @@
+[
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/26861500",
+        "pull_request_review_id": null,
+        "id": 26861500,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2ODYxNTAw",
+        "diff_hunk": "@@ -1,12 +1,13 @@\n <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n-<html xmlns=\"http://www.w3.org/1999/xhtml\">\n+<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+        "path": "dist/branded.html",
+        "position": null,
+        "original_position": 3,
+        "commit_id": "c48356b78237675a1a166149d4d7977eb1ade01d",
+        "original_commit_id": "7bccb4fd4956b905dc4516aa2b7f21037cf71b46",
+        "user": {
+            "login": "leemunroe",
+            "id": 15963,
+            "node_id": "MDQ6VXNlcjE1OTYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/15963?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leemunroe",
+            "html_url": "https://github.com/leemunroe",
+            "followers_url": "https://api.github.com/users/leemunroe/followers",
+            "following_url": "https://api.github.com/users/leemunroe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leemunroe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leemunroe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leemunroe/subscriptions",
+            "organizations_url": "https://api.github.com/users/leemunroe/orgs",
+            "repos_url": "https://api.github.com/users/leemunroe/repos",
+            "events_url": "https://api.github.com/users/leemunroe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leemunroe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm not sure why this line changed the way it did. Otherwise looks great. \n\nDo you want to add dist to gitignore in this pr too?\n",
+        "created_at": "2015-03-20T17:58:39Z",
+        "updated_at": "2015-03-20T18:25:18Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/22#discussion_r26861500",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/22",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/26861500"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/22#discussion_r26861500"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/22"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/27783719",
+        "pull_request_review_id": null,
+        "id": 27783719,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NzgzNzE5",
+        "diff_hunk": "@@ -39,7 +45,33 @@ module.exports = function(grunt) {\n           },\n           pages: {\n             src: ['src/emails/*.hbs'],",
+        "path": "Gruntfile.js",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "634f626b74c8ec0ad2cdf7c47da471ef86affdd6",
+        "original_commit_id": "86d468ff45fe634fd844ce11913080889931898b",
+        "user": {
+            "login": "leemunroe",
+            "id": 15963,
+            "node_id": "MDQ6VXNlcjE1OTYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/15963?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leemunroe",
+            "html_url": "https://github.com/leemunroe",
+            "followers_url": "https://api.github.com/users/leemunroe/followers",
+            "following_url": "https://api.github.com/users/leemunroe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leemunroe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leemunroe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leemunroe/subscriptions",
+            "organizations_url": "https://api.github.com/users/leemunroe/orgs",
+            "repos_url": "https://api.github.com/users/leemunroe/repos",
+            "events_url": "https://api.github.com/users/leemunroe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leemunroe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Curious why you didn't use the src variable here?\n",
+        "created_at": "2015-04-06T03:03:32Z",
+        "updated_at": "2015-04-08T22:22:34Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/34#discussion_r27783719",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/34",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/27783719"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/34#discussion_r27783719"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/27069729",
+        "pull_request_review_id": null,
+        "id": 27069729,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3MDY5NzI5",
+        "diff_hunk": "@@ -1,5 +1,11 @@\n module.exports = function(grunt) {\n \n+    // Configuration options for Amazon S3 service\n+    var awsConfig = {",
+        "path": "Gruntfile.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "0d18788b0726bfeff141758b1f6b1dc14bd8e69b",
+        "original_commit_id": "0e9735da5937662e835f731416bb2d9b78810dea",
+        "user": {
+            "login": "leemunroe",
+            "id": 15963,
+            "node_id": "MDQ6VXNlcjE1OTYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/15963?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leemunroe",
+            "html_url": "https://github.com/leemunroe",
+            "followers_url": "https://api.github.com/users/leemunroe/followers",
+            "following_url": "https://api.github.com/users/leemunroe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leemunroe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leemunroe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leemunroe/subscriptions",
+            "organizations_url": "https://api.github.com/users/leemunroe/orgs",
+            "repos_url": "https://api.github.com/users/leemunroe/repos",
+            "events_url": "https://api.github.com/users/leemunroe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leemunroe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What if you move all S3 related code down to the same code block? Would be nice to keep it in one place. Or could these vars be moved to secrets?\n",
+        "created_at": "2015-03-24T20:32:28Z",
+        "updated_at": "2015-04-18T13:22:55Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r27069729",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/27069729"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r27069729"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/27087122",
+        "pull_request_review_id": null,
+        "id": 27087122,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3MDg3MTIy",
+        "diff_hunk": "@@ -1,5 +1,11 @@\n module.exports = function(grunt) {\n \n+    // Configuration options for Amazon S3 service\n+    var awsConfig = {",
+        "path": "Gruntfile.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "0d18788b0726bfeff141758b1f6b1dc14bd8e69b",
+        "original_commit_id": "0e9735da5937662e835f731416bb2d9b78810dea",
+        "user": {
+            "login": "clecompte",
+            "id": 6219370,
+            "node_id": "MDQ6VXNlcjYyMTkzNzA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6219370?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/clecompte",
+            "html_url": "https://github.com/clecompte",
+            "followers_url": "https://api.github.com/users/clecompte/followers",
+            "following_url": "https://api.github.com/users/clecompte/following{/other_user}",
+            "gists_url": "https://api.github.com/users/clecompte/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/clecompte/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/clecompte/subscriptions",
+            "organizations_url": "https://api.github.com/users/clecompte/orgs",
+            "repos_url": "https://api.github.com/users/clecompte/repos",
+            "events_url": "https://api.github.com/users/clecompte/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/clecompte/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@leemunroe I was going to do that at first but decided against it for a reason I now forget. I've moved it to the secrets file. I blame it on late night coding :)\n",
+        "created_at": "2015-03-25T00:41:06Z",
+        "updated_at": "2015-04-18T13:22:55Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r27087122",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/27087122"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r27087122"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28290994",
+        "pull_request_review_id": null,
+        "id": 28290994,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4MjkwOTk0",
+        "diff_hunk": "@@ -2,26 +2,26 @@\n   \"name\": \"email-template\",\n   \"version\": \"0.1.0\",\n   \"repository\": {\n-    \"type\": \"git\",\n-    \"url\": \"https://github.com/leemunroe/grunt-email-design\"\n-  },\n+  \"type\": \"git\",\n+  \"url\": \"https://github.com/leemunroe/grunt-email-design\"\n+},\n   \"devDependencies\": {\n-    \"assemble\": \"0.4.37\",\n-    \"grunt\": \"~0.4.4\",\n-    \"grunt-cdn\": \"^0.6.1\",\n-    \"grunt-cloudfiles\": \"^0.3.0\",\n-    \"grunt-contrib-imagemin\": \"^0.9.3\",\n-    \"grunt-contrib-sass\": \"^0.7.3\",\n-    \"grunt-contrib-watch\": \"^0.6.1\",\n-    \"grunt-litmus\": \"^0.1.8\",\n-    \"grunt-mailgun\": \"0.0.3\",\n-    \"grunt-premailer\": \"^0.2.5\",\n-    \"grunt-s3\": \"^0.2.0-alpha.3\",\n-    \"imagemin-mozjpeg\": \"^0.1.2\",\n-    \"grunt-premailer\": \"0.2.5\",\n-    \"grunt-cloudfiles\": \"^0.3.0\",\n-    \"grunt-cdn\": \"^0.6.1\",\n-    \"grunt-litmus\": \"^0.1.8\",\n-    \"grunt-replace\": \"^0.8.0\"\n-  }\n+  \"assemble\": \"0.4.37\",\n+  \"grunt\": \"~0.4.4\",\n+  \"grunt-cdn\": \"^0.6.1\",\n+  \"grunt-cloudfiles\": \"^0.3.0\",\n+  \"grunt-contrib-imagemin\": \"^0.9.3\",\n+  \"grunt-contrib-sass\": \"^0.7.3\",\n+  \"grunt-contrib-watch\": \"^0.6.1\",\n+  \"grunt-litmus\": \"^0.1.8\",\n+  \"grunt-mailgun\": \"0.0.3\",\n+  \"grunt-premailer\": \"^0.2.5\",\n+  \"grunt-s3\": \"^0.2.0-alpha.3\",",
+        "path": "package.json",
+        "position": null,
+        "original_position": 39,
+        "commit_id": "0d18788b0726bfeff141758b1f6b1dc14bd8e69b",
+        "original_commit_id": "0a7dad578710c15e706d410c50515f454162bc2c",
+        "user": {
+            "login": "leemunroe",
+            "id": 15963,
+            "node_id": "MDQ6VXNlcjE1OTYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/15963?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leemunroe",
+            "html_url": "https://github.com/leemunroe",
+            "followers_url": "https://api.github.com/users/leemunroe/followers",
+            "following_url": "https://api.github.com/users/leemunroe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leemunroe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leemunroe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leemunroe/subscriptions",
+            "organizations_url": "https://api.github.com/users/leemunroe/orgs",
+            "repos_url": "https://api.github.com/users/leemunroe/repos",
+            "events_url": "https://api.github.com/users/leemunroe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leemunroe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Should this be replaced with grunt-aws-s3?\n",
+        "created_at": "2015-04-14T00:03:03Z",
+        "updated_at": "2015-04-18T13:22:55Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28290994",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28290994"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28290994"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28291427",
+        "pull_request_review_id": null,
+        "id": 28291427,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4MjkxNDI3",
+        "diff_hunk": "@@ -175,16 +176,26 @@ module.exports = function(grunt) {\n           }\n         },\n \n-        // CDN will replace local paths with your Cloud CDN path\n+        // CDN will replace local paths with your CDN path\n         cdn: {\n-          options: {\n-            cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri\n-            flatten: true,\n-            supportedTypes: 'html'\n+          cloudfiles: {\n+            options: {\n+              cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri\n+              flatten: true,\n+              supportedTypes: 'html'\n+            },\n+            cwd: './dist/',\n+            dest: './dist/',",
+        "path": "Gruntfile.js",
+        "position": null,
+        "original_position": 41,
+        "commit_id": "0d18788b0726bfeff141758b1f6b1dc14bd8e69b",
+        "original_commit_id": "0a7dad578710c15e706d410c50515f454162bc2c",
+        "user": {
+            "login": "leemunroe",
+            "id": 15963,
+            "node_id": "MDQ6VXNlcjE1OTYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/15963?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leemunroe",
+            "html_url": "https://github.com/leemunroe",
+            "followers_url": "https://api.github.com/users/leemunroe/followers",
+            "following_url": "https://api.github.com/users/leemunroe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leemunroe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leemunroe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leemunroe/subscriptions",
+            "organizations_url": "https://api.github.com/users/leemunroe/orgs",
+            "repos_url": "https://api.github.com/users/leemunroe/repos",
+            "events_url": "https://api.github.com/users/leemunroe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leemunroe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think we want to use the new vars here <%= paths.dist %>\n",
+        "created_at": "2015-04-14T00:08:14Z",
+        "updated_at": "2015-04-18T13:22:55Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28291427",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28291427"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28291427"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28297009",
+        "pull_request_review_id": null,
+        "id": 28297009,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4Mjk3MDA5",
+        "diff_hunk": "@@ -2,26 +2,26 @@\n   \"name\": \"email-template\",\n   \"version\": \"0.1.0\",\n   \"repository\": {\n-    \"type\": \"git\",\n-    \"url\": \"https://github.com/leemunroe/grunt-email-design\"\n-  },\n+  \"type\": \"git\",\n+  \"url\": \"https://github.com/leemunroe/grunt-email-design\"\n+},\n   \"devDependencies\": {\n-    \"assemble\": \"0.4.37\",\n-    \"grunt\": \"~0.4.4\",\n-    \"grunt-cdn\": \"^0.6.1\",\n-    \"grunt-cloudfiles\": \"^0.3.0\",\n-    \"grunt-contrib-imagemin\": \"^0.9.3\",\n-    \"grunt-contrib-sass\": \"^0.7.3\",\n-    \"grunt-contrib-watch\": \"^0.6.1\",\n-    \"grunt-litmus\": \"^0.1.8\",\n-    \"grunt-mailgun\": \"0.0.3\",\n-    \"grunt-premailer\": \"^0.2.5\",\n-    \"grunt-s3\": \"^0.2.0-alpha.3\",\n-    \"imagemin-mozjpeg\": \"^0.1.2\",\n-    \"grunt-premailer\": \"0.2.5\",\n-    \"grunt-cloudfiles\": \"^0.3.0\",\n-    \"grunt-cdn\": \"^0.6.1\",\n-    \"grunt-litmus\": \"^0.1.8\",\n-    \"grunt-replace\": \"^0.8.0\"\n-  }\n+  \"assemble\": \"0.4.37\",\n+  \"grunt\": \"~0.4.4\",\n+  \"grunt-cdn\": \"^0.6.1\",\n+  \"grunt-cloudfiles\": \"^0.3.0\",\n+  \"grunt-contrib-imagemin\": \"^0.9.3\",\n+  \"grunt-contrib-sass\": \"^0.7.3\",\n+  \"grunt-contrib-watch\": \"^0.6.1\",\n+  \"grunt-litmus\": \"^0.1.8\",\n+  \"grunt-mailgun\": \"0.0.3\",\n+  \"grunt-premailer\": \"^0.2.5\",\n+  \"grunt-s3\": \"^0.2.0-alpha.3\",",
+        "path": "package.json",
+        "position": null,
+        "original_position": 39,
+        "commit_id": "0d18788b0726bfeff141758b1f6b1dc14bd8e69b",
+        "original_commit_id": "0a7dad578710c15e706d410c50515f454162bc2c",
+        "user": {
+            "login": "clecompte",
+            "id": 6219370,
+            "node_id": "MDQ6VXNlcjYyMTkzNzA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6219370?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/clecompte",
+            "html_url": "https://github.com/clecompte",
+            "followers_url": "https://api.github.com/users/clecompte/followers",
+            "following_url": "https://api.github.com/users/clecompte/following{/other_user}",
+            "gists_url": "https://api.github.com/users/clecompte/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/clecompte/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/clecompte/subscriptions",
+            "organizations_url": "https://api.github.com/users/clecompte/orgs",
+            "repos_url": "https://api.github.com/users/clecompte/repos",
+            "events_url": "https://api.github.com/users/clecompte/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/clecompte/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yep, must've gotten messed up during rebase. Fixed.\n",
+        "created_at": "2015-04-14T02:34:58Z",
+        "updated_at": "2015-04-18T13:22:55Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28297009",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28297009"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28297009"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28297169",
+        "pull_request_review_id": null,
+        "id": 28297169,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4Mjk3MTY5",
+        "diff_hunk": "@@ -175,16 +176,26 @@ module.exports = function(grunt) {\n           }\n         },\n \n-        // CDN will replace local paths with your Cloud CDN path\n+        // CDN will replace local paths with your CDN path\n         cdn: {\n-          options: {\n-            cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri\n-            flatten: true,\n-            supportedTypes: 'html'\n+          cloudfiles: {\n+            options: {\n+              cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri\n+              flatten: true,\n+              supportedTypes: 'html'\n+            },\n+            cwd: './dist/',\n+            dest: './dist/',",
+        "path": "Gruntfile.js",
+        "position": null,
+        "original_position": 41,
+        "commit_id": "0d18788b0726bfeff141758b1f6b1dc14bd8e69b",
+        "original_commit_id": "0a7dad578710c15e706d410c50515f454162bc2c",
+        "user": {
+            "login": "clecompte",
+            "id": 6219370,
+            "node_id": "MDQ6VXNlcjYyMTkzNzA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6219370?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/clecompte",
+            "html_url": "https://github.com/clecompte",
+            "followers_url": "https://api.github.com/users/clecompte/followers",
+            "following_url": "https://api.github.com/users/clecompte/following{/other_user}",
+            "gists_url": "https://api.github.com/users/clecompte/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/clecompte/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/clecompte/subscriptions",
+            "organizations_url": "https://api.github.com/users/clecompte/orgs",
+            "repos_url": "https://api.github.com/users/clecompte/repos",
+            "events_url": "https://api.github.com/users/clecompte/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/clecompte/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Updated.\n",
+        "created_at": "2015-04-14T02:40:37Z",
+        "updated_at": "2015-04-18T13:22:55Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28297169",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28297169"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28297169"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28384901",
+        "pull_request_review_id": null,
+        "id": 28384901,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4Mzg0OTAx",
+        "diff_hunk": "@@ -194,30 +205,24 @@ module.exports = function(grunt) {\n \n \n         // Use Amazon S3 for images\n-        s3: {\n+        aws_s3: {\n           options: {\n-            key: '<%= secrets.s3.key %>', // define this in secrets.json\n-            secret: '<%= secrets.s3.secret %>', // define this in secrets.json\n-            access: 'public-read',\n-            region: 'us-east-1', // feel free to change this\n-            headers: {\n-              // Two Year cache policy (1000 * 60 * 60 * 24 * 730)\n-              \"Cache-Control\": \"max-age=630720000, public\",\n-              \"Expires\": new Date(Date.now() + 63072000000).toUTCString()\n-            }\n+            accessKeyId: '<%= secrets.s3.key %>', // See README for secrets.json\n+            secretAccessKey: '<%= secrets.s3.secret %>', // See README for secrets.json\n+            region: '', // Enter region or leave blank for US Standard region\n+            uploadConcurrency: 5, // 5 simultaneous uploads\n+            downloadConcurrency: 5 // 5 simultaneous downloads\n           },\n-          dev: {\n+          prod: {\n             options: {\n-              maxOperations: 20,\n-              bucket: 'BUCKET-NAME' // define this\n-            },\n-            upload: [\n-              {\n-                src: 'dist/**/*',\n-                dest: 'public/emails/', // define this\n-                rel: 'dist', // rel must be set to maintain directory structure of src\n-                options: { gzip: true }\n+              bucket: '<%= secrets.s3.bucketname %>', // Define your S3 bucket name in secrets.json\n+              differential: true, // Only uploads the files that have changed\n+              params: {\n+                CacheControl: '2000'\n               }\n+            },\n+            files: [\n+              {expand: true, cwd: '<%= paths.dist_img %>', src: ['**'], dest: 'test/<%= paths.dist_img %>'}",
+        "path": "Gruntfile.js",
+        "position": null,
+        "original_position": 99,
+        "commit_id": "0d18788b0726bfeff141758b1f6b1dc14bd8e69b",
+        "original_commit_id": "2b699a154a7405cf16fe32a57d4881c76a007817",
+        "user": {
+            "login": "leemunroe",
+            "id": 15963,
+            "node_id": "MDQ6VXNlcjE1OTYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/15963?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leemunroe",
+            "html_url": "https://github.com/leemunroe",
+            "followers_url": "https://api.github.com/users/leemunroe/followers",
+            "following_url": "https://api.github.com/users/leemunroe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leemunroe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leemunroe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leemunroe/subscriptions",
+            "organizations_url": "https://api.github.com/users/leemunroe/orgs",
+            "repos_url": "https://api.github.com/users/leemunroe/repos",
+            "events_url": "https://api.github.com/users/leemunroe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leemunroe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I was trying to test this out and `test/` was tripping me up. Does this need to be here?\n",
+        "created_at": "2015-04-15T00:31:31Z",
+        "updated_at": "2015-04-18T13:22:55Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28384901",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28384901"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28384901"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28473488",
+        "pull_request_review_id": null,
+        "id": 28473488,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NDczNDg4",
+        "diff_hunk": "@@ -194,30 +205,24 @@ module.exports = function(grunt) {\n \n \n         // Use Amazon S3 for images\n-        s3: {\n+        aws_s3: {\n           options: {\n-            key: '<%= secrets.s3.key %>', // define this in secrets.json\n-            secret: '<%= secrets.s3.secret %>', // define this in secrets.json\n-            access: 'public-read',\n-            region: 'us-east-1', // feel free to change this\n-            headers: {\n-              // Two Year cache policy (1000 * 60 * 60 * 24 * 730)\n-              \"Cache-Control\": \"max-age=630720000, public\",\n-              \"Expires\": new Date(Date.now() + 63072000000).toUTCString()\n-            }\n+            accessKeyId: '<%= secrets.s3.key %>', // See README for secrets.json\n+            secretAccessKey: '<%= secrets.s3.secret %>', // See README for secrets.json\n+            region: '', // Enter region or leave blank for US Standard region\n+            uploadConcurrency: 5, // 5 simultaneous uploads\n+            downloadConcurrency: 5 // 5 simultaneous downloads\n           },\n-          dev: {\n+          prod: {\n             options: {\n-              maxOperations: 20,\n-              bucket: 'BUCKET-NAME' // define this\n-            },\n-            upload: [\n-              {\n-                src: 'dist/**/*',\n-                dest: 'public/emails/', // define this\n-                rel: 'dist', // rel must be set to maintain directory structure of src\n-                options: { gzip: true }\n+              bucket: '<%= secrets.s3.bucketname %>', // Define your S3 bucket name in secrets.json\n+              differential: true, // Only uploads the files that have changed\n+              params: {\n+                CacheControl: '2000'\n               }\n+            },\n+            files: [\n+              {expand: true, cwd: '<%= paths.dist_img %>', src: ['**'], dest: 'test/<%= paths.dist_img %>'}",
+        "path": "Gruntfile.js",
+        "position": null,
+        "original_position": 99,
+        "commit_id": "0d18788b0726bfeff141758b1f6b1dc14bd8e69b",
+        "original_commit_id": "2b699a154a7405cf16fe32a57d4881c76a007817",
+        "user": {
+            "login": "clecompte",
+            "id": 6219370,
+            "node_id": "MDQ6VXNlcjYyMTkzNzA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6219370?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/clecompte",
+            "html_url": "https://github.com/clecompte",
+            "followers_url": "https://api.github.com/users/clecompte/followers",
+            "following_url": "https://api.github.com/users/clecompte/following{/other_user}",
+            "gists_url": "https://api.github.com/users/clecompte/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/clecompte/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/clecompte/subscriptions",
+            "organizations_url": "https://api.github.com/users/clecompte/orgs",
+            "repos_url": "https://api.github.com/users/clecompte/repos",
+            "events_url": "https://api.github.com/users/clecompte/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/clecompte/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No, it shouldn't be there. I actually made a modification just now to allow for subdirectories within the bucket (or it can be left blank to use the bucket at the main directory).\n",
+        "created_at": "2015-04-15T23:34:56Z",
+        "updated_at": "2015-04-18T13:22:55Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28473488",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28473488"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28473488"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28635218",
+        "pull_request_review_id": null,
+        "id": 28635218,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NjM1MjE4",
+        "diff_hunk": "@@ -175,16 +176,26 @@ module.exports = function(grunt) {\n           }\n         },\n \n-        // CDN will replace local paths with your Cloud CDN path\n+        // CDN will replace local paths with your CDN path\n         cdn: {\n-          options: {\n-            cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri\n-            flatten: true,\n-            supportedTypes: 'html'\n+          cloudfiles: {\n+            options: {\n+              cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri\n+              flatten: true,\n+              supportedTypes: 'html'\n+            },\n+            cwd: './<%= paths.dist %>',\n+            dest: './<%= paths.dist %>',\n+            src: ['*.html']\n           },\n-          dist: {\n-            cwd: '<%= paths.dist %>',\n-            dest: '<%= paths.dist %>',\n+          aws_s3: {\n+            options: {\n+              cdn: '<%= secrets.s3.bucketuri %>/<%= secrets.s3.bucketname %>/<%= secrets.s3.bucketdir %>', // See README for secrets.json or replace this with your Amazon S3 bucket uri",
+        "path": "Gruntfile.js",
+        "position": 49,
+        "original_position": 49,
+        "commit_id": "0d18788b0726bfeff141758b1f6b1dc14bd8e69b",
+        "original_commit_id": "895807f85d83c8087c9260c9e1d930f7d2d8497e",
+        "user": {
+            "login": "leemunroe",
+            "id": 15963,
+            "node_id": "MDQ6VXNlcjE1OTYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/15963?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leemunroe",
+            "html_url": "https://github.com/leemunroe",
+            "followers_url": "https://api.github.com/users/leemunroe/followers",
+            "following_url": "https://api.github.com/users/leemunroe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leemunroe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leemunroe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leemunroe/subscriptions",
+            "organizations_url": "https://api.github.com/users/leemunroe/orgs",
+            "repos_url": "https://api.github.com/users/leemunroe/repos",
+            "events_url": "https://api.github.com/users/leemunroe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leemunroe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Looks like bucketuri is used here but bucketpath in the readme/secrets.json\n",
+        "created_at": "2015-04-17T22:33:45Z",
+        "updated_at": "2015-04-18T13:22:55Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28635218",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28635218"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28635218"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28643963",
+        "pull_request_review_id": null,
+        "id": 28643963,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NjQzOTYz",
+        "diff_hunk": "@@ -175,16 +176,26 @@ module.exports = function(grunt) {\n           }\n         },\n \n-        // CDN will replace local paths with your Cloud CDN path\n+        // CDN will replace local paths with your CDN path\n         cdn: {\n-          options: {\n-            cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri\n-            flatten: true,\n-            supportedTypes: 'html'\n+          cloudfiles: {\n+            options: {\n+              cdn: '<%= secrets.cloudfiles.uri %>', // See README for secrets.json or replace this with your cdn uri\n+              flatten: true,\n+              supportedTypes: 'html'\n+            },\n+            cwd: './<%= paths.dist %>',\n+            dest: './<%= paths.dist %>',\n+            src: ['*.html']\n           },\n-          dist: {\n-            cwd: '<%= paths.dist %>',\n-            dest: '<%= paths.dist %>',\n+          aws_s3: {\n+            options: {\n+              cdn: '<%= secrets.s3.bucketuri %>/<%= secrets.s3.bucketname %>/<%= secrets.s3.bucketdir %>', // See README for secrets.json or replace this with your Amazon S3 bucket uri",
+        "path": "Gruntfile.js",
+        "position": 49,
+        "original_position": 49,
+        "commit_id": "0d18788b0726bfeff141758b1f6b1dc14bd8e69b",
+        "original_commit_id": "895807f85d83c8087c9260c9e1d930f7d2d8497e",
+        "user": {
+            "login": "clecompte",
+            "id": 6219370,
+            "node_id": "MDQ6VXNlcjYyMTkzNzA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6219370?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/clecompte",
+            "html_url": "https://github.com/clecompte",
+            "followers_url": "https://api.github.com/users/clecompte/followers",
+            "following_url": "https://api.github.com/users/clecompte/following{/other_user}",
+            "gists_url": "https://api.github.com/users/clecompte/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/clecompte/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/clecompte/subscriptions",
+            "organizations_url": "https://api.github.com/users/clecompte/orgs",
+            "repos_url": "https://api.github.com/users/clecompte/repos",
+            "events_url": "https://api.github.com/users/clecompte/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/clecompte/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Good catch -- updated readme.\n",
+        "created_at": "2015-04-18T13:23:44Z",
+        "updated_at": "2015-04-18T13:23:44Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28643963",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/28643963"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/28#discussion_r28643963"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/34536053",
+        "pull_request_review_id": null,
+        "id": 34536053,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NTM2MDUz",
+        "diff_hunk": "@@ -272,4 +339,13 @@ module.exports = function(grunt) {\n     // Upload image files to Amazon S3\n     grunt.registerTask('s3upload', ['aws_s3:prod', 'cdn:aws_s3']);\n \n+    // Launch the express server and start watching\n+    // NOTE: The server will not stay running if the grunt watch task is not active\n+    grunt.registerTask('serve', ['default', 'express', 'open', 'watch']);\n+\n+\n+    // Launch the express server and start watching\n+    // NOTE: The server will not stay running if the grunt watch task is not active\n+    grunt.registerTask('serve', ['default', 'autoprefixer:preview', 'express', 'open', 'watch']);",
+        "path": "Gruntfile.js",
+        "position": null,
+        "original_position": 132,
+        "commit_id": "440308050fe578d40a29f9c81bffa5327a48e7d4",
+        "original_commit_id": "26053c6d424ea69e24588c6714433f39fb6a4dd2",
+        "user": {
+            "login": "leemunroe",
+            "id": 15963,
+            "node_id": "MDQ6VXNlcjE1OTYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/15963?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leemunroe",
+            "html_url": "https://github.com/leemunroe",
+            "followers_url": "https://api.github.com/users/leemunroe/followers",
+            "following_url": "https://api.github.com/users/leemunroe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leemunroe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leemunroe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leemunroe/subscriptions",
+            "organizations_url": "https://api.github.com/users/leemunroe/orgs",
+            "repos_url": "https://api.github.com/users/leemunroe/repos",
+            "events_url": "https://api.github.com/users/leemunroe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leemunroe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can we remove line 344? I think these are duplicates if I'm not mistaken.\n",
+        "created_at": "2015-07-14T04:17:20Z",
+        "updated_at": "2015-07-14T15:54:47Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/33#discussion_r34536053",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/33",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/34536053"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/33#discussion_r34536053"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/33"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/34622667",
+        "pull_request_review_id": null,
+        "id": 34622667,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NjIyNjY3",
+        "diff_hunk": "@@ -261,7 +328,7 @@ module.exports = function(grunt) {\n     require('load-grunt-tasks')(grunt);\n \n     // Where we tell Grunt what to do when we type \"grunt\" into the terminal.\n-    grunt.registerTask('default', ['sass','assemble','premailer','imagemin','replace:src_images']);\n+    grunt.registerTask('default', ['sass','autoprefixer:preview','assemble','premailer','imagemin','replace:src_images']);",
+        "path": "Gruntfile.js",
+        "position": 117,
+        "original_position": 117,
+        "commit_id": "440308050fe578d40a29f9c81bffa5327a48e7d4",
+        "original_commit_id": "440308050fe578d40a29f9c81bffa5327a48e7d4",
+        "user": {
+            "login": "leemunroe",
+            "id": 15963,
+            "node_id": "MDQ6VXNlcjE1OTYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/15963?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leemunroe",
+            "html_url": "https://github.com/leemunroe",
+            "followers_url": "https://api.github.com/users/leemunroe/followers",
+            "following_url": "https://api.github.com/users/leemunroe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leemunroe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leemunroe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leemunroe/subscriptions",
+            "organizations_url": "https://api.github.com/users/leemunroe/orgs",
+            "repos_url": "https://api.github.com/users/leemunroe/repos",
+            "events_url": "https://api.github.com/users/leemunroe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leemunroe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can we remove autoprefixer here?\n",
+        "created_at": "2015-07-14T21:35:08Z",
+        "updated_at": "2015-07-14T21:35:08Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/33#discussion_r34622667",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/33",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/34622667"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/33#discussion_r34622667"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/33"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/34622872",
+        "pull_request_review_id": null,
+        "id": 34622872,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NjIyODcy",
+        "diff_hunk": "@@ -261,7 +328,7 @@ module.exports = function(grunt) {\n     require('load-grunt-tasks')(grunt);\n \n     // Where we tell Grunt what to do when we type \"grunt\" into the terminal.\n-    grunt.registerTask('default', ['sass','assemble','premailer','imagemin','replace:src_images']);\n+    grunt.registerTask('default', ['sass','autoprefixer:preview','assemble','premailer','imagemin','replace:src_images']);",
+        "path": "Gruntfile.js",
+        "position": 117,
+        "original_position": 117,
+        "commit_id": "440308050fe578d40a29f9c81bffa5327a48e7d4",
+        "original_commit_id": "440308050fe578d40a29f9c81bffa5327a48e7d4",
+        "user": {
+            "login": "taeo",
+            "id": 1403363,
+            "node_id": "MDQ6VXNlcjE0MDMzNjM=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1403363?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/taeo",
+            "html_url": "https://github.com/taeo",
+            "followers_url": "https://api.github.com/users/taeo/followers",
+            "following_url": "https://api.github.com/users/taeo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/taeo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/taeo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/taeo/subscriptions",
+            "organizations_url": "https://api.github.com/users/taeo/orgs",
+            "repos_url": "https://api.github.com/users/taeo/repos",
+            "events_url": "https://api.github.com/users/taeo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/taeo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Only if you want less browser coverage. Not recommended.\nUnless there's actual bugs / issues, i'd recommend going through with the PR and we can enhance later as needed.\n",
+        "created_at": "2015-07-14T21:37:04Z",
+        "updated_at": "2015-07-14T21:37:04Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/33#discussion_r34622872",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/33",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/34622872"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/33#discussion_r34622872"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/33"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/34623313",
+        "pull_request_review_id": null,
+        "id": 34623313,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NjIzMzEz",
+        "diff_hunk": "@@ -261,7 +328,7 @@ module.exports = function(grunt) {\n     require('load-grunt-tasks')(grunt);\n \n     // Where we tell Grunt what to do when we type \"grunt\" into the terminal.\n-    grunt.registerTask('default', ['sass','assemble','premailer','imagemin','replace:src_images']);\n+    grunt.registerTask('default', ['sass','autoprefixer:preview','assemble','premailer','imagemin','replace:src_images']);",
+        "path": "Gruntfile.js",
+        "position": 117,
+        "original_position": 117,
+        "commit_id": "440308050fe578d40a29f9c81bffa5327a48e7d4",
+        "original_commit_id": "440308050fe578d40a29f9c81bffa5327a48e7d4",
+        "user": {
+            "login": "leemunroe",
+            "id": 15963,
+            "node_id": "MDQ6VXNlcjE1OTYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/15963?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leemunroe",
+            "html_url": "https://github.com/leemunroe",
+            "followers_url": "https://api.github.com/users/leemunroe/followers",
+            "following_url": "https://api.github.com/users/leemunroe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leemunroe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leemunroe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leemunroe/subscriptions",
+            "organizations_url": "https://api.github.com/users/leemunroe/orgs",
+            "repos_url": "https://api.github.com/users/leemunroe/repos",
+            "events_url": "https://api.github.com/users/leemunroe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leemunroe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Autoprefixer is only used for the preview server though (grunt serve) right?\n",
+        "created_at": "2015-07-14T21:40:19Z",
+        "updated_at": "2015-07-14T21:40:19Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/33#discussion_r34623313",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/33",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/34623313"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/33#discussion_r34623313"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/33"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/34623452",
+        "pull_request_review_id": null,
+        "id": 34623452,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NjIzNDUy",
+        "diff_hunk": "@@ -261,7 +328,7 @@ module.exports = function(grunt) {\n     require('load-grunt-tasks')(grunt);\n \n     // Where we tell Grunt what to do when we type \"grunt\" into the terminal.\n-    grunt.registerTask('default', ['sass','assemble','premailer','imagemin','replace:src_images']);\n+    grunt.registerTask('default', ['sass','autoprefixer:preview','assemble','premailer','imagemin','replace:src_images']);",
+        "path": "Gruntfile.js",
+        "position": 117,
+        "original_position": 117,
+        "commit_id": "440308050fe578d40a29f9c81bffa5327a48e7d4",
+        "original_commit_id": "440308050fe578d40a29f9c81bffa5327a48e7d4",
+        "user": {
+            "login": "taeo",
+            "id": 1403363,
+            "node_id": "MDQ6VXNlcjE0MDMzNjM=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1403363?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/taeo",
+            "html_url": "https://github.com/taeo",
+            "followers_url": "https://api.github.com/users/taeo/followers",
+            "following_url": "https://api.github.com/users/taeo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/taeo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/taeo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/taeo/subscriptions",
+            "organizations_url": "https://api.github.com/users/taeo/orgs",
+            "repos_url": "https://api.github.com/users/taeo/repos",
+            "events_url": "https://api.github.com/users/taeo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/taeo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Correct.\n",
+        "created_at": "2015-07-14T21:41:25Z",
+        "updated_at": "2015-07-14T21:41:25Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/33#discussion_r34623452",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/33",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/34623452"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/33#discussion_r34623452"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/33"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/83118874",
+        "pull_request_review_id": 3981159,
+        "id": 83118874,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgzMTE4ODc0",
+        "diff_hunk": "@@ -0,0 +1,13 @@\n+<table class=\"btn btn-{{ type }}\" cellpadding=\"0\" cellspacing=\"0\">",
+        "path": "src/partials/components/chart.hbs",
+        "position": null,
+        "original_position": 1,
+        "commit_id": "c52ad56faf3c0671d1a0e23091480cff3ea64407",
+        "original_commit_id": "c5e88cfa3857419b80214896fc288a2e5da31e15",
+        "user": {
+            "login": "leemunroe",
+            "id": 15963,
+            "node_id": "MDQ6VXNlcjE1OTYz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/15963?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leemunroe",
+            "html_url": "https://github.com/leemunroe",
+            "followers_url": "https://api.github.com/users/leemunroe/followers",
+            "following_url": "https://api.github.com/users/leemunroe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leemunroe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leemunroe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leemunroe/subscriptions",
+            "organizations_url": "https://api.github.com/users/leemunroe/orgs",
+            "repos_url": "https://api.github.com/users/leemunroe/repos",
+            "events_url": "https://api.github.com/users/leemunroe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leemunroe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sorry just noticed this. Is there a reason we're using a btn class here? Assuming it was copied over from another component file?\n\nI think for the purposes of the chart, we can change this to be just one table and give it a different class e.g.\n\n```\n<table class=\"chart\" cellpadding=\"0\" cellspacing=\"0\">\n  <tr>\n   <td align=\"{{ align }}\">\n      <img width=\"{{{ width }}}\" src=\"https://image-charts.com/chart?chs={{{ width }}}x{{{ height }}}&amp;{{{ params }}}\" alt=\"{{{ alt }}}\" />\n   </td>\n  </tr>\n</table>\n\nThoughts?\n```\n",
+        "created_at": "2016-10-12T23:21:23Z",
+        "updated_at": "2016-10-14T14:14:19Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/80#discussion_r83118874",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/80",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/83118874"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/80#discussion_r83118874"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/80"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/83429898",
+        "pull_request_review_id": 4275782,
+        "id": 83429898,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgzNDI5ODk4",
+        "diff_hunk": "@@ -0,0 +1,13 @@\n+<table class=\"btn btn-{{ type }}\" cellpadding=\"0\" cellspacing=\"0\">",
+        "path": "src/partials/components/chart.hbs",
+        "position": null,
+        "original_position": 1,
+        "commit_id": "c52ad56faf3c0671d1a0e23091480cff3ea64407",
+        "original_commit_id": "c5e88cfa3857419b80214896fc288a2e5da31e15",
+        "user": {
+            "login": "FGRibreau",
+            "id": 138050,
+            "node_id": "MDQ6VXNlcjEzODA1MA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/138050?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/FGRibreau",
+            "html_url": "https://github.com/FGRibreau",
+            "followers_url": "https://api.github.com/users/FGRibreau/followers",
+            "following_url": "https://api.github.com/users/FGRibreau/following{/other_user}",
+            "gists_url": "https://api.github.com/users/FGRibreau/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/FGRibreau/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/FGRibreau/subscriptions",
+            "organizations_url": "https://api.github.com/users/FGRibreau/orgs",
+            "repos_url": "https://api.github.com/users/FGRibreau/repos",
+            "events_url": "https://api.github.com/users/FGRibreau/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/FGRibreau/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@leemunroe I agree and fixed it :)\n",
+        "created_at": "2016-10-14T14:14:35Z",
+        "updated_at": "2016-10-14T14:14:35Z",
+        "html_url": "https://github.com/leemunroe/grunt-email-workflow/pull/80#discussion_r83429898",
+        "pull_request_url": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/80",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/comments/83429898"
+            },
+            "html": {
+                "href": "https://github.com/leemunroe/grunt-email-workflow/pull/80#discussion_r83429898"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/leemunroe/grunt-email-workflow/pulls/80"
+            }
+        },
+        "in_reply_to_id": 83118874
+    }
+]

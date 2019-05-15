@@ -1,0 +1,835 @@
+[
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/38486",
+        "pull_request_review_id": null,
+        "id": 38486,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NDg2",
+        "diff_hunk": "@@ -264,29 +265,29 @@ function parseInt (buffer, size) {\n              (buffer[buffer.read++] << 8)  + buffer[buffer.read++];\n \n     default:\n-      throw new Error(\"cannot parse ints of that size\");\n+      this.throwError(\"cannot parse ints of that size\");",
+        "path": "amqp.js",
+        "position": null,
+        "original_position": 35,
+        "commit_id": "1deeee637a30cb9bcec6e6bc633d7c196326322b",
+        "original_commit_id": "42f230a51dd201a22e0e716029d9379648568bef",
+        "user": {
+            "login": "postwait",
+            "id": 335748,
+            "node_id": "MDQ6VXNlcjMzNTc0OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/335748?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/postwait",
+            "html_url": "https://github.com/postwait",
+            "followers_url": "https://api.github.com/users/postwait/followers",
+            "following_url": "https://api.github.com/users/postwait/following{/other_user}",
+            "gists_url": "https://api.github.com/users/postwait/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/postwait/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/postwait/subscriptions",
+            "organizations_url": "https://api.github.com/users/postwait/orgs",
+            "repos_url": "https://api.github.com/users/postwait/repos",
+            "events_url": "https://api.github.com/users/postwait/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/postwait/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this doesn't exist in this function. localParseInt isn't a method.\n",
+        "created_at": "2011-06-01T21:24:43Z",
+        "updated_at": "2011-06-02T00:36:19Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/1#discussion_r38486",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/1",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/38486"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/1#discussion_r38486"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/1"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/38487",
+        "pull_request_review_id": null,
+        "id": 38487,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NDg3",
+        "diff_hunk": "@@ -576,22 +651,43 @@ function serializeTable (b, object) {\n         break;\n \n       case 'number':\n-        if (value <= 0xFFFFFFFF) {\n-          b[b.used++] = 'I'.charCodeAt(0);\n-          serializeInt(b, 4, value);\n-        } else if (value > 0xFFFFFFFF) {\n-          b[b.used++] = 'T'.charCodeAt(0);\n-          serializeInt(b, 8, value);\n-        } \n-        // TODO decimal? meh.\n+        if (!isFloat(value)) {\n+          if (isBigInt(value)) {\n+            // 64-bit uint\n+            b[b.used++] = 'l'.charCodeAt(0);\n+            serializeInt(b, 8, value);\n+          } else {\n+            //32-bit uint\n+            b[b.used++] = 'I'.charCodeAt(0);\n+            serializeInt(b, 4, value);\n+          }\n+        } else {\n+          //64-bit float\n+          b[b.used++] = 'd'.charCodeAt(0);\n+          serializeFloat(b, 8, value);\n+        }\n         break;\n \n-      case 'object':\n-        serializeTable(b, value);\n+      case 'boolean':\n+        b[b.used++] = 't'charCodeAt(0);",
+        "path": "amqp.js",
+        "position": null,
+        "original_position": 333,
+        "commit_id": "1deeee637a30cb9bcec6e6bc633d7c196326322b",
+        "original_commit_id": "42f230a51dd201a22e0e716029d9379648568bef",
+        "user": {
+            "login": "postwait",
+            "id": 335748,
+            "node_id": "MDQ6VXNlcjMzNTc0OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/335748?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/postwait",
+            "html_url": "https://github.com/postwait",
+            "followers_url": "https://api.github.com/users/postwait/followers",
+            "following_url": "https://api.github.com/users/postwait/following{/other_user}",
+            "gists_url": "https://api.github.com/users/postwait/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/postwait/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/postwait/subscriptions",
+            "organizations_url": "https://api.github.com/users/postwait/orgs",
+            "repos_url": "https://api.github.com/users/postwait/repos",
+            "events_url": "https://api.github.com/users/postwait/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/postwait/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "That can't work.  Do you mean 't'.charCodeAt(0);\n\nMake sure this all passes the test suite.\n",
+        "created_at": "2011-06-01T21:25:56Z",
+        "updated_at": "2011-06-02T00:36:19Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/1#discussion_r38487",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/1",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/38487"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/1#discussion_r38487"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/1"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/598661",
+        "pull_request_review_id": null,
+        "id": 598661,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5ODY2MQ==",
+        "diff_hunk": "@@ -876,10 +880,10 @@ function urlOptions(connectionString) {\n   return opts;\n }\n \n-exports.createConnection = function (connectionArgs, options) {\n-  var c = new Connection();\n-  c.setOptions(connectionArgs);\n-  c.setImplOptions(options);\n+exports.createConnection = function (connectionArgs, options, readyCallback) {\n+  var c = new Connection(connectionArgs, options, readyCallback);\n+  // c.setOptions(connectionArgs);\n+  // c.setImplOptions(options);",
+        "path": "amqp.js",
+        "position": 31,
+        "original_position": 31,
+        "commit_id": "c2c34a4ff6022d4e09d0768318ee93f7d8f5a5d1",
+        "original_commit_id": "c2c34a4ff6022d4e09d0768318ee93f7d8f5a5d1",
+        "user": {
+            "login": "postwait",
+            "id": 335748,
+            "node_id": "MDQ6VXNlcjMzNTc0OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/335748?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/postwait",
+            "html_url": "https://github.com/postwait",
+            "followers_url": "https://api.github.com/users/postwait/followers",
+            "following_url": "https://api.github.com/users/postwait/following{/other_user}",
+            "gists_url": "https://api.github.com/users/postwait/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/postwait/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/postwait/subscriptions",
+            "organizations_url": "https://api.github.com/users/postwait/orgs",
+            "repos_url": "https://api.github.com/users/postwait/repos",
+            "events_url": "https://api.github.com/users/postwait/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/postwait/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why are these commented out?\n",
+        "created_at": "2012-03-23T20:20:32Z",
+        "updated_at": "2012-03-23T20:20:32Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/81#discussion_r598661",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/81",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/598661"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/81#discussion_r598661"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/81"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/920028",
+        "pull_request_review_id": null,
+        "id": 920028,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkyMDAyOA==",
+        "diff_hunk": "@@ -277,8 +280,8 @@ function parseLongString (buffer) {\n function parseSignedInteger (buffer) {\n   var int = parseInt(buffer, 4);\n   if (int & 0x80000000) {\n-    int |= 0xEFFFFFFF;\n     int = -int;\n+    int |= 0xEFFFFFFF;",
+        "path": "amqp.js",
+        "position": null,
+        "original_position": 46,
+        "commit_id": "8337a80bba30f5005660035477715c189c633a44",
+        "original_commit_id": "573626eeee46b9aa20588f40d306a22e6e9006c3",
+        "user": {
+            "login": "postwait",
+            "id": 335748,
+            "node_id": "MDQ6VXNlcjMzNTc0OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/335748?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/postwait",
+            "html_url": "https://github.com/postwait",
+            "followers_url": "https://api.github.com/users/postwait/followers",
+            "following_url": "https://api.github.com/users/postwait/following{/other_user}",
+            "gists_url": "https://api.github.com/users/postwait/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/postwait/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/postwait/subscriptions",
+            "organizations_url": "https://api.github.com/users/postwait/orgs",
+            "repos_url": "https://api.github.com/users/postwait/repos",
+            "events_url": "https://api.github.com/users/postwait/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/postwait/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This changes the functionality here. Do you have a test case that says it was broken before and fixed now?\n",
+        "created_at": "2012-06-03T19:39:03Z",
+        "updated_at": "2012-06-04T11:29:49Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/102#discussion_r920028",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/102",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/920028"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/102#discussion_r920028"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/102"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/921645",
+        "pull_request_review_id": null,
+        "id": 921645,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkyMTY0NQ==",
+        "diff_hunk": "@@ -277,8 +280,8 @@ function parseLongString (buffer) {\n function parseSignedInteger (buffer) {\n   var int = parseInt(buffer, 4);\n   if (int & 0x80000000) {\n-    int |= 0xEFFFFFFF;\n     int = -int;\n+    int |= 0xEFFFFFFF;",
+        "path": "amqp.js",
+        "position": null,
+        "original_position": 46,
+        "commit_id": "8337a80bba30f5005660035477715c189c633a44",
+        "original_commit_id": "573626eeee46b9aa20588f40d306a22e6e9006c3",
+        "user": {
+            "login": "jamescarr",
+            "id": 45389,
+            "node_id": "MDQ6VXNlcjQ1Mzg5",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/45389?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jamescarr",
+            "html_url": "https://github.com/jamescarr",
+            "followers_url": "https://api.github.com/users/jamescarr/followers",
+            "following_url": "https://api.github.com/users/jamescarr/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jamescarr/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jamescarr/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jamescarr/subscriptions",
+            "organizations_url": "https://api.github.com/users/jamescarr/orgs",
+            "repos_url": "https://api.github.com/users/jamescarr/repos",
+            "events_url": "https://api.github.com/users/jamescarr/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jamescarr/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm actually a little confused by that... it's not amongst what I changed (or intended to change). \n",
+        "created_at": "2012-06-04T11:28:17Z",
+        "updated_at": "2012-06-04T11:29:49Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/102#discussion_r921645",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/102",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/921645"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/102#discussion_r921645"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/102"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1381856",
+        "pull_request_review_id": null,
+        "id": 1381856,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzODE4NTY=",
+        "diff_hunk": "@@ -11,13 +11,15 @@ connection.addListener('ready', function () {\n   var q = connection.queue('node-binary-queue', function() {\n \n     q.bind(exchange, \"*\");\n-  \n+\n     q.subscribeRaw(function (m) {\n       var data;\n       m.addListener('data', function (d) { data = d; });\n       m.addListener('end', function () {\n         recvCount++;\n         m.acknowledge();\n+\n+        //TODO: This switch should be an if statement",
+        "path": "test/test-buffer.js",
+        "position": null,
+        "original_position": 22,
+        "commit_id": "fd269e881f728081e310f4117f85f45d16033517",
+        "original_commit_id": "2c962edd6fc2dd34d846eaa8dd74db9604ab9c5a",
+        "user": {
+            "login": "postwait",
+            "id": 335748,
+            "node_id": "MDQ6VXNlcjMzNTc0OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/335748?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/postwait",
+            "html_url": "https://github.com/postwait",
+            "followers_url": "https://api.github.com/users/postwait/followers",
+            "following_url": "https://api.github.com/users/postwait/following{/other_user}",
+            "gists_url": "https://api.github.com/users/postwait/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/postwait/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/postwait/subscriptions",
+            "organizations_url": "https://api.github.com/users/postwait/orgs",
+            "repos_url": "https://api.github.com/users/postwait/repos",
+            "events_url": "https://api.github.com/users/postwait/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/postwait/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The switch is fine, remove the TODO.\n",
+        "created_at": "2012-08-15T12:26:48Z",
+        "updated_at": "2012-08-15T13:06:37Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/104#discussion_r1381856",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/104",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1381856"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/104#discussion_r1381856"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/104"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1381860",
+        "pull_request_review_id": null,
+        "id": 1381860,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzODE4NjA=",
+        "diff_hunk": "@@ -19,6 +19,7 @@ connection.addListener('ready', function () {\n   var exchange = connection.exchange('clock', {type: 'fanout'});\n \n   var q = connection.queue('my-events-receiver');\n+  console.log(q);",
+        "path": "test.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "fd269e881f728081e310f4117f85f45d16033517",
+        "original_commit_id": "2c962edd6fc2dd34d846eaa8dd74db9604ab9c5a",
+        "user": {
+            "login": "postwait",
+            "id": 335748,
+            "node_id": "MDQ6VXNlcjMzNTc0OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/335748?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/postwait",
+            "html_url": "https://github.com/postwait",
+            "followers_url": "https://api.github.com/users/postwait/followers",
+            "following_url": "https://api.github.com/users/postwait/following{/other_user}",
+            "gists_url": "https://api.github.com/users/postwait/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/postwait/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/postwait/subscriptions",
+            "organizations_url": "https://api.github.com/users/postwait/orgs",
+            "repos_url": "https://api.github.com/users/postwait/repos",
+            "events_url": "https://api.github.com/users/postwait/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/postwait/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "no console.log here please.\n",
+        "created_at": "2012-08-15T12:27:01Z",
+        "updated_at": "2012-08-15T13:06:37Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/104#discussion_r1381860",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/104",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1381860"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/104#discussion_r1381860"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/104"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1381985",
+        "pull_request_review_id": null,
+        "id": 1381985,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzODE5ODU=",
+        "diff_hunk": "@@ -19,6 +19,7 @@ connection.addListener('ready', function () {\n   var exchange = connection.exchange('clock', {type: 'fanout'});\n \n   var q = connection.queue('my-events-receiver');\n+  console.log(q);",
+        "path": "test.js",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "fd269e881f728081e310f4117f85f45d16033517",
+        "original_commit_id": "2c962edd6fc2dd34d846eaa8dd74db9604ab9c5a",
+        "user": {
+            "login": "MyGGaN",
+            "id": 420726,
+            "node_id": "MDQ6VXNlcjQyMDcyNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/420726?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/MyGGaN",
+            "html_url": "https://github.com/MyGGaN",
+            "followers_url": "https://api.github.com/users/MyGGaN/followers",
+            "following_url": "https://api.github.com/users/MyGGaN/following{/other_user}",
+            "gists_url": "https://api.github.com/users/MyGGaN/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/MyGGaN/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/MyGGaN/subscriptions",
+            "organizations_url": "https://api.github.com/users/MyGGaN/orgs",
+            "repos_url": "https://api.github.com/users/MyGGaN/repos",
+            "events_url": "https://api.github.com/users/MyGGaN/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/MyGGaN/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Well spotted, sry!\n",
+        "created_at": "2012-08-15T12:51:39Z",
+        "updated_at": "2012-08-15T13:06:37Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/104#discussion_r1381985",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/104",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1381985"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/104#discussion_r1381985"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/104"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1381993",
+        "pull_request_review_id": null,
+        "id": 1381993,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzODE5OTM=",
+        "diff_hunk": "@@ -11,13 +11,15 @@ connection.addListener('ready', function () {\n   var q = connection.queue('node-binary-queue', function() {\n \n     q.bind(exchange, \"*\");\n-  \n+\n     q.subscribeRaw(function (m) {\n       var data;\n       m.addListener('data', function (d) { data = d; });\n       m.addListener('end', function () {\n         recvCount++;\n         m.acknowledge();\n+\n+        //TODO: This switch should be an if statement",
+        "path": "test/test-buffer.js",
+        "position": null,
+        "original_position": 22,
+        "commit_id": "fd269e881f728081e310f4117f85f45d16033517",
+        "original_commit_id": "2c962edd6fc2dd34d846eaa8dd74db9604ab9c5a",
+        "user": {
+            "login": "MyGGaN",
+            "id": 420726,
+            "node_id": "MDQ6VXNlcjQyMDcyNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/420726?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/MyGGaN",
+            "html_url": "https://github.com/MyGGaN",
+            "followers_url": "https://api.github.com/users/MyGGaN/followers",
+            "following_url": "https://api.github.com/users/MyGGaN/following{/other_user}",
+            "gists_url": "https://api.github.com/users/MyGGaN/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/MyGGaN/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/MyGGaN/subscriptions",
+            "organizations_url": "https://api.github.com/users/MyGGaN/orgs",
+            "repos_url": "https://api.github.com/users/MyGGaN/repos",
+            "events_url": "https://api.github.com/users/MyGGaN/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/MyGGaN/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I removed the TODO. But what's the reason to have a switch-case with one case over a simple if-else statement?\n",
+        "created_at": "2012-08-15T12:52:49Z",
+        "updated_at": "2012-08-15T13:06:37Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/104#discussion_r1381993",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/104",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1381993"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/104#discussion_r1381993"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/104"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1382011",
+        "pull_request_review_id": null,
+        "id": 1382011,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzODIwMTE=",
+        "diff_hunk": "@@ -11,13 +11,15 @@ connection.addListener('ready', function () {\n   var q = connection.queue('node-binary-queue', function() {\n \n     q.bind(exchange, \"*\");\n-  \n+\n     q.subscribeRaw(function (m) {\n       var data;\n       m.addListener('data', function (d) { data = d; });\n       m.addListener('end', function () {\n         recvCount++;\n         m.acknowledge();\n+\n+        //TODO: This switch should be an if statement",
+        "path": "test/test-buffer.js",
+        "position": null,
+        "original_position": 22,
+        "commit_id": "fd269e881f728081e310f4117f85f45d16033517",
+        "original_commit_id": "2c962edd6fc2dd34d846eaa8dd74db9604ab9c5a",
+        "user": {
+            "login": "postwait",
+            "id": 335748,
+            "node_id": "MDQ6VXNlcjMzNTc0OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/335748?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/postwait",
+            "html_url": "https://github.com/postwait",
+            "followers_url": "https://api.github.com/users/postwait/followers",
+            "following_url": "https://api.github.com/users/postwait/following{/other_user}",
+            "gists_url": "https://api.github.com/users/postwait/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/postwait/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/postwait/subscriptions",
+            "organizations_url": "https://api.github.com/users/postwait/orgs",
+            "repos_url": "https://api.github.com/users/postwait/repos",
+            "events_url": "https://api.github.com/users/postwait/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/postwait/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "b/c if it was that important you would have changed two lines of code instead of writing a comment.\n\nThe switch is clearer of intention.\n",
+        "created_at": "2012-08-15T12:55:18Z",
+        "updated_at": "2012-08-15T13:06:37Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/104#discussion_r1382011",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/104",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1382011"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/104#discussion_r1382011"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/104"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1628309",
+        "pull_request_review_id": null,
+        "id": 1628309,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MjgzMDk=",
+        "diff_hunk": "@@ -983,6 +983,10 @@ Connection.prototype._onMethod = function (channel, method, args) {\n \n     // 4. The server responds with a connectionTune request\n     case methods.connectionTune:\n+      if (args.frameMax) {\n+          debug(\"tweaking maxFrameBuffer to \" + args.frameMax);\n+          maxFrameBuffer = args.frameMax;\n+      }",
+        "path": "amqp.js",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "1b322a591646be065386790cd7e3dee411419b98",
+        "original_commit_id": "1b322a591646be065386790cd7e3dee411419b98",
+        "user": {
+            "login": "postwait",
+            "id": 335748,
+            "node_id": "MDQ6VXNlcjMzNTc0OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/335748?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/postwait",
+            "html_url": "https://github.com/postwait",
+            "followers_url": "https://api.github.com/users/postwait/followers",
+            "following_url": "https://api.github.com/users/postwait/following{/other_user}",
+            "gists_url": "https://api.github.com/users/postwait/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/postwait/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/postwait/subscriptions",
+            "organizations_url": "https://api.github.com/users/postwait/orgs",
+            "repos_url": "https://api.github.com/users/postwait/repos",
+            "events_url": "https://api.github.com/users/postwait/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/postwait/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please split this change into its own commit and pull request.\n",
+        "created_at": "2012-09-18T12:42:22Z",
+        "updated_at": "2012-09-18T12:42:22Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/127#discussion_r1628309",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/127",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1628309"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/127#discussion_r1628309"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/127"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1446761",
+        "pull_request_review_id": null,
+        "id": 1446761,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0NDY3NjE=",
+        "diff_hunk": "@@ -801,18 +801,88 @@ function Connection (connectionArgs, options, readyCallback) {\n     this._readyCallback = readyCallback;\n   }\n \n-  var state = 'handshake';\n   var parser;\n+  var backoffTime = null;\n+  this.connectionAttemptScheduled = false;\n+\n+  var backoff = function () {\n+    if (self._inboundHeartbeatTimer !== null) {\n+      clearTimeout(self._inboundHeartbeatTimer);\n+      self._inboundHeartbeatTimer = null;\n+    }\n+    if (self._outboundHeartbeatTimer !== null) {\n+      clearTimeout(self._outboundHeartbeatTimer);\n+      self._outboundHeartbeatTimer = null;\n+    }\n+\n+    if (!self.connectionAttemptScheduled) {\n+      // Set to true, as we are presently in the process of scheduling one.\n+      self.connectionAttemptScheduled = true;\n+\n+      // Kill the socket, if it hasn't been killed already.\n+      self.end();\n+\n+      // Reset parser state\n+      parser = null;\n+\n+      // In order for our reconnection to be seamless, we have to notify the\n+      // channels that they are no longer connected so that nobody attempts\n+      // to send messages which would be doomed to fail.\n+      for (var channel in self.channels) {\n+        if (channel != 0) {\n+          self.channels[channel].state = 'closed';\n+        }\n+      }\n+      // Queues are channels (so we have already marked them as closed), but\n+      // queues have special needs, since the subscriptions will no longer\n+      // be known to the server when we reconnect.  Mark the subscriptions as\n+      // closed so that we can resubscribe them once we are reconnected.\n+      for (var queue in self.queues) {\n+        for (var index in self.queues[queue].consumerTagOptions) {\n+          self.queues[queue].consumerTagOptions[index]['state'] = 'closed';\n+        }\n+      }\n+\n+      // Begin reconnection attempts\n+      if (self.implOptions.reconnect) {\n+        // Don't thrash, use a backoff strategy.\n+        if (backoffTime === null) {\n+          // This is the first time we've failed since a successful connection,\n+          // so use the configured backoff time without any modification.\n+          backoffTime = self.implOptions.reconnectBackoffTime;\n+        } else if (self.implOptions.reconnectBackoffStrategy === 'exponential') {\n+          // If you've configured exponential backoff, we'll double the\n+          // backoff time each subsequent attempt until success.\n+          backoffTime *= 2;",
+        "path": "amqp.js",
+        "position": 57,
+        "original_position": 57,
+        "commit_id": "485637932f00d7f603c0191099efb5d7c7605505",
+        "original_commit_id": "28ff8b83da0801aff3b3a2d70a1962e745d951f5",
+        "user": {
+            "login": "postwait",
+            "id": 335748,
+            "node_id": "MDQ6VXNlcjMzNTc0OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/335748?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/postwait",
+            "html_url": "https://github.com/postwait",
+            "followers_url": "https://api.github.com/users/postwait/followers",
+            "following_url": "https://api.github.com/users/postwait/following{/other_user}",
+            "gists_url": "https://api.github.com/users/postwait/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/postwait/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/postwait/subscriptions",
+            "organizations_url": "https://api.github.com/users/postwait/orgs",
+            "repos_url": "https://api.github.com/users/postwait/repos",
+            "events_url": "https://api.github.com/users/postwait/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/postwait/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This should have a limit to be useful. (like 30 or 60 seconds).  Otherwise, if the service breaks for 30 minutes, it could take a very very long time to recover.  So, it should change to exponential with a cap.\n",
+        "created_at": "2012-08-23T16:39:08Z",
+        "updated_at": "2012-09-26T00:47:21Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/120#discussion_r1446761",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/120",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1446761"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/120#discussion_r1446761"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/120"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1477257",
+        "pull_request_review_id": null,
+        "id": 1477257,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0NzcyNTc=",
+        "diff_hunk": "@@ -801,18 +801,88 @@ function Connection (connectionArgs, options, readyCallback) {\n     this._readyCallback = readyCallback;\n   }\n \n-  var state = 'handshake';\n   var parser;\n+  var backoffTime = null;\n+  this.connectionAttemptScheduled = false;\n+\n+  var backoff = function () {\n+    if (self._inboundHeartbeatTimer !== null) {\n+      clearTimeout(self._inboundHeartbeatTimer);\n+      self._inboundHeartbeatTimer = null;\n+    }\n+    if (self._outboundHeartbeatTimer !== null) {\n+      clearTimeout(self._outboundHeartbeatTimer);\n+      self._outboundHeartbeatTimer = null;\n+    }\n+\n+    if (!self.connectionAttemptScheduled) {\n+      // Set to true, as we are presently in the process of scheduling one.\n+      self.connectionAttemptScheduled = true;\n+\n+      // Kill the socket, if it hasn't been killed already.\n+      self.end();\n+\n+      // Reset parser state\n+      parser = null;\n+\n+      // In order for our reconnection to be seamless, we have to notify the\n+      // channels that they are no longer connected so that nobody attempts\n+      // to send messages which would be doomed to fail.\n+      for (var channel in self.channels) {\n+        if (channel != 0) {\n+          self.channels[channel].state = 'closed';\n+        }\n+      }\n+      // Queues are channels (so we have already marked them as closed), but\n+      // queues have special needs, since the subscriptions will no longer\n+      // be known to the server when we reconnect.  Mark the subscriptions as\n+      // closed so that we can resubscribe them once we are reconnected.\n+      for (var queue in self.queues) {\n+        for (var index in self.queues[queue].consumerTagOptions) {\n+          self.queues[queue].consumerTagOptions[index]['state'] = 'closed';\n+        }\n+      }\n+\n+      // Begin reconnection attempts\n+      if (self.implOptions.reconnect) {\n+        // Don't thrash, use a backoff strategy.\n+        if (backoffTime === null) {\n+          // This is the first time we've failed since a successful connection,\n+          // so use the configured backoff time without any modification.\n+          backoffTime = self.implOptions.reconnectBackoffTime;\n+        } else if (self.implOptions.reconnectBackoffStrategy === 'exponential') {\n+          // If you've configured exponential backoff, we'll double the\n+          // backoff time each subsequent attempt until success.\n+          backoffTime *= 2;",
+        "path": "amqp.js",
+        "position": 57,
+        "original_position": 57,
+        "commit_id": "485637932f00d7f603c0191099efb5d7c7605505",
+        "original_commit_id": "28ff8b83da0801aff3b3a2d70a1962e745d951f5",
+        "user": {
+            "login": "barshow",
+            "id": 607478,
+            "node_id": "MDQ6VXNlcjYwNzQ3OA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/607478?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/barshow",
+            "html_url": "https://github.com/barshow",
+            "followers_url": "https://api.github.com/users/barshow/followers",
+            "following_url": "https://api.github.com/users/barshow/following{/other_user}",
+            "gists_url": "https://api.github.com/users/barshow/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/barshow/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/barshow/subscriptions",
+            "organizations_url": "https://api.github.com/users/barshow/orgs",
+            "repos_url": "https://api.github.com/users/barshow/repos",
+            "events_url": "https://api.github.com/users/barshow/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/barshow/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thats a great point will add that!\n",
+        "created_at": "2012-08-28T17:36:12Z",
+        "updated_at": "2012-09-26T00:47:21Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/120#discussion_r1477257",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/120",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1477257"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/120#discussion_r1477257"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/120"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1694278",
+        "pull_request_review_id": null,
+        "id": 1694278,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2OTQyNzg=",
+        "diff_hunk": "@@ -983,6 +983,10 @@ Connection.prototype._onMethod = function (channel, method, args) {\n \n     // 4. The server responds with a connectionTune request\n     case methods.connectionTune:\n+      if (args.frameMax) {\n+          debug(\"tweaking maxFrameBuffer to \" + args.frameMax);\n+          maxFrameBuffer = args.frameMax;\n+      }",
+        "path": "amqp.js",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "1b322a591646be065386790cd7e3dee411419b98",
+        "original_commit_id": "1b322a591646be065386790cd7e3dee411419b98",
+        "user": {
+            "login": "majek",
+            "id": 63387,
+            "node_id": "MDQ6VXNlcjYzMzg3",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/63387?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/majek",
+            "html_url": "https://github.com/majek",
+            "followers_url": "https://api.github.com/users/majek/followers",
+            "following_url": "https://api.github.com/users/majek/following{/other_user}",
+            "gists_url": "https://api.github.com/users/majek/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/majek/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/majek/subscriptions",
+            "organizations_url": "https://api.github.com/users/majek/orgs",
+            "repos_url": "https://api.github.com/users/majek/repos",
+            "events_url": "https://api.github.com/users/majek/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/majek/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The whole point of this pull request is to adhere to `frameMax` advertised by the server. Additionally frameMax advertised by the server by default is equal to the predefined `maxFrameBuffer` (ie: 128KiB), so this line is effectively NOP for rabbit with default settings.\n",
+        "created_at": "2012-09-26T11:53:53Z",
+        "updated_at": "2012-09-26T11:53:53Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/127#discussion_r1694278",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/127",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/1694278"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/127#discussion_r1694278"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/127"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/8006419",
+        "pull_request_review_id": null,
+        "id": 8006419,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgwMDY0MTk=",
+        "diff_hunk": "@@ -1255,6 +1256,10 @@ Connection.prototype._onMethod = function (channel, method, args) {\n           if (DEBUG) { debug(\"tweaking maxFrameBuffer to \" + args.frameMax); }\n           maxFrameBuffer = args.frameMax;\n       }\n+      if (args.channelMax) {\n+          // @todo this should be eventually implemented, but works for RabbitMQ for now\n+          throw 'ability to change channelMax from default is not implemented! server requests value:' + args.channelMax;",
+        "path": "amqp.js",
+        "position": 16,
+        "original_position": 16,
+        "commit_id": "a7cc5d1ddc6c110edf62e54a91ec93c34af919e6",
+        "original_commit_id": "a7cc5d1ddc6c110edf62e54a91ec93c34af919e6",
+        "user": {
+            "login": "aheckmann",
+            "id": 166834,
+            "node_id": "MDQ6VXNlcjE2NjgzNA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/166834?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aheckmann",
+            "html_url": "https://github.com/aheckmann",
+            "followers_url": "https://api.github.com/users/aheckmann/followers",
+            "following_url": "https://api.github.com/users/aheckmann/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aheckmann/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aheckmann/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aheckmann/subscriptions",
+            "organizations_url": "https://api.github.com/users/aheckmann/orgs",
+            "repos_url": "https://api.github.com/users/aheckmann/repos",
+            "events_url": "https://api.github.com/users/aheckmann/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aheckmann/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "always throw instances of Error so that  the `stack` property is available. also, many libs expect `instanceof Error` to be true. \n",
+        "created_at": "2013-11-29T18:19:53Z",
+        "updated_at": "2013-11-29T18:19:53Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/237#discussion_r8006419",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/237",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/8006419"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/237#discussion_r8006419"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/237"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/19544289",
+        "pull_request_review_id": null,
+        "id": 19544289,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NTQ0Mjg5",
+        "diff_hunk": "@@ -565,10 +565,15 @@ Connection.prototype._chooseHost = function() {\n };\n \n Connection.prototype._createSocket = function() {\n-  var hostName = this._chooseHost(), self = this;\n+  var hostName = this._chooseHost(), self = this, port = this.options.port;\n+  if(hostName.indexOf(':') > -1){",
+        "path": "lib/connection.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "2d8cb339afdeffd55dc96f1ff7538736a3acd4c9",
+        "original_commit_id": "44bacd11883c25a9f7396d3da71ea141ee64091e",
+        "user": {
+            "login": "postwait",
+            "id": 335748,
+            "node_id": "MDQ6VXNlcjMzNTc0OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/335748?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/postwait",
+            "html_url": "https://github.com/postwait",
+            "followers_url": "https://api.github.com/users/postwait/followers",
+            "following_url": "https://api.github.com/users/postwait/following{/other_user}",
+            "gists_url": "https://api.github.com/users/postwait/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/postwait/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/postwait/subscriptions",
+            "organizations_url": "https://api.github.com/users/postwait/orgs",
+            "repos_url": "https://api.github.com/users/postwait/repos",
+            "events_url": "https://api.github.com/users/postwait/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/postwait/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "How does this interact with IPv6 addresses people have used a hosts? (containing colons)\n",
+        "created_at": "2014-10-29T15:12:27Z",
+        "updated_at": "2014-10-29T15:26:52Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/367#discussion_r19544289",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/367",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/19544289"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/367#discussion_r19544289"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/367"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/36569800",
+        "pull_request_review_id": null,
+        "id": 36569800,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NTY5ODAw",
+        "diff_hunk": "@@ -25,7 +25,7 @@ conn.once('ready', function () {\n     later(function(){\n       // This will emit a NOT_FOUND error b/c we're no longer bound to the exchange\n       var thrown = false;\n-      conn.addListener('error', function(e){\n+      exchange.addListener('error', function(e){",
+        "path": "test/test-unbind.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "c153988f38bde2e0368eef794831c141ede2e038",
+        "original_commit_id": "5755654e60d37943e38ba38a2e90f63032225abd",
+        "user": {
+            "login": "v-yarotsky",
+            "id": 472161,
+            "node_id": "MDQ6VXNlcjQ3MjE2MQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/472161?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/v-yarotsky",
+            "html_url": "https://github.com/v-yarotsky",
+            "followers_url": "https://api.github.com/users/v-yarotsky/followers",
+            "following_url": "https://api.github.com/users/v-yarotsky/following{/other_user}",
+            "gists_url": "https://api.github.com/users/v-yarotsky/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/v-yarotsky/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/v-yarotsky/subscriptions",
+            "organizations_url": "https://api.github.com/users/v-yarotsky/orgs",
+            "repos_url": "https://api.github.com/users/v-yarotsky/repos",
+            "events_url": "https://api.github.com/users/v-yarotsky/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/v-yarotsky/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Need some help on this one: the error event is not triggered on connection for some reason. That is not the case if I don't add error handlers on `channelOpenOk`.\n",
+        "created_at": "2015-08-07T23:21:34Z",
+        "updated_at": "2015-08-07T23:23:57Z",
+        "html_url": "https://github.com/postwait/node-amqp/pull/402#discussion_r36569800",
+        "pull_request_url": "https://api.github.com/repos/postwait/node-amqp/pulls/402",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/comments/36569800"
+            },
+            "html": {
+                "href": "https://github.com/postwait/node-amqp/pull/402#discussion_r36569800"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/postwait/node-amqp/pulls/402"
+            }
+        }
+    }
+]

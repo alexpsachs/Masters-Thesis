@@ -1,0 +1,1730 @@
+[
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/77370726",
+        "pull_request_review_id": null,
+        "id": 77370726,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3MzcwNzI2",
+        "diff_hunk": "@@ -23,12 +28,32 @@ protected void onNewIntent(Intent intent) {\n     }\n \n     private void handleIntent(Intent intent) {\n-        String[] permissions = intent.getStringArrayExtra(\"permissions\");\n-        requestPermissions(permissions, 42);\n+        List<String> perms = Arrays.asList(intent.getStringArrayExtra(\"permissions\"));\n+        List<String> yetGrantedPerms = Collections.emptyList();\n+\n+        // Figure out what permissions are not granted.\n+        for (String perm : perms) {\n+            int check = ContextCompat.checkSelfPermission(this,\n+                                                          perm);\n+\n+            if (PackageManager.PERMISSION_GRANTED != check) {\n+                yetGrantedPerms.add(perm);\n+            }\n+        }\n+\n+        // Request permissions if any.\n+        int permNum = yetGrantedPerms.size();\n+        if (permNum > 0) {\n+            ActivityCompat.requestPermissions(this,\n+                                              yetGrantedPerms.toArray(new String[permNum]),\n+                                              42);\n+        }\n     }\n \n     @Override\n-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {\n+    public void onRequestPermissionsResult(int requestCode,\n+                                           @NonNull String[] permissions,",
+        "path": "lib/src/main/java/com/tbruyelle/rxpermissions/ShadowActivity.java",
+        "position": 55,
+        "original_position": 55,
+        "commit_id": "6b818764a6457e590cd0cb48516da870933d7186",
+        "original_commit_id": "6b818764a6457e590cd0cb48516da870933d7186",
+        "user": {
+            "login": "boyw165",
+            "id": 6766554,
+            "node_id": "MDQ6VXNlcjY3NjY1NTQ=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6766554?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/boyw165",
+            "html_url": "https://github.com/boyw165",
+            "followers_url": "https://api.github.com/users/boyw165/followers",
+            "following_url": "https://api.github.com/users/boyw165/following{/other_user}",
+            "gists_url": "https://api.github.com/users/boyw165/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/boyw165/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/boyw165/subscriptions",
+            "organizations_url": "https://api.github.com/users/boyw165/orgs",
+            "repos_url": "https://api.github.com/users/boyw165/repos",
+            "events_url": "https://api.github.com/users/boyw165/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/boyw165/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Add `@NonNull` annotation.\n",
+        "created_at": "2016-09-02T16:02:08Z",
+        "updated_at": "2016-09-02T16:02:08Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/76#discussion_r77370726",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/76",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/77370726"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/76#discussion_r77370726"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/77440046",
+        "pull_request_review_id": null,
+        "id": 77440046,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3NDQwMDQ2",
+        "diff_hunk": "@@ -7,7 +7,11 @@\n import android.os.Bundle;\n \n @TargetApi(Build.VERSION_CODES.M)\n-public class ShadowActivity extends Activity {\n+class ShadowActivity extends Activity {",
+        "path": "lib/src/main/java/com/tbruyelle/rxpermissions/ShadowActivity.java",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "384d2d233493311513bdac962e50d5f1cafe32e0",
+        "original_commit_id": "384d2d233493311513bdac962e50d5f1cafe32e0",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why did you change the class scope ?\n",
+        "created_at": "2016-09-03T17:21:06Z",
+        "updated_at": "2016-09-03T17:21:06Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/70#discussion_r77440046",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/70",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/77440046"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/70#discussion_r77440046"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/70"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/77440121",
+        "pull_request_review_id": null,
+        "id": 77440121,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3NDQwMTIx",
+        "diff_hunk": "@@ -1,13 +1,18 @@\n package com.tbruyelle.rxpermissions;\n \n-import android.annotation.TargetApi;\n-import android.app.Activity;\n import android.content.Intent;\n-import android.os.Build;\n+import android.content.pm.PackageManager;\n import android.os.Bundle;\n+import android.support.annotation.NonNull;\n+import android.support.v4.app.ActivityCompat;\n+import android.support.v4.content.ContextCompat;\n+import android.support.v7.app.AppCompatActivity;\n \n-@TargetApi(Build.VERSION_CODES.M)\n-public class ShadowActivity extends Activity {\n+import java.util.Arrays;\n+import java.util.Collections;\n+import java.util.List;\n+\n+public class ShadowActivity extends AppCompatActivity {",
+        "path": "lib/src/main/java/com/tbruyelle/rxpermissions/ShadowActivity.java",
+        "position": 20,
+        "original_position": 20,
+        "commit_id": "6b818764a6457e590cd0cb48516da870933d7186",
+        "original_commit_id": "6b818764a6457e590cd0cb48516da870933d7186",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What is the benefit for an activity without ui to subclass `AppCompatActivity` ? I don't find any...\n",
+        "created_at": "2016-09-03T17:27:28Z",
+        "updated_at": "2016-09-03T17:28:15Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/76#discussion_r77440121",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/76",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/77440121"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/76#discussion_r77440121"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/77440240",
+        "pull_request_review_id": null,
+        "id": 77440240,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3NDQwMjQw",
+        "diff_hunk": "@@ -23,12 +28,32 @@ protected void onNewIntent(Intent intent) {\n     }\n \n     private void handleIntent(Intent intent) {\n-        String[] permissions = intent.getStringArrayExtra(\"permissions\");\n-        requestPermissions(permissions, 42);\n+        List<String> perms = Arrays.asList(intent.getStringArrayExtra(\"permissions\"));\n+        List<String> yetGrantedPerms = Collections.emptyList();\n+\n+        // Figure out what permissions are not granted.\n+        for (String perm : perms) {\n+            int check = ContextCompat.checkSelfPermission(this,\n+                                                          perm);\n+\n+            if (PackageManager.PERMISSION_GRANTED != check) {\n+                yetGrantedPerms.add(perm);\n+            }\n+        }\n+\n+        // Request permissions if any.\n+        int permNum = yetGrantedPerms.size();\n+        if (permNum > 0) {\n+            ActivityCompat.requestPermissions(this,\n+                                              yetGrantedPerms.toArray(new String[permNum]),\n+                                              42);\n+        }",
+        "path": "lib/src/main/java/com/tbruyelle/rxpermissions/ShadowActivity.java",
+        "position": 49,
+        "original_position": 49,
+        "commit_id": "6b818764a6457e590cd0cb48516da870933d7186",
+        "original_commit_id": "6b818764a6457e590cd0cb48516da870933d7186",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What is the goal of this ? Your PR has no comments.\n",
+        "created_at": "2016-09-03T17:33:43Z",
+        "updated_at": "2016-09-03T17:33:43Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/76#discussion_r77440240",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/76",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/77440240"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/76#discussion_r77440240"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/77448595",
+        "pull_request_review_id": null,
+        "id": 77448595,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3NDQ4NTk1",
+        "diff_hunk": "@@ -23,12 +28,32 @@ protected void onNewIntent(Intent intent) {\n     }\n \n     private void handleIntent(Intent intent) {\n-        String[] permissions = intent.getStringArrayExtra(\"permissions\");\n-        requestPermissions(permissions, 42);\n+        List<String> perms = Arrays.asList(intent.getStringArrayExtra(\"permissions\"));\n+        List<String> yetGrantedPerms = Collections.emptyList();\n+\n+        // Figure out what permissions are not granted.\n+        for (String perm : perms) {\n+            int check = ContextCompat.checkSelfPermission(this,\n+                                                          perm);\n+\n+            if (PackageManager.PERMISSION_GRANTED != check) {\n+                yetGrantedPerms.add(perm);\n+            }\n+        }\n+\n+        // Request permissions if any.\n+        int permNum = yetGrantedPerms.size();\n+        if (permNum > 0) {\n+            ActivityCompat.requestPermissions(this,\n+                                              yetGrantedPerms.toArray(new String[permNum]),\n+                                              42);\n+        }",
+        "path": "lib/src/main/java/com/tbruyelle/rxpermissions/ShadowActivity.java",
+        "position": 49,
+        "original_position": 49,
+        "commit_id": "6b818764a6457e590cd0cb48516da870933d7186",
+        "original_commit_id": "6b818764a6457e590cd0cb48516da870933d7186",
+        "user": {
+            "login": "tarasantoshchuk",
+            "id": 11973091,
+            "node_id": "MDQ6VXNlcjExOTczMDkx",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/11973091?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tarasantoshchuk",
+            "html_url": "https://github.com/tarasantoshchuk",
+            "followers_url": "https://api.github.com/users/tarasantoshchuk/followers",
+            "following_url": "https://api.github.com/users/tarasantoshchuk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tarasantoshchuk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tarasantoshchuk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tarasantoshchuk/subscriptions",
+            "organizations_url": "https://api.github.com/users/tarasantoshchuk/orgs",
+            "repos_url": "https://api.github.com/users/tarasantoshchuk/repos",
+            "events_url": "https://api.github.com/users/tarasantoshchuk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tarasantoshchuk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We perform similar checks in RxPermissions class, before starting ShadowActivity.\nI believe that we don't need to recheck permissions state here.\n",
+        "created_at": "2016-09-04T08:14:46Z",
+        "updated_at": "2016-09-04T08:14:46Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/76#discussion_r77448595",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/76",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/77448595"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/76#discussion_r77448595"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/76"
+            }
+        },
+        "in_reply_to_id": 77440240
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79554350",
+        "pull_request_review_id": 696479,
+        "id": 79554350,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NTU0MzUw",
+        "diff_hunk": "@@ -0,0 +1,9 @@\n+package com.tbruyelle.rxpermissions;\n+\n+final class Trigger {\n+    static final Trigger INSTANCE = new Trigger();",
+        "path": "lib/src/main/java/com/tbruyelle/rxpermissions/Trigger.java",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "af5d3a71e926ab6181ff0df0bda18ddb29c579de",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why do you need this instance rather than null?\n",
+        "created_at": "2016-09-20T07:59:16Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79554350",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79554350"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79554350"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79554519",
+        "pull_request_review_id": 696479,
+        "id": 79554519,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NTU0NTE5",
+        "diff_hunk": "@@ -18,5 +18,5 @@ dependencies {\n     compile project(':rxpermissions')\n \n     compile rootProject.ext.appCompat\n-    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'\n+    compile 'io.reactivex.rxjava2:rxandroid:2.0.0-RC1'",
+        "path": "sample/build.gradle",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "af5d3a71e926ab6181ff0df0bda18ddb29c579de",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It's wrong RxAndroid != RxBinding\n",
+        "created_at": "2016-09-20T08:00:21Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79554519",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79554519"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79554519"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79554680",
+        "pull_request_review_id": 696479,
+        "id": 79554680,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NTU0Njgw",
+        "diff_hunk": "@@ -0,0 +1,53 @@\n+package com.tbruyelle.rxpermissions.sample;\n+\n+import android.support.annotation.CheckResult;\n+import android.support.annotation.NonNull;\n+import android.view.View;\n+import io.reactivex.Observable;\n+import io.reactivex.ObservableEmitter;\n+import io.reactivex.ObservableOnSubscribe;\n+import io.reactivex.android.MainThreadDisposable;\n+\n+public final class RxView2 {",
+        "path": "sample/src/main/java/com/tbruyelle/rxpermissions/sample/RxView2.java",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "af5d3a71e926ab6181ff0df0bda18ddb29c579de",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Re-add RxBinding and you will have access to the legacy `RxView` class\n",
+        "created_at": "2016-09-20T08:01:35Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79554680",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79554680"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79554680"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79557286",
+        "pull_request_review_id": 699123,
+        "id": 79557286,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NTU3Mjg2",
+        "diff_hunk": "@@ -0,0 +1,9 @@\n+package com.tbruyelle.rxpermissions;\n+\n+final class Trigger {\n+    static final Trigger INSTANCE = new Trigger();",
+        "path": "lib/src/main/java/com/tbruyelle/rxpermissions/Trigger.java",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "af5d3a71e926ab6181ff0df0bda18ddb29c579de",
+        "user": {
+            "login": "vanniktech",
+            "id": 5759366,
+            "node_id": "MDQ6VXNlcjU3NTkzNjY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/5759366?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/vanniktech",
+            "html_url": "https://github.com/vanniktech",
+            "followers_url": "https://api.github.com/users/vanniktech/followers",
+            "following_url": "https://api.github.com/users/vanniktech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/vanniktech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/vanniktech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/vanniktech/subscriptions",
+            "organizations_url": "https://api.github.com/users/vanniktech/orgs",
+            "repos_url": "https://api.github.com/users/vanniktech/repos",
+            "events_url": "https://api.github.com/users/vanniktech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/vanniktech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Null values are forbidden now. Observable.just(null) will throw NPE that's why you need some other type\n",
+        "created_at": "2016-09-20T08:18:00Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79557286",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79557286"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79557286"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        },
+        "in_reply_to_id": 79554350
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79557358",
+        "pull_request_review_id": 699187,
+        "id": 79557358,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NTU3MzU4",
+        "diff_hunk": "@@ -0,0 +1,53 @@\n+package com.tbruyelle.rxpermissions.sample;\n+\n+import android.support.annotation.CheckResult;\n+import android.support.annotation.NonNull;\n+import android.view.View;\n+import io.reactivex.Observable;\n+import io.reactivex.ObservableEmitter;\n+import io.reactivex.ObservableOnSubscribe;\n+import io.reactivex.android.MainThreadDisposable;\n+\n+public final class RxView2 {",
+        "path": "sample/src/main/java/com/tbruyelle/rxpermissions/sample/RxView2.java",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "af5d3a71e926ab6181ff0df0bda18ddb29c579de",
+        "user": {
+            "login": "vanniktech",
+            "id": 5759366,
+            "node_id": "MDQ6VXNlcjU3NTkzNjY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/5759366?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/vanniktech",
+            "html_url": "https://github.com/vanniktech",
+            "followers_url": "https://api.github.com/users/vanniktech/followers",
+            "following_url": "https://api.github.com/users/vanniktech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/vanniktech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/vanniktech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/vanniktech/subscriptions",
+            "organizations_url": "https://api.github.com/users/vanniktech/orgs",
+            "repos_url": "https://api.github.com/users/vanniktech/repos",
+            "events_url": "https://api.github.com/users/vanniktech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/vanniktech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Not possible. RxView emits null for each click events which are forbidden. \n",
+        "created_at": "2016-09-20T08:18:26Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79557358",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79557358"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79557358"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        },
+        "in_reply_to_id": 79554680
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79557451",
+        "pull_request_review_id": 699267,
+        "id": 79557451,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NTU3NDUx",
+        "diff_hunk": "@@ -18,5 +18,5 @@ dependencies {\n     compile project(':rxpermissions')\n \n     compile rootProject.ext.appCompat\n-    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'\n+    compile 'io.reactivex.rxjava2:rxandroid:2.0.0-RC1'",
+        "path": "sample/build.gradle",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "af5d3a71e926ab6181ff0df0bda18ddb29c579de",
+        "user": {
+            "login": "vanniktech",
+            "id": 5759366,
+            "node_id": "MDQ6VXNlcjU3NTkzNjY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/5759366?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/vanniktech",
+            "html_url": "https://github.com/vanniktech",
+            "followers_url": "https://api.github.com/users/vanniktech/followers",
+            "following_url": "https://api.github.com/users/vanniktech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/vanniktech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/vanniktech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/vanniktech/subscriptions",
+            "organizations_url": "https://api.github.com/users/vanniktech/orgs",
+            "repos_url": "https://api.github.com/users/vanniktech/repos",
+            "events_url": "https://api.github.com/users/vanniktech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/vanniktech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yup I know but we can't use version 0.4.0 which only supports RxJava 1. However the MainThreadDisposable is needed in RxView2 which we only get from RxAndroid\n",
+        "created_at": "2016-09-20T08:19:04Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79557451",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79557451"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79557451"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        },
+        "in_reply_to_id": 79554519
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79570521",
+        "pull_request_review_id": 711160,
+        "id": 79570521,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NTcwNTIx",
+        "diff_hunk": "@@ -18,5 +18,5 @@ dependencies {\n     compile project(':rxpermissions')\n \n     compile rootProject.ext.appCompat\n-    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'\n+    compile 'io.reactivex.rxjava2:rxandroid:2.0.0-RC1'",
+        "path": "sample/build.gradle",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "af5d3a71e926ab6181ff0df0bda18ddb29c579de",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Oh ok, in that case I think we should switch to the legacy click listener, in order to prevent confusion with that extra `RxView2` class. It's the sample app and we need to keep it very simple.\n",
+        "created_at": "2016-09-20T09:35:24Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79570521",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79570521"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79570521"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        },
+        "in_reply_to_id": 79554519
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79571923",
+        "pull_request_review_id": 712481,
+        "id": 79571923,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc5NTcxOTIz",
+        "diff_hunk": "@@ -0,0 +1,9 @@\n+package com.tbruyelle.rxpermissions;\n+\n+final class Trigger {\n+    static final Trigger INSTANCE = new Trigger();",
+        "path": "lib/src/main/java/com/tbruyelle/rxpermissions/Trigger.java",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "af5d3a71e926ab6181ff0df0bda18ddb29c579de",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ok, but do we really need an extra class for that ? Why not a simple field in the `RxPermissions` class : \n\n``` java\nstatic final Object trigger = new Object();\n```\n",
+        "created_at": "2016-09-20T09:43:19Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79571923",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/79571923"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r79571923"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        },
+        "in_reply_to_id": 79554350
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/80032974",
+        "pull_request_review_id": 1134240,
+        "id": 80032974,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgwMDMyOTc0",
+        "diff_hunk": "@@ -25,6 +25,10 @@ android {\n             events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'\n         }\n     }\n+\n+    testOptions {\n+        unitTests.returnDefaultValues = true",
+        "path": "lib/build.gradle",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "902bfd4df48ff9e811d739a0251cb1d3c057f3e9",
+        "user": {
+            "login": "vanniktech",
+            "id": 5759366,
+            "node_id": "MDQ6VXNlcjU3NTkzNjY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/5759366?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/vanniktech",
+            "html_url": "https://github.com/vanniktech",
+            "followers_url": "https://api.github.com/users/vanniktech/followers",
+            "following_url": "https://api.github.com/users/vanniktech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/vanniktech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/vanniktech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/vanniktech/subscriptions",
+            "organizations_url": "https://api.github.com/users/vanniktech/orgs",
+            "repos_url": "https://api.github.com/users/vanniktech/repos",
+            "events_url": "https://api.github.com/users/vanniktech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/vanniktech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this is needed locally when running tests from the terminal\n",
+        "created_at": "2016-09-22T12:53:55Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r80032974",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/80032974"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r80032974"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/80035517",
+        "pull_request_review_id": 1136719,
+        "id": 80035517,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgwMDM1NTE3",
+        "diff_hunk": "@@ -161,4 +161,9 @@ function splitJvmOpts() {\n eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS\n JVM_OPTS[${#JVM_OPTS[*]}]=\"-Dorg.gradle.appname=$APP_BASE_NAME\"\n \n+# by default we should be in the correct project dir, but when run from Finder on Mac, the cwd is wrong\n+if [[ \"$(uname)\" == \"Darwin\" ]] && [[ \"$HOME\" == \"$PWD\" ]]; then\n+  cd \"$(dirname \"$0\")\"\n+fi",
+        "path": "gradlew",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "902bfd4df48ff9e811d739a0251cb1d3c057f3e9",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You really run gradlew  _from Finder_ ??\n",
+        "created_at": "2016-09-22T13:09:11Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r80035517",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/80035517"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r80035517"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/80036170",
+        "pull_request_review_id": 1137353,
+        "id": 80036170,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgwMDM2MTcw",
+        "diff_hunk": "@@ -25,6 +25,10 @@ android {\n             events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'\n         }\n     }\n+\n+    testOptions {\n+        unitTests.returnDefaultValues = true",
+        "path": "lib/build.gradle",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "902bfd4df48ff9e811d739a0251cb1d3c057f3e9",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I don't understand why, this is not linked to the running environment. In general I prefer to disable that option because it can hide an unmocked object that should be mocked (when disabled an exception is thrown, so it's visible)\n",
+        "created_at": "2016-09-22T13:12:59Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r80036170",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/80036170"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r80036170"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        },
+        "in_reply_to_id": 80032974
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/80038260",
+        "pull_request_review_id": 1139333,
+        "id": 80038260,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgwMDM4MjYw",
+        "diff_hunk": "@@ -161,4 +161,9 @@ function splitJvmOpts() {\n eval splitJvmOpts $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS\n JVM_OPTS[${#JVM_OPTS[*]}]=\"-Dorg.gradle.appname=$APP_BASE_NAME\"\n \n+# by default we should be in the correct project dir, but when run from Finder on Mac, the cwd is wrong\n+if [[ \"$(uname)\" == \"Darwin\" ]] && [[ \"$HOME\" == \"$PWD\" ]]; then\n+  cd \"$(dirname \"$0\")\"\n+fi",
+        "path": "gradlew",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "c51e7cbec5d7b20102d4e34ee8814db2f3b737e1",
+        "original_commit_id": "902bfd4df48ff9e811d739a0251cb1d3c057f3e9",
+        "user": {
+            "login": "vanniktech",
+            "id": 5759366,
+            "node_id": "MDQ6VXNlcjU3NTkzNjY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/5759366?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/vanniktech",
+            "html_url": "https://github.com/vanniktech",
+            "followers_url": "https://api.github.com/users/vanniktech/followers",
+            "following_url": "https://api.github.com/users/vanniktech/following{/other_user}",
+            "gists_url": "https://api.github.com/users/vanniktech/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/vanniktech/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/vanniktech/subscriptions",
+            "organizations_url": "https://api.github.com/users/vanniktech/orgs",
+            "repos_url": "https://api.github.com/users/vanniktech/repos",
+            "events_url": "https://api.github.com/users/vanniktech/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/vanniktech/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "That change in gradlew is coming from Gradle itself and not from me. \n",
+        "created_at": "2016-09-22T13:23:26Z",
+        "updated_at": "2016-09-23T10:02:37Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r80038260",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/80038260"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/80#discussion_r80038260"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/80"
+            }
+        },
+        "in_reply_to_id": 80035517
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/99443132",
+        "pull_request_review_id": 20125621,
+        "id": 99443132,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk5NDQzMTMy",
+        "diff_hunk": "@@ -249,6 +252,21 @@ public boolean isGranted(String permission) {\n     }\n \n     /**\n+     * Returns true if the permission is already granted.\n+     * <p>\n+     * Always true if SDK &lt; 23.\n+     */\n+    @SuppressWarnings(\"WeakerAccess\")\n+    public static boolean isGranted(Context context, String permission) {\n+        return !isMarshmallowImplementation() || isGrantedImplementation(context, permission);",
+        "path": "lib/src/main/java/com/tbruyelle/rxpermissions/RxPermissions.java",
+        "position": 22,
+        "original_position": 22,
+        "commit_id": "037d1da08783007f7b04ea994f7ca319ac18e380",
+        "original_commit_id": "037d1da08783007f7b04ea994f7ca319ac18e380",
+        "user": {
+            "login": "epool",
+            "id": 1973616,
+            "node_id": "MDQ6VXNlcjE5NzM2MTY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1973616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/epool",
+            "html_url": "https://github.com/epool",
+            "followers_url": "https://api.github.com/users/epool/followers",
+            "following_url": "https://api.github.com/users/epool/following{/other_user}",
+            "gists_url": "https://api.github.com/users/epool/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/epool/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/epool/subscriptions",
+            "organizations_url": "https://api.github.com/users/epool/orgs",
+            "repos_url": "https://api.github.com/users/epool/repos",
+            "events_url": "https://api.github.com/users/epool/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/epool/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@Luolc we can also create a Observable<Boolean> version for these static methods, like `Observable.fromCallable(() -> isGranted.(context, permission));`",
+        "created_at": "2017-02-03T23:26:40Z",
+        "updated_at": "2017-02-03T23:26:48Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/111#discussion_r99443132",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/111",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/99443132"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/111#discussion_r99443132"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/111"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/100486325",
+        "pull_request_review_id": 21194545,
+        "id": 100486325,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMDQ4NjMyNQ==",
+        "diff_hunk": "@@ -37,21 +37,23 @@ ext {\n     bintrayRepo = 'tbruyelle'\n     bintrayName = 'RxPermissions'\n \n-    publishedGroupId = 'com.tbruyelle.rxpermissions'\n+    publishedGroupId = 'com.sanqis.rxpermissions'\n     artifact = 'rxpermissions'\n     libraryName = 'RxPermissions'\n     libraryVersion = '0.9.1'\n \n     libraryDescription = 'A wrapper for Android 6.0 permissions'\n \n-    siteUrl = 'https://github.com/tbruyelle/RxPermissions'\n-    gitUrl = 'https://github.com/tbruyelle/RxPermissions.git'\n+    siteUrl = 'https://github.com/Sanqis/RxPermissions'\n+    gitUrl = 'https://github.com/Sanqis/RxPermissions.git'\n \n-    developerId = 'tbruyelle'\n-    developerName = 'Thomas Bruyelle'\n-    developerEmail = 'thomas.bruyelle@gmail.com'\n+    developerId = 'Sanqis'\n+    developerName = 'Jady Li'\n+    developerEmail = '1257984872@qq.com'",
+        "path": "build.gradle",
+        "position": 44,
+        "original_position": 44,
+        "commit_id": "83f5c41528c71058c35ff549334d1018f84ada64",
+        "original_commit_id": "83f5c41528c71058c35ff549334d1018f84ada64",
+        "user": {
+            "login": "T12E",
+            "id": 4158832,
+            "node_id": "MDQ6VXNlcjQxNTg4MzI=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/4158832?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/T12E",
+            "html_url": "https://github.com/T12E",
+            "followers_url": "https://api.github.com/users/T12E/followers",
+            "following_url": "https://api.github.com/users/T12E/following{/other_user}",
+            "gists_url": "https://api.github.com/users/T12E/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/T12E/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/T12E/subscriptions",
+            "organizations_url": "https://api.github.com/users/T12E/orgs",
+            "repos_url": "https://api.github.com/users/T12E/repos",
+            "events_url": "https://api.github.com/users/T12E/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/T12E/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Really ?",
+        "created_at": "2017-02-10T07:59:20Z",
+        "updated_at": "2017-02-10T07:59:31Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/119#discussion_r100486325",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/119",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/100486325"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/119#discussion_r100486325"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/119"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/101923592",
+        "pull_request_review_id": 22664481,
+        "id": 101923592,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMTkyMzU5Mg==",
+        "diff_hunk": "@@ -0,0 +1,17 @@\n+# Project-wide Gradle settings.\n+\n+# IDE (e.g. Android Studio) users:\n+# Gradle settings configured through the IDE *will override*\n+# any settings specified in this file.\n+\n+# For more details on how to configure your build environment visit\n+# http://www.gradle.org/docs/current/userguide/build_environment.html\n+\n+# Specifies the JVM arguments used for the daemon process.\n+# The setting is particularly useful for tweaking memory settings.\n+org.gradle.jvmargs=-Xmx1536m",
+        "path": "gradle.properties",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "b0a492213ba0f0c149ee2f1230b145bf98440175",
+        "original_commit_id": "70994c376802f9e51c6572e5aa62d3ea745c1118",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why this settting?",
+        "created_at": "2017-02-19T17:23:06Z",
+        "updated_at": "2017-03-03T09:27:18Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r101923592",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/101923592"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r101923592"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/101923599",
+        "pull_request_review_id": 22664481,
+        "id": 101923599,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMTkyMzU5OQ==",
+        "diff_hunk": "@@ -1,8 +1,9 @@\n-<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n-             xmlns:tools=\"http://schemas.android.com/tools\"\n-             android:layout_width=\"match_parent\"\n-             android:layout_height=\"match_parent\"\n-             tools:context=\".MainActivity\"\n+<merge",
+        "path": "sample/src/main/res/layout/activity_main.xml",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "b0a492213ba0f0c149ee2f1230b145bf98440175",
+        "original_commit_id": "70994c376802f9e51c6572e5aa62d3ea745c1118",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Are you sure it works on any Android version ?",
+        "created_at": "2017-02-19T17:23:50Z",
+        "updated_at": "2017-03-03T09:27:18Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r101923599",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/101923599"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r101923599"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/101923611",
+        "pull_request_review_id": 22664481,
+        "id": 101923611,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMTkyMzYxMQ==",
+        "diff_hunk": "@@ -30,7 +30,7 @@ protected void onCreate(Bundle savedInstanceState) {\n         RxPermissions rxPermissions = new RxPermissions(this);\n         rxPermissions.setLogging(true);\n \n-        setContentView(R.layout.act_main);\n+        setContentView(R.layout.activity_main);",
+        "path": "sample/src/main/java/com/tbruyelle/rxpermissions/sample/MainActivity.java",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "b0a492213ba0f0c149ee2f1230b145bf98440175",
+        "original_commit_id": "70994c376802f9e51c6572e5aa62d3ea745c1118",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please respect owner naming convention ^^",
+        "created_at": "2017-02-19T17:24:31Z",
+        "updated_at": "2017-03-03T09:27:18Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r101923611",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/101923611"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r101923611"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/101923617",
+        "pull_request_review_id": 22664481,
+        "id": 101923617,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMTkyMzYxNw==",
+        "diff_hunk": "@@ -12,6 +13,7 @@\n         android:icon=\"@mipmap/ic_launcher\"\n         android:label=\"@string/app_name\"\n         android:theme=\"@style/Theme.AppCompat.Light.DarkActionBar\"\n+        tools:ignore=\"GoogleAppIndexingWarning\"",
+        "path": "sample/src/main/AndroidManifest.xml",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "b0a492213ba0f0c149ee2f1230b145bf98440175",
+        "original_commit_id": "70994c376802f9e51c6572e5aa62d3ea745c1118",
+        "user": {
+            "login": "tbruyelle",
+            "id": 92280,
+            "node_id": "MDQ6VXNlcjkyMjgw",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/92280?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tbruyelle",
+            "html_url": "https://github.com/tbruyelle",
+            "followers_url": "https://api.github.com/users/tbruyelle/followers",
+            "following_url": "https://api.github.com/users/tbruyelle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tbruyelle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tbruyelle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tbruyelle/subscriptions",
+            "organizations_url": "https://api.github.com/users/tbruyelle/orgs",
+            "repos_url": "https://api.github.com/users/tbruyelle/repos",
+            "events_url": "https://api.github.com/users/tbruyelle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tbruyelle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Explain",
+        "created_at": "2017-02-19T17:24:45Z",
+        "updated_at": "2017-03-03T09:27:18Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r101923617",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/101923617"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r101923617"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/104115255",
+        "pull_request_review_id": 24932297,
+        "id": 104115255,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNDExNTI1NQ==",
+        "diff_hunk": "@@ -0,0 +1,17 @@\n+# Project-wide Gradle settings.\n+\n+# IDE (e.g. Android Studio) users:\n+# Gradle settings configured through the IDE *will override*\n+# any settings specified in this file.\n+\n+# For more details on how to configure your build environment visit\n+# http://www.gradle.org/docs/current/userguide/build_environment.html\n+\n+# Specifies the JVM arguments used for the daemon process.\n+# The setting is particularly useful for tweaking memory settings.\n+org.gradle.jvmargs=-Xmx1536m",
+        "path": "gradle.properties",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "b0a492213ba0f0c149ee2f1230b145bf98440175",
+        "original_commit_id": "70994c376802f9e51c6572e5aa62d3ea745c1118",
+        "user": {
+            "login": "friederbluemle",
+            "id": 743291,
+            "node_id": "MDQ6VXNlcjc0MzI5MQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/743291?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/friederbluemle",
+            "html_url": "https://github.com/friederbluemle",
+            "followers_url": "https://api.github.com/users/friederbluemle/followers",
+            "following_url": "https://api.github.com/users/friederbluemle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/friederbluemle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/friederbluemle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/friederbluemle/subscriptions",
+            "organizations_url": "https://api.github.com/users/friederbluemle/orgs",
+            "repos_url": "https://api.github.com/users/friederbluemle/repos",
+            "events_url": "https://api.github.com/users/friederbluemle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/friederbluemle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The reason is that with the default setting of 1GB and a more recent version of the Android build tool chain and Gradle, `dex` will run out of process since it requires a larger heap. Adding this setting allows dex to run in the same process, speeding up the build. This is now also the default setting, if you create a new project using the latest version of Android Studio.\r\n\r\nDuring the build, you would encounter this warning if the heap was not explicity set to at least 1.5G:\r\n\r\n```\r\nRunning dex as a separate process.\r\n\r\nTo run dex in process, the Gradle daemon needs a larger heap.\r\nIt currently has 1024 MB.\r\nFor faster builds, increase the maximum heap size for the Gradle daemon to at least 1536 MB.\r\nTo do this set org.gradle.jvmargs=-Xmx1536M in the project gradle.properties.\r\nFor more information see https://docs.gradle.org/current/userguide/build_environment.html\r\n```",
+        "created_at": "2017-03-03T09:23:13Z",
+        "updated_at": "2017-03-03T09:27:18Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r104115255",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/104115255"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r104115255"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122"
+            }
+        },
+        "in_reply_to_id": 101923592
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/104115292",
+        "pull_request_review_id": 24932343,
+        "id": 104115292,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNDExNTI5Mg==",
+        "diff_hunk": "@@ -1,8 +1,9 @@\n-<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n-             xmlns:tools=\"http://schemas.android.com/tools\"\n-             android:layout_width=\"match_parent\"\n-             android:layout_height=\"match_parent\"\n-             tools:context=\".MainActivity\"\n+<merge",
+        "path": "sample/src/main/res/layout/activity_main.xml",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "b0a492213ba0f0c149ee2f1230b145bf98440175",
+        "original_commit_id": "70994c376802f9e51c6572e5aa62d3ea745c1118",
+        "user": {
+            "login": "friederbluemle",
+            "id": 743291,
+            "node_id": "MDQ6VXNlcjc0MzI5MQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/743291?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/friederbluemle",
+            "html_url": "https://github.com/friederbluemle",
+            "followers_url": "https://api.github.com/users/friederbluemle/followers",
+            "following_url": "https://api.github.com/users/friederbluemle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/friederbluemle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/friederbluemle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/friederbluemle/subscriptions",
+            "organizations_url": "https://api.github.com/users/friederbluemle/orgs",
+            "repos_url": "https://api.github.com/users/friederbluemle/repos",
+            "events_url": "https://api.github.com/users/friederbluemle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/friederbluemle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I tested on an API 14 emulator and there were no issues.",
+        "created_at": "2017-03-03T09:23:30Z",
+        "updated_at": "2017-03-03T09:27:18Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r104115292",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/104115292"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r104115292"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122"
+            }
+        },
+        "in_reply_to_id": 101923599
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/104115341",
+        "pull_request_review_id": 24932391,
+        "id": 104115341,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNDExNTM0MQ==",
+        "diff_hunk": "@@ -30,7 +30,7 @@ protected void onCreate(Bundle savedInstanceState) {\n         RxPermissions rxPermissions = new RxPermissions(this);\n         rxPermissions.setLogging(true);\n \n-        setContentView(R.layout.act_main);\n+        setContentView(R.layout.activity_main);",
+        "path": "sample/src/main/java/com/tbruyelle/rxpermissions/sample/MainActivity.java",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "b0a492213ba0f0c149ee2f1230b145bf98440175",
+        "original_commit_id": "70994c376802f9e51c6572e5aa62d3ea745c1118",
+        "user": {
+            "login": "friederbluemle",
+            "id": 743291,
+            "node_id": "MDQ6VXNlcjc0MzI5MQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/743291?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/friederbluemle",
+            "html_url": "https://github.com/friederbluemle",
+            "followers_url": "https://api.github.com/users/friederbluemle/followers",
+            "following_url": "https://api.github.com/users/friederbluemle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/friederbluemle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/friederbluemle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/friederbluemle/subscriptions",
+            "organizations_url": "https://api.github.com/users/friederbluemle/orgs",
+            "repos_url": "https://api.github.com/users/friederbluemle/repos",
+            "events_url": "https://api.github.com/users/friederbluemle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/friederbluemle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Okay, I reverted the rename",
+        "created_at": "2017-03-03T09:23:46Z",
+        "updated_at": "2017-03-03T09:27:18Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r104115341",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/104115341"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r104115341"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122"
+            }
+        },
+        "in_reply_to_id": 101923611
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/104115525",
+        "pull_request_review_id": 24932593,
+        "id": 104115525,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNDExNTUyNQ==",
+        "diff_hunk": "@@ -12,6 +13,7 @@\n         android:icon=\"@mipmap/ic_launcher\"\n         android:label=\"@string/app_name\"\n         android:theme=\"@style/Theme.AppCompat.Light.DarkActionBar\"\n+        tools:ignore=\"GoogleAppIndexingWarning\"",
+        "path": "sample/src/main/AndroidManifest.xml",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "b0a492213ba0f0c149ee2f1230b145bf98440175",
+        "original_commit_id": "70994c376802f9e51c6572e5aa62d3ea745c1118",
+        "user": {
+            "login": "friederbluemle",
+            "id": 743291,
+            "node_id": "MDQ6VXNlcjc0MzI5MQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/743291?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/friederbluemle",
+            "html_url": "https://github.com/friederbluemle",
+            "followers_url": "https://api.github.com/users/friederbluemle/followers",
+            "following_url": "https://api.github.com/users/friederbluemle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/friederbluemle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/friederbluemle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/friederbluemle/subscriptions",
+            "organizations_url": "https://api.github.com/users/friederbluemle/orgs",
+            "repos_url": "https://api.github.com/users/friederbluemle/repos",
+            "events_url": "https://api.github.com/users/friederbluemle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/friederbluemle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It simply removes a Lint warning and highlight in Android Studio complaining about missing app indexing. I assume you won't ever need deep link support through Google search for this sample app. ;)",
+        "created_at": "2017-03-03T09:24:48Z",
+        "updated_at": "2017-03-03T09:27:18Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r104115525",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/104115525"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/122#discussion_r104115525"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/122"
+            }
+        },
+        "in_reply_to_id": 101923617
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/197184981",
+        "pull_request_review_id": 130879548,
+        "id": 197184981,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzE4NDk4MQ==",
+        "diff_hunk": "@@ -20,8 +20,6 @@\n import android.content.pm.PackageManager;\n import android.os.Build;\n \n-import com.tbruyelle.rxpermissions.BuildConfig;",
+        "path": "lib/src/test/java/com/tbruyelle/rxpermissions2/RxPermissionsTest.java",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "ffcb2544a6a3cbd7d52b73f5961a5f304a45e1fe",
+        "original_commit_id": "ffcb2544a6a3cbd7d52b73f5961a5f304a45e1fe",
+        "user": {
+            "login": "epool",
+            "id": 1973616,
+            "node_id": "MDQ6VXNlcjE5NzM2MTY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1973616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/epool",
+            "html_url": "https://github.com/epool",
+            "followers_url": "https://api.github.com/users/epool/followers",
+            "following_url": "https://api.github.com/users/epool/following{/other_user}",
+            "gists_url": "https://api.github.com/users/epool/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/epool/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/epool/subscriptions",
+            "organizations_url": "https://api.github.com/users/epool/orgs",
+            "repos_url": "https://api.github.com/users/epool/repos",
+            "events_url": "https://api.github.com/users/epool/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/epool/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@wangyongf `BuildConfig` is being used in the line `50` how is this resolved? should `com.tbruyelle.rxpermissions2.BuildConfig` be imported?",
+        "created_at": "2018-06-21T15:48:03Z",
+        "updated_at": "2018-06-21T15:48:04Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/229#discussion_r197184981",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/229",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/197184981"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/229#discussion_r197184981"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/229"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/197186481",
+        "pull_request_review_id": 130881400,
+        "id": 197186481,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzE4NjQ4MQ==",
+        "diff_hunk": "@@ -20,8 +20,6 @@\n import android.content.pm.PackageManager;\n import android.os.Build;\n \n-import com.tbruyelle.rxpermissions.BuildConfig;",
+        "path": "lib/src/test/java/com/tbruyelle/rxpermissions2/RxPermissionsTest.java",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "ffcb2544a6a3cbd7d52b73f5961a5f304a45e1fe",
+        "original_commit_id": "ffcb2544a6a3cbd7d52b73f5961a5f304a45e1fe",
+        "user": {
+            "login": "epool",
+            "id": 1973616,
+            "node_id": "MDQ6VXNlcjE5NzM2MTY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1973616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/epool",
+            "html_url": "https://github.com/epool",
+            "followers_url": "https://api.github.com/users/epool/followers",
+            "following_url": "https://api.github.com/users/epool/following{/other_user}",
+            "gists_url": "https://api.github.com/users/epool/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/epool/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/epool/subscriptions",
+            "organizations_url": "https://api.github.com/users/epool/orgs",
+            "repos_url": "https://api.github.com/users/epool/repos",
+            "events_url": "https://api.github.com/users/epool/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/epool/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nvm looks like all the tests passes on travis",
+        "created_at": "2018-06-21T15:52:14Z",
+        "updated_at": "2018-06-21T15:52:15Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/229#discussion_r197186481",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/229",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/197186481"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/229#discussion_r197186481"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/229"
+            }
+        },
+        "in_reply_to_id": 197184981
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/215322174",
+        "pull_request_review_id": 152559785,
+        "id": 215322174,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNTMyMjE3NA==",
+        "diff_hunk": "@@ -3,8 +3,8 @@ language: android\n android:\n   components:\n     - tools\n-    - build-tools-27.0.3\n-    - android-27\n+    - build-tools-28.0.2",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "480b6a677dad3cb5590d4eaef73b80fa2edd34d6",
+        "original_commit_id": "ddd76945be07e2700c4ffd1bbd909cfb615f2bab",
+        "user": {
+            "login": "epool",
+            "id": 1973616,
+            "node_id": "MDQ6VXNlcjE5NzM2MTY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1973616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/epool",
+            "html_url": "https://github.com/epool",
+            "followers_url": "https://api.github.com/users/epool/followers",
+            "following_url": "https://api.github.com/users/epool/following{/other_user}",
+            "gists_url": "https://api.github.com/users/epool/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/epool/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/epool/subscriptions",
+            "organizations_url": "https://api.github.com/users/epool/orgs",
+            "repos_url": "https://api.github.com/users/epool/repos",
+            "events_url": "https://api.github.com/users/epool/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/epool/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@voltazor according with travis, we don't need to change build tools version since we didn't touch it, just the android version.",
+        "created_at": "2018-09-05T15:37:43Z",
+        "updated_at": "2018-10-17T08:21:06Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r215322174",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/215322174"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r215322174"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/221376394",
+        "pull_request_review_id": 160017824,
+        "id": 221376394,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMTM3NjM5NA==",
+        "diff_hunk": "@@ -19,14 +19,14 @@ allprojects {\n \n ext {\n     minSdkVersion = 11\n-    compileSdkVersion = 27\n+    compileSdkVersion = 28\n     targetSdkVersion = compileSdkVersion\n \n     rxJava = 'io.reactivex.rxjava2:rxjava:2.1.16'\n-    supportLibraryVersion = '27.1.1'\n-    appCompat = \"com.android.support:appcompat-v7:$supportLibraryVersion\"\n-    supportAnnotations = \"com.android.support:support-annotations:$supportLibraryVersion\"\n-    supportFragment = \"com.android.support:support-fragment:$supportLibraryVersion\"\n+    androidxVersion = '1.0.0-alpha1'",
+        "path": "build.gradle",
+        "position": null,
+        "original_position": 22,
+        "commit_id": "480b6a677dad3cb5590d4eaef73b80fa2edd34d6",
+        "original_commit_id": "4b45aabc8c6c689d1c69eb392c957fce5f9803bb",
+        "user": {
+            "login": "XinyueZ",
+            "id": 7869833,
+            "node_id": "MDQ6VXNlcjc4Njk4MzM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/7869833?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/XinyueZ",
+            "html_url": "https://github.com/XinyueZ",
+            "followers_url": "https://api.github.com/users/XinyueZ/followers",
+            "following_url": "https://api.github.com/users/XinyueZ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/XinyueZ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/XinyueZ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/XinyueZ/subscriptions",
+            "organizations_url": "https://api.github.com/users/XinyueZ/orgs",
+            "repos_url": "https://api.github.com/users/XinyueZ/repos",
+            "events_url": "https://api.github.com/users/XinyueZ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/XinyueZ/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "1.0.0 is released",
+        "created_at": "2018-09-28T20:43:16Z",
+        "updated_at": "2018-10-17T08:21:06Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r221376394",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/221376394"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r221376394"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/221376545",
+        "pull_request_review_id": 160017824,
+        "id": 221376545,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMTM3NjU0NQ==",
+        "diff_hunk": "@@ -4,7 +4,7 @@ buildscript {\n         jcenter()\n     }\n     dependencies {\n-        classpath 'com.android.tools.build:gradle:3.1.3'\n+        classpath 'com.android.tools.build:gradle:3.1.4'",
+        "path": "build.gradle",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "480b6a677dad3cb5590d4eaef73b80fa2edd34d6",
+        "original_commit_id": "4b45aabc8c6c689d1c69eb392c957fce5f9803bb",
+        "user": {
+            "login": "XinyueZ",
+            "id": 7869833,
+            "node_id": "MDQ6VXNlcjc4Njk4MzM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/7869833?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/XinyueZ",
+            "html_url": "https://github.com/XinyueZ",
+            "followers_url": "https://api.github.com/users/XinyueZ/followers",
+            "following_url": "https://api.github.com/users/XinyueZ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/XinyueZ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/XinyueZ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/XinyueZ/subscriptions",
+            "organizations_url": "https://api.github.com/users/XinyueZ/orgs",
+            "repos_url": "https://api.github.com/users/XinyueZ/repos",
+            "events_url": "https://api.github.com/users/XinyueZ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/XinyueZ/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "3.2.0 or 3.3.0-alpha12",
+        "created_at": "2018-09-28T20:43:57Z",
+        "updated_at": "2018-10-17T08:21:06Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r221376545",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/221376545"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r221376545"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/225636080",
+        "pull_request_review_id": 165277755,
+        "id": 225636080,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNTYzNjA4MA==",
+        "diff_hunk": "@@ -4,7 +4,7 @@ buildscript {\n         jcenter()\n     }\n     dependencies {\n-        classpath 'com.android.tools.build:gradle:3.1.3'\n+        classpath 'com.android.tools.build:gradle:3.2.0'",
+        "path": "build.gradle",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "480b6a677dad3cb5590d4eaef73b80fa2edd34d6",
+        "original_commit_id": "f96837c88b0e3b41b5e3aed820047d6a596c5629",
+        "user": {
+            "login": "XinyueZ",
+            "id": 7869833,
+            "node_id": "MDQ6VXNlcjc4Njk4MzM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/7869833?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/XinyueZ",
+            "html_url": "https://github.com/XinyueZ",
+            "followers_url": "https://api.github.com/users/XinyueZ/followers",
+            "following_url": "https://api.github.com/users/XinyueZ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/XinyueZ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/XinyueZ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/XinyueZ/subscriptions",
+            "organizations_url": "https://api.github.com/users/XinyueZ/orgs",
+            "repos_url": "https://api.github.com/users/XinyueZ/repos",
+            "events_url": "https://api.github.com/users/XinyueZ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/XinyueZ/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "3.2.1 now",
+        "created_at": "2018-10-16T17:26:00Z",
+        "updated_at": "2018-10-17T08:21:06Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r225636080",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/225636080"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r225636080"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/225636453",
+        "pull_request_review_id": 165277755,
+        "id": 225636453,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNTYzNjQ1Mw==",
+        "diff_hunk": "@@ -1,10 +1,13 @@\n language: android\n \n+before_install:\n+  - yes | sdkmanager \"platforms;android-28\"\n+\n android:\n   components:\n     - tools\n-    - build-tools-27.0.3\n-    - android-27\n+    - build-tools-28.0.2",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "480b6a677dad3cb5590d4eaef73b80fa2edd34d6",
+        "original_commit_id": "f96837c88b0e3b41b5e3aed820047d6a596c5629",
+        "user": {
+            "login": "XinyueZ",
+            "id": 7869833,
+            "node_id": "MDQ6VXNlcjc4Njk4MzM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/7869833?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/XinyueZ",
+            "html_url": "https://github.com/XinyueZ",
+            "followers_url": "https://api.github.com/users/XinyueZ/followers",
+            "following_url": "https://api.github.com/users/XinyueZ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/XinyueZ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/XinyueZ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/XinyueZ/subscriptions",
+            "organizations_url": "https://api.github.com/users/XinyueZ/orgs",
+            "repos_url": "https://api.github.com/users/XinyueZ/repos",
+            "events_url": "https://api.github.com/users/XinyueZ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/XinyueZ/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "28.0.3",
+        "created_at": "2018-10-16T17:27:02Z",
+        "updated_at": "2018-10-17T08:21:06Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r225636453",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/225636453"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r225636453"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/225636580",
+        "pull_request_review_id": 165277755,
+        "id": 225636580,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNTYzNjU4MA==",
+        "diff_hunk": "@@ -1,6 +1,6 @@\n-#Thu Jun 28 09:30:08 CDT 2018\n+#Mon Oct 08 19:08:58 EEST 2018\n distributionBase=GRADLE_USER_HOME\n distributionPath=wrapper/dists\n zipStoreBase=GRADLE_USER_HOME\n zipStorePath=wrapper/dists\n-distributionUrl=https\\://services.gradle.org/distributions/gradle-4.5.1-all.zip\n+distributionUrl=https\\://services.gradle.org/distributions/gradle-4.6-all.zip",
+        "path": "gradle/wrapper/gradle-wrapper.properties",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "480b6a677dad3cb5590d4eaef73b80fa2edd34d6",
+        "original_commit_id": "f96837c88b0e3b41b5e3aed820047d6a596c5629",
+        "user": {
+            "login": "XinyueZ",
+            "id": 7869833,
+            "node_id": "MDQ6VXNlcjc4Njk4MzM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/7869833?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/XinyueZ",
+            "html_url": "https://github.com/XinyueZ",
+            "followers_url": "https://api.github.com/users/XinyueZ/followers",
+            "following_url": "https://api.github.com/users/XinyueZ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/XinyueZ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/XinyueZ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/XinyueZ/subscriptions",
+            "organizations_url": "https://api.github.com/users/XinyueZ/orgs",
+            "repos_url": "https://api.github.com/users/XinyueZ/repos",
+            "events_url": "https://api.github.com/users/XinyueZ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/XinyueZ/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "4.10.2",
+        "created_at": "2018-10-16T17:27:22Z",
+        "updated_at": "2018-10-17T08:21:06Z",
+        "html_url": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r225636580",
+        "pull_request_url": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/comments/225636580"
+            },
+            "html": {
+                "href": "https://github.com/tbruyelle/RxPermissions/pull/248#discussion_r225636580"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/tbruyelle/RxPermissions/pulls/248"
+            }
+        }
+    }
+]

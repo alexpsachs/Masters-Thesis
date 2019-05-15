@@ -1,0 +1,1374 @@
+[
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/1557340",
+        "pull_request_review_id": null,
+        "id": 1557340,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NTczNDA=",
+        "diff_hunk": "@@ -67,6 +67,8 @@ def test_endian_definitions\n     # middle, little\n     endians = [\n       Chronic::Handler.new([:scalar_month, :separator_slash_or_dash, :scalar_day, :separator_slash_or_dash, :scalar_year, :separator_at?, 'time?'], :handle_sm_sd_sy),\n+      Chronic::Handler.new([:scalar_month, :separator_slash_or_dash, :scalar_day, :separator_at?, 'time?'], :handle_sm_sd),\n+      Chronic::Handler.new([:scalar_day, :separator_slash_or_dash, :scalar_month, :separator_at?, 'time?'], :handle_sd_sm),\n       Chronic::Handler.new([:scalar_day, :separator_slash_or_dash, :scalar_month, :separator_slash_or_dash, :scalar_year, :separator_at?, 'time?'], :handle_sd_sm_sy)\n     ]\n ",
+        "path": "test/test_chronic.rb",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "32b19808cacb8c89c5557e8ddfeb29f23242aa4c",
+        "original_commit_id": "32b19808cacb8c89c5557e8ddfeb29f23242aa4c",
+        "user": {
+            "login": "grantovich",
+            "id": 394835,
+            "node_id": "MDQ6VXNlcjM5NDgzNQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/394835?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/grantovich",
+            "html_url": "https://github.com/grantovich",
+            "followers_url": "https://api.github.com/users/grantovich/followers",
+            "following_url": "https://api.github.com/users/grantovich/following{/other_user}",
+            "gists_url": "https://api.github.com/users/grantovich/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/grantovich/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/grantovich/subscriptions",
+            "organizations_url": "https://api.github.com/users/grantovich/orgs",
+            "repos_url": "https://api.github.com/users/grantovich/repos",
+            "events_url": "https://api.github.com/users/grantovich/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/grantovich/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I left this test as-is in the interest of separating changes, but I'm not sure why these lines and the following `assert_equal` are present. It's just testing that the endians array is equal to a copy-pasted copy of itself. Am I missing something here?\n",
+        "created_at": "2012-09-07T18:22:07Z",
+        "updated_at": "2012-09-07T18:22:07Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/114#discussion_r1557340",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/114",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/1557340"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/114#discussion_r1557340"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/114"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/2425368",
+        "pull_request_review_id": null,
+        "id": 2425368,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MjUzNjg=",
+        "diff_hunk": "@@ -276,6 +276,9 @@ def test_handle_sm_sd_sy\n     time = parse_now(\"9/19/2011 6:05:57 PM\")\n     assert_equal Time.local(2011, 9, 19, 18, 05, 57), time\n \n+    time = parse_now(\"9/19/2011 6:05:57 UTC\")\n+    assert_equal Time.local(2011, 9, 19, 6, 05, 57), time",
+        "path": "test/test_parsing.rb",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "3c71138bb97e26641e7aa3e0f7278d8c27d55d06",
+        "original_commit_id": "3c71138bb97e26641e7aa3e0f7278d8c27d55d06",
+        "user": {
+            "login": "cbandy",
+            "id": 106560,
+            "node_id": "MDQ6VXNlcjEwNjU2MA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/106560?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/cbandy",
+            "html_url": "https://github.com/cbandy",
+            "followers_url": "https://api.github.com/users/cbandy/followers",
+            "following_url": "https://api.github.com/users/cbandy/following{/other_user}",
+            "gists_url": "https://api.github.com/users/cbandy/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/cbandy/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/cbandy/subscriptions",
+            "organizations_url": "https://api.github.com/users/cbandy/orgs",
+            "repos_url": "https://api.github.com/users/cbandy/repos",
+            "events_url": "https://api.github.com/users/cbandy/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/cbandy/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is this correct? It looks like you specify the time zone is UTC then assert the value is local.\n",
+        "created_at": "2012-12-14T20:54:10Z",
+        "updated_at": "2012-12-14T20:54:10Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/156#discussion_r2425368",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/156",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/2425368"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/156#discussion_r2425368"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/156"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/2427601",
+        "pull_request_review_id": null,
+        "id": 2427601,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0Mjc2MDE=",
+        "diff_hunk": "@@ -276,6 +276,9 @@ def test_handle_sm_sd_sy\n     time = parse_now(\"9/19/2011 6:05:57 PM\")\n     assert_equal Time.local(2011, 9, 19, 18, 05, 57), time\n \n+    time = parse_now(\"9/19/2011 6:05:57 UTC\")\n+    assert_equal Time.local(2011, 9, 19, 6, 05, 57), time",
+        "path": "test/test_parsing.rb",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "3c71138bb97e26641e7aa3e0f7278d8c27d55d06",
+        "original_commit_id": "3c71138bb97e26641e7aa3e0f7278d8c27d55d06",
+        "user": {
+            "login": "darrinholst",
+            "id": 4854,
+            "node_id": "MDQ6VXNlcjQ4NTQ=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/4854?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/darrinholst",
+            "html_url": "https://github.com/darrinholst",
+            "followers_url": "https://api.github.com/users/darrinholst/followers",
+            "following_url": "https://api.github.com/users/darrinholst/following{/other_user}",
+            "gists_url": "https://api.github.com/users/darrinholst/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/darrinholst/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/darrinholst/subscriptions",
+            "organizations_url": "https://api.github.com/users/darrinholst/orgs",
+            "repos_url": "https://api.github.com/users/darrinholst/repos",
+            "events_url": "https://api.github.com/users/darrinholst/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/darrinholst/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Works for me, I live in Greenwich!\n\n...but, yeah, you're right. My changes just make it not return nil. It looks like it's using the current timezone. I'll keep digging and see if I can figure it out.\n",
+        "created_at": "2012-12-15T01:01:26Z",
+        "updated_at": "2012-12-15T01:01:26Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/156#discussion_r2427601",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/156",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/2427601"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/156#discussion_r2427601"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/156"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/2522375",
+        "pull_request_review_id": null,
+        "id": 2522375,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MjIzNzU=",
+        "diff_hunk": "@@ -13,7 +13,6 @@\n require 'chronic/pointer'\n require 'chronic/scalar'\n require 'chronic/ordinal'\n-require 'chronic/ordinal'",
+        "path": "lib/chronic.rb",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "1c32d5405ca5fe1a278eb5200e6dedd07f871c69",
+        "original_commit_id": "1c32d5405ca5fe1a278eb5200e6dedd07f871c69",
+        "user": {
+            "login": "htaidirt",
+            "id": 299253,
+            "node_id": "MDQ6VXNlcjI5OTI1Mw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/299253?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/htaidirt",
+            "html_url": "https://github.com/htaidirt",
+            "followers_url": "https://api.github.com/users/htaidirt/followers",
+            "following_url": "https://api.github.com/users/htaidirt/following{/other_user}",
+            "gists_url": "https://api.github.com/users/htaidirt/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/htaidirt/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/htaidirt/subscriptions",
+            "organizations_url": "https://api.github.com/users/htaidirt/orgs",
+            "repos_url": "https://api.github.com/users/htaidirt/repos",
+            "events_url": "https://api.github.com/users/htaidirt/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/htaidirt/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Duplicate line. To remove.\n",
+        "created_at": "2012-12-31T07:41:16Z",
+        "updated_at": "2012-12-31T07:41:16Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/160#discussion_r2522375",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/160",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/2522375"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/160#discussion_r2522375"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/160"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921282",
+        "pull_request_review_id": null,
+        "id": 5921282,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MjEyODI=",
+        "diff_hunk": "@@ -204,6 +208,12 @@ def definitions(options = {})\n         ]\n       }\n \n+      if options[:ambiguous_number_priority] == :date\n+        @@definitions[:date] << Handler.new([:scalar_day], :handle_sd)\n+      else\n+        @@definitions[:date] = @@definitions[:date].reject { |l| l.pattern == [:scalar_day] }",
+        "path": "lib/chronic/parser.rb",
+        "position": 36,
+        "original_position": 36,
+        "commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "original_commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "user": {
+            "login": "davispuh",
+            "id": 651800,
+            "node_id": "MDQ6VXNlcjY1MTgwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/651800?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/davispuh",
+            "html_url": "https://github.com/davispuh",
+            "followers_url": "https://api.github.com/users/davispuh/followers",
+            "following_url": "https://api.github.com/users/davispuh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/davispuh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/davispuh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/davispuh/subscriptions",
+            "organizations_url": "https://api.github.com/users/davispuh/orgs",
+            "repos_url": "https://api.github.com/users/davispuh/repos",
+            "events_url": "https://api.github.com/users/davispuh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/davispuh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "this 214 line does nothing, there's no such pattern with just `[:scalar_day]`\n",
+        "created_at": "2013-08-22T10:52:53Z",
+        "updated_at": "2013-08-22T10:54:36Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/205#discussion_r5921282",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/205",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921282"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/205#discussion_r5921282"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/205"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921410",
+        "pull_request_review_id": null,
+        "id": 5921410,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MjE0MTA=",
+        "diff_hunk": "@@ -204,6 +208,12 @@ def definitions(options = {})\n         ]\n       }\n \n+      if options[:ambiguous_number_priority] == :date\n+        @@definitions[:date] << Handler.new([:scalar_day], :handle_sd)\n+      else\n+        @@definitions[:date] = @@definitions[:date].reject { |l| l.pattern == [:scalar_day] }",
+        "path": "lib/chronic/parser.rb",
+        "position": 36,
+        "original_position": 36,
+        "commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "original_commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "user": {
+            "login": "andygeers",
+            "id": 1673899,
+            "node_id": "MDQ6VXNlcjE2NzM4OTk=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1673899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/andygeers",
+            "html_url": "https://github.com/andygeers",
+            "followers_url": "https://api.github.com/users/andygeers/followers",
+            "following_url": "https://api.github.com/users/andygeers/following{/other_user}",
+            "gists_url": "https://api.github.com/users/andygeers/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/andygeers/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/andygeers/subscriptions",
+            "organizations_url": "https://api.github.com/users/andygeers/orgs",
+            "repos_url": "https://api.github.com/users/andygeers/repos",
+            "events_url": "https://api.github.com/users/andygeers/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/andygeers/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Well, this same commit adds it if : ambiguous_number_priority is :date. I was finding that these definitions seemed to persist between calls, so if you called it once with : ambiguous_number_priority => :date and then later with : ambiguous_number_priority => :time then it would break\n",
+        "created_at": "2013-08-22T11:02:50Z",
+        "updated_at": "2013-08-22T11:02:50Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/205#discussion_r5921410",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/205",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921410"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/205#discussion_r5921410"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/205"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921447",
+        "pull_request_review_id": null,
+        "id": 5921447,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MjE0NDc=",
+        "diff_hunk": "@@ -92,6 +92,25 @@ def handle_sd_rmn(tokens, options)\n       handle_m_d(month, day, tokens[2..tokens.size], options)\n     end\n \n+    def handle_od(tokens, options)\n+      t = Chronic.time_class.parse(options[:text])\n+      t = Chronic.time_class.new(self.now.year, self.now.month, t.day)\n+\n+      Span.new(t, t + 1)",
+        "path": "lib/chronic/handlers.rb",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "original_commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "user": {
+            "login": "davispuh",
+            "id": 651800,
+            "node_id": "MDQ6VXNlcjY1MTgwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/651800?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/davispuh",
+            "html_url": "https://github.com/davispuh",
+            "followers_url": "https://api.github.com/users/davispuh/followers",
+            "following_url": "https://api.github.com/users/davispuh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/davispuh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/davispuh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/davispuh/subscriptions",
+            "organizations_url": "https://api.github.com/users/davispuh/orgs",
+            "repos_url": "https://api.github.com/users/davispuh/repos",
+            "events_url": "https://api.github.com/users/davispuh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/davispuh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "BTW, `t + 1` is just till next second, but in this case time is not known, thus meaning span actually should be whole day, but if you'll set it so then chronic will return time as `12:00` because of how `:guess` works. I just hate how fucked up is this lib. Everything passed to `handle_generic` will be with time `00:00` if no time is specified, but for all other cases/handlers it will be `12:00`.\n",
+        "created_at": "2013-08-22T11:05:27Z",
+        "updated_at": "2013-08-22T11:05:27Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/205#discussion_r5921447",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/205",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921447"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/205#discussion_r5921447"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/205"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921448",
+        "pull_request_review_id": null,
+        "id": 5921448,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MjE0NDg=",
+        "diff_hunk": "@@ -92,6 +92,25 @@ def handle_sd_rmn(tokens, options)\n       handle_m_d(month, day, tokens[2..tokens.size], options)\n     end\n \n+    def handle_od(tokens, options)\n+      t = Chronic.time_class.parse(options[:text])\n+      t = Chronic.time_class.new(self.now.year, self.now.month, t.day)\n+\n+      Span.new(t, t + 1)\n+    rescue ArgumentError => e\n+      raise e unless e.message =~ /out of range/\n+    end\n+\n+    # Handle scalar-day\n+    def handle_sd(tokens, options)\n+      day = tokens[0].get_tag(ScalarDay)\n+      t = Chronic.time_class.new(self.now.year, self.now.month, day.type)\n+\n+      Span.new(t, t + 1)",
+        "path": "lib/chronic/handlers.rb",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "original_commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "user": {
+            "login": "davispuh",
+            "id": 651800,
+            "node_id": "MDQ6VXNlcjY1MTgwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/651800?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/davispuh",
+            "html_url": "https://github.com/davispuh",
+            "followers_url": "https://api.github.com/users/davispuh/followers",
+            "following_url": "https://api.github.com/users/davispuh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/davispuh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/davispuh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/davispuh/subscriptions",
+            "organizations_url": "https://api.github.com/users/davispuh/orgs",
+            "repos_url": "https://api.github.com/users/davispuh/repos",
+            "events_url": "https://api.github.com/users/davispuh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/davispuh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "here same...\n",
+        "created_at": "2013-08-22T11:05:38Z",
+        "updated_at": "2013-08-22T11:05:38Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/205#discussion_r5921448",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/205",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921448"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/205#discussion_r5921448"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/205"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921494",
+        "pull_request_review_id": null,
+        "id": 5921494,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MjE0OTQ=",
+        "diff_hunk": "@@ -204,6 +208,12 @@ def definitions(options = {})\n         ]\n       }\n \n+      if options[:ambiguous_number_priority] == :date\n+        @@definitions[:date] << Handler.new([:scalar_day], :handle_sd)\n+      else\n+        @@definitions[:date] = @@definitions[:date].reject { |l| l.pattern == [:scalar_day] }",
+        "path": "lib/chronic/parser.rb",
+        "position": 36,
+        "original_position": 36,
+        "commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "original_commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "user": {
+            "login": "davispuh",
+            "id": 651800,
+            "node_id": "MDQ6VXNlcjY1MTgwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/651800?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/davispuh",
+            "html_url": "https://github.com/davispuh",
+            "followers_url": "https://api.github.com/users/davispuh/followers",
+            "following_url": "https://api.github.com/users/davispuh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/davispuh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/davispuh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/davispuh/subscriptions",
+            "organizations_url": "https://api.github.com/users/davispuh/orgs",
+            "repos_url": "https://api.github.com/users/davispuh/repos",
+            "events_url": "https://api.github.com/users/davispuh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/davispuh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "oh right, it caches. Actually I think it's not good idea to change `@@definitions`, it's not thread safe and better would be just parse that option in some handler or something like that.\n",
+        "created_at": "2013-08-22T11:10:25Z",
+        "updated_at": "2013-08-22T11:10:25Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/205#discussion_r5921494",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/205",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921494"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/205#discussion_r5921494"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/205"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921533",
+        "pull_request_review_id": null,
+        "id": 5921533,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MjE1MzM=",
+        "diff_hunk": "@@ -92,6 +92,25 @@ def handle_sd_rmn(tokens, options)\n       handle_m_d(month, day, tokens[2..tokens.size], options)\n     end\n \n+    def handle_od(tokens, options)\n+      t = Chronic.time_class.parse(options[:text])\n+      t = Chronic.time_class.new(self.now.year, self.now.month, t.day)\n+\n+      Span.new(t, t + 1)",
+        "path": "lib/chronic/handlers.rb",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "original_commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "user": {
+            "login": "andygeers",
+            "id": 1673899,
+            "node_id": "MDQ6VXNlcjE2NzM4OTk=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1673899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/andygeers",
+            "html_url": "https://github.com/andygeers",
+            "followers_url": "https://api.github.com/users/andygeers/followers",
+            "following_url": "https://api.github.com/users/andygeers/following{/other_user}",
+            "gists_url": "https://api.github.com/users/andygeers/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/andygeers/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/andygeers/subscriptions",
+            "organizations_url": "https://api.github.com/users/andygeers/orgs",
+            "repos_url": "https://api.github.com/users/andygeers/repos",
+            "events_url": "https://api.github.com/users/andygeers/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/andygeers/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ok, so for now I should just change the 1 to 60_60_24?\n",
+        "created_at": "2013-08-22T11:14:53Z",
+        "updated_at": "2013-08-22T11:14:53Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/205#discussion_r5921533",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/205",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921533"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/205#discussion_r5921533"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/205"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921549",
+        "pull_request_review_id": null,
+        "id": 5921549,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MjE1NDk=",
+        "diff_hunk": "@@ -204,6 +208,12 @@ def definitions(options = {})\n         ]\n       }\n \n+      if options[:ambiguous_number_priority] == :date\n+        @@definitions[:date] << Handler.new([:scalar_day], :handle_sd)\n+      else\n+        @@definitions[:date] = @@definitions[:date].reject { |l| l.pattern == [:scalar_day] }",
+        "path": "lib/chronic/parser.rb",
+        "position": 36,
+        "original_position": 36,
+        "commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "original_commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "user": {
+            "login": "andygeers",
+            "id": 1673899,
+            "node_id": "MDQ6VXNlcjE2NzM4OTk=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1673899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/andygeers",
+            "html_url": "https://github.com/andygeers",
+            "followers_url": "https://api.github.com/users/andygeers/followers",
+            "following_url": "https://api.github.com/users/andygeers/following{/other_user}",
+            "gists_url": "https://api.github.com/users/andygeers/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/andygeers/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/andygeers/subscriptions",
+            "organizations_url": "https://api.github.com/users/andygeers/orgs",
+            "repos_url": "https://api.github.com/users/andygeers/repos",
+            "events_url": "https://api.github.com/users/andygeers/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/andygeers/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "So maybe have a handle_lonely_int that decides for itself whether to treat it as a day or an hour based upon options?\n",
+        "created_at": "2013-08-22T11:15:38Z",
+        "updated_at": "2013-08-22T11:15:38Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/205#discussion_r5921549",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/205",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5921549"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/205#discussion_r5921549"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/205"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5927157",
+        "pull_request_review_id": null,
+        "id": 5927157,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MjcxNTc=",
+        "diff_hunk": "@@ -92,6 +92,25 @@ def handle_sd_rmn(tokens, options)\n       handle_m_d(month, day, tokens[2..tokens.size], options)\n     end\n \n+    def handle_od(tokens, options)\n+      t = Chronic.time_class.parse(options[:text])\n+      t = Chronic.time_class.new(self.now.year, self.now.month, t.day)\n+\n+      Span.new(t, t + 1)",
+        "path": "lib/chronic/handlers.rb",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "original_commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "user": {
+            "login": "davispuh",
+            "id": 651800,
+            "node_id": "MDQ6VXNlcjY1MTgwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/651800?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/davispuh",
+            "html_url": "https://github.com/davispuh",
+            "followers_url": "https://api.github.com/users/davispuh/followers",
+            "following_url": "https://api.github.com/users/davispuh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/davispuh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/davispuh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/davispuh/subscriptions",
+            "organizations_url": "https://api.github.com/users/davispuh/orgs",
+            "repos_url": "https://api.github.com/users/davispuh/repos",
+            "events_url": "https://api.github.com/users/davispuh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/davispuh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "can just leave as it is, but correct way would be `Date::DAY_SECONDS`, take a look at my PR #206\n",
+        "created_at": "2013-08-22T15:23:11Z",
+        "updated_at": "2013-08-22T15:23:11Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/205#discussion_r5927157",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/205",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5927157"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/205#discussion_r5927157"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/205"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5927189",
+        "pull_request_review_id": null,
+        "id": 5927189,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MjcxODk=",
+        "diff_hunk": "@@ -204,6 +208,12 @@ def definitions(options = {})\n         ]\n       }\n \n+      if options[:ambiguous_number_priority] == :date\n+        @@definitions[:date] << Handler.new([:scalar_day], :handle_sd)\n+      else\n+        @@definitions[:date] = @@definitions[:date].reject { |l| l.pattern == [:scalar_day] }",
+        "path": "lib/chronic/parser.rb",
+        "position": 36,
+        "original_position": 36,
+        "commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "original_commit_id": "e30c7d7d7fb940139f97d6f9f7d7801c1cc1a88f",
+        "user": {
+            "login": "davispuh",
+            "id": 651800,
+            "node_id": "MDQ6VXNlcjY1MTgwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/651800?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/davispuh",
+            "html_url": "https://github.com/davispuh",
+            "followers_url": "https://api.github.com/users/davispuh/followers",
+            "following_url": "https://api.github.com/users/davispuh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/davispuh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/davispuh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/davispuh/subscriptions",
+            "organizations_url": "https://api.github.com/users/davispuh/orgs",
+            "repos_url": "https://api.github.com/users/davispuh/repos",
+            "events_url": "https://api.github.com/users/davispuh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/davispuh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "yeah that would work I think.\n",
+        "created_at": "2013-08-22T15:24:01Z",
+        "updated_at": "2013-08-22T15:24:01Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/205#discussion_r5927189",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/205",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/5927189"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/205#discussion_r5927189"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/205"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/6018320",
+        "pull_request_review_id": null,
+        "id": 6018320,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYwMTgzMjA=",
+        "diff_hunk": "@@ -137,8 +137,14 @@ def self.construct(year, month = 1, day = 1, hour = 0, minute = 0, second = 0, o\n         month = month % 12\n       end\n     end\n-    offset = Time::normalize_offset(offset) if Chronic.time_class.is_a?(DateTime)\n-    Chronic.time_class.new(year, month, day, hour, minute, second, offset)\n+    if Chronic.time_class.name == \"Date\"\n+        Chronic.time_class.new(year, month, day)",
+        "path": "lib/chronic.rb",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "6d127da5b435da638fe43d9c214684dbc74ae81e",
+        "original_commit_id": "5665940de833b85248eb4076db1b90752e299f10",
+        "user": {
+            "login": "kelvinst",
+            "id": 2791965,
+            "node_id": "MDQ6VXNlcjI3OTE5NjU=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2791965?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kelvinst",
+            "html_url": "https://github.com/kelvinst",
+            "followers_url": "https://api.github.com/users/kelvinst/followers",
+            "following_url": "https://api.github.com/users/kelvinst/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kelvinst/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kelvinst/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kelvinst/subscriptions",
+            "organizations_url": "https://api.github.com/users/kelvinst/orgs",
+            "repos_url": "https://api.github.com/users/kelvinst/repos",
+            "events_url": "https://api.github.com/users/kelvinst/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kelvinst/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "two space indentation please :smiley: \n",
+        "created_at": "2013-08-27T21:08:01Z",
+        "updated_at": "2013-08-27T21:21:21Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/209#discussion_r6018320",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/209",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/6018320"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/209#discussion_r6018320"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/209"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8260990",
+        "pull_request_review_id": null,
+        "id": 8260990,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyNjA5OTA=",
+        "diff_hunk": "@@ -0,0 +1,38 @@\n+require 'chronic/definition'\n+\n+module Chronic\n+  # A collection of definitions\n+  class Dictionary\n+    attr_accessor :options, :defined_items\n+\n+    def initialize(options = {})\n+      @options = options\n+      @defined_items = []\n+    end\n+\n+    # returns a hash of each word's Definitions\n+    def definitions\n+      defined_items.each_with_object({}) do |word, defs|\n+        word_type = \"#{word.capitalize.to_s + 'Definitions'}\"\n+        defs[word] = Object.const_get(:Chronic).const_get(word_type).definitions(options)",
+        "path": "lib/chronic/dictionary.rb",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "35772af1bb1b96a0f5f74004a665732480aaada5",
+        "original_commit_id": "8139d33f60e6579a8cb595350a615da04124e8ed",
+        "user": {
+            "login": "leejarvis",
+            "id": 197567,
+            "node_id": "MDQ6VXNlcjE5NzU2Nw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/197567?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leejarvis",
+            "html_url": "https://github.com/leejarvis",
+            "followers_url": "https://api.github.com/users/leejarvis/followers",
+            "following_url": "https://api.github.com/users/leejarvis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leejarvis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leejarvis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leejarvis/subscriptions",
+            "organizations_url": "https://api.github.com/users/leejarvis/orgs",
+            "repos_url": "https://api.github.com/users/leejarvis/repos",
+            "events_url": "https://api.github.com/users/leejarvis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leejarvis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why `const_get` for the Chronic class?\n",
+        "created_at": "2013-12-11T09:31:43Z",
+        "updated_at": "2014-01-02T09:21:33Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/236#discussion_r8260990",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/236",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8260990"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/236#discussion_r8260990"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/236"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8261001",
+        "pull_request_review_id": null,
+        "id": 8261001,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyNjEwMDE=",
+        "diff_hunk": "@@ -0,0 +1,38 @@\n+require 'chronic/definition'\n+\n+module Chronic\n+  # A collection of definitions\n+  class Dictionary\n+    attr_accessor :options, :defined_items\n+\n+    def initialize(options = {})\n+      @options = options\n+      @defined_items = []\n+    end\n+\n+    # returns a hash of each word's Definitions\n+    def definitions\n+      defined_items.each_with_object({}) do |word, defs|\n+        word_type = \"#{word.capitalize.to_s + 'Definitions'}\"\n+        defs[word] = Object.const_get(:Chronic).const_get(word_type).definitions(options)\n+      end\n+    end\n+  end\n+\n+  class SpanDictionary < Dictionary\n+    # Collection of SpanDefinitions\n+    def initialize(options = {})\n+      super\n+      @defined_items = [:time,:date,:anchor,:arrow,:narrow,:endian]\n+    end\n+\n+    # returns the a specific subclass of SpanDefinitions\n+    # SpanDefinition#definitions returns an array of Handler instances\n+    # arguments should come in as symbols, but will work with strings as well\n+    def [] handler_type=:default\n+      handler = handler_type.to_sym || handler_type",
+        "path": "lib/chronic/dictionary.rb",
+        "position": null,
+        "original_position": 33,
+        "commit_id": "35772af1bb1b96a0f5f74004a665732480aaada5",
+        "original_commit_id": "8139d33f60e6579a8cb595350a615da04124e8ed",
+        "user": {
+            "login": "leejarvis",
+            "id": 197567,
+            "node_id": "MDQ6VXNlcjE5NzU2Nw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/197567?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leejarvis",
+            "html_url": "https://github.com/leejarvis",
+            "followers_url": "https://api.github.com/users/leejarvis/followers",
+            "following_url": "https://api.github.com/users/leejarvis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leejarvis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leejarvis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leejarvis/subscriptions",
+            "organizations_url": "https://api.github.com/users/leejarvis/orgs",
+            "repos_url": "https://api.github.com/users/leejarvis/repos",
+            "events_url": "https://api.github.com/users/leejarvis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leejarvis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Not sure I understand this line, `to_sym` will only ever return a symbol or raise an exception?\n",
+        "created_at": "2013-12-11T09:32:21Z",
+        "updated_at": "2014-01-02T09:21:33Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/236#discussion_r8261001",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/236",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8261001"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/236#discussion_r8261001"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/236"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8261010",
+        "pull_request_review_id": null,
+        "id": 8261010,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyNjEwMTA=",
+        "diff_hunk": "@@ -141,6 +141,7 @@ def guess(span, mode = :middle)\n       span.begin\n     end\n \n+",
+        "path": "lib/chronic/parser.rb",
+        "position": null,
+        "original_position": 15,
+        "commit_id": "35772af1bb1b96a0f5f74004a665732480aaada5",
+        "original_commit_id": "8139d33f60e6579a8cb595350a615da04124e8ed",
+        "user": {
+            "login": "leejarvis",
+            "id": 197567,
+            "node_id": "MDQ6VXNlcjE5NzU2Nw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/197567?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leejarvis",
+            "html_url": "https://github.com/leejarvis",
+            "followers_url": "https://api.github.com/users/leejarvis/followers",
+            "following_url": "https://api.github.com/users/leejarvis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leejarvis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leejarvis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leejarvis/subscriptions",
+            "organizations_url": "https://api.github.com/users/leejarvis/orgs",
+            "repos_url": "https://api.github.com/users/leejarvis/repos",
+            "events_url": "https://api.github.com/users/leejarvis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leejarvis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Could you remove this random line :-)\n",
+        "created_at": "2013-12-11T09:32:36Z",
+        "updated_at": "2014-01-02T09:21:33Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/236#discussion_r8261010",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/236",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8261010"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/236#discussion_r8261010"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/236"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8261013",
+        "pull_request_review_id": null,
+        "id": 8261013,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyNjEwMTM=",
+        "diff_hunk": "@@ -1,9 +1,9 @@\n+require 'chronic/dictionary'\n require 'chronic/handlers'\n \n module Chronic\n   class Parser\n     include Handlers\n-",
+        "path": "lib/chronic/parser.rb",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "35772af1bb1b96a0f5f74004a665732480aaada5",
+        "original_commit_id": "8139d33f60e6579a8cb595350a615da04124e8ed",
+        "user": {
+            "login": "leejarvis",
+            "id": 197567,
+            "node_id": "MDQ6VXNlcjE5NzU2Nw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/197567?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leejarvis",
+            "html_url": "https://github.com/leejarvis",
+            "followers_url": "https://api.github.com/users/leejarvis/followers",
+            "following_url": "https://api.github.com/users/leejarvis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leejarvis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leejarvis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leejarvis/subscriptions",
+            "organizations_url": "https://api.github.com/users/leejarvis/orgs",
+            "repos_url": "https://api.github.com/users/leejarvis/repos",
+            "events_url": "https://api.github.com/users/leejarvis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leejarvis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Maybe add it back here!\n",
+        "created_at": "2013-12-11T09:32:45Z",
+        "updated_at": "2014-01-02T09:21:33Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/236#discussion_r8261013",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/236",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8261013"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/236#discussion_r8261013"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/236"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8261019",
+        "pull_request_review_id": null,
+        "id": 8261019,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyNjEwMTk=",
+        "diff_hunk": "@@ -148,82 +149,10 @@ def guess(span, mode = :middle)\n     #\n     # Returns a Hash of Handler definitions.\n     def definitions(options = {})\n-      options[:endian_precedence] ||= [:middle, :little]\n-\n-      @@definitions ||= {\n-        :time => [\n-          Handler.new([:repeater_time, :repeater_day_portion?], nil)\n-        ],\n-\n-        :date => [\n-          Handler.new([:repeater_day_name, :repeater_month_name, :scalar_day, :repeater_time, [:separator_slash?, :separator_dash?], :time_zone, :scalar_year], :handle_generic),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :scalar_day], :handle_rdn_rmn_sd),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :scalar_day, :scalar_year], :handle_rdn_rmn_sd_sy),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :ordinal_day], :handle_rdn_rmn_od),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :ordinal_day, :scalar_year], :handle_rdn_rmn_od_sy),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :scalar_day, :separator_at?, 'time?'], :handle_rdn_rmn_sd),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :ordinal_day, :separator_at?, 'time?'], :handle_rdn_rmn_od),\n-          Handler.new([:repeater_day_name, :ordinal_day, :separator_at?, 'time?'], :handle_rdn_od),\n-          Handler.new([:scalar_year, [:separator_slash, :separator_dash], :scalar_month, [:separator_slash, :separator_dash], :scalar_day, :repeater_time, :time_zone], :handle_generic),\n-          Handler.new([:ordinal_day], :handle_generic),\n-          Handler.new([:repeater_month_name, :scalar_day, :scalar_year], :handle_rmn_sd_sy),\n-          Handler.new([:repeater_month_name, :ordinal_day, :scalar_year], :handle_rmn_od_sy),\n-          Handler.new([:repeater_month_name, :scalar_day, :scalar_year, :separator_at?, 'time?'], :handle_rmn_sd_sy),\n-          Handler.new([:repeater_month_name, :ordinal_day, :scalar_year, :separator_at?, 'time?'], :handle_rmn_od_sy),\n-          Handler.new([:repeater_month_name, [:separator_slash?, :separator_dash?], :scalar_day, :separator_at?, 'time?'], :handle_rmn_sd),\n-          Handler.new([:repeater_time, :repeater_day_portion?, :separator_on?, :repeater_month_name, :scalar_day], :handle_rmn_sd_on),\n-          Handler.new([:repeater_month_name, :ordinal_day, :separator_at?, 'time?'], :handle_rmn_od),\n-          Handler.new([:ordinal_day, :repeater_month_name, :scalar_year, :separator_at?, 'time?'], :handle_od_rmn_sy),\n-          Handler.new([:ordinal_day, :repeater_month_name, :separator_at?, 'time?'], :handle_od_rmn),\n-          Handler.new([:ordinal_day, :grabber?, :repeater_month, :separator_at?, 'time?'], :handle_od_rm),\n-          Handler.new([:scalar_year, :repeater_month_name, :ordinal_day], :handle_sy_rmn_od),\n-          Handler.new([:repeater_time, :repeater_day_portion?, :separator_on?, :repeater_month_name, :ordinal_day], :handle_rmn_od_on),\n-          Handler.new([:repeater_month_name, :scalar_year], :handle_rmn_sy),\n-          Handler.new([:scalar_day, :repeater_month_name, :scalar_year, :separator_at?, 'time?'], :handle_sd_rmn_sy),\n-          Handler.new([:scalar_day, [:separator_slash?, :separator_dash?], :repeater_month_name, :separator_at?, 'time?'], :handle_sd_rmn),\n-          Handler.new([:scalar_year, [:separator_slash, :separator_dash], :scalar_month, [:separator_slash, :separator_dash], :scalar_day, :separator_at?, 'time?'], :handle_sy_sm_sd),\n-          Handler.new([:scalar_year, [:separator_slash, :separator_dash], :scalar_month], :handle_sy_sm),\n-          Handler.new([:scalar_month, [:separator_slash, :separator_dash], :scalar_year], :handle_sm_sy),\n-          Handler.new([:scalar_day, [:separator_slash, :separator_dash], :repeater_month_name, [:separator_slash, :separator_dash], :scalar_year, :repeater_time?], :handle_sm_rmn_sy),\n-          Handler.new([:scalar_year, [:separator_slash, :separator_dash], :scalar_month, [:separator_slash, :separator_dash], :scalar?, :time_zone], :handle_generic),\n-        ],\n-\n-        :anchor => [\n-          Handler.new([:separator_on?, :grabber?, :repeater, :separator_at?, :repeater?, :repeater?], :handle_r),\n-          Handler.new([:grabber?, :repeater, :repeater, :separator?, :repeater?, :repeater?], :handle_r),\n-          Handler.new([:repeater, :grabber, :repeater], :handle_r_g_r)\n-        ],\n-\n-        :arrow => [\n-          Handler.new([:scalar, :repeater, :pointer], :handle_s_r_p),\n-          Handler.new([:scalar, :repeater, :separator_and?, :scalar, :repeater, :pointer, :separator_at?, 'anchor'], :handle_s_r_a_s_r_p_a),\n-          Handler.new([:pointer, :scalar, :repeater], :handle_p_s_r),\n-          Handler.new([:scalar, :repeater, :pointer, :separator_at?, 'anchor'], :handle_s_r_p_a)\n-        ],\n-\n-        :narrow => [\n-          Handler.new([:ordinal, :repeater, :separator_in, :repeater], :handle_o_r_s_r),\n-          Handler.new([:ordinal, :repeater, :grabber, :repeater], :handle_o_r_g_r)\n-        ]\n-      }\n-\n-      endians = [\n-        Handler.new([:scalar_month, [:separator_slash, :separator_dash], :scalar_day, [:separator_slash, :separator_dash], :scalar_year, :separator_at?, 'time?'], :handle_sm_sd_sy),\n-        Handler.new([:scalar_month, [:separator_slash, :separator_dash], :scalar_day, :separator_at?, 'time?'], :handle_sm_sd),\n-        Handler.new([:scalar_day, [:separator_slash, :separator_dash], :scalar_month, :separator_at?, 'time?'], :handle_sd_sm),\n-        Handler.new([:scalar_day, [:separator_slash, :separator_dash], :scalar_month, [:separator_slash, :separator_dash], :scalar_year, :separator_at?, 'time?'], :handle_sd_sm_sy)\n-      ]\n-\n-      case endian = Array(options[:endian_precedence]).first\n-      when :little\n-        @@definitions.merge(:endian => endians.reverse)\n-      when :middle\n-        @@definitions.merge(:endian => endians)\n-      else\n-        raise ArgumentError, \"Unknown endian option '#{endian}'\"\n-      end\n+      SpanDictionary.new(options).definitions\n     end\n \n+",
+        "path": "lib/chronic/parser.rb",
+        "position": null,
+        "original_position": 100,
+        "commit_id": "35772af1bb1b96a0f5f74004a665732480aaada5",
+        "original_commit_id": "8139d33f60e6579a8cb595350a615da04124e8ed",
+        "user": {
+            "login": "leejarvis",
+            "id": 197567,
+            "node_id": "MDQ6VXNlcjE5NzU2Nw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/197567?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leejarvis",
+            "html_url": "https://github.com/leejarvis",
+            "followers_url": "https://api.github.com/users/leejarvis/followers",
+            "following_url": "https://api.github.com/users/leejarvis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leejarvis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leejarvis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leejarvis/subscriptions",
+            "organizations_url": "https://api.github.com/users/leejarvis/orgs",
+            "repos_url": "https://api.github.com/users/leejarvis/repos",
+            "events_url": "https://api.github.com/users/leejarvis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leejarvis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "And this one :)\n",
+        "created_at": "2013-12-11T09:32:53Z",
+        "updated_at": "2014-01-02T09:21:33Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/236#discussion_r8261019",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/236",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8261019"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/236#discussion_r8261019"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/236"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8274034",
+        "pull_request_review_id": null,
+        "id": 8274034,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyNzQwMzQ=",
+        "diff_hunk": "@@ -0,0 +1,38 @@\n+require 'chronic/definition'\n+\n+module Chronic\n+  # A collection of definitions\n+  class Dictionary\n+    attr_accessor :options, :defined_items\n+\n+    def initialize(options = {})\n+      @options = options\n+      @defined_items = []\n+    end\n+\n+    # returns a hash of each word's Definitions\n+    def definitions\n+      defined_items.each_with_object({}) do |word, defs|\n+        word_type = \"#{word.capitalize.to_s + 'Definitions'}\"\n+        defs[word] = Object.const_get(:Chronic).const_get(word_type).definitions(options)",
+        "path": "lib/chronic/dictionary.rb",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "35772af1bb1b96a0f5f74004a665732480aaada5",
+        "original_commit_id": "8139d33f60e6579a8cb595350a615da04124e8ed",
+        "user": {
+            "login": "TalkativeTree",
+            "id": 3632442,
+            "node_id": "MDQ6VXNlcjM2MzI0NDI=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3632442?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/TalkativeTree",
+            "html_url": "https://github.com/TalkativeTree",
+            "followers_url": "https://api.github.com/users/TalkativeTree/followers",
+            "following_url": "https://api.github.com/users/TalkativeTree/following{/other_user}",
+            "gists_url": "https://api.github.com/users/TalkativeTree/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/TalkativeTree/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/TalkativeTree/subscriptions",
+            "organizations_url": "https://api.github.com/users/TalkativeTree/orgs",
+            "repos_url": "https://api.github.com/users/TalkativeTree/repos",
+            "events_url": "https://api.github.com/users/TalkativeTree/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/TalkativeTree/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It should just reference Chronic. I realized that as I was going to bed last night haha. \n",
+        "created_at": "2013-12-11T17:24:15Z",
+        "updated_at": "2014-01-02T09:21:33Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/236#discussion_r8274034",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/236",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8274034"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/236#discussion_r8274034"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/236"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8274082",
+        "pull_request_review_id": null,
+        "id": 8274082,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyNzQwODI=",
+        "diff_hunk": "@@ -0,0 +1,38 @@\n+require 'chronic/definition'\n+\n+module Chronic\n+  # A collection of definitions\n+  class Dictionary\n+    attr_accessor :options, :defined_items\n+\n+    def initialize(options = {})\n+      @options = options\n+      @defined_items = []\n+    end\n+\n+    # returns a hash of each word's Definitions\n+    def definitions\n+      defined_items.each_with_object({}) do |word, defs|\n+        word_type = \"#{word.capitalize.to_s + 'Definitions'}\"\n+        defs[word] = Object.const_get(:Chronic).const_get(word_type).definitions(options)\n+      end\n+    end\n+  end\n+\n+  class SpanDictionary < Dictionary\n+    # Collection of SpanDefinitions\n+    def initialize(options = {})\n+      super\n+      @defined_items = [:time,:date,:anchor,:arrow,:narrow,:endian]\n+    end\n+\n+    # returns the a specific subclass of SpanDefinitions\n+    # SpanDefinition#definitions returns an array of Handler instances\n+    # arguments should come in as symbols, but will work with strings as well\n+    def [] handler_type=:default\n+      handler = handler_type.to_sym || handler_type",
+        "path": "lib/chronic/dictionary.rb",
+        "position": null,
+        "original_position": 33,
+        "commit_id": "35772af1bb1b96a0f5f74004a665732480aaada5",
+        "original_commit_id": "8139d33f60e6579a8cb595350a615da04124e8ed",
+        "user": {
+            "login": "TalkativeTree",
+            "id": 3632442,
+            "node_id": "MDQ6VXNlcjM2MzI0NDI=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3632442?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/TalkativeTree",
+            "html_url": "https://github.com/TalkativeTree",
+            "followers_url": "https://api.github.com/users/TalkativeTree/followers",
+            "following_url": "https://api.github.com/users/TalkativeTree/following{/other_user}",
+            "gists_url": "https://api.github.com/users/TalkativeTree/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/TalkativeTree/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/TalkativeTree/subscriptions",
+            "organizations_url": "https://api.github.com/users/TalkativeTree/orgs",
+            "repos_url": "https://api.github.com/users/TalkativeTree/repos",
+            "events_url": "https://api.github.com/users/TalkativeTree/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/TalkativeTree/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It might be a little premature to put that in. It won't error on Symbols, but it'll error on Arrays, etc. \n",
+        "created_at": "2013-12-11T17:25:35Z",
+        "updated_at": "2014-01-02T09:21:33Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/236#discussion_r8274082",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/236",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8274082"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/236#discussion_r8274082"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/236"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8274655",
+        "pull_request_review_id": null,
+        "id": 8274655,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyNzQ2NTU=",
+        "diff_hunk": "@@ -148,82 +149,10 @@ def guess(span, mode = :middle)\n     #\n     # Returns a Hash of Handler definitions.\n     def definitions(options = {})\n-      options[:endian_precedence] ||= [:middle, :little]\n-\n-      @@definitions ||= {\n-        :time => [\n-          Handler.new([:repeater_time, :repeater_day_portion?], nil)\n-        ],\n-\n-        :date => [\n-          Handler.new([:repeater_day_name, :repeater_month_name, :scalar_day, :repeater_time, [:separator_slash?, :separator_dash?], :time_zone, :scalar_year], :handle_generic),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :scalar_day], :handle_rdn_rmn_sd),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :scalar_day, :scalar_year], :handle_rdn_rmn_sd_sy),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :ordinal_day], :handle_rdn_rmn_od),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :ordinal_day, :scalar_year], :handle_rdn_rmn_od_sy),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :scalar_day, :separator_at?, 'time?'], :handle_rdn_rmn_sd),\n-          Handler.new([:repeater_day_name, :repeater_month_name, :ordinal_day, :separator_at?, 'time?'], :handle_rdn_rmn_od),\n-          Handler.new([:repeater_day_name, :ordinal_day, :separator_at?, 'time?'], :handle_rdn_od),\n-          Handler.new([:scalar_year, [:separator_slash, :separator_dash], :scalar_month, [:separator_slash, :separator_dash], :scalar_day, :repeater_time, :time_zone], :handle_generic),\n-          Handler.new([:ordinal_day], :handle_generic),\n-          Handler.new([:repeater_month_name, :scalar_day, :scalar_year], :handle_rmn_sd_sy),\n-          Handler.new([:repeater_month_name, :ordinal_day, :scalar_year], :handle_rmn_od_sy),\n-          Handler.new([:repeater_month_name, :scalar_day, :scalar_year, :separator_at?, 'time?'], :handle_rmn_sd_sy),\n-          Handler.new([:repeater_month_name, :ordinal_day, :scalar_year, :separator_at?, 'time?'], :handle_rmn_od_sy),\n-          Handler.new([:repeater_month_name, [:separator_slash?, :separator_dash?], :scalar_day, :separator_at?, 'time?'], :handle_rmn_sd),\n-          Handler.new([:repeater_time, :repeater_day_portion?, :separator_on?, :repeater_month_name, :scalar_day], :handle_rmn_sd_on),\n-          Handler.new([:repeater_month_name, :ordinal_day, :separator_at?, 'time?'], :handle_rmn_od),\n-          Handler.new([:ordinal_day, :repeater_month_name, :scalar_year, :separator_at?, 'time?'], :handle_od_rmn_sy),\n-          Handler.new([:ordinal_day, :repeater_month_name, :separator_at?, 'time?'], :handle_od_rmn),\n-          Handler.new([:ordinal_day, :grabber?, :repeater_month, :separator_at?, 'time?'], :handle_od_rm),\n-          Handler.new([:scalar_year, :repeater_month_name, :ordinal_day], :handle_sy_rmn_od),\n-          Handler.new([:repeater_time, :repeater_day_portion?, :separator_on?, :repeater_month_name, :ordinal_day], :handle_rmn_od_on),\n-          Handler.new([:repeater_month_name, :scalar_year], :handle_rmn_sy),\n-          Handler.new([:scalar_day, :repeater_month_name, :scalar_year, :separator_at?, 'time?'], :handle_sd_rmn_sy),\n-          Handler.new([:scalar_day, [:separator_slash?, :separator_dash?], :repeater_month_name, :separator_at?, 'time?'], :handle_sd_rmn),\n-          Handler.new([:scalar_year, [:separator_slash, :separator_dash], :scalar_month, [:separator_slash, :separator_dash], :scalar_day, :separator_at?, 'time?'], :handle_sy_sm_sd),\n-          Handler.new([:scalar_year, [:separator_slash, :separator_dash], :scalar_month], :handle_sy_sm),\n-          Handler.new([:scalar_month, [:separator_slash, :separator_dash], :scalar_year], :handle_sm_sy),\n-          Handler.new([:scalar_day, [:separator_slash, :separator_dash], :repeater_month_name, [:separator_slash, :separator_dash], :scalar_year, :repeater_time?], :handle_sm_rmn_sy),\n-          Handler.new([:scalar_year, [:separator_slash, :separator_dash], :scalar_month, [:separator_slash, :separator_dash], :scalar?, :time_zone], :handle_generic),\n-        ],\n-\n-        :anchor => [\n-          Handler.new([:separator_on?, :grabber?, :repeater, :separator_at?, :repeater?, :repeater?], :handle_r),\n-          Handler.new([:grabber?, :repeater, :repeater, :separator?, :repeater?, :repeater?], :handle_r),\n-          Handler.new([:repeater, :grabber, :repeater], :handle_r_g_r)\n-        ],\n-\n-        :arrow => [\n-          Handler.new([:scalar, :repeater, :pointer], :handle_s_r_p),\n-          Handler.new([:scalar, :repeater, :separator_and?, :scalar, :repeater, :pointer, :separator_at?, 'anchor'], :handle_s_r_a_s_r_p_a),\n-          Handler.new([:pointer, :scalar, :repeater], :handle_p_s_r),\n-          Handler.new([:scalar, :repeater, :pointer, :separator_at?, 'anchor'], :handle_s_r_p_a)\n-        ],\n-\n-        :narrow => [\n-          Handler.new([:ordinal, :repeater, :separator_in, :repeater], :handle_o_r_s_r),\n-          Handler.new([:ordinal, :repeater, :grabber, :repeater], :handle_o_r_g_r)\n-        ]\n-      }\n-\n-      endians = [\n-        Handler.new([:scalar_month, [:separator_slash, :separator_dash], :scalar_day, [:separator_slash, :separator_dash], :scalar_year, :separator_at?, 'time?'], :handle_sm_sd_sy),\n-        Handler.new([:scalar_month, [:separator_slash, :separator_dash], :scalar_day, :separator_at?, 'time?'], :handle_sm_sd),\n-        Handler.new([:scalar_day, [:separator_slash, :separator_dash], :scalar_month, :separator_at?, 'time?'], :handle_sd_sm),\n-        Handler.new([:scalar_day, [:separator_slash, :separator_dash], :scalar_month, [:separator_slash, :separator_dash], :scalar_year, :separator_at?, 'time?'], :handle_sd_sm_sy)\n-      ]\n-\n-      case endian = Array(options[:endian_precedence]).first\n-      when :little\n-        @@definitions.merge(:endian => endians.reverse)\n-      when :middle\n-        @@definitions.merge(:endian => endians)\n-      else\n-        raise ArgumentError, \"Unknown endian option '#{endian}'\"\n-      end\n+      SpanDictionary.new(options).definitions\n     end\n \n+",
+        "path": "lib/chronic/parser.rb",
+        "position": null,
+        "original_position": 100,
+        "commit_id": "35772af1bb1b96a0f5f74004a665732480aaada5",
+        "original_commit_id": "8139d33f60e6579a8cb595350a615da04124e8ed",
+        "user": {
+            "login": "TalkativeTree",
+            "id": 3632442,
+            "node_id": "MDQ6VXNlcjM2MzI0NDI=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3632442?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/TalkativeTree",
+            "html_url": "https://github.com/TalkativeTree",
+            "followers_url": "https://api.github.com/users/TalkativeTree/followers",
+            "following_url": "https://api.github.com/users/TalkativeTree/following{/other_user}",
+            "gists_url": "https://api.github.com/users/TalkativeTree/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/TalkativeTree/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/TalkativeTree/subscriptions",
+            "organizations_url": "https://api.github.com/users/TalkativeTree/orgs",
+            "repos_url": "https://api.github.com/users/TalkativeTree/repos",
+            "events_url": "https://api.github.com/users/TalkativeTree/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/TalkativeTree/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Looks like I should have ran -p when I added parser haha\n",
+        "created_at": "2013-12-11T17:41:25Z",
+        "updated_at": "2014-01-02T09:21:33Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/236#discussion_r8274655",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/236",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8274655"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/236#discussion_r8274655"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/236"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8609392",
+        "pull_request_review_id": null,
+        "id": 8609392,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MDkzOTI=",
+        "diff_hunk": "@@ -0,0 +1,36 @@\n+require 'chronic/definition'\n+\n+module Chronic\n+  # A collection of definitions\n+  class Dictionary\n+    attr_reader :defined_items, :options\n+\n+    def initialize(options = {})\n+      @options = options\n+      @defined_items = []\n+    end\n+\n+    # returns a hash of each word's Definitions\n+    def definitions\n+      defined_items.each_with_object({}) do |word, defs|\n+        word_type = \"#{word.capitalize.to_s + 'Definitions'}\"\n+        defs[word] = Chronic.const_get(word_type).new(options).definitions\n+      end\n+    end\n+  end\n+\n+  class SpanDictionary < Dictionary\n+    # Collection of SpanDefinitions\n+    def initialize(options = {})\n+      super\n+      @defined_items = [:time,:date,:anchor,:arrow,:narrow,:endian]\n+    end\n+\n+    # returns the definitions of a specific subclass of SpanDefinitions\n+    # SpanDefinition#definitions returns an Hash of Handler instances\n+    # arguments should come in as symbols\n+    def [] handler_type=:smybol",
+        "path": "lib/chronic/dictionary.rb",
+        "position": null,
+        "original_position": 32,
+        "commit_id": "35772af1bb1b96a0f5f74004a665732480aaada5",
+        "original_commit_id": "60494832e738c3b5403b67e625f9b9d150dcd8e5",
+        "user": {
+            "login": "leejarvis",
+            "id": 197567,
+            "node_id": "MDQ6VXNlcjE5NzU2Nw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/197567?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/leejarvis",
+            "html_url": "https://github.com/leejarvis",
+            "followers_url": "https://api.github.com/users/leejarvis/followers",
+            "following_url": "https://api.github.com/users/leejarvis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/leejarvis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/leejarvis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/leejarvis/subscriptions",
+            "organizations_url": "https://api.github.com/users/leejarvis/orgs",
+            "repos_url": "https://api.github.com/users/leejarvis/repos",
+            "events_url": "https://api.github.com/users/leejarvis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/leejarvis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "typo? could you also use parenthesis here for the args\n",
+        "created_at": "2014-01-02T09:17:31Z",
+        "updated_at": "2014-01-02T09:21:33Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/236#discussion_r8609392",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/236",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/8609392"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/236#discussion_r8609392"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/236"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/11505356",
+        "pull_request_review_id": null,
+        "id": 11505356,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNTA1MzU2",
+        "diff_hunk": "@@ -107,7 +107,7 @@ def test_handle_rmn_od\n \n   def test_handle_od_rm\n     time = parse_now(\"fifteenth of this month\")\n-    assert_equal Time.local(2006, 8, 15, 12), time\n+    assert_equal Time.local(2007, 8, 15, 12), time",
+        "path": "test/test_parsing.rb",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "1ea8248e9986e3117e97c179479b0124a0f4cad1",
+        "original_commit_id": "1ea8248e9986e3117e97c179479b0124a0f4cad1",
+        "user": {
+            "login": "dnrce",
+            "id": 1084619,
+            "node_id": "MDQ6VXNlcjEwODQ2MTk=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1084619?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dnrce",
+            "html_url": "https://github.com/dnrce",
+            "followers_url": "https://api.github.com/users/dnrce/followers",
+            "following_url": "https://api.github.com/users/dnrce/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dnrce/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dnrce/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dnrce/subscriptions",
+            "organizations_url": "https://api.github.com/users/dnrce/orgs",
+            "repos_url": "https://api.github.com/users/dnrce/repos",
+            "events_url": "https://api.github.com/users/dnrce/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dnrce/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Shouldn't this one still be 2006? \"This month\" never means \"this month next year.\"\n",
+        "created_at": "2014-04-10T20:31:01Z",
+        "updated_at": "2014-04-10T20:31:01Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/255#discussion_r11505356",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/255",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/11505356"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/255#discussion_r11505356"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/255"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/11518602",
+        "pull_request_review_id": null,
+        "id": 11518602,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNTE4NjAy",
+        "diff_hunk": "@@ -107,7 +107,7 @@ def test_handle_rmn_od\n \n   def test_handle_od_rm\n     time = parse_now(\"fifteenth of this month\")\n-    assert_equal Time.local(2006, 8, 15, 12), time\n+    assert_equal Time.local(2007, 8, 15, 12), time",
+        "path": "test/test_parsing.rb",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "1ea8248e9986e3117e97c179479b0124a0f4cad1",
+        "original_commit_id": "1ea8248e9986e3117e97c179479b0124a0f4cad1",
+        "user": {
+            "login": "synopia",
+            "id": 192861,
+            "node_id": "MDQ6VXNlcjE5Mjg2MQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/192861?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/synopia",
+            "html_url": "https://github.com/synopia",
+            "followers_url": "https://api.github.com/users/synopia/followers",
+            "following_url": "https://api.github.com/users/synopia/following{/other_user}",
+            "gists_url": "https://api.github.com/users/synopia/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/synopia/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/synopia/subscriptions",
+            "organizations_url": "https://api.github.com/users/synopia/orgs",
+            "repos_url": "https://api.github.com/users/synopia/repos",
+            "events_url": "https://api.github.com/users/synopia/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/synopia/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Look at line 371 and following in the same file. \n\nIf it should be 2006 in the test_handle_rmn_sd, it should be 2006 in test_handle_sm_sd, too.\n\nSince we currently need this behavior right now, I fixed it this way ;-)\n",
+        "created_at": "2014-04-11T05:18:07Z",
+        "updated_at": "2014-04-11T05:18:07Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/255#discussion_r11518602",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/255",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/11518602"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/255#discussion_r11518602"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/255"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/11518692",
+        "pull_request_review_id": null,
+        "id": 11518692,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNTE4Njky",
+        "diff_hunk": "@@ -107,7 +107,7 @@ def test_handle_rmn_od\n \n   def test_handle_od_rm\n     time = parse_now(\"fifteenth of this month\")\n-    assert_equal Time.local(2006, 8, 15, 12), time\n+    assert_equal Time.local(2007, 8, 15, 12), time",
+        "path": "test/test_parsing.rb",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "1ea8248e9986e3117e97c179479b0124a0f4cad1",
+        "original_commit_id": "1ea8248e9986e3117e97c179479b0124a0f4cad1",
+        "user": {
+            "login": "dnrce",
+            "id": 1084619,
+            "node_id": "MDQ6VXNlcjEwODQ2MTk=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1084619?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dnrce",
+            "html_url": "https://github.com/dnrce",
+            "followers_url": "https://api.github.com/users/dnrce/followers",
+            "following_url": "https://api.github.com/users/dnrce/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dnrce/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dnrce/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dnrce/subscriptions",
+            "organizations_url": "https://api.github.com/users/dnrce/orgs",
+            "repos_url": "https://api.github.com/users/dnrce/repos",
+            "events_url": "https://api.github.com/users/dnrce/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dnrce/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sorry, but I'm not quite following. I don't see that the two are equivalent.\n",
+        "created_at": "2014-04-11T05:23:31Z",
+        "updated_at": "2014-04-11T05:23:31Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/255#discussion_r11518692",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/255",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/11518692"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/255#discussion_r11518692"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/255"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/11520230",
+        "pull_request_review_id": null,
+        "id": 11520230,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNTIwMjMw",
+        "diff_hunk": "@@ -107,7 +107,7 @@ def test_handle_rmn_od\n \n   def test_handle_od_rm\n     time = parse_now(\"fifteenth of this month\")\n-    assert_equal Time.local(2006, 8, 15, 12), time\n+    assert_equal Time.local(2007, 8, 15, 12), time",
+        "path": "test/test_parsing.rb",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "1ea8248e9986e3117e97c179479b0124a0f4cad1",
+        "original_commit_id": "1ea8248e9986e3117e97c179479b0124a0f4cad1",
+        "user": {
+            "login": "synopia",
+            "id": 192861,
+            "node_id": "MDQ6VXNlcjE5Mjg2MQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/192861?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/synopia",
+            "html_url": "https://github.com/synopia",
+            "followers_url": "https://api.github.com/users/synopia/followers",
+            "following_url": "https://api.github.com/users/synopia/following{/other_user}",
+            "gists_url": "https://api.github.com/users/synopia/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/synopia/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/synopia/subscriptions",
+            "organizations_url": "https://api.github.com/users/synopia/orgs",
+            "repos_url": "https://api.github.com/users/synopia/repos",
+            "events_url": "https://api.github.com/users/synopia/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/synopia/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "In the tests, Time.now is set to 2006-08-16.\n\nThe test in line 371 says:\n    time = parse_now(\"05/06\")\n    assert_equal Time.local(2007, 5, 6, 12), time\n\nIf there is a date without a year, with day/month before NOW, it should be suggested to be next year.\n\nFor the word parsing feature, the behavior should be the same - this is what my fix changes.\n",
+        "created_at": "2014-04-11T06:13:24Z",
+        "updated_at": "2014-04-11T06:13:24Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/255#discussion_r11520230",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/255",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/11520230"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/255#discussion_r11520230"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/255"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mojombo/chronic/pulls/comments/11521160",
+        "pull_request_review_id": null,
+        "id": 11521160,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNTIxMTYw",
+        "diff_hunk": "@@ -107,7 +107,7 @@ def test_handle_rmn_od\n \n   def test_handle_od_rm\n     time = parse_now(\"fifteenth of this month\")\n-    assert_equal Time.local(2006, 8, 15, 12), time\n+    assert_equal Time.local(2007, 8, 15, 12), time",
+        "path": "test/test_parsing.rb",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "1ea8248e9986e3117e97c179479b0124a0f4cad1",
+        "original_commit_id": "1ea8248e9986e3117e97c179479b0124a0f4cad1",
+        "user": {
+            "login": "davispuh",
+            "id": 651800,
+            "node_id": "MDQ6VXNlcjY1MTgwMA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/651800?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/davispuh",
+            "html_url": "https://github.com/davispuh",
+            "followers_url": "https://api.github.com/users/davispuh/followers",
+            "following_url": "https://api.github.com/users/davispuh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/davispuh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/davispuh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/davispuh/subscriptions",
+            "organizations_url": "https://api.github.com/users/davispuh/orgs",
+            "repos_url": "https://api.github.com/users/davispuh/repos",
+            "events_url": "https://api.github.com/users/davispuh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/davispuh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "there's `:context` option which by default is `:future` and that's why we're looking in next year, because it can't be this year. I've actually idea about context `:year`, `:month` which then could handle those cases when you know it's this year independently from future/past\n",
+        "created_at": "2014-04-11T07:04:14Z",
+        "updated_at": "2014-04-11T07:04:14Z",
+        "html_url": "https://github.com/mojombo/chronic/pull/255#discussion_r11521160",
+        "pull_request_url": "https://api.github.com/repos/mojombo/chronic/pulls/255",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/comments/11521160"
+            },
+            "html": {
+                "href": "https://github.com/mojombo/chronic/pull/255#discussion_r11521160"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mojombo/chronic/pulls/255"
+            }
+        }
+    }
+]

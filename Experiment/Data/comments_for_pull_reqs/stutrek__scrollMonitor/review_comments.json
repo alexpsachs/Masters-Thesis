@@ -1,0 +1,198 @@
+[
+    {
+        "url": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/comments/12413665",
+        "pull_request_review_id": null,
+        "id": 12413665,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDEzNjY1",
+        "diff_hunk": "@@ -48,11 +63,23 @@\n \t\treturn window.innerHeight || document.documentElement.clientHeight;\n \t}\n \n+\tvar pageHeight = (window.orientation !== undefined || (screen.width !== undefined && screen.availHeight !== undefined))",
+        "path": "scrollMonitor.js",
+        "position": null,
+        "original_position": 47,
+        "commit_id": "8aeaa969625e93006ffcc8b5bba34ac34be3117d",
+        "original_commit_id": "82e37488075fef26d72bfc58134bd24807ebd5ed",
+        "user": {
+            "login": "theorm",
+            "id": 89853,
+            "node_id": "MDQ6VXNlcjg5ODUz",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/89853?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/theorm",
+            "html_url": "https://github.com/theorm",
+            "followers_url": "https://api.github.com/users/theorm/followers",
+            "following_url": "https://api.github.com/users/theorm/following{/other_user}",
+            "gists_url": "https://api.github.com/users/theorm/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/theorm/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/theorm/subscriptions",
+            "organizations_url": "https://api.github.com/users/theorm/orgs",
+            "repos_url": "https://api.github.com/users/theorm/repos",
+            "events_url": "https://api.github.com/users/theorm/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/theorm/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This method returns the viewport height across different browsers and devices. It worked fine for me before but gut feeling tells me that this method might be wrong sometimes and there should be a better way to do it. Does anyone have a better idea? I'll be looking for other solutions meanwhile.\n",
+        "created_at": "2014-05-08T02:43:48Z",
+        "updated_at": "2014-05-14T02:09:15Z",
+        "html_url": "https://github.com/stutrek/scrollMonitor/pull/22#discussion_r12413665",
+        "pull_request_url": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/22",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/comments/12413665"
+            },
+            "html": {
+                "href": "https://github.com/stutrek/scrollMonitor/pull/22#discussion_r12413665"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/22"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/comments/12414425",
+        "pull_request_review_id": null,
+        "id": 12414425,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDE0NDI1",
+        "diff_hunk": "@@ -48,11 +63,23 @@\n \t\treturn window.innerHeight || document.documentElement.clientHeight;\n \t}\n \n+\tvar pageHeight = (window.orientation !== undefined || (screen.width !== undefined && screen.availHeight !== undefined))",
+        "path": "scrollMonitor.js",
+        "position": null,
+        "original_position": 47,
+        "commit_id": "8aeaa969625e93006ffcc8b5bba34ac34be3117d",
+        "original_commit_id": "82e37488075fef26d72bfc58134bd24807ebd5ed",
+        "user": {
+            "login": "stutrek",
+            "id": 339327,
+            "node_id": "MDQ6VXNlcjMzOTMyNw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/339327?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/stutrek",
+            "html_url": "https://github.com/stutrek",
+            "followers_url": "https://api.github.com/users/stutrek/followers",
+            "following_url": "https://api.github.com/users/stutrek/following{/other_user}",
+            "gists_url": "https://api.github.com/users/stutrek/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/stutrek/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/stutrek/subscriptions",
+            "organizations_url": "https://api.github.com/users/stutrek/orgs",
+            "repos_url": "https://api.github.com/users/stutrek/repos",
+            "events_url": "https://api.github.com/users/stutrek/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/stutrek/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I was actually concerned about this exact bit. Androids are inconsistent about this, I've never seen it done well without a UA check.\n",
+        "created_at": "2014-05-08T03:40:00Z",
+        "updated_at": "2014-05-14T02:09:15Z",
+        "html_url": "https://github.com/stutrek/scrollMonitor/pull/22#discussion_r12414425",
+        "pull_request_url": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/22",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/comments/12414425"
+            },
+            "html": {
+                "href": "https://github.com/stutrek/scrollMonitor/pull/22#discussion_r12414425"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/22"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/comments/12435237",
+        "pull_request_review_id": null,
+        "id": 12435237,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNDM1MjM3",
+        "diff_hunk": "@@ -191,10 +216,9 @@\n \t\t\t\tif (cachedDisplay === 'none') {\n \t\t\t\t\tthis.watchItem.style.display = '';\n \t\t\t\t}\n-\t\t\t\t\n-\t\t\t\tvar elementLocation = $(this.watchItem).offset();\n-\t\t\t\tthis.top = elementLocation.top;\n-\t\t\t\tthis.bottom = elementLocation.top + this.watchItem.offsetHeight;\n+\n+\t\t\t\tthis.top = this.watchItem.offsetTop;",
+        "path": "scrollMonitor.js",
+        "position": null,
+        "original_position": 143,
+        "commit_id": "8aeaa969625e93006ffcc8b5bba34ac34be3117d",
+        "original_commit_id": "f5125098b13d5aeb660a127d41d7bae1fa196619",
+        "user": {
+            "login": "stutrek",
+            "id": 339327,
+            "node_id": "MDQ6VXNlcjMzOTMyNw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/339327?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/stutrek",
+            "html_url": "https://github.com/stutrek",
+            "followers_url": "https://api.github.com/users/stutrek/followers",
+            "following_url": "https://api.github.com/users/stutrek/following{/other_user}",
+            "gists_url": "https://api.github.com/users/stutrek/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/stutrek/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/stutrek/subscriptions",
+            "organizations_url": "https://api.github.com/users/stutrek/orgs",
+            "repos_url": "https://api.github.com/users/stutrek/repos",
+            "events_url": "https://api.github.com/users/stutrek/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/stutrek/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This changes depending on the element's offsetParent. You might be able to do this using getBoundingClientRect and adding the scrollTop.\n\nhttps://developer.mozilla.org/en-US/docs/Web/API/Element.getBoundingClientRect\n",
+        "created_at": "2014-05-08T15:36:31Z",
+        "updated_at": "2014-05-14T02:09:15Z",
+        "html_url": "https://github.com/stutrek/scrollMonitor/pull/22#discussion_r12435237",
+        "pull_request_url": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/22",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/comments/12435237"
+            },
+            "html": {
+                "href": "https://github.com/stutrek/scrollMonitor/pull/22#discussion_r12435237"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/22"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/comments/139716246",
+        "pull_request_review_id": 63687818,
+        "id": 139716246,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzOTcxNjI0Ng==",
+        "diff_hunk": "@@ -106,12 +106,24 @@ class ScrollMonitorContainer {\n \t}\n \n \tlistenToDOM () {\n+\t\tvar browserSupportsPassive = false;\n+\t\ttry {\n+\t\t\tvar opts = Object.defineProperty({}, 'passive', {\n+\t\t\t\tget: function() {\n+\t\t\t\t\tbrowserSupportsPassive = true;\n+\t\t\t\t}\n+\t\t\t});\n+\t\t\twindow.addEventListener('test', null, opts);\n+\t\t} catch (e) {}\n+\n+\t\tconst useCapture = browserSupportsPassive ? {capture: false, passive: true} : false;\n+",
+        "path": "src/container.js",
+        "position": null,
+        "original_position": 15,
+        "commit_id": "45ff8e62f99c31d7fcf16db76504be3ce8de2c40",
+        "original_commit_id": "b3b9ef33c550d5077a6215cb0f04db3fd7819743",
+        "user": {
+            "login": "stutrek",
+            "id": 339327,
+            "node_id": "MDQ6VXNlcjMzOTMyNw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/339327?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/stutrek",
+            "html_url": "https://github.com/stutrek",
+            "followers_url": "https://api.github.com/users/stutrek/followers",
+            "following_url": "https://api.github.com/users/stutrek/following{/other_user}",
+            "gists_url": "https://api.github.com/users/stutrek/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/stutrek/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/stutrek/subscriptions",
+            "organizations_url": "https://api.github.com/users/stutrek/orgs",
+            "repos_url": "https://api.github.com/users/stutrek/repos",
+            "events_url": "https://api.github.com/users/stutrek/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/stutrek/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We're almost there. Move this block up to the top level of the module, right now it's calling `addEventListener` every time a watcher is created.",
+        "created_at": "2017-09-19T14:50:07Z",
+        "updated_at": "2017-09-20T00:29:37Z",
+        "html_url": "https://github.com/stutrek/scrollMonitor/pull/70#discussion_r139716246",
+        "pull_request_url": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/70",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/comments/139716246"
+            },
+            "html": {
+                "href": "https://github.com/stutrek/scrollMonitor/pull/70#discussion_r139716246"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stutrek/scrollMonitor/pulls/70"
+            }
+        }
+    }
+]

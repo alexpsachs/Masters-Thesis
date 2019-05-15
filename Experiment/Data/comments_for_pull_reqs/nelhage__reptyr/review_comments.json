@@ -1,0 +1,150 @@
+[
+    {
+        "url": "https://api.github.com/repos/nelhage/reptyr/pulls/comments/15976285",
+        "pull_request_review_id": null,
+        "id": 15976285,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1OTc2Mjg1",
+        "diff_hunk": "@@ -145,15 +146,16 @@ int *get_child_tty_fds(struct ptrace_child *child, int statfd, int *count) {\n             || st.st_rdev == console_st.st_rdev) {\n             if (n == allocated) {\n                 allocated = allocated ? 2 * allocated : 2;\n-                tmp = realloc(fds, allocated * sizeof *tmp);\n-                if (tmp == NULL) {\n-                  child->error = assert_nonzero(errno);\n-                  error(\"Unable to allocate memory for fd array.\");\n-                  free(fds);\n-                  fds = NULL;\n-                  goto out;\n-                }\n-                fds = tmp;\n+\t\t\t\terrno = 0;",
+        "path": "attach.c",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "bbbd1fe129bbd034d88ff327e42b1850c793a4cf",
+        "original_commit_id": "bbbd1fe129bbd034d88ff327e42b1850c793a4cf",
+        "user": {
+            "login": "charmander",
+            "id": 1889843,
+            "node_id": "MDQ6VXNlcjE4ODk4NDM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1889843?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/charmander",
+            "html_url": "https://github.com/charmander",
+            "followers_url": "https://api.github.com/users/charmander/followers",
+            "following_url": "https://api.github.com/users/charmander/following{/other_user}",
+            "gists_url": "https://api.github.com/users/charmander/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/charmander/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/charmander/subscriptions",
+            "organizations_url": "https://api.github.com/users/charmander/orgs",
+            "repos_url": "https://api.github.com/users/charmander/repos",
+            "events_url": "https://api.github.com/users/charmander/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/charmander/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The indentation here seems to have been broken.\n",
+        "created_at": "2014-08-08T02:50:11Z",
+        "updated_at": "2014-08-08T02:50:11Z",
+        "html_url": "https://github.com/nelhage/reptyr/pull/36#discussion_r15976285",
+        "pull_request_url": "https://api.github.com/repos/nelhage/reptyr/pulls/36",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nelhage/reptyr/pulls/comments/15976285"
+            },
+            "html": {
+                "href": "https://github.com/nelhage/reptyr/pull/36#discussion_r15976285"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nelhage/reptyr/pulls/36"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/nelhage/reptyr/pulls/comments/238129214",
+        "pull_request_review_id": 180595514,
+        "id": 238129214,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzODEyOTIxNA==",
+        "diff_hunk": "@@ -115,6 +123,21 @@ int do_setsid(struct ptrace_child *child) {\n     return err;\n }\n \n+static int do_dup2(struct ptrace_child *child, int oldfd, int newfd) {\n+    if (ptrace_syscall_numbers(child)->nr_dup2 != -1) {\n+        return do_syscall(child, dup2, oldfd, newfd, 0, 0, 0, 0);\n+    } else {\n+        int err = do_syscall(child, dup3, oldfd, newfd, 0, 0, 0, 0);\n+        // dup3 returns EINVAL when the fds are the same, while dup2 ignores it",
+        "path": "attach.c",
+        "position": 30,
+        "original_position": 30,
+        "commit_id": "ceef05a707f6b708d9417407943d926e44f5e421",
+        "original_commit_id": "ceef05a707f6b708d9417407943d926e44f5e421",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`dup3` returns `EINVAL` for other reasons, too. They're probably not relevant here, but let's instead check for the equality of the fds and shortcut the call.",
+        "created_at": "2018-12-03T02:10:39Z",
+        "updated_at": "2018-12-03T02:15:44Z",
+        "html_url": "https://github.com/nelhage/reptyr/pull/97#discussion_r238129214",
+        "pull_request_url": "https://api.github.com/repos/nelhage/reptyr/pulls/97",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nelhage/reptyr/pulls/comments/238129214"
+            },
+            "html": {
+                "href": "https://github.com/nelhage/reptyr/pull/97#discussion_r238129214"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nelhage/reptyr/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/nelhage/reptyr/pulls/comments/238786706",
+        "pull_request_review_id": 181414855,
+        "id": 238786706,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzODc4NjcwNg==",
+        "diff_hunk": "@@ -115,6 +123,21 @@ int do_setsid(struct ptrace_child *child) {\n     return err;\n }\n \n+static int do_dup2(struct ptrace_child *child, int oldfd, int newfd) {\n+    if (ptrace_syscall_numbers(child)->nr_dup2 != -1) {\n+        return do_syscall(child, dup2, oldfd, newfd, 0, 0, 0, 0);\n+    } else {\n+        int err = do_syscall(child, dup3, oldfd, newfd, 0, 0, 0, 0);\n+        // dup3 returns EINVAL when the fds are the same, while dup2 ignores it",
+        "path": "attach.c",
+        "position": 30,
+        "original_position": 30,
+        "commit_id": "ceef05a707f6b708d9417407943d926e44f5e421",
+        "original_commit_id": "ceef05a707f6b708d9417407943d926e44f5e421",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "(applied a fix in #98)",
+        "created_at": "2018-12-04T18:37:24Z",
+        "updated_at": "2018-12-04T18:37:24Z",
+        "html_url": "https://github.com/nelhage/reptyr/pull/97#discussion_r238786706",
+        "pull_request_url": "https://api.github.com/repos/nelhage/reptyr/pulls/97",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nelhage/reptyr/pulls/comments/238786706"
+            },
+            "html": {
+                "href": "https://github.com/nelhage/reptyr/pull/97#discussion_r238786706"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nelhage/reptyr/pulls/97"
+            }
+        },
+        "in_reply_to_id": 238129214
+    }
+]

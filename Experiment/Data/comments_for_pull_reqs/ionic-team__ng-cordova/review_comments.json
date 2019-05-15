@@ -1,0 +1,198 @@
+[
+    {
+        "url": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/comments/28642434",
+        "pull_request_review_id": null,
+        "id": 28642434,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NjQyNDM0",
+        "diff_hunk": "@@ -1,14 +1,48 @@\n-//  install   :   cordova plugin add https://github.com/don/cordova-plugin-ble-central#:/plugin\n+//  install   :   cordova plugin add com.megster.cordova.ble\n //  link      :   https://github.com/don/cordova-plugin-ble-central\n \n angular.module('ngCordova.plugins.ble', [])\n \n-  .factory('$cordovaBLE', ['$q', function ($q) {\n+  .factory('$cordovaBLE', ['$q', '$timeout', function ($q, $timeout) {\n+\n+    var scanning = null;\n \n     return {\n       scan: function (services, seconds) {\n         var q = $q.defer();\n+        var devices = [];\n         ble.scan(services, seconds, function (result) {\n+          devices.push(result);\n+          q.notify(result);\n+        }, function (error) {\n+          q.reject(error);\n+        });\n+\n+        $timeout(function () {\n+          q.resolve(devices);\n+        }, seconds*1000);\n+\n+        return q.promise;\n+      },\n+\n+      startScan: function(services) {\n+        var q = $q.defer();\n+        ble.startScan(services, function (result) {\n+          q.notify(result);\n+        }, function (error) {\n+          q.reject(error);\n+        });\n+        scanner = q.promise;",
+        "path": "src/plugins/ble.js",
+        "position": null,
+        "original_position": 37,
+        "commit_id": "e4b5675d2f84b963505a8d636098d3ba0c7bbad1",
+        "original_commit_id": "1e415c42736d7f3af742dd747cd183d37e2d207c",
+        "user": {
+            "login": "evanliomain",
+            "id": 6391294,
+            "node_id": "MDQ6VXNlcjYzOTEyOTQ=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/6391294?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/evanliomain",
+            "html_url": "https://github.com/evanliomain",
+            "followers_url": "https://api.github.com/users/evanliomain/followers",
+            "following_url": "https://api.github.com/users/evanliomain/following{/other_user}",
+            "gists_url": "https://api.github.com/users/evanliomain/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/evanliomain/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/evanliomain/subscriptions",
+            "organizations_url": "https://api.github.com/users/evanliomain/orgs",
+            "repos_url": "https://api.github.com/users/evanliomain/repos",
+            "events_url": "https://api.github.com/users/evanliomain/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/evanliomain/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You should mean `scanning` rather than `scanner`.\n",
+        "created_at": "2015-04-18T08:36:08Z",
+        "updated_at": "2015-04-18T16:25:09Z",
+        "html_url": "https://github.com/ionic-team/ng-cordova/pull/722#discussion_r28642434",
+        "pull_request_url": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/722",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/comments/28642434"
+            },
+            "html": {
+                "href": "https://github.com/ionic-team/ng-cordova/pull/722#discussion_r28642434"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/722"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/comments/31550946",
+        "pull_request_review_id": null,
+        "id": 31550946,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxNTUwOTQ2",
+        "diff_hunk": "@@ -5007,7 +5011,7 @@ angular.module(\"ngCordova.plugins.oauth\", [\"ngCordova.plugins.oauthUtility\"])\n             var deferred = $q.defer();\n             if(window.cordova) {\n                 var cordovaMetadata = cordova.require(\"cordova/plugin_list\").metadata;\n-                if(cordovaMetadata.hasOwnProperty(\"org.apache.cordova.inappbrowser\") === true) {\n+                if(cordovaMetadata.hasOwnProperty(\"org.apache.cordova.inappbrowser\") === true || cordovaMetadata.hasOwnProperty(\"cordova-plugin-inappbrowser\") === true || cordovaMetadata.hasOwnProperty(\"cordova-plugin-inappbrowser\") === true) {",
+        "path": "demo/www/lib/ngCordova/dist/ng-cordova.js",
+        "position": 16,
+        "original_position": 16,
+        "commit_id": "63d3180499c4b5248243ed669628b7c9ae0b1947",
+        "original_commit_id": "63d3180499c4b5248243ed669628b7c9ae0b1947",
+        "user": {
+            "login": "matheusrocha89",
+            "id": 3718366,
+            "node_id": "MDQ6VXNlcjM3MTgzNjY=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/3718366?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/matheusrocha89",
+            "html_url": "https://github.com/matheusrocha89",
+            "followers_url": "https://api.github.com/users/matheusrocha89/followers",
+            "following_url": "https://api.github.com/users/matheusrocha89/following{/other_user}",
+            "gists_url": "https://api.github.com/users/matheusrocha89/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/matheusrocha89/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/matheusrocha89/subscriptions",
+            "organizations_url": "https://api.github.com/users/matheusrocha89/orgs",
+            "repos_url": "https://api.github.com/users/matheusrocha89/repos",
+            "events_url": "https://api.github.com/users/matheusrocha89/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/matheusrocha89/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You are making twice the same test here:\n\n``` javascript\ncordovaMetadata.hasOwnProperty(\"cordova-plugin-inappbrowser\") === true || cordovaMetadata.hasOwnProperty(\"cordova-plugin-inappbrowser\") === true\n```\n\nRemove one, I think we could put this string in a variable, it's better than repeat it, or maybe in a array and just test if the value is in it, cause then if someday the name change it again we can just add the new name to the variable, what do you think about @JoshAntBrown ?\n",
+        "created_at": "2015-06-02T17:55:34Z",
+        "updated_at": "2015-06-02T17:55:34Z",
+        "html_url": "https://github.com/ionic-team/ng-cordova/pull/787#discussion_r31550946",
+        "pull_request_url": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/787",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/comments/31550946"
+            },
+            "html": {
+                "href": "https://github.com/ionic-team/ng-cordova/pull/787#discussion_r31550946"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/787"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/comments/31576754",
+        "pull_request_review_id": null,
+        "id": 31576754,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxNTc2NzU0",
+        "diff_hunk": "@@ -5007,7 +5011,7 @@ angular.module(\"ngCordova.plugins.oauth\", [\"ngCordova.plugins.oauthUtility\"])\n             var deferred = $q.defer();\n             if(window.cordova) {\n                 var cordovaMetadata = cordova.require(\"cordova/plugin_list\").metadata;\n-                if(cordovaMetadata.hasOwnProperty(\"org.apache.cordova.inappbrowser\") === true) {\n+                if(cordovaMetadata.hasOwnProperty(\"org.apache.cordova.inappbrowser\") === true || cordovaMetadata.hasOwnProperty(\"cordova-plugin-inappbrowser\") === true || cordovaMetadata.hasOwnProperty(\"cordova-plugin-inappbrowser\") === true) {",
+        "path": "demo/www/lib/ngCordova/dist/ng-cordova.js",
+        "position": 16,
+        "original_position": 16,
+        "commit_id": "63d3180499c4b5248243ed669628b7c9ae0b1947",
+        "original_commit_id": "63d3180499c4b5248243ed669628b7c9ae0b1947",
+        "user": {
+            "login": "matheusrocha89",
+            "id": 3718366,
+            "node_id": "MDQ6VXNlcjM3MTgzNjY=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/3718366?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/matheusrocha89",
+            "html_url": "https://github.com/matheusrocha89",
+            "followers_url": "https://api.github.com/users/matheusrocha89/followers",
+            "following_url": "https://api.github.com/users/matheusrocha89/following{/other_user}",
+            "gists_url": "https://api.github.com/users/matheusrocha89/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/matheusrocha89/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/matheusrocha89/subscriptions",
+            "organizations_url": "https://api.github.com/users/matheusrocha89/orgs",
+            "repos_url": "https://api.github.com/users/matheusrocha89/repos",
+            "events_url": "https://api.github.com/users/matheusrocha89/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/matheusrocha89/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@JoshAntBrown I also made a Pull Request to `ng-cordova-oauth` project doing that, if you want, take a look: https://github.com/nraboy/ng-cordova-oauth/pull/83\n",
+        "created_at": "2015-06-02T22:10:09Z",
+        "updated_at": "2015-06-02T22:10:09Z",
+        "html_url": "https://github.com/ionic-team/ng-cordova/pull/787#discussion_r31576754",
+        "pull_request_url": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/787",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/comments/31576754"
+            },
+            "html": {
+                "href": "https://github.com/ionic-team/ng-cordova/pull/787#discussion_r31576754"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/787"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/comments/49824325",
+        "pull_request_review_id": null,
+        "id": 49824325,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5ODI0MzI1",
+        "diff_hunk": "@@ -62,6 +62,19 @@ angular.module('ngCordova.plugins.push_v5', [])\n           }, number);\n         }\n         return q.promise;\n+      },\n+      finish: function(){\n+        var q = $q.defer();\n+        if (push === undefined) {",
+        "path": "src/plugins/push_v5.js",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "e9a40b7ff110df27d831f27d4c4671fcdc1ef69e",
+        "original_commit_id": "e9a40b7ff110df27d831f27d4c4671fcdc1ef69e",
+        "user": {
+            "login": "JaKXz",
+            "id": 2642545,
+            "node_id": "MDQ6VXNlcjI2NDI1NDU=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2642545?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JaKXz",
+            "html_url": "https://github.com/JaKXz",
+            "followers_url": "https://api.github.com/users/JaKXz/followers",
+            "following_url": "https://api.github.com/users/JaKXz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JaKXz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JaKXz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JaKXz/subscriptions",
+            "organizations_url": "https://api.github.com/users/JaKXz/orgs",
+            "repos_url": "https://api.github.com/users/JaKXz/repos",
+            "events_url": "https://api.github.com/users/JaKXz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JaKXz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Shouldn't this just check if `push` is falsy? Since it's consistent with the rest of the file I'm sure it's fine, but just a suggestion.\n",
+        "created_at": "2016-01-15T06:23:40Z",
+        "updated_at": "2016-01-15T06:23:40Z",
+        "html_url": "https://github.com/ionic-team/ng-cordova/pull/1091#discussion_r49824325",
+        "pull_request_url": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/1091",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/comments/49824325"
+            },
+            "html": {
+                "href": "https://github.com/ionic-team/ng-cordova/pull/1091#discussion_r49824325"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/ionic-team/ng-cordova/pulls/1091"
+            }
+        }
+    }
+]

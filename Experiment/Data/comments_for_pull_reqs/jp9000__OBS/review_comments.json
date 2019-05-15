@@ -1,0 +1,1061 @@
+[
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/9764712",
+        "pull_request_review_id": null,
+        "id": 9764712,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3NjQ3MTI=",
+        "diff_hunk": "@@ -607,6 +607,12 @@ class OBSAPIInterface : public APIInterface\n     virtual void RemoveSettingsPane(SettingsPane *pane) {App->RemoveSettingsPane(pane);}\n \n     virtual UINT GetSampleRateHz() const {return App->GetSampleRateHz();}\n+    \n+    virtual UINT GetCaptureFPS() const       {return App->captureFPS;}\n+    virtual UINT GetbytesPerSec() const      {return App->bytesPerSec;}\n+    virtual UINT GetTotalFrames() const      {return App->network->NumTotalVideoFrames();}",
+        "path": "Source/API.cpp",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "6258828c708411f3fec8bce62e35d927edb45b36",
+        "original_commit_id": "38a0bcc240e7452d3f7d8f50fbe3744b4fc71514",
+        "user": {
+            "login": "palana",
+            "id": 343642,
+            "node_id": "MDQ6VXNlcjM0MzY0Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/343642?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/palana",
+            "html_url": "https://github.com/palana",
+            "followers_url": "https://api.github.com/users/palana/followers",
+            "following_url": "https://api.github.com/users/palana/following{/other_user}",
+            "gists_url": "https://api.github.com/users/palana/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/palana/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/palana/subscriptions",
+            "organizations_url": "https://api.github.com/users/palana/orgs",
+            "repos_url": "https://api.github.com/users/palana/repos",
+            "events_url": "https://api.github.com/users/palana/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/palana/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Might want to change this to\n\n```\nvirtual UINT GetTotalFrames() const override {return App->network ? App->network->NumTotalVideoFrames() : 0;}\n```\n",
+        "created_at": "2014-02-14T21:29:19Z",
+        "updated_at": "2014-02-14T22:24:10Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/309#discussion_r9764712",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/309",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/9764712"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/309#discussion_r9764712"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/309"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/9764785",
+        "pull_request_review_id": null,
+        "id": 9764785,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk3NjQ3ODU=",
+        "diff_hunk": "@@ -181,6 +181,12 @@ class APIInterface\n     virtual bool GetRecording() const = 0;\n \n     virtual bool GetKeepRecording() const = 0;\n+    \n+    virtual UINT GetCaptureFPS() const       {return App->captureFPS;}\n+    virtual UINT GetbytesPerSec() const      {return App->bytesPerSec;}\n+    virtual UINT GetTotalFrames() const      {return App->network->NumTotalVideoFrames();}\n+    virtual UINT GetFramesDropped() const    {return App->curFramesDropped;}\n+    virtual UINT GetTotalStreamTime() const  {return App->totalStreamTime;}",
+        "path": "OBSApi/APIInterface.h",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "6258828c708411f3fec8bce62e35d927edb45b36",
+        "original_commit_id": "38a0bcc240e7452d3f7d8f50fbe3744b4fc71514",
+        "user": {
+            "login": "palana",
+            "id": 343642,
+            "node_id": "MDQ6VXNlcjM0MzY0Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/343642?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/palana",
+            "html_url": "https://github.com/palana",
+            "followers_url": "https://api.github.com/users/palana/followers",
+            "following_url": "https://api.github.com/users/palana/following{/other_user}",
+            "gists_url": "https://api.github.com/users/palana/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/palana/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/palana/subscriptions",
+            "organizations_url": "https://api.github.com/users/palana/orgs",
+            "repos_url": "https://api.github.com/users/palana/repos",
+            "events_url": "https://api.github.com/users/palana/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/palana/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Those function bodies don't belong there, should be\n\n```\nvirtual UINT func() const = 0;\n```\n\nAlso perhaps rename GetbytesPerSec to GetBytesPerSec\n",
+        "created_at": "2014-02-14T21:31:34Z",
+        "updated_at": "2014-02-14T22:24:10Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/309#discussion_r9764785",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/309",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/9764785"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/309#discussion_r9764785"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/309"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10998819",
+        "pull_request_review_id": null,
+        "id": 10998819,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwOTk4ODE5",
+        "diff_hunk": "@@ -749,7 +749,7 @@ String XConfig::ProcessString(TSTR &lpTemp)\n         return String();\n \n     String stringOut = string.Mid(1, string.Length()-1);\n-    if (stringOut.IsEmpty())\n+    if(stringOut.IsEmpty())",
+        "path": "OBSApi/Utility/XConfig.cpp",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "palana",
+            "id": 343642,
+            "node_id": "MDQ6VXNlcjM0MzY0Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/343642?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/palana",
+            "html_url": "https://github.com/palana",
+            "followers_url": "https://api.github.com/users/palana/followers",
+            "following_url": "https://api.github.com/users/palana/following{/other_user}",
+            "gists_url": "https://api.github.com/users/palana/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/palana/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/palana/subscriptions",
+            "organizations_url": "https://api.github.com/users/palana/orgs",
+            "repos_url": "https://api.github.com/users/palana/repos",
+            "events_url": "https://api.github.com/users/palana/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/palana/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Seems a bit unrelated?\n",
+        "created_at": "2014-03-26T21:00:15Z",
+        "updated_at": "2014-03-26T21:00:15Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r10998819",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10998819"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r10998819"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10998846",
+        "pull_request_review_id": null,
+        "id": 10998846,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwOTk4ODQ2",
+        "diff_hunk": "@@ -844,16 +849,31 @@ bool  XConfig::ReadFileData(XElement *curElement, int level, TSTR &lpTemp)\n                 String data;\n \n                 if(*lpTemp == '\"')\n+                {\n                     data = ProcessString(lpTemp);\n+\n+                    // Back one if we've hit a brace. \n+                    // This should back us onto a \" by definition.\n+                    if(lpTemp[0] == '}')\n+                    {\n+                        --lpTemp;\n+                    }\n+                }\n                 else\n                 {\n                     TSTR lpDataStart = lpTemp;\n \n-                    lpTemp = schr(lpTemp, '\\n');\n+                    TCHAR separators[] = {'\\n', '}'};\n+\n+                    lpTemp = schr_n(lpTemp, separators, 2);\n+\n                     if(!lpTemp)\n                         return false;\n \n-                    if(lpTemp[-1] == '\\r') --lpTemp;\n+                    if (lpTemp[-1] == '\\r')\n+                    {\n+                        --lpTemp;\n+                    }",
+        "path": "OBSApi/Utility/XConfig.cpp",
+        "position": 52,
+        "original_position": 52,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "palana",
+            "id": 343642,
+            "node_id": "MDQ6VXNlcjM0MzY0Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/343642?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/palana",
+            "html_url": "https://github.com/palana",
+            "followers_url": "https://api.github.com/users/palana/followers",
+            "following_url": "https://api.github.com/users/palana/following{/other_user}",
+            "gists_url": "https://api.github.com/users/palana/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/palana/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/palana/subscriptions",
+            "organizations_url": "https://api.github.com/users/palana/orgs",
+            "repos_url": "https://api.github.com/users/palana/repos",
+            "events_url": "https://api.github.com/users/palana/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/palana/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why did you change this?\n",
+        "created_at": "2014-03-26T21:00:46Z",
+        "updated_at": "2014-03-26T21:00:46Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r10998846",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10998846"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r10998846"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10998893",
+        "pull_request_review_id": null,
+        "id": 10998893,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwOTk4ODkz",
+        "diff_hunk": "@@ -794,6 +794,7 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n \n     String failReason;\n     String strBindIP;\n+    RTMP *rtmp = NULL;",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "palana",
+            "id": 343642,
+            "node_id": "MDQ6VXNlcjM0MzY0Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/343642?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/palana",
+            "html_url": "https://github.com/palana",
+            "followers_url": "https://api.github.com/users/palana/followers",
+            "following_url": "https://api.github.com/users/palana/following{/other_user}",
+            "gists_url": "https://api.github.com/users/palana/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/palana/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/palana/subscriptions",
+            "organizations_url": "https://api.github.com/users/palana/orgs",
+            "repos_url": "https://api.github.com/users/palana/repos",
+            "events_url": "https://api.github.com/users/palana/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/palana/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Another unnecessary change?\n",
+        "created_at": "2014-03-26T21:01:56Z",
+        "updated_at": "2014-03-26T21:01:56Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r10998893",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10998893"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r10998893"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10998978",
+        "pull_request_review_id": null,
+        "id": 10998978,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwOTk4OTc4",
+        "diff_hunk": "@@ -822,8 +823,9 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n         goto end;\n     }\n \n+    // A service ID implies the settings have come from the xconfig file.\n     if(serviceID != 0)\n-    {\n+    {\t",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "palana",
+            "id": 343642,
+            "node_id": "MDQ6VXNlcjM0MzY0Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/343642?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/palana",
+            "html_url": "https://github.com/palana",
+            "followers_url": "https://api.github.com/users/palana/followers",
+            "following_url": "https://api.github.com/users/palana/following{/other_user}",
+            "gists_url": "https://api.github.com/users/palana/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/palana/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/palana/subscriptions",
+            "organizations_url": "https://api.github.com/users/palana/orgs",
+            "repos_url": "https://api.github.com/users/palana/repos",
+            "events_url": "https://api.github.com/users/palana/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/palana/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please remove the trailing whitespace\n",
+        "created_at": "2014-03-26T21:03:34Z",
+        "updated_at": "2014-03-26T21:03:34Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r10998978",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10998978"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r10998978"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10999510",
+        "pull_request_review_id": null,
+        "id": 10999510,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwOTk5NTEw",
+        "diff_hunk": "@@ -863,15 +867,82 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n             goto end;\n         }\n \n+        // Got the server node now so can look up the ingestion URL.\n         XDataItem *item = servers->GetDataItem(strURL);\n         if(!item)\n             item = servers->GetDataItemByID(0);\n \n         strURL = item->GetData();\n \n+        // Stream urls start with RTMP. If there's an HTTP then assume this is a web API call\n+        // to get the proper data.\n+        if (strURL.Left(4).MakeLower() == \"http\")\n+        {\n+            // Query the web API for stream details\n+            String web_url = strURL + strPlayPath;\n+\n+            int responseCode;\n+            TCHAR extraHeaders[256];\n+\n+            extraHeaders[0] = 0;\n+\n+            String response = HTTPGetString(web_url, extraHeaders, &responseCode);\n+\n+            if (responseCode != 200 && responseCode != 304)\n+            {\n+                failReason = TEXT(\"Webserver failed to respond with valid stream details.\");\n+                goto end;\n+            }\n+\n+            XConfig apiData;\n+\n+            // Expecting a response from the web API to look like this:\n+            // {\"data\":{\"stream_url\":\"rtmp://some_url\", \"stream_name\": \"some-name\"}}\"\n+            // A nice bit of JSON which is basically the same as the structure for XConfig.\n+            if(!apiData.ParseString(response))\n+            {\n+                failReason = TEXT(\"Could not understand response from webserver.\");\n+                goto end;\n+            }\n+\n+            // We could have read an error string back from the server.\n+            // So we need to trap any missing bits of data.\n+\n+            XElement *p_data = apiData.GetElement(TEXT(\"data\"));\n+\n+            if (p_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid data returned from web server.\");\n+                goto end;\n+            }\n+\n+            XDataItem *p_stream_url_data = p_data->GetDataItem(TEXT(\"stream_url\"));\n+\n+            if (p_stream_url_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid broadcast stream URL returned from web server.\");\n+                goto end;\n+            }\n+\n+            strURL = p_stream_url_data->GetData();\n+\n+            XDataItem *p_stream_name_data = p_data->GetDataItem(TEXT(\"stream_name\"));\n+\n+            if (p_stream_name_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid stream name/path returned from web server.\");\n+                goto end;\n+            }\n+\n+            strPlayPath = p_stream_name_data->GetData();\n+\n+            Log(TEXT(\"Web API returned URL: %s\"), strURL.Array());\n+            Log(TEXT(\"                path: %s\"), strPlayPath.Array());\n+        }\n+\n         Log(TEXT(\"Using RTMP service: %s\"), service->GetName());\n-        Log(TEXT(\"  Server selection: %s\"), strURL.Array());\n-    }\n+        Log(TEXT(\"  Server selection: %s\"), strPlayPath.Array());",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 115,
+        "original_position": 115,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "palana",
+            "id": 343642,
+            "node_id": "MDQ6VXNlcjM0MzY0Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/343642?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/palana",
+            "html_url": "https://github.com/palana",
+            "followers_url": "https://api.github.com/users/palana/followers",
+            "following_url": "https://api.github.com/users/palana/following{/other_user}",
+            "gists_url": "https://api.github.com/users/palana/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/palana/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/palana/subscriptions",
+            "organizations_url": "https://api.github.com/users/palana/orgs",
+            "repos_url": "https://api.github.com/users/palana/repos",
+            "events_url": "https://api.github.com/users/palana/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/palana/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We really don't want private stream keys in the log by default, this should be strURL for non-HTTP-API stuff, and probably something that is not all of the playpath returned by the API? No idea what kind of data those services return \u2026\n",
+        "created_at": "2014-03-26T21:13:01Z",
+        "updated_at": "2014-03-26T21:13:01Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r10999510",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10999510"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r10999510"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10999551",
+        "pull_request_review_id": null,
+        "id": 10999551,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwOTk5NTUx",
+        "diff_hunk": "@@ -863,15 +867,82 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n             goto end;\n         }\n \n+        // Got the server node now so can look up the ingestion URL.\n         XDataItem *item = servers->GetDataItem(strURL);\n         if(!item)\n             item = servers->GetDataItemByID(0);\n \n         strURL = item->GetData();\n \n+        // Stream urls start with RTMP. If there's an HTTP then assume this is a web API call\n+        // to get the proper data.\n+        if (strURL.Left(4).MakeLower() == \"http\")\n+        {\n+            // Query the web API for stream details\n+            String web_url = strURL + strPlayPath;\n+\n+            int responseCode;\n+            TCHAR extraHeaders[256];\n+\n+            extraHeaders[0] = 0;\n+\n+            String response = HTTPGetString(web_url, extraHeaders, &responseCode);\n+\n+            if (responseCode != 200 && responseCode != 304)\n+            {\n+                failReason = TEXT(\"Webserver failed to respond with valid stream details.\");\n+                goto end;\n+            }\n+\n+            XConfig apiData;\n+\n+            // Expecting a response from the web API to look like this:\n+            // {\"data\":{\"stream_url\":\"rtmp://some_url\", \"stream_name\": \"some-name\"}}\"\n+            // A nice bit of JSON which is basically the same as the structure for XConfig.\n+            if(!apiData.ParseString(response))\n+            {\n+                failReason = TEXT(\"Could not understand response from webserver.\");\n+                goto end;\n+            }\n+\n+            // We could have read an error string back from the server.\n+            // So we need to trap any missing bits of data.\n+\n+            XElement *p_data = apiData.GetElement(TEXT(\"data\"));\n+\n+            if (p_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid data returned from web server.\");\n+                goto end;\n+            }\n+\n+            XDataItem *p_stream_url_data = p_data->GetDataItem(TEXT(\"stream_url\"));\n+\n+            if (p_stream_url_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid broadcast stream URL returned from web server.\");\n+                goto end;\n+            }\n+\n+            strURL = p_stream_url_data->GetData();\n+\n+            XDataItem *p_stream_name_data = p_data->GetDataItem(TEXT(\"stream_name\"));\n+\n+            if (p_stream_name_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid stream name/path returned from web server.\");\n+                goto end;\n+            }\n+\n+            strPlayPath = p_stream_name_data->GetData();\n+\n+            Log(TEXT(\"Web API returned URL: %s\"), strURL.Array());\n+            Log(TEXT(\"                path: %s\"), strPlayPath.Array());\n+        }\n+\n         Log(TEXT(\"Using RTMP service: %s\"), service->GetName());\n-        Log(TEXT(\"  Server selection: %s\"), strURL.Array());\n-    }\n+        Log(TEXT(\"  Server selection: %s\"), strPlayPath.Array());\n+    } // end of if",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 116,
+        "original_position": 116,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "palana",
+            "id": 343642,
+            "node_id": "MDQ6VXNlcjM0MzY0Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/343642?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/palana",
+            "html_url": "https://github.com/palana",
+            "followers_url": "https://api.github.com/users/palana/followers",
+            "following_url": "https://api.github.com/users/palana/following{/other_user}",
+            "gists_url": "https://api.github.com/users/palana/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/palana/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/palana/subscriptions",
+            "organizations_url": "https://api.github.com/users/palana/orgs",
+            "repos_url": "https://api.github.com/users/palana/repos",
+            "events_url": "https://api.github.com/users/palana/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/palana/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Seems rather pointless to add a comment here\n",
+        "created_at": "2014-03-26T21:13:37Z",
+        "updated_at": "2014-03-26T21:13:37Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r10999551",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10999551"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r10999551"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10999616",
+        "pull_request_review_id": null,
+        "id": 10999616,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwOTk5NjE2",
+        "diff_hunk": "@@ -930,9 +1003,16 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n     UINT tcpBufferSize = AppConfig->GetInt(TEXT(\"Publish\"), TEXT(\"TCPBufferSize\"), 64*1024);\n \n     if(tcpBufferSize < 8192)\n+    {\n         tcpBufferSize = 8192;\n-    else if(tcpBufferSize > 1024*1024)\n-        tcpBufferSize = 1024*1024;\n+    }\n+    else \n+    {\n+        if(tcpBufferSize > 1024*1024)\n+        {\n+           tcpBufferSize = 1024*1024;\n+        }\n+    }",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 153,
+        "original_position": 153,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "palana",
+            "id": 343642,
+            "node_id": "MDQ6VXNlcjM0MzY0Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/343642?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/palana",
+            "html_url": "https://github.com/palana",
+            "followers_url": "https://api.github.com/users/palana/followers",
+            "following_url": "https://api.github.com/users/palana/following{/other_user}",
+            "gists_url": "https://api.github.com/users/palana/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/palana/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/palana/subscriptions",
+            "organizations_url": "https://api.github.com/users/palana/orgs",
+            "repos_url": "https://api.github.com/users/palana/repos",
+            "events_url": "https://api.github.com/users/palana/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/palana/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "And another \"why did you change these\"?\n",
+        "created_at": "2014-03-26T21:14:42Z",
+        "updated_at": "2014-03-26T21:14:42Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r10999616",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10999616"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r10999616"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10999642",
+        "pull_request_review_id": null,
+        "id": 10999642,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwOTk5NjQy",
+        "diff_hunk": "@@ -997,7 +1077,7 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n     if(!bSuccess)\n     {\n         OSEnterMutex(publisher->hRTMPMutex);\n-        if(rtmp)\n+        if(rtmp != NULL)",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 162,
+        "original_position": 162,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "palana",
+            "id": 343642,
+            "node_id": "MDQ6VXNlcjM0MzY0Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/343642?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/palana",
+            "html_url": "https://github.com/palana",
+            "followers_url": "https://api.github.com/users/palana/followers",
+            "following_url": "https://api.github.com/users/palana/following{/other_user}",
+            "gists_url": "https://api.github.com/users/palana/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/palana/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/palana/subscriptions",
+            "organizations_url": "https://api.github.com/users/palana/orgs",
+            "repos_url": "https://api.github.com/users/palana/repos",
+            "events_url": "https://api.github.com/users/palana/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/palana/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Unnecessary, should not be part of the pull request\n",
+        "created_at": "2014-03-26T21:15:09Z",
+        "updated_at": "2014-03-26T21:15:09Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r10999642",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/10999642"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r10999642"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11013392",
+        "pull_request_review_id": null,
+        "id": 11013392,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMDEzMzky",
+        "diff_hunk": "@@ -794,6 +794,7 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n \n     String failReason;\n     String strBindIP;\n+    RTMP *rtmp = NULL;",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "spangleb",
+            "id": 6798150,
+            "node_id": "MDQ6VXNlcjY3OTgxNTA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6798150?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spangleb",
+            "html_url": "https://github.com/spangleb",
+            "followers_url": "https://api.github.com/users/spangleb/followers",
+            "following_url": "https://api.github.com/users/spangleb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spangleb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spangleb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spangleb/subscriptions",
+            "organizations_url": "https://api.github.com/users/spangleb/orgs",
+            "repos_url": "https://api.github.com/users/spangleb/repos",
+            "events_url": "https://api.github.com/users/spangleb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spangleb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Needed to move this up so it was initialised before a goto on failure to read from web API. If its not initialised then get a crash if the goto is triggered\n",
+        "created_at": "2014-03-27T08:19:44Z",
+        "updated_at": "2014-03-27T08:19:44Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r11013392",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11013392"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r11013392"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11013481",
+        "pull_request_review_id": null,
+        "id": 11013481,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMDEzNDgx",
+        "diff_hunk": "@@ -863,15 +867,82 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n             goto end;\n         }\n \n+        // Got the server node now so can look up the ingestion URL.\n         XDataItem *item = servers->GetDataItem(strURL);\n         if(!item)\n             item = servers->GetDataItemByID(0);\n \n         strURL = item->GetData();\n \n+        // Stream urls start with RTMP. If there's an HTTP then assume this is a web API call\n+        // to get the proper data.\n+        if (strURL.Left(4).MakeLower() == \"http\")\n+        {\n+            // Query the web API for stream details\n+            String web_url = strURL + strPlayPath;\n+\n+            int responseCode;\n+            TCHAR extraHeaders[256];\n+\n+            extraHeaders[0] = 0;\n+\n+            String response = HTTPGetString(web_url, extraHeaders, &responseCode);\n+\n+            if (responseCode != 200 && responseCode != 304)\n+            {\n+                failReason = TEXT(\"Webserver failed to respond with valid stream details.\");\n+                goto end;\n+            }\n+\n+            XConfig apiData;\n+\n+            // Expecting a response from the web API to look like this:\n+            // {\"data\":{\"stream_url\":\"rtmp://some_url\", \"stream_name\": \"some-name\"}}\"\n+            // A nice bit of JSON which is basically the same as the structure for XConfig.\n+            if(!apiData.ParseString(response))\n+            {\n+                failReason = TEXT(\"Could not understand response from webserver.\");\n+                goto end;\n+            }\n+\n+            // We could have read an error string back from the server.\n+            // So we need to trap any missing bits of data.\n+\n+            XElement *p_data = apiData.GetElement(TEXT(\"data\"));\n+\n+            if (p_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid data returned from web server.\");\n+                goto end;\n+            }\n+\n+            XDataItem *p_stream_url_data = p_data->GetDataItem(TEXT(\"stream_url\"));\n+\n+            if (p_stream_url_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid broadcast stream URL returned from web server.\");\n+                goto end;\n+            }\n+\n+            strURL = p_stream_url_data->GetData();\n+\n+            XDataItem *p_stream_name_data = p_data->GetDataItem(TEXT(\"stream_name\"));\n+\n+            if (p_stream_name_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid stream name/path returned from web server.\");\n+                goto end;\n+            }\n+\n+            strPlayPath = p_stream_name_data->GetData();\n+\n+            Log(TEXT(\"Web API returned URL: %s\"), strURL.Array());\n+            Log(TEXT(\"                path: %s\"), strPlayPath.Array());\n+        }\n+\n         Log(TEXT(\"Using RTMP service: %s\"), service->GetName());\n-        Log(TEXT(\"  Server selection: %s\"), strURL.Array());\n-    }\n+        Log(TEXT(\"  Server selection: %s\"), strPlayPath.Array());",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 115,
+        "original_position": 115,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "spangleb",
+            "id": 6798150,
+            "node_id": "MDQ6VXNlcjY3OTgxNTA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6798150?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spangleb",
+            "html_url": "https://github.com/spangleb",
+            "followers_url": "https://api.github.com/users/spangleb/followers",
+            "following_url": "https://api.github.com/users/spangleb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spangleb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spangleb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spangleb/subscriptions",
+            "organizations_url": "https://api.github.com/users/spangleb/orgs",
+            "repos_url": "https://api.github.com/users/spangleb/repos",
+            "events_url": "https://api.github.com/users/spangleb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spangleb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Okay. I set the test Web API to return exactly what would normally be entered in the \"Broadcast\" settings. So it would be currently logging exactly what OBS currently logs. I think code has been added to set crash logs to OBS since - so perhaps I should review this. Although it is handy for debugging. \n",
+        "created_at": "2014-03-27T08:23:41Z",
+        "updated_at": "2014-03-27T08:23:41Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r11013481",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11013481"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r11013481"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11013509",
+        "pull_request_review_id": null,
+        "id": 11013509,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMDEzNTA5",
+        "diff_hunk": "@@ -997,7 +1077,7 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n     if(!bSuccess)\n     {\n         OSEnterMutex(publisher->hRTMPMutex);\n-        if(rtmp)\n+        if(rtmp != NULL)",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 162,
+        "original_position": 162,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "spangleb",
+            "id": 6798150,
+            "node_id": "MDQ6VXNlcjY3OTgxNTA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6798150?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spangleb",
+            "html_url": "https://github.com/spangleb",
+            "followers_url": "https://api.github.com/users/spangleb/followers",
+            "following_url": "https://api.github.com/users/spangleb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spangleb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spangleb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spangleb/subscriptions",
+            "organizations_url": "https://api.github.com/users/spangleb/orgs",
+            "repos_url": "https://api.github.com/users/spangleb/repos",
+            "events_url": "https://api.github.com/users/spangleb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spangleb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This fixes a compiler warning.\n",
+        "created_at": "2014-03-27T08:25:19Z",
+        "updated_at": "2014-03-27T08:25:19Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r11013509",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11013509"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r11013509"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11013528",
+        "pull_request_review_id": null,
+        "id": 11013528,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMDEzNTI4",
+        "diff_hunk": "@@ -930,9 +1003,16 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n     UINT tcpBufferSize = AppConfig->GetInt(TEXT(\"Publish\"), TEXT(\"TCPBufferSize\"), 64*1024);\n \n     if(tcpBufferSize < 8192)\n+    {\n         tcpBufferSize = 8192;\n-    else if(tcpBufferSize > 1024*1024)\n-        tcpBufferSize = 1024*1024;\n+    }\n+    else \n+    {\n+        if(tcpBufferSize > 1024*1024)\n+        {\n+           tcpBufferSize = 1024*1024;\n+        }\n+    }",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 153,
+        "original_position": 153,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "spangleb",
+            "id": 6798150,
+            "node_id": "MDQ6VXNlcjY3OTgxNTA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6798150?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spangleb",
+            "html_url": "https://github.com/spangleb",
+            "followers_url": "https://api.github.com/users/spangleb/followers",
+            "following_url": "https://api.github.com/users/spangleb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spangleb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spangleb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spangleb/subscriptions",
+            "organizations_url": "https://api.github.com/users/spangleb/orgs",
+            "repos_url": "https://api.github.com/users/spangleb/repos",
+            "events_url": "https://api.github.com/users/spangleb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spangleb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Happy to revert but not use {} on statements is generally bad practise?\n",
+        "created_at": "2014-03-27T08:26:15Z",
+        "updated_at": "2014-03-27T08:26:15Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r11013528",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11013528"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r11013528"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11013545",
+        "pull_request_review_id": null,
+        "id": 11013545,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMDEzNTQ1",
+        "diff_hunk": "@@ -863,15 +867,82 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n             goto end;\n         }\n \n+        // Got the server node now so can look up the ingestion URL.\n         XDataItem *item = servers->GetDataItem(strURL);\n         if(!item)\n             item = servers->GetDataItemByID(0);\n \n         strURL = item->GetData();\n \n+        // Stream urls start with RTMP. If there's an HTTP then assume this is a web API call\n+        // to get the proper data.\n+        if (strURL.Left(4).MakeLower() == \"http\")\n+        {\n+            // Query the web API for stream details\n+            String web_url = strURL + strPlayPath;\n+\n+            int responseCode;\n+            TCHAR extraHeaders[256];\n+\n+            extraHeaders[0] = 0;\n+\n+            String response = HTTPGetString(web_url, extraHeaders, &responseCode);\n+\n+            if (responseCode != 200 && responseCode != 304)\n+            {\n+                failReason = TEXT(\"Webserver failed to respond with valid stream details.\");\n+                goto end;\n+            }\n+\n+            XConfig apiData;\n+\n+            // Expecting a response from the web API to look like this:\n+            // {\"data\":{\"stream_url\":\"rtmp://some_url\", \"stream_name\": \"some-name\"}}\"\n+            // A nice bit of JSON which is basically the same as the structure for XConfig.\n+            if(!apiData.ParseString(response))\n+            {\n+                failReason = TEXT(\"Could not understand response from webserver.\");\n+                goto end;\n+            }\n+\n+            // We could have read an error string back from the server.\n+            // So we need to trap any missing bits of data.\n+\n+            XElement *p_data = apiData.GetElement(TEXT(\"data\"));\n+\n+            if (p_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid data returned from web server.\");\n+                goto end;\n+            }\n+\n+            XDataItem *p_stream_url_data = p_data->GetDataItem(TEXT(\"stream_url\"));\n+\n+            if (p_stream_url_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid broadcast stream URL returned from web server.\");\n+                goto end;\n+            }\n+\n+            strURL = p_stream_url_data->GetData();\n+\n+            XDataItem *p_stream_name_data = p_data->GetDataItem(TEXT(\"stream_name\"));\n+\n+            if (p_stream_name_data == NULL)\n+            {\n+                failReason = TEXT(\"No valid stream name/path returned from web server.\");\n+                goto end;\n+            }\n+\n+            strPlayPath = p_stream_name_data->GetData();\n+\n+            Log(TEXT(\"Web API returned URL: %s\"), strURL.Array());\n+            Log(TEXT(\"                path: %s\"), strPlayPath.Array());\n+        }\n+\n         Log(TEXT(\"Using RTMP service: %s\"), service->GetName());\n-        Log(TEXT(\"  Server selection: %s\"), strURL.Array());\n-    }\n+        Log(TEXT(\"  Server selection: %s\"), strPlayPath.Array());\n+    } // end of if",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 116,
+        "original_position": 116,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": {
+            "login": "spangleb",
+            "id": 6798150,
+            "node_id": "MDQ6VXNlcjY3OTgxNTA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6798150?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spangleb",
+            "html_url": "https://github.com/spangleb",
+            "followers_url": "https://api.github.com/users/spangleb/followers",
+            "following_url": "https://api.github.com/users/spangleb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spangleb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spangleb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spangleb/subscriptions",
+            "organizations_url": "https://api.github.com/users/spangleb/orgs",
+            "repos_url": "https://api.github.com/users/spangleb/repos",
+            "events_url": "https://api.github.com/users/spangleb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spangleb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I was getting lost in braces. Probably implying this bit of code should go into a function. Will review.\n",
+        "created_at": "2014-03-27T08:27:03Z",
+        "updated_at": "2014-03-27T08:27:03Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r11013545",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11013545"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r11013545"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11014680",
+        "pull_request_review_id": null,
+        "id": 11014680,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMDE0Njgw",
+        "diff_hunk": "@@ -930,9 +1003,16 @@ DWORD WINAPI RTMPPublisher::CreateConnectionThread(RTMPPublisher *publisher)\n     UINT tcpBufferSize = AppConfig->GetInt(TEXT(\"Publish\"), TEXT(\"TCPBufferSize\"), 64*1024);\n \n     if(tcpBufferSize < 8192)\n+    {\n         tcpBufferSize = 8192;\n-    else if(tcpBufferSize > 1024*1024)\n-        tcpBufferSize = 1024*1024;\n+    }\n+    else \n+    {\n+        if(tcpBufferSize > 1024*1024)\n+        {\n+           tcpBufferSize = 1024*1024;\n+        }\n+    }",
+        "path": "Source/RTMPPublisher.cpp",
+        "position": 153,
+        "original_position": 153,
+        "commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "original_commit_id": "0c2169da12663c7eb99e1c3700c54e773593b686",
+        "user": null,
+        "body": "In general, if the statement following the if is just one line, I wouldn't consider omitting the braces bad practice, but that's just my personal opinion.\nI think the weirdest thing about this is how you have else { and then if { instead of just else if {, which I don't really see the point of in this case.\n",
+        "created_at": "2014-03-27T09:11:11Z",
+        "updated_at": "2014-03-27T09:11:11Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/319#discussion_r11014680",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/319",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/11014680"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/319#discussion_r11014680"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/14053586",
+        "pull_request_review_id": null,
+        "id": 14053586,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MDUzNTg2",
+        "diff_hunk": "@@ -854,7 +854,7 @@ void OBS::TrackModifyListbox(HWND hwnd, int ret)\n \n                 if(App->scene)\n                     App->scene->GetSelectedItems(selectedSceneItems);\n-\t\t",
+        "path": "Source/WindowStuff.cpp",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "98d18ba4fe89314a74a4bed72a968aa3e0210752",
+        "original_commit_id": "ba0266adcec8fa053d3c874bdecf2e5574403378",
+        "user": {
+            "login": "Glought",
+            "id": 663343,
+            "node_id": "MDQ6VXNlcjY2MzM0Mw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/663343?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Glought",
+            "html_url": "https://github.com/Glought",
+            "followers_url": "https://api.github.com/users/Glought/followers",
+            "following_url": "https://api.github.com/users/Glought/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Glought/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Glought/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Glought/subscriptions",
+            "organizations_url": "https://api.github.com/users/Glought/orgs",
+            "repos_url": "https://api.github.com/users/Glought/repos",
+            "events_url": "https://api.github.com/users/Glought/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Glought/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "There was tabs here someone else added.\n",
+        "created_at": "2014-06-22T08:53:39Z",
+        "updated_at": "2014-06-26T05:16:30Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/339#discussion_r14053586",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/339",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/14053586"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/339#discussion_r14053586"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/339"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/15791704",
+        "pull_request_review_id": null,
+        "id": 15791704,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NzkxNzA0",
+        "diff_hunk": "@@ -2107,6 +2107,76 @@ INT_PTR CALLBACK OBS::GlobalSourcesProc(HWND hwnd, UINT message, WPARAM wParam,\n                         break;\n                     }\n \n+            case IDC_IMPORT:\n+                {\n+                   HMENU hMenu = CreatePopupMenu();\n+\n+                   App->globalSourcesConfig.Close();\n+\n+                   String strGlobalSourcesConfig;\n+                   strGlobalSourcesConfig = FormattedString(L\"%s\\\\sceneCollection\\\\scenes.xconfig\", lpAppDataPath);\n+\n+                   if (!App->globalSourcesConfig.Open(strGlobalSourcesConfig))\n+                       CrashError(TEXT(\"Could not open '%s\"), strGlobalSourcesConfig.Array());\n+\n+                   List<CTSTR> globalSourcesList;\n+                   App->GetGlobalSourceNames(globalSourcesList, true);\n+\n+                   XElement *globals = App->globalSourcesConfig.GetElement(TEXT(\"global sources\"));\n+                   \n+                   String currentSceneCollection = GetCurrentSceneCollection();\n+                   if(currentSceneCollection == TEXT(\"scenes\"))\n+                   {\n+                       String strMainSceneCollection = Str(\"CantImportGlobalSourcesIntoMainSceneCollection\");\n+                       OBSMessageBox(hwnd, strMainSceneCollection, NULL, 0);\n+                       break;\n+                   }\n+\n+                   if(globals)\n+                      {\n+                        AppendMenu(hMenu, MF_STRING|IMFS_DISABLED,  0, Str(\"Listbox.GlobalSourcesFrom\"));\n+                        AppendMenu(hMenu, MF_SEPARATOR, 1, 0);\n+                        for(UINT i=0; i<globalSourcesList.Num(); i++)\n+                        {\n+                              String strImport = Str(\"Listbox.Import\");\n+                              strImport.FindReplace(TEXT(\"$1\"), globalSourcesList[i]);\n+                              AppendMenu(hMenu, MF_STRING, i + 2, strImport.Array());\n+                        }\n+                      }",
+        "path": "Source/WindowStuff.cpp",
+        "position": null,
+        "original_position": 39,
+        "commit_id": "7e934f8f1641d9c06fba59e3e19245302c12e7c6",
+        "original_commit_id": "98872c0e91574fd8264151f5ad7747d9f9ddf370",
+        "user": {
+            "login": "jp9000",
+            "id": 2084112,
+            "node_id": "MDQ6VXNlcjIwODQxMTI=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2084112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jp9000",
+            "html_url": "https://github.com/jp9000",
+            "followers_url": "https://api.github.com/users/jp9000/followers",
+            "following_url": "https://api.github.com/users/jp9000/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jp9000/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jp9000/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jp9000/subscriptions",
+            "organizations_url": "https://api.github.com/users/jp9000/orgs",
+            "repos_url": "https://api.github.com/users/jp9000/repos",
+            "events_url": "https://api.github.com/users/jp9000/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jp9000/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The code formatting here seems a bit weird.  Actually, it seems like you're using 3-space indentation in a lot of places, but here in particular is an example of some really strange looking code.\n",
+        "created_at": "2014-08-05T01:43:25Z",
+        "updated_at": "2014-08-18T20:41:41Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/362#discussion_r15791704",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/362",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/15791704"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/362#discussion_r15791704"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/362"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/15791715",
+        "pull_request_review_id": null,
+        "id": 15791715,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NzkxNzE1",
+        "diff_hunk": "@@ -2107,6 +2107,76 @@ INT_PTR CALLBACK OBS::GlobalSourcesProc(HWND hwnd, UINT message, WPARAM wParam,\n                         break;\n                     }\n \n+            case IDC_IMPORT:\n+                {\n+                   HMENU hMenu = CreatePopupMenu();\n+\n+                   App->globalSourcesConfig.Close();\n+\n+                   String strGlobalSourcesConfig;\n+                   strGlobalSourcesConfig = FormattedString(L\"%s\\\\sceneCollection\\\\scenes.xconfig\", lpAppDataPath);\n+\n+                   if (!App->globalSourcesConfig.Open(strGlobalSourcesConfig))\n+                       CrashError(TEXT(\"Could not open '%s\"), strGlobalSourcesConfig.Array());\n+\n+                   List<CTSTR> globalSourcesList;\n+                   App->GetGlobalSourceNames(globalSourcesList, true);\n+\n+                   XElement *globals = App->globalSourcesConfig.GetElement(TEXT(\"global sources\"));\n+                   \n+                   String currentSceneCollection = GetCurrentSceneCollection();\n+                   if(currentSceneCollection == TEXT(\"scenes\"))\n+                   {\n+                       String strMainSceneCollection = Str(\"CantImportGlobalSourcesIntoMainSceneCollection\");\n+                       OBSMessageBox(hwnd, strMainSceneCollection, NULL, 0);\n+                       break;\n+                   }\n+\n+                   if(globals)\n+                      {\n+                        AppendMenu(hMenu, MF_STRING|IMFS_DISABLED,  0, Str(\"Listbox.GlobalSourcesFrom\"));\n+                        AppendMenu(hMenu, MF_SEPARATOR, 1, 0);\n+                        for(UINT i=0; i<globalSourcesList.Num(); i++)\n+                        {\n+                              String strImport = Str(\"Listbox.Import\");\n+                              strImport.FindReplace(TEXT(\"$1\"), globalSourcesList[i]);\n+                              AppendMenu(hMenu, MF_STRING, i + 2, strImport.Array());\n+                        }\n+                      }\n+\n+                   POINT p;\n+                   GetCursorPos(&p);\n+\n+                   int classID = (int)TrackPopupMenuEx(hMenu, TPM_RETURNCMD | TPM_LEFTALIGN | TPM_RIGHTBUTTON, p.x, p.y, hwndMain, NULL);\n+                   if(!classID)\n+                      break;\n+\n+                   XElement *gSources = globals->GetElementByID(classID - 2);\n+                   XElement *currentSceneGlobalSources = App->scenesConfig.GetElement(TEXT(\"global sources\"));\n+\n+                   if(!currentSceneGlobalSources)\n+                      currentSceneGlobalSources = App->scenesConfig.CreateElement(TEXT(\"global sources\"));\n+\n+                   if(currentSceneGlobalSources)\n+                   {\n+                      XElement *foundSource = currentSceneGlobalSources->GetElement(gSources->GetName());\n+                      if(foundSource != NULL && gSources->GetName() != foundSource->GetName())\n+                      {\n+                         String strExists = Str(\"ImportGlobalSourceNameExists\");\n+                         strExists.FindReplace(TEXT(\"$1\"), gSources->GetName());\n+                         OBSMessageBox(hwnd, strExists, NULL, 0);\n+                          break;",
+        "path": "Source/WindowStuff.cpp",
+        "position": null,
+        "original_position": 62,
+        "commit_id": "7e934f8f1641d9c06fba59e3e19245302c12e7c6",
+        "original_commit_id": "98872c0e91574fd8264151f5ad7747d9f9ddf370",
+        "user": {
+            "login": "jp9000",
+            "id": 2084112,
+            "node_id": "MDQ6VXNlcjIwODQxMTI=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2084112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jp9000",
+            "html_url": "https://github.com/jp9000",
+            "followers_url": "https://api.github.com/users/jp9000/followers",
+            "following_url": "https://api.github.com/users/jp9000/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jp9000/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jp9000/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jp9000/subscriptions",
+            "organizations_url": "https://api.github.com/users/jp9000/orgs",
+            "repos_url": "https://api.github.com/users/jp9000/repos",
+            "events_url": "https://api.github.com/users/jp9000/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jp9000/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yea, I think your editor is definitely messed up.  What editor are you using?  Is it set to 3-spaced indentation?\n",
+        "created_at": "2014-08-05T01:44:05Z",
+        "updated_at": "2014-08-18T20:41:41Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/362#discussion_r15791715",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/362",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/15791715"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/362#discussion_r15791715"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/362"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/15791804",
+        "pull_request_review_id": null,
+        "id": 15791804,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NzkxODA0",
+        "diff_hunk": "@@ -2107,6 +2107,76 @@ INT_PTR CALLBACK OBS::GlobalSourcesProc(HWND hwnd, UINT message, WPARAM wParam,\n                         break;\n                     }\n \n+            case IDC_IMPORT:\n+                {\n+                   HMENU hMenu = CreatePopupMenu();\n+\n+                   App->globalSourcesConfig.Close();\n+\n+                   String strGlobalSourcesConfig;\n+                   strGlobalSourcesConfig = FormattedString(L\"%s\\\\sceneCollection\\\\scenes.xconfig\", lpAppDataPath);\n+\n+                   if (!App->globalSourcesConfig.Open(strGlobalSourcesConfig))\n+                       CrashError(TEXT(\"Could not open '%s\"), strGlobalSourcesConfig.Array());\n+\n+                   List<CTSTR> globalSourcesList;\n+                   App->GetGlobalSourceNames(globalSourcesList, true);\n+\n+                   XElement *globals = App->globalSourcesConfig.GetElement(TEXT(\"global sources\"));\n+                   \n+                   String currentSceneCollection = GetCurrentSceneCollection();\n+                   if(currentSceneCollection == TEXT(\"scenes\"))\n+                   {\n+                       String strMainSceneCollection = Str(\"CantImportGlobalSourcesIntoMainSceneCollection\");\n+                       OBSMessageBox(hwnd, strMainSceneCollection, NULL, 0);\n+                       break;\n+                   }\n+\n+                   if(globals)\n+                      {\n+                        AppendMenu(hMenu, MF_STRING|IMFS_DISABLED,  0, Str(\"Listbox.GlobalSourcesFrom\"));\n+                        AppendMenu(hMenu, MF_SEPARATOR, 1, 0);\n+                        for(UINT i=0; i<globalSourcesList.Num(); i++)\n+                        {\n+                              String strImport = Str(\"Listbox.Import\");\n+                              strImport.FindReplace(TEXT(\"$1\"), globalSourcesList[i]);\n+                              AppendMenu(hMenu, MF_STRING, i + 2, strImport.Array());\n+                        }\n+                      }\n+\n+                   POINT p;\n+                   GetCursorPos(&p);\n+\n+                   int classID = (int)TrackPopupMenuEx(hMenu, TPM_RETURNCMD | TPM_LEFTALIGN | TPM_RIGHTBUTTON, p.x, p.y, hwndMain, NULL);\n+                   if(!classID)\n+                      break;\n+\n+                   XElement *gSources = globals->GetElementByID(classID - 2);\n+                   XElement *currentSceneGlobalSources = App->scenesConfig.GetElement(TEXT(\"global sources\"));\n+\n+                   if(!currentSceneGlobalSources)\n+                      currentSceneGlobalSources = App->scenesConfig.CreateElement(TEXT(\"global sources\"));\n+\n+                   if(currentSceneGlobalSources)\n+                   {\n+                      XElement *foundSource = currentSceneGlobalSources->GetElement(gSources->GetName());\n+                      if(foundSource != NULL && gSources->GetName() != foundSource->GetName())\n+                      {\n+                         String strExists = Str(\"ImportGlobalSourceNameExists\");\n+                         strExists.FindReplace(TEXT(\"$1\"), gSources->GetName());\n+                         OBSMessageBox(hwnd, strExists, NULL, 0);\n+                          break;",
+        "path": "Source/WindowStuff.cpp",
+        "position": null,
+        "original_position": 62,
+        "commit_id": "7e934f8f1641d9c06fba59e3e19245302c12e7c6",
+        "original_commit_id": "98872c0e91574fd8264151f5ad7747d9f9ddf370",
+        "user": {
+            "login": "Glought",
+            "id": 663343,
+            "node_id": "MDQ6VXNlcjY2MzM0Mw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/663343?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Glought",
+            "html_url": "https://github.com/Glought",
+            "followers_url": "https://api.github.com/users/Glought/followers",
+            "following_url": "https://api.github.com/users/Glought/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Glought/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Glought/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Glought/subscriptions",
+            "organizations_url": "https://api.github.com/users/Glought/orgs",
+            "repos_url": "https://api.github.com/users/Glought/repos",
+            "events_url": "https://api.github.com/users/Glought/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Glought/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm using Microsoft Vsual Studio Express 2013.  What is the proper spaced indentation? \n",
+        "created_at": "2014-08-05T01:48:42Z",
+        "updated_at": "2014-08-18T20:41:41Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/362#discussion_r15791804",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/362",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/15791804"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/362#discussion_r15791804"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/362"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/47051522",
+        "pull_request_review_id": null,
+        "id": 47051522,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3MDUxNTIy",
+        "diff_hunk": "@@ -626,7 +590,7 @@ bool NVENCEncoder::Encode(LPVOID picIn, List<DataPacket> &packets, List<PacketTy\n         }\n     }\n \n-    if (!outputSurfaceQueueReady.empty())\n+    if (!outputSurfaceQueueReady.empty() && (!picIn || outputSurfaceQueue.size() + outputSurfaceQueueReady.size() >= maxSurfaceCount - 1))",
+        "path": "ObsNvenc/src/NVENCEncoder.cpp",
+        "position": null,
+        "original_position": 180,
+        "commit_id": "a08e141509db2fd3e44241a0df7dde23d0798e08",
+        "original_commit_id": "ad3a287087b1af92ad1bb12cf49093b183d1e815",
+        "user": {
+            "login": "jp9000",
+            "id": 2084112,
+            "node_id": "MDQ6VXNlcjIwODQxMTI=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2084112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jp9000",
+            "html_url": "https://github.com/jp9000",
+            "followers_url": "https://api.github.com/users/jp9000/followers",
+            "following_url": "https://api.github.com/users/jp9000/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jp9000/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jp9000/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jp9000/subscriptions",
+            "organizations_url": "https://api.github.com/users/jp9000/orgs",
+            "repos_url": "https://api.github.com/users/jp9000/repos",
+            "events_url": "https://api.github.com/users/jp9000/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jp9000/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think this particular commit is causing some desync (outside of normal thresholds for OBS1, OBS1 doesn't have accurate syncing of audio/video data but it doesn't usually go quite this out of sync).  I did a test of about 20 recordings with this commit applied/reverted for the sake of testing and whenever it was applied it had unusual amounts of desync, and when it was reverted there was no noticeable desync.\n\nI'm doing some more tests to find the root cause and see if there's a solution without having to revert.\n",
+        "created_at": "2015-12-09T04:57:07Z",
+        "updated_at": "2015-12-09T09:10:02Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/458#discussion_r47051522",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/458",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/47051522"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/458#discussion_r47051522"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/458"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/jp9000/OBS/pulls/comments/47065430",
+        "pull_request_review_id": null,
+        "id": 47065430,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3MDY1NDMw",
+        "diff_hunk": "@@ -626,7 +590,7 @@ bool NVENCEncoder::Encode(LPVOID picIn, List<DataPacket> &packets, List<PacketTy\n         }\n     }\n \n-    if (!outputSurfaceQueueReady.empty())\n+    if (!outputSurfaceQueueReady.empty() && (!picIn || outputSurfaceQueue.size() + outputSurfaceQueueReady.size() >= maxSurfaceCount - 1))",
+        "path": "ObsNvenc/src/NVENCEncoder.cpp",
+        "position": null,
+        "original_position": 180,
+        "commit_id": "a08e141509db2fd3e44241a0df7dde23d0798e08",
+        "original_commit_id": "ad3a287087b1af92ad1bb12cf49093b183d1e815",
+        "user": {
+            "login": "BtbN",
+            "id": 294293,
+            "node_id": "MDQ6VXNlcjI5NDI5Mw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/294293?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/BtbN",
+            "html_url": "https://github.com/BtbN",
+            "followers_url": "https://api.github.com/users/BtbN/followers",
+            "following_url": "https://api.github.com/users/BtbN/following{/other_user}",
+            "gists_url": "https://api.github.com/users/BtbN/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/BtbN/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/BtbN/subscriptions",
+            "organizations_url": "https://api.github.com/users/BtbN/orgs",
+            "repos_url": "https://api.github.com/users/BtbN/repos",
+            "events_url": "https://api.github.com/users/BtbN/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/BtbN/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'll move this one(and the adjustment for Auto-Mode) into a seperate PR for now, so this can be sorted out propperly.\nIt would also be possible to make a compromise and delay output only by a few frames instead of filling up the buffer, that wouldn't be nearly as bad in terms of delaying the output, while it still gives a decent performance boost.\n",
+        "created_at": "2015-12-09T09:07:18Z",
+        "updated_at": "2015-12-09T09:10:02Z",
+        "html_url": "https://github.com/jp9000/OBS/pull/458#discussion_r47065430",
+        "pull_request_url": "https://api.github.com/repos/jp9000/OBS/pulls/458",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/comments/47065430"
+            },
+            "html": {
+                "href": "https://github.com/jp9000/OBS/pull/458#discussion_r47065430"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/jp9000/OBS/pulls/458"
+            }
+        }
+    }
+]

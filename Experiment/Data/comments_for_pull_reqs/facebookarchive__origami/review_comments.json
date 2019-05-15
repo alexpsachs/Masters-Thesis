@@ -1,0 +1,149 @@
+[
+    {
+        "url": "https://api.github.com/repos/facebookarchive/origami/pulls/comments/59133299",
+        "pull_request_review_id": null,
+        "id": 59133299,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MTMzMjk5",
+        "diff_hunk": "@@ -28,6 +28,58 @@\n \tborder-bottom-width: 1px;\n }\n \n+/* F8 Section */\n+\n+#section-f8 {\n+\tbackground-image: linear-gradient(-135deg, #00E3AD 0%, #5252C9 59%, #002350 100%);\n+\theight:auto;\n+\twidth:100%;\n+\tpadding:30px 30px 30px 33px;\n+\tvertical-align: middle;\n+\tcolor: white;\n+\tposition: relative;\n+\tdisplay: -webkit-flex;\n+\tdisplay: flex;\n+\t-webkit-flex-direction: row;\n+\tflex-direction: row;\n+\t-webkit-align-items: center;\n+\talign-items: center;\n+\t-webkit-box-align: center;\n+\tbox-align: center;\n+}\n+\n+#section-f8 .separator {\n+\tmargin:0 30px;\n+}\n+\n+#section-f8 .header {\n+\tcolor: white;\n+}\n+\n+#section-f8 .header p {\n+\tcolor: white;\n+}\n+\n+#section-f8 ::selection {\n+\tbackground: rgba(255, 255, 255, .3);\t\n+}\n+\n+#section-f8 .main-content {\n+\twidth: 100%;\n+\tmargin: 30px auto;\n+}\n+\n+#section-f8 .description {\n+\tflex-grow: 1;\n+}\n+\n+#section-f8 #download-buttons {\n+\tmargin-top:0;\n+}\n+\n+#section-f8 .logo {",
+        "path": "public/css/homepage.css",
+        "position": null,
+        "original_position": 53,
+        "commit_id": "76b4e24b4058a0a1b8f50055a6bb1f80a593dc8c",
+        "original_commit_id": "6e2a2d1f60926385e8529cdff64d9fabb752ad73",
+        "user": {
+            "login": "tarngerine",
+            "id": 1629901,
+            "node_id": "MDQ6VXNlcjE2Mjk5MDE=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1629901?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tarngerine",
+            "html_url": "https://github.com/tarngerine",
+            "followers_url": "https://api.github.com/users/tarngerine/followers",
+            "following_url": "https://api.github.com/users/tarngerine/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tarngerine/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tarngerine/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tarngerine/subscriptions",
+            "organizations_url": "https://api.github.com/users/tarngerine/orgs",
+            "repos_url": "https://api.github.com/users/tarngerine/repos",
+            "events_url": "https://api.github.com/users/tarngerine/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tarngerine/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Empty css \n",
+        "created_at": "2016-04-10T12:55:02Z",
+        "updated_at": "2016-04-11T04:03:56Z",
+        "html_url": "https://github.com/facebookarchive/origami/pull/66#discussion_r59133299",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/origami/pulls/66",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/origami/pulls/comments/59133299"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/origami/pull/66#discussion_r59133299"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/origami/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/origami/pulls/comments/59133308",
+        "pull_request_review_id": null,
+        "id": 59133308,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MTMzMzA4",
+        "diff_hunk": "@@ -1372,6 +1424,33 @@\n \t\tdisplay: none;\t\n \t}\n \t\n+\t#section-f8 .logo {\n+\t\tmargin-bottom:15px;\n+\t}\n+\n+\t#section-f8 .separator {\n+\t\tdisplay:none;\n+\t}\n+\n+\t#section-f8 {",
+        "path": "public/css/homepage.css",
+        "position": 72,
+        "original_position": 71,
+        "commit_id": "76b4e24b4058a0a1b8f50055a6bb1f80a593dc8c",
+        "original_commit_id": "6e2a2d1f60926385e8529cdff64d9fabb752ad73",
+        "user": {
+            "login": "tarngerine",
+            "id": 1629901,
+            "node_id": "MDQ6VXNlcjE2Mjk5MDE=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1629901?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tarngerine",
+            "html_url": "https://github.com/tarngerine",
+            "followers_url": "https://api.github.com/users/tarngerine/followers",
+            "following_url": "https://api.github.com/users/tarngerine/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tarngerine/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tarngerine/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tarngerine/subscriptions",
+            "organizations_url": "https://api.github.com/users/tarngerine/orgs",
+            "repos_url": "https://api.github.com/users/tarngerine/repos",
+            "events_url": "https://api.github.com/users/tarngerine/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tarngerine/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "On mobile so can't quite see but why is this id CSS repeated at the bottom of the file instead of being with the original set of CSS at top\n",
+        "created_at": "2016-04-10T12:55:50Z",
+        "updated_at": "2016-04-11T04:03:56Z",
+        "html_url": "https://github.com/facebookarchive/origami/pull/66#discussion_r59133308",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/origami/pulls/66",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/origami/pulls/comments/59133308"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/origami/pull/66#discussion_r59133308"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/origami/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/origami/pulls/comments/59133311",
+        "pull_request_review_id": null,
+        "id": 59133311,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5MTMzMzEx",
+        "diff_hunk": "@@ -1372,6 +1424,33 @@\n \t\tdisplay: none;\t\n \t}\n \t\n+\t#section-f8 .logo {\n+\t\tmargin-bottom:15px;\n+\t}\n+\n+\t#section-f8 .separator {\n+\t\tdisplay:none;\n+\t}\n+\n+\t#section-f8 {",
+        "path": "public/css/homepage.css",
+        "position": 72,
+        "original_position": 71,
+        "commit_id": "76b4e24b4058a0a1b8f50055a6bb1f80a593dc8c",
+        "original_commit_id": "6e2a2d1f60926385e8529cdff64d9fabb752ad73",
+        "user": {
+            "login": "tarngerine",
+            "id": 1629901,
+            "node_id": "MDQ6VXNlcjE2Mjk5MDE=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/1629901?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tarngerine",
+            "html_url": "https://github.com/tarngerine",
+            "followers_url": "https://api.github.com/users/tarngerine/followers",
+            "following_url": "https://api.github.com/users/tarngerine/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tarngerine/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tarngerine/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tarngerine/subscriptions",
+            "organizations_url": "https://api.github.com/users/tarngerine/orgs",
+            "repos_url": "https://api.github.com/users/tarngerine/repos",
+            "events_url": "https://api.github.com/users/tarngerine/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tarngerine/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Oh I guess this is for mobile\n",
+        "created_at": "2016-04-10T12:56:32Z",
+        "updated_at": "2016-04-11T04:03:56Z",
+        "html_url": "https://github.com/facebookarchive/origami/pull/66#discussion_r59133311",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/origami/pulls/66",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/origami/pulls/comments/59133311"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/origami/pull/66#discussion_r59133311"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/origami/pulls/66"
+            }
+        }
+    }
+]

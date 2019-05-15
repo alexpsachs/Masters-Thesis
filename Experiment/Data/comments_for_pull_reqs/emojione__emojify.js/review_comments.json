@@ -1,0 +1,296 @@
+[
+    {
+        "url": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/16038051",
+        "pull_request_review_id": null,
+        "id": 16038051,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDM4MDUx",
+        "diff_hunk": "@@ -31,7 +31,7 @@ You can also use ``emojify.replace()`` method to emojify a string directly:\n \n ### Configuration\n To set configuration options, use `emojify.setConfig()` and a JSON object as a parameter with the following attributes:\n-* ``emojify_tag_type``: Set to `<div>` by default. Sets the element the emojify.js uses to replace emoji keywords\n+* ``emojify_tag_type``: Set to `null` by default. When set emojify uses this div element with the background image applied as a class, instead of an img+src",
+        "path": "README.md",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "3d112353646655410067a1a923cb43c6751c7064",
+        "original_commit_id": "a0e2544e61f335ac40714c467ee317f40a625371",
+        "user": {
+            "login": "qq99",
+            "id": 150352,
+            "node_id": "MDQ6VXNlcjE1MDM1Mg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/150352?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/qq99",
+            "html_url": "https://github.com/qq99",
+            "followers_url": "https://api.github.com/users/qq99/followers",
+            "following_url": "https://api.github.com/users/qq99/following{/other_user}",
+            "gists_url": "https://api.github.com/users/qq99/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/qq99/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/qq99/subscriptions",
+            "organizations_url": "https://api.github.com/users/qq99/orgs",
+            "repos_url": "https://api.github.com/users/qq99/repos",
+            "events_url": "https://api.github.com/users/qq99/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/qq99/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "```\nWhen set, emojify uses this `emojify_tag_type` element with the class `emoji emoji-#{emojiname}` instead of an `img` with a `src` attribute.  Example valid values: `div`, `span`\n```\n\nmaybe a small copy tweak to emphasize ability to use any element, and the format expected\n",
+        "created_at": "2014-08-11T05:43:16Z",
+        "updated_at": "2014-08-11T19:10:55Z",
+        "html_url": "https://github.com/joypixels/emojify.js/pull/40#discussion_r16038051",
+        "pull_request_url": "https://api.github.com/repos/joypixels/emojify.js/pulls/40",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/16038051"
+            },
+            "html": {
+                "href": "https://github.com/joypixels/emojify.js/pull/40#discussion_r16038051"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/40"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/17840074",
+        "pull_request_review_id": null,
+        "id": 17840074,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3ODQwMDc0",
+        "diff_hunk": "@@ -24,45 +24,29 @@ module.exports = function (grunt) {\n         },\n         cssmin: {\n             minify: {\n-                src: 'emojify.css',\n-                dest: 'emojify.min.css'\n-          }\n+                files: {\n+                    'emojify.min.css': 'emojify.css',\n+                    'emojify-emoticons.min.css': 'emojify-emoticons.css',\n+                }\n+            }\n+        },\n+        datauri: {\n+            production: {\n+                options: {\n+                    classPrefix: 'emoji-'\n+                },\n+                files: {\n+                    'emojify.css': 'images/emoji/*.png',\n+                    'emojify-emoticons.css': 'images/emoji/{blush,scream,smirk,smiley,stuck_out_tongue_closed_eyes,stuck_out_tongue_winking_eye,rage,disappointed,sob,kissing_heart,wink,pensive,confounded,flushed,relaxed,mask,heart,broken_heart}.png'",
+        "path": "Gruntfile.js",
+        "position": 20,
+        "original_position": 20,
+        "commit_id": "891fcb38132a4e6de628a1b80638ee2274822824",
+        "original_commit_id": "891fcb38132a4e6de628a1b80638ee2274822824",
+        "user": {
+            "login": "adam-lynch",
+            "id": 1427241,
+            "node_id": "MDQ6VXNlcjE0MjcyNDE=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1427241?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adam-lynch",
+            "html_url": "https://github.com/adam-lynch",
+            "followers_url": "https://api.github.com/users/adam-lynch/followers",
+            "following_url": "https://api.github.com/users/adam-lynch/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adam-lynch/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adam-lynch/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adam-lynch/subscriptions",
+            "organizations_url": "https://api.github.com/users/adam-lynch/orgs",
+            "repos_url": "https://api.github.com/users/adam-lynch/repos",
+            "events_url": "https://api.github.com/users/adam-lynch/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adam-lynch/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Aren't there loads of emoji names missing here? See https://github.com/hassankhan/emojify.js/blob/master/emojify.js#L29\n",
+        "created_at": "2014-09-22T09:44:11Z",
+        "updated_at": "2014-09-22T09:44:11Z",
+        "html_url": "https://github.com/joypixels/emojify.js/pull/47#discussion_r17840074",
+        "pull_request_url": "https://api.github.com/repos/joypixels/emojify.js/pulls/47",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/17840074"
+            },
+            "html": {
+                "href": "https://github.com/joypixels/emojify.js/pull/47#discussion_r17840074"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/47"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/17842159",
+        "pull_request_review_id": null,
+        "id": 17842159,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3ODQyMTU5",
+        "diff_hunk": "@@ -24,45 +24,29 @@ module.exports = function (grunt) {\n         },\n         cssmin: {\n             minify: {\n-                src: 'emojify.css',\n-                dest: 'emojify.min.css'\n-          }\n+                files: {\n+                    'emojify.min.css': 'emojify.css',\n+                    'emojify-emoticons.min.css': 'emojify-emoticons.css',\n+                }\n+            }\n+        },\n+        datauri: {\n+            production: {\n+                options: {\n+                    classPrefix: 'emoji-'\n+                },\n+                files: {\n+                    'emojify.css': 'images/emoji/*.png',\n+                    'emojify-emoticons.css': 'images/emoji/{blush,scream,smirk,smiley,stuck_out_tongue_closed_eyes,stuck_out_tongue_winking_eye,rage,disappointed,sob,kissing_heart,wink,pensive,confounded,flushed,relaxed,mask,heart,broken_heart}.png'",
+        "path": "Gruntfile.js",
+        "position": 20,
+        "original_position": 20,
+        "commit_id": "891fcb38132a4e6de628a1b80638ee2274822824",
+        "original_commit_id": "891fcb38132a4e6de628a1b80638ee2274822824",
+        "user": {
+            "login": "rjcoelho",
+            "id": 96265,
+            "node_id": "MDQ6VXNlcjk2MjY1",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/96265?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rjcoelho",
+            "html_url": "https://github.com/rjcoelho",
+            "followers_url": "https://api.github.com/users/rjcoelho/followers",
+            "following_url": "https://api.github.com/users/rjcoelho/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rjcoelho/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rjcoelho/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rjcoelho/subscriptions",
+            "organizations_url": "https://api.github.com/users/rjcoelho/orgs",
+            "repos_url": "https://api.github.com/users/rjcoelho/repos",
+            "events_url": "https://api.github.com/users/rjcoelho/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rjcoelho/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Grunt-datauri will use the filename as the class, optionally prefixing w/ \"classPrefix\". See https://github.com/ceee/grunt-datauri/blob/master/tasks/datauri.js\n",
+        "created_at": "2014-09-22T10:43:55Z",
+        "updated_at": "2014-09-22T10:43:55Z",
+        "html_url": "https://github.com/joypixels/emojify.js/pull/47#discussion_r17842159",
+        "pull_request_url": "https://api.github.com/repos/joypixels/emojify.js/pulls/47",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/17842159"
+            },
+            "html": {
+                "href": "https://github.com/joypixels/emojify.js/pull/47#discussion_r17842159"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/47"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/17843068",
+        "pull_request_review_id": null,
+        "id": 17843068,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3ODQzMDY4",
+        "diff_hunk": "@@ -24,45 +24,29 @@ module.exports = function (grunt) {\n         },\n         cssmin: {\n             minify: {\n-                src: 'emojify.css',\n-                dest: 'emojify.min.css'\n-          }\n+                files: {\n+                    'emojify.min.css': 'emojify.css',\n+                    'emojify-emoticons.min.css': 'emojify-emoticons.css',\n+                }\n+            }\n+        },\n+        datauri: {\n+            production: {\n+                options: {\n+                    classPrefix: 'emoji-'\n+                },\n+                files: {\n+                    'emojify.css': 'images/emoji/*.png',\n+                    'emojify-emoticons.css': 'images/emoji/{blush,scream,smirk,smiley,stuck_out_tongue_closed_eyes,stuck_out_tongue_winking_eye,rage,disappointed,sob,kissing_heart,wink,pensive,confounded,flushed,relaxed,mask,heart,broken_heart}.png'",
+        "path": "Gruntfile.js",
+        "position": 20,
+        "original_position": 20,
+        "commit_id": "891fcb38132a4e6de628a1b80638ee2274822824",
+        "original_commit_id": "891fcb38132a4e6de628a1b80638ee2274822824",
+        "user": {
+            "login": "adam-lynch",
+            "id": 1427241,
+            "node_id": "MDQ6VXNlcjE0MjcyNDE=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1427241?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adam-lynch",
+            "html_url": "https://github.com/adam-lynch",
+            "followers_url": "https://api.github.com/users/adam-lynch/followers",
+            "following_url": "https://api.github.com/users/adam-lynch/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adam-lynch/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adam-lynch/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adam-lynch/subscriptions",
+            "organizations_url": "https://api.github.com/users/adam-lynch/orgs",
+            "repos_url": "https://api.github.com/users/adam-lynch/repos",
+            "events_url": "https://api.github.com/users/adam-lynch/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adam-lynch/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Nevermind, I misunderstood. You're splitting 18 emoji off into its own file while still having one with all. :smile: \n",
+        "created_at": "2014-09-22T11:14:13Z",
+        "updated_at": "2014-09-22T11:14:13Z",
+        "html_url": "https://github.com/joypixels/emojify.js/pull/47#discussion_r17843068",
+        "pull_request_url": "https://api.github.com/repos/joypixels/emojify.js/pulls/47",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/17843068"
+            },
+            "html": {
+                "href": "https://github.com/joypixels/emojify.js/pull/47#discussion_r17843068"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/47"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/20155614",
+        "pull_request_review_id": null,
+        "id": 20155614,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIwMTU1NjE0",
+        "diff_hunk": "@@ -18,7 +20,7 @@ gulp.task('default', ['compile']);\n \n gulp.task('compile', ['script', 'images-and-styles']);\n \n-gulp.task('release', ['test', 'bump', 'compile']);\n+gulp.task('release', ['bump', 'compile']);",
+        "path": "gulpfile.js",
+        "position": 20,
+        "original_position": 17,
+        "commit_id": "dbe582cce76a9752ea12526acef814bb23cd651f",
+        "original_commit_id": "8bc2021bc013d4e06aff44ab0b0a69afe714f3ae",
+        "user": {
+            "login": "adam-lynch",
+            "id": 1427241,
+            "node_id": "MDQ6VXNlcjE0MjcyNDE=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1427241?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adam-lynch",
+            "html_url": "https://github.com/adam-lynch",
+            "followers_url": "https://api.github.com/users/adam-lynch/followers",
+            "following_url": "https://api.github.com/users/adam-lynch/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adam-lynch/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adam-lynch/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adam-lynch/subscriptions",
+            "organizations_url": "https://api.github.com/users/adam-lynch/orgs",
+            "repos_url": "https://api.github.com/users/adam-lynch/repos",
+            "events_url": "https://api.github.com/users/adam-lynch/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adam-lynch/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I also removed the \"test\" task here from the dependencies because it doesn't exist anymore.\n",
+        "created_at": "2014-11-11T15:18:03Z",
+        "updated_at": "2014-11-19T10:52:08Z",
+        "html_url": "https://github.com/joypixels/emojify.js/pull/108#discussion_r20155614",
+        "pull_request_url": "https://api.github.com/repos/joypixels/emojify.js/pulls/108",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/20155614"
+            },
+            "html": {
+                "href": "https://github.com/joypixels/emojify.js/pull/108#discussion_r20155614"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/108"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/69383985",
+        "pull_request_review_id": null,
+        "id": 69383985,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5MzgzOTg1",
+        "diff_hunk": "@@ -306,15 +306,15 @@\n \n                 var nodes = [];\n \n-                var elementsBlacklist = new RegExp(defaultConfig.blacklist.elements.join('|'), 'i'),\n+                var elementsBlacklist = new RegExp('^(' + defaultConfig.blacklist.elements.join('|') + ')$', 'i'),\n                     classesBlacklist = new RegExp(defaultConfig.blacklist.classes.join('|'), 'i');\n \n                 if(typeof win.document.createTreeWalker !== 'undefined') {\n                     var nodeIterator = win.document.createTreeWalker(\n                         el,\n                         win.NodeFilter.SHOW_TEXT | win.NodeFilter.SHOW_ELEMENT,\n                         function(node) {\n-                            if(node.nodeType !== 1) {\n+                            if(node.nodeType !== node.ELEMENT_NODE) {\n                                 /* Text Node? Good! */",
+        "path": "src/emojify.js",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "c6226d2d5238a93f38cdbfd09132aa5bd5fc462a",
+        "original_commit_id": "c6226d2d5238a93f38cdbfd09132aa5bd5fc462a",
+        "user": {
+            "login": "adam-lynch",
+            "id": 1427241,
+            "node_id": "MDQ6VXNlcjE0MjcyNDE=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1427241?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adam-lynch",
+            "html_url": "https://github.com/adam-lynch",
+            "followers_url": "https://api.github.com/users/adam-lynch/followers",
+            "following_url": "https://api.github.com/users/adam-lynch/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adam-lynch/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adam-lynch/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adam-lynch/subscriptions",
+            "organizations_url": "https://api.github.com/users/adam-lynch/orgs",
+            "repos_url": "https://api.github.com/users/adam-lynch/repos",
+            "events_url": "https://api.github.com/users/adam-lynch/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adam-lynch/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Does this comment still make sense?\n",
+        "created_at": "2016-07-03T00:10:43Z",
+        "updated_at": "2016-07-03T00:10:43Z",
+        "html_url": "https://github.com/joypixels/emojify.js/pull/165#discussion_r69383985",
+        "pull_request_url": "https://api.github.com/repos/joypixels/emojify.js/pulls/165",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/comments/69383985"
+            },
+            "html": {
+                "href": "https://github.com/joypixels/emojify.js/pull/165#discussion_r69383985"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/joypixels/emojify.js/pulls/165"
+            }
+        }
+    }
+]

@@ -1,0 +1,198 @@
+[
+    {
+        "url": "https://api.github.com/repos/scrapy/dirbot/pulls/comments/66119768",
+        "pull_request_review_id": null,
+        "id": 66119768,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY2MTE5NzY4",
+        "diff_hunk": "@@ -10,7 +12,7 @@ class FilterWordsPipeline(object):\n \n     def process_item(self, item, spider):\n         for word in self.words_to_filter:\n-            if word in unicode(item['description']).lower():\n+            if word in six.text_type(item['description']).lower():",
+        "path": "dirbot/pipelines.py",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "810eae1563f78c0402d054b4edfb12729da64887",
+        "original_commit_id": "bbd8d2dbc1b1150446788a38705d2957c218c9aa",
+        "user": {
+            "login": "kmike",
+            "id": 107893,
+            "node_id": "MDQ6VXNlcjEwNzg5Mw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/107893?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kmike",
+            "html_url": "https://github.com/kmike",
+            "followers_url": "https://api.github.com/users/kmike/followers",
+            "following_url": "https://api.github.com/users/kmike/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kmike/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kmike/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kmike/subscriptions",
+            "organizations_url": "https://api.github.com/users/kmike/orgs",
+            "repos_url": "https://api.github.com/users/kmike/repos",
+            "events_url": "https://api.github.com/users/kmike/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kmike/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why isn't just `item['description']).lower()` enough?\n`unicode(item['description'])` was just wrong, by the way :)\n\nI think it is not good to add six dependency to example project because users shouldn't write Python 2+3 compatible code in most cases.\n",
+        "created_at": "2016-06-07T17:52:04Z",
+        "updated_at": "2016-06-08T10:03:15Z",
+        "html_url": "https://github.com/scrapy/dirbot/pull/21#discussion_r66119768",
+        "pull_request_url": "https://api.github.com/repos/scrapy/dirbot/pulls/21",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/scrapy/dirbot/pulls/comments/66119768"
+            },
+            "html": {
+                "href": "https://github.com/scrapy/dirbot/pull/21#discussion_r66119768"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/scrapy/dirbot/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/scrapy/dirbot/pulls/comments/66227452",
+        "pull_request_review_id": null,
+        "id": 66227452,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY2MjI3NDUy",
+        "diff_hunk": "@@ -10,7 +12,7 @@ class FilterWordsPipeline(object):\n \n     def process_item(self, item, spider):\n         for word in self.words_to_filter:\n-            if word in unicode(item['description']).lower():\n+            if word in six.text_type(item['description']).lower():",
+        "path": "dirbot/pipelines.py",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "810eae1563f78c0402d054b4edfb12729da64887",
+        "original_commit_id": "bbd8d2dbc1b1150446788a38705d2957c218c9aa",
+        "user": {
+            "login": "redapple",
+            "id": 886296,
+            "node_id": "MDQ6VXNlcjg4NjI5Ng==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/886296?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/redapple",
+            "html_url": "https://github.com/redapple",
+            "followers_url": "https://api.github.com/users/redapple/followers",
+            "following_url": "https://api.github.com/users/redapple/following{/other_user}",
+            "gists_url": "https://api.github.com/users/redapple/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/redapple/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/redapple/subscriptions",
+            "organizations_url": "https://api.github.com/users/redapple/orgs",
+            "repos_url": "https://api.github.com/users/redapple/repos",
+            "events_url": "https://api.github.com/users/redapple/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/redapple/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Right. Items were being populated with lists of values. \nI changed this to single value with `.extract_first()` now, and included updated selectors for new layout.\n",
+        "created_at": "2016-06-08T10:01:00Z",
+        "updated_at": "2016-06-08T10:03:15Z",
+        "html_url": "https://github.com/scrapy/dirbot/pull/21#discussion_r66227452",
+        "pull_request_url": "https://api.github.com/repos/scrapy/dirbot/pulls/21",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/scrapy/dirbot/pulls/comments/66227452"
+            },
+            "html": {
+                "href": "https://github.com/scrapy/dirbot/pull/21#discussion_r66227452"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/scrapy/dirbot/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/scrapy/dirbot/pulls/comments/70493043",
+        "pull_request_review_id": null,
+        "id": 70493043,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcwNDkzMDQz",
+        "diff_hunk": "@@ -20,15 +20,17 @@ def parse(self, response):\n         @url http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/\n         @scrapes name\n         \"\"\"\n-        sel = Selector(response)\n-        sites = sel.xpath('//ul[@class=\"directory-url\"]/li')\n+        sites = response.css('#site-list-content > div.site-item > div.title-and-desc')\n         items = []\n \n         for site in sites:\n             item = Website()\n-            item['name'] = site.xpath('a/text()').extract()\n-            item['url'] = site.xpath('a/@href').extract()\n-            item['description'] = site.xpath('text()').re('-\\s[^\\n]*\\\\r')\n+            item['name'] = site.css(",
+        "path": "dirbot/spiders/dmoz.py",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "810eae1563f78c0402d054b4edfb12729da64887",
+        "original_commit_id": "810eae1563f78c0402d054b4edfb12729da64887",
+        "user": {
+            "login": "soduko",
+            "id": 6954634,
+            "node_id": "MDQ6VXNlcjY5NTQ2MzQ=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/6954634?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/soduko",
+            "html_url": "https://github.com/soduko",
+            "followers_url": "https://api.github.com/users/soduko/followers",
+            "following_url": "https://api.github.com/users/soduko/following{/other_user}",
+            "gists_url": "https://api.github.com/users/soduko/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/soduko/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/soduko/subscriptions",
+            "organizations_url": "https://api.github.com/users/soduko/orgs",
+            "repos_url": "https://api.github.com/users/soduko/repos",
+            "events_url": "https://api.github.com/users/soduko/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/soduko/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why not leave both the xpath and css examples? Tutorial is using xpath and css for the last part.\n",
+        "created_at": "2016-07-12T18:22:01Z",
+        "updated_at": "2016-07-12T18:22:01Z",
+        "html_url": "https://github.com/scrapy/dirbot/pull/21#discussion_r70493043",
+        "pull_request_url": "https://api.github.com/repos/scrapy/dirbot/pulls/21",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/scrapy/dirbot/pulls/comments/70493043"
+            },
+            "html": {
+                "href": "https://github.com/scrapy/dirbot/pull/21#discussion_r70493043"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/scrapy/dirbot/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/scrapy/dirbot/pulls/comments/147333330",
+        "pull_request_review_id": 72414753,
+        "id": 147333330,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0NzMzMzMzMA==",
+        "diff_hunk": "@@ -6,10 +6,10 @@\n \n class DmozSpider(Spider):\n     name = \"dmoz\"\n-    allowed_domains = [\"dmoz.org\"]\n+    allowed_domains = [\"resource-zone\"]",
+        "path": "dirbot/spiders/dmoz.py",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "99167334545616800101c66be576e0538ab4ff79",
+        "original_commit_id": "9b56423a47a98feaeddb9823b4c68d8dc3bcb934",
+        "user": {
+            "login": "baitercel",
+            "id": 7665360,
+            "node_id": "MDQ6VXNlcjc2NjUzNjA=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/7665360?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/baitercel",
+            "html_url": "https://github.com/baitercel",
+            "followers_url": "https://api.github.com/users/baitercel/followers",
+            "following_url": "https://api.github.com/users/baitercel/following{/other_user}",
+            "gists_url": "https://api.github.com/users/baitercel/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/baitercel/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/baitercel/subscriptions",
+            "organizations_url": "https://api.github.com/users/baitercel/orgs",
+            "repos_url": "https://api.github.com/users/baitercel/repos",
+            "events_url": "https://api.github.com/users/baitercel/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/baitercel/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "sorroy ,  \"allowed_domains = [\"resource-zone.com\"]\" is right",
+        "created_at": "2017-10-27T06:46:15Z",
+        "updated_at": "2017-10-27T08:08:04Z",
+        "html_url": "https://github.com/scrapy/dirbot/pull/30#discussion_r147333330",
+        "pull_request_url": "https://api.github.com/repos/scrapy/dirbot/pulls/30",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/scrapy/dirbot/pulls/comments/147333330"
+            },
+            "html": {
+                "href": "https://github.com/scrapy/dirbot/pull/30#discussion_r147333330"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/scrapy/dirbot/pulls/30"
+            }
+        }
+    }
+]

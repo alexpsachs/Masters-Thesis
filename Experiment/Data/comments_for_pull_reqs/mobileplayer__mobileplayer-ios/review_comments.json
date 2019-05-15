@@ -1,0 +1,3040 @@
+[
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31190096",
+        "pull_request_review_id": null,
+        "id": 31190096,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxMTkwMDk2",
+        "diff_hunk": "@@ -0,0 +1,33 @@\n+//\n+//  CloseConfig.swift\n+//  MovielalaPlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 27/05/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import Foundation\n+\n+public struct CloseConfig {\n+  \n+  // MARK: - Title\n+  \n+  var closeButtonImage = MovielalaPlayerConfig.loadImage(named: \"MLCloseButton\")\n+  var closeButtonTintColor = UIColor.whiteColor()\n+  \n+  public init() {}\n+  \n+  public init(dictionary: [String: AnyObject]) {\n+    // Close Button\n+    if let closeButtonConfig = dictionary[\"closeButton\"] as? [String:AnyObject] {\n+      if let closeButtonImage = closeButtonConfig[\"image\"] as? String {\n+        self.closeButtonImage = MovielalaPlayerConfig.loadImage(named: closeButtonImage)\n+      }\n+      if let closeButtonTintColor = closeButtonConfig[\"tintColor\"] as? String {\n+        self.closeButtonTintColor = UIColor(rgba: closeButtonTintColor)\n+      }\n+    }\n+    ",
+        "path": "MovielalaPlayer/CloseButtonConfig.swift",
+        "position": null,
+        "original_position": 30,
+        "commit_id": "4b5a4bd3dd338f2e6f3f695034f8f1eb31bc8f37",
+        "original_commit_id": "ceb5474f39d1b87afdb62a1763b10fd1b27087e2",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "extra whitespace should be removed\n",
+        "created_at": "2015-05-27T23:11:32Z",
+        "updated_at": "2015-05-27T23:27:44Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/14#discussion_r31190096",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/14",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31190096"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/14#discussion_r31190096"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/14"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31190101",
+        "pull_request_review_id": null,
+        "id": 31190101,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxMTkwMTAx",
+        "diff_hunk": "@@ -0,0 +1,33 @@\n+//\n+//  CloseConfig.swift\n+//  MovielalaPlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 27/05/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import Foundation\n+\n+public struct CloseConfig {\n+  \n+  // MARK: - Title\n+  \n+  var closeButtonImage = MovielalaPlayerConfig.loadImage(named: \"MLCloseButton\")\n+  var closeButtonTintColor = UIColor.whiteColor()\n+  \n+  public init() {}\n+  \n+  public init(dictionary: [String: AnyObject]) {\n+    // Close Button\n+    if let closeButtonConfig = dictionary[\"closeButton\"] as? [String:AnyObject] {\n+      if let closeButtonImage = closeButtonConfig[\"image\"] as? String {\n+        self.closeButtonImage = MovielalaPlayerConfig.loadImage(named: closeButtonImage)\n+      }\n+      if let closeButtonTintColor = closeButtonConfig[\"tintColor\"] as? String {\n+        self.closeButtonTintColor = UIColor(rgba: closeButtonTintColor)\n+      }\n+    }\n+    \n+  }\n+  ",
+        "path": "MovielalaPlayer/CloseButtonConfig.swift",
+        "position": null,
+        "original_position": 32,
+        "commit_id": "4b5a4bd3dd338f2e6f3f695034f8f1eb31bc8f37",
+        "original_commit_id": "ceb5474f39d1b87afdb62a1763b10fd1b27087e2",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "extra whitespace should be removed\n",
+        "created_at": "2015-05-27T23:11:38Z",
+        "updated_at": "2015-05-27T23:27:44Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/14#discussion_r31190101",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/14",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31190101"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/14#discussion_r31190101"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/14"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31190209",
+        "pull_request_review_id": null,
+        "id": 31190209,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxMTkwMjA5",
+        "diff_hunk": "@@ -0,0 +1,55 @@\n+//\n+//  ControlbarConfig.swift\n+//  MovielalaPlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 26/05/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import Foundation\n+\n+\n+public struct ControlbarConfig {\n+  var playButtonImage = MovielalaPlayerConfig.loadImage(named: \"MLPlayButton\")\n+  var playButtonTintColor = UIColor.whiteColor()\n+  var pauseButtonImage = MovielalaPlayerConfig.loadImage(named: \"MLPauseButton\")\n+  var pauseButtonTintColor = UIColor.whiteColor()\n+  var timeTextFont = UIFont.systemFontOfSize(14)\n+  var timeTextColor = UIColor.whiteColor()\n+  \n+  public init() {}\n+  \n+  public init(dictionary: [String: AnyObject]) {\n+    // Play Button\n+    if let playButtonConfig = dictionary[\"playButton\"] as? [String:AnyObject] {\n+      if let playButtonImage = playButtonConfig[\"image\"] as? String {\n+        self.playButtonImage = MovielalaPlayerConfig.loadImage(named: playButtonImage)\n+      }\n+      if let playButtonTintColor = playButtonConfig[\"tintColor\"] as? String {\n+        self.playButtonTintColor = UIColor(rgba: playButtonTintColor)\n+      }\n+    }\n+    // Pause Button\n+    if let pauseButtonConfig = dictionary[\"pauseButton\"] as? [String:AnyObject] {\n+      if let pauseButtonImage = pauseButtonConfig[\"image\"] as? String {\n+        self.pauseButtonImage = MovielalaPlayerConfig.loadImage(named: pauseButtonImage)\n+      }\n+      if let pauseButtonTintColor = pauseButtonConfig[\"tintColor\"] as? String {\n+        self.pauseButtonTintColor = UIColor(rgba: pauseButtonTintColor)\n+      }\n+    }\n+    // Time\n+    if let timeConfig = dictionary[\"time\"] as? [String:AnyObject] {\n+      if let timeTextFont = timeConfig[\"textFont\"] as? String {\n+        if let timeTextSize = timeConfig[\"textFontSize\"] as? CGFloat {\n+        self.timeTextFont = UIFont(name: timeTextFont, size: timeTextSize)!",
+        "path": "MovielalaPlayer/Config/ControlbarConfig.swift",
+        "position": 44,
+        "original_position": 45,
+        "commit_id": "4b5a4bd3dd338f2e6f3f695034f8f1eb31bc8f37",
+        "original_commit_id": "46e87fe62cc7801e0ed6c826eff81ab222bf1deb",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Wrong indentation here\n",
+        "created_at": "2015-05-27T23:13:21Z",
+        "updated_at": "2015-05-27T23:27:44Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/14#discussion_r31190209",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/14",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31190209"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/14#discussion_r31190209"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/14"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31190227",
+        "pull_request_review_id": null,
+        "id": 31190227,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxMTkwMjI3",
+        "diff_hunk": "@@ -0,0 +1,28 @@\n+//\n+//  CloseConfig.swift\n+//  MovielalaPlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 27/05/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import Foundation\n+\n+public struct CloseConfig {",
+        "path": "MovielalaPlayer/CloseButtonConfig.swift",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "4b5a4bd3dd338f2e6f3f695034f8f1eb31bc8f37",
+        "original_commit_id": "46e87fe62cc7801e0ed6c826eff81ab222bf1deb",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "CloseConfig should be renamed as CloseButtonConfig\n",
+        "created_at": "2015-05-27T23:13:38Z",
+        "updated_at": "2015-05-27T23:27:44Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/14#discussion_r31190227",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/14",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31190227"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/14#discussion_r31190227"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/14"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31968109",
+        "pull_request_review_id": null,
+        "id": 31968109,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTY4MTA5",
+        "diff_hunk": "@@ -8,9 +8,9 @@\n \n import Foundation\n \n-extension UIColor {\n+public extension UIColor {",
+        "path": "MovielalaPlayer/UIColor+Extension.swift",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "3e98baacf77c1ac946198a6cd82c5d8bfa308884",
+        "original_commit_id": "6c8187614f9c9aa304ef4b568295a5667d258e09",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "UIColor extension shouldn't be public\n",
+        "created_at": "2015-06-08T22:49:54Z",
+        "updated_at": "2015-06-08T22:52:04Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/21#discussion_r31968109",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/21",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31968109"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/21#discussion_r31968109"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/21"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31972716",
+        "pull_request_review_id": null,
+        "id": 31972716,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTcyNzE2",
+        "diff_hunk": "@@ -0,0 +1,94 @@\n+//\n+//  SkinParserTests.swift\n+//  MovielalaPlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 08/06/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+import XCTest\n+import MovielalaPlayer\n+\n+class SkinParserTests: XCTestCase {\n+  \n+  override func setUp() {\n+    super.setUp()\n+  }\n+  \n+  func testControlbarConfig() {\n+    let testBundle = NSBundle(forClass: self.dynamicType)",
+        "path": "MovielalaPlayerTests/SkinParserTests.swift",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "e79f3fd468d5e3cf97279472b69e9f07a0f29158",
+        "original_commit_id": "48d2719184256a085bd794aaacb5d6a50c21d613",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Should be a class property.\n",
+        "created_at": "2015-06-09T00:07:38Z",
+        "updated_at": "2015-06-09T18:49:23Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/22#discussion_r31972716",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/22",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31972716"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/22#discussion_r31972716"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/22"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31984743",
+        "pull_request_review_id": null,
+        "id": 31984743,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTg0NzQz",
+        "diff_hunk": "@@ -0,0 +1,87 @@\n+//\n+//  SkinParserTests.swift\n+//  MovielalaPlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 08/06/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+import XCTest\n+import MovielalaPlayer\n+\n+class SkinParserTests: XCTestCase {\n+  let fileURL = NSBundle(forClass: SkinParserTests.self).URLForResource(\"TestSkin\", withExtension:\"json\")!\n+  \n+  override func setUp() {\n+    super.setUp()\n+  }\n+  \n+  func testControlbarConfig() {\n+     if var config:MovielalaPlayerConfig = SkinParser.parseConfigFromURL(fileURL) {",
+        "path": "MovielalaPlayerTests/SkinParserTests.swift",
+        "position": null,
+        "original_position": 21,
+        "commit_id": "e79f3fd468d5e3cf97279472b69e9f07a0f29158",
+        "original_commit_id": "16b50ba1973e508f716387cad9f8e1198225cd0e",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This should be `if let config = SkinParser.parseConfigFromURL(fileURL)`.\n",
+        "created_at": "2015-06-09T06:09:41Z",
+        "updated_at": "2015-06-09T18:49:23Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/22#discussion_r31984743",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/22",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/31984743"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/22#discussion_r31984743"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/22"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365188",
+        "pull_request_review_id": null,
+        "id": 32365188,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyMzY1MTg4",
+        "diff_hunk": "@@ -104,68 +104,61 @@ class CustomTimeSliderView: UIView {\n       userInteraction = false\n     }\n   }\n-  \n+\n   //Buffer Percent\n-  func refreshBufferPercentRatio(bufferRatio width:CGFloat,totalDuration total:CGFloat) {\n-    if width.isNaN || total.isNaN {\n-      return bufferPercentRatio = 0.0\n-    }\n-    videoPercentRatio = CGFloat(width / total * 100)\n-    var bufferPercent:CGFloat = videoPercentRatio * self.bounds.size.width / 100\n-    bufferPercentRatio = bufferPercent\n-    layoutSubviews()\n+  func refreshBufferPercentRatio(\n+    bufferRatio width: CGFloat,\n+    totalDuration total: CGFloat\n+    ) {",
+        "path": "MovielalaPlayer/CustomTimeSliderView.swift",
+        "position": null,
+        "original_position": 115,
+        "commit_id": "f0a51df3cce609af4d4046fca8b16b2db24d7d37",
+        "original_commit_id": "175a48a611925a5167eb74f936d62a97ab585360",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\") {\" should be moved to the end of the previous line.\n",
+        "created_at": "2015-06-13T00:22:23Z",
+        "updated_at": "2015-06-14T06:24:31Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365188",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365188"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365188"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365227",
+        "pull_request_review_id": null,
+        "id": 32365227,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyMzY1MjI3",
+        "diff_hunk": "@@ -11,50 +11,39 @@ import MovielalaPlayer\n \n @UIApplicationMain\n class AppDelegate: UIResponder, UIApplicationDelegate {\n-  \n+\n   var window: UIWindow?\n-  \n-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {\n-    \n-    if let fileUrl = NSBundle.mainBundle().URLForResource(\"BarbieSkin\", withExtension: \"json\") {\n-      let playerVC = MovielalaPlayerViewController(\n-      contentURL: NSURL(string: \"http://player.vimeo.com/external/129470313.m3u8?p=high,standard,mobile&s=87cf536853be9d543e30f9e227285906\")!,\n-      configFileURL: fileUrl\n-      )\n-      playerVC.title = \"Jurrasic World\"\n-      self.window = UIWindow(frame: UIScreen.mainScreen().bounds)\n-      self.window!.rootViewController = playerVC\n-      self.window!.backgroundColor = UIColor.whiteColor()\n-      self.window!.makeKeyAndVisible()\n-    } else {\n-      println(\"MovielalaPlayer: Skin file not found\")\n-    }\n-    \n-    return true\n-  }\n-  \n-  func applicationWillResignActive(application: UIApplication) {\n-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.\n-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.\n-  }\n-  \n-  func applicationDidEnterBackground(application: UIApplication) {\n-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.\n-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.\n-  }\n-  \n-  func applicationWillEnterForeground(application: UIApplication) {\n-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.\n-  }\n-  \n-  func applicationDidBecomeActive(application: UIApplication) {\n-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.\n-  }\n-  \n-  func applicationWillTerminate(application: UIApplication) {\n-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.\n+\n+  func application(\n+    application: UIApplication,\n+    didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {\n+\n+      if let fileUrl = NSBundle.mainBundle().URLForResource(\"BarbieSkin\", withExtension: \"json\") {\n+        let youtubeURL = NSURL(string: \"https://www.youtube.com/watch?v=Bt6clk4LNRk\")!\n+        let youtubeLiveURL = NSURL(string: \"https://www.youtube.com/watch?v=rxGoGg7n77A\")!\n+        let playerVC = MovielalaPlayerViewController(\n+          youTubeURL: youtubeURL,\n+          configFileURL: fileUrl\n+        )\n+        playerVC.title = \"Tron Legacy\"\n+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)\n+        self.window!.rootViewController = playerVC\n+        self.window!.backgroundColor = UIColor.whiteColor()\n+        self.window!.makeKeyAndVisible()\n+      } else {\n+        println(\"MovielalaPlayer: Skin file not found\")\n+      }\n+\n+      return true\n   }\n-  \n-  \n-}\n \n+  func applicationWillResignActive(application: UIApplication) { }\n+\n+  func applicationDidEnterBackground(application: UIApplication) { }\n+\n+  func applicationWillEnterForeground(application: UIApplication) { }\n+\n+  func applicationDidBecomeActive(application: UIApplication) { }\n+\n+  func applicationWillTerminate(application: UIApplication) { }\n+}",
+        "path": "MovielalaPlayerExample/AppDelegate.swift",
+        "position": null,
+        "original_position": 83,
+        "commit_id": "f0a51df3cce609af4d4046fca8b16b2db24d7d37",
+        "original_commit_id": "175a48a611925a5167eb74f936d62a97ab585360",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Missing new line here.\n",
+        "created_at": "2015-06-13T00:24:13Z",
+        "updated_at": "2015-06-14T06:24:31Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365227",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365227"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365227"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365260",
+        "pull_request_review_id": null,
+        "id": 32365260,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyMzY1MjYw",
+        "diff_hunk": "@@ -11,24 +11,78 @@ import XCTest\n import MovielalaPlayer\n \n class SkinParserTests: XCTestCase {\n-  let fileURL = NSBundle(forClass: SkinParserTests.self).URLForResource(\"TestSkin\", withExtension:\"json\")!\n-  \n+  let fileURL = NSBundle(\n+    forClass: SkinParserTests.self\n+    ).URLForResource(",
+        "path": "MovielalaPlayerTests/SkinParserTests.swift",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "f0a51df3cce609af4d4046fca8b16b2db24d7d37",
+        "original_commit_id": "175a48a611925a5167eb74f936d62a97ab585360",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Don't separate it like this, closing parentheses should not be the first character of a new line.\n",
+        "created_at": "2015-06-13T00:26:02Z",
+        "updated_at": "2015-06-14T06:24:31Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365260",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365260"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365260"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365299",
+        "pull_request_review_id": null,
+        "id": 32365299,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyMzY1Mjk5",
+        "diff_hunk": "@@ -0,0 +1,59 @@\n+//\n+//  YoutubeTests.swift\n+//  MovielalaPlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 09/06/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+import XCTest\n+import MovielalaPlayer\n+\n+class YoutubeTests: XCTestCase {\n+\n+  override func setUp() {\n+    super.setUp()\n+  }\n+\n+  func testStringByDecodingURLFormat() {\n+    let originalString = \"https://www.youtube.com/watch?v=XUFpdwbfqqQ+XUFpdwbfqqQ\"\n+    let testString = \"https://www.youtube.com/watch?v=XUFpdwbfqqQ XUFpdwbfqqQ\"\n+    let comparsionString = originalString.stringByDecodingURLFormat()\n+    XCTAssertEqual(comparsionString, testString, \"String decoding failed\")\n+  }\n+\n+  func testDictionaryFromQueryStringComponents() {\n+    let sampleLink = \"https://www.youtube.com/watch?v=o0jJiB2Ygpg&list=RDo0jJiB2Ygpg\"\n+    let dictionary = sampleLink.dictionaryFromQueryStringComponents()\n+    XCTAssertNotNil(dictionary, \"url dictionary parse error\")",
+        "path": "MovielalaPlayerTests/YoutubeTests.swift",
+        "position": null,
+        "original_position": 29,
+        "commit_id": "f0a51df3cce609af4d4046fca8b16b2db24d7d37",
+        "original_commit_id": "175a48a611925a5167eb74f936d62a97ab585360",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Check if the dictionary has the correct key value pairs, a nil check is not sufficient here.\n",
+        "created_at": "2015-06-13T00:28:00Z",
+        "updated_at": "2015-06-14T06:24:31Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365299",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365299"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365299"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365304",
+        "pull_request_review_id": null,
+        "id": 32365304,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyMzY1MzA0",
+        "diff_hunk": "@@ -0,0 +1,59 @@\n+//\n+//  YoutubeTests.swift\n+//  MovielalaPlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 09/06/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+import XCTest\n+import MovielalaPlayer\n+\n+class YoutubeTests: XCTestCase {\n+\n+  override func setUp() {\n+    super.setUp()\n+  }\n+\n+  func testStringByDecodingURLFormat() {\n+    let originalString = \"https://www.youtube.com/watch?v=XUFpdwbfqqQ+XUFpdwbfqqQ\"\n+    let testString = \"https://www.youtube.com/watch?v=XUFpdwbfqqQ XUFpdwbfqqQ\"\n+    let comparsionString = originalString.stringByDecodingURLFormat()\n+    XCTAssertEqual(comparsionString, testString, \"String decoding failed\")\n+  }\n+\n+  func testDictionaryFromQueryStringComponents() {\n+    let sampleLink = \"https://www.youtube.com/watch?v=o0jJiB2Ygpg&list=RDo0jJiB2Ygpg\"\n+    let dictionary = sampleLink.dictionaryFromQueryStringComponents()\n+    XCTAssertNotNil(dictionary, \"url dictionary parse error\")\n+  }\n+\n+  func testYoutubeIDFromYoutubeURL() {\n+    let youTube = Youtube()\n+    let sampleLink = NSURL(string: \"http://www.youtube.com/watch?v=1hZ98an9wjo\")!\n+    XCTAssertNotNil(youTube.youtubeIDFromYoutubeURL(sampleLink), \"Youtube ID is nil\")",
+        "path": "MovielalaPlayerTests/YoutubeTests.swift",
+        "position": 42,
+        "original_position": 35,
+        "commit_id": "f0a51df3cce609af4d4046fca8b16b2db24d7d37",
+        "original_commit_id": "175a48a611925a5167eb74f936d62a97ab585360",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Verify that the youtubeID is `1hZ98an9wjo`.\n",
+        "created_at": "2015-06-13T00:28:25Z",
+        "updated_at": "2015-06-14T06:24:31Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365304",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365304"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365304"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365337",
+        "pull_request_review_id": null,
+        "id": 32365337,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyMzY1MzM3",
+        "diff_hunk": "@@ -0,0 +1,59 @@\n+//\n+//  YoutubeTests.swift\n+//  MovielalaPlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 09/06/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+import XCTest\n+import MovielalaPlayer\n+\n+class YoutubeTests: XCTestCase {\n+\n+  override func setUp() {\n+    super.setUp()\n+  }\n+\n+  func testStringByDecodingURLFormat() {\n+    let originalString = \"https://www.youtube.com/watch?v=XUFpdwbfqqQ+XUFpdwbfqqQ\"\n+    let testString = \"https://www.youtube.com/watch?v=XUFpdwbfqqQ XUFpdwbfqqQ\"\n+    let comparsionString = originalString.stringByDecodingURLFormat()\n+    XCTAssertEqual(comparsionString, testString, \"String decoding failed\")\n+  }\n+\n+  func testDictionaryFromQueryStringComponents() {\n+    let sampleLink = \"https://www.youtube.com/watch?v=o0jJiB2Ygpg&list=RDo0jJiB2Ygpg\"\n+    let dictionary = sampleLink.dictionaryFromQueryStringComponents()\n+    XCTAssertNotNil(dictionary, \"url dictionary parse error\")\n+  }\n+\n+  func testYoutubeIDFromYoutubeURL() {\n+    let youTube = Youtube()\n+    let sampleLink = NSURL(string: \"http://www.youtube.com/watch?v=1hZ98an9wjo\")!\n+    XCTAssertNotNil(youTube.youtubeIDFromYoutubeURL(sampleLink), \"Youtube ID is nil\")\n+  }\n+\n+  func testH264videosWithYoutubeURL() {\n+    let youTube = Youtube()\n+    let sampleLink: NSURL = NSURL(string: \"http://www.youtube.com/watch?v=1hZ98an9wjo\")!\n+    var videoComponents = youTube.h264videosWithYoutubeID(\"1hZ98an9wjo\")\n+    XCTAssertNotNil(videoComponents, \"video component is nil\")",
+        "path": "MovielalaPlayerTests/YoutubeTests.swift",
+        "position": null,
+        "original_position": 42,
+        "commit_id": "f0a51df3cce609af4d4046fca8b16b2db24d7d37",
+        "original_commit_id": "175a48a611925a5167eb74f936d62a97ab585360",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Again, don't just do a nil check.\n",
+        "created_at": "2015-06-13T00:29:55Z",
+        "updated_at": "2015-06-14T06:24:31Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365337",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365337"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365337"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365341",
+        "pull_request_review_id": null,
+        "id": 32365341,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyMzY1MzQx",
+        "diff_hunk": "@@ -0,0 +1,59 @@\n+//\n+//  YoutubeTests.swift\n+//  MovielalaPlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 09/06/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+import XCTest\n+import MovielalaPlayer\n+\n+class YoutubeTests: XCTestCase {\n+\n+  override func setUp() {\n+    super.setUp()\n+  }\n+\n+  func testStringByDecodingURLFormat() {\n+    let originalString = \"https://www.youtube.com/watch?v=XUFpdwbfqqQ+XUFpdwbfqqQ\"\n+    let testString = \"https://www.youtube.com/watch?v=XUFpdwbfqqQ XUFpdwbfqqQ\"\n+    let comparsionString = originalString.stringByDecodingURLFormat()\n+    XCTAssertEqual(comparsionString, testString, \"String decoding failed\")\n+  }\n+\n+  func testDictionaryFromQueryStringComponents() {\n+    let sampleLink = \"https://www.youtube.com/watch?v=o0jJiB2Ygpg&list=RDo0jJiB2Ygpg\"\n+    let dictionary = sampleLink.dictionaryFromQueryStringComponents()\n+    XCTAssertNotNil(dictionary, \"url dictionary parse error\")\n+  }\n+\n+  func testYoutubeIDFromYoutubeURL() {\n+    let youTube = Youtube()\n+    let sampleLink = NSURL(string: \"http://www.youtube.com/watch?v=1hZ98an9wjo\")!\n+    XCTAssertNotNil(youTube.youtubeIDFromYoutubeURL(sampleLink), \"Youtube ID is nil\")\n+  }\n+\n+  func testH264videosWithYoutubeURL() {\n+    let youTube = Youtube()\n+    let sampleLink: NSURL = NSURL(string: \"http://www.youtube.com/watch?v=1hZ98an9wjo\")!\n+    var videoComponents = youTube.h264videosWithYoutubeID(\"1hZ98an9wjo\")\n+    XCTAssertNotNil(videoComponents, \"video component is nil\")\n+  }\n+\n+  func testh264videosWithYoutubeURLBlock() {\n+    let youTube = Youtube()",
+        "path": "MovielalaPlayerTests/YoutubeTests.swift",
+        "position": null,
+        "original_position": 46,
+        "commit_id": "f0a51df3cce609af4d4046fca8b16b2db24d7d37",
+        "original_commit_id": "175a48a611925a5167eb74f936d62a97ab585360",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`videoInfo` values should be verified.\n",
+        "created_at": "2015-06-13T00:30:20Z",
+        "updated_at": "2015-06-14T06:24:31Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365341",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32365341"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/24#discussion_r32365341"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32492997",
+        "pull_request_review_id": null,
+        "id": 32492997,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNDkyOTk3",
+        "diff_hunk": "@@ -452,13 +452,13 @@\n \t\t\tname = \"Validate Code Style\";\n \t\t\toutputPaths = (\n \t\t\t);\n-\t\t\trunOnlyForDeploymentPostprocessing = 0;\n+\t\t\trunOnlyForDeploymentPostprocessing = 1;",
+        "path": "MovielalaPlayer.xcodeproj/project.pbxproj",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "625e37aa583828128d3a65d6f1457f6f31ed04d6",
+        "original_commit_id": "187a3cec0384046e5efb4e7cdb8dd632392e71cb",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "SwiftLint should run in all cases. Please uncheck \"run script only when installing\".\n",
+        "created_at": "2015-06-16T05:56:36Z",
+        "updated_at": "2015-06-17T19:06:10Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/28#discussion_r32492997",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/28",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32492997"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/28#discussion_r32492997"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32493006",
+        "pull_request_review_id": null,
+        "id": 32493006,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNDkzMDA2",
+        "diff_hunk": "@@ -466,13 +466,13 @@\n \t\t\tname = \"Validate Code Style\";\n \t\t\toutputPaths = (\n \t\t\t);\n-\t\t\trunOnlyForDeploymentPostprocessing = 0;\n+\t\t\trunOnlyForDeploymentPostprocessing = 1;",
+        "path": "MovielalaPlayer.xcodeproj/project.pbxproj",
+        "position": null,
+        "original_position": 30,
+        "commit_id": "625e37aa583828128d3a65d6f1457f6f31ed04d6",
+        "original_commit_id": "187a3cec0384046e5efb4e7cdb8dd632392e71cb",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "SwiftLint should run in all cases. Please uncheck \"run script only when installing\".\n",
+        "created_at": "2015-06-16T05:56:43Z",
+        "updated_at": "2015-06-17T19:06:10Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/28#discussion_r32493006",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/28",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32493006"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/28#discussion_r32493006"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32493009",
+        "pull_request_review_id": null,
+        "id": 32493009,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNDkzMDA5",
+        "diff_hunk": "@@ -480,13 +480,13 @@\n \t\t\tname = \"Validate Code Style\";\n \t\t\toutputPaths = (\n \t\t\t);\n-\t\t\trunOnlyForDeploymentPostprocessing = 0;\n+\t\t\trunOnlyForDeploymentPostprocessing = 1;",
+        "path": "MovielalaPlayer.xcodeproj/project.pbxproj",
+        "position": null,
+        "original_position": 46,
+        "commit_id": "625e37aa583828128d3a65d6f1457f6f31ed04d6",
+        "original_commit_id": "187a3cec0384046e5efb4e7cdb8dd632392e71cb",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "SwiftLint should run in all cases. Please uncheck \"run script only when installing\".\n",
+        "created_at": "2015-06-16T05:56:49Z",
+        "updated_at": "2015-06-17T19:06:10Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/28#discussion_r32493009",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/28",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32493009"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/28#discussion_r32493009"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32493012",
+        "pull_request_review_id": null,
+        "id": 32493012,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNDkzMDEy",
+        "diff_hunk": "@@ -494,7 +494,7 @@\n \t\t\tname = \"Validate Code Style\";\n \t\t\toutputPaths = (\n \t\t\t);\n-\t\t\trunOnlyForDeploymentPostprocessing = 0;\n+\t\t\trunOnlyForDeploymentPostprocessing = 1;",
+        "path": "MovielalaPlayer.xcodeproj/project.pbxproj",
+        "position": null,
+        "original_position": 62,
+        "commit_id": "625e37aa583828128d3a65d6f1457f6f31ed04d6",
+        "original_commit_id": "187a3cec0384046e5efb4e7cdb8dd632392e71cb",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "SwiftLint should run in all cases. Please uncheck \"run script only when installing\".\n",
+        "created_at": "2015-06-16T05:56:55Z",
+        "updated_at": "2015-06-17T19:06:10Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/28#discussion_r32493012",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/28",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32493012"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/28#discussion_r32493012"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32493049",
+        "pull_request_review_id": null,
+        "id": 32493049,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNDkzMDQ5",
+        "diff_hunk": "@@ -242,14 +246,15 @@ public class MovielalaPlayerViewController: MPMoviePlayerViewController {\n       }\n     }\n   }\n-  \n+\n   final func hideControlsIfPlaying() {\n     let state = moviePlayer.playbackState\n     if state == .Playing || state == .Interrupted {\n-      controlsView.controlsHidden = true\n+      //TODO: Open this line!",
+        "path": "MovielalaPlayer/MovielalaPlayerViewController.swift",
+        "position": null,
+        "original_position": 206,
+        "commit_id": "625e37aa583828128d3a65d6f1457f6f31ed04d6",
+        "original_commit_id": "187a3cec0384046e5efb4e7cdb8dd632392e71cb",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Did you forget this TODO?\n",
+        "created_at": "2015-06-16T05:57:49Z",
+        "updated_at": "2015-06-17T19:06:10Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/28#discussion_r32493049",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/28",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32493049"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/28#discussion_r32493049"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/28"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32661439",
+        "pull_request_review_id": null,
+        "id": 32661439,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNjYxNDM5",
+        "diff_hunk": "@@ -317,8 +325,8 @@ public extension MovielalaPlayerViewController {\n   }\n \n   final func goToCustomTimeSliderWithTime(notification: NSNotification) {\n-    if let userInfo = notification.userInfo as? [String: NSTimeInterval] {\n-      let messageString = userInfo[\"time\"]!\n+    if let userInfo = notification.userInfo as? [String: NSTimeInterval],\n+      messageString = userInfo[\"time\"] {\n       var playbackTime = messageString",
+        "path": "MovielalaPlayer/MovielalaPlayerViewController.swift",
+        "position": null,
+        "original_position": 33,
+        "commit_id": "98a1b1dc369e65aa68cdea8414a5562e65571ed6",
+        "original_commit_id": "695a7fc21f80c772894361e29a1ec1b167dfa08d",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Incorrect inner block and if let indentation here.\n",
+        "created_at": "2015-06-17T18:54:23Z",
+        "updated_at": "2015-06-17T19:12:09Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/29#discussion_r32661439",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/29",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32661439"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/29#discussion_r32661439"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/29"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32687795",
+        "pull_request_review_id": null,
+        "id": 32687795,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNjg3Nzk1",
+        "diff_hunk": "@@ -642,10 +642,10 @@\n \t\t\t\t\t\"DEBUG=1\",\n \t\t\t\t\t\"$(inherited)\",\n \t\t\t\t);\n-\t\t\t\tINFOPLIST_FILE = \"MovielalaPlayerExampleTests/Supporting Files/Info.plist\";\n+\t\t\t\tINFOPLIST_FILE = \"MobilePlayerExampleTests/Supporting Files/Info.plist\";\n \t\t\t\tLD_RUNPATH_SEARCH_PATHS = \"$(inherited) @executable_path/Frameworks @loader_path/Frameworks\";\n-\t\t\t\tPRODUCT_NAME = \"$(TARGET_NAME)\";\n-\t\t\t\tTEST_HOST = \"$(BUILT_PRODUCTS_DIR)/MovielalaPlayerExample.app/MovielalaPlayerExample\";\n+\t\t\t\tPRODUCT_NAME = MobilePlayerExampleTests;",
+        "path": "MobilePlayer.xcodeproj/project.pbxproj",
+        "position": null,
+        "original_position": 486,
+        "commit_id": "693dd7f15ebd92fa05ca1f423116f39aa62772ed",
+        "original_commit_id": "35623721894581c5114ce526c480e434930b59d4",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "PRODUCT_NAME should be `$(TARGET_NAME)`.\n",
+        "created_at": "2015-06-17T23:46:43Z",
+        "updated_at": "2015-06-18T05:08:36Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32687795",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32687795"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32687795"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32687828",
+        "pull_request_review_id": null,
+        "id": 32687828,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNjg3ODI4",
+        "diff_hunk": "@@ -657,10 +657,10 @@\n \t\t\t\t\t\"$(SDKROOT)/Developer/Library/Frameworks\",\n \t\t\t\t\t\"$(inherited)\",\n \t\t\t\t);\n-\t\t\t\tINFOPLIST_FILE = \"MovielalaPlayerExampleTests/Supporting Files/Info.plist\";\n+\t\t\t\tINFOPLIST_FILE = \"MobilePlayerExampleTests/Supporting Files/Info.plist\";\n \t\t\t\tLD_RUNPATH_SEARCH_PATHS = \"$(inherited) @executable_path/Frameworks @loader_path/Frameworks\";\n-\t\t\t\tPRODUCT_NAME = \"$(TARGET_NAME)\";\n-\t\t\t\tTEST_HOST = \"$(BUILT_PRODUCTS_DIR)/MovielalaPlayerExample.app/MovielalaPlayerExample\";\n+\t\t\t\tPRODUCT_NAME = MobilePlayerExampleTests;",
+        "path": "MobilePlayer.xcodeproj/project.pbxproj",
+        "position": null,
+        "original_position": 500,
+        "commit_id": "693dd7f15ebd92fa05ca1f423116f39aa62772ed",
+        "original_commit_id": "35623721894581c5114ce526c480e434930b59d4",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "PRODUCT_NAME should be `$(TARGET_NAME)`.\n",
+        "created_at": "2015-06-17T23:47:20Z",
+        "updated_at": "2015-06-18T05:08:36Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32687828",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32687828"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32687828"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32687881",
+        "pull_request_review_id": null,
+        "id": 32687881,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNjg3ODgx",
+        "diff_hunk": "@@ -778,10 +778,10 @@\n \t\t\t\tDYLIB_COMPATIBILITY_VERSION = 1;\n \t\t\t\tDYLIB_CURRENT_VERSION = 1;\n \t\t\t\tDYLIB_INSTALL_NAME_BASE = \"@rpath\";\n-\t\t\t\tINFOPLIST_FILE = \"MovielalaPlayer/Supporting Files/Info.plist\";\n+\t\t\t\tINFOPLIST_FILE = \"MobilePlayer/Supporting Files/Info.plist\";\n \t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 8.0;\n \t\t\t\tLD_RUNPATH_SEARCH_PATHS = \"$(inherited) @executable_path/Frameworks @loader_path/Frameworks\";\n-\t\t\t\tPRODUCT_NAME = MovielalaPlayer;\n+\t\t\t\tPRODUCT_NAME = MobilePlayer;",
+        "path": "MobilePlayer.xcodeproj/project.pbxproj",
+        "position": null,
+        "original_position": 527,
+        "commit_id": "693dd7f15ebd92fa05ca1f423116f39aa62772ed",
+        "original_commit_id": "35623721894581c5114ce526c480e434930b59d4",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "PRODUCT_NAME should be `$(TARGET_NAME)`.\n",
+        "created_at": "2015-06-17T23:48:10Z",
+        "updated_at": "2015-06-18T05:08:36Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32687881",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32687881"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32687881"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32687918",
+        "pull_request_review_id": null,
+        "id": 32687918,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNjg3OTE4",
+        "diff_hunk": "@@ -797,9 +797,9 @@\n \t\t\t\t\t\"DEBUG=1\",\n \t\t\t\t\t\"$(inherited)\",\n \t\t\t\t);\n-\t\t\t\tINFOPLIST_FILE = \"MovielalaPlayerTests/Supporting Files/Info.plist\";\n+\t\t\t\tINFOPLIST_FILE = \"MobilePlayerTests/Supporting Files/Info.plist\";\n \t\t\t\tLD_RUNPATH_SEARCH_PATHS = \"$(inherited) @executable_path/Frameworks @loader_path/Frameworks\";\n-\t\t\t\tPRODUCT_NAME = \"$(TARGET_NAME)\";\n+\t\t\t\tPRODUCT_NAME = MobilePlayerTests;",
+        "path": "MobilePlayer.xcodeproj/project.pbxproj",
+        "position": null,
+        "original_position": 539,
+        "commit_id": "693dd7f15ebd92fa05ca1f423116f39aa62772ed",
+        "original_commit_id": "35623721894581c5114ce526c480e434930b59d4",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "PRODUCT_NAME should be `$(TARGET_NAME)`.\n",
+        "created_at": "2015-06-17T23:48:34Z",
+        "updated_at": "2015-06-18T05:08:36Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32687918",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32687918"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32687918"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32687945",
+        "pull_request_review_id": null,
+        "id": 32687945,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNjg3OTQ1",
+        "diff_hunk": "@@ -810,16 +810,16 @@\n \t\t\t\t\t\"$(SDKROOT)/Developer/Library/Frameworks\",\n \t\t\t\t\t\"$(inherited)\",\n \t\t\t\t);\n-\t\t\t\tINFOPLIST_FILE = \"MovielalaPlayerTests/Supporting Files/Info.plist\";\n+\t\t\t\tINFOPLIST_FILE = \"MobilePlayerTests/Supporting Files/Info.plist\";\n \t\t\t\tLD_RUNPATH_SEARCH_PATHS = \"$(inherited) @executable_path/Frameworks @loader_path/Frameworks\";\n-\t\t\t\tPRODUCT_NAME = \"$(TARGET_NAME)\";\n+\t\t\t\tPRODUCT_NAME = MobilePlayerTests;",
+        "path": "MobilePlayer.xcodeproj/project.pbxproj",
+        "position": null,
+        "original_position": 551,
+        "commit_id": "693dd7f15ebd92fa05ca1f423116f39aa62772ed",
+        "original_commit_id": "35623721894581c5114ce526c480e434930b59d4",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "PRODUCT_NAME should be `$(TARGET_NAME)`.\n",
+        "created_at": "2015-06-17T23:49:04Z",
+        "updated_at": "2015-06-18T05:08:36Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32687945",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32687945"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32687945"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32688043",
+        "pull_request_review_id": null,
+        "id": 32688043,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNjg4MDQz",
+        "diff_hunk": "@@ -1,6 +1,6 @@\n //\n-//  MovielalaPlayerConfig.swift\n-//  MovielalaPlayer\n+//  MobilePlayerConfig.swift\n+//  MobilePlayerConfig",
+        "path": "MobilePlayer/Config/MobilePlayerConfig.swift",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "693dd7f15ebd92fa05ca1f423116f39aa62772ed",
+        "original_commit_id": "35623721894581c5114ce526c480e434930b59d4",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This line should read `MobilePlayer`, as it should be the name of the project.\n",
+        "created_at": "2015-06-17T23:50:43Z",
+        "updated_at": "2015-06-18T05:08:36Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32688043",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32688043"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32688043"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32691730",
+        "pull_request_review_id": null,
+        "id": 32691730,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNjkxNzMw",
+        "diff_hunk": "@@ -1,6 +1,6 @@\n //\n-//  MovielalaPlayerConfig.swift\n-//  MovielalaPlayer\n+//  MobilePlayerConfig.swift\n+//  MobilePlayerConfig",
+        "path": "MobilePlayer/Config/MobilePlayerConfig.swift",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "693dd7f15ebd92fa05ca1f423116f39aa62772ed",
+        "original_commit_id": "35623721894581c5114ce526c480e434930b59d4",
+        "user": {
+            "login": "toygar-zzz",
+            "id": 604489,
+            "node_id": "MDQ6VXNlcjYwNDQ4OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/604489?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/toygar-zzz",
+            "html_url": "https://github.com/toygar-zzz",
+            "followers_url": "https://api.github.com/users/toygar-zzz/followers",
+            "following_url": "https://api.github.com/users/toygar-zzz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/toygar-zzz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/toygar-zzz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/toygar-zzz/subscriptions",
+            "organizations_url": "https://api.github.com/users/toygar-zzz/orgs",
+            "repos_url": "https://api.github.com/users/toygar-zzz/repos",
+            "events_url": "https://api.github.com/users/toygar-zzz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/toygar-zzz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Enteresan bende d\u00fczg\u00fcn g\u00f6z\u00fck\u00fcyor dosya\n\n//  MobilePlayerConfig.swift\n//  MobilePlayerConfig\n",
+        "created_at": "2015-06-18T01:03:02Z",
+        "updated_at": "2015-06-18T05:08:36Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32691730",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32691730"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32691730"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32692346",
+        "pull_request_review_id": null,
+        "id": 32692346,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNjkyMzQ2",
+        "diff_hunk": "@@ -1,6 +1,6 @@\n //\n-//  MovielalaPlayerConfig.swift\n-//  MovielalaPlayer\n+//  MobilePlayerConfig.swift\n+//  MobilePlayerConfig",
+        "path": "MobilePlayer/Config/MobilePlayerConfig.swift",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "693dd7f15ebd92fa05ca1f423116f39aa62772ed",
+        "original_commit_id": "35623721894581c5114ce526c480e434930b59d4",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It should be\n\n``` swift\n// MobilePlayerConfig.swift\n// MobilePlayer\n```\n",
+        "created_at": "2015-06-18T01:17:38Z",
+        "updated_at": "2015-06-18T05:08:36Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32692346",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32692346"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/31#discussion_r32692346"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/31"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32775019",
+        "pull_request_review_id": null,
+        "id": 32775019,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNzc1MDE5",
+        "diff_hunk": "@@ -30,7 +30,8 @@ public class MobilePlayerViewController: MPMoviePlayerViewController {\n   private var wasPlayingBeforeTimeShift = false\n   private var playbackTimeInterfaceUpdateTimer = NSTimer()\n   private var hideControlsTimer = NSTimer()\n-\n+  private var isPreRollView = false\n+  private var preRollViewController = MobilePlayerOverlayViewController()",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "15fec7bc6509368c7953900c62069153e78e580d",
+        "original_commit_id": "899ab4b8db92c212a5f760578c7e5ac220ed21b1",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "preRollViewController should be optional\n",
+        "created_at": "2015-06-18T20:34:02Z",
+        "updated_at": "2015-06-22T08:03:17Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/34#discussion_r32775019",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32775019"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/34#discussion_r32775019"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32775056",
+        "pull_request_review_id": null,
+        "id": 32775056,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNzc1MDU2",
+        "diff_hunk": "@@ -30,7 +30,8 @@ public class MobilePlayerViewController: MPMoviePlayerViewController {\n   private var wasPlayingBeforeTimeShift = false\n   private var playbackTimeInterfaceUpdateTimer = NSTimer()\n   private var hideControlsTimer = NSTimer()\n-\n+  private var isPreRollView = false",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "15fec7bc6509368c7953900c62069153e78e580d",
+        "original_commit_id": "899ab4b8db92c212a5f760578c7e5ac220ed21b1",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You don't need a state variable here.\n",
+        "created_at": "2015-06-18T20:34:21Z",
+        "updated_at": "2015-06-22T08:03:17Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/34#discussion_r32775056",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32775056"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/34#discussion_r32775056"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32775112",
+        "pull_request_review_id": null,
+        "id": 32775112,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNzc1MTEy",
+        "diff_hunk": "@@ -366,6 +380,9 @@ extension MobilePlayerViewController: MobilePlayerOverlayViewControllerDelegate\n     if state == .Playing || state == .Interrupted {\n       moviePlayer.pause()\n     } else {\n+      if isPreRollView {",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 43,
+        "commit_id": "15fec7bc6509368c7953900c62069153e78e580d",
+        "original_commit_id": "899ab4b8db92c212a5f760578c7e5ac220ed21b1",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "After making the prerollViewController optional, just check if it was assigned here.\n",
+        "created_at": "2015-06-18T20:34:55Z",
+        "updated_at": "2015-06-22T08:03:17Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/34#discussion_r32775112",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32775112"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/34#discussion_r32775112"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32775207",
+        "pull_request_review_id": null,
+        "id": 32775207,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyNzc1MjA3",
+        "diff_hunk": "@@ -22,9 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {\n         let youtubeURL = NSURL(string: \"https://www.youtube.com/watch?v=Kznek1uNVsg\")!\n         let youtubeLiveURL = NSURL(string: \"https://www.youtube.com/watch?v=rxGoGg7n77A\")!\n         let playerVC = MobilePlayerViewController(\n-          youTubeURL: youtubeLiveURL,\n+          youTubeURL: youtubeURL,\n           configFileURL: fileUrl\n         )\n+        let preRollVC = PreRollViewController()\n+        playerVC.showPreRollViewController(preRollVC)",
+        "path": "MobilePlayerExample/AppDelegate.swift",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "15fec7bc6509368c7953900c62069153e78e580d",
+        "original_commit_id": "899ab4b8db92c212a5f760578c7e5ac220ed21b1",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Pre-roll showing behaviour should be the same as post-roll showing behavior. You assign post-roll view controller as a config attribute. This should be the same.\n",
+        "created_at": "2015-06-18T20:35:44Z",
+        "updated_at": "2015-06-22T08:03:17Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/34#discussion_r32775207",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32775207"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/34#discussion_r32775207"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32905586",
+        "pull_request_review_id": null,
+        "id": 32905586,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyOTA1NTg2",
+        "diff_hunk": "@@ -421,11 +371,13 @@ extension MovielalaPlayerViewController: MovielalaPlayerOverlayViewControllerDel\n     }\n   }\n \n-  private func showOverlayViewController(overlayVC: MovielalaPlayerOverlayViewController) {\n+  private func showOverlayViewController(overlayVC: MobilePlayerOverlayViewController) {\n     addChildViewController(overlayVC)\n     overlayVC.view.clipsToBounds = true\n-    controlsView.overlayContainerView.addSubview(overlayVC.view)\n-    overlayVC.didMoveToParentViewController(self)\n+    UIView.animateWithDuration(0.5, animations: { () -> Void in",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 225,
+        "commit_id": "f304a6b120209f14093c0c9988cb0e9cee22abd4",
+        "original_commit_id": "0b40cba6fbc1161b0eb77a4e980f951df7f61fb3",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You can omit the closure type declaration for closures with no input that return nothing. So you can shorten this line as:\n\n``` swift\nUIView.animateWithDuration(0.5, animations: {\n```\n\nBy the way, why are we animating this?\n",
+        "created_at": "2015-06-22T05:02:45Z",
+        "updated_at": "2015-06-25T18:18:42Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/32#discussion_r32905586",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/32",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32905586"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/32#discussion_r32905586"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/32"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32906352",
+        "pull_request_review_id": null,
+        "id": 32906352,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyOTA2MzUy",
+        "diff_hunk": "@@ -10,15 +10,15 @@ import UIKit\n \n public struct SkinParser {\n \n-  public static func parseConfigFromURL(url: NSURL) -> MovielalaPlayerConfig? {\n+  public static func parseConfigFromURL(url: NSURL) -> MobilePlayerConfig? {\n     if let\n       jsonString = String(contentsOfURL: url, encoding: NSUTF8StringEncoding),\n       jsonData = jsonString.dataUsingEncoding(NSUTF8StringEncoding),\n       dictionary = NSJSONSerialization.JSONObjectWithData(\n         jsonData, options: nil, error: nil) as? [String: AnyObject] {\n-          return MovielalaPlayerConfig(dictionary: dictionary)\n+          return MobilePlayerConfig(dictionary: dictionary)\n     } else {\n-      println(\"MovielalaPlayer: Skin File Error! - Please check json validation\")\n+      println(\"MobilePlayer: Skin File Error! - Please check json validation\")",
+        "path": "MobilePlayer/Parser/SkinParser.swift",
+        "position": null,
+        "original_position": 23,
+        "commit_id": "f304a6b120209f14093c0c9988cb0e9cee22abd4",
+        "original_commit_id": "0b40cba6fbc1161b0eb77a4e980f951df7f61fb3",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This println call should be removed.\n",
+        "created_at": "2015-06-22T05:38:10Z",
+        "updated_at": "2015-06-25T18:18:42Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/32#discussion_r32906352",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/32",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/32906352"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/32#discussion_r32906352"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/32"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33215336",
+        "pull_request_review_id": null,
+        "id": 33215336,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzMjE1MzM2",
+        "diff_hunk": "@@ -30,28 +30,32 @@ public class MovielalaPlayerViewController: MPMoviePlayerViewController {\n   private var wasPlayingBeforeTimeShift = false\n   private var playbackTimeInterfaceUpdateTimer = NSTimer()\n   private var hideControlsTimer = NSTimer()\n+  // OverlayController\n+  public var overlayController = MobilePlayerOverlayViewController()\n+  public var isShowOverlay = false\n+  public var overlayViews = NSMutableArray()",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 41,
+        "commit_id": "f304a6b120209f14093c0c9988cb0e9cee22abd4",
+        "original_commit_id": "e548acfe3ccb4d474c18ca1a89519d22b160d20b",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can you change this line to the following for now?\n\n``` swift\npublic var timedOverlays = [[String: AnyObject]]()\n```\n\nI have different plans for this mechanism for later, before we open source it.\n",
+        "created_at": "2015-06-25T01:33:14Z",
+        "updated_at": "2015-06-25T18:18:42Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/32#discussion_r33215336",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/32",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33215336"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/32#discussion_r33215336"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/32"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33543854",
+        "pull_request_review_id": null,
+        "id": 33543854,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNTQzODU0",
+        "diff_hunk": "@@ -285,10 +285,12 @@ public class MobilePlayerViewController: MPMoviePlayerViewController {\n   public final func updateBufferInterface() {\n     if var bufferCalculate =\n       progressBarBufferPercentWithMoviePlayer(moviePlayer) as? NSTimeInterval {\n-        controlsView.customTimeSliderView.refreshBufferPercentRatio(\n-          bufferRatio: CGFloat(bufferCalculate),\n-          totalDuration: CGFloat(moviePlayer.duration)\n-        )\n+        if moviePlayer.duration > 0 {",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "cc689b521e97e74d7a9ad7540e480ec7959cf03c",
+        "original_commit_id": "e62a6e52b7e64a2729a0ec8eeaf50cbf62dd13c2",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This place you have edited no longer exists on master. Can you remove this chunk, rebase your branch on master, then do the appropriate fix?\n",
+        "created_at": "2015-06-30T06:35:50Z",
+        "updated_at": "2015-06-30T21:34:15Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/41#discussion_r33543854",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/41",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33543854"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/41#discussion_r33543854"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/41"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33543885",
+        "pull_request_review_id": null,
+        "id": 33543885,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNTQzODg1",
+        "diff_hunk": "@@ -31,6 +31,9 @@ public class MobilePlayerViewController: MPMoviePlayerViewController {\n   private var wasPlayingBeforeTimeShift = false\n   private var playbackTimeInterfaceUpdateTimer = NSTimer()\n   private var hideControlsTimer = NSTimer()\n+  private var updateBufferInterfaceTimer = NSTimer()",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "d1e33726209e434186016dc147ca02d8151d9ac2",
+        "original_commit_id": "ce0f3bf2f91b20cab7026ad8bceb15ae26d06985",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "These should be of type `NSTimer?`. No need to create NSTimer instances that we won't use on initialization.\n",
+        "created_at": "2015-06-30T06:36:39Z",
+        "updated_at": "2015-06-30T22:01:42Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/45#discussion_r33543885",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/45",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33543885"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/45#discussion_r33543885"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/45"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442559",
+        "pull_request_review_id": null,
+        "id": 33442559,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQyNTU5",
+        "diff_hunk": "@@ -79,5 +86,25 @@ public struct ControlbarConfig {\n         self.timeSliderBackgroundColor = UIColor(hexString: timeSliderBackgroundColor)\n       }\n     }\n+    if let volumeSliderConfig = dictionary[\"volumeSlider\"] as? [String:AnyObject] {\n+      if let volumeSliderRailTintColorValue = volumeSliderConfig[\"railTintColor\"] as? String {\n+        self.volumeRailTintColor = UIColor(hexString: volumeSliderRailTintColorValue)",
+        "path": "MobilePlayer/Config/ControlbarConfig.swift",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Double check your `self.` usage in all these assignments. You shouldn't use `self.` unless you need to.\n",
+        "created_at": "2015-06-29T08:24:02Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442559",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442559"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442559"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442654",
+        "pull_request_review_id": null,
+        "id": 33442654,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQyNjU0",
+        "diff_hunk": "@@ -0,0 +1,21 @@\n+{\n+  \"images\" : [\n+    {\n+      \"idiom\" : \"universal\",\n+      \"scale\" : \"1x\",\n+      \"filename\" : \"increaseVolumeImage.png\"",
+        "path": "MobilePlayer/Images.xcassets/increaseVolumeImage.imageset/Contents.json",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Try finding a vector image, converting it to a PDF, and then using it.\n",
+        "created_at": "2015-06-29T08:25:16Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442654",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442654"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442654"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442733",
+        "pull_request_review_id": null,
+        "id": 33442733,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQyNzMz",
+        "diff_hunk": "@@ -140,6 +154,25 @@ final class MobilePlayerControlsView: UIView {\n     activityIndicatorView.center = overlayContainerView.center\n     layoutHeaderSubviews()\n     layoutFooterSubviews()\n+    volumeView.frame = CGRectMake(",
+        "path": "MobilePlayer/MobilePlayerControlsView.swift",
+        "position": null,
+        "original_position": 39,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "CGRectMake is Objective-C style, try using a CGRect initializer.\n",
+        "created_at": "2015-06-29T08:26:38Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442733",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442733"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442733"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442767",
+        "pull_request_review_id": null,
+        "id": 33442767,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQyNzY3",
+        "diff_hunk": "@@ -140,6 +154,25 @@ final class MobilePlayerControlsView: UIView {\n     activityIndicatorView.center = overlayContainerView.center\n     layoutHeaderSubviews()\n     layoutFooterSubviews()\n+    volumeView.frame = CGRectMake(\n+      volumeButton.frame.origin.x,\n+      footerView.frame.origin.y - 155,\n+      35,\n+      150.0\n+    )\n+  }\n+\n+  func toggleVolumeView() {\n+    if volumeView.hidden == true {",
+        "path": "MobilePlayer/MobilePlayerControlsView.swift",
+        "position": null,
+        "original_position": 48,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "volumeView.hidden = !volumeView.hidden\n",
+        "created_at": "2015-06-29T08:27:11Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442767",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442767"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442767"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442784",
+        "pull_request_review_id": null,
+        "id": 33442784,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQyNzg0",
+        "diff_hunk": "@@ -140,6 +154,25 @@ final class MobilePlayerControlsView: UIView {\n     activityIndicatorView.center = overlayContainerView.center\n     layoutHeaderSubviews()\n     layoutFooterSubviews()\n+    volumeView.frame = CGRectMake(\n+      volumeButton.frame.origin.x,\n+      footerView.frame.origin.y - 155,\n+      35,\n+      150.0\n+    )\n+  }\n+\n+  func toggleVolumeView() {\n+    if volumeView.hidden == true {\n+      volumeView.hidden = false\n+    } else {\n+      volumeView.hidden = true\n+    }\n+    layoutSubviews()",
+        "path": "MobilePlayer/MobilePlayerControlsView.swift",
+        "position": null,
+        "original_position": 53,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "setNeedsLayoutSubviews()\n\nlayoutSubviews should **never** be called directly.\n",
+        "created_at": "2015-06-29T08:27:29Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442784",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442784"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442784"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442922",
+        "pull_request_review_id": null,
+        "id": 33442922,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQyOTIy",
+        "diff_hunk": "@@ -140,6 +154,25 @@ final class MobilePlayerControlsView: UIView {\n     activityIndicatorView.center = overlayContainerView.center\n     layoutHeaderSubviews()\n     layoutFooterSubviews()\n+    volumeView.frame = CGRectMake(\n+      volumeButton.frame.origin.x,\n+      footerView.frame.origin.y - 155,\n+      35,\n+      150.0\n+    )\n+  }\n+\n+  func toggleVolumeView() {\n+    if volumeView.hidden == true {\n+      volumeView.hidden = false\n+    } else {\n+      volumeView.hidden = true\n+    }\n+    layoutSubviews()\n+  }\n+\n+  func volumeViewHidden(state: Bool) {",
+        "path": "MobilePlayer/MobilePlayerControlsView.swift",
+        "position": null,
+        "original_position": 56,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "volumeView is an internal property. You can remove this method and access volumeView's hidden property directly from the places where you call this method.\n",
+        "created_at": "2015-06-29T08:29:54Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442922",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33442922"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33442922"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443418",
+        "pull_request_review_id": null,
+        "id": 33443418,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQzNDE4",
+        "diff_hunk": "@@ -321,6 +327,10 @@ extension MobilePlayerViewController: MobilePlayerOverlayViewControllerDelegate\n // MARK: - Event Handling\n extension MobilePlayerViewController {\n \n+  func volumeToggle() {",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 24,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let's rename this as `toggleVolumeControl`.\n",
+        "created_at": "2015-06-29T08:36:42Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443418",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443418"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443418"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443483",
+        "pull_request_review_id": null,
+        "id": 33443483,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQzNDgz",
+        "diff_hunk": "@@ -518,6 +531,7 @@ extension MobilePlayerViewController {\n     for (index,overlay) in enumerate(timedOverlays) {\n       if let start = overlay[\"start\"] as? NSTimeInterval,\n         duration = overlay[\"duration\"] as? NSTimeInterval {\n+          if !isnan(self.moviePlayer.currentPlaybackTime) {\n           var videoTime = Int(self.moviePlayer.currentPlaybackTime)",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 56,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This block should be indented.\n",
+        "created_at": "2015-06-29T08:37:34Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443483",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443483"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443483"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443518",
+        "pull_request_review_id": null,
+        "id": 33443518,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQzNTE4",
+        "diff_hunk": "@@ -530,7 +544,7 @@ extension MobilePlayerViewController {\n                 userInfo: vc,\n                 repeats: false\n               )\n-            }\n+            }}",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 64,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "These shouldn't be on the same line.\n",
+        "created_at": "2015-06-29T08:38:00Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443518",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443518"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443518"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443657",
+        "pull_request_review_id": null,
+        "id": 33443657,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQzNjU3",
+        "diff_hunk": "@@ -103,7 +103,7 @@ public class Youtube: NSObject {\n                   ]\n                 }\n               }\n-              if fmtStreamMapString.length > 0 {\n+              if fmtStreamMapString.length() > 0 {",
+        "path": "MobilePlayer/Support/Youtube.swift",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "On line 95, cast fmtStreamMapString as a String, then use `count(fmtStreamMapString) > 0` here.\n\nAlso I see you that just casted everything to `AnyObject`. That is very wrong.\n",
+        "created_at": "2015-06-29T08:40:09Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443657",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443657"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443657"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443769",
+        "pull_request_review_id": null,
+        "id": 33443769,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQzNzY5",
+        "diff_hunk": "@@ -0,0 +1,43 @@\n+//\n+//  SoundControlView.swift\n+//  MobilePlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 25/06/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+import MediaPlayer\n+\n+class VolumeControlView: UIView {\n+  var volumeSlider = MPVolumeView(frame: CGRectZero)\n+  var increaseVolumeImage = UIImageView(frame: CGRectZero)\n+  var reduceVolumeImage = UIImageView(frame: CGRectZero)\n+\n+  override init(frame: CGRect) {\n+    super.init(frame: frame)\n+    self.backgroundColor = UIColor.whiteColor()",
+        "path": "MobilePlayer/VolumeControlView.swift",
+        "position": null,
+        "original_position": 19,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No need to use `self.` here.\n",
+        "created_at": "2015-06-29T08:40:33Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443769",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443769"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443769"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443778",
+        "pull_request_review_id": null,
+        "id": 33443778,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQzNzc4",
+        "diff_hunk": "@@ -0,0 +1,43 @@\n+//\n+//  SoundControlView.swift\n+//  MobilePlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 25/06/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+import MediaPlayer\n+\n+class VolumeControlView: UIView {\n+  var volumeSlider = MPVolumeView(frame: CGRectZero)\n+  var increaseVolumeImage = UIImageView(frame: CGRectZero)\n+  var reduceVolumeImage = UIImageView(frame: CGRectZero)\n+\n+  override init(frame: CGRect) {\n+    super.init(frame: frame)\n+    self.backgroundColor = UIColor.whiteColor()\n+    volumeSlider.frame = CGRectMake(-22.0, 50.0, 110.0, 50.0)\n+    volumeSlider.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))\n+    volumeSlider.showsVolumeSlider = true\n+    volumeSlider.showsRouteButton = false\n+    addSubview(volumeSlider)\n+    increaseVolumeImage = UIImageView(frame: CGRectMake(10.0, 0.0, 20.0, 20.0))\n+    increaseVolumeImage.image = UIImage(named: \"increaseVolumeImage\")\n+    addSubview(increaseVolumeImage)\n+    reduceVolumeImage = UIImageView(frame: CGRectMake(10.0, 130.0, 20.0, 20.0))\n+    reduceVolumeImage.image = UIImage(named: \"reduceVolumeImage\")\n+    addSubview(reduceVolumeImage)\n+  }\n+\n+  required init(coder aDecoder: NSCoder) {\n+      fatalError(\"init(coder:) has not been implemented\")\n+  }\n+\n+  override func layoutSubviews() {\n+    self.layer.cornerRadius = 5",
+        "path": "MobilePlayer/VolumeControlView.swift",
+        "position": null,
+        "original_position": 38,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No need to use `self.` inside this method at all.\n",
+        "created_at": "2015-06-29T08:40:38Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443778",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33443778"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33443778"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33444035",
+        "pull_request_review_id": null,
+        "id": 33444035,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNDQ0MDM1",
+        "diff_hunk": "@@ -0,0 +1,43 @@\n+//\n+//  SoundControlView.swift\n+//  MobilePlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 25/06/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+import MediaPlayer\n+\n+class VolumeControlView: UIView {\n+  var volumeSlider = MPVolumeView(frame: CGRectZero)\n+  var increaseVolumeImage = UIImageView(frame: CGRectZero)\n+  var reduceVolumeImage = UIImageView(frame: CGRectZero)\n+\n+  override init(frame: CGRect) {\n+    super.init(frame: frame)\n+    self.backgroundColor = UIColor.whiteColor()\n+    volumeSlider.frame = CGRectMake(-22.0, 50.0, 110.0, 50.0)\n+    volumeSlider.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))\n+    volumeSlider.showsVolumeSlider = true\n+    volumeSlider.showsRouteButton = false\n+    addSubview(volumeSlider)\n+    increaseVolumeImage = UIImageView(frame: CGRectMake(10.0, 0.0, 20.0, 20.0))\n+    increaseVolumeImage.image = UIImage(named: \"increaseVolumeImage\")\n+    addSubview(increaseVolumeImage)\n+    reduceVolumeImage = UIImageView(frame: CGRectMake(10.0, 130.0, 20.0, 20.0))\n+    reduceVolumeImage.image = UIImage(named: \"reduceVolumeImage\")\n+    addSubview(reduceVolumeImage)\n+  }\n+\n+  required init(coder aDecoder: NSCoder) {\n+      fatalError(\"init(coder:) has not been implemented\")",
+        "path": "MobilePlayer/VolumeControlView.swift",
+        "position": null,
+        "original_position": 34,
+        "commit_id": "bc39618ae260e3a9a5cd07b49d95a9a28fa94d8b",
+        "original_commit_id": "1929bb7f6f039a901dcf3249be7d5034277676c6",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Wrong indentation level here.\n",
+        "created_at": "2015-06-29T08:44:00Z",
+        "updated_at": "2015-06-30T23:01:39Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33444035",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/33444035"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/43#discussion_r33444035"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/34487382",
+        "pull_request_review_id": null,
+        "id": 34487382,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NDg3Mzgy",
+        "diff_hunk": "@@ -0,0 +1,75 @@\n+//\n+//  SocialSharing.swift\n+//  MobilePlayer\n+//\n+//  Created by Toygar D\u00fcndaralp on 7/9/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+import Social\n+\n+public class SocialSharing {\n+\n+  public static\n+    func showSocialViewWithTitle(\n+    msg: String,\n+    image: UIImage?,\n+    url: NSURL?,\n+    viewController: UIViewController) {\n+    let settingsActionSheet: UIAlertController =\n+    UIAlertController(\n+      title: nil,\n+      message: nil,\n+      preferredStyle: UIAlertControllerStyle.ActionSheet)\n+    settingsActionSheet.addAction(UIAlertAction(\n+      title: \"Twitter Share\",\n+      style: UIAlertActionStyle.Default,\n+      handler:{ action in\n+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {\n+          var tweetSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)\n+          tweetSheet.setInitialText(msg)\n+          if let url = url as NSURL? {\n+            tweetSheet.addURL(url)\n+          }\n+          if let image = image as UIImage? {\n+            tweetSheet.addImage(image)\n+          }\n+          viewController.presentViewController(tweetSheet, animated: true, completion: nil)\n+        } else {\n+          let alert = UIAlertView()\n+          alert.title = \"Twitter Share\"\n+          alert.message = \"Error, Check your account settings\"\n+          alert.addButtonWithTitle(\"OK\")\n+          alert.show()\n+        }\n+    }))\n+    settingsActionSheet.addAction(UIAlertAction(\n+      title: \"Facebook Share\",\n+      style:UIAlertActionStyle.Default,\n+      handler:{ action in\n+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook) {\n+          var facebookSheet = SLComposeViewController(forServiceType: SLServiceTypeFacebook)",
+        "path": "MobilePlayer/SocialSharing.swift",
+        "position": null,
+        "original_position": 52,
+        "commit_id": "ed389aa357c29963778b62fa7796906009db9bee",
+        "original_commit_id": "67ecc9f9b35f70ec2a13ee2275d9b302ee32d7ff",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "let\n",
+        "created_at": "2015-07-13T17:22:51Z",
+        "updated_at": "2015-07-13T22:34:52Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/56#discussion_r34487382",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/56",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/34487382"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/56#discussion_r34487382"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/56"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/34653121",
+        "pull_request_review_id": null,
+        "id": 34653121,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NjUzMTIx",
+        "diff_hunk": "@@ -496,9 +498,12 @@ extension MobilePlayerViewController {\n   }\n \n   public final func shareContent() {\n-    if let shareCallback = config.shareCallback {\n-      moviePlayer.pause()\n-      shareCallback(playerVC: self)\n+    if let title = title as String? {",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": 23,
+        "original_position": 23,
+        "commit_id": "ed389aa357c29963778b62fa7796906009db9bee",
+        "original_commit_id": "ed389aa357c29963778b62fa7796906009db9bee",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "title should already be String? if I remember correctly. So you can just do `if let title = title {`\n",
+        "created_at": "2015-07-15T07:43:23Z",
+        "updated_at": "2015-07-15T07:44:03Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/56#discussion_r34653121",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/56",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/34653121"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/56#discussion_r34653121"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/56"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/37295196",
+        "pull_request_review_id": null,
+        "id": 37295196,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3Mjk1MTk2",
+        "diff_hunk": "@@ -9,6 +9,10 @@\n import UIKit\n import MediaPlayer\n \n+public protocol MobilePlayerCustomButtonDelegate : class {\n+  func didPressButton(button: UIButton, identifier: String)",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "dcb103744e42c57c703e5cf369fa558c641149cd",
+        "original_commit_id": "cc9122b9fbad68c838ed4a79d983375df0b5ed9a",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@toygard Let's move this over to MobilePlayerViewControllerDelegate like we discussed, and make this PR the first step towards writing the MobilePlayerViewControllerDelegate.\n",
+        "created_at": "2015-08-18T13:09:14Z",
+        "updated_at": "2015-08-27T03:45:47Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/66#discussion_r37295196",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/66",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/37295196"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/66#discussion_r37295196"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/37905769",
+        "pull_request_review_id": null,
+        "id": 37905769,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3OTA1NzY5",
+        "diff_hunk": "@@ -10,7 +10,7 @@ import Foundation\n import MediaPlayer\n import SnapKit\n \n-final class MobilePlayerControlsView: UIView {\n+class MobilePlayerControlsView: UIView {",
+        "path": "MobilePlayer/MobilePlayerControlsView.swift",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "dcb103744e42c57c703e5cf369fa558c641149cd",
+        "original_commit_id": "a2db2b270edb440fe887835045bc9c300688aee4",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "final class\n",
+        "created_at": "2015-08-25T19:06:57Z",
+        "updated_at": "2015-08-27T03:45:47Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/66#discussion_r37905769",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/66",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/37905769"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/66#discussion_r37905769"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/37905807",
+        "pull_request_review_id": null,
+        "id": 37905807,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3OTA1ODA3",
+        "diff_hunk": "@@ -90,7 +87,7 @@ final class MobilePlayerControlsView: UIView {\n     volumeView.hidden = !volumeView.hidden\n   }\n \n-  required init(coder aDecoder: NSCoder) {\n+  required public init(coder aDecoder: NSCoder) {",
+        "path": "MobilePlayer/MobilePlayerControlsView.swift",
+        "position": null,
+        "original_position": 31,
+        "commit_id": "dcb103744e42c57c703e5cf369fa558c641149cd",
+        "original_commit_id": "a2db2b270edb440fe887835045bc9c300688aee4",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "public should be removed\n",
+        "created_at": "2015-08-25T19:07:07Z",
+        "updated_at": "2015-08-27T03:45:47Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/66#discussion_r37905807",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/66",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/37905807"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/66#discussion_r37905807"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/66"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/37058502",
+        "pull_request_review_id": null,
+        "id": 37058502,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3MDU4NTAy",
+        "diff_hunk": "@@ -542,6 +546,21 @@ extension MobilePlayerViewController {\n   }\n \n   public final func shareContent() {\n+    if let myWebsite = self.shareURL as NSURL? {",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 36,
+        "commit_id": "596a49713a7a4746ee0eceebe7adca67d76a114d",
+        "original_commit_id": "203cfd6683cd6c22d266125134408606ba105b37",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@toygard Just showing an activity view controller inside this function is unacceptable. What happens if the user defines their own sharing functionality using config.shareCallback?\n",
+        "created_at": "2015-08-14T08:37:31Z",
+        "updated_at": "2015-08-27T17:52:31Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/63#discussion_r37058502",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/63",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/37058502"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/63#discussion_r37058502"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/63"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/37905637",
+        "pull_request_review_id": null,
+        "id": 37905637,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3OTA1NjM3",
+        "diff_hunk": "@@ -542,6 +526,20 @@ extension MobilePlayerViewController {\n   }\n \n   public final func shareContent() {\n+    if let items = self.shareItems as [AnyObject]? {\n+      let shareVC = UIActivityViewController(activityItems: items, applicationActivities: nil)\n+      shareVC.excludedActivityTypes =  [\n+        UIActivityTypePostToWeibo,\n+        UIActivityTypeCopyToPasteboard,\n+        UIActivityTypeAssignToContact,\n+        UIActivityTypeSaveToCameraRoll,\n+        UIActivityTypePostToFlickr,\n+        UIActivityTypePostToVimeo,\n+        UIActivityTypePostToTencentWeibo,\n+        UIActivityTypeAirDrop\n+      ]\n+      self.presentViewController(shareVC, animated: true, completion: nil)\n+    }\n     if let shareCallback = config.shareCallback {",
+        "path": "MobilePlayer/MobilePlayerViewController.swift",
+        "position": null,
+        "original_position": 127,
+        "commit_id": "596a49713a7a4746ee0eceebe7adca67d76a114d",
+        "original_commit_id": "212666d8ca3b2a80d15208d51ab8511e6ea7a9dd",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@toygard Let's remove the shareCallback like we talked. Also, it's a good idea to add moviePlayer.pause() as the first line of this method.\n",
+        "created_at": "2015-08-25T19:05:39Z",
+        "updated_at": "2015-08-27T17:52:31Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/63#discussion_r37905637",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/63",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/37905637"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/63#discussion_r37905637"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/63"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/38654564",
+        "pull_request_review_id": null,
+        "id": 38654564,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NjU0NTY0",
+        "diff_hunk": "@@ -0,0 +1,71 @@\n+//\n+//  SkinListViewController.swift\n+//  MobilePlayer\n+//\n+//  Created by Toygar Dundaralp on 9/2/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+\n+class SkinListViewController: UITableViewController {\n+\n+  let arrSkins = [\n+    \"Youtube Style\",\n+    \"Hulu Style\",\n+    \"Netflix Style\",\n+    \"Facebook Style\",\n+    \"Super Minimalist\",\n+    \"Slim\"]\n+  override func viewDidLoad() {\n+    super.viewDidLoad()\n+    self.title = \"Select Your Skin\"\n+  }\n+\n+  override func prefersStatusBarHidden() -> Bool {\n+    return true\n+  }\n+\n+  override func didReceiveMemoryWarning() {",
+        "path": "MobilePlayerExample/SkinListViewController.swift",
+        "position": 29,
+        "original_position": 29,
+        "commit_id": "b664bb6a935e66fee74af3c0a4b3f89f6aeb3b87",
+        "original_commit_id": "b664bb6a935e66fee74af3c0a4b3f89f6aeb3b87",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "There is no need to override a method if you're just calling its super.\n",
+        "created_at": "2015-09-03T14:53:48Z",
+        "updated_at": "2015-09-03T14:53:48Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/68#discussion_r38654564",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/68",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/38654564"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/68#discussion_r38654564"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/38654888",
+        "pull_request_review_id": null,
+        "id": 38654888,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NjU0ODg4",
+        "diff_hunk": "@@ -0,0 +1,71 @@\n+//\n+//  SkinListViewController.swift\n+//  MobilePlayer\n+//\n+//  Created by Toygar Dundaralp on 9/2/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+\n+class SkinListViewController: UITableViewController {\n+\n+  let arrSkins = [\n+    \"Youtube Style\",\n+    \"Hulu Style\",\n+    \"Netflix Style\",\n+    \"Facebook Style\",\n+    \"Super Minimalist\",\n+    \"Slim\"]\n+  override func viewDidLoad() {\n+    super.viewDidLoad()\n+    self.title = \"Select Your Skin\"\n+  }\n+\n+  override func prefersStatusBarHidden() -> Bool {\n+    return true\n+  }\n+\n+  override func didReceiveMemoryWarning() {\n+    super.didReceiveMemoryWarning()\n+  }\n+\n+  // MARK: - Table view data source\n+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {",
+        "path": "MobilePlayerExample/SkinListViewController.swift",
+        "position": 34,
+        "original_position": 34,
+        "commit_id": "b664bb6a935e66fee74af3c0a4b3f89f6aeb3b87",
+        "original_commit_id": "b664bb6a935e66fee74af3c0a4b3f89f6aeb3b87",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No need to override this method either as its super already returns 1, you can check UIKit Framework docs for more information.\n",
+        "created_at": "2015-09-03T14:56:15Z",
+        "updated_at": "2015-09-03T14:56:24Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/68#discussion_r38654888",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/68",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/38654888"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/68#discussion_r38654888"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/38698580",
+        "pull_request_review_id": null,
+        "id": 38698580,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4Njk4NTgw",
+        "diff_hunk": "@@ -0,0 +1,71 @@\n+//\n+//  SkinListViewController.swift\n+//  MobilePlayer\n+//\n+//  Created by Toygar Dundaralp on 9/2/15.\n+//  Copyright (c) 2015 MovieLaLa. All rights reserved.\n+//\n+\n+import UIKit\n+\n+class SkinListViewController: UITableViewController {\n+\n+  let arrSkins = [\n+    \"Youtube Style\",\n+    \"Hulu Style\",\n+    \"Netflix Style\",\n+    \"Facebook Style\",\n+    \"Super Minimalist\",\n+    \"Slim\"]\n+  override func viewDidLoad() {\n+    super.viewDidLoad()\n+    self.title = \"Select Your Skin\"\n+  }\n+\n+  override func prefersStatusBarHidden() -> Bool {\n+    return true\n+  }\n+\n+  override func didReceiveMemoryWarning() {",
+        "path": "MobilePlayerExample/SkinListViewController.swift",
+        "position": 29,
+        "original_position": 29,
+        "commit_id": "b664bb6a935e66fee74af3c0a4b3f89f6aeb3b87",
+        "original_commit_id": "b664bb6a935e66fee74af3c0a4b3f89f6aeb3b87",
+        "user": {
+            "login": "toygar-zzz",
+            "id": 604489,
+            "node_id": "MDQ6VXNlcjYwNDQ4OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/604489?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/toygar-zzz",
+            "html_url": "https://github.com/toygar-zzz",
+            "followers_url": "https://api.github.com/users/toygar-zzz/followers",
+            "following_url": "https://api.github.com/users/toygar-zzz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/toygar-zzz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/toygar-zzz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/toygar-zzz/subscriptions",
+            "organizations_url": "https://api.github.com/users/toygar-zzz/orgs",
+            "repos_url": "https://api.github.com/users/toygar-zzz/repos",
+            "events_url": "https://api.github.com/users/toygar-zzz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/toygar-zzz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "![screen shot 2015-09-03 at 2 24 30 pm](https://cloud.githubusercontent.com/assets/604489/9671407/8fc2a726-5247-11e5-8647-e9c2cdbc8589.png)\n",
+        "created_at": "2015-09-03T21:25:05Z",
+        "updated_at": "2015-09-03T21:25:05Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/68#discussion_r38698580",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/68",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/38698580"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/68#discussion_r38698580"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/73500824",
+        "pull_request_review_id": null,
+        "id": 73500824,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDczNTAwODI0",
+        "diff_hunk": "@@ -661,16 +661,23 @@\n \t\t\t\t\t};\n \t\t\t\t\t5F56CB801C040E8D00EF50C4 = {\n \t\t\t\t\t\tCreatedOnToolsVersion = 7.1.1;\n+\t\t\t\t\t\tDevelopmentTeam = 9E43V6CC9L;\n+\t\t\t\t\t\tDevelopmentTeamName = \"Guillaume Bellut\";",
+        "path": "MobilePlayer.xcodeproj/project.pbxproj",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "17af40a59f5b9482fe3d8646c0f25194fdf008c9",
+        "original_commit_id": "a5c2ce0bd56700be229318ad28f28dafae1b5272",
+        "user": {
+            "login": "isair",
+            "id": 988213,
+            "node_id": "MDQ6VXNlcjk4ODIxMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/988213?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/isair",
+            "html_url": "https://github.com/isair",
+            "followers_url": "https://api.github.com/users/isair/followers",
+            "following_url": "https://api.github.com/users/isair/following{/other_user}",
+            "gists_url": "https://api.github.com/users/isair/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/isair/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/isair/subscriptions",
+            "organizations_url": "https://api.github.com/users/isair/orgs",
+            "repos_url": "https://api.github.com/users/isair/repos",
+            "events_url": "https://api.github.com/users/isair/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/isair/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`DevelopmentTeam` and `DevelopmentTeamName` keys should be removed.\n",
+        "created_at": "2016-08-04T10:52:38Z",
+        "updated_at": "2016-08-04T11:24:53Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/145#discussion_r73500824",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/145",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/73500824"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/145#discussion_r73500824"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/145"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/73504759",
+        "pull_request_review_id": null,
+        "id": 73504759,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDczNTA0NzU5",
+        "diff_hunk": "@@ -661,16 +661,23 @@\n \t\t\t\t\t};\n \t\t\t\t\t5F56CB801C040E8D00EF50C4 = {\n \t\t\t\t\t\tCreatedOnToolsVersion = 7.1.1;\n+\t\t\t\t\t\tDevelopmentTeam = 9E43V6CC9L;\n+\t\t\t\t\t\tDevelopmentTeamName = \"Guillaume Bellut\";",
+        "path": "MobilePlayer.xcodeproj/project.pbxproj",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "17af40a59f5b9482fe3d8646c0f25194fdf008c9",
+        "original_commit_id": "a5c2ce0bd56700be229318ad28f28dafae1b5272",
+        "user": {
+            "login": "Tulleb",
+            "id": 5658984,
+            "node_id": "MDQ6VXNlcjU2NTg5ODQ=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/5658984?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Tulleb",
+            "html_url": "https://github.com/Tulleb",
+            "followers_url": "https://api.github.com/users/Tulleb/followers",
+            "following_url": "https://api.github.com/users/Tulleb/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Tulleb/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Tulleb/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Tulleb/subscriptions",
+            "organizations_url": "https://api.github.com/users/Tulleb/orgs",
+            "repos_url": "https://api.github.com/users/Tulleb/repos",
+            "events_url": "https://api.github.com/users/Tulleb/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Tulleb/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "My bad, I thought I did it already.\n",
+        "created_at": "2016-08-04T11:23:20Z",
+        "updated_at": "2016-08-04T11:24:53Z",
+        "html_url": "https://github.com/mobileplayer/mobileplayer-ios/pull/145#discussion_r73504759",
+        "pull_request_url": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/145",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/comments/73504759"
+            },
+            "html": {
+                "href": "https://github.com/mobileplayer/mobileplayer-ios/pull/145#discussion_r73504759"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mobileplayer/mobileplayer-ios/pulls/145"
+            }
+        }
+    }
+]

@@ -1,0 +1,786 @@
+[
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/8867695",
+        "pull_request_review_id": null,
+        "id": 8867695,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg4Njc2OTU=",
+        "diff_hunk": "@@ -195,6 +185,26 @@ def transform(ns, obj, schema=nil)\n       row\n     end\n \n+    def sanitize(value)\n+      # Kludgily delete binary blobs from _extra_props -- they may",
+        "path": "lib/mosql/schema.rb",
+        "position": null,
+        "original_position": 24,
+        "commit_id": "5e8b2c71c100b1b87e487ffdc2384b7545c34143",
+        "original_commit_id": "2ac46f20f34d458fce6d89abf3918e8f57c68c87",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Update this comment?\n",
+        "created_at": "2014-01-14T17:29:32Z",
+        "updated_at": "2014-01-14T17:30:33Z",
+        "html_url": "https://github.com/stripe/mosql/pull/36#discussion_r8867695",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/36",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/8867695"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/36#discussion_r8867695"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/36"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/16874845",
+        "pull_request_review_id": null,
+        "id": 16874845,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2ODc0ODQ1",
+        "diff_hunk": "@@ -15,25 +26,61 @@ def initialize(backends, type, table, opts)\n       @service = opts[:service] || \"mosql\"\n     end\n \n-    def read_timestamp\n-      row = @table.where(:service => @service).select([:timestamp]).first\n-      if row\n-        BSON::Timestamp.new(row[:timestamp], 0)\n+    def read_state\n+      row = @table.where(:service => @service).first\n+      return nil unless row\n+      # try to do seamless upgrades - latest operation before or at timestamp if no\n+      # placeholder exists\n+      puts(\"Read_state: #{row} #{row.class}\")\n+      result = {}\n+      result['time'] = Time.at(row.fetch(:timestamp))\n+      if row[:placeholder]\n+        result['placeholder'] = from_blob(row[:placeholder])\n+        puts(\"Existing placeholder: #{result}. #{result['placeholder'].to_a}\")\n       else\n-        BSON::Timestamp.new(0, 0)\n+        result['placeholder'] = most_recent_operation(result['time'])\n+        puts(\"trying to find most recent placeholder! #{result}\")\n+        save_state(result)\n       end\n+      result\n     end\n \n-    def write_timestamp(ts)\n+    def write_state(state)\n+      data = {\n+        :service => @service,\n+        :timestamp => state['time'].to_i,\n+        :placeholder => to_blob(state['placeholder'])\n+      }\n+\n       unless @did_insert\n         begin\n-          @table.insert({:service => @service, :timestamp => ts.seconds})\n+          @table.insert(data)\n         rescue Sequel::DatabaseError => e\n           raise unless MoSQL::SQLAdapter.duplicate_key_error?(e)\n         end\n         @did_insert = true\n       end\n-      @table.where(:service => @service).update(:timestamp => ts.seconds)\n+\n+      @table.where(:service => @service).update(data)\n+    end\n+\n+    private\n+    def to_blob(placeholder)\n+      case database_type\n+      when :mongo\n+        return Sequel::SQL::Blob.new(placeholder.seconds.to_s)",
+        "path": "lib/mosql/tailer.rb",
+        "position": null,
+        "original_position": 81,
+        "commit_id": "3c287e79ad8d31b240ecae91e8235d4f2d5a3de2",
+        "original_commit_id": "f5284cfda5ca4a3633d0f0235e358862e4c8a97f",
+        "user": {
+            "login": "ebroder",
+            "id": 28167,
+            "node_id": "MDQ6VXNlcjI4MTY3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/28167?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ebroder",
+            "html_url": "https://github.com/ebroder",
+            "followers_url": "https://api.github.com/users/ebroder/followers",
+            "following_url": "https://api.github.com/users/ebroder/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ebroder/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ebroder/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ebroder/subscriptions",
+            "organizations_url": "https://api.github.com/users/ebroder/orgs",
+            "repos_url": "https://api.github.com/users/ebroder/repos",
+            "events_url": "https://api.github.com/users/ebroder/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ebroder/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Now that we can actually store arbitrary data, does it make sense to try and capture the increment as well? Given idempotency it's not really needed for correctness, but would be slightly more accurate.\n",
+        "created_at": "2014-08-28T23:35:51Z",
+        "updated_at": "2014-09-04T21:01:04Z",
+        "html_url": "https://github.com/stripe/mosql/pull/63#discussion_r16874845",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/63",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/16874845"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/63#discussion_r16874845"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/63"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026153",
+        "pull_request_review_id": null,
+        "id": 17026153,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MDI2MTUz",
+        "diff_hunk": "@@ -90,14 +90,17 @@ def initial_import\n       @schema.create_schema(@sql.db, !options[:no_drop_tables])\n \n       unless options[:skip_tail]\n-        start_ts = @mongo['local']['oplog.rs'].find_one({}, {:sort => [['$natural', -1]]})['ts']\n+        start_state = {",
+        "path": "lib/mosql/streamer.rb",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "3c287e79ad8d31b240ecae91e8235d4f2d5a3de2",
+        "original_commit_id": "6da8e0aae97369451b2db8fee0028f1b6443df36",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I wonder if mongoriver should just have a `most_recent_state` or something that constructs this entire hash. This is probably a common pattern.\n",
+        "created_at": "2014-09-03T00:50:23Z",
+        "updated_at": "2014-09-04T21:01:04Z",
+        "html_url": "https://github.com/stripe/mosql/pull/63#discussion_r17026153",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/63",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026153"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/63#discussion_r17026153"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/63"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026171",
+        "pull_request_review_id": null,
+        "id": 17026171,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MDI2MTcx",
+        "diff_hunk": "@@ -164,9 +166,11 @@ def import_collection(ns, collection, filter)\n     end\n \n     def optail\n-      tailer.tail_from(options[:tail_from] ?\n-                       BSON::Timestamp.new(options[:tail_from].to_i, 0) :\n-                       nil)\n+      tail_from = options[:tail_from]\n+      if tail_from.is_a? Time\n+        tail_from = most_recent_operation(tail_from)",
+        "path": "lib/mosql/streamer.rb",
+        "position": null,
+        "original_position": 50,
+        "commit_id": "3c287e79ad8d31b240ecae91e8235d4f2d5a3de2",
+        "original_commit_id": "6da8e0aae97369451b2db8fee0028f1b6443df36",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Should this be `tailer.most_recent_operation`?\n",
+        "created_at": "2014-09-03T00:50:57Z",
+        "updated_at": "2014-09-04T21:01:04Z",
+        "html_url": "https://github.com/stripe/mosql/pull/63#discussion_r17026171",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/63",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026171"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/63#discussion_r17026171"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/63"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026252",
+        "pull_request_review_id": null,
+        "id": 17026252,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MDI2MjUy",
+        "diff_hunk": "@@ -1,11 +1,25 @@\n module MoSQL\n   class Tailer < Mongoriver::AbstractPersistentTailer\n     def self.create_table(db, tablename)\n-      db.create_table?(tablename) do\n-        column :service,   'TEXT'\n-        column :timestamp, 'INTEGER'\n-        primary_key [:service]\n+      if !db.table_exists?(tablename)\n+        db.create_table?(tablename) do\n+          column :service,     'TEXT'\n+          column :timestamp,   'INTEGER'\n+          column :placeholder, 'BYTEA'",
+        "path": "lib/mosql/tailer.rb",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "3c287e79ad8d31b240ecae91e8235d4f2d5a3de2",
+        "original_commit_id": "6da8e0aae97369451b2db8fee0028f1b6443df36",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is a mongoriver issue, but I really don't like the \"placeholder\" name. A placeholder is (in my mind) a dummy value that will be replaced a real value later, which is not at all what we're using it as here, as far as I can tell. Can we call it a \"position\" or something instead?\n",
+        "created_at": "2014-09-03T00:53:46Z",
+        "updated_at": "2014-09-04T21:01:04Z",
+        "html_url": "https://github.com/stripe/mosql/pull/63#discussion_r17026252",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/63",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026252"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/63#discussion_r17026252"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/63"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026264",
+        "pull_request_review_id": null,
+        "id": 17026264,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MDI2MjY0",
+        "diff_hunk": "@@ -1,11 +1,25 @@\n module MoSQL\n   class Tailer < Mongoriver::AbstractPersistentTailer\n     def self.create_table(db, tablename)\n-      db.create_table?(tablename) do\n-        column :service,   'TEXT'\n-        column :timestamp, 'INTEGER'\n-        primary_key [:service]\n+      if !db.table_exists?(tablename)\n+        db.create_table?(tablename) do",
+        "path": "lib/mosql/tailer.rb",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "3c287e79ad8d31b240ecae91e8235d4f2d5a3de2",
+        "original_commit_id": "6da8e0aae97369451b2db8fee0028f1b6443df36",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Drop the `?` -- if we're already inside a `table_exists?` there's no need to doubly-qualify it.\n",
+        "created_at": "2014-09-03T00:54:13Z",
+        "updated_at": "2014-09-04T21:01:04Z",
+        "html_url": "https://github.com/stripe/mosql/pull/63#discussion_r17026264",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/63",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026264"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/63#discussion_r17026264"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/63"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026321",
+        "pull_request_review_id": null,
+        "id": 17026321,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MDI2MzIx",
+        "diff_hunk": "@@ -142,7 +142,8 @@ def table3; @sequel[:sqltable3]; end\n       after = @sequel.select(Sequel.function(:NOW)).first[:now]\n       rows = @sequel[:special].select.sort_by { |r| r[:_id] }\n       assert_instance_of(Time, rows[0][:mosql_updated])\n-      assert(rows[0][:mosql_updated] > before && rows[0][:mosql_updated] < after)\n+      assert(rows[0][:mosql_updated] > before && rows[0][:mosql_updated] < after,",
+        "path": "test/functional/schema.rb",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "3c287e79ad8d31b240ecae91e8235d4f2d5a3de2",
+        "original_commit_id": "6da8e0aae97369451b2db8fee0028f1b6443df36",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I replaced this assert with better asserts on master, so you can probably just drop this hunk.\n",
+        "created_at": "2014-09-03T00:56:07Z",
+        "updated_at": "2014-09-04T21:01:04Z",
+        "html_url": "https://github.com/stripe/mosql/pull/63#discussion_r17026321",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/63",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026321"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/63#discussion_r17026321"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/63"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026908",
+        "pull_request_review_id": null,
+        "id": 17026908,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MDI2OTA4",
+        "diff_hunk": "@@ -1,11 +1,25 @@\n module MoSQL\n   class Tailer < Mongoriver::AbstractPersistentTailer\n     def self.create_table(db, tablename)\n-      db.create_table?(tablename) do\n-        column :service,   'TEXT'\n-        column :timestamp, 'INTEGER'\n-        primary_key [:service]\n+      if !db.table_exists?(tablename)\n+        db.create_table?(tablename) do\n+          column :service,     'TEXT'\n+          column :timestamp,   'INTEGER'\n+          column :placeholder, 'BYTEA'",
+        "path": "lib/mosql/tailer.rb",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "3c287e79ad8d31b240ecae91e8235d4f2d5a3de2",
+        "original_commit_id": "6da8e0aae97369451b2db8fee0028f1b6443df36",
+        "user": {
+            "login": "macobo",
+            "id": 148820,
+            "node_id": "MDQ6VXNlcjE0ODgyMA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/148820?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/macobo",
+            "html_url": "https://github.com/macobo",
+            "followers_url": "https://api.github.com/users/macobo/followers",
+            "following_url": "https://api.github.com/users/macobo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/macobo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/macobo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/macobo/subscriptions",
+            "organizations_url": "https://api.github.com/users/macobo/orgs",
+            "repos_url": "https://api.github.com/users/macobo/repos",
+            "events_url": "https://api.github.com/users/macobo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/macobo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Since we haven't shipped mongoriver yet, there's time to replace placeholder with anything. I don't have any strong feelings about this - if you feel that `position` is better and we should update mongoriver, I'll go ahead and do that.\n",
+        "created_at": "2014-09-03T01:10:01Z",
+        "updated_at": "2014-09-04T21:01:04Z",
+        "html_url": "https://github.com/stripe/mosql/pull/63#discussion_r17026908",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/63",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/17026908"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/63#discussion_r17026908"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/63"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/17063563",
+        "pull_request_review_id": null,
+        "id": 17063563,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MDYzNTYz",
+        "diff_hunk": "@@ -1,11 +1,25 @@\n module MoSQL\n   class Tailer < Mongoriver::AbstractPersistentTailer\n     def self.create_table(db, tablename)\n-      db.create_table?(tablename) do\n-        column :service,   'TEXT'\n-        column :timestamp, 'INTEGER'\n-        primary_key [:service]\n+      if !db.table_exists?(tablename)\n+        db.create_table?(tablename) do\n+          column :service,     'TEXT'\n+          column :timestamp,   'INTEGER'\n+          column :placeholder, 'BYTEA'",
+        "path": "lib/mosql/tailer.rb",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "3c287e79ad8d31b240ecae91e8235d4f2d5a3de2",
+        "original_commit_id": "6da8e0aae97369451b2db8fee0028f1b6443df36",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think I'd feel much better about `position`. @ebroder do you have an opinion?\n",
+        "created_at": "2014-09-03T17:05:14Z",
+        "updated_at": "2014-09-04T21:01:04Z",
+        "html_url": "https://github.com/stripe/mosql/pull/63#discussion_r17063563",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/63",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/17063563"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/63#discussion_r17063563"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/63"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/17063706",
+        "pull_request_review_id": null,
+        "id": 17063706,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MDYzNzA2",
+        "diff_hunk": "@@ -1,11 +1,25 @@\n module MoSQL\n   class Tailer < Mongoriver::AbstractPersistentTailer\n     def self.create_table(db, tablename)\n-      db.create_table?(tablename) do\n-        column :service,   'TEXT'\n-        column :timestamp, 'INTEGER'\n-        primary_key [:service]\n+      if !db.table_exists?(tablename)\n+        db.create_table?(tablename) do\n+          column :service,     'TEXT'\n+          column :timestamp,   'INTEGER'\n+          column :placeholder, 'BYTEA'",
+        "path": "lib/mosql/tailer.rb",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "3c287e79ad8d31b240ecae91e8235d4f2d5a3de2",
+        "original_commit_id": "6da8e0aae97369451b2db8fee0028f1b6443df36",
+        "user": {
+            "login": "ebroder",
+            "id": 28167,
+            "node_id": "MDQ6VXNlcjI4MTY3",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/28167?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ebroder",
+            "html_url": "https://github.com/ebroder",
+            "followers_url": "https://api.github.com/users/ebroder/followers",
+            "following_url": "https://api.github.com/users/ebroder/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ebroder/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ebroder/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ebroder/subscriptions",
+            "organizations_url": "https://api.github.com/users/ebroder/orgs",
+            "repos_url": "https://api.github.com/users/ebroder/repos",
+            "events_url": "https://api.github.com/users/ebroder/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ebroder/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm fine with that\n",
+        "created_at": "2014-09-03T17:07:51Z",
+        "updated_at": "2014-09-04T21:01:04Z",
+        "html_url": "https://github.com/stripe/mosql/pull/63#discussion_r17063706",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/63",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/17063706"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/63#discussion_r17063706"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/63"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/17920657",
+        "pull_request_review_id": null,
+        "id": 17920657,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3OTIwNjU3",
+        "diff_hunk": "@@ -170,14 +174,31 @@ def optail\n       if tail_from.is_a? Time\n         tail_from = tailer.most_recent_position(tail_from)\n       end\n+\n+      last_batch_insert = Time.now\n       tailer.tail(:from => tail_from)\n       until @done\n         tailer.stream(1000) do |op|",
+        "path": "lib/mosql/streamer.rb",
+        "position": 46,
+        "original_position": 46,
+        "commit_id": "e7be442eec611fab78260ccf55b0a6ca6ec4e458",
+        "original_commit_id": "e7be442eec611fab78260ccf55b0a6ca6ec4e458",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I haven't done the digging to confirm this, but I'm pretty sure the contract on `Tailer` by default is that once your block returns, the op is considered to have been handled, and the timestamp may be persisted to postgres. However, with batched inserts, we haven't actually processed the op until we've flushed the inserts, so this could result in data loss if we save a timestamp before flushing the inserts.\n\nmongoriver does have a `batch` mode, which allows you to explicitly mark batches and tell mongoriver when you're done with a batch. Unfortunately I've forgotten the details, so you'll probably have to source-dive :(\n",
+        "created_at": "2014-09-23T16:40:08Z",
+        "updated_at": "2014-09-23T16:40:08Z",
+        "html_url": "https://github.com/stripe/mosql/pull/68#discussion_r17920657",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/68",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/17920657"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/68#discussion_r17920657"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/17921821",
+        "pull_request_review_id": null,
+        "id": 17921821,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3OTIxODIx",
+        "diff_hunk": "@@ -170,14 +174,31 @@ def optail\n       if tail_from.is_a? Time\n         tail_from = tailer.most_recent_position(tail_from)\n       end\n+\n+      last_batch_insert = Time.now\n       tailer.tail(:from => tail_from)\n       until @done\n         tailer.stream(1000) do |op|",
+        "path": "lib/mosql/streamer.rb",
+        "position": 46,
+        "original_position": 46,
+        "commit_id": "e7be442eec611fab78260ccf55b0a6ca6ec4e458",
+        "original_commit_id": "e7be442eec611fab78260ccf55b0a6ca6ec4e458",
+        "user": {
+            "login": "macobo",
+            "id": 148820,
+            "node_id": "MDQ6VXNlcjE0ODgyMA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/148820?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/macobo",
+            "html_url": "https://github.com/macobo",
+            "followers_url": "https://api.github.com/users/macobo/followers",
+            "following_url": "https://api.github.com/users/macobo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/macobo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/macobo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/macobo/subscriptions",
+            "organizations_url": "https://api.github.com/users/macobo/orgs",
+            "repos_url": "https://api.github.com/users/macobo/repos",
+            "events_url": "https://api.github.com/users/macobo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/macobo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Good point! \nMy original assumption was that if the process is told to stop, it would flush due to the signal handler. However in hindsight you're right - if something catastrophic happens the data would not get flushed resulting in data loss.\n",
+        "created_at": "2014-09-23T16:59:20Z",
+        "updated_at": "2014-09-23T16:59:20Z",
+        "html_url": "https://github.com/stripe/mosql/pull/68#discussion_r17921821",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/68",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/17921821"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/68#discussion_r17921821"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/17922236",
+        "pull_request_review_id": null,
+        "id": 17922236,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3OTIyMjM2",
+        "diff_hunk": "@@ -170,14 +174,31 @@ def optail\n       if tail_from.is_a? Time\n         tail_from = tailer.most_recent_position(tail_from)\n       end\n+\n+      last_batch_insert = Time.now\n       tailer.tail(:from => tail_from)\n       until @done\n         tailer.stream(1000) do |op|",
+        "path": "lib/mosql/streamer.rb",
+        "position": 46,
+        "original_position": 46,
+        "commit_id": "e7be442eec611fab78260ccf55b0a6ca6ec4e458",
+        "original_commit_id": "e7be442eec611fab78260ccf55b0a6ca6ec4e458",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yeah, we can't assume we'll get to shutdown gracefully -- we need to handle the case where the machine dies, the program gets killed via `SIGKILL`, whatever.\n",
+        "created_at": "2014-09-23T17:06:47Z",
+        "updated_at": "2014-09-23T17:06:47Z",
+        "html_url": "https://github.com/stripe/mosql/pull/68#discussion_r17922236",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/68",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/17922236"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/68#discussion_r17922236"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/68"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/19772540",
+        "pull_request_review_id": null,
+        "id": 19772540,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzcyNTQw",
+        "diff_hunk": "@@ -362,6 +382,31 @@ def check(orig, path, expect, result)\n       assert_equal(['a', Sequel.function(:now)], r)\n     end\n \n+    it 'translates $exists' do\n+      r = @othermap.transform('db.existence', { '_id' => 'a' })\n+      assert_equal(['a', false, false], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => nil })\n+      assert_equal(['a', true, false], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => {} })\n+      assert_equal(['a', true, false], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => {'bar' => nil} })\n+      assert_equal(['a', true, true], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => {'bar' => 42} })\n+      assert_equal(['a', true, true], r)\n+    end\n+\n+    # $exists has a major caveat: you have to list any '$exists foo' column",
+        "path": "test/unit/lib/mosql/schema.rb",
+        "position": null,
+        "original_position": 44,
+        "commit_id": "5fb534f36309d6a1ff542ce2433e943422548b71",
+        "original_commit_id": "06f4590d4f31bdbf4bd11688c4acb390dc3eaf0e",
+        "user": {
+            "login": "nelhage",
+            "id": 16725,
+            "node_id": "MDQ6VXNlcjE2NzI1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16725?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nelhage",
+            "html_url": "https://github.com/nelhage",
+            "followers_url": "https://api.github.com/users/nelhage/followers",
+            "following_url": "https://api.github.com/users/nelhage/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nelhage/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nelhage/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nelhage/subscriptions",
+            "organizations_url": "https://api.github.com/users/nelhage/orgs",
+            "repos_url": "https://api.github.com/users/nelhage/repos",
+            "events_url": "https://api.github.com/users/nelhage/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nelhage/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is this still true, or did your cloning shenanigans fix this?\n",
+        "created_at": "2014-11-03T22:36:43Z",
+        "updated_at": "2014-11-03T22:42:08Z",
+        "html_url": "https://github.com/stripe/mosql/pull/75#discussion_r19772540",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/75",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/19772540"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/75#discussion_r19772540"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/75"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/19772870",
+        "pull_request_review_id": null,
+        "id": 19772870,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzcyODcw",
+        "diff_hunk": "@@ -362,6 +382,31 @@ def check(orig, path, expect, result)\n       assert_equal(['a', Sequel.function(:now)], r)\n     end\n \n+    it 'translates $exists' do\n+      r = @othermap.transform('db.existence', { '_id' => 'a' })\n+      assert_equal(['a', false, false], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => nil })\n+      assert_equal(['a', true, false], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => {} })\n+      assert_equal(['a', true, false], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => {'bar' => nil} })\n+      assert_equal(['a', true, true], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => {'bar' => 42} })\n+      assert_equal(['a', true, true], r)\n+    end\n+\n+    # $exists has a major caveat: you have to list any '$exists foo' column",
+        "path": "test/unit/lib/mosql/schema.rb",
+        "position": null,
+        "original_position": 44,
+        "commit_id": "5fb534f36309d6a1ff542ce2433e943422548b71",
+        "original_commit_id": "06f4590d4f31bdbf4bd11688c4acb390dc3eaf0e",
+        "user": {
+            "login": "glasser",
+            "id": 16724,
+            "node_id": "MDQ6VXNlcjE2NzI0",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16724?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/glasser",
+            "html_url": "https://github.com/glasser",
+            "followers_url": "https://api.github.com/users/glasser/followers",
+            "following_url": "https://api.github.com/users/glasser/following{/other_user}",
+            "gists_url": "https://api.github.com/users/glasser/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/glasser/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/glasser/subscriptions",
+            "organizations_url": "https://api.github.com/users/glasser/orgs",
+            "repos_url": "https://api.github.com/users/glasser/repos",
+            "events_url": "https://api.github.com/users/glasser/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/glasser/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Whoops, forgot to remove the comment when I changed the test to test the lack of a bug rather than the existence of a workaround.\n",
+        "created_at": "2014-11-03T22:42:30Z",
+        "updated_at": "2014-11-03T22:42:30Z",
+        "html_url": "https://github.com/stripe/mosql/pull/75#discussion_r19772870",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/75",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/19772870"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/75#discussion_r19772870"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/75"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stripe/mosql/pulls/comments/19772880",
+        "pull_request_review_id": null,
+        "id": 19772880,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NzcyODgw",
+        "diff_hunk": "@@ -362,6 +382,31 @@ def check(orig, path, expect, result)\n       assert_equal(['a', Sequel.function(:now)], r)\n     end\n \n+    it 'translates $exists' do\n+      r = @othermap.transform('db.existence', { '_id' => 'a' })\n+      assert_equal(['a', false, false], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => nil })\n+      assert_equal(['a', true, false], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => {} })\n+      assert_equal(['a', true, false], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => {'bar' => nil} })\n+      assert_equal(['a', true, true], r)\n+      r = @othermap.transform('db.existence', { '_id' => 'a', 'foo' => {'bar' => 42} })\n+      assert_equal(['a', true, true], r)\n+    end\n+\n+    # $exists has a major caveat: you have to list any '$exists foo' column",
+        "path": "test/unit/lib/mosql/schema.rb",
+        "position": null,
+        "original_position": 44,
+        "commit_id": "5fb534f36309d6a1ff542ce2433e943422548b71",
+        "original_commit_id": "06f4590d4f31bdbf4bd11688c4acb390dc3eaf0e",
+        "user": {
+            "login": "glasser",
+            "id": 16724,
+            "node_id": "MDQ6VXNlcjE2NzI0",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/16724?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/glasser",
+            "html_url": "https://github.com/glasser",
+            "followers_url": "https://api.github.com/users/glasser/followers",
+            "following_url": "https://api.github.com/users/glasser/following{/other_user}",
+            "gists_url": "https://api.github.com/users/glasser/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/glasser/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/glasser/subscriptions",
+            "organizations_url": "https://api.github.com/users/glasser/orgs",
+            "repos_url": "https://api.github.com/users/glasser/repos",
+            "events_url": "https://api.github.com/users/glasser/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/glasser/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "(pushed fix)\n",
+        "created_at": "2014-11-03T22:42:39Z",
+        "updated_at": "2014-11-03T22:42:39Z",
+        "html_url": "https://github.com/stripe/mosql/pull/75#discussion_r19772880",
+        "pull_request_url": "https://api.github.com/repos/stripe/mosql/pulls/75",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/comments/19772880"
+            },
+            "html": {
+                "href": "https://github.com/stripe/mosql/pull/75#discussion_r19772880"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stripe/mosql/pulls/75"
+            }
+        }
+    }
+]

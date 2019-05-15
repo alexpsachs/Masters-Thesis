@@ -1,0 +1,2109 @@
+[
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2171218",
+        "pull_request_review_id": null,
+        "id": 2171218,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNzEyMTg=",
+        "diff_hunk": "@@ -0,0 +1,12 @@\n+language: node_js\n+node_js:\n+  - 0.8\n+before_script:\n+  - \"export DISPLAY=:99.0\" \n+  - \"sh -e /etc/init.d/xvfb start\"\n+  - npm install connect\n+  - sleep 5\n+  - sudo node test/node-server.js ../../ 80 &\n+  - sleep 5\n+script: \n+  - phantomjs test/vendor/run-qunit.js \"http://localhost:80/test/index.html\"",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "0ed96a211ebe0b270d5598884f173481ac2e35f0",
+        "original_commit_id": "49b5cbb58cd311693842dd8242edd65a5294169c",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No need for `before_script` and `script`. Just add `connect` as devDep to package.json and the test execution to `scripts.test`.\n",
+        "created_at": "2012-11-19T19:08:31Z",
+        "updated_at": "2012-11-20T23:19:46Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2171218",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/40",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2171218"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2171218"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/40"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2171262",
+        "pull_request_review_id": null,
+        "id": 2171262,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNzEyNjI=",
+        "diff_hunk": "@@ -78,42 +79,39 @@\n \t\t}\n \t};\n \n-\tvar wrapStoreData = function( data, expiration ) {\n+\tvar wrapStoreData = function( obj, data) {",
+        "path": "lib/basket.js",
+        "position": null,
+        "original_position": 28,
+        "commit_id": "0ed96a211ebe0b270d5598884f173481ac2e35f0",
+        "original_commit_id": "49b5cbb58cd311693842dd8242edd65a5294169c",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "space\n",
+        "created_at": "2012-11-19T19:12:23Z",
+        "updated_at": "2012-11-20T23:19:46Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2171262",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/40",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2171262"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2171262"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/40"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2171281",
+        "pull_request_review_id": null,
+        "id": 2171281,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNzEyODE=",
+        "diff_hunk": "@@ -78,42 +79,39 @@\n \t\t}\n \t};\n \n-\tvar wrapStoreData = function( data, expiration ) {\n+\tvar wrapStoreData = function( obj, data) {\n \t\tvar now = +new Date();\n-\t\tvar storeObj = {\n-\t\t\tdata: data,\n-\t\t\tstamp: now\n-\t\t};\n-\n-\t\tif ( expiration ) {\n-\t\t\tstoreObj.expire = now + ( expiration * 60 * 60 * 1000 );\n-\t\t}\n+\t\tobj.exist = true;\n+\t\tobj.data = data;\n+\t\tobj.stamp = now;\n+\t\tobj.expire = now + ( (obj.expire || defaultExpiration) * 60 * 60 * 1000 );\n \n-\t\treturn storeObj;\n+\t\treturn obj;\n \t};\n \n \tvar handleStackObject = function( obj ) {\n-\t\tvar key = storagePrefix + ( obj.key || obj.url );\n \t\tvar waitCount = globalWaitCount;\n \t\tvar scriptIndex = scripts.length;\n-\t\tvar source = JSON.parse( localStorage.getItem( key ) );\n+\t\tvar source;\n \n \t\tvar callback = function( text ) {\n \t\t\tscripts[ scriptIndex ] = text;\n \t\t\tqueueExec( waitCount, obj.execute );\n \t\t};\n-\n+\t\t\n \t\tif ( !obj.url ) {\n \t\t\treturn;\n \t\t}\n+\t\tobj.key =  ( obj.key || obj.url );\n+\t\tsource = basket.get( obj.key );\n \n \t\tobj.execute = obj.execute !== false;\n \t\tscripts[ scriptIndex ] = null;\n-\n-\t\tif ( source && ( source.expire && source.expire - +new Date() > 0 ) ) {\n+\t\t\n+\t\tif( !source.exist || source.expire - +new Date() < 0 ){",
+        "path": "lib/basket.js",
+        "position": null,
+        "original_position": 71,
+        "commit_id": "0ed96a211ebe0b270d5598884f173481ac2e35f0",
+        "original_commit_id": "49b5cbb58cd311693842dd8242edd65a5294169c",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "space\n",
+        "created_at": "2012-11-19T19:14:12Z",
+        "updated_at": "2012-11-20T23:19:46Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2171281",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/40",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2171281"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2171281"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/40"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2171284",
+        "pull_request_review_id": null,
+        "id": 2171284,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNzEyODQ=",
+        "diff_hunk": "@@ -78,42 +79,39 @@\n \t\t}\n \t};\n \n-\tvar wrapStoreData = function( data, expiration ) {\n+\tvar wrapStoreData = function( obj, data) {\n \t\tvar now = +new Date();\n-\t\tvar storeObj = {\n-\t\t\tdata: data,\n-\t\t\tstamp: now\n-\t\t};\n-\n-\t\tif ( expiration ) {\n-\t\t\tstoreObj.expire = now + ( expiration * 60 * 60 * 1000 );\n-\t\t}\n+\t\tobj.exist = true;\n+\t\tobj.data = data;\n+\t\tobj.stamp = now;\n+\t\tobj.expire = now + ( (obj.expire || defaultExpiration) * 60 * 60 * 1000 );\n \n-\t\treturn storeObj;\n+\t\treturn obj;\n \t};\n \n \tvar handleStackObject = function( obj ) {\n-\t\tvar key = storagePrefix + ( obj.key || obj.url );\n \t\tvar waitCount = globalWaitCount;\n \t\tvar scriptIndex = scripts.length;\n-\t\tvar source = JSON.parse( localStorage.getItem( key ) );\n+\t\tvar source;\n \n \t\tvar callback = function( text ) {\n \t\t\tscripts[ scriptIndex ] = text;\n \t\t\tqueueExec( waitCount, obj.execute );\n \t\t};\n-\n+\t\t\n \t\tif ( !obj.url ) {\n \t\t\treturn;\n \t\t}\n+\t\tobj.key =  ( obj.key || obj.url );\n+\t\tsource = basket.get( obj.key );\n \n \t\tobj.execute = obj.execute !== false;\n \t\tscripts[ scriptIndex ] = null;\n-\n-\t\tif ( source && ( source.expire && source.expire - +new Date() > 0 ) ) {\n+\t\t\n+\t\tif( !source.exist || source.expire - +new Date() < 0 ){\n+\t\t\tsaveUrl( obj, callback );\n+\t\t}else{",
+        "path": "lib/basket.js",
+        "position": null,
+        "original_position": 73,
+        "commit_id": "0ed96a211ebe0b270d5598884f173481ac2e35f0",
+        "original_commit_id": "49b5cbb58cd311693842dd8242edd65a5294169c",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "space\n",
+        "created_at": "2012-11-19T19:14:20Z",
+        "updated_at": "2012-11-20T23:19:46Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2171284",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/40",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2171284"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2171284"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/40"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2187377",
+        "pull_request_review_id": null,
+        "id": 2187377,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxODczNzc=",
+        "diff_hunk": "@@ -8,6 +8,7 @@\n \tvar scriptsExecuted = 0;\n \tvar globalWaitCount = 0;\n \tvar waitCallbacks = [];\n+\tvar defaultExpiration = 5000;",
+        "path": "lib/basket.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "0ed96a211ebe0b270d5598884f173481ac2e35f0",
+        "original_commit_id": "08d78f89e9ac24cf06fc429aaea149bab35408cd",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Question to all. Is 5000 too much as default?\n",
+        "created_at": "2012-11-20T21:57:42Z",
+        "updated_at": "2012-11-20T23:19:46Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2187377",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/40",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2187377"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2187377"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/40"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2187483",
+        "pull_request_review_id": null,
+        "id": 2187483,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxODc0ODM=",
+        "diff_hunk": "@@ -8,6 +8,7 @@\n \tvar scriptsExecuted = 0;\n \tvar globalWaitCount = 0;\n \tvar waitCallbacks = [];\n+\tvar defaultExpiration = 5000;",
+        "path": "lib/basket.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "0ed96a211ebe0b270d5598884f173481ac2e35f0",
+        "original_commit_id": "08d78f89e9ac24cf06fc429aaea149bab35408cd",
+        "user": {
+            "login": "peol",
+            "id": 83221,
+            "node_id": "MDQ6VXNlcjgzMjIx",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/83221?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/peol",
+            "html_url": "https://github.com/peol",
+            "followers_url": "https://api.github.com/users/peol/followers",
+            "following_url": "https://api.github.com/users/peol/following{/other_user}",
+            "gists_url": "https://api.github.com/users/peol/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/peol/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/peol/subscriptions",
+            "organizations_url": "https://api.github.com/users/peol/orgs",
+            "repos_url": "https://api.github.com/users/peol/repos",
+            "events_url": "https://api.github.com/users/peol/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/peol/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think it's fine. We could even raise it a bit more if we could find a way so that the developer could easily cache bust. Maybe something like `basket.revision(1);` and whenever he/she needs to refresh the cache, they just bump it to `basket.revision(2);` and basket.js would clear all old stuff and store it using rev 2 instead. That way, we could probably have an expiration that would virtually never expire and leave it up to the developer completely.\n\nBut that's a whole other discussion I guess ;)\n",
+        "created_at": "2012-11-20T22:04:23Z",
+        "updated_at": "2012-11-20T23:19:46Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2187483",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/40",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2187483"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2187483"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/40"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2188541",
+        "pull_request_review_id": null,
+        "id": 2188541,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxODg1NDE=",
+        "diff_hunk": "@@ -8,6 +8,7 @@\n \tvar scriptsExecuted = 0;\n \tvar globalWaitCount = 0;\n \tvar waitCallbacks = [];\n+\tvar defaultExpiration = 5000;",
+        "path": "lib/basket.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "0ed96a211ebe0b270d5598884f173481ac2e35f0",
+        "original_commit_id": "08d78f89e9ac24cf06fc429aaea149bab35408cd",
+        "user": {
+            "login": "addyosmani",
+            "id": 110953,
+            "node_id": "MDQ6VXNlcjExMDk1Mw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/110953?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/addyosmani",
+            "html_url": "https://github.com/addyosmani",
+            "followers_url": "https://api.github.com/users/addyosmani/followers",
+            "following_url": "https://api.github.com/users/addyosmani/following{/other_user}",
+            "gists_url": "https://api.github.com/users/addyosmani/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/addyosmani/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/addyosmani/subscriptions",
+            "organizations_url": "https://api.github.com/users/addyosmani/orgs",
+            "repos_url": "https://api.github.com/users/addyosmani/repos",
+            "events_url": "https://api.github.com/users/addyosmani/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/addyosmani/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "+1. I think it works  at 5000.\n",
+        "created_at": "2012-11-20T23:28:45Z",
+        "updated_at": "2012-11-20T23:28:45Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2188541",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/40",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2188541"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2188541"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/40"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2188824",
+        "pull_request_review_id": null,
+        "id": 2188824,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxODg4MjQ=",
+        "diff_hunk": "@@ -8,6 +8,7 @@\n \tvar scriptsExecuted = 0;\n \tvar globalWaitCount = 0;\n \tvar waitCallbacks = [];\n+\tvar defaultExpiration = 5000;",
+        "path": "lib/basket.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "0ed96a211ebe0b270d5598884f173481ac2e35f0",
+        "original_commit_id": "08d78f89e9ac24cf06fc429aaea149bab35408cd",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "okidoki\n",
+        "created_at": "2012-11-21T00:01:53Z",
+        "updated_at": "2012-11-21T00:01:53Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2188824",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/40",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2188824"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/40#discussion_r2188824"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/40"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2195110",
+        "pull_request_review_id": null,
+        "id": 2195110,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxOTUxMTA=",
+        "diff_hunk": "@@ -107,7 +107,11 @@\n \t\tobj.execute = obj.execute !== false;\n \t\tscripts[ scriptIndex ] = null;\n \t\t\n-\t\tif( !source || source.expire - +new Date() < 0 ) {\n+\t\tif( !source || source.expire - +new Date() < 0  || obj.unique !== source.unique) {",
+        "path": "lib/basket.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "7636470ae0694ebcd6e61f2bb3d1e3ed9a1ff324",
+        "original_commit_id": "d77783d51c40f7c4ec029669d85bc15776b36def",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`if (`\n",
+        "created_at": "2012-11-21T15:29:32Z",
+        "updated_at": "2012-11-21T17:04:09Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/43#discussion_r2195110",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2195110"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/43#discussion_r2195110"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2195114",
+        "pull_request_review_id": null,
+        "id": 2195114,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxOTUxMTQ=",
+        "diff_hunk": "@@ -107,7 +107,11 @@\n \t\tobj.execute = obj.execute !== false;\n \t\tscripts[ scriptIndex ] = null;\n \t\t\n-\t\tif( !source || source.expire - +new Date() < 0 ) {\n+\t\tif( !source || source.expire - +new Date() < 0  || obj.unique !== source.unique) {\n+\t\t\tif( obj.unique ) {\n+\t\t\t\t//set parameter to prevent browser cache",
+        "path": "lib/basket.js",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "7636470ae0694ebcd6e61f2bb3d1e3ed9a1ff324",
+        "original_commit_id": "d77783d51c40f7c4ec029669d85bc15776b36def",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`// s`\n",
+        "created_at": "2012-11-21T15:29:39Z",
+        "updated_at": "2012-11-21T17:04:09Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/43#discussion_r2195114",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2195114"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/43#discussion_r2195114"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2195130",
+        "pull_request_review_id": null,
+        "id": 2195130,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxOTUxMzA=",
+        "diff_hunk": "@@ -107,7 +107,11 @@\n \t\tobj.execute = obj.execute !== false;\n \t\tscripts[ scriptIndex ] = null;\n \t\t\n-\t\tif( !source || source.expire - +new Date() < 0 ) {\n+\t\tif( !source || source.expire - +new Date() < 0  || obj.unique !== source.unique) {\n+\t\t\tif( obj.unique ) {\n+\t\t\t\t//set parameter to prevent browser cache\n+\t\t\t\tobj.url += ( (obj.url.indexOf(\"?\") > 0 ) ? \"&\" : \"?\" ) + \"basket-unique=\"+obj.unique;",
+        "path": "lib/basket.js",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "7636470ae0694ebcd6e61f2bb3d1e3ed9a1ff324",
+        "original_commit_id": "d77783d51c40f7c4ec029669d85bc15776b36def",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "single quotes\nspace between operators\n",
+        "created_at": "2012-11-21T15:30:14Z",
+        "updated_at": "2012-11-21T17:04:09Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/43#discussion_r2195130",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2195130"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/43#discussion_r2195130"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2195142",
+        "pull_request_review_id": null,
+        "id": 2195142,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxOTUxNDI=",
+        "diff_hunk": "@@ -132,3 +132,70 @@ asyncTest( 'store data using expiration (expired)', 2, function() {\n \t\t\t\t\t});\n \t\t\t});\n });\n+\n+\n+asyncTest( 'get()', 2, function() {\n+\tbasket\n+\t\t.require({ url: 'fixtures/jquery.min.js', key: 'jquery' })\n+\t\t.wait(function() {\n+\t\t\tok( basket.get('jquery'), 'Data retrieved under custom key' );\n+\t\t\tok( !basket.get(\"anotherkey\").stamp, 'No Data retrieved under custom key' );\n+\n+\t\t\tstart();\n+\t\t});\n+});\n+\n+asyncTest( 'store data using file-versioning (not previous explicit version)', 3, function() {\n+\t\tbasket\n+\t\t\t.require({ url: 'fixtures/stamp-script.js' })\n+\t\t\t.wait(function() {\n+\t\t\t\tvar stamp = basket.get('fixtures/stamp-script.js').stamp;\n+\t\t\t\tok( basket.get('fixtures/stamp-script.js'), 'Data exists in localStorage' );\n+\n+\t\t\t\tbasket\n+\t\t\t\t\t.require({ url: 'fixtures/stamp-script.js', unique: 123 })\n+\t\t\t\t\t.wait(function() {\n+\t\t\t\t\t\tvar req = basket.get('fixtures/stamp-script.js');\n+\t\t\t\t\t\tok( stamp !== req.stamp, 'Data retrieved from server' );\n+\t\t\t\t\t\tok( req.url.indexOf(\"basket-unique=123\") > 0, 'Sending basket unique parameter' );\n+\n+\t\t\t\t\t\tstart();\n+\t\t\t\t\t});\n+\t\t\t});\n+});\n+\n+asyncTest( 'store data using file-versioning (same release)', 2, function() {\n+\t\tbasket\n+\t\t\t.require({ url: 'fixtures/stamp-script.js', unique: 123 })\n+\t\t\t.wait(function() {\n+\t\t\t\tvar stamp = basket.get('fixtures/stamp-script.js').stamp;\n+\t\t\t\tok( basket.get('fixtures/stamp-script.js'), 'Data exists in localStorage' );\n+\n+\t\t\t\tbasket\n+\t\t\t\t\t.require({ url: 'fixtures/stamp-script.js', unique: 123 })\n+\t\t\t\t\t.wait(function() {\n+\t\t\t\t\t\tvar stampAfter = basket.get('fixtures/stamp-script.js').stamp;\n+\t\t\t\t\t\tok( stamp === stampAfter, 'Data retrieved from server' );\n+\n+\t\t\t\t\t\tstart();\n+\t\t\t\t\t});\n+\t\t\t});\n+});\n+\n+asyncTest( 'store data using file-versioning (different release)', 3, function() {\n+\t\tbasket\n+\t\t\t.require({ url: 'fixtures/stamp-script.js', unique: 123 })\n+\t\t\t.wait(function() {\n+\t\t\t\tvar stamp = basket.get('fixtures/stamp-script.js').stamp;\n+\t\t\t\tok( basket.get('fixtures/stamp-script.js'), 'Data exists in localStorage' );\n+\n+\t\t\t\tbasket\n+\t\t\t\t\t.require({ url: 'fixtures/stamp-script.js', unique: 456 })\n+\t\t\t\t\t.wait(function() {\n+\t\t\t\t\t\tvar req = basket.get('fixtures/stamp-script.js');\n+\t\t\t\t\t\tok( stamp !== req.stamp, 'Data retrieved from server' );\n+\t\t\t\t\t\tok( req.url.indexOf(\"basket-unique=456\") > 0, 'Sending basket unique parameter' );",
+        "path": "test/tests.js",
+        "position": null,
+        "original_position": 82,
+        "commit_id": "7636470ae0694ebcd6e61f2bb3d1e3ed9a1ff324",
+        "original_commit_id": "d77783d51c40f7c4ec029669d85bc15776b36def",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "single quotes\n",
+        "created_at": "2012-11-21T15:30:49Z",
+        "updated_at": "2012-11-21T17:04:09Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/43#discussion_r2195142",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2195142"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/43#discussion_r2195142"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2195150",
+        "pull_request_review_id": null,
+        "id": 2195150,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxOTUxNTA=",
+        "diff_hunk": "@@ -132,3 +132,70 @@ asyncTest( 'store data using expiration (expired)', 2, function() {\n \t\t\t\t\t});\n \t\t\t});\n });\n+\n+\n+asyncTest( 'get()', 2, function() {\n+\tbasket\n+\t\t.require({ url: 'fixtures/jquery.min.js', key: 'jquery' })\n+\t\t.wait(function() {\n+\t\t\tok( basket.get('jquery'), 'Data retrieved under custom key' );\n+\t\t\tok( !basket.get(\"anotherkey\").stamp, 'No Data retrieved under custom key' );\n+\n+\t\t\tstart();\n+\t\t});\n+});\n+\n+asyncTest( 'store data using file-versioning (not previous explicit version)', 3, function() {\n+\t\tbasket\n+\t\t\t.require({ url: 'fixtures/stamp-script.js' })\n+\t\t\t.wait(function() {\n+\t\t\t\tvar stamp = basket.get('fixtures/stamp-script.js').stamp;\n+\t\t\t\tok( basket.get('fixtures/stamp-script.js'), 'Data exists in localStorage' );\n+\n+\t\t\t\tbasket\n+\t\t\t\t\t.require({ url: 'fixtures/stamp-script.js', unique: 123 })\n+\t\t\t\t\t.wait(function() {\n+\t\t\t\t\t\tvar req = basket.get('fixtures/stamp-script.js');\n+\t\t\t\t\t\tok( stamp !== req.stamp, 'Data retrieved from server' );\n+\t\t\t\t\t\tok( req.url.indexOf(\"basket-unique=123\") > 0, 'Sending basket unique parameter' );",
+        "path": "test/tests.js",
+        "position": null,
+        "original_position": 45,
+        "commit_id": "7636470ae0694ebcd6e61f2bb3d1e3ed9a1ff324",
+        "original_commit_id": "d77783d51c40f7c4ec029669d85bc15776b36def",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "single quotes\n",
+        "created_at": "2012-11-21T15:31:21Z",
+        "updated_at": "2012-11-21T17:04:09Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/43#discussion_r2195150",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/43",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2195150"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/43#discussion_r2195150"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/43"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205515",
+        "pull_request_review_id": null,
+        "id": 2205515,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMDU1MTU=",
+        "diff_hunk": "@@ -47,98 +47,106 @@\n \n <h3>API And Examples</h3>\n \n-<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.1.</p>\n+<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.2.</p>\n \n <ul>\n <li><strong>basket.require()</strong></li>\n-<li><strong>basket.add()</strong></li>\n+<li><strong>basket.get()</strong></li>\n <li><strong>basket.remove()</strong></li>\n <li><strong>basket.wait()</strong></li>\n+<li><strong>basket.clear()</strong></li>\n </ul>\n \n-<p><strong>basket.require( uri )</strong></p>\n-\n-<p><em>uri:</em> A relative URI to a local script to load.</p>\n+<p><strong>basket.require( objects )</strong></p>\n+\n+<p><em>objects:</em> One or more plain JavaScript objects to configure the require operation.</p>\n+<dl>\n+\t<dt>url</dt>\n+\t\t<dd><strong>Required</strong> Relative URI to a local script.</dd>\n+\t<dt>key</dt>\n+\t\t<dd><strong>Optional</strong> Use this to define an alternative name, will default to <em>uri.</em></dd>",
+        "path": "index.html",
+        "position": 41,
+        "original_position": 41,
+        "commit_id": "12bcba1251dab6cde83c6ea27d39b10480ca5090",
+        "original_commit_id": "9bda5fffb13951cdb4586769c1de69d141b52e53",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "internally\n",
+        "created_at": "2012-11-22T13:06:16Z",
+        "updated_at": "2012-11-22T23:45:26Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205515",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/44",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205515"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205515"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205546",
+        "pull_request_review_id": null,
+        "id": 2205546,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMDU1NDY=",
+        "diff_hunk": "@@ -47,98 +47,106 @@\n \n <h3>API And Examples</h3>\n \n-<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.1.</p>\n+<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.2.</p>\n \n <ul>\n <li><strong>basket.require()</strong></li>\n-<li><strong>basket.add()</strong></li>\n+<li><strong>basket.get()</strong></li>\n <li><strong>basket.remove()</strong></li>\n <li><strong>basket.wait()</strong></li>\n+<li><strong>basket.clear()</strong></li>\n </ul>\n \n-<p><strong>basket.require( uri )</strong></p>\n-\n-<p><em>uri:</em> A relative URI to a local script to load.</p>\n+<p><strong>basket.require( objects )</strong></p>\n+\n+<p><em>objects:</em> One or more plain JavaScript objects to configure the require operation.</p>\n+<dl>\n+\t<dt>url</dt>\n+\t\t<dd><strong>Required</strong> Relative URI to a local script.</dd>\n+\t<dt>key</dt>\n+\t\t<dd><strong>Optional</strong> Use this to define an alternative name, will default to <em>uri.</em></dd>\n+\t<dt>expire</dt>\n+\t\t<dd><strong>Optional</strong> Set an expiration date, defined in hours before basket.js will re-fetch the script.</dd>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 43,
+        "commit_id": "12bcba1251dab6cde83c6ea27d39b10480ca5090",
+        "original_commit_id": "9bda5fffb13951cdb4586769c1de69d141b52e53",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "lifespan of file cache in localStorage in hours\n",
+        "created_at": "2012-11-22T13:09:57Z",
+        "updated_at": "2012-11-22T23:45:26Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205546",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/44",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205546"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205546"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205557",
+        "pull_request_review_id": null,
+        "id": 2205557,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMDU1NTc=",
+        "diff_hunk": "@@ -47,98 +47,106 @@\n \n <h3>API And Examples</h3>\n \n-<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.1.</p>\n+<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.2.</p>\n \n <ul>\n <li><strong>basket.require()</strong></li>\n-<li><strong>basket.add()</strong></li>\n+<li><strong>basket.get()</strong></li>\n <li><strong>basket.remove()</strong></li>\n <li><strong>basket.wait()</strong></li>\n+<li><strong>basket.clear()</strong></li>\n </ul>\n \n-<p><strong>basket.require( uri )</strong></p>\n-\n-<p><em>uri:</em> A relative URI to a local script to load.</p>\n+<p><strong>basket.require( objects )</strong></p>\n+\n+<p><em>objects:</em> One or more plain JavaScript objects to configure the require operation.</p>\n+<dl>\n+\t<dt>url</dt>\n+\t\t<dd><strong>Required</strong> Relative URI to a local script.</dd>\n+\t<dt>key</dt>\n+\t\t<dd><strong>Optional</strong> Use this to define an alternative name, will default to <em>uri.</em></dd>\n+\t<dt>expire</dt>\n+\t\t<dd><strong>Optional</strong> Set an expiration date, defined in hours before basket.js will re-fetch the script.</dd>\n+\t<dt>execute</dt>\n+\t\t<dd><strong>Optional</strong> Whether to execute the script on load.</dd>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 45,
+        "commit_id": "12bcba1251dab6cde83c6ea27d39b10480ca5090",
+        "original_commit_id": "9bda5fffb13951cdb4586769c1de69d141b52e53",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Defaults to 'true'. Set to 'false' to only cache, but not execute the file.\n",
+        "created_at": "2012-11-22T13:11:48Z",
+        "updated_at": "2012-11-22T23:45:26Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205557",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/44",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205557"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205557"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205561",
+        "pull_request_review_id": null,
+        "id": 2205561,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMDU1NjE=",
+        "diff_hunk": "@@ -47,98 +47,106 @@\n \n <h3>API And Examples</h3>\n \n-<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.1.</p>\n+<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.2.</p>\n \n <ul>\n <li><strong>basket.require()</strong></li>\n-<li><strong>basket.add()</strong></li>\n+<li><strong>basket.get()</strong></li>\n <li><strong>basket.remove()</strong></li>\n <li><strong>basket.wait()</strong></li>\n+<li><strong>basket.clear()</strong></li>\n </ul>\n \n-<p><strong>basket.require( uri )</strong></p>\n-\n-<p><em>uri:</em> A relative URI to a local script to load.</p>\n+<p><strong>basket.require( objects )</strong></p>\n+\n+<p><em>objects:</em> One or more plain JavaScript objects to configure the require operation.</p>\n+<dl>\n+\t<dt>url</dt>\n+\t\t<dd><strong>Required</strong> Relative URI to a local script.</dd>\n+\t<dt>key</dt>\n+\t\t<dd><strong>Optional</strong> Use this to define an alternative name, will default to <em>uri.</em></dd>\n+\t<dt>expire</dt>\n+\t\t<dd><strong>Optional</strong> Set an expiration date, defined in hours before basket.js will re-fetch the script.</dd>\n+\t<dt>execute</dt>\n+\t\t<dd><strong>Optional</strong> Whether to execute the script on load.</dd>\n+\t<dt>unique</dt>\n+\t\t<dd><strong>Optional</strong> used to set a version id to file.</dd>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 47,
+        "commit_id": "12bcba1251dab6cde83c6ea27d39b10480ca5090",
+        "original_commit_id": "9bda5fffb13951cdb4586769c1de69d141b52e53",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "used to bust a cached file\n",
+        "created_at": "2012-11-22T13:12:31Z",
+        "updated_at": "2012-11-22T23:45:26Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205561",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/44",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205561"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205561"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205572",
+        "pull_request_review_id": null,
+        "id": 2205572,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMDU1NzI=",
+        "diff_hunk": "@@ -47,98 +47,106 @@\n \n <h3>API And Examples</h3>\n \n-<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.1.</p>\n+<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.2.</p>\n \n <ul>\n <li><strong>basket.require()</strong></li>\n-<li><strong>basket.add()</strong></li>\n+<li><strong>basket.get()</strong></li>\n <li><strong>basket.remove()</strong></li>\n <li><strong>basket.wait()</strong></li>\n+<li><strong>basket.clear()</strong></li>\n </ul>\n \n-<p><strong>basket.require( uri )</strong></p>\n-\n-<p><em>uri:</em> A relative URI to a local script to load.</p>\n+<p><strong>basket.require( objects )</strong></p>\n+\n+<p><em>objects:</em> One or more plain JavaScript objects to configure the require operation.</p>\n+<dl>\n+\t<dt>url</dt>\n+\t\t<dd><strong>Required</strong> Relative URI to a local script.</dd>\n+\t<dt>key</dt>\n+\t\t<dd><strong>Optional</strong> Use this to define an alternative name, will default to <em>uri.</em></dd>\n+\t<dt>expire</dt>\n+\t\t<dd><strong>Optional</strong> Set an expiration date, defined in hours before basket.js will re-fetch the script.</dd>\n+\t<dt>execute</dt>\n+\t\t<dd><strong>Optional</strong> Whether to execute the script on load.</dd>\n+\t<dt>unique</dt>\n+\t\t<dd><strong>Optional</strong> used to set a version id to file.</dd>\n+</dl>\n \n <p><code>.require()</code> allows us to construct loader chains, each of which instruct basket.js to fetch (either externally or from a localStorage cached-copy) a script defined by a supplied uri. The basic loading of a single uri could be achieved as follows:</p>\n \n-<pre><code>basket.require('jquery.js');</code></pre>\n+<pre><code>basket.require({ url: 'jquery.js' });</code></pre>\n \n <p>This will check to see if an item with the key <code>basket-jquery.js</code> exists in localStorage (i.e a cached copy of the script). If present, the script contents are read from storage and injected into the current page. If not present, the script will be fetched, cached in storage and then similarly injected into the document for use.</p>\n \n <p>basket.js also supports chaining and so requesting multiple scripts is also straight-forward:</p>\n \n-<pre><code>basket\n-    .require('jquery.js')\n-    .require('underscore.js')\n-    .require('backbone.js');\n-</code></pre>\n+<pre><code>basket.require({ url: 'jquery.js' }, { url: 'underscore.js' }, { url: 'backbone.js' });</code></pre>\n \n-<p><strong>basket.require( key )</strong></p>\n+<p>Note that at present, JSONP/server-side middleware is necessary for the support of remote scripts. This is down to access of script content being limited under cross-origin policies.</p>\n \n-<p>If a script has been saved to a specific key in localStorage (e.g <code>jquery</code>), it can be accessed using <code>require()</code> as follows:</p>\n+<p>If you wish to store a script under a specific key name (e.g if you have a build process outputting a script of a name such as <code>012345.js</code> and would like to store it under say, <code>main</code>), this could be done as follows:</p>\n \n-<pre><code>basket.require('jquery');</code></pre>\n+<pre><code>basket.require({ url: '012345.js', key: 'main' });</code></pre>\n \n-<p>Note that at present, JSONP/server-side middleware is necessary for the support of remote scripts. This is down to access of script content being limited under cross-origin policies.</p>\n+<p>Similarly, if you wish to store <code>jquery-1.7.1.min.js</code> as <code>jquery</code>, this can be done as well:</p>\n \n-<p><strong>basket.add( uri, [,options], [,callback] )</strong></p>\n+<pre><code>basket.require({ url: 'jquery-1.7.1.min.js', key: 'jquery' });</code></pre>\n \n-<p><em>uri:</em> A relative URI to a local script to be saved to localStorage (but not executed)</p>\n+<p><strong> If <code>key</code> is unset, the url will be used as key.</strong></p>\n \n-<p><em>options:</em> An object allowing you to configure the add operation. It supports two optional keys: overwrite - A boolean defining whether an entry being added can overwrite an existing entry with the same path/filename.</p>\n+<p>You can Use <code>expire</code> to set a lifetime in hours for a cached file. The script will be fetched again if required after this time.</p>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 85,
+        "commit_id": "12bcba1251dab6cde83c6ea27d39b10480ca5090",
+        "original_commit_id": "9bda5fffb13951cdb4586769c1de69d141b52e53",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "use\n",
+        "created_at": "2012-11-22T13:13:44Z",
+        "updated_at": "2012-11-22T23:45:26Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205572",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/44",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205572"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205572"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205583",
+        "pull_request_review_id": null,
+        "id": 2205583,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMDU1ODM=",
+        "diff_hunk": "@@ -47,98 +47,106 @@\n \n <h3>API And Examples</h3>\n \n-<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.1.</p>\n+<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.2.</p>\n \n <ul>\n <li><strong>basket.require()</strong></li>\n-<li><strong>basket.add()</strong></li>\n+<li><strong>basket.get()</strong></li>\n <li><strong>basket.remove()</strong></li>\n <li><strong>basket.wait()</strong></li>\n+<li><strong>basket.clear()</strong></li>\n </ul>\n \n-<p><strong>basket.require( uri )</strong></p>\n-\n-<p><em>uri:</em> A relative URI to a local script to load.</p>\n+<p><strong>basket.require( objects )</strong></p>\n+\n+<p><em>objects:</em> One or more plain JavaScript objects to configure the require operation.</p>\n+<dl>\n+\t<dt>url</dt>\n+\t\t<dd><strong>Required</strong> Relative URI to a local script.</dd>\n+\t<dt>key</dt>\n+\t\t<dd><strong>Optional</strong> Use this to define an alternative name, will default to <em>uri.</em></dd>\n+\t<dt>expire</dt>\n+\t\t<dd><strong>Optional</strong> Set an expiration date, defined in hours before basket.js will re-fetch the script.</dd>\n+\t<dt>execute</dt>\n+\t\t<dd><strong>Optional</strong> Whether to execute the script on load.</dd>\n+\t<dt>unique</dt>\n+\t\t<dd><strong>Optional</strong> used to set a version id to file.</dd>\n+</dl>\n \n <p><code>.require()</code> allows us to construct loader chains, each of which instruct basket.js to fetch (either externally or from a localStorage cached-copy) a script defined by a supplied uri. The basic loading of a single uri could be achieved as follows:</p>\n \n-<pre><code>basket.require('jquery.js');</code></pre>\n+<pre><code>basket.require({ url: 'jquery.js' });</code></pre>\n \n <p>This will check to see if an item with the key <code>basket-jquery.js</code> exists in localStorage (i.e a cached copy of the script). If present, the script contents are read from storage and injected into the current page. If not present, the script will be fetched, cached in storage and then similarly injected into the document for use.</p>\n \n <p>basket.js also supports chaining and so requesting multiple scripts is also straight-forward:</p>\n \n-<pre><code>basket\n-    .require('jquery.js')\n-    .require('underscore.js')\n-    .require('backbone.js');\n-</code></pre>\n+<pre><code>basket.require({ url: 'jquery.js' }, { url: 'underscore.js' }, { url: 'backbone.js' });</code></pre>\n \n-<p><strong>basket.require( key )</strong></p>\n+<p>Note that at present, JSONP/server-side middleware is necessary for the support of remote scripts. This is down to access of script content being limited under cross-origin policies.</p>\n \n-<p>If a script has been saved to a specific key in localStorage (e.g <code>jquery</code>), it can be accessed using <code>require()</code> as follows:</p>\n+<p>If you wish to store a script under a specific key name (e.g if you have a build process outputting a script of a name such as <code>012345.js</code> and would like to store it under say, <code>main</code>), this could be done as follows:</p>\n \n-<pre><code>basket.require('jquery');</code></pre>\n+<pre><code>basket.require({ url: '012345.js', key: 'main' });</code></pre>\n \n-<p>Note that at present, JSONP/server-side middleware is necessary for the support of remote scripts. This is down to access of script content being limited under cross-origin policies.</p>\n+<p>Similarly, if you wish to store <code>jquery-1.7.1.min.js</code> as <code>jquery</code>, this can be done as well:</p>\n \n-<p><strong>basket.add( uri, [,options], [,callback] )</strong></p>\n+<pre><code>basket.require({ url: 'jquery-1.7.1.min.js', key: 'jquery' });</code></pre>\n \n-<p><em>uri:</em> A relative URI to a local script to be saved to localStorage (but not executed)</p>\n+<p><strong> If <code>key</code> is unset, the url will be used as key.</strong></p>\n \n-<p><em>options:</em> An object allowing you to configure the add operation. It supports two optional keys: overwrite - A boolean defining whether an entry being added can overwrite an existing entry with the same path/filename.</p>\n+<p>You can Use <code>expire</code> to set a lifetime in hours for a cached file. The script will be fetched again if required after this time.</p>\n+<p>If expire is unset, the default time will be used. ( i.e. 5000 hours, almost 7 months )</p>\n \n-<p><em>key:</em> A key-name under which to save a specific script\n-callback: An optional function to be executed once a script has been added to localStorage</p>\n+<pre><code>basket.require({ url: 'jquery.min.js', expire: 2 });</code> </pre>\n \n-<p><code>add()</code> allows you to add scripts to localStorage without actually injecting them into the current document. It accepts a URI, which it then fetches the contents of and caches. If the overwrite argument is supplied (and is <code>true</code>), basket.js will overwrite an existing entry for the script being added if one is found.</p>\n \n-<pre><code>basket\n-    .add('jquery.js')\n-    .add('handlebars.js')\n-    .add('jquery.plugin1.js')\n-    .add('jquery.plugin2.js');\n-</code></pre>\n+<p>The <code>execute</code> allow put a file in cache without inject into the document</p>\n \n-<p>An example of how to use the callback is as follows:</p>\n+<pre><code>basket.require({ url: 'jquery.min.js', execute: false });</code> </pre>\n \n-<pre><code>basket\n-    .add('jquery.js')\n-    .add('handlebars.js', {}, function(){\n-        console.log('jQuery and Handlebars exist in localStorage now');\n-    });\n-</code></pre>\n \n-<p>If you wish to store a script under a specific key name (e.g if you have a build process outputting a script of a name such as <code>012345.js</code> and would like to store it under say, <code>main</code>), this could be done as follows:</p>\n+<p>Set the <code>unique</code> to control a version from file cached. Modifying the parameter, the file is fetched again.</p>\n+<p>basket.js will add the \"basket-unique\" parameter on url to prevent browse cache.</p>\n \n-<pre><code>basket.add('012345.js', { key: 'main' });</code></pre>\n+<pre><code>basket.require({ url: 'jquery.min.js' }); /* fetch and cache the file */</code> </pre>\n+<pre><code>basket.require({ url: 'jquery.min.js', unique: 123 }); /* fetch and cache again */</code> </pre>\n \n-<p>Similarly, if you wish to store <code>jquery-1.7.1.min.js</code> as <code>jquery</code>, this can be done as well:</p>\n \n-<pre><code>basket.add('jquery-1.7.1.min.js', { key: 'jquery' });</code></pre>\n+<p><strong>basket.get( key )</strong></p>\n \n-<p>Finally if you would like to use options it is fairly trivial to add a script with an option to overwrite it if it already exists, store it under a specific key and add a callback to it as follows:</p>\n+<p><em>key:</em> The key value to retrieve info from specific local script in localStorage.</p>\n \n-<pre><code>basket.add('jquery-1.7.1', { key: 'foo', overwrite: false }, function() {\n-});\n+<p><code>get()</code> will return an object if script is found or false if not</p>\n+<p>The object retuned will contains all the properties set to require and some other properties such as.</p>\n+<dl>\n+\t<dt>stamp</dt>\n+\t\t<dd>The timestamp for when the file was fetched.</dd>\n+\t<dt>expire</dt>\n+\t\t<dd>Updated to the expiration timestamp.</dd>\n+\t<dt>data</dt>\n+\t\t<dd>Contains the script text.</dd>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 138,
+        "commit_id": "12bcba1251dab6cde83c6ea27d39b10480ca5090",
+        "original_commit_id": "9bda5fffb13951cdb4586769c1de69d141b52e53",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "File contents\n",
+        "created_at": "2012-11-22T13:15:07Z",
+        "updated_at": "2012-11-22T23:45:26Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205583",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/44",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2205583"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2205583"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2207161",
+        "pull_request_review_id": null,
+        "id": 2207161,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMDcxNjE=",
+        "diff_hunk": "@@ -47,98 +47,106 @@\n \n <h3>API And Examples</h3>\n \n-<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.1.</p>\n+<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.2.</p>\n \n <ul>\n <li><strong>basket.require()</strong></li>\n-<li><strong>basket.add()</strong></li>\n+<li><strong>basket.get()</strong></li>\n <li><strong>basket.remove()</strong></li>\n <li><strong>basket.wait()</strong></li>\n+<li><strong>basket.clear()</strong></li>\n </ul>\n \n-<p><strong>basket.require( uri )</strong></p>\n-\n-<p><em>uri:</em> A relative URI to a local script to load.</p>\n+<p><strong>basket.require( objects )</strong></p>\n+\n+<p><em>objects:</em> One or more plain JavaScript objects to configure the require operation.</p>\n+<dl>\n+\t<dt>url</dt>\n+\t\t<dd><strong>Required</strong> Relative URI to a local script.</dd>\n+\t<dt>key</dt>\n+\t\t<dd><strong>Optional</strong> Use this to define an alternative name, will default to <em>uri.</em></dd>\n+\t<dt>expire</dt>\n+\t\t<dd><strong>Optional</strong> Set an expiration date, defined in hours before basket.js will re-fetch the script.</dd>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 43,
+        "commit_id": "12bcba1251dab6cde83c6ea27d39b10480ca5090",
+        "original_commit_id": "9bda5fffb13951cdb4586769c1de69d141b52e53",
+        "user": {
+            "login": "felipemorais",
+            "id": 2274057,
+            "node_id": "MDQ6VXNlcjIyNzQwNTc=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/2274057?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/felipemorais",
+            "html_url": "https://github.com/felipemorais",
+            "followers_url": "https://api.github.com/users/felipemorais/followers",
+            "following_url": "https://api.github.com/users/felipemorais/following{/other_user}",
+            "gists_url": "https://api.github.com/users/felipemorais/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/felipemorais/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/felipemorais/subscriptions",
+            "organizations_url": "https://api.github.com/users/felipemorais/orgs",
+            "repos_url": "https://api.github.com/users/felipemorais/repos",
+            "events_url": "https://api.github.com/users/felipemorais/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/felipemorais/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "\"Set a lifespan of file cache in localStorage in hours\" ?\n",
+        "created_at": "2012-11-22T16:47:23Z",
+        "updated_at": "2012-11-22T23:45:26Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2207161",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/44",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2207161"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2207161"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2207192",
+        "pull_request_review_id": null,
+        "id": 2207192,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMDcxOTI=",
+        "diff_hunk": "@@ -47,98 +47,106 @@\n \n <h3>API And Examples</h3>\n \n-<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.1.</p>\n+<p>Let's briefly review the current basket.js API, which differs from the API supported in 0.2.</p>\n \n <ul>\n <li><strong>basket.require()</strong></li>\n-<li><strong>basket.add()</strong></li>\n+<li><strong>basket.get()</strong></li>\n <li><strong>basket.remove()</strong></li>\n <li><strong>basket.wait()</strong></li>\n+<li><strong>basket.clear()</strong></li>\n </ul>\n \n-<p><strong>basket.require( uri )</strong></p>\n-\n-<p><em>uri:</em> A relative URI to a local script to load.</p>\n+<p><strong>basket.require( objects )</strong></p>\n+\n+<p><em>objects:</em> One or more plain JavaScript objects to configure the require operation.</p>\n+<dl>\n+\t<dt>url</dt>\n+\t\t<dd><strong>Required</strong> Relative URI to a local script.</dd>\n+\t<dt>key</dt>\n+\t\t<dd><strong>Optional</strong> Use this to define an alternative name, will default to <em>uri.</em></dd>\n+\t<dt>expire</dt>\n+\t\t<dd><strong>Optional</strong> Set an expiration date, defined in hours before basket.js will re-fetch the script.</dd>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 43,
+        "commit_id": "12bcba1251dab6cde83c6ea27d39b10480ca5090",
+        "original_commit_id": "9bda5fffb13951cdb4586769c1de69d141b52e53",
+        "user": {
+            "login": "addyosmani",
+            "id": 110953,
+            "node_id": "MDQ6VXNlcjExMDk1Mw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/110953?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/addyosmani",
+            "html_url": "https://github.com/addyosmani",
+            "followers_url": "https://api.github.com/users/addyosmani/followers",
+            "following_url": "https://api.github.com/users/addyosmani/following{/other_user}",
+            "gists_url": "https://api.github.com/users/addyosmani/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/addyosmani/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/addyosmani/subscriptions",
+            "organizations_url": "https://api.github.com/users/addyosmani/orgs",
+            "repos_url": "https://api.github.com/users/addyosmani/repos",
+            "events_url": "https://api.github.com/users/addyosmani/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/addyosmani/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We should be providing an example of this after \"hours\" (e.g re-fetching after 7 days = 7 \\* 24 = 168)\n",
+        "created_at": "2012-11-22T16:52:34Z",
+        "updated_at": "2012-11-22T23:45:26Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2207192",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/44",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2207192"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/44#discussion_r2207192"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2248211",
+        "pull_request_review_id": null,
+        "id": 2248211,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNDgyMTE=",
+        "diff_hunk": "@@ -182,35 +184,37 @@\n <pre><code>var message, str;\n basket\n     .require({ url: 'test/jquery-1.7.1.min.js' }).wait()\n-    .require({ url: 'test/underscore-min.js' })\n-    .require({ url: 'test/backbone-min.js' }).wait(function() {</p>\n-\n-    // Backbone is now available, so let's define\n-    // a test model with a sample attribute\n+    .require({ url: 'test/underscore-min.js' }, { url: 'test/backbone-min.js' })\n+    .wait(function() {\n+\t    // Backbone is now available, so let's define\n+\t    // a test model with a sample attribute\n \n-    var testModel = Backbone.Model.extend({\n-      idAttribute: '_id'\n-    });\n+\t    var testModel = Backbone.Model.extend({\n+\t      idAttribute: '_id'\n+\t    });\n \n-    // Create an instance of the model\n-    var myModel = new testModel({ _id: 4, name: 'Nyan Cat' });\n+\t    // Create an instance of the model\n+\t    var myModel = new testModel({ _id: 4, name: 'Nyan Cat' });\n \n-    // Cache a reference to our message holder with jQuery\n-    message = $('#message');\n+\t    // Cache a reference to our message holder with jQuery\n+\t    message = $('#message');\n \n-    // Where #intro contains a template, get our templating on:\n+\t    // Where #intro contains a template, get our templating on:\n \n-    var templateContent = $('#intro').html();\n-    var compiled = _.template(templateContent);\n-    message.html( compiled({name: myModel.get('name')}));\n+\t    var templateContent = $('#intro').html();\n+\t    var compiled = _.template(templateContent);\n+\t    message.html( compiled({name: myModel.get('name')}));\n \n-});\n+\t});\n </code></pre>\n \n \n-<p><strong>basket.clear()</strong></p>\n-<p>This will remove the keys associated at basket.js</p>\n-<pre><code> basket.clear(); </code> </pre>\n+<p><strong>basket.clear( expired )</strong></p>\n+<p>This will remove the keys associated at basket.js. If expired is true, only expired keys will be removed.</p>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 95,
+        "commit_id": "f14a95444f2b6943742e448925e71ddb1c284b1a",
+        "original_commit_id": "560505faa9371da3a9dc846174606110f142769d",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "at -> with\n",
+        "created_at": "2012-11-28T10:00:37Z",
+        "updated_at": "2012-11-28T17:16:02Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2248211",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/48",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2248211"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2248211"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2248226",
+        "pull_request_review_id": null,
+        "id": 2248226,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNDgyMjY=",
+        "diff_hunk": "@@ -83,6 +83,10 @@\n \n <pre><code>basket.require({ url: 'jquery.js' }, { url: 'underscore.js' }, { url: 'backbone.js' });</code></pre>\n \n+<p>The HTML5 spec suggests a limit of 5 MB for amount of data written to localStorage, but browsers aren\u2019t compelled to comply. So each browser can implement your own quota spaces. Basket.js will care exceeded quota removing oldest entries on load and when browser throws QUOTA_EXCEEDED_ERR error. Some browser like Opera can popup user asking about ilimited spaces at a given origin.</p>\n+\n+<p>basket.js will remove only your own entries. The spaces consumed by other apps in same origin will not be modified.</p>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "f14a95444f2b6943742e448925e71ddb1c284b1a",
+        "original_commit_id": "560505faa9371da3a9dc846174606110f142769d",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "spaces -> space\n",
+        "created_at": "2012-11-28T10:01:41Z",
+        "updated_at": "2012-11-28T17:16:02Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2248226",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/48",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2248226"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2248226"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2248262",
+        "pull_request_review_id": null,
+        "id": 2248262,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNDgyNjI=",
+        "diff_hunk": "@@ -83,6 +83,10 @@\n \n <pre><code>basket.require({ url: 'jquery.js' }, { url: 'underscore.js' }, { url: 'backbone.js' });</code></pre>\n \n+<p>The HTML5 spec suggests a limit of 5 MB for amount of data written to localStorage, but browsers aren\u2019t compelled to comply. So each browser can implement your own quota spaces. Basket.js will care exceeded quota removing oldest entries on load and when browser throws QUOTA_EXCEEDED_ERR error. Some browser like Opera can popup user asking about ilimited spaces at a given origin.</p>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "f14a95444f2b6943742e448925e71ddb1c284b1a",
+        "original_commit_id": "560505faa9371da3a9dc846174606110f142769d",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The HTML5 spec suggests storage quota with the limit of 5MB for localStorage\n\nWhich means browsers can implement your own quota.\n",
+        "created_at": "2012-11-28T10:05:03Z",
+        "updated_at": "2012-11-28T17:16:02Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2248262",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/48",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2248262"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2248262"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2248271",
+        "pull_request_review_id": null,
+        "id": 2248271,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNDgyNzE=",
+        "diff_hunk": "@@ -83,6 +83,10 @@\n \n <pre><code>basket.require({ url: 'jquery.js' }, { url: 'underscore.js' }, { url: 'backbone.js' });</code></pre>\n \n+<p>The HTML5 spec suggests a limit of 5 MB for amount of data written to localStorage, but browsers aren\u2019t compelled to comply. So each browser can implement your own quota spaces. Basket.js will care exceeded quota removing oldest entries on load and when browser throws QUOTA_EXCEEDED_ERR error. Some browser like Opera can popup user asking about ilimited spaces at a given origin.</p>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "f14a95444f2b6943742e448925e71ddb1c284b1a",
+        "original_commit_id": "560505faa9371da3a9dc846174606110f142769d",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Also what do you mean here:\n\n> Some browsers like Opera can popup user asking about ilimited spaces at a given origin.\n\nDoes Opera ask the user to increase the localStorage quota?\n",
+        "created_at": "2012-11-28T10:05:45Z",
+        "updated_at": "2012-11-28T17:16:02Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2248271",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/48",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2248271"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2248271"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2252614",
+        "pull_request_review_id": null,
+        "id": 2252614,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNTI2MTQ=",
+        "diff_hunk": "@@ -83,6 +83,10 @@\n \n <pre><code>basket.require({ url: 'jquery.js' }, { url: 'underscore.js' }, { url: 'backbone.js' });</code></pre>\n \n+<p>The HTML5 spec suggests a limit of 5 MB for amount of data written to localStorage, but browsers aren\u2019t compelled to comply. So each browser can implement your own quota spaces. Basket.js will care exceeded quota removing oldest entries on load and when browser throws QUOTA_EXCEEDED_ERR error. Some browser like Opera can popup user asking about ilimited spaces at a given origin.</p>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "f14a95444f2b6943742e448925e71ddb1c284b1a",
+        "original_commit_id": "560505faa9371da3a9dc846174606110f142769d",
+        "user": {
+            "login": "felipemorais",
+            "id": 2274057,
+            "node_id": "MDQ6VXNlcjIyNzQwNTc=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/2274057?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/felipemorais",
+            "html_url": "https://github.com/felipemorais",
+            "followers_url": "https://api.github.com/users/felipemorais/followers",
+            "following_url": "https://api.github.com/users/felipemorais/following{/other_user}",
+            "gists_url": "https://api.github.com/users/felipemorais/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/felipemorais/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/felipemorais/subscriptions",
+            "organizations_url": "https://api.github.com/users/felipemorais/orgs",
+            "repos_url": "https://api.github.com/users/felipemorais/repos",
+            "events_url": "https://api.github.com/users/felipemorais/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/felipemorais/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes. Opera shows popup asking to user to increase quota when this exceed 1MB (and 2, 4, 8 ... ).\n",
+        "created_at": "2012-11-28T16:16:47Z",
+        "updated_at": "2012-11-28T17:16:02Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2252614",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/48",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2252614"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2252614"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2253049",
+        "pull_request_review_id": null,
+        "id": 2253049,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNTMwNDk=",
+        "diff_hunk": "@@ -83,6 +83,10 @@\n \n <pre><code>basket.require({ url: 'jquery.js' }, { url: 'underscore.js' }, { url: 'backbone.js' });</code></pre>\n \n+<p>The HTML5 spec suggests a limit of 5 MB for amount of data written to localStorage, but browsers aren\u2019t compelled to comply. So each browser can implement your own quota spaces. Basket.js will care exceeded quota removing oldest entries on load and when browser throws QUOTA_EXCEEDED_ERR error. Some browser like Opera can popup user asking about ilimited spaces at a given origin.</p>",
+        "path": "index.html",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "f14a95444f2b6943742e448925e71ddb1c284b1a",
+        "original_commit_id": "560505faa9371da3a9dc846174606110f142769d",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "k\n\n\"Some browsers like Opera will ask the user about increasing the quota when it exceeds a set threshold\"\n",
+        "created_at": "2012-11-28T16:41:32Z",
+        "updated_at": "2012-11-28T17:16:02Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2253049",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/48",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2253049"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/48#discussion_r2253049"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744422",
+        "pull_request_review_id": null,
+        "id": 2744422,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NDQ0MjI=",
+        "diff_hunk": "@@ -0,0 +1,12 @@\n+<h3 id=\"clear-doc\">basket.clear</h3>",
+        "path": "_includes/basket-clear.md",
+        "position": null,
+        "original_position": 1,
+        "commit_id": "5b5d3c21600df5d0e065f397fe6ec9727d2180af",
+        "original_commit_id": "3945fa1b26ad7499ed1fcecc4e7c3a81fb0b6007",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can you use Markdown headers?\n",
+        "created_at": "2013-01-23T16:45:52Z",
+        "updated_at": "2013-01-23T17:50:01Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744422",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/73",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744422"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744422"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/73"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744447",
+        "pull_request_review_id": null,
+        "id": 2744447,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NDQ0NDc=",
+        "diff_hunk": "@@ -0,0 +1,12 @@\n+<h3 id=\"clear-doc\">basket.clear</h3>",
+        "path": "_includes/basket-clear.md",
+        "position": null,
+        "original_position": 1,
+        "commit_id": "5b5d3c21600df5d0e065f397fe6ec9727d2180af",
+        "original_commit_id": "3945fa1b26ad7499ed1fcecc4e7c3a81fb0b6007",
+        "user": {
+            "login": "zenorocha",
+            "id": 398893,
+            "node_id": "MDQ6VXNlcjM5ODg5Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/398893?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zenorocha",
+            "html_url": "https://github.com/zenorocha",
+            "followers_url": "https://api.github.com/users/zenorocha/followers",
+            "following_url": "https://api.github.com/users/zenorocha/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zenorocha/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zenorocha/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zenorocha/subscriptions",
+            "organizations_url": "https://api.github.com/users/zenorocha/orgs",
+            "repos_url": "https://api.github.com/users/zenorocha/repos",
+            "events_url": "https://api.github.com/users/zenorocha/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zenorocha/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I don't know how to use a markdown header with `id`.\n",
+        "created_at": "2013-01-23T16:47:25Z",
+        "updated_at": "2013-01-23T17:50:01Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744447",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/73",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744447"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744447"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/73"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744459",
+        "pull_request_review_id": null,
+        "id": 2744459,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NDQ0NTk=",
+        "diff_hunk": "@@ -0,0 +1,18 @@\n+<h2>API</h2>\n+\n+<div class=\"boxout\">\n+\t<h2>Summary of changes since version 0.2</h2>\n+\t<p><strong>basket.require() now returns a Promise</strong>. Calls to <code>require()</code> are no longer chainable but you get better flexibilty in handling dependancies and errors in return.</p>\n+\t<p><strong>The basket.wait() method has been removed</strong>. The promise returned by <code>require()</code> fulfills the same purpose in a more standard way.</p>\n+\t<p><strong>The basket.add() method has been removed</strong>. Manually adding items to the cache is no longer supported.</p>\n+\t<p><strong>basket.clear() has been added</strong>.</p>\n+\n+\t<p>See the updated documentation below for more details.</p>\n+</div>\n+\n+<ul>\n+\t<li><a href=\"#require-doc\"><code>basket.require()</code></a></li>\n+\t<li><a href=\"#get-doc\"><code>basket.get()</code></a></li>\n+\t<li><a href=\"#remove-doc\"><code>basket.remove()</code></a></li>\n+\t<li><a href=\"#clear-doc\"><code>basket.clear()</code></a></li>\n+</ul>",
+        "path": "_includes/api.html",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "5b5d3c21600df5d0e065f397fe6ec9727d2180af",
+        "original_commit_id": "3945fa1b26ad7499ed1fcecc4e7c3a81fb0b6007",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Markdown too?\n",
+        "created_at": "2013-01-23T16:48:07Z",
+        "updated_at": "2013-01-23T17:50:01Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744459",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/73",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744459"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744459"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/73"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744491",
+        "pull_request_review_id": null,
+        "id": 2744491,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NDQ0OTE=",
+        "diff_hunk": "@@ -0,0 +1,12 @@\n+<h3 id=\"clear-doc\">basket.clear</h3>",
+        "path": "_includes/basket-clear.md",
+        "position": null,
+        "original_position": 1,
+        "commit_id": "5b5d3c21600df5d0e065f397fe6ec9727d2180af",
+        "original_commit_id": "3945fa1b26ad7499ed1fcecc4e7c3a81fb0b6007",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Id is autogenerated by GitHub based on the header title.\n",
+        "created_at": "2013-01-23T16:50:16Z",
+        "updated_at": "2013-01-23T17:50:01Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744491",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/73",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744491"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744491"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/73"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744553",
+        "pull_request_review_id": null,
+        "id": 2744553,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NDQ1NTM=",
+        "diff_hunk": "@@ -0,0 +1,18 @@\n+<h2>API</h2>\n+\n+<div class=\"boxout\">\n+\t<h2>Summary of changes since version 0.2</h2>\n+\t<p><strong>basket.require() now returns a Promise</strong>. Calls to <code>require()</code> are no longer chainable but you get better flexibilty in handling dependancies and errors in return.</p>\n+\t<p><strong>The basket.wait() method has been removed</strong>. The promise returned by <code>require()</code> fulfills the same purpose in a more standard way.</p>\n+\t<p><strong>The basket.add() method has been removed</strong>. Manually adding items to the cache is no longer supported.</p>\n+\t<p><strong>basket.clear() has been added</strong>.</p>\n+\n+\t<p>See the updated documentation below for more details.</p>\n+</div>\n+\n+<ul>\n+\t<li><a href=\"#require-doc\"><code>basket.require()</code></a></li>\n+\t<li><a href=\"#get-doc\"><code>basket.get()</code></a></li>\n+\t<li><a href=\"#remove-doc\"><code>basket.remove()</code></a></li>\n+\t<li><a href=\"#clear-doc\"><code>basket.clear()</code></a></li>\n+</ul>",
+        "path": "_includes/api.html",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "5b5d3c21600df5d0e065f397fe6ec9727d2180af",
+        "original_commit_id": "3945fa1b26ad7499ed1fcecc4e7c3a81fb0b6007",
+        "user": {
+            "login": "zenorocha",
+            "id": 398893,
+            "node_id": "MDQ6VXNlcjM5ODg5Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/398893?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zenorocha",
+            "html_url": "https://github.com/zenorocha",
+            "followers_url": "https://api.github.com/users/zenorocha/followers",
+            "following_url": "https://api.github.com/users/zenorocha/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zenorocha/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zenorocha/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zenorocha/subscriptions",
+            "organizations_url": "https://api.github.com/users/zenorocha/orgs",
+            "repos_url": "https://api.github.com/users/zenorocha/repos",
+            "events_url": "https://api.github.com/users/zenorocha/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zenorocha/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "the `<ul>` is easy, but when I tried to convert the content inside of `div.boxout` it didn't render like markdown.\n",
+        "created_at": "2013-01-23T16:53:04Z",
+        "updated_at": "2013-01-23T17:50:02Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744553",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/73",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744553"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744553"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/73"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744604",
+        "pull_request_review_id": null,
+        "id": 2744604,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NDQ2MDQ=",
+        "diff_hunk": "@@ -0,0 +1,18 @@\n+<h2>API</h2>\n+\n+<div class=\"boxout\">\n+\t<h2>Summary of changes since version 0.2</h2>\n+\t<p><strong>basket.require() now returns a Promise</strong>. Calls to <code>require()</code> are no longer chainable but you get better flexibilty in handling dependancies and errors in return.</p>\n+\t<p><strong>The basket.wait() method has been removed</strong>. The promise returned by <code>require()</code> fulfills the same purpose in a more standard way.</p>\n+\t<p><strong>The basket.add() method has been removed</strong>. Manually adding items to the cache is no longer supported.</p>\n+\t<p><strong>basket.clear() has been added</strong>.</p>\n+\n+\t<p>See the updated documentation below for more details.</p>\n+</div>\n+\n+<ul>\n+\t<li><a href=\"#require-doc\"><code>basket.require()</code></a></li>\n+\t<li><a href=\"#get-doc\"><code>basket.get()</code></a></li>\n+\t<li><a href=\"#remove-doc\"><code>basket.remove()</code></a></li>\n+\t<li><a href=\"#clear-doc\"><code>basket.clear()</code></a></li>\n+</ul>",
+        "path": "_includes/api.html",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "5b5d3c21600df5d0e065f397fe6ec9727d2180af",
+        "original_commit_id": "3945fa1b26ad7499ed1fcecc4e7c3a81fb0b6007",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No worries, just convert it to plain markdown, don't really need the style.\n",
+        "created_at": "2013-01-23T16:56:01Z",
+        "updated_at": "2013-01-23T17:50:02Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744604",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/73",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2744604"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2744604"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/73"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2745146",
+        "pull_request_review_id": null,
+        "id": 2745146,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NDUxNDY=",
+        "diff_hunk": "@@ -1,272 +1,16 @@\n-<!doctype html>\n-<html>\n-\t<head>\n-\t\t<meta charset=\"utf-8\">\n-\t\t<title>basket.js - a simple script loader that caches scripts with localStorage</title>\n-\t</head>\n-\t<link rel=\"stylesheet\" href=\"asset/base.css\">\n-\t<body>\n-\n-\t<div id=\"container\">\n-\t\t<h1><img src=\"asset/logo.png\" width=\"450\" alt=\"basket.js logo\"></h1>\n-\t\t<h2>A simple (proof-of-concept) script loader that caches scripts with localStorage </h2>\n-\t\t<a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-text=\"basket.js - a simple script loader that caches scripts with localStorage\" data-via=\"addyosmani\">Tweet</a>\n-\t\t<p>\n-\t\t    <strong>Version 0.3: </strong>\n-\t\t\t<a href=\"dist/basket.js\">basket.js</a> (4.4KB) &nbsp;\n-\t\t\t<a href=\"dist/basket.min.js\">basket.min.js</a>* (1.1KB gzipped) &nbsp;\n-\t\t\t<a href=\"dist/basket.full.min.js\">basket.full.min.js</a> (2.0KB gzipped) &nbsp;\n-\t\t\t<small>* = Use this version if you want to manually handle the <a href=\"https://github.com/tildeio/rsvp.js\">rsvp.js</a> dependency</small>\n-\t\t</p>\n-\n-\t\t<div id=\"message\" class=\"content\"><p><strong>If you're seeing this message, something has gone wrong. Please ensure you are testing this page using a HTTP server.</strong></p></div>\n-\t\t<div class=\"content\">\n-\n-<h3>Introduction</h3>\n-\n-<p>basket.js is a small JavaScript library supporting localStorage caching of scripts. If script(s) have previously been saved locally, they will simply be loaded and injected into the current document. If not, they will be XHR'd in for use right away, but cached so that no additional loads are required in the future.</p>\n-\n-<h3>Why localStorage?</h3>\n-\n-<p><a href=\"http://www.stevesouders.com/blog/2011/03/28/storager-case-study-bing-google/\">Tests</a> by Google and Bing have shown that there are performance benefits to caching assets in localStorage (especially on mobile) when compared to simply reading and writing from the standard browser cache. This project is currently working on replicating these tests in the public so that we have definitive statistics on whether this is true. </p>\n-\n-<p>Developers have also been wondering why we opted for localStorage as opposed to alternatives such as IndexedDB. Jens Arps has shown that IDB is at present <a href=\"http://jsperf.com/indexeddb-vs-localstorage/2\">significantly slower</a> than localStorage for reading and writing assets. Other developers exploring this space have also shown that localStorage works just fine for caching data (it's actually significantly <a href=\"http://www.webdirections.org/blog/localstorage-perhaps-not-so-harmful/\">faster</a> in Safari at the moment than any other browser). </p>\n-\n-<p>We believe that in time, once implementers have optimized localStorage, it will become more feasible to use cross-browser. In the mean time, we are also exploring solutions such as the <a href=\"http://www.html5rocks.com/en/tutorials/file/filesystem/\">FileSystem API</a> as a storage mechanism for caching scripts locally.</p>\n-\n-<h3>Project History</h3>\n-\n-<p>This project was created as a response to a <a href=\"https://twitter.com/#!/souders/statuses/166928191649357824\">tweet</a> by Steve Souders asking that the jQuery project consider caching jQuery in localStorage for performance reasons. Intrigued by the idea, we began exploring a minimalistic solution to it (just for the sake of experimentation).</p>\n-\n-<p>You may remember Souders previously did research and a <a href=\"http://www.stevesouders.com/blog/2011/03/28/storager-case-study-bing-google/\">write-up</a> on search engines making use of localStorage caching back in 2011. His conclusions were:</p>\n-\n-<p><strong>Bing and Google Search make extensive use of localStorage for stashing SCRIPT blocks that are used on subsequent page views. None of the other top sites from my previous post use localStorage in this way. Are Bing and Google Search onto something? Yes, definitely.</strong></p>\n-\n-<p>To help provide a more general solution for this problem, we put together a script loader that treats localStorage as a cache.</p>\n-\n-<h3>Compatibility</h3>\n-\n-<p>basket.js supports locally caching scripts in any browser with <a href=\"http://caniuse.com/#search=localstorage\">localStorage capabilities</a>.</p>\n-\n-<h3>About localStorage</h3>\n-\n-<p><a href=\"http://diveintohtml5.info/storage.html\">localStorage</a> is a simple API within modern browsers to allow web developers to store small amounts of data within the user's browser.</p>\n-\n-<p>The HTML5 spec suggests storage quota with a limit of 5MB for localStorage but browsers can implement their own quota if they wish. If the quota is exceeded the browser may fail to store items in the cache. If this happens, basket.js will remove entries from the cache beginning with the oldest and try again. Some browsers like Opera will ask the user about increasing the quota when it exceeds a set threshold.</p>\n-\n-<p>To free space basket.js will only remove cached scripts that it placed in localStorage itself. The data stored by other code in same origin will not be touched.</p>\n-\n-<h2>API</h2>\n-\n-<div class=\"boxout\">\n-\t<h2>Summary of changes since version 0.2</h2>\n-\t<p><strong>basket.require() now returns a Promise</strong>. Calls to <code>require()</code> are no longer chainable but you get better flexibilty in handling dependancies and errors in return.</p>\n-\t<p><strong>The basket.wait() method has been removed</strong>. The promise returned by <code>require()</code> fulfills the same purpose in a more standard way.</p>\n-\t<p><strong>The basket.add() method has been removed</strong>. Manually adding items to the cache is no longer supported.</p>\n-\t<p><strong>basket.clear() has been added</strong>.</p>\n-\n-\t<p>See the updated documentation below for more details.</p>\n-</div>\n-\n-<ul>\n-\t<li><a href=\"#require-doc\"><code>basket.require()</code></a></li>\n-\t<li><a href=\"#get-doc\"><code>basket.get()</code></a></li>\n-\t<li><a href=\"#remove-doc\"><code>basket.remove()</code></a></li>\n-\t<li><a href=\"#clear-doc\"><code>basket.clear()</code></a></li>\n-</ul>\n-\n-<h3 id=\"require-doc\">basket.require</h3>\n-\n-<p><code>basket.require( details )</code></p>\n-\n-<p><em>details:</em> Either an object or an array of objects with the following fields:</p>\n-\n-<ul>\n-\t<li><strong>url</strong> (<em>required</em>) The URI for the script. At present this must be a URI on the same origin as the caller.</li>\n-\t<li><strong>key</strong> The name that will be used to refer to this script. By default this is the <em>uri</em>.</li>\n-\t<li><strong>expire</strong> How long (in hours) before the cached item expires.</li>\n-\t<li><strong>execute</strong> Whether to cause the script to be executed once it has been retrieved. Defaults to true.</li>\n-\t<li><strong>unique</strong> A token stored with the cached item. If you request the same item again with a different token the script will be fetched and cached again.</li>\n-</ul>\n-\n-<p><code>require()</code> returns a <a href=\"http://wiki.commonjs.org/wiki/Promises/A\">promise</a> that will be fulfilled when each of the requested items has been fetched, or rejected if any item fails.</p>\n-\n-<h4>Examples</h4>\n-\n-<strong>Single script</strong>\n-\n-<pre><code>basket.require({ url: 'jquery.js' });\n-</code></pre>\n-\n-<p>This fetches a single script and executes it. If the script was already in the localStorage cache it will be loaded from there, otherwise it will be loaded from the network. The script will then be injected into the document for the browser to execute.</p>\n-\n-<strong>Multiple scripts</strong>\n-\n-<pre><code>basket.require(\n-\t{ url: 'jquery.js' },\n-\t{ url: 'underscore.js' },\n-\t{ url: 'backbone.js' }\n-);\n-</code></pre>\n-\n-<p>Multiple scripts will be requested. The scripts are requested asynchronously and so may load and execute in any order.</p>\n-\n-<strong>Ordering dependencies</strong>\n-\n-<pre><code>basket.require({ url: 'jquery.js' })\n-\t.then(function() {\n-\t\tbasket.require({ url: 'jquery-ui.js' });\n-\t});\n-})\n-</code></pre>\n-\n-<p>Here we ask basket.js to load jQuery. Once it has been fetched and executed, the promise returned by <code>require()</code> will be fulfilled and the callback passed to the <code>then()</code> method of the promise will be executed. Now we can do anything the requires jquery to be loaded including load any scripts that depend on it.</p>\n-\n-<strong>Error handling</strong>\n-\n-<pre><code>basket.require({ url: 'missing.js' })\n-\t.then(function() {\n-\t\t// Success\n-\t}, function( error ) {\n-\t\t// There was an error fetching the script\n-\t\tconsole.log( error );\n-\t});\n-</code></pre>\n-\n-<p>The second parameter to <code>then()</code> is a function that will be called if the promise is rejected. That is, if there was an error fetching the script. The only parameter to the error callback will be an Error object with details of the failure.</p>\n-\n-<strong>Using an alias</strong>\n-\n-<pre><code>basket.require({ url: 'jquery-1.8.3.min.js', key: 'jquery' });\n-</code></pre>\n-\n-<p>If you wish to store a script under a specific key name (e.g. if you have a build process which creates a script with a name like <code>012345.js</code> and want to store it as, say, <code>main</code>), you can set the <code>key</code> property to the name you want to use.</p>\n-\n-<p>This can also be useful for libraries with version numbers in their URIs when you don't need a particular version. In the above example the cache will be checked for a script stored as \"jquery\" regardless of its original URI. This allows us to use an older version stored in the cache if one exists.</p>\n-\n-<p>If <code>key</code> is not set the url will be used instead.</p>\n-\n-<strong>Cache expiry</strong>\n-\n-<pre><code>basket.require({ url: 'jquery.min.js', expire: 2 })\n-</code></pre>\n-\n-<p>Here script will only be cached for up to 2 hours. After that time it will be fetched from the network again even if it exists in the cache. To re-fetch after 7 days you could set 168 ( i.e. 7 * 24 = 168 ).</p>\n-\n-<p>If <code>expire</code> is not set, the default time of 5000 hours will be used - almost 7 months.</p>\n-\n-<strong>Cache a file without executing it</strong>\n-\n-<pre><code>basket.require({ url: 'jquery.min.js', execute: false });\n-</code></pre>\n-\n-<p>The script will be cached but will not be added to the document to be executed.</p>\n-\n-<strong>Cache busting</strong>\n-\n-<pre><code>/* fetch and cache the file */\n-basket.require({ url: 'jquery.min.js' });\n-\n-/* fetch and cache again */\n-basket.require({ url: 'jquery.min.js', unique: 123 });\n-</code></pre>\n-\n-<p>Set the <code>unique</code> property to control whether the script will be loaded from the cache. If the parameter is different in the request to that stored in the cache the file is fetched again.</p>\n-\n-<p>basket.js will add the \"basket-unique\" parameter on to the url to also prevent the script being fetched from the browser cache.</p>\n-\n-\n-<h3 id=\"get-doc\">basket.get</h3>\n-\n-<p><code>basket.get( key )</code></p>\n-\n-<p><em>key:</em> The key to lookup in the localStorage cache.</p>\n-\n-<p><code>get()</code> will return an object if script is found or false if not. The object contains the same data as that passed to <code>require()</code> when it was first loaded, with some additional details added:</p>\n-\n-<ul>\n-\t<li><strong>stamp</strong> The timestamp for when the file was fetched.</li>\n-\t<li><strong>expire</strong> The timestamp for when the item will expire.</li>\n-\t<li><strong>data</strong> The file contents of the script.</li>\n-</ul>\n-\n-<pre><code>var req, ttl;\n-basket.require({ url: 'jquery.min.js', key: 'jquery' });\n-req = basket.get('jquery');\n-// know the lifetime\n-ttl = req.expire - req.stamp;\n-</code></pre>\n-\n-\n-<h3 id=\"remove-doc\">basket.remove</h3>\n-\n-<p><code>basket.remove( key )</code></p>\n-\n-<p><em>key:</em> The key to remove from the localStorage cache.</p>\n-\n-<p><code>remove()</code> will simply remove a previously cached script from localStorage. An example of how to use it can be seen below:</p>\n-\n-<pre><code>basket\n-\t.remove('jquery.js')\n-\t.remove('modernizr');\n-</code></pre>\n-\n-<h3 id=\"clear-doc\">basket.clear</h3>\n-\n-<p><code>basket.clear( expired )</code></p>\n-\n-<p><em>expired:</em> If <code>expired</code> is true then only items that have expired will be removed. Otherwise all items are removed.</p>\n-\n-<p><code>clear()</code> removes items from the cache.</p>\n-\n-<pre><code>basket.clear();\n-basket.clear( true );\n-</code></pre>\n-\n-<p>&nbsp;</p>\n-<h3>The Future</h3>\n-<p>We are currently investigating a number of different features we would like to bring to the project, as well as looking to produce some high-quality <a href=\"https://github.com/addyosmani/basket.js/issues/24\">performance benchmarks</a> (compared to IndexedDB, Browser cache and more). To find out more, check out <a href=\"https://github.com/addyosmani/basket.js/issues\">what we're working on</a>.</p>\n-\n-<p>&nbsp;</p>\n-<h3>Team, License &amp; Contribution Guide</h3>\n-<p>basket.js is released under an <a href=\"http://en.wikipedia.org/wiki/MIT_License\">MIT License</a> and is currently maintained by <a href=\"https://github.com/addyosmani\">Addy Osmani</a>, <a href=\"https://github.com/sindresorhus\">Sindre Sorhus</a>, <a href=\"https://github.com/wibblymat\">Mat Scales</a> and <a href=\"https://github.com/peol\">Andr\u00e9e Hansson</a>. We would also like to extend our thanks to <a href=\"https://github.com/rwldrn\">Rick Waldron</a> for the optimizations he suggested for improving the project.</p>\n-<p>For more information on our style-guide and how to get involved with basket.js, please see the README in our project <a href=\"http://github.com/addyosmani/basket.js\">repo</a>.</p>\n-\t\t</div>\n-\t</div>\n-\n-\t<script type=\"text/template\" id=\"intro\">\n-\t\t<p><em>This section was rendered using the micro-templating in Underscore.js. It's just one of a number of scripts that were added to this document using basket.js when you loaded it and should now be <strong>cached</strong> in localStorage (if supported). If you visit this page again, the scripts will be loaded from there rather than being refetched. Backbone.js was also loaded and we created a new model with the name: <%= name %> (just for funsies).</em></p>\n-\t</script>\n-\t<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=\"//platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\n-\t<script src=\"https://raw.github.com/tildeio/rsvp.js/1.0.0/browser/rsvp.min.js\"></script>\n-\t<script src=\"dist/basket.min.js\"></script>\n-\t<script>\n-\t\tvar message, str;\n-\n-\t\tbasket.require({ url: \"test/fixtures/jquery.min.js\" })\n-\t\t\t.then(function(){\n-\t\t\t\tbasket.require({ url: \"test/fixtures/underscore-min.js\" }, { url: \"test/fixtures/backbone-min.js\" })\n-\t\t\t\t\t.then(function() {\n-\n-\t\t\t\t\tvar testModel = Backbone.Model.extend({\n-\t\t\t\t\t\tidAttribute: \"_id\"\n-\t\t\t\t\t});\n-\n-\t\t\t\t\tvar myModel = new testModel({ _id: 4, name: \"Nyan Cat\" });\n-\n-\t\t\t\t\t//basket.remove('test/backbone-min.js');\n-\t\t\t\t\t//basket.require('test/modernizr.min.js');\n-\n-\n-\t\t\t\t\tmessage = $('#message');\n-\t\t\t\t\tvar templateContent = $('#intro').html();\n-\t\t\t\t\tvar compiled = _.template(templateContent);\n-\t\t\t\t\tmessage.html( compiled({name: myModel.get('name')}));\n-\n-\t\t\t\t});\n-\t\t\t});\n-\n-\t</script>\n-\t\t<a href=\"http://github.com/addyosmani/basket.js\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png\" alt=\"Fork me on GitHub\"></a>\n-\t</body>\n-</html>\n+---\n+layout: default\n+---\n+\n+{% include introduction.md %}\n+{% include why-localstorage.md %}\n+{% include project-history.md %}\n+{% include compatibility.md %}\n+{% include about-localstorage.md %}\n+{% include api.md %}\n+{% include basket-require.md %}\n+{% include basket-get.md %}\n+{% include basket-remove.md %}\n+{% include basket-clear.md %}\n+{% include the-future.md %}\n+{% include team.md %}",
+        "path": "index.html",
+        "position": null,
+        "original_position": 288,
+        "commit_id": "5b5d3c21600df5d0e065f397fe6ec9727d2180af",
+        "original_commit_id": "bb959e73cf9b581533481b95c4801c934effe12a",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Still too many files. How about one file called `index.md` containing everything except the `api.md` which contains all the `basket_*` files.\n\nResulting files:\n\nindex.md\napi.md\n",
+        "created_at": "2013-01-23T17:25:35Z",
+        "updated_at": "2013-01-23T17:50:02Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2745146",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/73",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2745146"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2745146"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/73"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2745554",
+        "pull_request_review_id": null,
+        "id": 2745554,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI3NDU1NTQ=",
+        "diff_hunk": "@@ -1,272 +1,16 @@\n-<!doctype html>\n-<html>\n-\t<head>\n-\t\t<meta charset=\"utf-8\">\n-\t\t<title>basket.js - a simple script loader that caches scripts with localStorage</title>\n-\t</head>\n-\t<link rel=\"stylesheet\" href=\"asset/base.css\">\n-\t<body>\n-\n-\t<div id=\"container\">\n-\t\t<h1><img src=\"asset/logo.png\" width=\"450\" alt=\"basket.js logo\"></h1>\n-\t\t<h2>A simple (proof-of-concept) script loader that caches scripts with localStorage </h2>\n-\t\t<a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-text=\"basket.js - a simple script loader that caches scripts with localStorage\" data-via=\"addyosmani\">Tweet</a>\n-\t\t<p>\n-\t\t    <strong>Version 0.3: </strong>\n-\t\t\t<a href=\"dist/basket.js\">basket.js</a> (4.4KB) &nbsp;\n-\t\t\t<a href=\"dist/basket.min.js\">basket.min.js</a>* (1.1KB gzipped) &nbsp;\n-\t\t\t<a href=\"dist/basket.full.min.js\">basket.full.min.js</a> (2.0KB gzipped) &nbsp;\n-\t\t\t<small>* = Use this version if you want to manually handle the <a href=\"https://github.com/tildeio/rsvp.js\">rsvp.js</a> dependency</small>\n-\t\t</p>\n-\n-\t\t<div id=\"message\" class=\"content\"><p><strong>If you're seeing this message, something has gone wrong. Please ensure you are testing this page using a HTTP server.</strong></p></div>\n-\t\t<div class=\"content\">\n-\n-<h3>Introduction</h3>\n-\n-<p>basket.js is a small JavaScript library supporting localStorage caching of scripts. If script(s) have previously been saved locally, they will simply be loaded and injected into the current document. If not, they will be XHR'd in for use right away, but cached so that no additional loads are required in the future.</p>\n-\n-<h3>Why localStorage?</h3>\n-\n-<p><a href=\"http://www.stevesouders.com/blog/2011/03/28/storager-case-study-bing-google/\">Tests</a> by Google and Bing have shown that there are performance benefits to caching assets in localStorage (especially on mobile) when compared to simply reading and writing from the standard browser cache. This project is currently working on replicating these tests in the public so that we have definitive statistics on whether this is true. </p>\n-\n-<p>Developers have also been wondering why we opted for localStorage as opposed to alternatives such as IndexedDB. Jens Arps has shown that IDB is at present <a href=\"http://jsperf.com/indexeddb-vs-localstorage/2\">significantly slower</a> than localStorage for reading and writing assets. Other developers exploring this space have also shown that localStorage works just fine for caching data (it's actually significantly <a href=\"http://www.webdirections.org/blog/localstorage-perhaps-not-so-harmful/\">faster</a> in Safari at the moment than any other browser). </p>\n-\n-<p>We believe that in time, once implementers have optimized localStorage, it will become more feasible to use cross-browser. In the mean time, we are also exploring solutions such as the <a href=\"http://www.html5rocks.com/en/tutorials/file/filesystem/\">FileSystem API</a> as a storage mechanism for caching scripts locally.</p>\n-\n-<h3>Project History</h3>\n-\n-<p>This project was created as a response to a <a href=\"https://twitter.com/#!/souders/statuses/166928191649357824\">tweet</a> by Steve Souders asking that the jQuery project consider caching jQuery in localStorage for performance reasons. Intrigued by the idea, we began exploring a minimalistic solution to it (just for the sake of experimentation).</p>\n-\n-<p>You may remember Souders previously did research and a <a href=\"http://www.stevesouders.com/blog/2011/03/28/storager-case-study-bing-google/\">write-up</a> on search engines making use of localStorage caching back in 2011. His conclusions were:</p>\n-\n-<p><strong>Bing and Google Search make extensive use of localStorage for stashing SCRIPT blocks that are used on subsequent page views. None of the other top sites from my previous post use localStorage in this way. Are Bing and Google Search onto something? Yes, definitely.</strong></p>\n-\n-<p>To help provide a more general solution for this problem, we put together a script loader that treats localStorage as a cache.</p>\n-\n-<h3>Compatibility</h3>\n-\n-<p>basket.js supports locally caching scripts in any browser with <a href=\"http://caniuse.com/#search=localstorage\">localStorage capabilities</a>.</p>\n-\n-<h3>About localStorage</h3>\n-\n-<p><a href=\"http://diveintohtml5.info/storage.html\">localStorage</a> is a simple API within modern browsers to allow web developers to store small amounts of data within the user's browser.</p>\n-\n-<p>The HTML5 spec suggests storage quota with a limit of 5MB for localStorage but browsers can implement their own quota if they wish. If the quota is exceeded the browser may fail to store items in the cache. If this happens, basket.js will remove entries from the cache beginning with the oldest and try again. Some browsers like Opera will ask the user about increasing the quota when it exceeds a set threshold.</p>\n-\n-<p>To free space basket.js will only remove cached scripts that it placed in localStorage itself. The data stored by other code in same origin will not be touched.</p>\n-\n-<h2>API</h2>\n-\n-<div class=\"boxout\">\n-\t<h2>Summary of changes since version 0.2</h2>\n-\t<p><strong>basket.require() now returns a Promise</strong>. Calls to <code>require()</code> are no longer chainable but you get better flexibilty in handling dependancies and errors in return.</p>\n-\t<p><strong>The basket.wait() method has been removed</strong>. The promise returned by <code>require()</code> fulfills the same purpose in a more standard way.</p>\n-\t<p><strong>The basket.add() method has been removed</strong>. Manually adding items to the cache is no longer supported.</p>\n-\t<p><strong>basket.clear() has been added</strong>.</p>\n-\n-\t<p>See the updated documentation below for more details.</p>\n-</div>\n-\n-<ul>\n-\t<li><a href=\"#require-doc\"><code>basket.require()</code></a></li>\n-\t<li><a href=\"#get-doc\"><code>basket.get()</code></a></li>\n-\t<li><a href=\"#remove-doc\"><code>basket.remove()</code></a></li>\n-\t<li><a href=\"#clear-doc\"><code>basket.clear()</code></a></li>\n-</ul>\n-\n-<h3 id=\"require-doc\">basket.require</h3>\n-\n-<p><code>basket.require( details )</code></p>\n-\n-<p><em>details:</em> Either an object or an array of objects with the following fields:</p>\n-\n-<ul>\n-\t<li><strong>url</strong> (<em>required</em>) The URI for the script. At present this must be a URI on the same origin as the caller.</li>\n-\t<li><strong>key</strong> The name that will be used to refer to this script. By default this is the <em>uri</em>.</li>\n-\t<li><strong>expire</strong> How long (in hours) before the cached item expires.</li>\n-\t<li><strong>execute</strong> Whether to cause the script to be executed once it has been retrieved. Defaults to true.</li>\n-\t<li><strong>unique</strong> A token stored with the cached item. If you request the same item again with a different token the script will be fetched and cached again.</li>\n-</ul>\n-\n-<p><code>require()</code> returns a <a href=\"http://wiki.commonjs.org/wiki/Promises/A\">promise</a> that will be fulfilled when each of the requested items has been fetched, or rejected if any item fails.</p>\n-\n-<h4>Examples</h4>\n-\n-<strong>Single script</strong>\n-\n-<pre><code>basket.require({ url: 'jquery.js' });\n-</code></pre>\n-\n-<p>This fetches a single script and executes it. If the script was already in the localStorage cache it will be loaded from there, otherwise it will be loaded from the network. The script will then be injected into the document for the browser to execute.</p>\n-\n-<strong>Multiple scripts</strong>\n-\n-<pre><code>basket.require(\n-\t{ url: 'jquery.js' },\n-\t{ url: 'underscore.js' },\n-\t{ url: 'backbone.js' }\n-);\n-</code></pre>\n-\n-<p>Multiple scripts will be requested. The scripts are requested asynchronously and so may load and execute in any order.</p>\n-\n-<strong>Ordering dependencies</strong>\n-\n-<pre><code>basket.require({ url: 'jquery.js' })\n-\t.then(function() {\n-\t\tbasket.require({ url: 'jquery-ui.js' });\n-\t});\n-})\n-</code></pre>\n-\n-<p>Here we ask basket.js to load jQuery. Once it has been fetched and executed, the promise returned by <code>require()</code> will be fulfilled and the callback passed to the <code>then()</code> method of the promise will be executed. Now we can do anything the requires jquery to be loaded including load any scripts that depend on it.</p>\n-\n-<strong>Error handling</strong>\n-\n-<pre><code>basket.require({ url: 'missing.js' })\n-\t.then(function() {\n-\t\t// Success\n-\t}, function( error ) {\n-\t\t// There was an error fetching the script\n-\t\tconsole.log( error );\n-\t});\n-</code></pre>\n-\n-<p>The second parameter to <code>then()</code> is a function that will be called if the promise is rejected. That is, if there was an error fetching the script. The only parameter to the error callback will be an Error object with details of the failure.</p>\n-\n-<strong>Using an alias</strong>\n-\n-<pre><code>basket.require({ url: 'jquery-1.8.3.min.js', key: 'jquery' });\n-</code></pre>\n-\n-<p>If you wish to store a script under a specific key name (e.g. if you have a build process which creates a script with a name like <code>012345.js</code> and want to store it as, say, <code>main</code>), you can set the <code>key</code> property to the name you want to use.</p>\n-\n-<p>This can also be useful for libraries with version numbers in their URIs when you don't need a particular version. In the above example the cache will be checked for a script stored as \"jquery\" regardless of its original URI. This allows us to use an older version stored in the cache if one exists.</p>\n-\n-<p>If <code>key</code> is not set the url will be used instead.</p>\n-\n-<strong>Cache expiry</strong>\n-\n-<pre><code>basket.require({ url: 'jquery.min.js', expire: 2 })\n-</code></pre>\n-\n-<p>Here script will only be cached for up to 2 hours. After that time it will be fetched from the network again even if it exists in the cache. To re-fetch after 7 days you could set 168 ( i.e. 7 * 24 = 168 ).</p>\n-\n-<p>If <code>expire</code> is not set, the default time of 5000 hours will be used - almost 7 months.</p>\n-\n-<strong>Cache a file without executing it</strong>\n-\n-<pre><code>basket.require({ url: 'jquery.min.js', execute: false });\n-</code></pre>\n-\n-<p>The script will be cached but will not be added to the document to be executed.</p>\n-\n-<strong>Cache busting</strong>\n-\n-<pre><code>/* fetch and cache the file */\n-basket.require({ url: 'jquery.min.js' });\n-\n-/* fetch and cache again */\n-basket.require({ url: 'jquery.min.js', unique: 123 });\n-</code></pre>\n-\n-<p>Set the <code>unique</code> property to control whether the script will be loaded from the cache. If the parameter is different in the request to that stored in the cache the file is fetched again.</p>\n-\n-<p>basket.js will add the \"basket-unique\" parameter on to the url to also prevent the script being fetched from the browser cache.</p>\n-\n-\n-<h3 id=\"get-doc\">basket.get</h3>\n-\n-<p><code>basket.get( key )</code></p>\n-\n-<p><em>key:</em> The key to lookup in the localStorage cache.</p>\n-\n-<p><code>get()</code> will return an object if script is found or false if not. The object contains the same data as that passed to <code>require()</code> when it was first loaded, with some additional details added:</p>\n-\n-<ul>\n-\t<li><strong>stamp</strong> The timestamp for when the file was fetched.</li>\n-\t<li><strong>expire</strong> The timestamp for when the item will expire.</li>\n-\t<li><strong>data</strong> The file contents of the script.</li>\n-</ul>\n-\n-<pre><code>var req, ttl;\n-basket.require({ url: 'jquery.min.js', key: 'jquery' });\n-req = basket.get('jquery');\n-// know the lifetime\n-ttl = req.expire - req.stamp;\n-</code></pre>\n-\n-\n-<h3 id=\"remove-doc\">basket.remove</h3>\n-\n-<p><code>basket.remove( key )</code></p>\n-\n-<p><em>key:</em> The key to remove from the localStorage cache.</p>\n-\n-<p><code>remove()</code> will simply remove a previously cached script from localStorage. An example of how to use it can be seen below:</p>\n-\n-<pre><code>basket\n-\t.remove('jquery.js')\n-\t.remove('modernizr');\n-</code></pre>\n-\n-<h3 id=\"clear-doc\">basket.clear</h3>\n-\n-<p><code>basket.clear( expired )</code></p>\n-\n-<p><em>expired:</em> If <code>expired</code> is true then only items that have expired will be removed. Otherwise all items are removed.</p>\n-\n-<p><code>clear()</code> removes items from the cache.</p>\n-\n-<pre><code>basket.clear();\n-basket.clear( true );\n-</code></pre>\n-\n-<p>&nbsp;</p>\n-<h3>The Future</h3>\n-<p>We are currently investigating a number of different features we would like to bring to the project, as well as looking to produce some high-quality <a href=\"https://github.com/addyosmani/basket.js/issues/24\">performance benchmarks</a> (compared to IndexedDB, Browser cache and more). To find out more, check out <a href=\"https://github.com/addyosmani/basket.js/issues\">what we're working on</a>.</p>\n-\n-<p>&nbsp;</p>\n-<h3>Team, License &amp; Contribution Guide</h3>\n-<p>basket.js is released under an <a href=\"http://en.wikipedia.org/wiki/MIT_License\">MIT License</a> and is currently maintained by <a href=\"https://github.com/addyosmani\">Addy Osmani</a>, <a href=\"https://github.com/sindresorhus\">Sindre Sorhus</a>, <a href=\"https://github.com/wibblymat\">Mat Scales</a> and <a href=\"https://github.com/peol\">Andr\u00e9e Hansson</a>. We would also like to extend our thanks to <a href=\"https://github.com/rwldrn\">Rick Waldron</a> for the optimizations he suggested for improving the project.</p>\n-<p>For more information on our style-guide and how to get involved with basket.js, please see the README in our project <a href=\"http://github.com/addyosmani/basket.js\">repo</a>.</p>\n-\t\t</div>\n-\t</div>\n-\n-\t<script type=\"text/template\" id=\"intro\">\n-\t\t<p><em>This section was rendered using the micro-templating in Underscore.js. It's just one of a number of scripts that were added to this document using basket.js when you loaded it and should now be <strong>cached</strong> in localStorage (if supported). If you visit this page again, the scripts will be loaded from there rather than being refetched. Backbone.js was also loaded and we created a new model with the name: <%= name %> (just for funsies).</em></p>\n-\t</script>\n-\t<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=\"//platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>\n-\t<script src=\"https://raw.github.com/tildeio/rsvp.js/1.0.0/browser/rsvp.min.js\"></script>\n-\t<script src=\"dist/basket.min.js\"></script>\n-\t<script>\n-\t\tvar message, str;\n-\n-\t\tbasket.require({ url: \"test/fixtures/jquery.min.js\" })\n-\t\t\t.then(function(){\n-\t\t\t\tbasket.require({ url: \"test/fixtures/underscore-min.js\" }, { url: \"test/fixtures/backbone-min.js\" })\n-\t\t\t\t\t.then(function() {\n-\n-\t\t\t\t\tvar testModel = Backbone.Model.extend({\n-\t\t\t\t\t\tidAttribute: \"_id\"\n-\t\t\t\t\t});\n-\n-\t\t\t\t\tvar myModel = new testModel({ _id: 4, name: \"Nyan Cat\" });\n-\n-\t\t\t\t\t//basket.remove('test/backbone-min.js');\n-\t\t\t\t\t//basket.require('test/modernizr.min.js');\n-\n-\n-\t\t\t\t\tmessage = $('#message');\n-\t\t\t\t\tvar templateContent = $('#intro').html();\n-\t\t\t\t\tvar compiled = _.template(templateContent);\n-\t\t\t\t\tmessage.html( compiled({name: myModel.get('name')}));\n-\n-\t\t\t\t});\n-\t\t\t});\n-\n-\t</script>\n-\t\t<a href=\"http://github.com/addyosmani/basket.js\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png\" alt=\"Fork me on GitHub\"></a>\n-\t</body>\n-</html>\n+---\n+layout: default\n+---\n+\n+{% include introduction.md %}\n+{% include why-localstorage.md %}\n+{% include project-history.md %}\n+{% include compatibility.md %}\n+{% include about-localstorage.md %}\n+{% include api.md %}\n+{% include basket-require.md %}\n+{% include basket-get.md %}\n+{% include basket-remove.md %}\n+{% include basket-clear.md %}\n+{% include the-future.md %}\n+{% include team.md %}",
+        "path": "index.html",
+        "position": null,
+        "original_position": 288,
+        "commit_id": "5b5d3c21600df5d0e065f397fe6ec9727d2180af",
+        "original_commit_id": "bb959e73cf9b581533481b95c4801c934effe12a",
+        "user": {
+            "login": "zenorocha",
+            "id": 398893,
+            "node_id": "MDQ6VXNlcjM5ODg5Mw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/398893?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zenorocha",
+            "html_url": "https://github.com/zenorocha",
+            "followers_url": "https://api.github.com/users/zenorocha/followers",
+            "following_url": "https://api.github.com/users/zenorocha/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zenorocha/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zenorocha/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zenorocha/subscriptions",
+            "organizations_url": "https://api.github.com/users/zenorocha/orgs",
+            "repos_url": "https://api.github.com/users/zenorocha/repos",
+            "events_url": "https://api.github.com/users/zenorocha/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zenorocha/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I prefer small files, but ok.\n",
+        "created_at": "2013-01-23T17:49:03Z",
+        "updated_at": "2013-01-23T17:50:02Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2745554",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/73",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2745554"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/73#discussion_r2745554"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/73"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2828752",
+        "pull_request_review_id": null,
+        "id": 2828752,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4Mjg3NTI=",
+        "diff_hunk": "@@ -115,7 +119,7 @@\n \t\t\tpromise = saveUrl( obj );\n \t\t} else {\n \t\t\tpromise = new RSVP.Promise();\n-\t\t\tpromise.resolve( source.data );\n+\t\t\tpromise.resolve( source.data, obj.key.search(/\\.css$/i) !== -1 );",
+        "path": "lib/basket.js",
+        "position": null,
+        "original_position": 37,
+        "commit_id": "565f1f3c9e2870bf53ed5f9c0962dd9b8571251f",
+        "original_commit_id": "4e5d86f3c7c10eb3df58e270bc3a34e57d586631",
+        "user": {
+            "login": "wibblymat",
+            "id": 393358,
+            "node_id": "MDQ6VXNlcjM5MzM1OA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/393358?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wibblymat",
+            "html_url": "https://github.com/wibblymat",
+            "followers_url": "https://api.github.com/users/wibblymat/followers",
+            "following_url": "https://api.github.com/users/wibblymat/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wibblymat/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wibblymat/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wibblymat/subscriptions",
+            "organizations_url": "https://api.github.com/users/wibblymat/orgs",
+            "repos_url": "https://api.github.com/users/wibblymat/repos",
+            "events_url": "https://api.github.com/users/wibblymat/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wibblymat/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I would move this check into injectScript. Doesn't really seem to belong here.\n\nAlso, maybe injectScript needs renaming. 'addTo'DOM' or something like that.\n\n**Edit:** Of course, you only currently get the text passed to injectScript so can't do the check there.\n\nI made a change for my own PR in https://github.com/wibblymat/basket.js/commit/6814adb8b32550ac5cdeb2421a62367e02712cdd which allows you to get the obj. It was done with exactly this in mind.\n",
+        "created_at": "2013-01-30T16:34:15Z",
+        "updated_at": "2013-01-30T20:56:13Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/76#discussion_r2828752",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/76",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2828752"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/76#discussion_r2828752"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2828836",
+        "pull_request_review_id": null,
+        "id": 2828836,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4Mjg4MzY=",
+        "diff_hunk": "@@ -115,7 +119,7 @@\n \t\t\tpromise = saveUrl( obj );\n \t\t} else {\n \t\t\tpromise = new RSVP.Promise();\n-\t\t\tpromise.resolve( source.data );\n+\t\t\tpromise.resolve( source.data, obj.key.search(/\\.css$/i) !== -1 );",
+        "path": "lib/basket.js",
+        "position": null,
+        "original_position": 37,
+        "commit_id": "565f1f3c9e2870bf53ed5f9c0962dd9b8571251f",
+        "original_commit_id": "4e5d86f3c7c10eb3df58e270bc3a34e57d586631",
+        "user": {
+            "login": "amrnt",
+            "id": 21756,
+            "node_id": "MDQ6VXNlcjIxNzU2",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/21756?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/amrnt",
+            "html_url": "https://github.com/amrnt",
+            "followers_url": "https://api.github.com/users/amrnt/followers",
+            "following_url": "https://api.github.com/users/amrnt/following{/other_user}",
+            "gists_url": "https://api.github.com/users/amrnt/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/amrnt/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/amrnt/subscriptions",
+            "organizations_url": "https://api.github.com/users/amrnt/orgs",
+            "repos_url": "https://api.github.com/users/amrnt/repos",
+            "events_url": "https://api.github.com/users/amrnt/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/amrnt/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "makes sense. `addToDOM` is a good replacement.\n\nYeah just found that I can't do the check there in `injectScript` function.\n\nI think, I'm leaving as it is now, but change `injectScript` to `addToDOM`.\n",
+        "created_at": "2013-01-30T16:38:57Z",
+        "updated_at": "2013-01-30T20:56:13Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/76#discussion_r2828836",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/76",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/2828836"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/76#discussion_r2828836"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/76"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/5701721",
+        "pull_request_review_id": null,
+        "id": 5701721,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU3MDE3MjE=",
+        "diff_hunk": "@@ -1,6 +1,7 @@\n language: node_js\n node_js:\n   - 0.8\n+  - 0.10",
+        "path": ".travis.yml",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "72f9d15b0e43782a97ff734fad894c2f6ae24b8b",
+        "original_commit_id": "72f9d15b0e43782a97ff734fad894c2f6ae24b8b",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "both needs to be quoted\n",
+        "created_at": "2013-08-12T00:36:30Z",
+        "updated_at": "2013-08-12T00:36:30Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/83#discussion_r5701721",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/83",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/5701721"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/83#discussion_r5701721"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/83"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/12265269",
+        "pull_request_review_id": null,
+        "id": 12265269,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMjY1MjY5",
+        "diff_hunk": "@@ -44,6 +44,9 @@\n \t};\n \n \tvar getUrl = function( url ) {\n+\t\tif (url instanceof Array) {",
+        "path": "lib/basket.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "ad8137efe7b9604a12bbcc215ab2ff78d5f9718b",
+        "original_commit_id": "ad8137efe7b9604a12bbcc215ab2ff78d5f9718b",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Array.isArray()\n",
+        "created_at": "2014-05-05T00:10:59Z",
+        "updated_at": "2014-05-05T00:10:59Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/97#discussion_r12265269",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/97",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/12265269"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/97#discussion_r12265269"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/12265271",
+        "pull_request_review_id": null,
+        "id": 12265271,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMjY1Mjcx",
+        "diff_hunk": "@@ -111,7 +135,7 @@\n \t\t\treturn;\n \t\t}\n \n-\t\tobj.key =  ( obj.key || obj.url );\n+\t\tobj.key =  ( obj.key || (obj.url instanceof Array ? obj.url[0] : obj.url ));",
+        "path": "lib/basket.js",
+        "position": 43,
+        "original_position": 43,
+        "commit_id": "ad8137efe7b9604a12bbcc215ab2ff78d5f9718b",
+        "original_commit_id": "ad8137efe7b9604a12bbcc215ab2ff78d5f9718b",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Array.isArray\n",
+        "created_at": "2014-05-05T00:11:16Z",
+        "updated_at": "2014-05-05T00:11:16Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/97#discussion_r12265271",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/97",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/12265271"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/97#discussion_r12265271"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/13481585",
+        "pull_request_review_id": null,
+        "id": 13481585,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNDgxNTg1",
+        "diff_hunk": "@@ -31,6 +31,7 @@ See the updated documentation below for more details.\n * **expire** How long (in hours) before the cached item expires.\n * **execute** Whether to cause the script to be executed once it has been retrieved. Defaults to true.\n * **unique** A token stored with the cached item. If you request the same item again with a different token the script will be fetched and cached again.\n+* **skipCache** Whether to store the script in localStorage. By default is *false*.",
+        "path": "_includes/api.md",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "c4667f56ee0220ffd4317bcf81c12b897c8a98c9",
+        "original_commit_id": "1900a07ff373885491665105fa877909aee90b32",
+        "user": {
+            "login": "sindresorhus",
+            "id": 170270,
+            "node_id": "MDQ6VXNlcjE3MDI3MA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/170270?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sindresorhus",
+            "html_url": "https://github.com/sindresorhus",
+            "followers_url": "https://api.github.com/users/sindresorhus/followers",
+            "following_url": "https://api.github.com/users/sindresorhus/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sindresorhus/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sindresorhus/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sindresorhus/subscriptions",
+            "organizations_url": "https://api.github.com/users/sindresorhus/orgs",
+            "repos_url": "https://api.github.com/users/sindresorhus/repos",
+            "events_url": "https://api.github.com/users/sindresorhus/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sindresorhus/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "> Whether to store the script in localStorage\n\n=>\n\n> Prevent storing the script in cache. Useful when you want load scripts in order, but only cache some.\n",
+        "created_at": "2014-06-06T09:04:29Z",
+        "updated_at": "2014-06-06T09:11:38Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/107#discussion_r13481585",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/107",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/13481585"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/107#discussion_r13481585"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/107"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/67660993",
+        "pull_request_review_id": null,
+        "id": 67660993,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3NjYwOTkz",
+        "diff_hunk": "@@ -160,8 +160,16 @@\n \t\thead.appendChild( script );\n \t};\n \n+\tvar injectStyle = function( obj ) {\n+\t\tvar style = document.createElement('style');\n+\t\tstyle.type = 'text/css';\n+\t\tstyle.text = obj.data;\n+\t\thead.appendChild( style );\n+\t};\n+\n \tvar handlers = {\n-\t\t'default': injectScript\n+\t\t'default': injectScript,\n+\t\t'css': injectStyle",
+        "path": "lib/basket.js",
+        "position": 38,
+        "original_position": 14,
+        "commit_id": "40108d0eaf11feaa9e086c3fff74f272a3f10b59",
+        "original_commit_id": "d2d5043d0423e7b6fc3e04c44eb1ed0cd33a900c",
+        "user": {
+            "login": "untone",
+            "id": 47335,
+            "node_id": "MDQ6VXNlcjQ3MzM1",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/47335?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/untone",
+            "html_url": "https://github.com/untone",
+            "followers_url": "https://api.github.com/users/untone/followers",
+            "following_url": "https://api.github.com/users/untone/following{/other_user}",
+            "gists_url": "https://api.github.com/users/untone/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/untone/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/untone/subscriptions",
+            "organizations_url": "https://api.github.com/users/untone/orgs",
+            "repos_url": "https://api.github.com/users/untone/repos",
+            "events_url": "https://api.github.com/users/untone/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/untone/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Better use 'text/css' as key name instead 'css' cause obj.type must equal xhr.getResponseHeader('content-type'), which responsed as 'text/css', of course.\n",
+        "created_at": "2016-06-20T09:38:24Z",
+        "updated_at": "2018-07-27T13:22:42Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/160#discussion_r67660993",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/160",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/67660993"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/160#discussion_r67660993"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/160"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/67661338",
+        "pull_request_review_id": null,
+        "id": 67661338,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3NjYxMzM4",
+        "diff_hunk": "@@ -160,8 +160,16 @@\n \t\thead.appendChild( script );\n \t};\n \n+\tvar injectStyle = function( obj ) {\n+\t\tvar style = document.createElement('style');\n+\t\tstyle.type = 'text/css';\n+\t\tstyle.text = obj.data;",
+        "path": "lib/basket.js",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "40108d0eaf11feaa9e086c3fff74f272a3f10b59",
+        "original_commit_id": "d2d5043d0423e7b6fc3e04c44eb1ed0cd33a900c",
+        "user": {
+            "login": "untone",
+            "id": 47335,
+            "node_id": "MDQ6VXNlcjQ3MzM1",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/47335?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/untone",
+            "html_url": "https://github.com/untone",
+            "followers_url": "https://api.github.com/users/untone/followers",
+            "following_url": "https://api.github.com/users/untone/following{/other_user}",
+            "gists_url": "https://api.github.com/users/untone/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/untone/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/untone/subscriptions",
+            "organizations_url": "https://api.github.com/users/untone/orgs",
+            "repos_url": "https://api.github.com/users/untone/repos",
+            "events_url": "https://api.github.com/users/untone/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/untone/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "style.appendChild(document.createTextNode(obj.data)) instead of style.text\n",
+        "created_at": "2016-06-20T09:40:57Z",
+        "updated_at": "2018-07-27T13:22:42Z",
+        "html_url": "https://github.com/addyosmani/basket.js/pull/160#discussion_r67661338",
+        "pull_request_url": "https://api.github.com/repos/addyosmani/basket.js/pulls/160",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/comments/67661338"
+            },
+            "html": {
+                "href": "https://github.com/addyosmani/basket.js/pull/160#discussion_r67661338"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/addyosmani/basket.js/pulls/160"
+            }
+        }
+    }
+]

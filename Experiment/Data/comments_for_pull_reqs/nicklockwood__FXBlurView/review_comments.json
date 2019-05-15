@@ -1,0 +1,149 @@
+[
+    {
+        "url": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/comments/8607227",
+        "pull_request_review_id": null,
+        "id": 8607227,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MDcyMjc=",
+        "diff_hunk": "@@ -493,6 +493,21 @@ - (void)restoreSuperviewAfterSnapshot:(NSArray *)hiddenViews\n     }\n }\n \n+- (UIImage *)blurredVersionOfSnapshot:(UIImage *)snapshot\n+{\n+    UIImage *blurredImage = [snapshot blurredImageWithRadius:self.blurRadius",
+        "path": "FXBlurView/FXBlurView.m",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "143517dec81f552165e3d68fbd65b3a24bc39b6e",
+        "original_commit_id": "143517dec81f552165e3d68fbd65b3a24bc39b6e",
+        "user": {
+            "login": "JaviSoto",
+            "id": 666807,
+            "node_id": "MDQ6VXNlcjY2NjgwNw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/666807?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JaviSoto",
+            "html_url": "https://github.com/JaviSoto",
+            "followers_url": "https://api.github.com/users/JaviSoto/followers",
+            "following_url": "https://api.github.com/users/JaviSoto/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JaviSoto/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JaviSoto/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JaviSoto/subscriptions",
+            "organizations_url": "https://api.github.com/users/JaviSoto/orgs",
+            "repos_url": "https://api.github.com/users/JaviSoto/repos",
+            "events_url": "https://api.github.com/users/JaviSoto/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JaviSoto/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I just realized that you access these properties from a background thread with no locking :)\n",
+        "created_at": "2014-01-01T22:49:56Z",
+        "updated_at": "2014-01-01T22:49:56Z",
+        "html_url": "https://github.com/nicklockwood/FXBlurView/pull/34#discussion_r8607227",
+        "pull_request_url": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/comments/8607227"
+            },
+            "html": {
+                "href": "https://github.com/nicklockwood/FXBlurView/pull/34#discussion_r8607227"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/comments/89492052",
+        "pull_request_review_id": 10036944,
+        "id": 89492052,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5NDkyMDUy",
+        "diff_hunk": "@@ -78,14 +78,26 @@ - (UIImage *)blurredImageWithRadius:(CGFloat)radius iterations:(NSUInteger)itera\n     size_t bytes = buffer1.rowBytes * buffer1.height;\n     buffer1.data = malloc(bytes);\n     buffer2.data = malloc(bytes);\n+  \n+    if (NULL == buffer1.data || NULL == buffer2.data) {",
+        "path": "FXBlurView/FXBlurView.m",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "104f2220b9238b25e71519d70d95d8a971a5c741",
+        "original_commit_id": "e5e4ee57042d69cb5ed14ec63c8b9c4a5f72616d",
+        "user": {
+            "login": "nicklockwood",
+            "id": 546885,
+            "node_id": "MDQ6VXNlcjU0Njg4NQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/546885?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nicklockwood",
+            "html_url": "https://github.com/nicklockwood",
+            "followers_url": "https://api.github.com/users/nicklockwood/followers",
+            "following_url": "https://api.github.com/users/nicklockwood/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nicklockwood/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nicklockwood/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nicklockwood/subscriptions",
+            "organizations_url": "https://api.github.com/users/nicklockwood/orgs",
+            "repos_url": "https://api.github.com/users/nicklockwood/repos",
+            "events_url": "https://api.github.com/users/nicklockwood/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nicklockwood/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "{ on next line please",
+        "created_at": "2016-11-24T12:49:30Z",
+        "updated_at": "2016-11-24T16:34:42Z",
+        "html_url": "https://github.com/nicklockwood/FXBlurView/pull/124#discussion_r89492052",
+        "pull_request_url": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/124",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/comments/89492052"
+            },
+            "html": {
+                "href": "https://github.com/nicklockwood/FXBlurView/pull/124#discussion_r89492052"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/124"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/comments/89492080",
+        "pull_request_review_id": 10036978,
+        "id": 89492080,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5NDkyMDgw",
+        "diff_hunk": "@@ -78,14 +78,26 @@ - (UIImage *)blurredImageWithRadius:(CGFloat)radius iterations:(NSUInteger)itera\n     size_t bytes = buffer1.rowBytes * buffer1.height;\n     buffer1.data = malloc(bytes);\n     buffer2.data = malloc(bytes);\n+  \n+    if (NULL == buffer1.data || NULL == buffer2.data) {\n+        free(buffer1.data);\n+        free(buffer2.data);\n+        return self;\n+    }\n \n     //create temp buffer\n     void *tempBuffer = malloc((size_t)vImageBoxConvolve_ARGB8888(&buffer1, &buffer2, NULL, 0, 0, boxSize, boxSize,\n                                                                  NULL, kvImageEdgeExtend + kvImageGetTempBufferSize));\n \n     //copy image data\n-    CFDataRef dataSource = CGDataProviderCopyData(CGImageGetDataProvider(imageRef));\n-    memcpy(buffer1.data, CFDataGetBytePtr(dataSource), bytes);\n+    CGDataProviderRef provider = CGImageGetDataProvider(imageRef);\n+    CFDataRef dataSource = CGDataProviderCopyData(provider);\n+    if (NULL == dataSource) {",
+        "path": "FXBlurView/FXBlurView.m",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "104f2220b9238b25e71519d70d95d8a971a5c741",
+        "original_commit_id": "e5e4ee57042d69cb5ed14ec63c8b9c4a5f72616d",
+        "user": {
+            "login": "nicklockwood",
+            "id": 546885,
+            "node_id": "MDQ6VXNlcjU0Njg4NQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/546885?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nicklockwood",
+            "html_url": "https://github.com/nicklockwood",
+            "followers_url": "https://api.github.com/users/nicklockwood/followers",
+            "following_url": "https://api.github.com/users/nicklockwood/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nicklockwood/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nicklockwood/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nicklockwood/subscriptions",
+            "organizations_url": "https://api.github.com/users/nicklockwood/orgs",
+            "repos_url": "https://api.github.com/users/nicklockwood/repos",
+            "events_url": "https://api.github.com/users/nicklockwood/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nicklockwood/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "{ on next line, and 4 space indent",
+        "created_at": "2016-11-24T12:49:43Z",
+        "updated_at": "2016-11-24T16:34:42Z",
+        "html_url": "https://github.com/nicklockwood/FXBlurView/pull/124#discussion_r89492080",
+        "pull_request_url": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/124",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/comments/89492080"
+            },
+            "html": {
+                "href": "https://github.com/nicklockwood/FXBlurView/pull/124#discussion_r89492080"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/nicklockwood/FXBlurView/pulls/124"
+            }
+        }
+    }
+]

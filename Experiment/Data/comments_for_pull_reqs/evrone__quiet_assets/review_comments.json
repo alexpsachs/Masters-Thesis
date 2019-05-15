@@ -1,0 +1,492 @@
+[
+    {
+        "url": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/4335215",
+        "pull_request_review_id": null,
+        "id": 4335215,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMzUyMTU=",
+        "diff_hunk": "@@ -1,7 +1,7 @@\n-# Quiet assets\n+# Quiet Assets\n [![Continuous Integration status](https://secure.travis-ci.org/evrone/quiet_assets.png)](http://travis-ci.org/evrone/quiet_assets)\n \n-Quiet assets turn off assets pipeline log, kind of:\n+Quiet Assets turns off the Rails asset pipeline log. This means that it supporesses messages in your development log such as:",
+        "path": "README.md",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "c9d4185a9881c3b8c5c4dd7d5a7b5e3b9de62192",
+        "original_commit_id": "7199893d6a1dea77bf18c8b61fcba25f8e2dde22",
+        "user": {
+            "login": "route",
+            "id": 414803,
+            "node_id": "MDQ6VXNlcjQxNDgwMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/414803?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/route",
+            "html_url": "https://github.com/route",
+            "followers_url": "https://api.github.com/users/route/followers",
+            "following_url": "https://api.github.com/users/route/following{/other_user}",
+            "gists_url": "https://api.github.com/users/route/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/route/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/route/subscriptions",
+            "organizations_url": "https://api.github.com/users/route/orgs",
+            "repos_url": "https://api.github.com/users/route/repos",
+            "events_url": "https://api.github.com/users/route/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/route/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "There's a typo here `suppresses`\n",
+        "created_at": "2013-05-22T10:11:41Z",
+        "updated_at": "2013-05-23T07:07:04Z",
+        "html_url": "https://github.com/evrone/quiet_assets/pull/19#discussion_r4335215",
+        "pull_request_url": "https://api.github.com/repos/evrone/quiet_assets/pulls/19",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/4335215"
+            },
+            "html": {
+                "href": "https://github.com/evrone/quiet_assets/pull/19#discussion_r4335215"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/19"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/4335232",
+        "pull_request_review_id": null,
+        "id": 4335232,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMzUyMzI=",
+        "diff_hunk": "@@ -10,18 +10,19 @@ Support Ruby on Rails >= 3.1\n \n ## Installation\n \n-We recommend you to use it only for development.\n-Add this line to development group in your Gemfile:\n+It is recommended that this gem only be used for development.\n+To install, add this line to development group in your Gemfile:\n \n     gem 'quiet_assets', :group => :development\n \n-And then execute:\n+The, from the command line, run:",
+        "path": "README.md",
+        "position": null,
+        "original_position": 22,
+        "commit_id": "c9d4185a9881c3b8c5c4dd7d5a7b5e3b9de62192",
+        "original_commit_id": "7199893d6a1dea77bf18c8b61fcba25f8e2dde22",
+        "user": {
+            "login": "route",
+            "id": 414803,
+            "node_id": "MDQ6VXNlcjQxNDgwMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/414803?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/route",
+            "html_url": "https://github.com/route",
+            "followers_url": "https://api.github.com/users/route/followers",
+            "following_url": "https://api.github.com/users/route/following{/other_user}",
+            "gists_url": "https://api.github.com/users/route/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/route/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/route/subscriptions",
+            "organizations_url": "https://api.github.com/users/route/orgs",
+            "repos_url": "https://api.github.com/users/route/repos",
+            "events_url": "https://api.github.com/users/route/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/route/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Seems to be here should be `Then`\n",
+        "created_at": "2013-05-22T10:12:35Z",
+        "updated_at": "2013-05-23T07:07:04Z",
+        "html_url": "https://github.com/evrone/quiet_assets/pull/19#discussion_r4335232",
+        "pull_request_url": "https://api.github.com/repos/evrone/quiet_assets/pulls/19",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/4335232"
+            },
+            "html": {
+                "href": "https://github.com/evrone/quiet_assets/pull/19#discussion_r4335232"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/19"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14013278",
+        "pull_request_review_id": null,
+        "id": 14013278,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MDEzMjc4",
+        "diff_hunk": "@@ -26,6 +26,11 @@ place the following in your `config/application.rb` file:\n \n     config.quiet_assets = false\n \n+If you need to supress output for other paths you can do so by specifying:\n+\n+    config.quiet_assets_paths << '/silent/'",
+        "path": "README.md",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "original_commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "user": {
+            "login": "route",
+            "id": 414803,
+            "node_id": "MDQ6VXNlcjQxNDgwMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/414803?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/route",
+            "html_url": "https://github.com/route",
+            "followers_url": "https://api.github.com/users/route/followers",
+            "following_url": "https://api.github.com/users/route/following{/other_user}",
+            "gists_url": "https://api.github.com/users/route/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/route/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/route/subscriptions",
+            "organizations_url": "https://api.github.com/users/route/orgs",
+            "repos_url": "https://api.github.com/users/route/repos",
+            "events_url": "https://api.github.com/users/route/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/route/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let's use another name for this option. I think it doesn't mean quiet assets paths anymore. Something like `suppressed_paths` or any other you can think of.\n",
+        "created_at": "2014-06-20T09:57:34Z",
+        "updated_at": "2014-06-20T09:57:34Z",
+        "html_url": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14013278",
+        "pull_request_url": "https://api.github.com/repos/evrone/quiet_assets/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14013278"
+            },
+            "html": {
+                "href": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14013278"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14032686",
+        "pull_request_review_id": null,
+        "id": 14032686,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MDMyNjg2",
+        "diff_hunk": "@@ -26,6 +26,11 @@ place the following in your `config/application.rb` file:\n \n     config.quiet_assets = false\n \n+If you need to supress output for other paths you can do so by specifying:\n+\n+    config.quiet_assets_paths << '/silent/'",
+        "path": "README.md",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "original_commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "user": {
+            "login": "phallstrom",
+            "id": 16705,
+            "node_id": "MDQ6VXNlcjE2NzA1",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/16705?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phallstrom",
+            "html_url": "https://github.com/phallstrom",
+            "followers_url": "https://api.github.com/users/phallstrom/followers",
+            "following_url": "https://api.github.com/users/phallstrom/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phallstrom/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phallstrom/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phallstrom/subscriptions",
+            "organizations_url": "https://api.github.com/users/phallstrom/orgs",
+            "repos_url": "https://api.github.com/users/phallstrom/repos",
+            "events_url": "https://api.github.com/users/phallstrom/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phallstrom/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "My thinking was that it should be at least prefixed with \"quiet_assets\" to namespace it (sort of) to this gem.  quiet_assets_suppressed_paths would work though.  Thoughts?\n",
+        "created_at": "2014-06-20T18:01:03Z",
+        "updated_at": "2014-06-20T18:01:03Z",
+        "html_url": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14032686",
+        "pull_request_url": "https://api.github.com/repos/evrone/quiet_assets/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14032686"
+            },
+            "html": {
+                "href": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14032686"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14067994",
+        "pull_request_review_id": null,
+        "id": 14067994,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MDY3OTk0",
+        "diff_hunk": "@@ -26,6 +26,11 @@ place the following in your `config/application.rb` file:\n \n     config.quiet_assets = false\n \n+If you need to supress output for other paths you can do so by specifying:\n+\n+    config.quiet_assets_paths << '/silent/'",
+        "path": "README.md",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "original_commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "user": {
+            "login": "route",
+            "id": 414803,
+            "node_id": "MDQ6VXNlcjQxNDgwMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/414803?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/route",
+            "html_url": "https://github.com/route",
+            "followers_url": "https://api.github.com/users/route/followers",
+            "following_url": "https://api.github.com/users/route/following{/other_user}",
+            "gists_url": "https://api.github.com/users/route/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/route/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/route/subscriptions",
+            "organizations_url": "https://api.github.com/users/route/orgs",
+            "repos_url": "https://api.github.com/users/route/repos",
+            "events_url": "https://api.github.com/users/route/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/route/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Well, people say we could use such thing as `config.quiet_assets.enabled = true` and `config.quiet_assets.paths`. WDYT about this?\n",
+        "created_at": "2014-06-23T10:04:28Z",
+        "updated_at": "2014-06-23T10:04:40Z",
+        "html_url": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14067994",
+        "pull_request_url": "https://api.github.com/repos/evrone/quiet_assets/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14067994"
+            },
+            "html": {
+                "href": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14067994"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14084586",
+        "pull_request_review_id": null,
+        "id": 14084586,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MDg0NTg2",
+        "diff_hunk": "@@ -26,6 +26,11 @@ place the following in your `config/application.rb` file:\n \n     config.quiet_assets = false\n \n+If you need to supress output for other paths you can do so by specifying:\n+\n+    config.quiet_assets_paths << '/silent/'",
+        "path": "README.md",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "original_commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "user": {
+            "login": "phallstrom",
+            "id": 16705,
+            "node_id": "MDQ6VXNlcjE2NzA1",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/16705?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phallstrom",
+            "html_url": "https://github.com/phallstrom",
+            "followers_url": "https://api.github.com/users/phallstrom/followers",
+            "following_url": "https://api.github.com/users/phallstrom/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phallstrom/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phallstrom/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phallstrom/subscriptions",
+            "organizations_url": "https://api.github.com/users/phallstrom/orgs",
+            "repos_url": "https://api.github.com/users/phallstrom/repos",
+            "events_url": "https://api.github.com/users/phallstrom/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phallstrom/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Reasonable, but seems like over kill too.  Unless you've had people ask for the `enabled` option...\n",
+        "created_at": "2014-06-23T16:33:06Z",
+        "updated_at": "2014-06-23T16:33:06Z",
+        "html_url": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14084586",
+        "pull_request_url": "https://api.github.com/repos/evrone/quiet_assets/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14084586"
+            },
+            "html": {
+                "href": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14084586"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14118476",
+        "pull_request_review_id": null,
+        "id": 14118476,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MTE4NDc2",
+        "diff_hunk": "@@ -26,6 +26,11 @@ place the following in your `config/application.rb` file:\n \n     config.quiet_assets = false\n \n+If you need to supress output for other paths you can do so by specifying:\n+\n+    config.quiet_assets_paths << '/silent/'",
+        "path": "README.md",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "original_commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "user": {
+            "login": "route",
+            "id": 414803,
+            "node_id": "MDQ6VXNlcjQxNDgwMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/414803?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/route",
+            "html_url": "https://github.com/route",
+            "followers_url": "https://api.github.com/users/route/followers",
+            "following_url": "https://api.github.com/users/route/following{/other_user}",
+            "gists_url": "https://api.github.com/users/route/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/route/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/route/subscriptions",
+            "organizations_url": "https://api.github.com/users/route/orgs",
+            "repos_url": "https://api.github.com/users/route/repos",
+            "events_url": "https://api.github.com/users/route/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/route/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sorry I'm not following about the last point..\n",
+        "created_at": "2014-06-24T08:41:35Z",
+        "updated_at": "2014-06-24T11:45:25Z",
+        "html_url": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14118476",
+        "pull_request_url": "https://api.github.com/repos/evrone/quiet_assets/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14118476"
+            },
+            "html": {
+                "href": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14118476"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14135992",
+        "pull_request_review_id": null,
+        "id": 14135992,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MTM1OTky",
+        "diff_hunk": "@@ -26,6 +26,11 @@ place the following in your `config/application.rb` file:\n \n     config.quiet_assets = false\n \n+If you need to supress output for other paths you can do so by specifying:\n+\n+    config.quiet_assets_paths << '/silent/'",
+        "path": "README.md",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "original_commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "user": {
+            "login": "phallstrom",
+            "id": 16705,
+            "node_id": "MDQ6VXNlcjE2NzA1",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/16705?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phallstrom",
+            "html_url": "https://github.com/phallstrom",
+            "followers_url": "https://api.github.com/users/phallstrom/followers",
+            "following_url": "https://api.github.com/users/phallstrom/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phallstrom/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phallstrom/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phallstrom/subscriptions",
+            "organizations_url": "https://api.github.com/users/phallstrom/orgs",
+            "repos_url": "https://api.github.com/users/phallstrom/repos",
+            "events_url": "https://api.github.com/users/phallstrom/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phallstrom/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Just saying I don't see the point in adding a \"enabled\" flag since people can just remove the gem if they don't want it.  Feels like an option no one will ever use to me.\n",
+        "created_at": "2014-06-24T15:34:48Z",
+        "updated_at": "2014-06-24T15:34:48Z",
+        "html_url": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14135992",
+        "pull_request_url": "https://api.github.com/repos/evrone/quiet_assets/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14135992"
+            },
+            "html": {
+                "href": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14135992"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14142586",
+        "pull_request_review_id": null,
+        "id": 14142586,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0MTQyNTg2",
+        "diff_hunk": "@@ -26,6 +26,11 @@ place the following in your `config/application.rb` file:\n \n     config.quiet_assets = false\n \n+If you need to supress output for other paths you can do so by specifying:\n+\n+    config.quiet_assets_paths << '/silent/'",
+        "path": "README.md",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "original_commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "user": {
+            "login": "route",
+            "id": 414803,
+            "node_id": "MDQ6VXNlcjQxNDgwMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/414803?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/route",
+            "html_url": "https://github.com/route",
+            "followers_url": "https://api.github.com/users/route/followers",
+            "following_url": "https://api.github.com/users/route/following{/other_user}",
+            "gists_url": "https://api.github.com/users/route/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/route/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/route/subscriptions",
+            "organizations_url": "https://api.github.com/users/route/orgs",
+            "repos_url": "https://api.github.com/users/route/repos",
+            "events_url": "https://api.github.com/users/route/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/route/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Oh got it, agree. Let's leave just path then.\n",
+        "created_at": "2014-06-24T17:26:59Z",
+        "updated_at": "2014-06-24T17:26:59Z",
+        "html_url": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14142586",
+        "pull_request_url": "https://api.github.com/repos/evrone/quiet_assets/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14142586"
+            },
+            "html": {
+                "href": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14142586"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14835257",
+        "pull_request_review_id": null,
+        "id": 14835257,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE0ODM1MjU3",
+        "diff_hunk": "@@ -26,6 +26,11 @@ place the following in your `config/application.rb` file:\n \n     config.quiet_assets = false\n \n+If you need to supress output for other paths you can do so by specifying:\n+\n+    config.quiet_assets_paths << '/silent/'",
+        "path": "README.md",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "original_commit_id": "66788a34711bb07a9fa3b04493b2812b85fc7dfd",
+        "user": {
+            "login": "phallstrom",
+            "id": 16705,
+            "node_id": "MDQ6VXNlcjE2NzA1",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/16705?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phallstrom",
+            "html_url": "https://github.com/phallstrom",
+            "followers_url": "https://api.github.com/users/phallstrom/followers",
+            "following_url": "https://api.github.com/users/phallstrom/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phallstrom/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phallstrom/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phallstrom/subscriptions",
+            "organizations_url": "https://api.github.com/users/phallstrom/orgs",
+            "repos_url": "https://api.github.com/users/phallstrom/repos",
+            "events_url": "https://api.github.com/users/phallstrom/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phallstrom/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can this get merged in?\n",
+        "created_at": "2014-07-11T18:11:54Z",
+        "updated_at": "2014-07-11T18:11:54Z",
+        "html_url": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14835257",
+        "pull_request_url": "https://api.github.com/repos/evrone/quiet_assets/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/comments/14835257"
+            },
+            "html": {
+                "href": "https://github.com/evrone/quiet_assets/pull/34#discussion_r14835257"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/evrone/quiet_assets/pulls/34"
+            }
+        }
+    }
+]

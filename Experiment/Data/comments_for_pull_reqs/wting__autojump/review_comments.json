@@ -1,0 +1,1276 @@
+[
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/3816537",
+        "pull_request_review_id": null,
+        "id": 3816537,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4MTY1Mzc=",
+        "diff_hunk": "@@ -73,7 +73,7 @@ case $PROMPT_COMMAND in\n esac\n \n function j {\n-    if [[ ${@} =~ ^-{1,2}.* ]]; then\n+    if [[ ${@} = -* ]]; then",
+        "path": "bin/autojump.bash",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "79d87639444cea6cc07acfa6987393e4339e9cd7",
+        "original_commit_id": "79d87639444cea6cc07acfa6987393e4339e9cd7",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Regression bug, reverts this commit: https://github.com/joelthelion/autojump/commit/ca8763aa02baa2c7091c0ce87abd9d3bff48950d\n",
+        "created_at": "2013-04-16T17:25:58Z",
+        "updated_at": "2013-04-16T17:25:58Z",
+        "html_url": "https://github.com/wting/autojump/pull/192#discussion_r3816537",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/192",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/3816537"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/192#discussion_r3816537"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/192"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/3816555",
+        "pull_request_review_id": null,
+        "id": 3816555,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4MTY1NTU=",
+        "diff_hunk": "@@ -33,7 +33,7 @@ if [[ -n ${AUTOJUMP_AUTOCOMPLETE_CMDS} ]]; then\n fi\n \n #determine the data directory according to the XDG Base Directory Specification\n-if [[ -n ${XDG_DATA_HOME} ]] && [[ ${XDG_DATA_HOME} =~ ${USER} ]]; then\n+if [[ -n ${XDG_DATA_HOME} ]] && [[ ${XDG_DATA_HOME} = ${USER} ]]; then",
+        "path": "bin/autojump.bash",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "79d87639444cea6cc07acfa6987393e4339e9cd7",
+        "original_commit_id": "79d87639444cea6cc07acfa6987393e4339e9cd7",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Regression bug, reverts this commit: https://github.com/joelthelion/autojump/commit/a7c9575bceacecf83433fec28fd621c8ef6b0a98\n",
+        "created_at": "2013-04-16T17:26:26Z",
+        "updated_at": "2013-04-16T17:26:26Z",
+        "html_url": "https://github.com/wting/autojump/pull/192#discussion_r3816555",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/192",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/3816555"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/192#discussion_r3816555"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/192"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8912832",
+        "pull_request_review_id": null,
+        "id": 8912832,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTI4MzI=",
+        "diff_hunk": "@@ -258,13 +263,13 @@ def match_consecutive(needles, haystack, ignore_case=False):\n             (path=\"/moo/foo/baz\", weight=10),\n             (path=\"/foo/baz\", weight=10)]\n     \"\"\"\n-    regex_no_sep = '[^' + os.sep + ']*'\n-    regex_one_sep = regex_no_sep + os.sep + regex_no_sep\n+    sep = os.sep.encode('string-escape')",
+        "path": "bin/autojump",
+        "position": null,
+        "original_position": 25,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The encoding is `string_escape`, and doesn't work in Python 3.\n\nI may be missing something, but why is this necessary? If it's necessary, there are a few missed call sites in `autojump` and `autojump_utils.py`.\n",
+        "created_at": "2014-01-15T21:27:04Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8912832",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8912832"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8912832"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8913203",
+        "pull_request_review_id": null,
+        "id": 8913203,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTMyMDM=",
+        "diff_hunk": "@@ -78,16 +78,21 @@ def parse_arguments():\n         if sys.version_info[0] == 2 and sys.version_info[1] < 6:\n             print(\"Python v2.6+ or v3.0+ required.\", file=sys.stderr)\n             sys.exit(1)\n-\n-        if get_shell() not in SUPPORTED_SHELLS:\n-            print(\"Unsupported shell: %s\" % os.getenv('SHELL'),\n-                  file=sys.stderr)\n-            sys.exit(1)\n-\n-        if args.system and os.geteuid() != 0:\n-            print(\"Please rerun as root for system-wide installation.\",\n-                  file=sys.stderr)\n-            sys.exit(1)\n+        if platform.system() != 'Windows':\n+            if get_shell() not in SUPPORTED_SHELLS:\n+                print(\"Unsupported shell: %s\" % os.getenv('SHELL'),\n+                      file=sys.stderr)\n+                sys.exit(1)\n+\n+            if args.system and os.geteuid() != 0:\n+                print(\"Please rerun as root for system-wide installation.\",\n+                      file=sys.stderr)\n+                sys.exit(1)\n+        else:\n+            if args.system:\n+                print(\"System-wide installation is not supported on Windows.\",\n+                      file=sys.stderr)\n+                sys.exit(1)",
+        "path": "install.py",
+        "position": null,
+        "original_position": 28,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You can reduce an indention and make intent clearer by grouping appropriately:\n\n``` python\nif args.system:\n    if platform.system() == 'Windows':\n        # error\n    elif os.geteuid() != 0:\n        # error\n\nif get_shell() not in SUPPORTED_SHELLS:\n...\n```\n",
+        "created_at": "2014-01-15T21:35:39Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8913203",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8913203"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8913203"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8913312",
+        "pull_request_review_id": null,
+        "id": 8913312,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTMzMTI=",
+        "diff_hunk": "@@ -139,10 +147,11 @@ def main(args):\n         print(\"Installing autojump to %s ...\" % args.destdir)\n \n     bin_dir = os.path.join(args.destdir, args.prefix, 'bin')\n-    etc_dir = os.path.join(args.destdir, 'etc/profile.d')\n-    doc_dir = os.path.join(args.destdir, args.prefix, 'share/man/man1')\n-    icon_dir = os.path.join(args.destdir, args.prefix, 'share/autojump')\n+    etc_dir = os.path.join(args.destdir, 'etc', 'profile.d')\n+    doc_dir = os.path.join(args.destdir, args.prefix, 'share', 'man', 'man1')\n+    icon_dir = os.path.join(args.destdir, args.prefix, 'share', 'autojump')",
+        "path": "install.py",
+        "position": 124,
+        "original_position": 89,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks for catching that.\n",
+        "created_at": "2014-01-15T21:38:36Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8913312",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8913312"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8913312"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8913516",
+        "pull_request_review_id": null,
+        "id": 8913516,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTM1MTY=",
+        "diff_hunk": "@@ -109,26 +114,29 @@ def parse_arguments():\n     return args\n \n \n-def print_post_installation_message(etc_dir):\n-    if get_shell() == 'fish':\n-        aj_shell = '%s/autojump.fish' % etc_dir\n-        source_msg = \"if test -f %s; . %s; end\" % (aj_shell, aj_shell)\n+def print_post_installation_message(etc_dir, bin_dir):\n+    if platform.system() != 'Windows':",
+        "path": "install.py",
+        "position": null,
+        "original_position": 41,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "In general, try to use explicit matching and keep it flat instead of nested if/then's. For example if I had used `if platform.system != 'Darwin'` below, you would have to modify a bunch of locations elsewhere.\n\nRather, just use `if platform.system() == 'Windows': # do windows stuff`. Right now the Windows check and Windows-specific code is far from each other.\n",
+        "created_at": "2014-01-15T21:43:42Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8913516",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8913516"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8913516"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8913564",
+        "pull_request_review_id": null,
+        "id": 8913564,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTM1NjQ=",
+        "diff_hunk": "@@ -154,18 +163,27 @@ def main(args):\n     cp('./bin/autojump_argparse.py', bin_dir, args.dryrun)\n     cp('./bin/autojump_data.py', bin_dir, args.dryrun)\n     cp('./bin/autojump_utils.py', bin_dir, args.dryrun)\n-    cp('./bin/autojump.sh', etc_dir, args.dryrun)\n-    cp('./bin/autojump.bash', etc_dir, args.dryrun)\n-    cp('./bin/autojump.fish', etc_dir, args.dryrun)\n-    cp('./bin/autojump.zsh', etc_dir, args.dryrun)\n-    cp('./bin/_j', zshshare_dir, args.dryrun)\n+    if platform.system() != 'Windows':",
+        "path": "install.py",
+        "position": null,
+        "original_position": 104,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Same as above. Also you're no longer supporting custom install for Windows.\n",
+        "created_at": "2014-01-15T21:45:02Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8913564",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8913564"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8913564"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8913578",
+        "pull_request_review_id": null,
+        "id": 8913578,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTM1Nzg=",
+        "diff_hunk": "@@ -8,6 +8,7 @@\n import shutil\n import sys\n \n+sys.path.append('bin')",
+        "path": "uninstall.py",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks.\n",
+        "created_at": "2014-01-15T21:45:30Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8913578",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8913578"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8913578"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8913659",
+        "pull_request_review_id": null,
+        "id": 8913659,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTM2NTk=",
+        "diff_hunk": "@@ -127,9 +132,13 @@ def remove_user_data(dryrun=False):\n \n def remove_user_installation(dryrun=False):\n     default_destdir = os.path.join(os.path.expanduser(\"~\"), '.autojump')\n+    clink_dir = os.path.join(os.getenv(\"LOCALAPPDATA\"),'clink')\n     if os.path.exists(default_destdir):\n         print(\"\\nFound user installation...\")\n         rmdir(default_destdir, dryrun)\n+    if platform.system() == 'Windows':\n+        if os.path.exists(clink_dir):\n+            rm(os.path.join(clink_dir,'autojump.lua'), dryrun)",
+        "path": "uninstall.py",
+        "position": null,
+        "original_position": 29,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You probably meant `rmdir` here.\n",
+        "created_at": "2014-01-15T21:47:33Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8913659",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8913659"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8913659"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8913681",
+        "pull_request_review_id": null,
+        "id": 8913681,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTM2ODE=",
+        "diff_hunk": "@@ -127,9 +132,13 @@ def remove_user_data(dryrun=False):\n \n def remove_user_installation(dryrun=False):\n     default_destdir = os.path.join(os.path.expanduser(\"~\"), '.autojump')\n+    clink_dir = os.path.join(os.getenv(\"LOCALAPPDATA\"),'clink')\n     if os.path.exists(default_destdir):\n         print(\"\\nFound user installation...\")\n         rmdir(default_destdir, dryrun)\n+    if platform.system() == 'Windows':\n+        if os.path.exists(clink_dir):",
+        "path": "uninstall.py",
+        "position": null,
+        "original_position": 28,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why nest `if` statements?\n",
+        "created_at": "2014-01-15T21:48:06Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8913681",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8913681"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8913681"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8913981",
+        "pull_request_review_id": null,
+        "id": 8913981,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTM5ODE=",
+        "diff_hunk": "@@ -139,10 +147,11 @@ def main(args):\n         print(\"Installing autojump to %s ...\" % args.destdir)\n \n     bin_dir = os.path.join(args.destdir, args.prefix, 'bin')\n-    etc_dir = os.path.join(args.destdir, 'etc/profile.d')\n-    doc_dir = os.path.join(args.destdir, args.prefix, 'share/man/man1')\n-    icon_dir = os.path.join(args.destdir, args.prefix, 'share/autojump')\n+    etc_dir = os.path.join(args.destdir, 'etc', 'profile.d')\n+    doc_dir = os.path.join(args.destdir, args.prefix, 'share', 'man', 'man1')\n+    icon_dir = os.path.join(args.destdir, args.prefix, 'share', 'autojump')\n     zshshare_dir = os.path.join(args.destdir, args.zshshare)\n+    clink_dir = os.path.join(os.getenv(\"LOCALAPPDATA\"),'clink')",
+        "path": "install.py",
+        "position": null,
+        "original_position": 91,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Crashes if `LOCALAPPDATA` is missing. Use `os.getenv('LOCALAPPDATA', '')`.\n",
+        "created_at": "2014-01-15T21:56:41Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8913981",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8913981"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8913981"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8914005",
+        "pull_request_review_id": null,
+        "id": 8914005,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTQwMDU=",
+        "diff_hunk": "@@ -127,9 +132,13 @@ def remove_user_data(dryrun=False):\n \n def remove_user_installation(dryrun=False):\n     default_destdir = os.path.join(os.path.expanduser(\"~\"), '.autojump')\n+    clink_dir = os.path.join(os.getenv(\"LOCALAPPDATA\"),'clink')",
+        "path": "uninstall.py",
+        "position": null,
+        "original_position": 23,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Crashes if `LOCALAPPDATA` is missing. Use `os.getenv('LOCALAPPDATA', '')`.\n",
+        "created_at": "2014-01-15T21:57:18Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8914005",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8914005"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8914005"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8916815",
+        "pull_request_review_id": null,
+        "id": 8916815,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTY4MTU=",
+        "diff_hunk": "@@ -258,13 +263,13 @@ def match_consecutive(needles, haystack, ignore_case=False):\n             (path=\"/moo/foo/baz\", weight=10),\n             (path=\"/foo/baz\", weight=10)]\n     \"\"\"\n-    regex_no_sep = '[^' + os.sep + ']*'\n-    regex_one_sep = regex_no_sep + os.sep + regex_no_sep\n+    sep = os.sep.encode('string-escape')",
+        "path": "bin/autojump",
+        "position": null,
+        "original_position": 25,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "mdlawson",
+            "id": 1243016,
+            "node_id": "MDQ6VXNlcjEyNDMwMTY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1243016?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mdlawson",
+            "html_url": "https://github.com/mdlawson",
+            "followers_url": "https://api.github.com/users/mdlawson/followers",
+            "following_url": "https://api.github.com/users/mdlawson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mdlawson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mdlawson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mdlawson/subscriptions",
+            "organizations_url": "https://api.github.com/users/mdlawson/orgs",
+            "repos_url": "https://api.github.com/users/mdlawson/repos",
+            "events_url": "https://api.github.com/users/mdlawson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mdlawson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Strange, since it fixed the issue. I'm not really a python guy, so I don't know what the best way of dealing with this is, but the problem this is (supposed to be?) fixing is that the `\"\\\\\"` paths in windows need to be escaped again (`\"\\\\\\\\\"`) if they're going into a regex it seems. Whats the most elegant way of doing that? `sep = sep.replace(\"\\\\\",\"\\\\\\\\\")` would work I guess.\n",
+        "created_at": "2014-01-15T23:14:49Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8916815",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8916815"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8916815"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/8916817",
+        "pull_request_review_id": null,
+        "id": 8916817,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5MTY4MTc=",
+        "diff_hunk": "@@ -127,9 +132,13 @@ def remove_user_data(dryrun=False):\n \n def remove_user_installation(dryrun=False):\n     default_destdir = os.path.join(os.path.expanduser(\"~\"), '.autojump')\n+    clink_dir = os.path.join(os.getenv(\"LOCALAPPDATA\"),'clink')\n     if os.path.exists(default_destdir):\n         print(\"\\nFound user installation...\")\n         rmdir(default_destdir, dryrun)\n+    if platform.system() == 'Windows':\n+        if os.path.exists(clink_dir):\n+            rm(os.path.join(clink_dir,'autojump.lua'), dryrun)",
+        "path": "uninstall.py",
+        "position": null,
+        "original_position": 29,
+        "commit_id": "ff9376cb93a52de5b155a54f791cbd24fafacc5b",
+        "original_commit_id": "7a756aaa4e1a30abb30a3869293ca1008e732607",
+        "user": {
+            "login": "mdlawson",
+            "id": 1243016,
+            "node_id": "MDQ6VXNlcjEyNDMwMTY=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1243016?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mdlawson",
+            "html_url": "https://github.com/mdlawson",
+            "followers_url": "https://api.github.com/users/mdlawson/followers",
+            "following_url": "https://api.github.com/users/mdlawson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mdlawson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mdlawson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mdlawson/subscriptions",
+            "organizations_url": "https://api.github.com/users/mdlawson/orgs",
+            "repos_url": "https://api.github.com/users/mdlawson/repos",
+            "events_url": "https://api.github.com/users/mdlawson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mdlawson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`rm()` is correct here since `clink_dir` refers to clinks profile directory, which definitely shouldn't be removed on uninstall since it contains other user data. \n",
+        "created_at": "2014-01-15T23:14:54Z",
+        "updated_at": "2014-01-16T11:39:28Z",
+        "html_url": "https://github.com/wting/autojump/pull/253#discussion_r8916817",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/253",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/8916817"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/253#discussion_r8916817"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/253"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/19056882",
+        "pull_request_review_id": null,
+        "id": 19056882,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5MDU2ODgy",
+        "diff_hunk": "@@ -47,13 +49,18 @@ j() {\n         return\n     fi\n \n-    setopt localoptions noautonamedirs",
+        "path": "bin/autojump.zsh",
+        "position": null,
+        "original_position": 10,
+        "commit_id": "819c5c76cc25de8918a2d764cd3c187e6b184279",
+        "original_commit_id": "a149175d3500789e79063da47ed7f279ee0141f4",
+        "user": {
+            "login": "blueyed",
+            "id": 9766,
+            "node_id": "MDQ6VXNlcjk3NjY=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/9766?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/blueyed",
+            "html_url": "https://github.com/blueyed",
+            "followers_url": "https://api.github.com/users/blueyed/followers",
+            "following_url": "https://api.github.com/users/blueyed/following{/other_user}",
+            "gists_url": "https://api.github.com/users/blueyed/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/blueyed/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/blueyed/subscriptions",
+            "organizations_url": "https://api.github.com/users/blueyed/orgs",
+            "repos_url": "https://api.github.com/users/blueyed/repos",
+            "events_url": "https://api.github.com/users/blueyed/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/blueyed/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@wting \nThis looks like some merge error!\nThe options need to be defined before the `cd` (see https://github.com/joelthelion/autojump/issues/312#issuecomment-55961937), and there's a parse error here.\nI will test and amend it with the old lines 50-54 removed.\n",
+        "created_at": "2014-10-18T23:36:19Z",
+        "updated_at": "2014-10-22T01:29:48Z",
+        "html_url": "https://github.com/wting/autojump/pull/319#discussion_r19056882",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/319",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/19056882"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/319#discussion_r19056882"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/19189649",
+        "pull_request_review_id": null,
+        "id": 19189649,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5MTg5NjQ5",
+        "diff_hunk": "@@ -47,13 +49,18 @@ j() {\n         return\n     fi\n \n-    setopt localoptions noautonamedirs",
+        "path": "bin/autojump.zsh",
+        "position": null,
+        "original_position": 10,
+        "commit_id": "819c5c76cc25de8918a2d764cd3c187e6b184279",
+        "original_commit_id": "a149175d3500789e79063da47ed7f279ee0141f4",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Nice catch. :+1: \n",
+        "created_at": "2014-10-22T00:59:56Z",
+        "updated_at": "2014-10-22T01:29:48Z",
+        "html_url": "https://github.com/wting/autojump/pull/319#discussion_r19189649",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/319",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/19189649"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/319#discussion_r19189649"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/319"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/17210299",
+        "pull_request_review_id": null,
+        "id": 17210299,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MjEwMjk5",
+        "diff_hunk": "@@ -52,7 +52,9 @@ esac\n \n # default autojump command\n j() {\n-    if [[ ${@} =~ ^-{1,2}.* ]]; then\n+    if [[ $1 == -- ]]; then",
+        "path": "bin/autojump.bash",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "c0c93987942dd3a86e42d20f5a9355978beca9e8",
+        "original_commit_id": "b2a855d8a507c210f37a34c20d480b8992a6afb2",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: `[[ ${1} == \"--\" ]]`\n\nThis also needs to be added `jc()`, `jo()`, `jco()`. This logic is duplicated in 4 places so it could probably be refactored into a helper function.\n",
+        "created_at": "2014-09-06T17:53:44Z",
+        "updated_at": "2014-10-22T02:07:57Z",
+        "html_url": "https://github.com/wting/autojump/pull/311#discussion_r17210299",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/311",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/17210299"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/311#discussion_r17210299"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/311"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/17210325",
+        "pull_request_review_id": null,
+        "id": 17210325,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MjEwMzI1",
+        "diff_hunk": "@@ -42,7 +42,9 @@ chpwd_functions+=autojump_chpwd\n \n # default autojump command\n j() {\n-    if [[ ${@} == -* ]]; then\n+    if [[ $1 == -- ]]; then",
+        "path": "bin/autojump.zsh",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "c0c93987942dd3a86e42d20f5a9355978beca9e8",
+        "original_commit_id": "b2a855d8a507c210f37a34c20d480b8992a6afb2",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I've only tested the zsh version but it doesn't work for me:\n\n```\n\u256d\u2500wting@mission ~ \u2039python-2.7.7\u203a\n\u2570\u2500\u27a4  j -gdrive                                                                               2014.09.06 10:52:00 PDT\nusage: autojump [-h] [-a DIRECTORY] [-i [WEIGHT]] [-d [WEIGHT]] [--complete]\n                [--purge] [-s] [-v]\n                [DIRECTORY [DIRECTORY ...]]\nautojump: error: unrecognized arguments: -gdrive\n\u256d\u2500wting@mission ~ \u2039python-2.7.7\u203a\n\u2570\u2500\u27a4  j -- -gdrive                                                                        2 \u21b5 2014.09.06 10:52:02 PDT\nusage: autojump [-h] [-a DIRECTORY] [-i [WEIGHT]] [-d [WEIGHT]] [--complete]\n                [--purge] [-s] [-v]\n                [DIRECTORY [DIRECTORY ...]]\nautojump: error: unrecognized arguments: -gdrive\nautojump: directory '-gdrive' not found\nTry `autojump --help` for more information.\n\u256d\u2500wting@mission ~ \u2039python-2.7.7\u203a\n\u2570\u2500\u27a4  j gdrive                                                                            1 \u21b5 2014.09.06 10:52:04 PDT\n/Users/wting/riyoda-gdrive\n\u256d\u2500wting@mission ~/riyoda-gdrive \u2039python-2.7.7\u203a\n\u2570\u2500\u27a4                                                                                          2014.09.06 10:52:25 PDT\n```\n\n`autojump -gdrive` is still being interpreted as an option at the python level.\n",
+        "created_at": "2014-09-06T17:59:10Z",
+        "updated_at": "2014-10-22T02:07:57Z",
+        "html_url": "https://github.com/wting/autojump/pull/311#discussion_r17210325",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/311",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/17210325"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/311#discussion_r17210325"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/311"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/48621142",
+        "pull_request_review_id": null,
+        "id": 48621142,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4NjIxMTQy",
+        "diff_hunk": "@@ -135,10 +135,13 @@ def add_path(data, path, weight=10):\n     with resulting duplicate entries in the database than a single canonical\n     path.\n     \"\"\"\n-    path = unico(path).rstrip(os.sep)",
+        "path": "bin/autojump",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "5241d67efc6fcb16292b14dd65689667b98ce644",
+        "original_commit_id": "825a21bc6ecba7aa226465a7bcca1319414a3b8f",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This eliminates the ability to handle filesystems with different encodings, particularly with Python 2.\n",
+        "created_at": "2015-12-30T18:18:57Z",
+        "updated_at": "2015-12-31T01:31:12Z",
+        "html_url": "https://github.com/wting/autojump/pull/395#discussion_r48621142",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/395",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/48621142"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/395#discussion_r48621142"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/395"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/48633546",
+        "pull_request_review_id": null,
+        "id": 48633546,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4NjMzNTQ2",
+        "diff_hunk": "@@ -135,10 +135,13 @@ def add_path(data, path, weight=10):\n     with resulting duplicate entries in the database than a single canonical\n     path.\n     \"\"\"\n-    path = unico(path).rstrip(os.sep)",
+        "path": "bin/autojump",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "5241d67efc6fcb16292b14dd65689667b98ce644",
+        "original_commit_id": "825a21bc6ecba7aa226465a7bcca1319414a3b8f",
+        "user": {
+            "login": "jared-hess",
+            "id": 2113429,
+            "node_id": "MDQ6VXNlcjIxMTM0Mjk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2113429?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jared-hess",
+            "html_url": "https://github.com/jared-hess",
+            "followers_url": "https://api.github.com/users/jared-hess/followers",
+            "following_url": "https://api.github.com/users/jared-hess/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jared-hess/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jared-hess/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jared-hess/subscriptions",
+            "organizations_url": "https://api.github.com/users/jared-hess/orgs",
+            "repos_url": "https://api.github.com/users/jared-hess/repos",
+            "events_url": "https://api.github.com/users/jared-hess/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jared-hess/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ah, I see. I guess there is no reason for this line not to be here, adding it back in before passing path to abspath shouldn't cause a problem.\n",
+        "created_at": "2015-12-30T21:41:27Z",
+        "updated_at": "2015-12-31T01:31:12Z",
+        "html_url": "https://github.com/wting/autojump/pull/395#discussion_r48633546",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/395",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/48633546"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/395#discussion_r48633546"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/395"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/48620826",
+        "pull_request_review_id": null,
+        "id": 48620826,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4NjIwODI2",
+        "diff_hunk": "@@ -135,10 +135,13 @@ def add_path(data, path, weight=10):\n     with resulting duplicate entries in the database than a single canonical\n     path.\n     \"\"\"\n-    path = unico(path).rstrip(os.sep)\n+    path = os.path.abspath(path)\n     if path == os.path.expanduser('~'):\n         return data, Entry(path, 0)\n \n+    if not os.path.isdir(path):",
+        "path": "bin/autojump",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "5241d67efc6fcb16292b14dd65689667b98ce644",
+        "original_commit_id": "825a21bc6ecba7aa226465a7bcca1319414a3b8f",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Since we check this on reads, why check this on writes?\n",
+        "created_at": "2015-12-30T18:14:23Z",
+        "updated_at": "2018-09-07T06:14:52Z",
+        "html_url": "https://github.com/wting/autojump/pull/395#discussion_r48620826",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/395",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/48620826"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/395#discussion_r48620826"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/395"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/48621079",
+        "pull_request_review_id": null,
+        "id": 48621079,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4NjIxMDc5",
+        "diff_hunk": "@@ -135,10 +135,13 @@ def add_path(data, path, weight=10):\n     with resulting duplicate entries in the database than a single canonical\n     path.\n     \"\"\"\n-    path = unico(path).rstrip(os.sep)\n+    path = os.path.abspath(path)",
+        "path": "bin/autojump",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "5241d67efc6fcb16292b14dd65689667b98ce644",
+        "original_commit_id": "825a21bc6ecba7aa226465a7bcca1319414a3b8f",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Since this stores the absolute path, how do you match against symlinks?\n",
+        "created_at": "2015-12-30T18:17:52Z",
+        "updated_at": "2018-09-07T06:14:52Z",
+        "html_url": "https://github.com/wting/autojump/pull/395#discussion_r48621079",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/395",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/48621079"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/395#discussion_r48621079"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/395"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/48632318",
+        "pull_request_review_id": null,
+        "id": 48632318,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4NjMyMzE4",
+        "diff_hunk": "@@ -135,10 +135,13 @@ def add_path(data, path, weight=10):\n     with resulting duplicate entries in the database than a single canonical\n     path.\n     \"\"\"\n-    path = unico(path).rstrip(os.sep)\n+    path = os.path.abspath(path)",
+        "path": "bin/autojump",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "5241d67efc6fcb16292b14dd65689667b98ce644",
+        "original_commit_id": "825a21bc6ecba7aa226465a7bcca1319414a3b8f",
+        "user": {
+            "login": "jared-hess",
+            "id": 2113429,
+            "node_id": "MDQ6VXNlcjIxMTM0Mjk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2113429?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jared-hess",
+            "html_url": "https://github.com/jared-hess",
+            "followers_url": "https://api.github.com/users/jared-hess/followers",
+            "following_url": "https://api.github.com/users/jared-hess/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jared-hess/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jared-hess/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jared-hess/subscriptions",
+            "organizations_url": "https://api.github.com/users/jared-hess/orgs",
+            "repos_url": "https://api.github.com/users/jared-hess/repos",
+            "events_url": "https://api.github.com/users/jared-hess/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jared-hess/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Absolute path leaves symlinks intact, unlike real path. Doing something like this:\n\n$ ln -s / rootlink\n$ j -add rootlink\n\nUsing absolute path results in /path/to/rootlink getting added to the database. Real path would result in \"/\" getting added to the database. Absolute path can also handle things like \".\" or \"..\"\n",
+        "created_at": "2015-12-30T21:21:16Z",
+        "updated_at": "2018-09-07T06:14:52Z",
+        "html_url": "https://github.com/wting/autojump/pull/395#discussion_r48632318",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/395",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/48632318"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/395#discussion_r48632318"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/395"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/48632597",
+        "pull_request_review_id": null,
+        "id": 48632597,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4NjMyNTk3",
+        "diff_hunk": "@@ -135,10 +135,13 @@ def add_path(data, path, weight=10):\n     with resulting duplicate entries in the database than a single canonical\n     path.\n     \"\"\"\n-    path = unico(path).rstrip(os.sep)\n+    path = os.path.abspath(path)\n     if path == os.path.expanduser('~'):\n         return data, Entry(path, 0)\n \n+    if not os.path.isdir(path):",
+        "path": "bin/autojump",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "5241d67efc6fcb16292b14dd65689667b98ce644",
+        "original_commit_id": "825a21bc6ecba7aa226465a7bcca1319414a3b8f",
+        "user": {
+            "login": "jared-hess",
+            "id": 2113429,
+            "node_id": "MDQ6VXNlcjIxMTM0Mjk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2113429?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jared-hess",
+            "html_url": "https://github.com/jared-hess",
+            "followers_url": "https://api.github.com/users/jared-hess/followers",
+            "following_url": "https://api.github.com/users/jared-hess/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jared-hess/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jared-hess/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jared-hess/subscriptions",
+            "organizations_url": "https://api.github.com/users/jared-hess/orgs",
+            "repos_url": "https://api.github.com/users/jared-hess/repos",
+            "events_url": "https://api.github.com/users/jared-hess/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jared-hess/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It is not checked when reading input from the user, so something like this:\nj -add foo\nSimply adds \"foo\" to the database, regardless of whether it is a directory or whether it exists or not. It is also worth noting that with the current implementation it adds \"foo\" simply as a relative path rather than \"/path/to/foo\" as you'd expect, which is why I used abspath to determine the actual path.\n",
+        "created_at": "2015-12-30T21:25:40Z",
+        "updated_at": "2018-09-07T06:14:52Z",
+        "html_url": "https://github.com/wting/autojump/pull/395#discussion_r48632597",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/395",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/48632597"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/395#discussion_r48632597"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/395"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/48639181",
+        "pull_request_review_id": null,
+        "id": 48639181,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4NjM5MTgx",
+        "diff_hunk": "@@ -135,10 +135,13 @@ def add_path(data, path, weight=10):\n     with resulting duplicate entries in the database than a single canonical\n     path.\n     \"\"\"\n-    path = unico(path).rstrip(os.sep)\n+    path = os.path.abspath(path)",
+        "path": "bin/autojump",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "5241d67efc6fcb16292b14dd65689667b98ce644",
+        "original_commit_id": "825a21bc6ecba7aa226465a7bcca1319414a3b8f",
+        "user": {
+            "login": "wting",
+            "id": 622170,
+            "node_id": "MDQ6VXNlcjYyMjE3MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/622170?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wting",
+            "html_url": "https://github.com/wting",
+            "followers_url": "https://api.github.com/users/wting/followers",
+            "following_url": "https://api.github.com/users/wting/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wting/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wting/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wting/subscriptions",
+            "organizations_url": "https://api.github.com/users/wting/orgs",
+            "repos_url": "https://api.github.com/users/wting/repos",
+            "events_url": "https://api.github.com/users/wting/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wting/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ahh nm, when I spot checked this in the console I goofed. Good call on the `os.path.abspath`, but we still need the end result to be encoded in unicode.\n",
+        "created_at": "2015-12-30T23:27:26Z",
+        "updated_at": "2018-09-07T06:14:52Z",
+        "html_url": "https://github.com/wting/autojump/pull/395#discussion_r48639181",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/395",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/48639181"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/395#discussion_r48639181"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/395"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/pulls/comments/48645418",
+        "pull_request_review_id": null,
+        "id": 48645418,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4NjQ1NDE4",
+        "diff_hunk": "@@ -135,10 +135,13 @@ def add_path(data, path, weight=10):\n     with resulting duplicate entries in the database than a single canonical\n     path.\n     \"\"\"\n-    path = unico(path).rstrip(os.sep)\n+    path = os.path.abspath(path)",
+        "path": "bin/autojump",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "5241d67efc6fcb16292b14dd65689667b98ce644",
+        "original_commit_id": "825a21bc6ecba7aa226465a7bcca1319414a3b8f",
+        "user": {
+            "login": "jared-hess",
+            "id": 2113429,
+            "node_id": "MDQ6VXNlcjIxMTM0Mjk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2113429?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jared-hess",
+            "html_url": "https://github.com/jared-hess",
+            "followers_url": "https://api.github.com/users/jared-hess/followers",
+            "following_url": "https://api.github.com/users/jared-hess/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jared-hess/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jared-hess/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jared-hess/subscriptions",
+            "organizations_url": "https://api.github.com/users/jared-hess/orgs",
+            "repos_url": "https://api.github.com/users/jared-hess/repos",
+            "events_url": "https://api.github.com/users/jared-hess/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jared-hess/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Gotcha. I changed it to this:\npath = os.path.abspath(unico(path))\nI tested in python 2.6 and it has the same effect as this (outputting a unicode string)\npath = unico(os.path.abspath(path))\nFrom what I can tell the path methods match their output encoding to the input, so as long as we input a unicode string we can expect one out. \n",
+        "created_at": "2015-12-31T03:19:28Z",
+        "updated_at": "2018-09-07T06:14:52Z",
+        "html_url": "https://github.com/wting/autojump/pull/395#discussion_r48645418",
+        "pull_request_url": "https://api.github.com/repos/wting/autojump/pulls/395",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/comments/48645418"
+            },
+            "html": {
+                "href": "https://github.com/wting/autojump/pull/395#discussion_r48645418"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/wting/autojump/pulls/395"
+            }
+        }
+    }
+]

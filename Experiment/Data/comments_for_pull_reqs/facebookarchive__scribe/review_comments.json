@@ -1,0 +1,247 @@
+[
+    {
+        "url": "https://api.github.com/repos/facebookarchive/scribe/pulls/comments/8249221",
+        "pull_request_review_id": null,
+        "id": 8249221,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyNDkyMjE=",
+        "diff_hunk": "@@ -1841,6 +1847,24 @@ void NetworkStore::periodicCheck() {\n   }\n }\n \n+bool NetworkStore::loadFromList() {\n+  vector<string> strs;\n+  boost::split(strs, serviceList, boost::is_any_of(\"\\t \"));\n+  vector<string> split;\n+  for (vector<string>::iterator iter = strs.begin();\n+       iter != strs.end();\n+       iter++) {\n+    if ( (*iter).find(\":\") != string::npos) {",
+        "path": "src/store.cpp",
+        "position": null,
+        "original_position": 40,
+        "commit_id": "dbb6602a69e73ddda894e3f338b014e58f8d94a8",
+        "original_commit_id": "18a2ae8f8c17ac006c1ee2e2a21f1164b27e3f6b",
+        "user": {
+            "login": "mdordal",
+            "id": 526675,
+            "node_id": "MDQ6VXNlcjUyNjY3NQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/526675?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mdordal",
+            "html_url": "https://github.com/mdordal",
+            "followers_url": "https://api.github.com/users/mdordal/followers",
+            "following_url": "https://api.github.com/users/mdordal/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mdordal/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mdordal/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mdordal/subscriptions",
+            "organizations_url": "https://api.github.com/users/mdordal/orgs",
+            "repos_url": "https://api.github.com/users/mdordal/repos",
+            "events_url": "https://api.github.com/users/mdordal/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mdordal/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You can do iter->find() here, which is probably clearer.\n",
+        "created_at": "2013-12-10T21:55:33Z",
+        "updated_at": "2013-12-17T21:06:08Z",
+        "html_url": "https://github.com/facebookarchive/scribe/pull/77#discussion_r8249221",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/scribe/pulls/77",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/scribe/pulls/comments/8249221"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/scribe/pull/77#discussion_r8249221"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/scribe/pulls/77"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/scribe/pulls/comments/8249818",
+        "pull_request_review_id": null,
+        "id": 8249818,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyNDk4MTg=",
+        "diff_hunk": "@@ -1771,7 +1773,11 @@ void NetworkStore::configure(pStoreConf configuration, pStoreConf parent) {\n     // Constructor defaults are fine if these don't exist\n     configuration->getString(\"service_options\", serviceOptions);\n     configuration->getUnsigned(\"service_cache_timeout\", serviceCacheTimeout);\n-  } else {\n+  } else if (configuration->getString(\"service_list\", serviceList)) {",
+        "path": "src/store.cpp",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "dbb6602a69e73ddda894e3f338b014e58f8d94a8",
+        "original_commit_id": "18a2ae8f8c17ac006c1ee2e2a21f1164b27e3f6b",
+        "user": {
+            "login": "mdordal",
+            "id": 526675,
+            "node_id": "MDQ6VXNlcjUyNjY3NQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/526675?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mdordal",
+            "html_url": "https://github.com/mdordal",
+            "followers_url": "https://api.github.com/users/mdordal/followers",
+            "following_url": "https://api.github.com/users/mdordal/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mdordal/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mdordal/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mdordal/subscriptions",
+            "organizations_url": "https://api.github.com/users/mdordal/orgs",
+            "repos_url": "https://api.github.com/users/mdordal/repos",
+            "events_url": "https://api.github.com/users/mdordal/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mdordal/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Why not loadFromList here? AFAICT serviceList doesn't have any use outside of being parsed, so making loadFromList take the config option and loading servers directly might be better.\n\nIt also saves you from having to add the serviceList and serviceListDefaultPort members.\n",
+        "created_at": "2013-12-10T22:11:28Z",
+        "updated_at": "2013-12-17T21:06:08Z",
+        "html_url": "https://github.com/facebookarchive/scribe/pull/77#discussion_r8249818",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/scribe/pulls/77",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/scribe/pulls/comments/8249818"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/scribe/pull/77#discussion_r8249818"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/scribe/pulls/77"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/scribe/pulls/comments/8250273",
+        "pull_request_review_id": null,
+        "id": 8250273,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgyNTAyNzM=",
+        "diff_hunk": "@@ -1771,7 +1773,11 @@ void NetworkStore::configure(pStoreConf configuration, pStoreConf parent) {\n     // Constructor defaults are fine if these don't exist\n     configuration->getString(\"service_options\", serviceOptions);\n     configuration->getUnsigned(\"service_cache_timeout\", serviceCacheTimeout);\n-  } else {\n+  } else if (configuration->getString(\"service_list\", serviceList)) {",
+        "path": "src/store.cpp",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "dbb6602a69e73ddda894e3f338b014e58f8d94a8",
+        "original_commit_id": "18a2ae8f8c17ac006c1ee2e2a21f1164b27e3f6b",
+        "user": {
+            "login": "chrisjbray",
+            "id": 5336417,
+            "node_id": "MDQ6VXNlcjUzMzY0MTc=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/5336417?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/chrisjbray",
+            "html_url": "https://github.com/chrisjbray",
+            "followers_url": "https://api.github.com/users/chrisjbray/followers",
+            "following_url": "https://api.github.com/users/chrisjbray/following{/other_user}",
+            "gists_url": "https://api.github.com/users/chrisjbray/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/chrisjbray/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/chrisjbray/subscriptions",
+            "organizations_url": "https://api.github.com/users/chrisjbray/orgs",
+            "repos_url": "https://api.github.com/users/chrisjbray/repos",
+            "events_url": "https://api.github.com/users/chrisjbray/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/chrisjbray/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The only reason for this approach was keeping it as similar to the `smc_service` flow as possible, grab the settings into members in ::configure, then actually do the parsing in ::load\n\nI could go either way, if you'd rather I setup 'servers' from ::configure?\n",
+        "created_at": "2013-12-10T22:25:56Z",
+        "updated_at": "2013-12-17T21:06:08Z",
+        "html_url": "https://github.com/facebookarchive/scribe/pull/77#discussion_r8250273",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/scribe/pulls/77",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/scribe/pulls/comments/8250273"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/scribe/pull/77#discussion_r8250273"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/scribe/pulls/77"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/scribe/pulls/comments/8412806",
+        "pull_request_review_id": null,
+        "id": 8412806,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg0MTI4MDY=",
+        "diff_hunk": "@@ -1771,7 +1773,11 @@ void NetworkStore::configure(pStoreConf configuration, pStoreConf parent) {\n     // Constructor defaults are fine if these don't exist\n     configuration->getString(\"service_options\", serviceOptions);\n     configuration->getUnsigned(\"service_cache_timeout\", serviceCacheTimeout);\n-  } else {\n+  } else if (configuration->getString(\"service_list\", serviceList)) {",
+        "path": "src/store.cpp",
+        "position": 21,
+        "original_position": 21,
+        "commit_id": "dbb6602a69e73ddda894e3f338b014e58f8d94a8",
+        "original_commit_id": "18a2ae8f8c17ac006c1ee2e2a21f1164b27e3f6b",
+        "user": {
+            "login": "mdordal",
+            "id": 526675,
+            "node_id": "MDQ6VXNlcjUyNjY3NQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/526675?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mdordal",
+            "html_url": "https://github.com/mdordal",
+            "followers_url": "https://api.github.com/users/mdordal/followers",
+            "following_url": "https://api.github.com/users/mdordal/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mdordal/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mdordal/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mdordal/subscriptions",
+            "organizations_url": "https://api.github.com/users/mdordal/orgs",
+            "repos_url": "https://api.github.com/users/mdordal/repos",
+            "events_url": "https://api.github.com/users/mdordal/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mdordal/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Alright, I see what's going on here now.\n",
+        "created_at": "2013-12-17T19:01:00Z",
+        "updated_at": "2013-12-17T21:06:08Z",
+        "html_url": "https://github.com/facebookarchive/scribe/pull/77#discussion_r8412806",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/scribe/pulls/77",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/scribe/pulls/comments/8412806"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/scribe/pull/77#discussion_r8412806"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/scribe/pulls/77"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/scribe/pulls/comments/8412849",
+        "pull_request_review_id": null,
+        "id": 8412849,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg0MTI4NDk=",
+        "diff_hunk": "@@ -1859,7 +1883,12 @@ bool NetworkStore::open() {\n       success = scribe::network_config::getService(serviceName, serviceOptions,\n                                                    servers);\n     }\n+  } else if (listBased) {\n+    // load 'servers' from the list\n+    success = loadFromList();",
+        "path": "src/store.cpp",
+        "position": null,
+        "original_position": 70,
+        "commit_id": "dbb6602a69e73ddda894e3f338b014e58f8d94a8",
+        "original_commit_id": "d9837ce40a7c1f752571fd131b0b8079b67ebf2b",
+        "user": {
+            "login": "mdordal",
+            "id": 526675,
+            "node_id": "MDQ6VXNlcjUyNjY3NQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/526675?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mdordal",
+            "html_url": "https://github.com/mdordal",
+            "followers_url": "https://api.github.com/users/mdordal/followers",
+            "following_url": "https://api.github.com/users/mdordal/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mdordal/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mdordal/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mdordal/subscriptions",
+            "organizations_url": "https://api.github.com/users/mdordal/orgs",
+            "repos_url": "https://api.github.com/users/mdordal/repos",
+            "events_url": "https://api.github.com/users/mdordal/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mdordal/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": " It might be clearer if though if `loadFromList` took an out parameter like `network_config::getService` does above. \n",
+        "created_at": "2013-12-17T19:02:09Z",
+        "updated_at": "2013-12-17T21:06:08Z",
+        "html_url": "https://github.com/facebookarchive/scribe/pull/77#discussion_r8412849",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/scribe/pulls/77",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/scribe/pulls/comments/8412849"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/scribe/pull/77#discussion_r8412849"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/scribe/pulls/77"
+            }
+        }
+    }
+]

@@ -1,0 +1,1374 @@
+[
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2259816",
+        "pull_request_review_id": null,
+        "id": 2259816,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNTk4MTY=",
+        "diff_hunk": "@@ -254,6 +255,9 @@\n \t\t\tisopen = true;\n \t\t\telement.innerHTML = build(item);\n \t\t\taddListeners(item.callback);\n+\t\t\t// adding focus to prompt input box\n+\t\t\t// doesn't work without a setTimeout... \n+\t\t\tif (item.type === \"prompt\") global.setTimeout(function () { document.getElementById(\"aText\").focus(); }, 0);",
+        "path": "lib/alertify.js",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "0e28753c9887f731e191ae52bf4832ff2d8a2e81",
+        "original_commit_id": "0e28753c9887f731e191ae52bf4832ff2d8a2e81",
+        "user": {
+            "login": "philfreo",
+            "id": 97612,
+            "node_id": "MDQ6VXNlcjk3NjEy",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/97612?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/philfreo",
+            "html_url": "https://github.com/philfreo",
+            "followers_url": "https://api.github.com/users/philfreo/followers",
+            "following_url": "https://api.github.com/users/philfreo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/philfreo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/philfreo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/philfreo/subscriptions",
+            "organizations_url": "https://api.github.com/users/philfreo/orgs",
+            "repos_url": "https://api.github.com/users/philfreo/repos",
+            "events_url": "https://api.github.com/users/philfreo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/philfreo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "you should probably prefix your elements with something like `alertify` since it wouldnt be unreasonable for somebody to already have an `aText` id :)\n",
+        "created_at": "2012-11-29T00:55:50Z",
+        "updated_at": "2012-11-29T00:55:50Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/9#discussion_r2259816",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/9",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2259816"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/9#discussion_r2259816"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/9"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2264858",
+        "pull_request_review_id": null,
+        "id": 2264858,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyNjQ4NTg=",
+        "diff_hunk": "@@ -1,14 +1,11 @@\n {\n-\t\"name\"        : \"Alertify\",\n-\t\"description\" : \"An unobtrusive customizable JavaScript notification system\",\n-\t\"version\"     : \"0.1a1\",\n-\t\"homepage\"    : \"http://www.github.com/fabien-d\",\n-\t\"author\" : {\n-\t\t\"name\"  : \"Fabien Doiron\",\n-\t\t\"email\" : \"fabien.doiron@gmail.com\"\n+\t\"name\": \"alertify\",\n+\t\"description\": \"An unobtrusive customizable JavaScript notification system\",\n+\t\"version\": \"0.1.1\",\n+\t\"author\" : \"Fabien Doiron <fabien.doiron@gmail.com>\",\n+\t\"repository\": {\n+\t\t\"type\": \"git\",\n+\t    \"url\": \"https://github.com/fabien-d/alertify.js.git\"",
+        "path": "package.json",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "4aac5052d34ee7303b09cddbf3f9bf92bd95817e",
+        "original_commit_id": "4aac5052d34ee7303b09cddbf3f9bf92bd95817e",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Indentation\n",
+        "created_at": "2012-11-29T13:52:41Z",
+        "updated_at": "2012-11-29T13:52:41Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/18#discussion_r2264858",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/18",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2264858"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/18#discussion_r2264858"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/18"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2288442",
+        "pull_request_review_id": null,
+        "id": 2288442,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyODg0NDI=",
+        "diff_hunk": "@@ -195,10 +195,12 @@\n \t\t * \n \t\t * @return {undefined}\n \t\t */\n-\t\tclose = function () {\n+\t\tclose = function (elem) {\n+\t\t\tbind(elem, \"click\", function(){",
+        "path": "lib/alertify.js",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "5e2b7e59805ab493ee70a2c732cd31855b9c899f",
+        "original_commit_id": "ca84c15bb756fa0bc6395d42c3f7a3eb29c8db4c",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "spaces before and after the function brackets... e.g. function () {\n",
+        "created_at": "2012-12-02T23:38:09Z",
+        "updated_at": "2012-12-03T03:53:34Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/34#discussion_r2288442",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/34",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2288442"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/34#discussion_r2288442"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2288443",
+        "pull_request_review_id": null,
+        "id": 2288443,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyODg0NDM=",
+        "diff_hunk": "@@ -195,10 +195,12 @@\n \t\t * \n \t\t * @return {undefined}\n \t\t */\n-\t\tclose = function () {\n+\t\tclose = function (elem) {\n+\t\t\tbind(elem, \"click\", function(){\n+\t\t\t\tlogElement.removeChild(elem);\n+\t\t\t});\n \t\t\tsetTimeout(function () {\n-\t\t\t\tvar child = logElement.childNodes[logElement.childNodes.length - 1];\n-\t\t\t\tif (typeof child !== \"undefined\") logElement.removeChild(child);\n+\t\t\t\tif (typeof elem !== \"undefined\" && elem.parentNode===logElement) logElement.removeChild(elem);",
+        "path": "lib/alertify.js",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "5e2b7e59805ab493ee70a2c732cd31855b9c899f",
+        "original_commit_id": "ca84c15bb756fa0bc6395d42c3f7a3eb29c8db4c",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "spaces before and after === \n",
+        "created_at": "2012-12-02T23:38:33Z",
+        "updated_at": "2012-12-03T03:53:34Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/34#discussion_r2288443",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/34",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2288443"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/34#discussion_r2288443"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2288451",
+        "pull_request_review_id": null,
+        "id": 2288451,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyODg0NTE=",
+        "diff_hunk": "@@ -195,10 +195,12 @@\n \t\t * \n \t\t * @return {undefined}\n \t\t */\n-\t\tclose = function () {\n+\t\tclose = function (elem) {\n+\t\t\tbind(elem, \"click\", function(){\n+\t\t\t\tlogElement.removeChild(elem);",
+        "path": "lib/alertify.js",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "5e2b7e59805ab493ee70a2c732cd31855b9c899f",
+        "original_commit_id": "ca84c15bb756fa0bc6395d42c3f7a3eb29c8db4c",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "since this \"logElement.removeChild(elem)\" is called twice... maybe an inner function in the close method would be useful for DRY.  thoughts? \n",
+        "created_at": "2012-12-02T23:41:29Z",
+        "updated_at": "2012-12-03T03:53:34Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/34#discussion_r2288451",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/34",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2288451"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/34#discussion_r2288451"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2289147",
+        "pull_request_review_id": null,
+        "id": 2289147,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyODkxNDc=",
+        "diff_hunk": "@@ -195,10 +195,12 @@\n \t\t * \n \t\t * @return {undefined}\n \t\t */\n-\t\tclose = function () {\n+\t\tclose = function (elem) {\n+\t\t\tbind(elem, \"click\", function(){\n+\t\t\t\tlogElement.removeChild(elem);",
+        "path": "lib/alertify.js",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "5e2b7e59805ab493ee70a2c732cd31855b9c899f",
+        "original_commit_id": "ca84c15bb756fa0bc6395d42c3f7a3eb29c8db4c",
+        "user": {
+            "login": "pzl",
+            "id": 315796,
+            "node_id": "MDQ6VXNlcjMxNTc5Ng==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/315796?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pzl",
+            "html_url": "https://github.com/pzl",
+            "followers_url": "https://api.github.com/users/pzl/followers",
+            "following_url": "https://api.github.com/users/pzl/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pzl/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pzl/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pzl/subscriptions",
+            "organizations_url": "https://api.github.com/users/pzl/orgs",
+            "repos_url": "https://api.github.com/users/pzl/repos",
+            "events_url": "https://api.github.com/users/pzl/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pzl/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "That's your call. Both instances of that are very close to each other (so presumably hard to miss if updating one) and wrapping it in a function might even take more space/size than just leaving it. But if adhering to DRY is important, it wouldn't be a crazy thing to change.\n",
+        "created_at": "2012-12-03T04:04:04Z",
+        "updated_at": "2012-12-03T04:04:04Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/34#discussion_r2289147",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/34",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2289147"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/34#discussion_r2289147"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2289185",
+        "pull_request_review_id": null,
+        "id": 2289185,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyODkxODU=",
+        "diff_hunk": "@@ -195,10 +195,12 @@\n \t\t * \n \t\t * @return {undefined}\n \t\t */\n-\t\tclose = function () {\n+\t\tclose = function (elem) {\n+\t\t\tbind(elem, \"click\", function(){\n+\t\t\t\tlogElement.removeChild(elem);",
+        "path": "lib/alertify.js",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "5e2b7e59805ab493ee70a2c732cd31855b9c899f",
+        "original_commit_id": "ca84c15bb756fa0bc6395d42c3f7a3eb29c8db4c",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm good with the way it is. As you said, they're close and it's a one liner. Not an issue to update both if ever a change is needed. \n\nSent from my iPhone\n\nOn 2012-12-02, at 11:04 PM, Dan Panzarella notifications@github.com wrote:\n\n> In lib/alertify.js:\n> \n> > @@ -195,10 +195,12 @@\n> >          \\* \n> >          \\* @return {undefined}\n> >          */\n> > -       close = function () {\n> > -       close = function (elem) {\n> > -           bind(elem, \"click\", function(){\n> > -               logElement.removeChild(elem);\n> >   That's your call. Both instances of that are very close to each other (so presumably hard to miss if updating one) and wrapping it in a function might even take more space/size than just leaving it. But if adhering to DRY is important, it wouldn't be a crazy thing to change.\n> \n> \u2014\n> Reply to this email directly or view it on GitHub.\n",
+        "created_at": "2012-12-03T04:21:09Z",
+        "updated_at": "2012-12-03T04:21:09Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/34#discussion_r2289185",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/34",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2289185"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/34#discussion_r2289185"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/34"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2306616",
+        "pull_request_review_id": null,
+        "id": 2306616,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzMDY2MTY=",
+        "diff_hunk": "@@ -356,10 +361,11 @@\n \t\t * \n \t\t * @param  {String} message    The message passed from the callee\n \t\t * @param  {String} type       [Optional] Optional type of log message\n+\t\t * @param  {Number} wait       [Optional] Time (in ms) to wait before auto-hiding the log\n \t\t * \n \t\t * @return {Object}\n \t\t */\n-\t\tlog = function (message, type) {\n+\t\tlog = function (message, type, wait) {",
+        "path": "lib/alertify.js",
+        "position": 73,
+        "original_position": 55,
+        "commit_id": "912b36c45b003e930e091506de5066c5d121e482",
+        "original_commit_id": "63b3520478917e739bf92f95ea68863815cd6068",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "maybe throw an error catching statement here\n\n``` js\nif (wait && typeof wait !== \"number\") throw new Error(\"wait parameter must be a number\");\n```\n",
+        "created_at": "2012-12-04T14:26:04Z",
+        "updated_at": "2012-12-04T19:25:16Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/37#discussion_r2306616",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/37",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2306616"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/37#discussion_r2306616"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/37"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2309634",
+        "pull_request_review_id": null,
+        "id": 2309634,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzMDk2MzQ=",
+        "diff_hunk": "@@ -199,16 +199,29 @@\n \n \t\t/**\n \t\t * Close the log messages\n-\t\t * \n+\t\t *\n+\t\t * @param  {Object} elem    HTML Element of log message to close\n+\t\t * @param  {Number} wait    [optional] Time (in ms) to wait before automatically hiding the message  \n+\t\t *\n \t\t * @return {undefined}\n \t\t */\n-\t\tclose = function (elem) {\n+\t\tclose = function (elem, wait) {\n+\t\t\tvar timer;\n+\t\t\tif (wait && typeof wait !== undefined){\n+\t\t\t\tif (!isNaN(wait)){\n+\t\t\t\t\ttimer = +wait;\n+\t\t\t\t} else {\n+\t\t\t\t\tthrow new Error(\"Log message delay must be a Number\");\n+\t\t\t\t}\n+\t\t\t} else {\n+\t\t\t\ttimer = delay;\n+\t\t\t}",
+        "path": "lib/alertify.js",
+        "position": 22,
+        "original_position": 22,
+        "commit_id": "912b36c45b003e930e091506de5066c5d121e482",
+        "original_commit_id": "3f86dc8025e8b6b8793ed8d77ed9e4b99045a8f1",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I was thinking a 1 line addition, don't like how it adds 10 lines. Maybe a silent failure is better (as you originally had). I do like the testing of the wait number though. I would comment the unary plus since it's not obvious what it does (for everyone)\n\n``` js\n// +wait -> Unary Plus,  evaluates operand and attempts to converts it into a number\nvar timer = (wait && !isNaN(wait)) ? +wait : delay\n```\n\nmy bad\n",
+        "created_at": "2012-12-04T17:36:56Z",
+        "updated_at": "2012-12-04T19:25:16Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/37#discussion_r2309634",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/37",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2309634"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/37#discussion_r2309634"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/37"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2356847",
+        "pull_request_review_id": null,
+        "id": 2356847,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzNTY4NDc=",
+        "diff_hunk": "@@ -31,5 +31,5 @@ Alertify is licensed under MIT http://www.opensource.org/licenses/MIT\n \n ### Copyright\n \n-Copyright (c) 2012, Fabien Doiron  ",
+        "path": "README.md",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "1308bfd2c6b01842b3c4f3fef1517111ddde0a2b",
+        "original_commit_id": "d71b2c0ca96e9b0ce2364a7affce270de3c22dfe",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The 2 trailing spaces acts as a line break for markdown.\n",
+        "created_at": "2012-12-08T15:00:47Z",
+        "updated_at": "2012-12-08T15:05:59Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/54#discussion_r2356847",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/54",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2356847"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/54#discussion_r2356847"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/54"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2356854",
+        "pull_request_review_id": null,
+        "id": 2356854,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzNTY4NTQ=",
+        "diff_hunk": "@@ -31,5 +31,5 @@ Alertify is licensed under MIT http://www.opensource.org/licenses/MIT\n \n ### Copyright\n \n-Copyright (c) 2012, Fabien Doiron  ",
+        "path": "README.md",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "1308bfd2c6b01842b3c4f3fef1517111ddde0a2b",
+        "original_commit_id": "d71b2c0ca96e9b0ce2364a7affce270de3c22dfe",
+        "user": {
+            "login": "toin0u",
+            "id": 672421,
+            "node_id": "MDQ6VXNlcjY3MjQyMQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/672421?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/toin0u",
+            "html_url": "https://github.com/toin0u",
+            "followers_url": "https://api.github.com/users/toin0u/followers",
+            "following_url": "https://api.github.com/users/toin0u/following{/other_user}",
+            "gists_url": "https://api.github.com/users/toin0u/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/toin0u/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/toin0u/subscriptions",
+            "organizations_url": "https://api.github.com/users/toin0u/orgs",
+            "repos_url": "https://api.github.com/users/toin0u/repos",
+            "events_url": "https://api.github.com/users/toin0u/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/toin0u/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sorry for that ! :-/\n",
+        "created_at": "2012-12-08T15:04:21Z",
+        "updated_at": "2012-12-08T15:05:59Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/54#discussion_r2356854",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/54",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2356854"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/54#discussion_r2356854"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/54"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2378810",
+        "pull_request_review_id": null,
+        "id": 2378810,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzNzg4MTA=",
+        "diff_hunk": "@@ -235,7 +235,10 @@\n \t\t\t\tvar timer = (wait && !isNaN(wait)) ? +wait : this.delay; // Unary Plus: +\"2\" === 2\n \t\t\t\tthis.bind(elem, \"click\", function () {\n \t\t\t\t\telLog.removeChild(elem);\n-\t\t\t\t});\n+\t\t\t\t});\t\t\t\t\n+\t\t\t\tif ( wait == 0 ){\n+\t\t\t\t\treturn;\n+\t\t\t\t}",
+        "path": "lib/alertify.js",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "8532eb6f6180a2caa092c9250d30a7d5ca3f1f8d",
+        "original_commit_id": "712bb86797bada54e6ec62bb4296d87ac94de89f",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "1 liner, spacing and strict equal.\n\n``` js\nif (wait === 0) return;\n```\n",
+        "created_at": "2012-12-11T14:57:09Z",
+        "updated_at": "2012-12-11T15:13:38Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/61#discussion_r2378810",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/61",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2378810"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/61#discussion_r2378810"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/61"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2386127",
+        "pull_request_review_id": null,
+        "id": 2386127,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIzODYxMjc=",
+        "diff_hunk": "@@ -224,6 +224,9 @@\n \t\t\t\tthis.bind(elem, \"click\", function () {\n \t\t\t\t\telLog.removeChild(elem);\n \t\t\t\t});\n+\n+\t\t\t\tif ( wait === 0 ) return;",
+        "path": "src/alertify.js",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "8532eb6f6180a2caa092c9250d30a7d5ca3f1f8d",
+        "original_commit_id": "8532eb6f6180a2caa092c9250d30a7d5ca3f1f8d",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Still a spacing issue. There should not be spaces between the brackets. And could you also squash your commits into 1? Then I'll merge!\n",
+        "created_at": "2012-12-11T22:43:01Z",
+        "updated_at": "2012-12-11T22:43:01Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/61#discussion_r2386127",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/61",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2386127"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/61#discussion_r2386127"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/61"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2627332",
+        "pull_request_review_id": null,
+        "id": 2627332,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2MjczMzI=",
+        "diff_hunk": "@@ -104,11 +110,13 @@\n \t\t\t\tvar btnReset  = $(\"alertify-resetFocus\"),\n \t\t\t\t    btnOK     = $(\"alertify-ok\")     || undefined,\n \t\t\t\t    btnCancel = $(\"alertify-cancel\") || undefined,\n+\t\t\t\t    btnFocus  = (_alertify.buttonFocus == 'cancel') ? btnCancel : ((_alertify.buttonFocus == 'none') ? null : btnOK),",
+        "path": "src/alertify.js",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "1e2cdb26bca3fb39ebb5247ec1e4501b319e10f6",
+        "original_commit_id": "2d820f42993bf25a21a10ed9f7338296c5bf9ebf",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "=== instead of ==\n\" instead of '\n\nThe only issue I have is with null. If focus isn't set to either button, than a keyboard user will have to tab through the entire page to reach the button of the DOM and enter the dialog element before being able to click a button. (or resort to using the mouse)\n\nCould add another empty `<a>` in the dialog and assign focus to it? Seems a bit hacky...\n",
+        "created_at": "2013-01-12T15:28:37Z",
+        "updated_at": "2013-01-15T16:31:34Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2627332",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2627332"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2627332"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2627341",
+        "pull_request_review_id": null,
+        "id": 2627341,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2MjczNDE=",
+        "diff_hunk": "@@ -156,6 +164,7 @@\n \t\t\t\treset = function (event) {\n \t\t\t\t\tif (hasInput) input.focus();\n \t\t\t\t\telse if (hasCancel) btnCancel.focus();\n+\t\t\t\t\telse if (hasFocus) btnFocus.focus()",
+        "path": "src/alertify.js",
+        "position": null,
+        "original_position": 31,
+        "commit_id": "1e2cdb26bca3fb39ebb5247ec1e4501b319e10f6",
+        "original_commit_id": "2d820f42993bf25a21a10ed9f7338296c5bf9ebf",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This isn't needed. The `reset` function is only to keep the focus inside the dialog. So tabbing through should ignore the `buttonFocus` property and simply set the focus on the first element available. `input`, `cancel` and `ok` respectively.\n",
+        "created_at": "2013-01-12T15:30:49Z",
+        "updated_at": "2013-01-15T16:31:34Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2627341",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2627341"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2627341"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2627348",
+        "pull_request_review_id": null,
+        "id": 2627348,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2MjczNDg=",
+        "diff_hunk": "@@ -513,7 +523,7 @@\n \t\t\t\t\t\t\tinput.focus();\n \t\t\t\t\t\t\tinput.select();\n \t\t\t\t\t\t}\n-\t\t\t\t\t\telse btnOK.focus();\n+\t\t\t\t\t\telse if(btnFocus != null) btnFocus.focus();",
+        "path": "src/alertify.js",
+        "position": null,
+        "original_position": 59,
+        "commit_id": "1e2cdb26bca3fb39ebb5247ec1e4501b319e10f6",
+        "original_commit_id": "2d820f42993bf25a21a10ed9f7338296c5bf9ebf",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "space between `if` and `(`\n\nand same issue as above with null. focus remains in the middle of the page and users need to tab through all the DOM to get to the dialog.\n",
+        "created_at": "2013-01-12T15:32:44Z",
+        "updated_at": "2013-01-15T16:31:34Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2627348",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2627348"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2627348"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2636320",
+        "pull_request_review_id": null,
+        "id": 2636320,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2MzYzMjA=",
+        "diff_hunk": "@@ -104,11 +110,13 @@\n \t\t\t\tvar btnReset  = $(\"alertify-resetFocus\"),\n \t\t\t\t    btnOK     = $(\"alertify-ok\")     || undefined,\n \t\t\t\t    btnCancel = $(\"alertify-cancel\") || undefined,\n+\t\t\t\t    btnFocus  = (_alertify.buttonFocus == 'cancel') ? btnCancel : ((_alertify.buttonFocus == 'none') ? null : btnOK),",
+        "path": "src/alertify.js",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "1e2cdb26bca3fb39ebb5247ec1e4501b319e10f6",
+        "original_commit_id": "2d820f42993bf25a21a10ed9f7338296c5bf9ebf",
+        "user": {
+            "login": "quasipickle",
+            "id": 1377105,
+            "node_id": "MDQ6VXNlcjEzNzcxMDU=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1377105?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/quasipickle",
+            "html_url": "https://github.com/quasipickle",
+            "followers_url": "https://api.github.com/users/quasipickle/followers",
+            "following_url": "https://api.github.com/users/quasipickle/following{/other_user}",
+            "gists_url": "https://api.github.com/users/quasipickle/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/quasipickle/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/quasipickle/subscriptions",
+            "organizations_url": "https://api.github.com/users/quasipickle/orgs",
+            "repos_url": "https://api.github.com/users/quasipickle/repos",
+            "events_url": "https://api.github.com/users/quasipickle/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/quasipickle/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If the desire is to have nothing focused, then the desire is to use the mouse anyway - the idea being to slow the user down and have them really consider what the dialog is saying.\n\nI'm unable to tab the buttons into focus anyway - either when using my updated code or the original.\n",
+        "created_at": "2013-01-14T16:07:30Z",
+        "updated_at": "2013-01-15T16:31:35Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2636320",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2636320"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2636320"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2639010",
+        "pull_request_review_id": null,
+        "id": 2639010,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2MzkwMTA=",
+        "diff_hunk": "@@ -21,7 +21,7 @@\n \t\tdialogs = {\n \t\t\tbuttons : {\n \t\t\t\tholder : \"<nav class=\\\"alertify-buttons\\\">{{buttons}}</nav>\",\n-\t\t\t\tsubmit : \"<button type=\\\"submit\\\" class=\\\"alertify-button alertify-button-ok\\\" id=\\\"alertify-ok\\\" />{{ok}}</button>\",\n+\t\t\t\tsubmit : \"<button type=\\\"submit\\\" class=\\\"alertify-button alertify-button-ok\\\" id=\\\"alertify-ok\\\">{{ok}}</button>\",",
+        "path": "src/alertify.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "1e2cdb26bca3fb39ebb5247ec1e4501b319e10f6",
+        "original_commit_id": "da1fdc13ab5e527667a74b6a54d8e6b96eb56086",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": ":+1: \n",
+        "created_at": "2013-01-14T18:53:59Z",
+        "updated_at": "2013-01-15T16:31:35Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2639010",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2639010"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2639010"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2639045",
+        "pull_request_review_id": null,
+        "id": 2639045,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2MzkwNDU=",
+        "diff_hunk": "@@ -225,6 +232,9 @@\n \n \t\t\t\thtml += \"<div class=\\\"alertify-dialog\\\">\";\n \n+\t\t\t\tif(_alertify.buttonFocus === \"none\")\n+\t\t\t\t\thtml += \"<a href=\\\"#\\\" id=\\\"alertify-noneFocus\\\" class = \\\"alertify-hidden\\\"></a>\";\n+",
+        "path": "src/alertify.js",
+        "position": null,
+        "original_position": 45,
+        "commit_id": "1e2cdb26bca3fb39ebb5247ec1e4501b319e10f6",
+        "original_commit_id": "da1fdc13ab5e527667a74b6a54d8e6b96eb56086",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "if there are no `{ }` keep on 1 line...  and also no spaces between `=` on class attribute\n",
+        "created_at": "2013-01-14T18:56:39Z",
+        "updated_at": "2013-01-15T16:31:35Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2639045",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2639045"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2639045"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2651718",
+        "pull_request_review_id": null,
+        "id": 2651718,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2NTE3MTg=",
+        "diff_hunk": "@@ -237,6 +244,8 @@\n \n \t\t\t\thtml += \"<div class=\\\"alertify-dialog\\\">\";\n \n+\t\t\t\tif(_alertify.buttonFocus === \"none\") html += \"<a href=\\\"#\\\" id=\\\"alertify-noneFocus\\\" class=\\\"alertify-hidden\\\"></a>\";",
+        "path": "lib/alertify.js",
+        "position": null,
+        "original_position": 43,
+        "commit_id": "1e2cdb26bca3fb39ebb5247ec1e4501b319e10f6",
+        "original_commit_id": "bc39a078d41fbbf341ec564579ebbc635cad7ae7",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "one last nitpick... space between `if (`\n",
+        "created_at": "2013-01-15T16:26:17Z",
+        "updated_at": "2013-01-15T16:31:35Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2651718",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2651718"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/87#discussion_r2651718"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/87"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2664086",
+        "pull_request_review_id": null,
+        "id": 2664086,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2NjQwODY=",
+        "diff_hunk": "@@ -1,3 +1,5 @@\n+![travis](https://travis-ci.org/fabien-d/delorean.png?branch=master)",
+        "path": "README.md",
+        "position": null,
+        "original_position": 1,
+        "commit_id": "331eaca6bb89bad467bd95ef90ee1fe7b13139d6",
+        "original_commit_id": "0b879a9a77c7f1b7c87a8514ac6bb439155ac2c2",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "just need to update delorean with alertify\n",
+        "created_at": "2013-01-16T11:52:48Z",
+        "updated_at": "2013-01-16T18:30:13Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/102#discussion_r2664086",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/102",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2664086"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/102#discussion_r2664086"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/102"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2666514",
+        "pull_request_review_id": null,
+        "id": 2666514,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2NjY1MTQ=",
+        "diff_hunk": "@@ -7,6 +7,12 @@\n \t\t\"name\"  : \"Fabien Doiron\",\n \t\t\"email\" : \"fabien.doiron@gmail.com\"\n \t},\n+\t\"scripts\": {\n+\t\t\"test\": \"grunt\"",
+        "path": "package.json",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "331eaca6bb89bad467bd95ef90ee1fe7b13139d6",
+        "original_commit_id": "00de9e5bd587aeeb02a00fbc0b1f73d377644a99",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "one more thing... probably makes more sense to do `grunt lint qunit`. Don't really need to run concat and min for the travis build.\n",
+        "created_at": "2013-01-16T15:22:15Z",
+        "updated_at": "2013-01-16T18:30:14Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/102#discussion_r2666514",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/102",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2666514"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/102#discussion_r2666514"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/102"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2932193",
+        "pull_request_review_id": null,
+        "id": 2932193,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI5MzIxOTM=",
+        "diff_hunk": "@@ -570,16 +570,16 @@\n \t\t};\n \n \t\treturn {\n-\t\t\talert   : function (message, fn, cssClass) { _alertify.dialog(message, \"alert\", fn, \"\", cssClass); return this; },\n-\t\t\tconfirm : function (message, fn, cssClass) { _alertify.dialog(message, \"confirm\", fn, \"\", cssClass); return this; },\n-\t\t\textend  : _alertify.extend,\n-\t\t\tinit    : _alertify.init,\n-\t\t\tlog     : function (message, type, wait) { _alertify.log(message, type, wait); return this; },\n-\t\t\tprompt  : function (message, fn, placeholder, cssClass) { _alertify.dialog(message, \"prompt\", fn, placeholder, cssClass); return this; },\n-\t\t\tsuccess : function (message, wait) { _alertify.log(message, \"success\", wait); return this; },\n-\t\t\terror   : function (message, wait) { _alertify.log(message, \"error\", wait); return this; },\n-\t\t\tset     : function (args) { _alertify.set(args); },\n-\t\t\tlabels  : _alertify.labels\n+\t\t  alert   : function (message, fn, cssClass) { _alertify.dialog(message, \"alert\", fn, \"\", cssClass); return this; },\n+\t\t  confirm : function (message, fn, cssClass) { _alertify.dialog(message, \"confirm\", fn, \"\", cssClass); return this; },\n+\t\t  extend  : _alertify.extend,\n+\t\t  init    : _alertify.init,\n+\t\t  log     : function (message, type, wait, cssClass) { _alertify.log(message, type, wait, cssClass); return this; },\n+\t\t  prompt  : function (message, fn, placeholder, cssClass) { _alertify.dialog(message, \"prompt\", fn, placeholder, cssClass); return this; },\n+\t\t  success : function (message, wait, cssClass) { _alertify.log(message, \"success\", wait, cssClass); return this; },\n+\t\t  error   : function (message, wait, cssClass) { _alertify.log(message, \"error\", wait, cssClass); return this; },\n+\t\t  set     : function (args) { _alertify.set(args); },\n+\t\t  labels  : _alertify.labels",
+        "path": "src/alertify.js",
+        "position": 53,
+        "original_position": 53,
+        "commit_id": "6b7327b4d943d563f20c1880275ba7ebb5250b79",
+        "original_commit_id": "6b7327b4d943d563f20c1880275ba7ebb5250b79",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Fixed indentation (tabs instead of spaces)\n",
+        "created_at": "2013-02-07T19:39:33Z",
+        "updated_at": "2013-02-07T19:39:33Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/114#discussion_r2932193",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/114",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2932193"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/114#discussion_r2932193"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/114"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2995221",
+        "pull_request_review_id": null,
+        "id": 2995221,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI5OTUyMjE=",
+        "diff_hunk": "@@ -33,9 +33,9 @@\n \t\tdialogs = {\n \t\t\tbuttons : {\n \t\t\t\tholder : \"<nav class=\\\"alertify-buttons\\\">{{buttons}}</nav>\",\n-\t\t\t\tsubmit : \"<button type=\\\"submit\\\" class=\\\"alertify-button alertify-button-ok\\\" id=\\\"alertify-ok\\\">{{ok}}</button>\",\n-\t\t\t\tok     : \"<a href=\\\"#\\\" class=\\\"alertify-button alertify-button-ok\\\" id=\\\"alertify-ok\\\">{{ok}}</a>\",\n-\t\t\t\tcancel : \"<a href=\\\"#\\\" class=\\\"alertify-button alertify-button-cancel\\\" id=\\\"alertify-cancel\\\">{{cancel}}</a>\"\n+\t\t\t\tsubmit : \"<button type=\\\"submit\\\" role=\"button\" class=\\\"alertify-button alertify-button-ok\\\" id=\\\"alertify-ok\\\">{{ok}}</button>\",\n+\t\t\t\tok     : \"<button type=\\\"button\\\" role=\"button\" class=\\\"alertify-button alertify-button-ok\\\" id=\\\"alertify-ok\\\">{{ok}}</button>\",\n+\t\t\t\tcancel : \"<button type=\\\"button\\\" role=\"button\" class=\\\"alertify-button alertify-button-cancel\\\" id=\\\"alertify-cancel\\\">{{cancel}}</button>\"",
+        "path": "lib/alertify.js",
+        "position": 9,
+        "original_position": 9,
+        "commit_id": "9d71ac8c143581f793c5f8aa2edcbd14a4b14c01",
+        "original_commit_id": "9d71ac8c143581f793c5f8aa2edcbd14a4b14c01",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "forgot to escape the quotes around the `role` attribute `\"` should be `\\\"`.\n",
+        "created_at": "2013-02-13T13:30:45Z",
+        "updated_at": "2013-02-13T13:30:45Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/118#discussion_r2995221",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/118",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/2995221"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/118#discussion_r2995221"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/118"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/10210937",
+        "pull_request_review_id": null,
+        "id": 10210937,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwMjEwOTM3",
+        "diff_hunk": "@@ -339,6 +339,9 @@\n \t\t\t\t\t\t\telLog.removeChild(el);\n \t\t\t\t\t\t\tif (!elLog.hasChildNodes()) elLog.className += \" alertify-logs-hidden\";\n \t\t\t\t\t\t}\n+\t\t\t\t\t\tif (typeof(callback) == \"function\") {",
+        "path": "lib/alertify.js",
+        "position": 31,
+        "original_position": 31,
+        "commit_id": "6204a0df1aa8be60e0133f7128e488ec4884900f",
+        "original_commit_id": "6204a0df1aa8be60e0133f7128e488ec4884900f",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "for consistency purpose, no brackets and strict equal\n\n``` js\nif (typeof callback === \"function\")\n```\n",
+        "created_at": "2014-03-03T14:15:53Z",
+        "updated_at": "2014-03-03T14:15:53Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/206#discussion_r10210937",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/206",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/10210937"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/206#discussion_r10210937"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/206"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/11539285",
+        "pull_request_review_id": null,
+        "id": 11539285,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNTM5Mjg1",
+        "diff_hunk": "@@ -419,7 +419,9 @@\n \t\t\t\t\telCover.className  = \"alertify-cover alertify-cover-hidden\";\n \t\t\t\t\t// set focus to the last element or body\n \t\t\t\t\t// after the dialog is closed\n-\t\t\t\t\telCallee.focus();\n+\t\t\t\t\tif (elCallee) {\n+\t\t\t\t\t\telCallee.focus();\t",
+        "path": "src/alertify.js",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "1a31aaeb37068b35d15cf36c8b16a2b0b5bc59a0",
+        "original_commit_id": "1a31aaeb37068b35d15cf36c8b16a2b0b5bc59a0",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "thoughts on a fallback to reset the tabbing focus at the top of the page instead of the bottom?\n\n``` js\nif (elCallee) {\n    elCallee.focus();\n} else {\n    document.body.focus();\n}\n```\n",
+        "created_at": "2014-04-11T16:08:01Z",
+        "updated_at": "2014-04-11T16:08:01Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/217#discussion_r11539285",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/217",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/11539285"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/217#discussion_r11539285"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/217"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/11775348",
+        "pull_request_review_id": null,
+        "id": 11775348,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNzc1MzQ4",
+        "diff_hunk": "@@ -419,7 +419,9 @@\n \t\t\t\t\telCover.className  = \"alertify-cover alertify-cover-hidden\";\n \t\t\t\t\t// set focus to the last element or body\n \t\t\t\t\t// after the dialog is closed\n-\t\t\t\t\telCallee.focus();\n+\t\t\t\t\tif (elCallee) {\n+\t\t\t\t\t\telCallee.focus();\t",
+        "path": "src/alertify.js",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "1a31aaeb37068b35d15cf36c8b16a2b0b5bc59a0",
+        "original_commit_id": "1a31aaeb37068b35d15cf36c8b16a2b0b5bc59a0",
+        "user": {
+            "login": "rhuynh",
+            "id": 98212,
+            "node_id": "MDQ6VXNlcjk4MjEy",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/98212?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rhuynh",
+            "html_url": "https://github.com/rhuynh",
+            "followers_url": "https://api.github.com/users/rhuynh/followers",
+            "following_url": "https://api.github.com/users/rhuynh/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rhuynh/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rhuynh/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rhuynh/subscriptions",
+            "organizations_url": "https://api.github.com/users/rhuynh/orgs",
+            "repos_url": "https://api.github.com/users/rhuynh/repos",
+            "events_url": "https://api.github.com/users/rhuynh/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rhuynh/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "i have thought about that option, but what i found is that the browser will show the focus border around the body and it does seem kinda strange/annoying since the user didn't trigger the alertrify from the body (i know that you can hide this w/ css, but it seems unnecessary).  is it necessary to always reset the focus back to some element after the dialog is closed?\n",
+        "created_at": "2014-04-18T15:32:19Z",
+        "updated_at": "2014-04-18T15:32:19Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/217#discussion_r11775348",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/217",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/11775348"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/217#discussion_r11775348"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/217"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/11794146",
+        "pull_request_review_id": null,
+        "id": 11794146,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNzk0MTQ2",
+        "diff_hunk": "@@ -419,7 +419,9 @@\n \t\t\t\t\telCover.className  = \"alertify-cover alertify-cover-hidden\";\n \t\t\t\t\t// set focus to the last element or body\n \t\t\t\t\t// after the dialog is closed\n-\t\t\t\t\telCallee.focus();\n+\t\t\t\t\tif (elCallee) {\n+\t\t\t\t\t\telCallee.focus();\t",
+        "path": "src/alertify.js",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "1a31aaeb37068b35d15cf36c8b16a2b0b5bc59a0",
+        "original_commit_id": "1a31aaeb37068b35d15cf36c8b16a2b0b5bc59a0",
+        "user": {
+            "login": "fabien-d",
+            "id": 747616,
+            "node_id": "MDQ6VXNlcjc0NzYxNg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/747616?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/fabien-d",
+            "html_url": "https://github.com/fabien-d",
+            "followers_url": "https://api.github.com/users/fabien-d/followers",
+            "following_url": "https://api.github.com/users/fabien-d/following{/other_user}",
+            "gists_url": "https://api.github.com/users/fabien-d/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/fabien-d/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/fabien-d/subscriptions",
+            "organizations_url": "https://api.github.com/users/fabien-d/orgs",
+            "repos_url": "https://api.github.com/users/fabien-d/repos",
+            "events_url": "https://api.github.com/users/fabien-d/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/fabien-d/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "> is it necessary to always reset the focus back to some element after the dialog is closed?\n\nNope. I was just curious! \n\nIf you could just squash your commits, I'll merge. Thanks\n",
+        "created_at": "2014-04-19T15:26:05Z",
+        "updated_at": "2014-04-19T15:26:05Z",
+        "html_url": "https://github.com/fabien-d/alertify.js/pull/217#discussion_r11794146",
+        "pull_request_url": "https://api.github.com/repos/fabien-d/alertify.js/pulls/217",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/comments/11794146"
+            },
+            "html": {
+                "href": "https://github.com/fabien-d/alertify.js/pull/217#discussion_r11794146"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/fabien-d/alertify.js/pulls/217"
+            }
+        }
+    }
+]

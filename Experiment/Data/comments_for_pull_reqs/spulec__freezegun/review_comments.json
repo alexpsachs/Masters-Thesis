@@ -1,0 +1,1733 @@
+[
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/25995827",
+        "pull_request_review_id": null,
+        "id": 25995827,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1OTk1ODI3",
+        "diff_hunk": "@@ -230,35 +230,21 @@ def __call__(self, func):\n         return self.decorate_callable(func)\n \n     def decorate_class(self, klass):\n-        klass_mro = klass.mro()\n-        for attr in dir(klass):\n-            if attr.startswith(\"_\"):\n-                continue\n+        seen = set()\n+        for base_klass in klass.mro():\n+            for (attr, attr_value) in base_klass.__dict__.items():\n+                if attr.startswith('_') or attr in seen:\n+                    continue\n+                seen.add(attr)\n \n-            attr_value = getattr(klass, attr)\n-            if not callable(attr_value):\n-                continue\n+                if not callable(attr_value) or inspect.isclass(attr_value):\n+                    continue\n \n-            for base_klass in klass_mro:\n                 try:\n-                    attr_descriptor = base_klass.__dict__[attr]\n-                except KeyError:\n-                    pass\n-                else:\n-                    break\n-            else:\n-                # don't sweat the attribute magic\n-                attr_descriptor = None\n-\n-            # Skip patching classmethods and staticmethods\n-            if isinstance(attr_descriptor, (classmethod, staticmethod)):",
+        "path": "freezegun/api.py",
+        "position": 33,
+        "original_position": 33,
+        "commit_id": "4b4ba0e2a14c1ecd7e8bfc0b2ea1f332840f5568",
+        "original_commit_id": "4b4ba0e2a14c1ecd7e8bfc0b2ea1f332840f5568",
+        "user": {
+            "login": "spulec",
+            "id": 292606,
+            "node_id": "MDQ6VXNlcjI5MjYwNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/292606?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spulec",
+            "html_url": "https://github.com/spulec",
+            "followers_url": "https://api.github.com/users/spulec/followers",
+            "following_url": "https://api.github.com/users/spulec/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spulec/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spulec/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spulec/subscriptions",
+            "organizations_url": "https://api.github.com/users/spulec/orgs",
+            "repos_url": "https://api.github.com/users/spulec/repos",
+            "events_url": "https://api.github.com/users/spulec/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spulec/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm a bit confused why we are removing this part? Am I missing that this would now be redundant due to something else?\n",
+        "created_at": "2015-03-07T12:56:20Z",
+        "updated_at": "2015-03-07T12:56:20Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/88#discussion_r25995827",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/88",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/25995827"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/88#discussion_r25995827"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/88"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/26086997",
+        "pull_request_review_id": null,
+        "id": 26086997,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2MDg2OTk3",
+        "diff_hunk": "@@ -230,35 +230,21 @@ def __call__(self, func):\n         return self.decorate_callable(func)\n \n     def decorate_class(self, klass):\n-        klass_mro = klass.mro()\n-        for attr in dir(klass):\n-            if attr.startswith(\"_\"):\n-                continue\n+        seen = set()\n+        for base_klass in klass.mro():\n+            for (attr, attr_value) in base_klass.__dict__.items():\n+                if attr.startswith('_') or attr in seen:\n+                    continue\n+                seen.add(attr)\n \n-            attr_value = getattr(klass, attr)\n-            if not callable(attr_value):\n-                continue\n+                if not callable(attr_value) or inspect.isclass(attr_value):\n+                    continue\n \n-            for base_klass in klass_mro:\n                 try:\n-                    attr_descriptor = base_klass.__dict__[attr]\n-                except KeyError:\n-                    pass\n-                else:\n-                    break\n-            else:\n-                # don't sweat the attribute magic\n-                attr_descriptor = None\n-\n-            # Skip patching classmethods and staticmethods\n-            if isinstance(attr_descriptor, (classmethod, staticmethod)):",
+        "path": "freezegun/api.py",
+        "position": 33,
+        "original_position": 33,
+        "commit_id": "4b4ba0e2a14c1ecd7e8bfc0b2ea1f332840f5568",
+        "original_commit_id": "4b4ba0e2a14c1ecd7e8bfc0b2ea1f332840f5568",
+        "user": {
+            "login": "jesteria",
+            "id": 530998,
+            "node_id": "MDQ6VXNlcjUzMDk5OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/530998?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jesteria",
+            "html_url": "https://github.com/jesteria",
+            "followers_url": "https://api.github.com/users/jesteria/followers",
+            "following_url": "https://api.github.com/users/jesteria/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jesteria/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jesteria/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jesteria/subscriptions",
+            "organizations_url": "https://api.github.com/users/jesteria/orgs",
+            "repos_url": "https://api.github.com/users/jesteria/repos",
+            "events_url": "https://api.github.com/users/jesteria/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jesteria/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Right. All I've done in this revision is to refactor it such that, rather than get the class's internal namespace more than once, (once with `dir()`, and then iterating over the MRO for each name), it relies on only one loop over the MRO, with a `set` to keep track of names we've already seen (because they were overwritten in the subclass). This is basically what `dir()` was doing for us in the first place, (excluding classes with exotic metaclasses, which would cause problems anyway).\n\nI started looking through the MRO, and each of its classes' `__dict__`s, in the first place, to avoid having to guess which class attribute values are proper functions (which act as instance methods), and which are instances of `classmethod` and `staticmethod`. (For that matter, this should now exclude properties as well, which makes sense.) Because rather, these are implemented in the class `__dict__` as non-callable descriptors, (which wrap functions) &ndash; and so the `not callable(attr_value)` [line](https://github.com/spulec/freezegun/pull/88/files#diff-80ef255f3bb85cfd652668d719317c10R240) can now exclude these without further inspection. So, freezegun will only wrap undecorated functions, (and callable objects, unless we start checking with `inspect.isfunction`).\n",
+        "created_at": "2015-03-09T23:28:28Z",
+        "updated_at": "2015-03-09T23:28:28Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/88#discussion_r26086997",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/88",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/26086997"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/88#discussion_r26086997"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/88"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/26087159",
+        "pull_request_review_id": null,
+        "id": 26087159,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI2MDg3MTU5",
+        "diff_hunk": "@@ -230,35 +230,21 @@ def __call__(self, func):\n         return self.decorate_callable(func)\n \n     def decorate_class(self, klass):\n-        klass_mro = klass.mro()\n-        for attr in dir(klass):\n-            if attr.startswith(\"_\"):\n-                continue\n+        seen = set()\n+        for base_klass in klass.mro():\n+            for (attr, attr_value) in base_klass.__dict__.items():\n+                if attr.startswith('_') or attr in seen:\n+                    continue\n+                seen.add(attr)\n \n-            attr_value = getattr(klass, attr)\n-            if not callable(attr_value):\n-                continue\n+                if not callable(attr_value) or inspect.isclass(attr_value):\n+                    continue\n \n-            for base_klass in klass_mro:\n                 try:\n-                    attr_descriptor = base_klass.__dict__[attr]\n-                except KeyError:\n-                    pass\n-                else:\n-                    break\n-            else:\n-                # don't sweat the attribute magic\n-                attr_descriptor = None\n-\n-            # Skip patching classmethods and staticmethods\n-            if isinstance(attr_descriptor, (classmethod, staticmethod)):",
+        "path": "freezegun/api.py",
+        "position": 33,
+        "original_position": 33,
+        "commit_id": "4b4ba0e2a14c1ecd7e8bfc0b2ea1f332840f5568",
+        "original_commit_id": "4b4ba0e2a14c1ecd7e8bfc0b2ea1f332840f5568",
+        "user": {
+            "login": "spulec",
+            "id": 292606,
+            "node_id": "MDQ6VXNlcjI5MjYwNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/292606?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spulec",
+            "html_url": "https://github.com/spulec",
+            "followers_url": "https://api.github.com/users/spulec/followers",
+            "following_url": "https://api.github.com/users/spulec/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spulec/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spulec/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spulec/subscriptions",
+            "organizations_url": "https://api.github.com/users/spulec/orgs",
+            "repos_url": "https://api.github.com/users/spulec/repos",
+            "events_url": "https://api.github.com/users/spulec/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spulec/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Got it. That makes sense.\n",
+        "created_at": "2015-03-09T23:30:48Z",
+        "updated_at": "2015-03-09T23:30:48Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/88#discussion_r26087159",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/88",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/26087159"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/88#discussion_r26087159"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/88"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36415517",
+        "pull_request_review_id": null,
+        "id": 36415517,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NDE1NTE3",
+        "diff_hunk": "@@ -7,3 +11,12 @@ def is_fake_date(obj):\n \n def is_fake_datetime(obj):\n     return obj.__class__ is FakeDatetime\n+\n+\n+def cpython_only(func):",
+        "path": "tests/utils.py",
+        "position": 16,
+        "original_position": 16,
+        "commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "original_commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "user": {
+            "login": "adamchainz",
+            "id": 857609,
+            "node_id": "MDQ6VXNlcjg1NzYwOQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/857609?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adamchainz",
+            "html_url": "https://github.com/adamchainz",
+            "followers_url": "https://api.github.com/users/adamchainz/followers",
+            "following_url": "https://api.github.com/users/adamchainz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adamchainz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adamchainz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adamchainz/subscriptions",
+            "organizations_url": "https://api.github.com/users/adamchainz/orgs",
+            "repos_url": "https://api.github.com/users/adamchainz/repos",
+            "events_url": "https://api.github.com/users/adamchainz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adamchainz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "make `is_cpython` a variable rather than a function, then you can just do `cpython_only = unittest.skipUnless(is_cpython, \"This functionality only works on CPython\")` rather than making a whole decorator.\n",
+        "created_at": "2015-08-06T13:47:44Z",
+        "updated_at": "2015-08-06T13:47:44Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/108#discussion_r36415517",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/108",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36415517"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/108#discussion_r36415517"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/108"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36415726",
+        "pull_request_review_id": null,
+        "id": 36415726,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NDE1NzI2",
+        "diff_hunk": "@@ -20,12 +21,17 @@\n except ImportError:\n     import copyreg\n \n+\n # Stolen from six\n def with_metaclass(meta, *bases):\n     \"\"\"Create a base class with a metaclass.\"\"\"\n     return meta(\"NewBase\", bases, {})\n \n \n+def _is_cpython():\n+    return platform.python_implementation() == \"CPython\"",
+        "path": "freezegun/api.py",
+        "position": 20,
+        "original_position": 20,
+        "commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "original_commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "user": {
+            "login": "adamchainz",
+            "id": 857609,
+            "node_id": "MDQ6VXNlcjg1NzYwOQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/857609?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adamchainz",
+            "html_url": "https://github.com/adamchainz",
+            "followers_url": "https://api.github.com/users/adamchainz/followers",
+            "following_url": "https://api.github.com/users/adamchainz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adamchainz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adamchainz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adamchainz/subscriptions",
+            "organizations_url": "https://api.github.com/users/adamchainz/orgs",
+            "repos_url": "https://api.github.com/users/adamchainz/repos",
+            "events_url": "https://api.github.com/users/adamchainz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adamchainz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "On the old `ctypes` branch, @spulec has the cpython test checking for whether `platform` has even the `python_implementation` attribute - see https://github.com/spulec/freezegun/commit/f429b5ae015a11c2cd25feb2ce06f868aad226de#diff-aa9b211ef57daf3482592c4cc9180558R23 . I don't know in what python interpreters this is the case, but I guess best to act defensively as I don't think this would just be added randomly.\n",
+        "created_at": "2015-08-06T13:49:33Z",
+        "updated_at": "2015-08-06T13:49:33Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/108#discussion_r36415726",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/108",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36415726"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/108#discussion_r36415726"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/108"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36415978",
+        "pull_request_review_id": null,
+        "id": 36415978,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NDE1OTc4",
+        "diff_hunk": "@@ -0,0 +1,42 @@\n+import datetime\n+import time\n+import mock\n+\n+from freezegun import freeze_time\n+from tests import utils\n+\n+\n+@utils.cpython_only\n+def test_ticking_datetime():\n+    with freeze_time(\"Jan 14th, 2012\", tick=True):\n+        assert datetime.datetime.now() > datetime.datetime(2012, 1, 14)",
+        "path": "tests/test_ticking.py",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "original_commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "user": {
+            "login": "adamchainz",
+            "id": 857609,
+            "node_id": "MDQ6VXNlcjg1NzYwOQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/857609?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adamchainz",
+            "html_url": "https://github.com/adamchainz",
+            "followers_url": "https://api.github.com/users/adamchainz/followers",
+            "following_url": "https://api.github.com/users/adamchainz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adamchainz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adamchainz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adamchainz/subscriptions",
+            "organizations_url": "https://api.github.com/users/adamchainz/orgs",
+            "repos_url": "https://api.github.com/users/adamchainz/repos",
+            "events_url": "https://api.github.com/users/adamchainz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adamchainz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "insert a tiny `sleep()` here of `0.1` seconds, or even `0.01` seconds - some system clocks don't have microsecond resolution which means the test could intermittently fail there.\n",
+        "created_at": "2015-08-06T13:51:49Z",
+        "updated_at": "2015-08-06T13:51:49Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/108#discussion_r36415978",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/108",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36415978"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/108#discussion_r36415978"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/108"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36416016",
+        "pull_request_review_id": null,
+        "id": 36416016,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NDE2MDE2",
+        "diff_hunk": "@@ -0,0 +1,42 @@\n+import datetime\n+import time\n+import mock\n+\n+from freezegun import freeze_time\n+from tests import utils\n+\n+\n+@utils.cpython_only\n+def test_ticking_datetime():\n+    with freeze_time(\"Jan 14th, 2012\", tick=True):\n+        assert datetime.datetime.now() > datetime.datetime(2012, 1, 14)\n+\n+\n+@utils.cpython_only\n+def test_ticking_date():\n+    with freeze_time(\"Jan 14th, 2012, 23:59:59.9999999\", tick=True):\n+        assert datetime.date.today() == datetime.date(2012, 1, 15)",
+        "path": "tests/test_ticking.py",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "original_commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "user": {
+            "login": "adamchainz",
+            "id": 857609,
+            "node_id": "MDQ6VXNlcjg1NzYwOQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/857609?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adamchainz",
+            "html_url": "https://github.com/adamchainz",
+            "followers_url": "https://api.github.com/users/adamchainz/followers",
+            "following_url": "https://api.github.com/users/adamchainz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adamchainz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adamchainz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adamchainz/subscriptions",
+            "organizations_url": "https://api.github.com/users/adamchainz/orgs",
+            "repos_url": "https://api.github.com/users/adamchainz/repos",
+            "events_url": "https://api.github.com/users/adamchainz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adamchainz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "again, a tiny delay :)\n",
+        "created_at": "2015-08-06T13:52:06Z",
+        "updated_at": "2015-08-06T13:52:06Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/108#discussion_r36416016",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/108",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36416016"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/108#discussion_r36416016"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/108"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36416043",
+        "pull_request_review_id": null,
+        "id": 36416043,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NDE2MDQz",
+        "diff_hunk": "@@ -0,0 +1,42 @@\n+import datetime\n+import time\n+import mock\n+\n+from freezegun import freeze_time\n+from tests import utils\n+\n+\n+@utils.cpython_only\n+def test_ticking_datetime():\n+    with freeze_time(\"Jan 14th, 2012\", tick=True):\n+        assert datetime.datetime.now() > datetime.datetime(2012, 1, 14)\n+\n+\n+@utils.cpython_only\n+def test_ticking_date():\n+    with freeze_time(\"Jan 14th, 2012, 23:59:59.9999999\", tick=True):\n+        assert datetime.date.today() == datetime.date(2012, 1, 15)\n+\n+\n+@utils.cpython_only\n+def test_ticking_time():\n+    with freeze_time(\"Jan 14th, 2012, 23:59:59\", tick=True):\n+        assert time.time() > 1326585599.0",
+        "path": "tests/test_ticking.py",
+        "position": 24,
+        "original_position": 24,
+        "commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "original_commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "user": {
+            "login": "adamchainz",
+            "id": 857609,
+            "node_id": "MDQ6VXNlcjg1NzYwOQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/857609?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adamchainz",
+            "html_url": "https://github.com/adamchainz",
+            "followers_url": "https://api.github.com/users/adamchainz/followers",
+            "following_url": "https://api.github.com/users/adamchainz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adamchainz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adamchainz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adamchainz/subscriptions",
+            "organizations_url": "https://api.github.com/users/adamchainz/orgs",
+            "repos_url": "https://api.github.com/users/adamchainz/repos",
+            "events_url": "https://api.github.com/users/adamchainz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adamchainz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "ditto\n",
+        "created_at": "2015-08-06T13:52:17Z",
+        "updated_at": "2015-08-06T13:52:17Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/108#discussion_r36416043",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/108",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36416043"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/108#discussion_r36416043"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/108"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36416083",
+        "pull_request_review_id": null,
+        "id": 36416083,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NDE2MDgz",
+        "diff_hunk": "@@ -0,0 +1,42 @@\n+import datetime\n+import time\n+import mock\n+\n+from freezegun import freeze_time\n+from tests import utils\n+\n+\n+@utils.cpython_only\n+def test_ticking_datetime():\n+    with freeze_time(\"Jan 14th, 2012\", tick=True):\n+        assert datetime.datetime.now() > datetime.datetime(2012, 1, 14)\n+\n+\n+@utils.cpython_only\n+def test_ticking_date():\n+    with freeze_time(\"Jan 14th, 2012, 23:59:59.9999999\", tick=True):\n+        assert datetime.date.today() == datetime.date(2012, 1, 15)\n+\n+\n+@utils.cpython_only\n+def test_ticking_time():\n+    with freeze_time(\"Jan 14th, 2012, 23:59:59\", tick=True):\n+        assert time.time() > 1326585599.0\n+\n+\n+@mock.patch('freezegun.api._is_cpython', lambda: False)\n+def test_pypy_compat():",
+        "path": "tests/test_ticking.py",
+        "position": 28,
+        "original_position": 28,
+        "commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "original_commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "user": {
+            "login": "adamchainz",
+            "id": 857609,
+            "node_id": "MDQ6VXNlcjg1NzYwOQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/857609?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adamchainz",
+            "html_url": "https://github.com/adamchainz",
+            "followers_url": "https://api.github.com/users/adamchainz/followers",
+            "following_url": "https://api.github.com/users/adamchainz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adamchainz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adamchainz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adamchainz/subscriptions",
+            "organizations_url": "https://api.github.com/users/adamchainz/orgs",
+            "repos_url": "https://api.github.com/users/adamchainz/repos",
+            "events_url": "https://api.github.com/users/adamchainz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adamchainz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "test_cpython_compat ?\n",
+        "created_at": "2015-08-06T13:52:32Z",
+        "updated_at": "2015-08-06T13:52:32Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/108#discussion_r36416083",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/108",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36416083"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/108#discussion_r36416083"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/108"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36416385",
+        "pull_request_review_id": null,
+        "id": 36416385,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NDE2Mzg1",
+        "diff_hunk": "@@ -0,0 +1,42 @@\n+import datetime\n+import time\n+import mock\n+\n+from freezegun import freeze_time\n+from tests import utils\n+\n+\n+@utils.cpython_only\n+def test_ticking_datetime():\n+    with freeze_time(\"Jan 14th, 2012\", tick=True):\n+        assert datetime.datetime.now() > datetime.datetime(2012, 1, 14)\n+\n+\n+@utils.cpython_only\n+def test_ticking_date():\n+    with freeze_time(\"Jan 14th, 2012, 23:59:59.9999999\", tick=True):\n+        assert datetime.date.today() == datetime.date(2012, 1, 15)\n+\n+\n+@utils.cpython_only\n+def test_ticking_time():\n+    with freeze_time(\"Jan 14th, 2012, 23:59:59\", tick=True):\n+        assert time.time() > 1326585599.0\n+\n+\n+@mock.patch('freezegun.api._is_cpython', lambda: False)\n+def test_pypy_compat():\n+    try:\n+        freeze_time(\"Jan 14th, 2012, 23:59:59\", tick=True)\n+    except SystemError:\n+        pass\n+    else:\n+        raise AssertionError(\"tick=True should not error on cpython\")",
+        "path": "tests/test_ticking.py",
+        "position": 34,
+        "original_position": 34,
+        "commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "original_commit_id": "93b532e57b5aa6466c65b26d545ce1e4b1e15baa",
+        "user": {
+            "login": "adamchainz",
+            "id": 857609,
+            "node_id": "MDQ6VXNlcjg1NzYwOQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/857609?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adamchainz",
+            "html_url": "https://github.com/adamchainz",
+            "followers_url": "https://api.github.com/users/adamchainz/followers",
+            "following_url": "https://api.github.com/users/adamchainz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adamchainz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adamchainz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adamchainz/subscriptions",
+            "organizations_url": "https://api.github.com/users/adamchainz/orgs",
+            "repos_url": "https://api.github.com/users/adamchainz/repos",
+            "events_url": "https://api.github.com/users/adamchainz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adamchainz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Maybe more readable with `nose`'s `raises`: http://nose.readthedocs.org/en/latest/testing_tools.html#nose.tools.raises\n",
+        "created_at": "2015-08-06T13:55:07Z",
+        "updated_at": "2015-08-06T13:55:07Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/108#discussion_r36416385",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/108",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/36416385"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/108#discussion_r36416385"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/108"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/41908160",
+        "pull_request_review_id": null,
+        "id": 41908160,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxOTA4MTYw",
+        "diff_hunk": "@@ -429,6 +434,15 @@ def stop(self):\n         time.localtime = time.localtime.previous_localtime_function\n         time.strftime = time.strftime.previous_strftime_function\n \n+    def increment(self, delta=datetime.timedelta(seconds=1)):\n+        if self.tick:\n+            raise TypeError(\"Cannot manually increment when tick is True.\")",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 52,
+        "commit_id": "288f6ac5465eeb95ba74e729ec7c580a8cdecd18",
+        "original_commit_id": "988a7e02a11cfa10d8a5322dc2974a5c2f2e75d4",
+        "user": {
+            "login": "aehlke",
+            "id": 71601,
+            "node_id": "MDQ6VXNlcjcxNjAx",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/71601?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aehlke",
+            "html_url": "https://github.com/aehlke",
+            "followers_url": "https://api.github.com/users/aehlke/followers",
+            "following_url": "https://api.github.com/users/aehlke/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aehlke/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aehlke/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aehlke/subscriptions",
+            "organizations_url": "https://api.github.com/users/aehlke/orgs",
+            "repos_url": "https://api.github.com/users/aehlke/repos",
+            "events_url": "https://api.github.com/users/aehlke/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aehlke/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Not happy with having this here, IMO the different frozen time classes should implement `increment` or not on their own, but that would require more extensive refactoring.\n",
+        "created_at": "2015-10-13T18:50:36Z",
+        "updated_at": "2015-10-14T22:25:22Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/115#discussion_r41908160",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/115",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/41908160"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/115#discussion_r41908160"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/115"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/104573707",
+        "pull_request_review_id": 25416704,
+        "id": 104573707,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNDU3MzcwNw==",
+        "diff_hunk": "@@ -35,6 +38,60 @@\n     import copyreg\n \n \n+# keep a cache of module attributes otherwise freezegun will need to analyze too many modules all the time\n+_GLOBAL_MODULES_CACHE = None\n+\n+\n+def _get_global_modules_cache():\n+    global _GLOBAL_MODULES_CACHE\n+    if _GLOBAL_MODULES_CACHE is None:\n+        _GLOBAL_MODULES_CACHE = _setup_modules_cache()\n+    return _GLOBAL_MODULES_CACHE\n+\n+\n+def _get_module_attributes(module):\n+    result = []\n+    for attribute_name in dir(module):\n+        try:\n+            attribute_value = getattr(module, attribute_name)\n+        except (ImportError, AttributeError, TypeError):\n+            # For certain libraries, this can result in ImportError(_winreg) or AttributeError (celery)\n+            continue\n+        else:\n+            result.append((attribute_name, attribute_value))\n+    return result\n+\n+\n+def _setup_modules_cache():\n+    # FIXME: move this definition to be at the top-level\n+    real_time_object_ids = set(id(obj) for obj in real_date_objects)\n+    result = {}\n+    for mod_name, module in list(sys.modules.items()):\n+        # ignore this module\n+        if mod_name == __name__:\n+            continue\n+        date_attrs = []\n+        all_module_attributes = _get_module_attributes(module)\n+        for attribute_name, attribute_value in all_module_attributes:\n+            if id(attribute_value) in real_time_object_ids:\n+                date_attrs.append((attribute_name, attribute_value))\n+        result[mod_name] = (_get_module_attributes_hash(module), date_attrs)\n+    return result\n+\n+\n+def _get_module_attributes_hash(module):\n+    return '{0}-{1}'.format(id(module), hashlib.md5(','.join(dir(module)).encode('utf-8')).hexdigest())\n+\n+\n+def _get_cached_module_attributes(mod_name, module):\n+    global_modules_cache = _get_global_modules_cache()\n+    module_hash, cached_attrs = global_modules_cache.get(mod_name, ('0', []))\n+    if _get_module_attributes_hash(module) == module_hash:\n+        return cached_attrs\n+    else:\n+        return _get_module_attributes(module)",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 71,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "b23129ebe8cfe4cb1c256eb08208ba425813377e",
+        "user": {
+            "login": "spulec",
+            "id": 292606,
+            "node_id": "MDQ6VXNlcjI5MjYwNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/292606?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spulec",
+            "html_url": "https://github.com/spulec",
+            "followers_url": "https://api.github.com/users/spulec/followers",
+            "following_url": "https://api.github.com/users/spulec/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spulec/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spulec/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spulec/subscriptions",
+            "organizations_url": "https://api.github.com/users/spulec/orgs",
+            "repos_url": "https://api.github.com/users/spulec/repos",
+            "events_url": "https://api.github.com/users/spulec/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spulec/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Do we want to be setting these back on `global_modules_cache` to update the cache?",
+        "created_at": "2017-03-07T02:05:12Z",
+        "updated_at": "2018-03-06T01:16:20Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r104573707",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/104573707"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r104573707"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/104704196",
+        "pull_request_review_id": 25551995,
+        "id": 104704196,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNDcwNDE5Ng==",
+        "diff_hunk": "@@ -35,6 +38,60 @@\n     import copyreg\n \n \n+# keep a cache of module attributes otherwise freezegun will need to analyze too many modules all the time\n+_GLOBAL_MODULES_CACHE = None\n+\n+\n+def _get_global_modules_cache():\n+    global _GLOBAL_MODULES_CACHE\n+    if _GLOBAL_MODULES_CACHE is None:\n+        _GLOBAL_MODULES_CACHE = _setup_modules_cache()\n+    return _GLOBAL_MODULES_CACHE\n+\n+\n+def _get_module_attributes(module):\n+    result = []\n+    for attribute_name in dir(module):\n+        try:\n+            attribute_value = getattr(module, attribute_name)\n+        except (ImportError, AttributeError, TypeError):\n+            # For certain libraries, this can result in ImportError(_winreg) or AttributeError (celery)\n+            continue\n+        else:\n+            result.append((attribute_name, attribute_value))\n+    return result\n+\n+\n+def _setup_modules_cache():\n+    # FIXME: move this definition to be at the top-level\n+    real_time_object_ids = set(id(obj) for obj in real_date_objects)\n+    result = {}\n+    for mod_name, module in list(sys.modules.items()):\n+        # ignore this module\n+        if mod_name == __name__:",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 50,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "b23129ebe8cfe4cb1c256eb08208ba425813377e",
+        "user": {
+            "login": "hltbra",
+            "id": 61387,
+            "node_id": "MDQ6VXNlcjYxMzg3",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/61387?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hltbra",
+            "html_url": "https://github.com/hltbra",
+            "followers_url": "https://api.github.com/users/hltbra/followers",
+            "following_url": "https://api.github.com/users/hltbra/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hltbra/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hltbra/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hltbra/subscriptions",
+            "organizations_url": "https://api.github.com/users/hltbra/orgs",
+            "repos_url": "https://api.github.com/users/hltbra/repos",
+            "events_url": "https://api.github.com/users/hltbra/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hltbra/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@spulec: in the `_freeze_time.start` method I saw a similar logic (`if mod_name is None or module is None`) but I didn't understand the `None` checks and didn't put them here. When are they `None`?",
+        "created_at": "2017-03-07T16:02:25Z",
+        "updated_at": "2018-03-06T01:16:20Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r104704196",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/104704196"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r104704196"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/104704376",
+        "pull_request_review_id": 25552176,
+        "id": 104704376,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNDcwNDM3Ng==",
+        "diff_hunk": "@@ -35,6 +38,60 @@\n     import copyreg\n \n \n+# keep a cache of module attributes otherwise freezegun will need to analyze too many modules all the time\n+_GLOBAL_MODULES_CACHE = None\n+\n+\n+def _get_global_modules_cache():\n+    global _GLOBAL_MODULES_CACHE\n+    if _GLOBAL_MODULES_CACHE is None:\n+        _GLOBAL_MODULES_CACHE = _setup_modules_cache()\n+    return _GLOBAL_MODULES_CACHE\n+\n+\n+def _get_module_attributes(module):\n+    result = []\n+    for attribute_name in dir(module):\n+        try:\n+            attribute_value = getattr(module, attribute_name)\n+        except (ImportError, AttributeError, TypeError):\n+            # For certain libraries, this can result in ImportError(_winreg) or AttributeError (celery)\n+            continue\n+        else:\n+            result.append((attribute_name, attribute_value))\n+    return result\n+\n+\n+def _setup_modules_cache():\n+    # FIXME: move this definition to be at the top-level\n+    real_time_object_ids = set(id(obj) for obj in real_date_objects)\n+    result = {}\n+    for mod_name, module in list(sys.modules.items()):\n+        # ignore this module\n+        if mod_name == __name__:\n+            continue\n+        date_attrs = []\n+        all_module_attributes = _get_module_attributes(module)\n+        for attribute_name, attribute_value in all_module_attributes:\n+            if id(attribute_value) in real_time_object_ids:\n+                date_attrs.append((attribute_name, attribute_value))\n+        result[mod_name] = (_get_module_attributes_hash(module), date_attrs)\n+    return result\n+\n+\n+def _get_module_attributes_hash(module):\n+    return '{0}-{1}'.format(id(module), hashlib.md5(','.join(dir(module)).encode('utf-8')).hexdigest())\n+\n+\n+def _get_cached_module_attributes(mod_name, module):\n+    global_modules_cache = _get_global_modules_cache()\n+    module_hash, cached_attrs = global_modules_cache.get(mod_name, ('0', []))\n+    if _get_module_attributes_hash(module) == module_hash:\n+        return cached_attrs\n+    else:\n+        return _get_module_attributes(module)",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 71,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "b23129ebe8cfe4cb1c256eb08208ba425813377e",
+        "user": {
+            "login": "hltbra",
+            "id": 61387,
+            "node_id": "MDQ6VXNlcjYxMzg3",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/61387?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hltbra",
+            "html_url": "https://github.com/hltbra",
+            "followers_url": "https://api.github.com/users/hltbra/followers",
+            "following_url": "https://api.github.com/users/hltbra/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hltbra/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hltbra/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hltbra/subscriptions",
+            "organizations_url": "https://api.github.com/users/hltbra/orgs",
+            "repos_url": "https://api.github.com/users/hltbra/repos",
+            "events_url": "https://api.github.com/users/hltbra/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hltbra/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sure.",
+        "created_at": "2017-03-07T16:03:06Z",
+        "updated_at": "2018-03-06T01:16:20Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r104704376",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/104704376"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r104704376"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        },
+        "in_reply_to_id": 104573707
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/106516901",
+        "pull_request_review_id": 27443650,
+        "id": 106516901,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEwNjUxNjkwMQ==",
+        "diff_hunk": "@@ -35,6 +38,60 @@\n     import copyreg\n \n \n+# keep a cache of module attributes otherwise freezegun will need to analyze too many modules all the time\n+_GLOBAL_MODULES_CACHE = None\n+\n+\n+def _get_global_modules_cache():\n+    global _GLOBAL_MODULES_CACHE\n+    if _GLOBAL_MODULES_CACHE is None:\n+        _GLOBAL_MODULES_CACHE = _setup_modules_cache()\n+    return _GLOBAL_MODULES_CACHE\n+\n+\n+def _get_module_attributes(module):\n+    result = []\n+    for attribute_name in dir(module):\n+        try:\n+            attribute_value = getattr(module, attribute_name)\n+        except (ImportError, AttributeError, TypeError):\n+            # For certain libraries, this can result in ImportError(_winreg) or AttributeError (celery)\n+            continue\n+        else:\n+            result.append((attribute_name, attribute_value))\n+    return result\n+\n+\n+def _setup_modules_cache():\n+    # FIXME: move this definition to be at the top-level\n+    real_time_object_ids = set(id(obj) for obj in real_date_objects)\n+    result = {}\n+    for mod_name, module in list(sys.modules.items()):\n+        # ignore this module\n+        if mod_name == __name__:",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 50,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "b23129ebe8cfe4cb1c256eb08208ba425813377e",
+        "user": {
+            "login": "hltbra",
+            "id": 61387,
+            "node_id": "MDQ6VXNlcjYxMzg3",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/61387?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hltbra",
+            "html_url": "https://github.com/hltbra",
+            "followers_url": "https://api.github.com/users/hltbra/followers",
+            "following_url": "https://api.github.com/users/hltbra/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hltbra/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hltbra/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hltbra/subscriptions",
+            "organizations_url": "https://api.github.com/users/hltbra/orgs",
+            "repos_url": "https://api.github.com/users/hltbra/repos",
+            "events_url": "https://api.github.com/users/hltbra/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hltbra/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "answering myself: module is None when it's a freezegun module. ",
+        "created_at": "2017-03-16T19:58:48Z",
+        "updated_at": "2018-03-06T01:16:20Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r106516901",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/106516901"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r106516901"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        },
+        "in_reply_to_id": 104704196
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/135886278",
+        "pull_request_review_id": 59351426,
+        "id": 135886278,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNTg4NjI3OA==",
+        "diff_hunk": "@@ -35,6 +39,66 @@\n     import copyreg\n \n \n+# keep a cache of module attributes otherwise freezegun will need to analyze too many modules all the time\n+# start with `None` as the sentinel value.\n+# if `{}` (empty dict) was the sentinel value, there's a chance that `setup_modules_cache()` will be called many times\n+_GLOBAL_MODULES_CACHE = None\n+\n+\n+def _get_global_modules_cache():\n+    global _GLOBAL_MODULES_CACHE\n+    # the first call to this function sets up the global module cache. it's expected to be slower than consecutive calls\n+    if _GLOBAL_MODULES_CACHE is None:\n+        _GLOBAL_MODULES_CACHE = {}\n+        _setup_modules_cache()\n+    return _GLOBAL_MODULES_CACHE\n+\n+\n+def _get_module_attributes(module):\n+    result = []\n+    for attribute_name in dir(module):\n+        try:\n+            attribute_value = getattr(module, attribute_name)\n+        except (ImportError, AttributeError, TypeError):\n+            # For certain libraries, this can result in ImportError(_winreg) or AttributeError (celery)\n+            continue\n+        else:\n+            result.append((attribute_name, attribute_value))\n+    return result\n+\n+\n+def _setup_modules_cache():\n+    for mod_name, module in list(sys.modules.items()):\n+        # ignore modules from freezegun\n+        if mod_name == __name__ or not mod_name or not module:\n+            continue\n+        _setup_module_cache(module)\n+\n+\n+def _setup_module_cache(module):\n+    global _GLOBAL_MODULES_CACHE\n+    date_attrs = []\n+    all_module_attributes = _get_module_attributes(module)\n+    for attribute_name, attribute_value in all_module_attributes:\n+        if id(attribute_value) in _real_time_object_ids:\n+            date_attrs.append((attribute_name, attribute_value))\n+    _GLOBAL_MODULES_CACHE[module.__name__] = (_get_module_attributes_hash(module), date_attrs)",
+        "path": "freezegun/api.py",
+        "position": 68,
+        "original_position": 64,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "8d5193e42adceabcbfc9e105d76d446948c6bbb5",
+        "user": {
+            "login": "azmeuk",
+            "id": 60163,
+            "node_id": "MDQ6VXNlcjYwMTYz",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/60163?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/azmeuk",
+            "html_url": "https://github.com/azmeuk",
+            "followers_url": "https://api.github.com/users/azmeuk/followers",
+            "following_url": "https://api.github.com/users/azmeuk/following{/other_user}",
+            "gists_url": "https://api.github.com/users/azmeuk/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/azmeuk/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/azmeuk/subscriptions",
+            "organizations_url": "https://api.github.com/users/azmeuk/orgs",
+            "repos_url": "https://api.github.com/users/azmeuk/repos",
+            "events_url": "https://api.github.com/users/azmeuk/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/azmeuk/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I encountered this bug:\r\n```\r\nlocal.virtualenv/lib/python2.7/site-packages/freezegun/api.py:557: in wrapper\r\n    with self:\r\nlocal.virtualenv/lib/python2.7/site-packages/freezegun/api.py:434: in __enter__\r\n    return self.start()\r\nlocal.virtualenv/lib/python2.7/site-packages/freezegun/api.py:490: in start\r\n    module_attrs = _get_cached_module_attributes(mod_name, module)\r\nlocal.virtualenv/lib/python2.7/site-packages/freezegun/api.py:96: in _get_cached_module_attributes\r\n    global_modules_cache = _get_global_modules_cache()\r\nlocal.virtualenv/lib/python2.7/site-packages/freezegun/api.py:53: in _get_global_modules_cache\r\n    _setup_modules_cache()\r\nlocal.virtualenv/lib/python2.7/site-packages/freezegun/api.py:75: in _setup_modules_cache\r\n    _setup_module_cache(module)\r\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\r\n\r\nmodule = <AliasModule 'py.error' for 'py._error.error'>\r\n\r\n    def _setup_module_cache(module):\r\n        global _GLOBAL_MODULES_CACHE\r\n        #if not hasattr(module, \"__name__\"):\r\n        #    return\r\n    \r\n        date_attrs = []\r\n        all_module_attributes = _get_module_attributes(module)\r\n        for attribute_name, attribute_value in all_module_attributes:\r\n            if id(attribute_value) in _real_time_object_ids:\r\n                date_attrs.append((attribute_name, attribute_value))\r\n>       _GLOBAL_MODULES_CACHE[module.__name__] = (_get_module_attributes_hash(module), date_attrs)\r\nE       AttributeError: __name__\r\n\r\nall_module_attributes = []\r\ndate_attrs = []\r\nmodule     = <AliasModule 'py.error' for 'py._error.error'>\r\n\r\nlocal.virtualenv/lib/python2.7/site-packages/freezegun/api.py:88: AttributeError\r\n```\r\nIt seems ok with the following code:\r\n```python\r\ndef _setup_modules_cache():\r\n    for mod_name, module in list(sys.modules.items()):\r\n        if mod_name == __name__ or not mod_name or not module or not hasattr(module, \"__name__\"):\r\n            continue\r\n\r\n    ...\r\n```\r\n",
+        "created_at": "2017-08-29T19:15:28Z",
+        "updated_at": "2018-03-06T01:16:20Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r135886278",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/135886278"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r135886278"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172428054",
+        "pull_request_review_id": 101439432,
+        "id": 172428054,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MjQyODA1NA==",
+        "diff_hunk": "@@ -37,6 +41,70 @@\n     import copyreg\n \n \n+# keep a cache of module attributes otherwise freezegun will need to analyze too many modules all the time\n+# start with `None` as the sentinel value.\n+# if `{}` (empty dict) was the sentinel value, there's a chance that `setup_modules_cache()` will be called many times\n+_GLOBAL_MODULES_CACHE = None\n+\n+\n+def _get_global_modules_cache():\n+    global _GLOBAL_MODULES_CACHE\n+    # the first call to this function sets up the global module cache. it's expected to be slower than consecutive calls\n+    if _GLOBAL_MODULES_CACHE is None:\n+        _GLOBAL_MODULES_CACHE = {}\n+        _setup_modules_cache()\n+    return _GLOBAL_MODULES_CACHE\n+\n+\n+def _get_module_attributes(module):\n+    result = []\n+    try:\n+        module_attributes = dir(module)\n+    except TypeError:\n+        return result\n+    for attribute_name in module_attributes:\n+        try:\n+            attribute_value = getattr(module, attribute_name)\n+        except (ImportError, AttributeError, TypeError):\n+            # For certain libraries, this can result in ImportError(_winreg) or AttributeError (celery)\n+            continue\n+        else:\n+            result.append((attribute_name, attribute_value))\n+    return result\n+\n+\n+def _setup_modules_cache():\n+    for mod_name, module in list(sys.modules.items()):\n+        # ignore modules from freezegun\n+        if mod_name == __name__ or not mod_name or not module or not hasattr(module, \"__name__\"):\n+            continue\n+        _setup_module_cache(module)\n+\n+\n+def _setup_module_cache(module):\n+    global _GLOBAL_MODULES_CACHE\n+    date_attrs = []\n+    all_module_attributes = _get_module_attributes(module)\n+    for attribute_name, attribute_value in all_module_attributes:\n+        if id(attribute_value) in _real_time_object_ids:\n+            date_attrs.append((attribute_name, attribute_value))\n+    _GLOBAL_MODULES_CACHE[module.__name__] = (_get_module_attributes_hash(module), date_attrs)\n+\n+\n+def _get_module_attributes_hash(module):\n+    return '{0}-{1}'.format(id(module), hashlib.md5(','.join(dir(module)).encode('utf-8')).hexdigest())",
+        "path": "freezegun/api.py",
+        "position": 72,
+        "original_position": 72,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "user": {
+            "login": "Chronial",
+            "id": 1321505,
+            "node_id": "MDQ6VXNlcjEzMjE1MDU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1321505?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Chronial",
+            "html_url": "https://github.com/Chronial",
+            "followers_url": "https://api.github.com/users/Chronial/followers",
+            "following_url": "https://api.github.com/users/Chronial/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Chronial/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Chronial/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Chronial/subscriptions",
+            "organizations_url": "https://api.github.com/users/Chronial/orgs",
+            "repos_url": "https://api.github.com/users/Chronial/repos",
+            "events_url": "https://api.github.com/users/Chronial/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Chronial/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "In line 63, you catch a `TypeError` when you call `dir(module)`, here you don't. If a `TypeError` is raised there, that doesn't seem to prevent this function from being called. Is that an issue?\r\nWhy don't you pass the already existing `all_module_attributes` to this function and extract the names from that?",
+        "created_at": "2018-03-06T07:24:02Z",
+        "updated_at": "2018-03-06T07:24:02Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r172428054",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172428054"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r172428054"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172501426",
+        "pull_request_review_id": 101525813,
+        "id": 172501426,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MjUwMTQyNg==",
+        "diff_hunk": "@@ -37,6 +41,70 @@\n     import copyreg\n \n \n+# keep a cache of module attributes otherwise freezegun will need to analyze too many modules all the time\n+# start with `None` as the sentinel value.\n+# if `{}` (empty dict) was the sentinel value, there's a chance that `setup_modules_cache()` will be called many times\n+_GLOBAL_MODULES_CACHE = None\n+\n+\n+def _get_global_modules_cache():\n+    global _GLOBAL_MODULES_CACHE\n+    # the first call to this function sets up the global module cache. it's expected to be slower than consecutive calls\n+    if _GLOBAL_MODULES_CACHE is None:\n+        _GLOBAL_MODULES_CACHE = {}\n+        _setup_modules_cache()\n+    return _GLOBAL_MODULES_CACHE\n+\n+\n+def _get_module_attributes(module):\n+    result = []\n+    try:\n+        module_attributes = dir(module)\n+    except TypeError:\n+        return result\n+    for attribute_name in module_attributes:\n+        try:\n+            attribute_value = getattr(module, attribute_name)\n+        except (ImportError, AttributeError, TypeError):\n+            # For certain libraries, this can result in ImportError(_winreg) or AttributeError (celery)\n+            continue\n+        else:\n+            result.append((attribute_name, attribute_value))\n+    return result\n+\n+\n+def _setup_modules_cache():\n+    for mod_name, module in list(sys.modules.items()):\n+        # ignore modules from freezegun\n+        if mod_name == __name__ or not mod_name or not module or not hasattr(module, \"__name__\"):\n+            continue\n+        _setup_module_cache(module)\n+\n+\n+def _setup_module_cache(module):\n+    global _GLOBAL_MODULES_CACHE\n+    date_attrs = []\n+    all_module_attributes = _get_module_attributes(module)\n+    for attribute_name, attribute_value in all_module_attributes:\n+        if id(attribute_value) in _real_time_object_ids:\n+            date_attrs.append((attribute_name, attribute_value))\n+    _GLOBAL_MODULES_CACHE[module.__name__] = (_get_module_attributes_hash(module), date_attrs)\n+\n+\n+def _get_module_attributes_hash(module):\n+    return '{0}-{1}'.format(id(module), hashlib.md5(','.join(dir(module)).encode('utf-8')).hexdigest())",
+        "path": "freezegun/api.py",
+        "position": 72,
+        "original_position": 72,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "user": {
+            "login": "spulec",
+            "id": 292606,
+            "node_id": "MDQ6VXNlcjI5MjYwNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/292606?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spulec",
+            "html_url": "https://github.com/spulec",
+            "followers_url": "https://api.github.com/users/spulec/followers",
+            "following_url": "https://api.github.com/users/spulec/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spulec/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spulec/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spulec/subscriptions",
+            "organizations_url": "https://api.github.com/users/spulec/orgs",
+            "repos_url": "https://api.github.com/users/spulec/repos",
+            "events_url": "https://api.github.com/users/spulec/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spulec/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks, fixed with https://github.com/spulec/freezegun/commit/689a7bbca2f1d39e5e35c83664f5e6fc73b07f40. ",
+        "created_at": "2018-03-06T12:34:07Z",
+        "updated_at": "2018-03-06T12:34:08Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r172501426",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172501426"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r172501426"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        },
+        "in_reply_to_id": 172428054
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172534056",
+        "pull_request_review_id": 101565338,
+        "id": 172534056,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MjUzNDA1Ng==",
+        "diff_hunk": "@@ -66,7 +66,7 @@ def _setup_modules_cache():\n     # FIXME: move this definition to be at the top-level\n     real_time_object_ids = set(id(obj) for obj in real_date_objects)\n     result = {}\n-    for mod_name, module in sys.modules.items():\n+    for mod_name, module in list(sys.modules.items()):",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "9d0d22ab5e431863dd185d4e878c65fb33fba817",
+        "user": {
+            "login": "mariuszthecoder",
+            "id": 1197059,
+            "node_id": "MDQ6VXNlcjExOTcwNTk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1197059?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mariuszthecoder",
+            "html_url": "https://github.com/mariuszthecoder",
+            "followers_url": "https://api.github.com/users/mariuszthecoder/followers",
+            "following_url": "https://api.github.com/users/mariuszthecoder/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mariuszthecoder/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mariuszthecoder/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mariuszthecoder/subscriptions",
+            "organizations_url": "https://api.github.com/users/mariuszthecoder/orgs",
+            "repos_url": "https://api.github.com/users/mariuszthecoder/repos",
+            "events_url": "https://api.github.com/users/mariuszthecoder/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mariuszthecoder/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "it's unnecessary - if `sys.modules` is dict , then `sys.modules.items()` is iterable containing pairs of key and value in both py2 and py3  \r\ncasting it to `list` will not break it, but slow down a bit",
+        "created_at": "2018-03-06T14:34:35Z",
+        "updated_at": "2018-03-06T14:34:36Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r172534056",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172534056"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r172534056"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172558488",
+        "pull_request_review_id": 101595043,
+        "id": 172558488,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MjU1ODQ4OA==",
+        "diff_hunk": "@@ -66,7 +66,7 @@ def _setup_modules_cache():\n     # FIXME: move this definition to be at the top-level\n     real_time_object_ids = set(id(obj) for obj in real_date_objects)\n     result = {}\n-    for mod_name, module in sys.modules.items():\n+    for mod_name, module in list(sys.modules.items()):",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "9d0d22ab5e431863dd185d4e878c65fb33fba817",
+        "user": {
+            "login": "spulec",
+            "id": 292606,
+            "node_id": "MDQ6VXNlcjI5MjYwNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/292606?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spulec",
+            "html_url": "https://github.com/spulec",
+            "followers_url": "https://api.github.com/users/spulec/followers",
+            "following_url": "https://api.github.com/users/spulec/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spulec/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spulec/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spulec/subscriptions",
+            "organizations_url": "https://api.github.com/users/spulec/orgs",
+            "repos_url": "https://api.github.com/users/spulec/repos",
+            "events_url": "https://api.github.com/users/spulec/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spulec/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Without creating the copy, I'm occasionally getting a `RuntimeError: dictionary changed size during iteration`, which makes sense since additional modules can get loaded.\r\n\r\nIdeas?",
+        "created_at": "2018-03-06T15:42:38Z",
+        "updated_at": "2018-03-06T15:42:38Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r172558488",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172558488"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r172558488"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        },
+        "in_reply_to_id": 172534056
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172581455",
+        "pull_request_review_id": 101622240,
+        "id": 172581455,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MjU4MTQ1NQ==",
+        "diff_hunk": "@@ -66,7 +66,7 @@ def _setup_modules_cache():\n     # FIXME: move this definition to be at the top-level\n     real_time_object_ids = set(id(obj) for obj in real_date_objects)\n     result = {}\n-    for mod_name, module in sys.modules.items():\n+    for mod_name, module in list(sys.modules.items()):",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "9d0d22ab5e431863dd185d4e878c65fb33fba817",
+        "user": {
+            "login": "Chronial",
+            "id": 1321505,
+            "node_id": "MDQ6VXNlcjEzMjE1MDU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1321505?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Chronial",
+            "html_url": "https://github.com/Chronial",
+            "followers_url": "https://api.github.com/users/Chronial/followers",
+            "following_url": "https://api.github.com/users/Chronial/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Chronial/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Chronial/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Chronial/subscriptions",
+            "organizations_url": "https://api.github.com/users/Chronial/orgs",
+            "repos_url": "https://api.github.com/users/Chronial/repos",
+            "events_url": "https://api.github.com/users/Chronial/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Chronial/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I would assume that the size of that collection is small enough so that casting to list once does not cause a relevant slowdown.",
+        "created_at": "2018-03-06T16:42:15Z",
+        "updated_at": "2018-03-06T16:42:15Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r172581455",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172581455"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r172581455"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        },
+        "in_reply_to_id": 172534056
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172772873",
+        "pull_request_review_id": 101844603,
+        "id": 172772873,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3Mjc3Mjg3Mw==",
+        "diff_hunk": "@@ -66,7 +66,7 @@ def _setup_modules_cache():\n     # FIXME: move this definition to be at the top-level\n     real_time_object_ids = set(id(obj) for obj in real_date_objects)\n     result = {}\n-    for mod_name, module in sys.modules.items():\n+    for mod_name, module in list(sys.modules.items()):",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "9d0d22ab5e431863dd185d4e878c65fb33fba817",
+        "user": {
+            "login": "mariuszthecoder",
+            "id": 1197059,
+            "node_id": "MDQ6VXNlcjExOTcwNTk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1197059?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mariuszthecoder",
+            "html_url": "https://github.com/mariuszthecoder",
+            "followers_url": "https://api.github.com/users/mariuszthecoder/followers",
+            "following_url": "https://api.github.com/users/mariuszthecoder/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mariuszthecoder/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mariuszthecoder/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mariuszthecoder/subscriptions",
+            "organizations_url": "https://api.github.com/users/mariuszthecoder/orgs",
+            "repos_url": "https://api.github.com/users/mariuszthecoder/repos",
+            "events_url": "https://api.github.com/users/mariuszthecoder/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mariuszthecoder/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "so commit message is misleading",
+        "created_at": "2018-03-07T08:48:24Z",
+        "updated_at": "2018-03-07T08:48:24Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r172772873",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172772873"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r172772873"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        },
+        "in_reply_to_id": 172534056
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172832117",
+        "pull_request_review_id": 101915051,
+        "id": 172832117,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MjgzMjExNw==",
+        "diff_hunk": "@@ -66,7 +66,7 @@ def _setup_modules_cache():\n     # FIXME: move this definition to be at the top-level\n     real_time_object_ids = set(id(obj) for obj in real_date_objects)\n     result = {}\n-    for mod_name, module in sys.modules.items():\n+    for mod_name, module in list(sys.modules.items()):",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "9d0d22ab5e431863dd185d4e878c65fb33fba817",
+        "user": {
+            "login": "Chronial",
+            "id": 1321505,
+            "node_id": "MDQ6VXNlcjEzMjE1MDU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1321505?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Chronial",
+            "html_url": "https://github.com/Chronial",
+            "followers_url": "https://api.github.com/users/Chronial/followers",
+            "following_url": "https://api.github.com/users/Chronial/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Chronial/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Chronial/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Chronial/subscriptions",
+            "organizations_url": "https://api.github.com/users/Chronial/orgs",
+            "repos_url": "https://api.github.com/users/Chronial/repos",
+            "events_url": "https://api.github.com/users/Chronial/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Chronial/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No, the PR title is about an architectural optimization that saves seconds of run time, not microoptimizations that make a difference of a few microseconds.",
+        "created_at": "2018-03-07T12:51:57Z",
+        "updated_at": "2018-03-07T12:51:57Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r172832117",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/172832117"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r172832117"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        },
+        "in_reply_to_id": 172534056
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/173448961",
+        "pull_request_review_id": 102644365,
+        "id": 173448961,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MzQ0ODk2MQ==",
+        "diff_hunk": "@@ -66,7 +66,7 @@ def _setup_modules_cache():\n     # FIXME: move this definition to be at the top-level\n     real_time_object_ids = set(id(obj) for obj in real_date_objects)\n     result = {}\n-    for mod_name, module in sys.modules.items():\n+    for mod_name, module in list(sys.modules.items()):",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "9d0d22ab5e431863dd185d4e878c65fb33fba817",
+        "user": {
+            "login": "mariuszthecoder",
+            "id": 1197059,
+            "node_id": "MDQ6VXNlcjExOTcwNTk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1197059?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mariuszthecoder",
+            "html_url": "https://github.com/mariuszthecoder",
+            "followers_url": "https://api.github.com/users/mariuszthecoder/followers",
+            "following_url": "https://api.github.com/users/mariuszthecoder/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mariuszthecoder/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mariuszthecoder/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mariuszthecoder/subscriptions",
+            "organizations_url": "https://api.github.com/users/mariuszthecoder/orgs",
+            "repos_url": "https://api.github.com/users/mariuszthecoder/repos",
+            "events_url": "https://api.github.com/users/mariuszthecoder/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mariuszthecoder/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I meant this particular commit, not entire PullRequest  \r\nReading `Make sys.modules.items() compatible with python 3` I expect some py3 adjustment, but I get runtime error prevention.  \r\nThat was my point, sir :)",
+        "created_at": "2018-03-09T13:28:54Z",
+        "updated_at": "2018-03-09T13:28:55Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r173448961",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/173448961"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r173448961"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        },
+        "in_reply_to_id": 172534056
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/173973395",
+        "pull_request_review_id": 103250240,
+        "id": 173973395,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3Mzk3MzM5NQ==",
+        "diff_hunk": "@@ -66,7 +66,7 @@ def _setup_modules_cache():\n     # FIXME: move this definition to be at the top-level\n     real_time_object_ids = set(id(obj) for obj in real_date_objects)\n     result = {}\n-    for mod_name, module in sys.modules.items():\n+    for mod_name, module in list(sys.modules.items()):",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "9d0d22ab5e431863dd185d4e878c65fb33fba817",
+        "user": {
+            "login": "Chronial",
+            "id": 1321505,
+            "node_id": "MDQ6VXNlcjEzMjE1MDU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1321505?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Chronial",
+            "html_url": "https://github.com/Chronial",
+            "followers_url": "https://api.github.com/users/Chronial/followers",
+            "following_url": "https://api.github.com/users/Chronial/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Chronial/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Chronial/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Chronial/subscriptions",
+            "organizations_url": "https://api.github.com/users/Chronial/orgs",
+            "repos_url": "https://api.github.com/users/Chronial/repos",
+            "events_url": "https://api.github.com/users/Chronial/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Chronial/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The commit message is not misleading. In python 2, `items()` returns a list (copy), which is what is needed here. But in python 3 it returns an iterator, which causes faulty behavior. So it is casted to list for python 3 support.",
+        "created_at": "2018-03-12T23:01:43Z",
+        "updated_at": "2018-03-12T23:01:43Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r173973395",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/173973395"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r173973395"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        },
+        "in_reply_to_id": 172534056
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/174445682",
+        "pull_request_review_id": 103800692,
+        "id": 174445682,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3NDQ0NTY4Mg==",
+        "diff_hunk": "@@ -66,7 +66,7 @@ def _setup_modules_cache():\n     # FIXME: move this definition to be at the top-level\n     real_time_object_ids = set(id(obj) for obj in real_date_objects)\n     result = {}\n-    for mod_name, module in sys.modules.items():\n+    for mod_name, module in list(sys.modules.items()):",
+        "path": "freezegun/api.py",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "1654a14ea6796a9ee59852e8015351b0022f7a2a",
+        "original_commit_id": "9d0d22ab5e431863dd185d4e878c65fb33fba817",
+        "user": {
+            "login": "mariuszthecoder",
+            "id": 1197059,
+            "node_id": "MDQ6VXNlcjExOTcwNTk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1197059?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mariuszthecoder",
+            "html_url": "https://github.com/mariuszthecoder",
+            "followers_url": "https://api.github.com/users/mariuszthecoder/followers",
+            "following_url": "https://api.github.com/users/mariuszthecoder/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mariuszthecoder/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mariuszthecoder/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mariuszthecoder/subscriptions",
+            "organizations_url": "https://api.github.com/users/mariuszthecoder/orgs",
+            "repos_url": "https://api.github.com/users/mariuszthecoder/repos",
+            "events_url": "https://api.github.com/users/mariuszthecoder/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mariuszthecoder/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "+1",
+        "created_at": "2018-03-14T12:44:36Z",
+        "updated_at": "2018-03-14T12:44:36Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/175#discussion_r174445682",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/175",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/174445682"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/175#discussion_r174445682"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/175"
+            }
+        },
+        "in_reply_to_id": 172534056
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/182922959",
+        "pull_request_review_id": 113822744,
+        "id": 182922959,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4MjkyMjk1OQ==",
+        "diff_hunk": "@@ -11,6 +11,11 @@\n     # Py3k\n     requires += ['python-dateutil>=2.0']\n \n+\n+if sys.version.startswith(\"3.6\") or sys.version.startswith(\"2.7\"):\n+    requires += [\"maya\"]",
+        "path": "setup.py",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "71b51b132166bf4f3d86c576b85df794ce8ef00f",
+        "original_commit_id": "2cac176e6d5bda4549065297fd892611448f4e92",
+        "user": {
+            "login": "spulec",
+            "id": 292606,
+            "node_id": "MDQ6VXNlcjI5MjYwNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/292606?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spulec",
+            "html_url": "https://github.com/spulec",
+            "followers_url": "https://api.github.com/users/spulec/followers",
+            "following_url": "https://api.github.com/users/spulec/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spulec/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spulec/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spulec/subscriptions",
+            "organizations_url": "https://api.github.com/users/spulec/orgs",
+            "repos_url": "https://api.github.com/users/spulec/repos",
+            "events_url": "https://api.github.com/users/spulec/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spulec/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Do we need to add this for everyone? I'm hesitant to add the additional dependency to everyone that uses freezegun. Any way we can get around this?",
+        "created_at": "2018-04-20T00:56:56Z",
+        "updated_at": "2018-04-21T20:36:40Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/238#discussion_r182922959",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/238",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/182922959"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/238#discussion_r182922959"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/238"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194201956",
+        "pull_request_review_id": 127339104,
+        "id": 194201956,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDIwMTk1Ng==",
+        "diff_hunk": "@@ -125,13 +126,36 @@ def with_metaclass(meta, *bases):\n )\n \n \n-class FakeTime(object):\n+class BaseFakeTime(object):",
+        "path": "freezegun/api.py",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "794db4ab1c003f07ff2eb76addb9229e43bae66b",
+        "original_commit_id": "171c24549b318fb608db883462af969130e83d55",
+        "user": {
+            "login": "spulec",
+            "id": 292606,
+            "node_id": "MDQ6VXNlcjI5MjYwNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/292606?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spulec",
+            "html_url": "https://github.com/spulec",
+            "followers_url": "https://api.github.com/users/spulec/followers",
+            "following_url": "https://api.github.com/users/spulec/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spulec/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spulec/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spulec/subscriptions",
+            "organizations_url": "https://api.github.com/users/spulec/orgs",
+            "repos_url": "https://api.github.com/users/spulec/repos",
+            "events_url": "https://api.github.com/users/spulec/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spulec/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Any reason to break this out into a separate class?",
+        "created_at": "2018-06-08T23:22:58Z",
+        "updated_at": "2018-06-12T21:55:21Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/245#discussion_r194201956",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/245",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194201956"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/245#discussion_r194201956"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/245"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194228381",
+        "pull_request_review_id": 127367523,
+        "id": 194228381,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDIyODM4MQ==",
+        "diff_hunk": "@@ -125,13 +126,36 @@ def with_metaclass(meta, *bases):\n )\n \n \n-class FakeTime(object):\n+class BaseFakeTime(object):",
+        "path": "freezegun/api.py",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "794db4ab1c003f07ff2eb76addb9229e43bae66b",
+        "original_commit_id": "171c24549b318fb608db883462af969130e83d55",
+        "user": {
+            "login": "kylegibson",
+            "id": 243791,
+            "node_id": "MDQ6VXNlcjI0Mzc5MQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/243791?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kylegibson",
+            "html_url": "https://github.com/kylegibson",
+            "followers_url": "https://api.github.com/users/kylegibson/followers",
+            "following_url": "https://api.github.com/users/kylegibson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kylegibson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kylegibson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kylegibson/subscriptions",
+            "organizations_url": "https://api.github.com/users/kylegibson/orgs",
+            "repos_url": "https://api.github.com/users/kylegibson/repos",
+            "events_url": "https://api.github.com/users/kylegibson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kylegibson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes, because this logic will need to be applied to the other Fake* classes. ",
+        "created_at": "2018-06-09T13:57:59Z",
+        "updated_at": "2018-06-12T21:55:21Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/245#discussion_r194228381",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/245",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194228381"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/245#discussion_r194228381"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/245"
+            }
+        },
+        "in_reply_to_id": 194201956
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194228438",
+        "pull_request_review_id": 127367589,
+        "id": 194228438,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDIyODQzOA==",
+        "diff_hunk": "@@ -125,13 +126,36 @@ def with_metaclass(meta, *bases):\n )\n \n \n-class FakeTime(object):\n+class BaseFakeTime(object):",
+        "path": "freezegun/api.py",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "794db4ab1c003f07ff2eb76addb9229e43bae66b",
+        "original_commit_id": "171c24549b318fb608db883462af969130e83d55",
+        "user": {
+            "login": "spulec",
+            "id": 292606,
+            "node_id": "MDQ6VXNlcjI5MjYwNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/292606?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spulec",
+            "html_url": "https://github.com/spulec",
+            "followers_url": "https://api.github.com/users/spulec/followers",
+            "following_url": "https://api.github.com/users/spulec/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spulec/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spulec/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spulec/subscriptions",
+            "organizations_url": "https://api.github.com/users/spulec/orgs",
+            "repos_url": "https://api.github.com/users/spulec/repos",
+            "events_url": "https://api.github.com/users/spulec/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spulec/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ah, got it. Should we do that now or will it require a lot more work? I feel a bit weird merging the functionality that will only work on some of the mocking.",
+        "created_at": "2018-06-09T13:59:58Z",
+        "updated_at": "2018-06-12T21:55:21Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/245#discussion_r194228438",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/245",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194228438"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/245#discussion_r194228438"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/245"
+            }
+        },
+        "in_reply_to_id": 194201956
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194228482",
+        "pull_request_review_id": 127367638,
+        "id": 194228482,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDIyODQ4Mg==",
+        "diff_hunk": "@@ -125,13 +126,36 @@ def with_metaclass(meta, *bases):\n )\n \n \n-class FakeTime(object):\n+class BaseFakeTime(object):",
+        "path": "freezegun/api.py",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "794db4ab1c003f07ff2eb76addb9229e43bae66b",
+        "original_commit_id": "171c24549b318fb608db883462af969130e83d55",
+        "user": {
+            "login": "kylegibson",
+            "id": 243791,
+            "node_id": "MDQ6VXNlcjI0Mzc5MQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/243791?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kylegibson",
+            "html_url": "https://github.com/kylegibson",
+            "followers_url": "https://api.github.com/users/kylegibson/followers",
+            "following_url": "https://api.github.com/users/kylegibson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kylegibson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kylegibson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kylegibson/subscriptions",
+            "organizations_url": "https://api.github.com/users/kylegibson/orgs",
+            "repos_url": "https://api.github.com/users/kylegibson/repos",
+            "events_url": "https://api.github.com/users/kylegibson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kylegibson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I will do that now, for this PR, if you give the +1. ",
+        "created_at": "2018-06-09T14:01:47Z",
+        "updated_at": "2018-06-12T21:55:21Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/245#discussion_r194228482",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/245",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194228482"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/245#discussion_r194228482"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/245"
+            }
+        },
+        "in_reply_to_id": 194201956
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194228507",
+        "pull_request_review_id": 127367662,
+        "id": 194228507,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDIyODUwNw==",
+        "diff_hunk": "@@ -125,13 +126,36 @@ def with_metaclass(meta, *bases):\n )\n \n \n-class FakeTime(object):\n+class BaseFakeTime(object):",
+        "path": "freezegun/api.py",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "794db4ab1c003f07ff2eb76addb9229e43bae66b",
+        "original_commit_id": "171c24549b318fb608db883462af969130e83d55",
+        "user": {
+            "login": "spulec",
+            "id": 292606,
+            "node_id": "MDQ6VXNlcjI5MjYwNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/292606?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spulec",
+            "html_url": "https://github.com/spulec",
+            "followers_url": "https://api.github.com/users/spulec/followers",
+            "following_url": "https://api.github.com/users/spulec/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spulec/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spulec/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spulec/subscriptions",
+            "organizations_url": "https://api.github.com/users/spulec/orgs",
+            "repos_url": "https://api.github.com/users/spulec/repos",
+            "events_url": "https://api.github.com/users/spulec/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spulec/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sounds great!",
+        "created_at": "2018-06-09T14:02:21Z",
+        "updated_at": "2018-06-12T21:55:21Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/245#discussion_r194228507",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/245",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194228507"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/245#discussion_r194228507"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/245"
+            }
+        },
+        "in_reply_to_id": 194201956
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194228526",
+        "pull_request_review_id": 127367683,
+        "id": 194228526,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDIyODUyNg==",
+        "diff_hunk": "@@ -125,13 +126,36 @@ def with_metaclass(meta, *bases):\n )\n \n \n-class FakeTime(object):\n+class BaseFakeTime(object):",
+        "path": "freezegun/api.py",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "794db4ab1c003f07ff2eb76addb9229e43bae66b",
+        "original_commit_id": "171c24549b318fb608db883462af969130e83d55",
+        "user": {
+            "login": "spulec",
+            "id": 292606,
+            "node_id": "MDQ6VXNlcjI5MjYwNg==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/292606?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/spulec",
+            "html_url": "https://github.com/spulec",
+            "followers_url": "https://api.github.com/users/spulec/followers",
+            "following_url": "https://api.github.com/users/spulec/following{/other_user}",
+            "gists_url": "https://api.github.com/users/spulec/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/spulec/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/spulec/subscriptions",
+            "organizations_url": "https://api.github.com/users/spulec/orgs",
+            "repos_url": "https://api.github.com/users/spulec/repos",
+            "events_url": "https://api.github.com/users/spulec/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/spulec/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If you wouldn't mind adding a test or two, that would also be great. I don't want us to accidentally regress later.",
+        "created_at": "2018-06-09T14:03:00Z",
+        "updated_at": "2018-06-12T21:55:21Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/245#discussion_r194228526",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/245",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194228526"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/245#discussion_r194228526"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/245"
+            }
+        },
+        "in_reply_to_id": 194201956
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194940207",
+        "pull_request_review_id": 128209037,
+        "id": 194940207,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDk0MDIwNw==",
+        "diff_hunk": "@@ -125,13 +126,36 @@ def with_metaclass(meta, *bases):\n )\n \n \n-class FakeTime(object):\n+class BaseFakeTime(object):",
+        "path": "freezegun/api.py",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "794db4ab1c003f07ff2eb76addb9229e43bae66b",
+        "original_commit_id": "171c24549b318fb608db883462af969130e83d55",
+        "user": {
+            "login": "kylegibson",
+            "id": 243791,
+            "node_id": "MDQ6VXNlcjI0Mzc5MQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/243791?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kylegibson",
+            "html_url": "https://github.com/kylegibson",
+            "followers_url": "https://api.github.com/users/kylegibson/followers",
+            "following_url": "https://api.github.com/users/kylegibson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kylegibson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kylegibson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kylegibson/subscriptions",
+            "organizations_url": "https://api.github.com/users/kylegibson/orgs",
+            "repos_url": "https://api.github.com/users/kylegibson/repos",
+            "events_url": "https://api.github.com/users/kylegibson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kylegibson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hi Steve! I've made some more changes. Could you review and let me know if this is good? Thank you. ",
+        "created_at": "2018-06-13T02:26:29Z",
+        "updated_at": "2018-06-13T02:26:29Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/245#discussion_r194940207",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/245",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/194940207"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/245#discussion_r194940207"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/245"
+            }
+        },
+        "in_reply_to_id": 194201956
+    },
+    {
+        "url": "https://api.github.com/repos/spulec/freezegun/pulls/comments/254983456",
+        "pull_request_review_id": 201465314,
+        "id": 254983456,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NDk4MzQ1Ng==",
+        "diff_hunk": "@@ -628,6 +628,16 @@ def test_time_with_nested():\n         assert time() == second\n \n \n+@pytest.fixture\n+def change_stack_limit():\n+    ori_val = api.call_stack_inspection_limit\n+    api.call_stack_inspection_limit = 100  # just to increase coverage\n+    yield\n+    # Restore to normal after test(s)\n+    api.call_stack_inspection_limit = ori_val\n+\n+\n+@pytest.mark.usefixtures('change_stack_limit')\n def test_should_use_real_time():",
+        "path": "tests/test_datetimes.py",
+        "position": 23,
+        "original_position": 23,
+        "commit_id": "dff410a148bedea213071fadaa709bf678921cd1",
+        "original_commit_id": "dff410a148bedea213071fadaa709bf678921cd1",
+        "user": {
+            "login": "goodspark",
+            "id": 29210237,
+            "node_id": "MDQ6VXNlcjI5MjEwMjM3",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/29210237?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/goodspark",
+            "html_url": "https://github.com/goodspark",
+            "followers_url": "https://api.github.com/users/goodspark/followers",
+            "following_url": "https://api.github.com/users/goodspark/following{/other_user}",
+            "gists_url": "https://api.github.com/users/goodspark/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/goodspark/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/goodspark/subscriptions",
+            "organizations_url": "https://api.github.com/users/goodspark/orgs",
+            "repos_url": "https://api.github.com/users/goodspark/repos",
+            "events_url": "https://api.github.com/users/goodspark/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/goodspark/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`test_should_use_real_time` fails. But if I comment out the lines that change `call_stack_inspection_limit`, they pass.\r\n\r\nAs a sanity check, I undid my change, left the `call_stack_inspection_limit` lines commented out, and the tests still passed. So I'm not sure what this is doing, other than increasing coverage. Perhaps another test should be written for that instead.\r\n\r\nI think the other tests failed ([from the run from the first commit](https://travis-ci.org/spulec/freezegun/jobs/490428158#L596)) because the limit was 'leaking' across the tests.",
+        "created_at": "2019-02-08T08:12:37Z",
+        "updated_at": "2019-02-08T08:19:36Z",
+        "html_url": "https://github.com/spulec/freezegun/pull/288#discussion_r254983456",
+        "pull_request_url": "https://api.github.com/repos/spulec/freezegun/pulls/288",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/comments/254983456"
+            },
+            "html": {
+                "href": "https://github.com/spulec/freezegun/pull/288#discussion_r254983456"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/spulec/freezegun/pulls/288"
+            }
+        }
+    }
+]

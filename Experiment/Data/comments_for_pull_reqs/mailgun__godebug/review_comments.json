@@ -1,0 +1,443 @@
+[
+    {
+        "url": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30477700",
+        "pull_request_review_id": null,
+        "id": 30477700,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwNDc3NzAw",
+        "diff_hunk": "@@ -487,8 +579,24 @@ func doOutput(args []string) {\n \t})\n }\n \n-func parseTestArguments(args []string) (packages, testFlags []string) {\n-\t// format: [-godebugwork] [-instrument pkgs...] [packages] [testFlags]\n+func parseBuildArguments(args []string) ([]string, bool) {\n+\tif len(args) == 0 {\n+\t\treturn []string{\".\"}, true\n+\t\t// logFatal(\"relative packages are not supported, specify what to build\")",
+        "path": "cmd.go",
+        "position": null,
+        "original_position": 308,
+        "commit_id": "f8742f647adb8ee17a1435de3b1929d36df590c8",
+        "original_commit_id": "31110e105b73c7b72b1153c43acffef3e47381fc",
+        "user": {
+            "login": "FiloSottile",
+            "id": 1225294,
+            "node_id": "MDQ6VXNlcjEyMjUyOTQ=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1225294?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/FiloSottile",
+            "html_url": "https://github.com/FiloSottile",
+            "followers_url": "https://api.github.com/users/FiloSottile/followers",
+            "following_url": "https://api.github.com/users/FiloSottile/following{/other_user}",
+            "gists_url": "https://api.github.com/users/FiloSottile/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/FiloSottile/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/FiloSottile/subscriptions",
+            "organizations_url": "https://api.github.com/users/FiloSottile/orgs",
+            "repos_url": "https://api.github.com/users/FiloSottile/repos",
+            "events_url": "https://api.github.com/users/FiloSottile/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/FiloSottile/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "TODO: remove this leftover\n",
+        "created_at": "2015-05-18T01:29:23Z",
+        "updated_at": "2015-05-19T12:44:05Z",
+        "html_url": "https://github.com/mailgun/godebug/pull/32#discussion_r30477700",
+        "pull_request_url": "https://api.github.com/repos/mailgun/godebug/pulls/32",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30477700"
+            },
+            "html": {
+                "href": "https://github.com/mailgun/godebug/pull/32#discussion_r30477700"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/32"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30568133",
+        "pull_request_review_id": null,
+        "id": 30568133,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwNTY4MTMz",
+        "diff_hunk": "@@ -77,30 +77,54 @@ must not be relative.\n \n If -godebugwork is set, godebug will print the name of the\n temporary work directory and not delete it when exiting.\n-`)\n+\n+-tags works like in 'go help build'.\n+`\n+\n+func runUsage() {\n+\tlog.Print(\n+\t\t`usage: godebug run [-godebugwork] [-instrument pkgs...] [-tags 'tag list'] gofiles... [--] [arguments...]\n+\n+Run emulates 'go run' behavior. It generates debugging code for the\n+named *.go files and then compiles and executes the result.\n+\n+Like 'go run' it takes a list of go files which are treated as a\n+single main package. The rest of the arguments is passed to the\n+binary. Optionally, a '--' argument ends the list of gofiles.\n+` + commonArgsUsage)\n+}\n+\n+func buildUsage() {\n+\tlog.Print(\n+\t\t`usage: godebug build [-godebugwork] [-instrument pkgs...] [-tags 'tag list'] [-o output] [package]\n+\n+Build is a wrapper around 'go build'. It generates debugging code for\n+the named target and builds the result.\n+\n+Like 'go build' it takes a single main package. If arguments are a list\n+of *.go files they are treated as a single package. Relative packages are\n+not supported - which means you can't leave the package name out, too.\n+\n+The output file naming if -o is not passed works like 'go build' (see\n+'go help build') with the addition of the suffix '.debug'.\n+` + commonArgsUsage)\n }\n \n func testUsage() {\n \tlog.Print(\n-\t\t`usage: godebug test [-godebugwork] [-instrument pkgs...] [packages] [flags for test binary]\n+\t\t`usage: godebug test [-godebugwork] [-instrument pkgs...] [-tags 'tag list'] [-c] [-o output] [packages] [flags for test binary]\n \n Test is a wrapper around 'go test'. It generates debugging code for\n the tests in the named packages and runs 'go test' on the result.\n \n As with 'go test', by default godebug test needs no arguments.\n \n-By default, godebug generates debugging code only for the named\n-packages, and not their dependencies. This means that in the\n-debugging session you will not be able to step into function\n-calls from imported packages. To instrument other packages,\n-pass the -instrument flag. Packages are comma-separated and\n-must not be relative.\n+Flags parsing, -c and -o work like for 'go test' - see 'go help test'.\n+The default binary name for -c has the suffix '.test.debug'.\n \n-If -godebugwork is set, godebug will print the name of the\n-temporary work directory and not delete it when exiting.\n-\n-See also: 'go help testflag'.\n-`)\n+See also: 'go help testflag'. Not that you have to use the 'test.'",
+        "path": "cmd.go",
+        "position": null,
+        "original_position": 107,
+        "commit_id": "f8742f647adb8ee17a1435de3b1929d36df590c8",
+        "original_commit_id": "fa60f450948792993cb1a6c3ad336baec638cff5",
+        "user": {
+            "login": "jeremyschlatter",
+            "id": 5741620,
+            "node_id": "MDQ6VXNlcjU3NDE2MjA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5741620?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jeremyschlatter",
+            "html_url": "https://github.com/jeremyschlatter",
+            "followers_url": "https://api.github.com/users/jeremyschlatter/followers",
+            "following_url": "https://api.github.com/users/jeremyschlatter/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jeremyschlatter/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jeremyschlatter/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jeremyschlatter/subscriptions",
+            "organizations_url": "https://api.github.com/users/jeremyschlatter/orgs",
+            "repos_url": "https://api.github.com/users/jeremyschlatter/repos",
+            "events_url": "https://api.github.com/users/jeremyschlatter/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jeremyschlatter/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Not -> Note\n",
+        "created_at": "2015-05-19T04:10:50Z",
+        "updated_at": "2015-05-19T12:44:05Z",
+        "html_url": "https://github.com/mailgun/godebug/pull/32#discussion_r30568133",
+        "pull_request_url": "https://api.github.com/repos/mailgun/godebug/pulls/32",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30568133"
+            },
+            "html": {
+                "href": "https://github.com/mailgun/godebug/pull/32#discussion_r30568133"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/32"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30568556",
+        "pull_request_review_id": null,
+        "id": 30568556,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwNTY4NTU2",
+        "diff_hunk": "@@ -487,8 +597,23 @@ func doOutput(args []string) {\n \t})\n }\n \n-func parseTestArguments(args []string) (packages, testFlags []string) {\n-\t// format: [-godebugwork] [-instrument pkgs...] [packages] [testFlags]\n+func parseBuildArguments(args []string) ([]string, bool) {\n+\tif len(args) == 0 {\n+\t\treturn []string{\".\"}, true\n+\t}\n+\tif len(args) == 1 && !strings.HasSuffix(args[0], \".go\") {\n+\t\treturn args, true\n+\t}\n+\tfor _, a := range args {\n+\t\tif !strings.HasSuffix(a, \".go\") {\n+\t\t\tlogFatal(\"you can only build a set of files or a single package\")\n+\t\t}\n+\t}\n+\treturn args, false\n+}\n+\n+func parseTestArguments(args []string) ([]string, []string) {",
+        "path": "cmd.go",
+        "position": null,
+        "original_position": 371,
+        "commit_id": "f8742f647adb8ee17a1435de3b1929d36df590c8",
+        "original_commit_id": "fa60f450948792993cb1a6c3ad336baec638cff5",
+        "user": {
+            "login": "jeremyschlatter",
+            "id": 5741620,
+            "node_id": "MDQ6VXNlcjU3NDE2MjA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5741620?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jeremyschlatter",
+            "html_url": "https://github.com/jeremyschlatter",
+            "followers_url": "https://api.github.com/users/jeremyschlatter/followers",
+            "following_url": "https://api.github.com/users/jeremyschlatter/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jeremyschlatter/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jeremyschlatter/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jeremyschlatter/subscriptions",
+            "organizations_url": "https://api.github.com/users/jeremyschlatter/orgs",
+            "repos_url": "https://api.github.com/users/jeremyschlatter/repos",
+            "events_url": "https://api.github.com/users/jeremyschlatter/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jeremyschlatter/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I find the named return parameters to be helpful documentation here. Was there a reason you removed them?\n",
+        "created_at": "2015-05-19T04:26:30Z",
+        "updated_at": "2015-05-19T12:44:05Z",
+        "html_url": "https://github.com/mailgun/godebug/pull/32#discussion_r30568556",
+        "pull_request_url": "https://api.github.com/repos/mailgun/godebug/pulls/32",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30568556"
+            },
+            "html": {
+                "href": "https://github.com/mailgun/godebug/pull/32#discussion_r30568556"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/32"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30569836",
+        "pull_request_review_id": null,
+        "id": 30569836,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwNTY5ODM2",
+        "diff_hunk": "@@ -212,28 +276,58 @@ func doTest(args []string) {\n \t\tpackages = []string{\".\"}\n \t}\n \n+\t// Expand ...\n+\tpackages = gotool.ImportPaths(packages)\n+\n+\tif len(packages) > 1 && (*c || *o != \"\") {\n+\t\tlogFatal(\"godebug test: cannot use -c or -o flag with multiple packages\")\n+\t}\n+\n \t// Build a loader.Config from the provided packages.\n-\tvar conf loader.Config\n+\tconf := newLoader()\n \tfor _, pkg := range packages {\n \t\texitIfErr(conf.ImportWithTests(pkg))\n \t}\n \n \ttmpDir := generateSourceFiles(&conf, \"test\")\n+\twd := getwd()\n \n \t// Run 'go test -i' once without changing the GOPATH.\n \t// This will recompile and install any out-of-date packages.\n \t// When we modify the GOPATH in the next invocation of the go tool,\n \t// it will not check if any of the uninstrumented dependencies are out-of-date.\n-\tshellGo(\"\", []string{\"test\", \"-i\"}, packages)\n+\tshellGo(\"\", []string{\"test\", \"-tags\", *tags, \"-i\"}, packages)\n+\n+\t// The target binary goes to -o if specified, otherwise to the default name\n+\t// is -c is specified, otherwise to the temporary directory.",
+        "path": "cmd.go",
+        "position": null,
+        "original_position": 237,
+        "commit_id": "f8742f647adb8ee17a1435de3b1929d36df590c8",
+        "original_commit_id": "fa60f450948792993cb1a6c3ad336baec638cff5",
+        "user": {
+            "login": "jeremyschlatter",
+            "id": 5741620,
+            "node_id": "MDQ6VXNlcjU3NDE2MjA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5741620?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jeremyschlatter",
+            "html_url": "https://github.com/jeremyschlatter",
+            "followers_url": "https://api.github.com/users/jeremyschlatter/followers",
+            "following_url": "https://api.github.com/users/jeremyschlatter/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jeremyschlatter/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jeremyschlatter/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jeremyschlatter/subscriptions",
+            "organizations_url": "https://api.github.com/users/jeremyschlatter/orgs",
+            "repos_url": "https://api.github.com/users/jeremyschlatter/repos",
+            "events_url": "https://api.github.com/users/jeremyschlatter/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jeremyschlatter/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "is -> if\n",
+        "created_at": "2015-05-19T05:14:59Z",
+        "updated_at": "2015-05-19T12:44:05Z",
+        "html_url": "https://github.com/mailgun/godebug/pull/32#discussion_r30569836",
+        "pull_request_url": "https://api.github.com/repos/mailgun/godebug/pulls/32",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30569836"
+            },
+            "html": {
+                "href": "https://github.com/mailgun/godebug/pull/32#discussion_r30569836"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/32"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30570312",
+        "pull_request_review_id": null,
+        "id": 30570312,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwNTcwMzEy",
+        "diff_hunk": "@@ -498,14 +623,17 @@ func parseTestArguments(args []string) (packages, testFlags []string) {\n \t\t}\n \t\tif strings.HasPrefix(arg, \"-\") &&\n \t\t\t!strings.HasPrefix(arg, \"-instrument\") &&\n-\t\t\t!strings.HasPrefix(arg, \"-godebugwork\") {\n+\t\t\t!strings.HasPrefix(arg, \"-godebugwork\") &&\n+\t\t\t!strings.HasPrefix(arg, \"-tags\") &&\n+\t\t\t!strings.HasPrefix(arg, \"-o\") &&\n+\t\t\t!strings.HasPrefix(arg, \"-c\") {",
+        "path": "cmd.go",
+        "position": null,
+        "original_position": 384,
+        "commit_id": "f8742f647adb8ee17a1435de3b1929d36df590c8",
+        "original_commit_id": "fa60f450948792993cb1a6c3ad336baec638cff5",
+        "user": {
+            "login": "jeremyschlatter",
+            "id": 5741620,
+            "node_id": "MDQ6VXNlcjU3NDE2MjA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5741620?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jeremyschlatter",
+            "html_url": "https://github.com/jeremyschlatter",
+            "followers_url": "https://api.github.com/users/jeremyschlatter/followers",
+            "following_url": "https://api.github.com/users/jeremyschlatter/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jeremyschlatter/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jeremyschlatter/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jeremyschlatter/subscriptions",
+            "organizations_url": "https://api.github.com/users/jeremyschlatter/orgs",
+            "repos_url": "https://api.github.com/users/jeremyschlatter/repos",
+            "events_url": "https://api.github.com/users/jeremyschlatter/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jeremyschlatter/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The `HasPrefix` check breaks if the user tries to pass a flag to their test that shares the same prefix. This was ok for \"instrument\" and \"godebugwork\", but there is a pretty good chance of conflict with \"o\" and \"c\".\n\nSomething like this would be better:\n\n``` go\nisFlag := func(arg, name string) bool {\n    return arg == name || strings.HasPrefix(arg, name + \"=\")\n}\nsep := len(args)\nfor i, arg := range args {\n    if strings.HasPrefix(arg, \"--\") {\n        arg = arg[1:]\n    }\n    if strings.HasPrefix(arg, \"-\") &&\n        !isFlag(arg, \"-instrument\") &&\n        !isFlag(arg, \"-godebugwork\") &&\n        !isFlag(arg, \"-tags\") &&\n        !isFlag(arg, \"-o\") &&\n        !isFlag(arg, \"-c\") &&\n```\n",
+        "created_at": "2015-05-19T05:32:19Z",
+        "updated_at": "2015-05-19T12:44:05Z",
+        "html_url": "https://github.com/mailgun/godebug/pull/32#discussion_r30570312",
+        "pull_request_url": "https://api.github.com/repos/mailgun/godebug/pulls/32",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30570312"
+            },
+            "html": {
+                "href": "https://github.com/mailgun/godebug/pull/32#discussion_r30570312"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/32"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30570455",
+        "pull_request_review_id": null,
+        "id": 30570455,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwNTcwNDU1",
+        "diff_hunk": "@@ -0,0 +1,7 @@\n+// +build godebugtest\n+\n+package main\n+\n+func init() {\n+\tv = \"y\"\n+}",
+        "path": "testdata/test-filesystem/gopath/src/tags/tagged.go",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "f8742f647adb8ee17a1435de3b1929d36df590c8",
+        "original_commit_id": "fa60f450948792993cb1a6c3ad336baec638cff5",
+        "user": {
+            "login": "jeremyschlatter",
+            "id": 5741620,
+            "node_id": "MDQ6VXNlcjU3NDE2MjA=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5741620?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jeremyschlatter",
+            "html_url": "https://github.com/jeremyschlatter",
+            "followers_url": "https://api.github.com/users/jeremyschlatter/followers",
+            "following_url": "https://api.github.com/users/jeremyschlatter/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jeremyschlatter/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jeremyschlatter/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jeremyschlatter/subscriptions",
+            "organizations_url": "https://api.github.com/users/jeremyschlatter/orgs",
+            "repos_url": "https://api.github.com/users/jeremyschlatter/repos",
+            "events_url": "https://api.github.com/users/jeremyschlatter/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jeremyschlatter/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks for adding test files. I don't see test cases that use them, though. Can you add those?\n",
+        "created_at": "2015-05-19T05:36:38Z",
+        "updated_at": "2015-05-19T12:44:05Z",
+        "html_url": "https://github.com/mailgun/godebug/pull/32#discussion_r30570455",
+        "pull_request_url": "https://api.github.com/repos/mailgun/godebug/pulls/32",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30570455"
+            },
+            "html": {
+                "href": "https://github.com/mailgun/godebug/pull/32#discussion_r30570455"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/32"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30591852",
+        "pull_request_review_id": null,
+        "id": 30591852,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwNTkxODUy",
+        "diff_hunk": "@@ -487,8 +597,23 @@ func doOutput(args []string) {\n \t})\n }\n \n-func parseTestArguments(args []string) (packages, testFlags []string) {\n-\t// format: [-godebugwork] [-instrument pkgs...] [packages] [testFlags]\n+func parseBuildArguments(args []string) ([]string, bool) {\n+\tif len(args) == 0 {\n+\t\treturn []string{\".\"}, true\n+\t}\n+\tif len(args) == 1 && !strings.HasSuffix(args[0], \".go\") {\n+\t\treturn args, true\n+\t}\n+\tfor _, a := range args {\n+\t\tif !strings.HasSuffix(a, \".go\") {\n+\t\t\tlogFatal(\"you can only build a set of files or a single package\")\n+\t\t}\n+\t}\n+\treturn args, false\n+}\n+\n+func parseTestArguments(args []string) ([]string, []string) {",
+        "path": "cmd.go",
+        "position": null,
+        "original_position": 371,
+        "commit_id": "f8742f647adb8ee17a1435de3b1929d36df590c8",
+        "original_commit_id": "fa60f450948792993cb1a6c3ad336baec638cff5",
+        "user": {
+            "login": "FiloSottile",
+            "id": 1225294,
+            "node_id": "MDQ6VXNlcjEyMjUyOTQ=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1225294?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/FiloSottile",
+            "html_url": "https://github.com/FiloSottile",
+            "followers_url": "https://api.github.com/users/FiloSottile/followers",
+            "following_url": "https://api.github.com/users/FiloSottile/following{/other_user}",
+            "gists_url": "https://api.github.com/users/FiloSottile/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/FiloSottile/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/FiloSottile/subscriptions",
+            "organizations_url": "https://api.github.com/users/FiloSottile/orgs",
+            "repos_url": "https://api.github.com/users/FiloSottile/repos",
+            "events_url": "https://api.github.com/users/FiloSottile/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/FiloSottile/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I have a personal allergy for the code that they encourage to write, but true, documentation comes first. Refactoring them back in.\n",
+        "created_at": "2015-05-19T11:57:57Z",
+        "updated_at": "2015-05-19T12:44:05Z",
+        "html_url": "https://github.com/mailgun/godebug/pull/32#discussion_r30591852",
+        "pull_request_url": "https://api.github.com/repos/mailgun/godebug/pulls/32",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30591852"
+            },
+            "html": {
+                "href": "https://github.com/mailgun/godebug/pull/32#discussion_r30591852"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/32"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30591881",
+        "pull_request_review_id": null,
+        "id": 30591881,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMwNTkxODgx",
+        "diff_hunk": "@@ -498,14 +623,17 @@ func parseTestArguments(args []string) (packages, testFlags []string) {\n \t\t}\n \t\tif strings.HasPrefix(arg, \"-\") &&\n \t\t\t!strings.HasPrefix(arg, \"-instrument\") &&\n-\t\t\t!strings.HasPrefix(arg, \"-godebugwork\") {\n+\t\t\t!strings.HasPrefix(arg, \"-godebugwork\") &&\n+\t\t\t!strings.HasPrefix(arg, \"-tags\") &&\n+\t\t\t!strings.HasPrefix(arg, \"-o\") &&\n+\t\t\t!strings.HasPrefix(arg, \"-c\") {",
+        "path": "cmd.go",
+        "position": null,
+        "original_position": 384,
+        "commit_id": "f8742f647adb8ee17a1435de3b1929d36df590c8",
+        "original_commit_id": "fa60f450948792993cb1a6c3ad336baec638cff5",
+        "user": {
+            "login": "FiloSottile",
+            "id": 1225294,
+            "node_id": "MDQ6VXNlcjEyMjUyOTQ=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1225294?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/FiloSottile",
+            "html_url": "https://github.com/FiloSottile",
+            "followers_url": "https://api.github.com/users/FiloSottile/followers",
+            "following_url": "https://api.github.com/users/FiloSottile/following{/other_user}",
+            "gists_url": "https://api.github.com/users/FiloSottile/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/FiloSottile/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/FiloSottile/subscriptions",
+            "organizations_url": "https://api.github.com/users/FiloSottile/orgs",
+            "repos_url": "https://api.github.com/users/FiloSottile/repos",
+            "events_url": "https://api.github.com/users/FiloSottile/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/FiloSottile/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Good catch, thanks\n",
+        "created_at": "2015-05-19T11:58:32Z",
+        "updated_at": "2015-05-19T12:44:05Z",
+        "html_url": "https://github.com/mailgun/godebug/pull/32#discussion_r30591881",
+        "pull_request_url": "https://api.github.com/repos/mailgun/godebug/pulls/32",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/comments/30591881"
+            },
+            "html": {
+                "href": "https://github.com/mailgun/godebug/pull/32#discussion_r30591881"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/32"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/mailgun/godebug/pulls/comments/110727823",
+        "pull_request_review_id": 31921172,
+        "id": 110727823,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExMDcyNzgyMw==",
+        "diff_hunk": "@@ -223,7 +223,12 @@ func doBuild(args []string) {\n \t\tgoArgs = mapToTmpDir(tmpDir, goArgs)\n \t}\n \n-\tbin := filepath.Base(strings.TrimSuffix(goArgs[0], \".go\")) + \".debug\"\n+\texeSuffix := \"\"",
+        "path": "cmd.go",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "784d30916780d54437c591b690c16c38e1b0cd1a",
+        "original_commit_id": "784d30916780d54437c591b690c16c38e1b0cd1a",
+        "user": {
+            "login": "ramonkeypr",
+            "id": 20910995,
+            "node_id": "MDQ6VXNlcjIwOTEwOTk1",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/20910995?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ramonkeypr",
+            "html_url": "https://github.com/ramonkeypr",
+            "followers_url": "https://api.github.com/users/ramonkeypr/followers",
+            "following_url": "https://api.github.com/users/ramonkeypr/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ramonkeypr/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ramonkeypr/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ramonkeypr/subscriptions",
+            "organizations_url": "https://api.github.com/users/ramonkeypr/orgs",
+            "repos_url": "https://api.github.com/users/ramonkeypr/repos",
+            "events_url": "https://api.github.com/users/ramonkeypr/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ramonkeypr/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What about `binSuffix` so that we can leave the code open to other executable binary file extensions that `go` may produce in the future?",
+        "created_at": "2017-04-10T18:24:25Z",
+        "updated_at": "2017-04-10T18:24:25Z",
+        "html_url": "https://github.com/mailgun/godebug/pull/82#discussion_r110727823",
+        "pull_request_url": "https://api.github.com/repos/mailgun/godebug/pulls/82",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/comments/110727823"
+            },
+            "html": {
+                "href": "https://github.com/mailgun/godebug/pull/82#discussion_r110727823"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/mailgun/godebug/pulls/82"
+            }
+        }
+    }
+]

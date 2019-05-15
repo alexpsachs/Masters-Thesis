@@ -1,0 +1,786 @@
+[
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/6112663",
+        "pull_request_review_id": null,
+        "id": 6112663,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYxMTI2NjM=",
+        "diff_hunk": "@@ -88,6 +88,94 @@ var output = run({ r: 1, g: 0.4, b: 0 });\n \n console.log(run.toString()); // copy and paste! no need to import brain.js\n ```\n+# Streams\n+The network itself is a [WriteStream](http://nodejs.org/api/stream.html#stream_class_stream_writable). You can train the network by using `pipe()` to send the training data to the network.\n+\n+#### Initialization\n+To train the network using a stream you must first initialize it by calling `net.initTrainStream()` which takes the following options:\n+\n+* `floodCallback()` - the callback function to re-populate the stream. This gets called on every training iteration.\n+* `doneTrainingCallback(info)` - the callback function to execute when the network is done training. The `info` param will contain a hash of information about how the training went:\n+\n+```javascript\n+{\n+  error: 0.0039139985510105032,  // training error\n+  iterations: 406                // training iterations\n+}\n+```\n+\n+#### Transform\n+Use a [Transform](http://nodejs.org/api/stream.html#stream_class_stream_transform) to coerce the data into the correct format. You might also use a Transform stream to normalize your data on the fly.\n+\n+#### Example\n+\n+```javascript\n+var net = new brain.NeuralNetwork();\n+var collection = db.collection('nn');\n+var stream = collection.find().stream();\n+// pipe the data to a transform first to coerce it into the expected datum\n+var ts = Transform({\n+  objectMode: true\n+});\n+ts._transform = function (chunk, enc, next) {\n+  var tf = {\n+    input: _.pick(chunk, 'propOne', 'propTwo'),\n+    output: _.pick(chunk, 'outProp')\n+  };\n+  this.push(tf);\n+  next();\n+};\n+stream.on(\"end\", function () {\n+  net.write(null);\n+});\n+net.initTrainStream({\n+  floodCallback: function () {\n+    // query and pipe again\n+    var ts = Transform({",
+        "path": "README.md",
+        "position": null,
+        "original_position": 56,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "326075609d20a713f9c3fdf4c8258045e6073e56",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Looks like you define this transform twice. Here and above.\n",
+        "created_at": "2013-09-02T15:40:58Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r6112663",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/6112663"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r6112663"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/6112821",
+        "pull_request_review_id": null,
+        "id": 6112821,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYxMTI4MjE=",
+        "diff_hunk": "@@ -88,6 +88,94 @@ var output = run({ r: 1, g: 0.4, b: 0 });\n \n console.log(run.toString()); // copy and paste! no need to import brain.js\n ```\n+# Streams\n+The network itself is a [WriteStream](http://nodejs.org/api/stream.html#stream_class_stream_writable). You can train the network by using `pipe()` to send the training data to the network.\n+\n+#### Initialization\n+To train the network using a stream you must first initialize it by calling `net.initTrainStream()` which takes the following options:\n+\n+* `floodCallback()` - the callback function to re-populate the stream. This gets called on every training iteration.\n+* `doneTrainingCallback(info)` - the callback function to execute when the network is done training. The `info` param will contain a hash of information about how the training went:\n+\n+```javascript\n+{\n+  error: 0.0039139985510105032,  // training error\n+  iterations: 406                // training iterations\n+}\n+```\n+\n+#### Transform\n+Use a [Transform](http://nodejs.org/api/stream.html#stream_class_stream_transform) to coerce the data into the correct format. You might also use a Transform stream to normalize your data on the fly.\n+\n+#### Example\n+\n+```javascript\n+var net = new brain.NeuralNetwork();\n+var collection = db.collection('nn');\n+var stream = collection.find().stream();\n+// pipe the data to a transform first to coerce it into the expected datum\n+var ts = Transform({\n+  objectMode: true\n+});\n+ts._transform = function (chunk, enc, next) {\n+  var tf = {\n+    input: _.pick(chunk, 'propOne', 'propTwo'),\n+    output: _.pick(chunk, 'outProp')\n+  };\n+  this.push(tf);\n+  next();\n+};\n+stream.on(\"end\", function () {\n+  net.write(null);\n+});\n+net.initTrainStream({\n+  floodCallback: function () {\n+    // query and pipe again\n+    var ts = Transform({\n+      objectMode: true\n+    });\n+    ts._transform = function (chunk, enc, next) {\n+      var tf = {\n+        input: _.pick(chunk, 'propOne', 'propTwo'),\n+        output: _.pick(chunk, 'outProp')\n+      };\n+      this.push(tf);\n+      next();\n+    };\n+\n+    var stream = collection.find().stream();\n+    // when you pipe be sure to leave the stream open for the next iteration\n+    stream.pipe(ts, {\n+      end: false\n+    }).pipe(net, {\n+      end: false\n+    });\n+\n+    stream.on(\"end\", function () {\n+      net.write(null); // let the network know an iteration has finished\n+    });\n+  },\n+  doneTrainingCallback: function (info) {\n+    // close the database connection\n+    db.close();\n+\n+    // run the network here\n+    console.log(\"done training\");\n+    console.log(info);\n+  },\n+  errorThresh: 0.0000000000004, // custom error threshold to reach\n+  iterations: 200000, // maximum training iterations\n+  log: true, // console.log() progress periodically\n+  logPeriod: 5000 // number of iterations between logging",
+        "path": "README.md",
+        "position": null,
+        "original_position": 91,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "326075609d20a713f9c3fdf4c8258045e6073e56",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Make an \"optional\" note for all these options. And align the `//`s for these options, as they're aligned elsewhere in the readme.\n",
+        "created_at": "2013-09-02T15:49:03Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r6112821",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/6112821"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r6112821"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/6116428",
+        "pull_request_review_id": null,
+        "id": 6116428,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYxMTY0Mjg=",
+        "diff_hunk": "@@ -38,9 +38,21 @@ function toHash(lookup, array) {\n   return hash;\n }\n \n+function fromArray(array) {\n+  var lookup = {};\n+  // super fast loop\n+  var z = 0;\n+  var i = array.length;\n+  while (i-- > 0) {\n+    lookup[array[i]] = z++;\n+  };\n+  return lookup;\n+}\n+\n module.exports = {\n   buildLookup: buildLookup,\n   lookupFromHash: lookupFromHash,\n   toArray: toArray,\n-  toHash: toHash\n+  toHash: toHash,\n+  fromArray: fromArray",
+        "path": "lib/lookup.js",
+        "position": null,
+        "original_position": 21,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "326075609d20a713f9c3fdf4c8258045e6073e56",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "minor nit, `fromArray` -> `lookupFromArray` for congruency with the other function names.\n",
+        "created_at": "2013-09-03T01:44:44Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r6116428",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/6116428"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r6116428"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/6116456",
+        "pull_request_review_id": null,
+        "id": 6116456,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYxMTY0NTY=",
+        "diff_hunk": "@@ -88,6 +88,94 @@ var output = run({ r: 1, g: 0.4, b: 0 });\n \n console.log(run.toString()); // copy and paste! no need to import brain.js\n ```\n+# Streams\n+The network itself is a [WriteStream](http://nodejs.org/api/stream.html#stream_class_stream_writable). You can train the network by using `pipe()` to send the training data to the network.\n+\n+#### Initialization\n+To train the network using a stream you must first initialize it by calling `net.initTrainStream()` which takes the following options:\n+\n+* `floodCallback()` - the callback function to re-populate the stream. This gets called on every training iteration.\n+* `doneTrainingCallback(info)` - the callback function to execute when the network is done training. The `info` param will contain a hash of information about how the training went:\n+\n+```javascript\n+{\n+  error: 0.0039139985510105032,  // training error\n+  iterations: 406                // training iterations\n+}\n+```\n+\n+#### Transform\n+Use a [Transform](http://nodejs.org/api/stream.html#stream_class_stream_transform) to coerce the data into the correct format. You might also use a Transform stream to normalize your data on the fly.\n+\n+#### Example\n+\n+```javascript\n+var net = new brain.NeuralNetwork();\n+var collection = db.collection('nn');\n+var stream = collection.find().stream();\n+// pipe the data to a transform first to coerce it into the expected datum\n+var ts = Transform({\n+  objectMode: true\n+});\n+ts._transform = function (chunk, enc, next) {\n+  var tf = {\n+    input: _.pick(chunk, 'propOne', 'propTwo'),\n+    output: _.pick(chunk, 'outProp')\n+  };\n+  this.push(tf);\n+  next();\n+};\n+stream.on(\"end\", function () {\n+  net.write(null);\n+});\n+net.initTrainStream({\n+  floodCallback: function () {\n+    // query and pipe again\n+    var ts = Transform({\n+      objectMode: true\n+    });\n+    ts._transform = function (chunk, enc, next) {\n+      var tf = {",
+        "path": "README.md",
+        "position": null,
+        "original_position": 60,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "326075609d20a713f9c3fdf4c8258045e6073e56",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`tf` and `ts`, too short and cryptic.\n",
+        "created_at": "2013-09-03T01:52:55Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r6116456",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/6116456"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r6116456"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/6116485",
+        "pull_request_review_id": null,
+        "id": 6116485,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYxMTY0ODU=",
+        "diff_hunk": "@@ -88,6 +88,94 @@ var output = run({ r: 1, g: 0.4, b: 0 });\n \n console.log(run.toString()); // copy and paste! no need to import brain.js\n ```\n+# Streams\n+The network itself is a [WriteStream](http://nodejs.org/api/stream.html#stream_class_stream_writable). You can train the network by using `pipe()` to send the training data to the network.\n+\n+#### Initialization\n+To train the network using a stream you must first initialize it by calling `net.initTrainStream()` which takes the following options:\n+\n+* `floodCallback()` - the callback function to re-populate the stream. This gets called on every training iteration.\n+* `doneTrainingCallback(info)` - the callback function to execute when the network is done training. The `info` param will contain a hash of information about how the training went:\n+\n+```javascript\n+{\n+  error: 0.0039139985510105032,  // training error\n+  iterations: 406                // training iterations\n+}\n+```\n+\n+#### Transform\n+Use a [Transform](http://nodejs.org/api/stream.html#stream_class_stream_transform) to coerce the data into the correct format. You might also use a Transform stream to normalize your data on the fly.\n+\n+#### Example\n+",
+        "path": "README.md",
+        "position": null,
+        "original_position": 33,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "326075609d20a713f9c3fdf4c8258045e6073e56",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'd add a brief description of what this example is doing, is it training a network with data from some kind of db?\n",
+        "created_at": "2013-09-03T01:57:22Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r6116485",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/6116485"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r6116485"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/6785161",
+        "pull_request_review_id": null,
+        "id": 6785161,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3ODUxNjE=",
+        "diff_hunk": "@@ -10,277 +14,282 @@ var NeuralNetwork = function(options) {\n   this.binaryThresh = options.binaryThresh || 0.5;\n }\n \n-NeuralNetwork.prototype = {\n-  initialize: function(sizes) {\n-    this.sizes = sizes;\n-    this.outputLayer = this.sizes.length - 1;\n-\n-    this.biases = []; // weights for bias nodes\n-    this.weights = [];\n-    this.outputs = [];\n-\n-    // state for training\n-    this.deltas = [];\n-    this.changes = []; // for momentum\n-    this.errors = [];\n-\n-    for (var layer = 0; layer <= this.outputLayer; layer++) {\n-      var size = this.sizes[layer];\n-      this.deltas[layer] = zeros(size);\n-      this.errors[layer] = zeros(size);\n-      this.outputs[layer] = zeros(size);\n-\n-      if (layer > 0) {\n-        this.biases[layer] = randos(size);\n-        this.weights[layer] = new Array(size);\n-        this.changes[layer] = new Array(size);\n-\n-        for (var node = 0; node < size; node++) {\n-          var prevSize = this.sizes[layer - 1];\n-          this.weights[layer][node] = randos(prevSize);\n-          this.changes[layer][node] = zeros(prevSize);\n-        }\n+NeuralNetwork.prototype.initialize = function(sizes) {",
+        "path": "lib/neuralnetwork.js",
+        "position": null,
+        "original_position": 48,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "8b3bd70c86f839337d659b66a86fc3bc2429a035",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Changing from `NN.prototype =` to `NN.prototype.funcname = ...` isn't a change I want to make in this patch.  If only because this makes the diff busy and it's really hard to tell what the real changes are in this PR. Also this is a style decision I made for this library. People use the `prototype.func` pattern, but that wasn't my choice for this library.\n",
+        "created_at": "2013-10-05T22:22:55Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r6785161",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/6785161"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r6785161"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/6785166",
+        "pull_request_review_id": null,
+        "id": 6785166,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3ODUxNjY=",
+        "diff_hunk": "@@ -413,4 +433,139 @@ function mse(errors) {\n   return sum / errors.length;\n }\n \n-exports.NeuralNetwork = NeuralNetwork;\n+function TrainStream(opts) {\n+  if (!(this instanceof TrainStream)) return new TrainStream(opts);\n+\n+  Writable.call(this, {\n+    objectMode: true\n+  });\n+\n+  opts = opts || {};\n+\n+  // require the neuralNetwork\n+  if(!opts.neuralNetwork) return null;\n+\n+  var self = this;",
+        "path": "lib/neuralnetwork.js",
+        "position": null,
+        "original_position": 707,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "8b3bd70c86f839337d659b66a86fc3bc2429a035",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "There's no need for this.\n",
+        "created_at": "2013-10-05T22:24:46Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r6785166",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/6785166"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r6785166"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/6785360",
+        "pull_request_review_id": null,
+        "id": 6785360,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3ODUzNjA=",
+        "diff_hunk": "@@ -1,8 +1,12 @@\n var _ = require(\"underscore\"),\n-    lookup = require(\"./lookup\");\n+  lookup = require(\"./lookup\"),\n+  Writable = require('stream').Writable,\n+  util = require('util');\n+\n \n var NeuralNetwork = function(options) {\n   options = options || {};\n+",
+        "path": "lib/neuralnetwork.js",
+        "position": null,
+        "original_position": 10,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "8b3bd70c86f839337d659b66a86fc3bc2429a035",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Style change to an unrelated piece of code, I'd leave this out.\n",
+        "created_at": "2013-10-05T23:35:21Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r6785360",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/6785360"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r6785360"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/7175340",
+        "pull_request_review_id": null,
+        "id": 7175340,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNzUzNDA=",
+        "diff_hunk": "@@ -414,3 +431,136 @@ function mse(errors) {\n }\n \n exports.NeuralNetwork = NeuralNetwork;\n+\n+function TrainStream(opts) {\n+  if (!(this instanceof TrainStream)) return new TrainStream(opts);\n+\n+  Writable.call(this, {\n+    objectMode: true\n+  });\n+\n+  opts = opts || {};\n+\n+  // require the neuralNetwork\n+  if(!opts.neuralNetwork) return null;",
+        "path": "lib/neuralnetwork.js",
+        "position": null,
+        "original_position": 53,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "5e8bd4d228f606ef015bce263e67cdf170d01450",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Maybe we should just throw here then, unless you had a reason for `null`? Also, the rest of the file's style applied to this would look like:\n\n``` javascript\nif (!opts.neuralNetwork) {\n  return null;\n}\n```\n",
+        "created_at": "2013-10-23T23:24:25Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r7175340",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/7175340"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r7175340"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/7175598",
+        "pull_request_review_id": null,
+        "id": 7175598,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNzU1OTg=",
+        "diff_hunk": "@@ -414,3 +431,136 @@ function mse(errors) {\n }\n \n exports.NeuralNetwork = NeuralNetwork;\n+\n+function TrainStream(opts) {\n+  if (!(this instanceof TrainStream)) return new TrainStream(opts);",
+        "path": "lib/neuralnetwork.js",
+        "position": null,
+        "original_position": 44,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "5e8bd4d228f606ef015bce263e67cdf170d01450",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is this so you can also do `var stream = TrainStream()`? Since we're not exporting `TrainStream`, and we use `new TrainStream()` ourselves in the file, it's not necessary.\n",
+        "created_at": "2013-10-23T23:41:25Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r7175598",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/7175598"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r7175598"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/7175638",
+        "pull_request_review_id": null,
+        "id": 7175638,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNzU2Mzg=",
+        "diff_hunk": "@@ -414,3 +431,136 @@ function mse(errors) {\n }\n \n exports.NeuralNetwork = NeuralNetwork;\n+\n+function TrainStream(opts) {\n+  if (!(this instanceof TrainStream)) return new TrainStream(opts);\n+\n+  Writable.call(this, {\n+    objectMode: true\n+  });\n+\n+  opts = opts || {};\n+\n+  // require the neuralNetwork\n+  if(!opts.neuralNetwork) return null;\n+\n+  this.neuralNetwork = opts.neuralNetwork;\n+  this.dataFormatDetermined = false;\n+\n+  this.inputKeys = [];\n+  this.outputKeys = []; // keeps track of keys seen\n+  this.i = 0; // keep track of the for loop i variable that we got rid of\n+  this.iterations = opts.iterations || 20000;\n+  this.errorThresh = opts.errorThresh || 0.005;\n+  this.log = opts.log || false;\n+  this.logPeriod = opts.logPeriod || 10;\n+  this.callback = opts.callback;\n+  this.callbackPeriod = opts.callbackPeriod || 10;\n+  this.floodCallback = opts.floodCallback;\n+  this.doneTrainingCallback = opts.doneTrainingCallback;\n+\n+  this.size = 0;\n+  this.count = 0;\n+\n+  this.error = 1;\n+  this.sum = 0;\n+\n+  this.on('finish', this.finishStreamIteration);\n+\n+  return this;\n+}\n+\n+inherits(TrainStream, Writable);\n+\n+/*\n+  _write expects data to be in the form of a datum.\n+  ie. {input: {a: 1 b: 0}, output: {z: 0}}\n+ */\n+TrainStream.prototype._write = function(chunk, enc, next) {\n+  if (!chunk) { // check for the end of one interation of the stream\n+    this.emit('finish');\n+    return next();\n+  }\n+\n+  if (!this.dataFormatDetermined) {\n+    this.size++;\n+    this.inputKeys = _.union(this.inputKeys, _.keys(chunk.input));\n+    this.outputKeys = _.union(this.outputKeys, _.keys(chunk.output));\n+    this.firstDatum = this.firstDatum || chunk;\n+    return next();\n+  }\n+\n+  this.count++;\n+\n+  var data = this.neuralNetwork.formatData(chunk);\n+  this.trainDatum(data[0]);\n+\n+  // tell the Readable Stream that we are ready for more data\n+  next();\n+}\n+\n+TrainStream.prototype.trainDatum = function(datum) {\n+  var err = this.neuralNetwork.trainPattern(datum.input, datum.output);\n+  this.sum += err;\n+}\n+\n+TrainStream.prototype.finishStreamIteration = function() {\n+  if (this.dataFormatDetermined && this.size !== this.count) {\n+    console.log(\"This iteration's data length was different from the first.\");\n+  }\n+\n+  if (!this.dataFormatDetermined) {\n+    // create the lookup\n+    this.neuralNetwork.inputLookup = lookup.lookupFromArray(this.inputKeys);\n+    this.neuralNetwork.outputLookup = lookup.lookupFromArray(this.outputKeys);\n+\n+    var data = this.neuralNetwork.formatData(this.firstDatum);\n+    var inputSize = data[0].input.length;\n+    var outputSize = data[0].output.length;\n+\n+    var hiddenSizes = this.hiddenSizes;\n+    if (!hiddenSizes) {\n+      hiddenSizes = [Math.max(3, Math.floor(inputSize / 2))];\n+    }\n+    var sizes = _([inputSize, hiddenSizes, outputSize]).flatten();\n+    this.dataFormatDetermined = true;\n+    this.neuralNetwork.initialize(sizes);\n+\n+    if (typeof this.floodCallback === 'function') {\n+      this.floodCallback();\n+    }\n+    return;\n+  }\n+\n+  this.error = this.sum / this.size;",
+        "path": "lib/neuralnetwork.js",
+        "position": null,
+        "original_position": 143,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "5e8bd4d228f606ef015bce263e67cdf170d01450",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No need for a `this.error`, a local `error` var will do, seems preferable.\n",
+        "created_at": "2013-10-23T23:43:39Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r7175638",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/7175638"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r7175638"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/7175724",
+        "pull_request_review_id": null,
+        "id": 7175724,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcxNzU3MjQ=",
+        "diff_hunk": "@@ -414,3 +431,136 @@ function mse(errors) {\n }\n \n exports.NeuralNetwork = NeuralNetwork;\n+\n+function TrainStream(opts) {\n+  if (!(this instanceof TrainStream)) return new TrainStream(opts);",
+        "path": "lib/neuralnetwork.js",
+        "position": null,
+        "original_position": 44,
+        "commit_id": "3c25852bee873827f5a9d5cda9e4ad099645b2b7",
+        "original_commit_id": "5e8bd4d228f606ef015bce263e67cdf170d01450",
+        "user": {
+            "login": "nickpoorman",
+            "id": 233103,
+            "node_id": "MDQ6VXNlcjIzMzEwMw==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/233103?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nickpoorman",
+            "html_url": "https://github.com/nickpoorman",
+            "followers_url": "https://api.github.com/users/nickpoorman/followers",
+            "following_url": "https://api.github.com/users/nickpoorman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nickpoorman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nickpoorman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nickpoorman/subscriptions",
+            "organizations_url": "https://api.github.com/users/nickpoorman/orgs",
+            "repos_url": "https://api.github.com/users/nickpoorman/repos",
+            "events_url": "https://api.github.com/users/nickpoorman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nickpoorman/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I do this out of habit. It saves headaches down the road when someone forgets a `new`.\n",
+        "created_at": "2013-10-23T23:48:12Z",
+        "updated_at": "2013-10-24T00:03:04Z",
+        "html_url": "https://github.com/harthur/brain/pull/30#discussion_r7175724",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/30",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/7175724"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/30#discussion_r7175724"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/17136396",
+        "pull_request_review_id": null,
+        "id": 17136396,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MTM2Mzk2",
+        "diff_hunk": "@@ -6,7 +6,7 @@ To run the tests in this directory, make sure you've installed the dev dependenc\n npm install\n ```\n \n-You'll also have to globally install [mocha](http://visionmedia.github.com/mocha/). `npm install mocha -g`.",
+        "path": "test/README.md",
+        "position": 10,
+        "original_position": 10,
+        "commit_id": "1e9961e6ede9dbfd1f45b901c1a78d8fd5884df8",
+        "original_commit_id": "1e9961e6ede9dbfd1f45b901c1a78d8fd5884df8",
+        "user": {
+            "login": "harthur",
+            "id": 140420,
+            "node_id": "MDQ6VXNlcjE0MDQyMA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/140420?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/harthur",
+            "html_url": "https://github.com/harthur",
+            "followers_url": "https://api.github.com/users/harthur/followers",
+            "following_url": "https://api.github.com/users/harthur/following{/other_user}",
+            "gists_url": "https://api.github.com/users/harthur/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/harthur/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/harthur/subscriptions",
+            "organizations_url": "https://api.github.com/users/harthur/orgs",
+            "repos_url": "https://api.github.com/users/harthur/repos",
+            "events_url": "https://api.github.com/users/harthur/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/harthur/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Do you not have to install mocha globally before running `npm test`?\n",
+        "created_at": "2014-09-04T19:29:27Z",
+        "updated_at": "2014-09-04T19:29:27Z",
+        "html_url": "https://github.com/harthur/brain/pull/45#discussion_r17136396",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/45",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/17136396"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/45#discussion_r17136396"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/45"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/17137149",
+        "pull_request_review_id": null,
+        "id": 17137149,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MTM3MTQ5",
+        "diff_hunk": "@@ -6,7 +6,7 @@ To run the tests in this directory, make sure you've installed the dev dependenc\n npm install\n ```\n \n-You'll also have to globally install [mocha](http://visionmedia.github.com/mocha/). `npm install mocha -g`.",
+        "path": "test/README.md",
+        "position": 10,
+        "original_position": 10,
+        "commit_id": "1e9961e6ede9dbfd1f45b901c1a78d8fd5884df8",
+        "original_commit_id": "1e9961e6ede9dbfd1f45b901c1a78d8fd5884df8",
+        "user": {
+            "login": "alexanderGugel",
+            "id": 703628,
+            "node_id": "MDQ6VXNlcjcwMzYyOA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/703628?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/alexanderGugel",
+            "html_url": "https://github.com/alexanderGugel",
+            "followers_url": "https://api.github.com/users/alexanderGugel/followers",
+            "following_url": "https://api.github.com/users/alexanderGugel/following{/other_user}",
+            "gists_url": "https://api.github.com/users/alexanderGugel/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/alexanderGugel/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/alexanderGugel/subscriptions",
+            "organizations_url": "https://api.github.com/users/alexanderGugel/orgs",
+            "repos_url": "https://api.github.com/users/alexanderGugel/repos",
+            "events_url": "https://api.github.com/users/alexanderGugel/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/alexanderGugel/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "No, npm does some PATH magic.\n",
+        "created_at": "2014-09-04T19:42:48Z",
+        "updated_at": "2014-09-04T19:42:48Z",
+        "html_url": "https://github.com/harthur/brain/pull/45#discussion_r17137149",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/45",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/17137149"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/45#discussion_r17137149"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/45"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/17137283",
+        "pull_request_review_id": null,
+        "id": 17137283,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MTM3Mjgz",
+        "diff_hunk": "@@ -6,7 +6,7 @@ To run the tests in this directory, make sure you've installed the dev dependenc\n npm install\n ```\n \n-You'll also have to globally install [mocha](http://visionmedia.github.com/mocha/). `npm install mocha -g`.",
+        "path": "test/README.md",
+        "position": 10,
+        "original_position": 10,
+        "commit_id": "1e9961e6ede9dbfd1f45b901c1a78d8fd5884df8",
+        "original_commit_id": "1e9961e6ede9dbfd1f45b901c1a78d8fd5884df8",
+        "user": {
+            "login": "alexanderGugel",
+            "id": 703628,
+            "node_id": "MDQ6VXNlcjcwMzYyOA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/703628?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/alexanderGugel",
+            "html_url": "https://github.com/alexanderGugel",
+            "followers_url": "https://api.github.com/users/alexanderGugel/followers",
+            "following_url": "https://api.github.com/users/alexanderGugel/following{/other_user}",
+            "gists_url": "https://api.github.com/users/alexanderGugel/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/alexanderGugel/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/alexanderGugel/subscriptions",
+            "organizations_url": "https://api.github.com/users/alexanderGugel/orgs",
+            "repos_url": "https://api.github.com/users/alexanderGugel/repos",
+            "events_url": "https://api.github.com/users/alexanderGugel/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/alexanderGugel/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "See https://github.com/npm/npm/blob/v1.4.20/lib/utils/lifecycle.js#L83\n",
+        "created_at": "2014-09-04T19:45:05Z",
+        "updated_at": "2014-09-04T19:45:05Z",
+        "html_url": "https://github.com/harthur/brain/pull/45#discussion_r17137283",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/45",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/17137283"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/45#discussion_r17137283"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/45"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/harthur/brain/pulls/comments/93364449",
+        "pull_request_review_id": 13889702,
+        "id": 93364449,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkzMzY0NDQ5",
+        "diff_hunk": "@@ -25,14 +25,18 @@ NeuralNetwork.prototype = {\n     this.deltas = [];\n     this.changes = []; // for momentum\n     this.errors = [];\n-\n-    for (var layer = 0; layer <= this.outputLayer; layer++) {\n+    \n+    if (this.outputLayer > 0) {\n       var size = this.sizes[layer];\n       this.deltas[layer] = zeros(size);",
+        "path": "lib/neuralnetwork.js",
+        "position": 9,
+        "original_position": 9,
+        "commit_id": "ca9b8545bb0dbec3b2685e38607437fd49dda98d",
+        "original_commit_id": "ca9b8545bb0dbec3b2685e38607437fd49dda98d",
+        "user": {
+            "login": "robertleeplummerjr",
+            "id": 679099,
+            "node_id": "MDQ6VXNlcjY3OTA5OQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/679099?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/robertleeplummerjr",
+            "html_url": "https://github.com/robertleeplummerjr",
+            "followers_url": "https://api.github.com/users/robertleeplummerjr/followers",
+            "following_url": "https://api.github.com/users/robertleeplummerjr/following{/other_user}",
+            "gists_url": "https://api.github.com/users/robertleeplummerjr/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/robertleeplummerjr/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/robertleeplummerjr/subscriptions",
+            "organizations_url": "https://api.github.com/users/robertleeplummerjr/orgs",
+            "repos_url": "https://api.github.com/users/robertleeplummerjr/repos",
+            "events_url": "https://api.github.com/users/robertleeplummerjr/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/robertleeplummerjr/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "These need to be removed, as they are called inside the loop.",
+        "created_at": "2016-12-21T02:22:25Z",
+        "updated_at": "2016-12-21T02:22:25Z",
+        "html_url": "https://github.com/harthur/brain/pull/76#discussion_r93364449",
+        "pull_request_url": "https://api.github.com/repos/harthur/brain/pulls/76",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/comments/93364449"
+            },
+            "html": {
+                "href": "https://github.com/harthur/brain/pull/76#discussion_r93364449"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/harthur/brain/pulls/76"
+            }
+        }
+    }
+]

@@ -1,0 +1,2117 @@
+[
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/19568151",
+        "pull_request_review_id": null,
+        "id": 19568151,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NTY4MTUx",
+        "diff_hunk": "@@ -356,8 +357,18 @@ func (d *decoder) scalar(n *node, out reflect.Value) (good bool) {\n \t\t\t\tout.SetInt(resolved)\n \t\t\t\tgood = true\n \t\t\t}\n+\t\tcase uint:",
+        "path": "decode.go",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "3a146c70f82c4c5b5c512e9833c23ddbcb4a6a33",
+        "original_commit_id": "3a146c70f82c4c5b5c512e9833c23ddbcb4a6a33",
+        "user": {
+            "login": "niemeyer",
+            "id": 378683,
+            "node_id": "MDQ6VXNlcjM3ODY4Mw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/378683?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/niemeyer",
+            "html_url": "https://github.com/niemeyer",
+            "followers_url": "https://api.github.com/users/niemeyer/followers",
+            "following_url": "https://api.github.com/users/niemeyer/following{/other_user}",
+            "gists_url": "https://api.github.com/users/niemeyer/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/niemeyer/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/niemeyer/subscriptions",
+            "organizations_url": "https://api.github.com/users/niemeyer/orgs",
+            "repos_url": "https://api.github.com/users/niemeyer/repos",
+            "events_url": "https://api.github.com/users/niemeyer/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/niemeyer/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It's not clear why there's special support for uint being added. The reason we handle int specially is because it's the default representation for integer literals, and is widely used by default for lengths, etc. What you are adding, though, is a special case that will come into play mainly when int64 overflows, in which case uint is irrelevant. We really want the 64 bits type to solve the problem.\n",
+        "created_at": "2014-10-29T20:06:57Z",
+        "updated_at": "2014-10-29T20:06:57Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/50#discussion_r19568151",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/50",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/19568151"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/50#discussion_r19568151"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/50"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/19568296",
+        "pull_request_review_id": null,
+        "id": 19568296,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NTY4Mjk2",
+        "diff_hunk": "@@ -356,8 +357,18 @@ func (d *decoder) scalar(n *node, out reflect.Value) (good bool) {\n \t\t\t\tout.SetInt(resolved)\n \t\t\t\tgood = true\n \t\t\t}\n+\t\tcase uint:",
+        "path": "decode.go",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "3a146c70f82c4c5b5c512e9833c23ddbcb4a6a33",
+        "original_commit_id": "3a146c70f82c4c5b5c512e9833c23ddbcb4a6a33",
+        "user": {
+            "login": "liggitt",
+            "id": 980082,
+            "node_id": "MDQ6VXNlcjk4MDA4Mg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/980082?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/liggitt",
+            "html_url": "https://github.com/liggitt",
+            "followers_url": "https://api.github.com/users/liggitt/followers",
+            "following_url": "https://api.github.com/users/liggitt/following{/other_user}",
+            "gists_url": "https://api.github.com/users/liggitt/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/liggitt/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/liggitt/subscriptions",
+            "organizations_url": "https://api.github.com/users/liggitt/orgs",
+            "repos_url": "https://api.github.com/users/liggitt/repos",
+            "events_url": "https://api.github.com/users/liggitt/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/liggitt/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm fine with removing uint in lieu of uint64\n",
+        "created_at": "2014-10-29T20:08:43Z",
+        "updated_at": "2014-10-29T20:08:43Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/50#discussion_r19568296",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/50",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/19568296"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/50#discussion_r19568296"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/50"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/19572220",
+        "pull_request_review_id": null,
+        "id": 19572220,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NTcyMjIw",
+        "diff_hunk": "@@ -267,6 +267,114 @@ var unmarshalTests = []struct {\n \t\tmap[string]uint64{},\n \t},\n \n+\t// int\n+\t{\n+\t\t\"int_max: 2147483647\", // math.MaxInt32",
+        "path": "decode_test.go",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "d466437aa4adc35830964cffc5b5f262c63ddcb4",
+        "original_commit_id": "1dd72ac3928693b9db2533639dfc2a5f831697eb",
+        "user": {
+            "login": "niemeyer",
+            "id": 378683,
+            "node_id": "MDQ6VXNlcjM3ODY4Mw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/378683?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/niemeyer",
+            "html_url": "https://github.com/niemeyer",
+            "followers_url": "https://api.github.com/users/niemeyer/followers",
+            "following_url": "https://api.github.com/users/niemeyer/following{/other_user}",
+            "gists_url": "https://api.github.com/users/niemeyer/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/niemeyer/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/niemeyer/subscriptions",
+            "organizations_url": "https://api.github.com/users/niemeyer/orgs",
+            "repos_url": "https://api.github.com/users/niemeyer/repos",
+            "events_url": "https://api.github.com/users/niemeyer/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/niemeyer/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Instead of having comments on all these entries, it might be better and more accurate to just use the actual value in the assertion. For example:\n\n```\n\"int_max: 2147483647\",\nmap[string]int{\"int_max\": math.MaxInt32},\n```\n",
+        "created_at": "2014-10-29T21:03:21Z",
+        "updated_at": "2014-10-29T21:08:46Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/51#discussion_r19572220",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/51",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/19572220"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/51#discussion_r19572220"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/51"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/19572297",
+        "pull_request_review_id": null,
+        "id": 19572297,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NTcyMjk3",
+        "diff_hunk": "@@ -267,6 +267,114 @@ var unmarshalTests = []struct {\n \t\tmap[string]uint64{},\n \t},\n \n+\t// int\n+\t{\n+\t\t\"int_max: 2147483647\", // math.MaxInt32",
+        "path": "decode_test.go",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "d466437aa4adc35830964cffc5b5f262c63ddcb4",
+        "original_commit_id": "1dd72ac3928693b9db2533639dfc2a5f831697eb",
+        "user": {
+            "login": "liggitt",
+            "id": 980082,
+            "node_id": "MDQ6VXNlcjk4MDA4Mg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/980082?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/liggitt",
+            "html_url": "https://github.com/liggitt",
+            "followers_url": "https://api.github.com/users/liggitt/followers",
+            "following_url": "https://api.github.com/users/liggitt/following{/other_user}",
+            "gists_url": "https://api.github.com/users/liggitt/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/liggitt/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/liggitt/subscriptions",
+            "organizations_url": "https://api.github.com/users/liggitt/orgs",
+            "repos_url": "https://api.github.com/users/liggitt/repos",
+            "events_url": "https://api.github.com/users/liggitt/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/liggitt/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I like it, will update\n",
+        "created_at": "2014-10-29T21:04:43Z",
+        "updated_at": "2014-10-29T21:08:46Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/51#discussion_r19572297",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/51",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/19572297"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/51#discussion_r19572297"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/51"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/40318776",
+        "pull_request_review_id": null,
+        "id": 40318776,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwMzE4Nzc2",
+        "diff_hunk": "@@ -237,6 +237,11 @@ func getStructInfo(st reflect.Type) (*structInfo, error) {\n \t\t}\n \n \t\tinline := false\n+\t\t// a embedded struct is auto-inlined, see LP: #1191814\n+\t\tif field.Anonymous {\n+\t\t\tinline = true",
+        "path": "yaml.go",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "e90bcf783f7abddaa0ee0994a09e536498744e49",
+        "original_commit_id": "4b23f7d45d06ec78fccd6c4ff3b605eabb2522de",
+        "user": {
+            "login": "niemeyer",
+            "id": 378683,
+            "node_id": "MDQ6VXNlcjM3ODY4Mw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/378683?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/niemeyer",
+            "html_url": "https://github.com/niemeyer",
+            "followers_url": "https://api.github.com/users/niemeyer/followers",
+            "following_url": "https://api.github.com/users/niemeyer/following{/other_user}",
+            "gists_url": "https://api.github.com/users/niemeyer/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/niemeyer/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/niemeyer/subscriptions",
+            "organizations_url": "https://api.github.com/users/niemeyer/orgs",
+            "repos_url": "https://api.github.com/users/niemeyer/repos",
+            "events_url": "https://api.github.com/users/niemeyer/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/niemeyer/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This doesn't seem related to the patch description.\n",
+        "created_at": "2015-09-24T13:36:14Z",
+        "updated_at": "2015-09-24T15:04:59Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/94#discussion_r40318776",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/94",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/40318776"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/94#discussion_r40318776"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/94"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/40323793",
+        "pull_request_review_id": null,
+        "id": 40323793,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwMzIzNzkz",
+        "diff_hunk": "@@ -936,6 +936,21 @@ func (s *S) TestUnmarshalSliceOnPreset(c *C) {\n \tc.Assert(v.A, DeepEquals, []int{2})\n }\n \n+func (s *S) TestUnmarshalEmbeddedStructs(c *C) {",
+        "path": "decode_test.go",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "e90bcf783f7abddaa0ee0994a09e536498744e49",
+        "original_commit_id": "4b23f7d45d06ec78fccd6c4ff3b605eabb2522de",
+        "user": {
+            "login": "niemeyer",
+            "id": 378683,
+            "node_id": "MDQ6VXNlcjM3ODY4Mw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/378683?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/niemeyer",
+            "html_url": "https://github.com/niemeyer",
+            "followers_url": "https://api.github.com/users/niemeyer/followers",
+            "following_url": "https://api.github.com/users/niemeyer/following{/other_user}",
+            "gists_url": "https://api.github.com/users/niemeyer/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/niemeyer/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/niemeyer/subscriptions",
+            "organizations_url": "https://api.github.com/users/niemeyer/orgs",
+            "repos_url": "https://api.github.com/users/niemeyer/repos",
+            "events_url": "https://api.github.com/users/niemeyer/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/niemeyer/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This also seems related to the unwanted change rather than the example.\n",
+        "created_at": "2015-09-24T14:22:06Z",
+        "updated_at": "2015-09-24T15:04:59Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/94#discussion_r40323793",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/94",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/40323793"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/94#discussion_r40323793"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/94"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/40457691",
+        "pull_request_review_id": null,
+        "id": 40457691,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNDU3Njkx",
+        "diff_hunk": "@@ -559,6 +559,17 @@ var unmarshalTests = []struct {\n \t\t\"a: []\",\n \t\t&struct{ A []int }{[]int{}},\n \t},\n+\n+\t// Line number information from parser\n+\t{\n+\t\t\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\na: one\\nb: two\\nc: three\\n\",\n+\t\t&struct {\n+\t\t\tA    string\n+\t\t\tB    string\n+\t\t\tLine int \",linenum\"\n+\t\t\tCol  int \",colnum\"\n+\t\t}{\"one\", \"two\", 11, 1},",
+        "path": "decode_test.go",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "974d979e37fd602344e02abda7c91bb78675c6df",
+        "original_commit_id": "974d979e37fd602344e02abda7c91bb78675c6df",
+        "user": {
+            "login": "niemeyer",
+            "id": 378683,
+            "node_id": "MDQ6VXNlcjM3ODY4Mw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/378683?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/niemeyer",
+            "html_url": "https://github.com/niemeyer",
+            "followers_url": "https://api.github.com/users/niemeyer/followers",
+            "following_url": "https://api.github.com/users/niemeyer/following{/other_user}",
+            "gists_url": "https://api.github.com/users/niemeyer/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/niemeyer/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/niemeyer/subscriptions",
+            "organizations_url": "https://api.github.com/users/niemeyer/orgs",
+            "repos_url": "https://api.github.com/users/niemeyer/repos",
+            "events_url": "https://api.github.com/users/niemeyer/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/niemeyer/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It's not clear what the line number and column number information mean here. There is a struct with multiple fields, and only a single exposed number information which maps to the first field apparently. What's are the semantics, and how is it useful?\n",
+        "created_at": "2015-09-25T17:59:58Z",
+        "updated_at": "2015-09-25T17:59:58Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/126#discussion_r40457691",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/126",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/40457691"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/126#discussion_r40457691"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/126"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/40491107",
+        "pull_request_review_id": null,
+        "id": 40491107,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNDkxMTA3",
+        "diff_hunk": "@@ -559,6 +559,17 @@ var unmarshalTests = []struct {\n \t\t\"a: []\",\n \t\t&struct{ A []int }{[]int{}},\n \t},\n+\n+\t// Line number information from parser\n+\t{\n+\t\t\"\\n\\n\\n\\n\\n\\n\\n\\n\\n\\na: one\\nb: two\\nc: three\\n\",\n+\t\t&struct {\n+\t\t\tA    string\n+\t\t\tB    string\n+\t\t\tLine int \",linenum\"\n+\t\t\tCol  int \",colnum\"\n+\t\t}{\"one\", \"two\", 11, 1},",
+        "path": "decode_test.go",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "974d979e37fd602344e02abda7c91bb78675c6df",
+        "original_commit_id": "974d979e37fd602344e02abda7c91bb78675c6df",
+        "user": {
+            "login": "yobert",
+            "id": 205770,
+            "node_id": "MDQ6VXNlcjIwNTc3MA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/205770?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/yobert",
+            "html_url": "https://github.com/yobert",
+            "followers_url": "https://api.github.com/users/yobert/followers",
+            "following_url": "https://api.github.com/users/yobert/following{/other_user}",
+            "gists_url": "https://api.github.com/users/yobert/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/yobert/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/yobert/subscriptions",
+            "organizations_url": "https://api.github.com/users/yobert/orgs",
+            "repos_url": "https://api.github.com/users/yobert/repos",
+            "events_url": "https://api.github.com/users/yobert/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/yobert/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It would be the line and column of where in the YAML that object \"started\". It's not perfectly granular, and only works for objects, so I understand completely if this is too hacky for you to want to add to go-yaml.  My use case is I have a file that has an array of several thousand objects. So when I find an error, I can report on what line that object began.\n",
+        "created_at": "2015-09-26T07:21:48Z",
+        "updated_at": "2015-09-26T07:21:48Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/126#discussion_r40491107",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/126",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/40491107"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/126#discussion_r40491107"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/126"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/75960361",
+        "pull_request_review_id": null,
+        "id": 75960361,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTYwMzYx",
+        "diff_hunk": "@@ -233,10 +236,23 @@ func isBase60Float(s string) (result bool) {\n \treturn base60float.MatchString(s)\n }\n \n+func isDate(s string) (result bool) {\n+\treturn date.MatchString(s)\n+}\n+\n // From http://yaml.org/type/float.html, except the regular expression there\n // is bogus. In practice parsers do not enforce the \"\\.[0-9_]*\" suffix.\n var base60float = regexp.MustCompile(`^[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+(?:\\.[0-9_]*)?$`)\n \n+// From http://yaml.org/type/timestamp.html\n+var date = regexp.MustCompile(`[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]|[0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?([Tt]|[ \\t]+)[0-9][0-9]?:[0-9][0-9]:[0-9][0-9](\\.[0-9]*)?(([ \\t]*)Z|[-+][0-9][0-9]?(:[0-9][0-9])?)?`)\n+\n+func (e *encoder) timev(tag string, in reflect.Value) {\n+\tm := in.Interface().(encoding.TextMarshaler)\n+\ts, _ := m.MarshalText()",
+        "path": "encode.go",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "a5b47d31c556af34a302ce5d659e6fea44d90de0",
+        "original_commit_id": "796e49e7743194a8348a72bb32772a6b95b51126",
+        "user": {
+            "login": "tv42",
+            "id": 419909,
+            "node_id": "MDQ6VXNlcjQxOTkwOQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/419909?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tv42",
+            "html_url": "https://github.com/tv42",
+            "followers_url": "https://api.github.com/users/tv42/followers",
+            "following_url": "https://api.github.com/users/tv42/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tv42/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tv42/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tv42/subscriptions",
+            "organizations_url": "https://api.github.com/users/tv42/orgs",
+            "repos_url": "https://api.github.com/users/tv42/repos",
+            "events_url": "https://api.github.com/users/tv42/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tv42/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Handle your errors.\n",
+        "created_at": "2016-08-23T22:04:39Z",
+        "updated_at": "2016-10-20T18:32:36Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/193#discussion_r75960361",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/193",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/75960361"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/193#discussion_r75960361"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/193"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/75960520",
+        "pull_request_review_id": null,
+        "id": 75960520,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTYwNTIw",
+        "diff_hunk": "@@ -233,10 +236,23 @@ func isBase60Float(s string) (result bool) {\n \treturn base60float.MatchString(s)\n }\n \n+func isDate(s string) (result bool) {\n+\treturn date.MatchString(s)\n+}\n+\n // From http://yaml.org/type/float.html, except the regular expression there\n // is bogus. In practice parsers do not enforce the \"\\.[0-9_]*\" suffix.\n var base60float = regexp.MustCompile(`^[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+(?:\\.[0-9_]*)?$`)\n \n+// From http://yaml.org/type/timestamp.html\n+var date = regexp.MustCompile(`[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]|[0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?([Tt]|[ \\t]+)[0-9][0-9]?:[0-9][0-9]:[0-9][0-9](\\.[0-9]*)?(([ \\t]*)Z|[-+][0-9][0-9]?(:[0-9][0-9])?)?`)\n+\n+func (e *encoder) timev(tag string, in reflect.Value) {\n+\tm := in.Interface().(encoding.TextMarshaler)",
+        "path": "encode.go",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "a5b47d31c556af34a302ce5d659e6fea44d90de0",
+        "original_commit_id": "796e49e7743194a8348a72bb32772a6b95b51126",
+        "user": {
+            "login": "tv42",
+            "id": 419909,
+            "node_id": "MDQ6VXNlcjQxOTkwOQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/419909?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tv42",
+            "html_url": "https://github.com/tv42",
+            "followers_url": "https://api.github.com/users/tv42/followers",
+            "following_url": "https://api.github.com/users/tv42/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tv42/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tv42/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tv42/subscriptions",
+            "organizations_url": "https://api.github.com/users/tv42/orgs",
+            "repos_url": "https://api.github.com/users/tv42/repos",
+            "events_url": "https://api.github.com/users/tv42/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tv42/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This repeats the type assertion from earlier, probably better to make the argument of the right type and just let parent type assert.\n",
+        "created_at": "2016-08-23T22:05:43Z",
+        "updated_at": "2016-10-20T18:32:36Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/193#discussion_r75960520",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/193",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/75960520"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/193#discussion_r75960520"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/193"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/75966901",
+        "pull_request_review_id": null,
+        "id": 75966901,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTY2OTAx",
+        "diff_hunk": "@@ -233,10 +236,23 @@ func isBase60Float(s string) (result bool) {\n \treturn base60float.MatchString(s)\n }\n \n+func isDate(s string) (result bool) {\n+\treturn date.MatchString(s)\n+}\n+\n // From http://yaml.org/type/float.html, except the regular expression there\n // is bogus. In practice parsers do not enforce the \"\\.[0-9_]*\" suffix.\n var base60float = regexp.MustCompile(`^[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+(?:\\.[0-9_]*)?$`)\n \n+// From http://yaml.org/type/timestamp.html\n+var date = regexp.MustCompile(`[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]|[0-9][0-9][0-9][0-9]-[0-9][0-9]?-[0-9][0-9]?([Tt]|[ \\t]+)[0-9][0-9]?:[0-9][0-9]:[0-9][0-9](\\.[0-9]*)?(([ \\t]*)Z|[-+][0-9][0-9]?(:[0-9][0-9])?)?`)\n+\n+func (e *encoder) timev(tag string, in reflect.Value) {\n+\tm := in.Interface().(encoding.TextMarshaler)",
+        "path": "encode.go",
+        "position": null,
+        "original_position": 26,
+        "commit_id": "a5b47d31c556af34a302ce5d659e6fea44d90de0",
+        "original_commit_id": "796e49e7743194a8348a72bb32772a6b95b51126",
+        "user": {
+            "login": "autrilla",
+            "id": 2260567,
+            "node_id": "MDQ6VXNlcjIyNjA1Njc=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/2260567?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/autrilla",
+            "html_url": "https://github.com/autrilla",
+            "followers_url": "https://api.github.com/users/autrilla/followers",
+            "following_url": "https://api.github.com/users/autrilla/following{/other_user}",
+            "gists_url": "https://api.github.com/users/autrilla/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/autrilla/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/autrilla/subscriptions",
+            "organizations_url": "https://api.github.com/users/autrilla/orgs",
+            "repos_url": "https://api.github.com/users/autrilla/repos",
+            "events_url": "https://api.github.com/users/autrilla/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/autrilla/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I don't handle the case of in.Interface() not being a TextMarshaler because that's checked earlier on. I guess in doesn't need to be reflect.Value, but I left it that way because the rest of the functions are also like that.\n",
+        "created_at": "2016-08-23T22:56:52Z",
+        "updated_at": "2016-10-20T18:32:36Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/193#discussion_r75966901",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/193",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/75966901"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/193#discussion_r75966901"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/193"
+            }
+        },
+        "in_reply_to_id": 75960520
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/84822970",
+        "pull_request_review_id": 5575166,
+        "id": 84822970,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg0ODIyOTcw",
+        "diff_hunk": "@@ -76,9 +76,51 @@ type Marshaler interface {\n // See the documentation of Marshal for the format of tags and a list of\n // supported tag options.\n //\n-func Unmarshal(in []byte, out interface{}) (err error) {\n+func Unmarshal(in []byte, out interface{}) error {\n+\treturn unmarshal(newDecoder(), in, out)\n+}\n+\n+// Unmarshal decodes the first document found within the in byte slice\n+// and assigns decoded values into the out value.\n+//\n+// Maps and pointers (to a struct, string, int, etc) are accepted as out\n+// values. If an internal pointer within a struct is not initialized,\n+// the yaml package will initialize it if necessary for unmarshalling\n+// the provided data. The out parameter must not be nil.\n+//\n+// The type of the decoded values should be compatible with the respective\n+// values in out. If one or more values cannot be decoded due to a type\n+// mismatches, decoding continues partially until the end of the YAML\n+// content, and a *yaml.TypeError is returned with details for all\n+// missed values.\n+//\n+// Struct fields are only unmarshalled if they are exported (have an\n+// upper case first letter), and are unmarshalled using the field name\n+// lowercased as the default key. Custom keys may be defined via the\n+// \"yaml\" name in the field tag: the content preceding the first comma\n+// is used as the key, and the following comma-separated options are\n+// used to tweak the marshalling process (see Marshal).\n+// Conflicting names result in a runtime error.\n+//\n+// For example:\n+//\n+//     type T struct {\n+//         F int `yaml:\"a,omitempty\"`\n+//         B int\n+//     }\n+//     var t T\n+//     d := yaml.NewDecoder()\n+//     d.Unmarshal([]byte(\"a: 1\\nb: 2\"), &t)\n+//\n+// See the documentation of Marshal for the format of tags and a list of\n+// supported tag options.\n+//\n+func (d *Decoder) Unmarshal(in []byte, out interface{}) error {",
+        "path": "yaml.go",
+        "position": 44,
+        "original_position": 44,
+        "commit_id": "fffb938cdb2bc399ac985fc495888a4c96637702",
+        "original_commit_id": "fffb938cdb2bc399ac985fc495888a4c96637702",
+        "user": {
+            "login": "nf",
+            "id": 74661,
+            "node_id": "MDQ6VXNlcjc0NjYx",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/74661?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/nf",
+            "html_url": "https://github.com/nf",
+            "followers_url": "https://api.github.com/users/nf/followers",
+            "following_url": "https://api.github.com/users/nf/following{/other_user}",
+            "gists_url": "https://api.github.com/users/nf/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/nf/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/nf/subscriptions",
+            "organizations_url": "https://api.github.com/users/nf/orgs",
+            "repos_url": "https://api.github.com/users/nf/repos",
+            "events_url": "https://api.github.com/users/nf/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/nf/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I suggest `Decode` to go with `Decoder`, a la `encoding/json.Decoder`.\n",
+        "created_at": "2016-10-25T02:48:26Z",
+        "updated_at": "2016-10-25T02:48:26Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/210#discussion_r84822970",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/210",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/84822970"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/210#discussion_r84822970"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/210"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/94768995",
+        "pull_request_review_id": 15304923,
+        "id": 94768995,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk0NzY4OTk1",
+        "diff_hunk": "@@ -2,8 +2,8 @@ package yaml_test\n \n import (\n \t\"errors\"\n+\t\"go.mozilla.org/yaml.v2\"\n \t. \"gopkg.in/check.v1\"\n-\t\"gopkg.in/yaml.v2\"",
+        "path": "decode_test.go",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "bbddbe6626be06e351338447e7b5c1cf78a752a3",
+        "original_commit_id": "149bb1b4e57162c184a00eeba0c658f06342ebe2",
+        "user": {
+            "login": "jvehent",
+            "id": 415617,
+            "node_id": "MDQ6VXNlcjQxNTYxNw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/415617?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jvehent",
+            "html_url": "https://github.com/jvehent",
+            "followers_url": "https://api.github.com/users/jvehent/followers",
+            "following_url": "https://api.github.com/users/jvehent/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jvehent/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jvehent/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jvehent/subscriptions",
+            "organizations_url": "https://api.github.com/users/jvehent/orgs",
+            "repos_url": "https://api.github.com/users/jvehent/repos",
+            "events_url": "https://api.github.com/users/jvehent/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jvehent/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "these import paths changes need to be reverted",
+        "created_at": "2017-01-05T13:43:48Z",
+        "updated_at": "2017-03-29T19:08:29Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/219#discussion_r94768995",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/219",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/94768995"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/219#discussion_r94768995"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/219"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/94769037",
+        "pull_request_review_id": 15304973,
+        "id": 94769037,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk0NzY5MDM3",
+        "diff_hunk": "@@ -7,8 +7,8 @@ import (\n \t\"strings\"\n \t\"time\"\n \n+\t\"go.mozilla.org/yaml.v2\"\n \t. \"gopkg.in/check.v1\"\n-\t\"gopkg.in/yaml.v2\"",
+        "path": "encode_test.go",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "bbddbe6626be06e351338447e7b5c1cf78a752a3",
+        "original_commit_id": "149bb1b4e57162c184a00eeba0c658f06342ebe2",
+        "user": {
+            "login": "jvehent",
+            "id": 415617,
+            "node_id": "MDQ6VXNlcjQxNTYxNw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/415617?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jvehent",
+            "html_url": "https://github.com/jvehent",
+            "followers_url": "https://api.github.com/users/jvehent/followers",
+            "following_url": "https://api.github.com/users/jvehent/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jvehent/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jvehent/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jvehent/subscriptions",
+            "organizations_url": "https://api.github.com/users/jvehent/orgs",
+            "repos_url": "https://api.github.com/users/jvehent/repos",
+            "events_url": "https://api.github.com/users/jvehent/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jvehent/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "these import path changes need to be reverted",
+        "created_at": "2017-01-05T13:44:07Z",
+        "updated_at": "2017-03-29T19:08:29Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/219#discussion_r94769037",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/219",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/94769037"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/219#discussion_r94769037"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/219"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/117238606",
+        "pull_request_review_id": 38927102,
+        "id": 117238606,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNzIzODYwNg==",
+        "diff_hunk": "@@ -81,7 +81,7 @@ func resolvableTag(tag string) bool {\n \treturn false\n }\n \n-var yamlStyleFloat = regexp.MustCompile(`^[-+]?[0-9]*\\.?[0-9]+([eE][-+][0-9]+)?$`)\n+var yamlStyleFloat = regexp.MustCompile(`^[-+]?(0|[1-9][0-9]*)?(\\.[0-9]+)?([eE][-+][0-9]+)?$`)",
+        "path": "resolve.go",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "becf8cb7bf67695d7686db18bd4e3e6c9c863a9d",
+        "original_commit_id": "becf8cb7bf67695d7686db18bd4e3e6c9c863a9d",
+        "user": {
+            "login": "gabriel-samfira",
+            "id": 903160,
+            "node_id": "MDQ6VXNlcjkwMzE2MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/903160?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/gabriel-samfira",
+            "html_url": "https://github.com/gabriel-samfira",
+            "followers_url": "https://api.github.com/users/gabriel-samfira/followers",
+            "following_url": "https://api.github.com/users/gabriel-samfira/following{/other_user}",
+            "gists_url": "https://api.github.com/users/gabriel-samfira/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/gabriel-samfira/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/gabriel-samfira/subscriptions",
+            "organizations_url": "https://api.github.com/users/gabriel-samfira/orgs",
+            "repos_url": "https://api.github.com/users/gabriel-samfira/repos",
+            "events_url": "https://api.github.com/users/gabriel-samfira/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/gabriel-samfira/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Shouldn't this be:\r\n\r\n```go\r\n// the sign of what follows after \"[eE]\" should be optional. \r\nvar yamlStyleFloat = regexp.MustCompile(`^[-+]?(0|[1-9][0-9]*)?(\\.[0-9]+)?([eE][-+]?[0-9]+)?$`)\r\n```\r\n\r\nto allow:\r\n\r\n```go\r\nfloats := []string{\r\n   \"2.2e11\",\r\n   \"2.2e+11\", // same as above, but with an explicit sign\r\n   \"2.2e-11\",\r\n}\r\n```\r\n?",
+        "created_at": "2017-05-18T12:53:39Z",
+        "updated_at": "2017-05-18T12:53:39Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/241#discussion_r117238606",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/241",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/117238606"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/241#discussion_r117238606"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/241"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/117378172",
+        "pull_request_review_id": 39082453,
+        "id": 117378172,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNzM3ODE3Mg==",
+        "diff_hunk": "@@ -81,7 +81,7 @@ func resolvableTag(tag string) bool {\n \treturn false\n }\n \n-var yamlStyleFloat = regexp.MustCompile(`^[-+]?[0-9]*\\.?[0-9]+([eE][-+][0-9]+)?$`)\n+var yamlStyleFloat = regexp.MustCompile(`^[-+]?(0|[1-9][0-9]*)?(\\.[0-9]+)?([eE][-+][0-9]+)?$`)",
+        "path": "resolve.go",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "becf8cb7bf67695d7686db18bd4e3e6c9c863a9d",
+        "original_commit_id": "becf8cb7bf67695d7686db18bd4e3e6c9c863a9d",
+        "user": {
+            "login": "howbazaar",
+            "id": 1744247,
+            "node_id": "MDQ6VXNlcjE3NDQyNDc=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1744247?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/howbazaar",
+            "html_url": "https://github.com/howbazaar",
+            "followers_url": "https://api.github.com/users/howbazaar/followers",
+            "following_url": "https://api.github.com/users/howbazaar/following{/other_user}",
+            "gists_url": "https://api.github.com/users/howbazaar/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/howbazaar/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/howbazaar/subscriptions",
+            "organizations_url": "https://api.github.com/users/howbazaar/orgs",
+            "repos_url": "https://api.github.com/users/howbazaar/repos",
+            "events_url": "https://api.github.com/users/howbazaar/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/howbazaar/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Well the spec says that all exponents must have explicit sign.",
+        "created_at": "2017-05-18T23:40:49Z",
+        "updated_at": "2017-05-18T23:40:49Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/241#discussion_r117378172",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/241",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/117378172"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/241#discussion_r117378172"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/241"
+            }
+        },
+        "in_reply_to_id": 117238606
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/126867251",
+        "pull_request_review_id": 49392244,
+        "id": 126867251,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNjg2NzI1MQ==",
+        "diff_hunk": "@@ -77,8 +77,19 @@ type Marshaler interface {\n // supported tag options.\n //\n func Unmarshal(in []byte, out interface{}) (err error) {\n+\treturn unmarshal(in, out, false)\n+}\n+\n+// UnmarshalStrict decodes the provided yaml just like Unmarshal but returns\n+// type errors also for fields that exists in YAML but are missing from provided",
+        "path": "yaml.go",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "f8db564a0a4a5f6d04f66522493597f18e5ab4ae",
+        "original_commit_id": "da36d083dac53bac434d7a363be4b231bf47a7ce",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "// UnmarshalStrict is like Unmarshal except that any fields that are found\r\n// in the data that do not have corresponding struct members will result in an error.\r\n\r\n?",
+        "created_at": "2017-07-12T05:34:03Z",
+        "updated_at": "2017-07-12T05:44:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/262#discussion_r126867251",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/262",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/126867251"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/262#discussion_r126867251"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/262"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128741931",
+        "pull_request_review_id": 51450744,
+        "id": 128741931,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODc0MTkzMQ==",
+        "diff_hunk": "@@ -1996,14 +1997,15 @@ func yaml_parser_scan_tag_uri(parser *yaml_parser_t, directive bool, head []byte\n \t\t\t}\n \t\t} else {\n \t\t\ts = read(parser, s)\n+\t\t\tlength++",
+        "path": "scannerc.go",
+        "position": 27,
+        "original_position": 27,
+        "commit_id": "9eade332f0ceebc6b7c9e24893574cad4c51722b",
+        "original_commit_id": "9eade332f0ceebc6b7c9e24893574cad4c51722b",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This doesn't work when the tag name consists entirely of URL-escaped characters.",
+        "created_at": "2017-07-21T11:34:48Z",
+        "updated_at": "2017-07-21T11:36:06Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/103#discussion_r128741931",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/103",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128741931"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/103#discussion_r128741931"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/103"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813640",
+        "pull_request_review_id": 51532527,
+        "id": 128813640,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxMzY0MA==",
+        "diff_hunk": "@@ -0,0 +1,64 @@\n+package yaml\n+\n+import (\n+\t\"io\"\n+\t\"reflect\"\n+)\n+\n+type Decoder struct {\n+\td *decoder\n+\tp *parser\n+}\n+\n+func (dec *Decoder) Decode(out interface{}) (err error) {\n+\tdefer handleErr(&err)\n+\tif dec.p.event.typ == yaml_STREAM_END_EVENT {\n+\t\treturn io.EOF\n+\t}\n+\tnode := dec.p.parse()\n+\tif node != nil {\n+\t\tv := reflect.ValueOf(out)\n+\t\tif v.Kind() == reflect.Ptr && !v.IsNil() {\n+\t\t\tv = v.Elem()\n+\t\t}\n+\t\tdec.d.unmarshal(node, v)\n+\t}\n+\tif len(dec.d.terrors) > 0 {\n+\t\treturn &TypeError{dec.d.terrors}\n+\t}\n+\treturn nil\n+}\n+\n+func (dec *Decoder) Close() {\n+\tdec.p.destroy()\n+}\n+\n+func NewDecoder(r io.Reader) *Decoder {\n+\treturn &Decoder{\n+\t\td: newDecoder(),\n+\t\tp: newFileParser(r),\n+\t}\n+}\n+\n+type Encoder struct {\n+\te *encoder\n+}\n+\n+func (enc *Encoder) Encode(in interface{}) (err error) {\n+\tdefer handleErr(&err)\n+\tenc.e.begin()\n+\tenc.e.marshal(\"\", reflect.ValueOf(in))\n+\tenc.e.end()\n+\treturn\n+}\n+\n+func (enc *Encoder) Close() {\n+\tenc.e.finish()",
+        "path": "yamlstream.go",
+        "position": 56,
+        "original_position": 56,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think that this needs a defer handleErr otherwise it can panic if there's an error when the final bytes are written to the stream.",
+        "created_at": "2017-07-21T17:15:01Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813640",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813640"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813640"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813659",
+        "pull_request_review_id": 51532527,
+        "id": 128813659,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxMzY1OQ==",
+        "diff_hunk": "@@ -0,0 +1,64 @@\n+package yaml\n+\n+import (\n+\t\"io\"\n+\t\"reflect\"\n+)\n+\n+type Decoder struct {\n+\td *decoder\n+\tp *parser\n+}\n+\n+func (dec *Decoder) Decode(out interface{}) (err error) {\n+\tdefer handleErr(&err)\n+\tif dec.p.event.typ == yaml_STREAM_END_EVENT {\n+\t\treturn io.EOF\n+\t}\n+\tnode := dec.p.parse()\n+\tif node != nil {\n+\t\tv := reflect.ValueOf(out)\n+\t\tif v.Kind() == reflect.Ptr && !v.IsNil() {\n+\t\t\tv = v.Elem()\n+\t\t}\n+\t\tdec.d.unmarshal(node, v)\n+\t}\n+\tif len(dec.d.terrors) > 0 {\n+\t\treturn &TypeError{dec.d.terrors}\n+\t}\n+\treturn nil\n+}\n+\n+func (dec *Decoder) Close() {\n+\tdec.p.destroy()\n+}\n+\n+func NewDecoder(r io.Reader) *Decoder {\n+\treturn &Decoder{\n+\t\td: newDecoder(),\n+\t\tp: newFileParser(r),\n+\t}\n+}\n+\n+type Encoder struct {",
+        "path": "yamlstream.go",
+        "position": 43,
+        "original_position": 43,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "doc comment please.",
+        "created_at": "2017-07-21T17:15:09Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813659",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813659"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813659"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813686",
+        "pull_request_review_id": 51532527,
+        "id": 128813686,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxMzY4Ng==",
+        "diff_hunk": "@@ -0,0 +1,64 @@\n+package yaml\n+\n+import (\n+\t\"io\"\n+\t\"reflect\"\n+)\n+\n+type Decoder struct {\n+\td *decoder\n+\tp *parser\n+}\n+\n+func (dec *Decoder) Decode(out interface{}) (err error) {\n+\tdefer handleErr(&err)\n+\tif dec.p.event.typ == yaml_STREAM_END_EVENT {\n+\t\treturn io.EOF\n+\t}\n+\tnode := dec.p.parse()\n+\tif node != nil {\n+\t\tv := reflect.ValueOf(out)\n+\t\tif v.Kind() == reflect.Ptr && !v.IsNil() {\n+\t\t\tv = v.Elem()\n+\t\t}\n+\t\tdec.d.unmarshal(node, v)\n+\t}\n+\tif len(dec.d.terrors) > 0 {\n+\t\treturn &TypeError{dec.d.terrors}\n+\t}\n+\treturn nil\n+}\n+\n+func (dec *Decoder) Close() {\n+\tdec.p.destroy()\n+}\n+\n+func NewDecoder(r io.Reader) *Decoder {\n+\treturn &Decoder{\n+\t\td: newDecoder(),\n+\t\tp: newFileParser(r),\n+\t}\n+}\n+\n+type Encoder struct {\n+\te *encoder\n+}\n+\n+func (enc *Encoder) Encode(in interface{}) (err error) {",
+        "path": "yamlstream.go",
+        "position": 47,
+        "original_position": 47,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "doc comment please.",
+        "created_at": "2017-07-21T17:15:16Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813686",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813686"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813686"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813718",
+        "pull_request_review_id": 51532527,
+        "id": 128813718,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxMzcxOA==",
+        "diff_hunk": "@@ -0,0 +1,64 @@\n+package yaml\n+\n+import (\n+\t\"io\"\n+\t\"reflect\"\n+)\n+\n+type Decoder struct {\n+\td *decoder\n+\tp *parser\n+}\n+\n+func (dec *Decoder) Decode(out interface{}) (err error) {\n+\tdefer handleErr(&err)\n+\tif dec.p.event.typ == yaml_STREAM_END_EVENT {\n+\t\treturn io.EOF\n+\t}\n+\tnode := dec.p.parse()\n+\tif node != nil {\n+\t\tv := reflect.ValueOf(out)\n+\t\tif v.Kind() == reflect.Ptr && !v.IsNil() {\n+\t\t\tv = v.Elem()\n+\t\t}\n+\t\tdec.d.unmarshal(node, v)\n+\t}\n+\tif len(dec.d.terrors) > 0 {\n+\t\treturn &TypeError{dec.d.terrors}\n+\t}\n+\treturn nil\n+}\n+\n+func (dec *Decoder) Close() {\n+\tdec.p.destroy()\n+}\n+\n+func NewDecoder(r io.Reader) *Decoder {",
+        "path": "yamlstream.go",
+        "position": 36,
+        "original_position": 36,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "doc comment please.",
+        "created_at": "2017-07-21T17:15:23Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813718",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813718"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813718"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813740",
+        "pull_request_review_id": 51532527,
+        "id": 128813740,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxMzc0MA==",
+        "diff_hunk": "@@ -0,0 +1,64 @@\n+package yaml\n+\n+import (\n+\t\"io\"\n+\t\"reflect\"\n+)\n+\n+type Decoder struct {\n+\td *decoder\n+\tp *parser\n+}\n+\n+func (dec *Decoder) Decode(out interface{}) (err error) {\n+\tdefer handleErr(&err)\n+\tif dec.p.event.typ == yaml_STREAM_END_EVENT {\n+\t\treturn io.EOF\n+\t}\n+\tnode := dec.p.parse()\n+\tif node != nil {\n+\t\tv := reflect.ValueOf(out)\n+\t\tif v.Kind() == reflect.Ptr && !v.IsNil() {\n+\t\t\tv = v.Elem()\n+\t\t}\n+\t\tdec.d.unmarshal(node, v)\n+\t}\n+\tif len(dec.d.terrors) > 0 {\n+\t\treturn &TypeError{dec.d.terrors}\n+\t}\n+\treturn nil\n+}\n+\n+func (dec *Decoder) Close() {",
+        "path": "yamlstream.go",
+        "position": 32,
+        "original_position": 32,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I don't think this method is needed - all the destroy method does is zero some memory. I think we can leave the garbage collector to do that.",
+        "created_at": "2017-07-21T17:15:32Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813740",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813740"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813740"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813762",
+        "pull_request_review_id": 51532527,
+        "id": 128813762,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxMzc2Mg==",
+        "diff_hunk": "@@ -0,0 +1,64 @@\n+package yaml\n+\n+import (\n+\t\"io\"\n+\t\"reflect\"\n+)\n+\n+type Decoder struct {\n+\td *decoder\n+\tp *parser\n+}\n+\n+func (dec *Decoder) Decode(out interface{}) (err error) {",
+        "path": "yamlstream.go",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "doc comment please.",
+        "created_at": "2017-07-21T17:15:38Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813762",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813762"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813762"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813783",
+        "pull_request_review_id": 51532527,
+        "id": 128813783,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxMzc4Mw==",
+        "diff_hunk": "@@ -0,0 +1,64 @@\n+package yaml\n+\n+import (\n+\t\"io\"\n+\t\"reflect\"\n+)\n+\n+type Decoder struct {",
+        "path": "yamlstream.go",
+        "position": 8,
+        "original_position": 8,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "doc comment please.",
+        "created_at": "2017-07-21T17:15:46Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813783",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128813783"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128813783"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128814213",
+        "pull_request_review_id": 51532527,
+        "id": 128814213,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxNDIxMw==",
+        "diff_hunk": "@@ -0,0 +1,64 @@\n+package yaml\n+\n+import (\n+\t\"io\"\n+\t\"reflect\"\n+)\n+\n+type Decoder struct {\n+\td *decoder\n+\tp *parser\n+}\n+\n+func (dec *Decoder) Decode(out interface{}) (err error) {\n+\tdefer handleErr(&err)\n+\tif dec.p.event.typ == yaml_STREAM_END_EVENT {\n+\t\treturn io.EOF\n+\t}\n+\tnode := dec.p.parse()\n+\tif node != nil {\n+\t\tv := reflect.ValueOf(out)\n+\t\tif v.Kind() == reflect.Ptr && !v.IsNil() {\n+\t\t\tv = v.Elem()\n+\t\t}\n+\t\tdec.d.unmarshal(node, v)\n+\t}\n+\tif len(dec.d.terrors) > 0 {\n+\t\treturn &TypeError{dec.d.terrors}\n+\t}\n+\treturn nil\n+}\n+\n+func (dec *Decoder) Close() {\n+\tdec.p.destroy()\n+}\n+\n+func NewDecoder(r io.Reader) *Decoder {\n+\treturn &Decoder{\n+\t\td: newDecoder(),\n+\t\tp: newFileParser(r),\n+\t}\n+}\n+\n+type Encoder struct {\n+\te *encoder\n+}\n+\n+func (enc *Encoder) Encode(in interface{}) (err error) {\n+\tdefer handleErr(&err)\n+\tenc.e.begin()\n+\tenc.e.marshal(\"\", reflect.ValueOf(in))\n+\tenc.e.end()\n+\treturn\n+}\n+\n+func (enc *Encoder) Close() {\n+\tenc.e.finish()\n+\tenc.e.destroy()\n+}\n+\n+func NewEncoder(w io.Writer) *Encoder {",
+        "path": "yamlstream.go",
+        "position": 60,
+        "original_position": 60,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "doc comment please.",
+        "created_at": "2017-07-21T17:17:51Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128814213",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128814213"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128814213"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128814407",
+        "pull_request_review_id": 51532527,
+        "id": 128814407,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxNDQwNw==",
+        "diff_hunk": "@@ -0,0 +1,106 @@\n+package yaml_test\n+\n+import (\n+\t\"bytes\"\n+\t. \"gopkg.in/check.v1\"\n+\t\"gopkg.in/yaml.v2\"\n+\t\"io\"\n+\t\"reflect\"\n+)\n+\n+var decodeStreamTest = []struct {\n+\tdata  string\n+\tvalue interface{}\n+}{\n+\t{\n+\t\t`---\n+time: 20:03:20\n+player: Sammy Sosa\n+action: strike (miss)\n+...\n+---\n+time: 20:03:47\n+player: Sammy Sosa\n+action: grand slam\n+...\n+`,\n+\t\t[]map[string]string{\n+\t\t\t{\"time\": \"20:03:20\", \"player\": \"Sammy Sosa\", \"action\": \"strike (miss)\"},\n+\t\t\t{\"time\": \"20:03:47\", \"player\": \"Sammy Sosa\", \"action\": \"grand slam\"},\n+\t\t},\n+\t},\n+\t{\n+\t\t`---\n+time: 20:03:20\n+player: Sammy Sosa\n+action: strike (miss)\n+---\n+time: 20:03:47\n+player: Sammy Sosa\n+action: grand slam\n+`,\n+\t\t[]map[string]string{\n+\t\t\t{\"time\": \"20:03:20\", \"player\": \"Sammy Sosa\", \"action\": \"strike (miss)\"},\n+\t\t\t{\"time\": \"20:03:47\", \"player\": \"Sammy Sosa\", \"action\": \"grand slam\"},\n+\t\t},\n+\t},\n+}\n+\n+func testDecode(c *C, v reflect.Value, decoder *yaml.Decoder) {\n+\tt := v.Type()\n+\tvar value interface{}\n+\tswitch t.Kind() {\n+\tcase reflect.Map:\n+\t\tvalue = reflect.MakeMap(t).Interface()\n+\tcase reflect.String:\n+\t\tvalue = reflect.New(t).Interface()\n+\tcase reflect.Ptr:\n+\t\tvalue = reflect.New(t.Elem()).Interface()\n+\tdefault:\n+\t\tc.Fatalf(\"missing case for %s\", t)\n+\t}\n+\terr := decoder.Decode(value)\n+\tif _, ok := err.(*yaml.TypeError); !ok {\n+\t\tif err != io.EOF {\n+\t\t\tc.Assert(err, IsNil)\n+\t\t}\n+\t}\n+\tif t.Kind() == reflect.String {\n+\t\tc.Assert(*value.(*string), Equals, v.Interface())\n+\t} else {\n+\t\tc.Assert(value, DeepEquals, v.Interface())",
+        "path": "yamlstream_test.go",
+        "position": 71,
+        "original_position": 71,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We should be able to use DeepEquals even when the value is a string.",
+        "created_at": "2017-07-21T17:18:52Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128814407",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128814407"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128814407"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128816145",
+        "pull_request_review_id": 51532527,
+        "id": 128816145,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxNjE0NQ==",
+        "diff_hunk": "@@ -57,6 +58,22 @@ func newParser(b []byte) *parser {\n \treturn &p\n }\n \n+func newFileParser(r io.Reader) *parser {\n+\tp := parser{}\n+\tif !yaml_parser_initialize(&p.parser) {\n+\t\tpanic(\"failed to initialize YAML emitter\")\n+\t}\n+\n+\tyaml_parser_set_input_file(&p.parser, r)\n+\n+\tp.skip()",
+        "path": "decode.go",
+        "position": 20,
+        "original_position": 20,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm not sure we should be calling skip here -  it means that NewDecoder can fail, and I don't think it's a great idea to make that return an error (it's nice if the YAML API mirrors the encoding/json API).",
+        "created_at": "2017-07-21T17:26:58Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128816145",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128816145"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128816145"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128816754",
+        "pull_request_review_id": 51532527,
+        "id": 128816754,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxNjc1NA==",
+        "diff_hunk": "@@ -30,6 +31,26 @@ func newEncoder() (e *encoder) {\n \treturn e\n }\n \n+func newFileEncoder(w io.Writer) (e *encoder) {\n+\te = &encoder{}\n+\te.must(yaml_emitter_initialize(&e.emitter))\n+\tyaml_emitter_set_output_file(&e.emitter, w)\n+\tyaml_emitter_set_unicode(&e.emitter, true)\n+\te.must(yaml_stream_start_event_initialize(&e.event, yaml_UTF8_ENCODING))",
+        "path": "encode.go",
+        "position": 17,
+        "original_position": 17,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "A similar issue applies here to the one in newFileParser. I don't think this should actually write anything until a value is encoded.",
+        "created_at": "2017-07-21T17:29:47Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128816754",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128816754"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128816754"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128816945",
+        "pull_request_review_id": 51532527,
+        "id": 128816945,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgxNjk0NQ==",
+        "diff_hunk": "@@ -0,0 +1,106 @@\n+package yaml_test",
+        "path": "yamlstream_test.go",
+        "position": 1,
+        "original_position": 1,
+        "commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "original_commit_id": "eff5a1c60ea8e800d16918f354603fc83cce3b07",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We'd need some Encoder tests too, please.",
+        "created_at": "2017-07-21T17:30:42Z",
+        "updated_at": "2017-07-21T17:33:33Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/163#discussion_r128816945",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/163",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128816945"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/163#discussion_r128816945"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/163"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128827709",
+        "pull_request_review_id": 51547988,
+        "id": 128827709,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyODgyNzcwOQ==",
+        "diff_hunk": "@@ -63,6 +65,9 @@ func (l keyList) Less(i, j int) bool {\n \t\tif ai != bi {\n \t\t\treturn ai < bi\n \t\t}\n+\t\tif ar[i] == br[i] {\n+\t\t\tcontinue",
+        "path": "sorter.go",
+        "position": 16,
+        "original_position": 16,
+        "commit_id": "6cb20cf9ab8a601dfe4d316a3dfe082b1a7fdcfe",
+        "original_commit_id": "6cb20cf9ab8a601dfe4d316a3dfe082b1a7fdcfe",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I suspect this may not be quite right. The original code always returned after comparing numbers, but this now means that we can carry on instead. At the least, this introduces quadratic behaviour which might be a problem for long keys with many decimal digits in. I'll need to think some more about this.",
+        "created_at": "2017-07-21T18:17:04Z",
+        "updated_at": "2017-07-21T18:18:34Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/195#discussion_r128827709",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/195",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/128827709"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/195#discussion_r128827709"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/195"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/132055379",
+        "pull_request_review_id": 55096723,
+        "id": 132055379,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjA1NTM3OQ==",
+        "diff_hunk": "@@ -63,6 +65,9 @@ func (l keyList) Less(i, j int) bool {\n \t\tif ai != bi {\n \t\t\treturn ai < bi\n \t\t}\n+\t\tif ar[i] == br[i] {\n+\t\t\tcontinue",
+        "path": "sorter.go",
+        "position": 16,
+        "original_position": 16,
+        "commit_id": "6cb20cf9ab8a601dfe4d316a3dfe082b1a7fdcfe",
+        "original_commit_id": "6cb20cf9ab8a601dfe4d316a3dfe082b1a7fdcfe",
+        "user": {
+            "login": "aviadl",
+            "id": 14630210,
+            "node_id": "MDQ6VXNlcjE0NjMwMjEw",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/14630210?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aviadl",
+            "html_url": "https://github.com/aviadl",
+            "followers_url": "https://api.github.com/users/aviadl/followers",
+            "following_url": "https://api.github.com/users/aviadl/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aviadl/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aviadl/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aviadl/subscriptions",
+            "organizations_url": "https://api.github.com/users/aviadl/orgs",
+            "repos_url": "https://api.github.com/users/aviadl/repos",
+            "events_url": "https://api.github.com/users/aviadl/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aviadl/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@rogpeppe is there a chance that this would be fixed anytime soon, it really hurts us on some scenarios",
+        "created_at": "2017-08-08T23:06:06Z",
+        "updated_at": "2017-08-08T23:06:06Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/195#discussion_r132055379",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/195",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/132055379"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/195#discussion_r132055379"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/195"
+            }
+        },
+        "in_reply_to_id": 128827709
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/132137191",
+        "pull_request_review_id": 55184393,
+        "id": 132137191,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjEzNzE5MQ==",
+        "diff_hunk": "@@ -63,6 +65,9 @@ func (l keyList) Less(i, j int) bool {\n \t\tif ai != bi {\n \t\t\treturn ai < bi\n \t\t}\n+\t\tif ar[i] == br[i] {\n+\t\t\tcontinue",
+        "path": "sorter.go",
+        "position": 16,
+        "original_position": 16,
+        "commit_id": "6cb20cf9ab8a601dfe4d316a3dfe082b1a7fdcfe",
+        "original_commit_id": "6cb20cf9ab8a601dfe4d316a3dfe082b1a7fdcfe",
+        "user": {
+            "login": "aviadl",
+            "id": 14630210,
+            "node_id": "MDQ6VXNlcjE0NjMwMjEw",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/14630210?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aviadl",
+            "html_url": "https://github.com/aviadl",
+            "followers_url": "https://api.github.com/users/aviadl/followers",
+            "following_url": "https://api.github.com/users/aviadl/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aviadl/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aviadl/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aviadl/subscriptions",
+            "organizations_url": "https://api.github.com/users/aviadl/orgs",
+            "repos_url": "https://api.github.com/users/aviadl/repos",
+            "events_url": "https://api.github.com/users/aviadl/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aviadl/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can i offer to simple do a string comparison on the last case:\r\nSo the less function would look like this:\r\n```\r\nfunc (l keyList) Less(i, j int) bool {\r\n\ta := l[i]\r\n\tb := l[j]\r\n\tak := a.Kind()\r\n\tbk := b.Kind()\r\n\tfor (ak == reflect.Interface || ak == reflect.Ptr) && !a.IsNil() {\r\n\t\ta = a.Elem()\r\n\t\tak = a.Kind()\r\n\t}\r\n\tfor (bk == reflect.Interface || bk == reflect.Ptr) && !b.IsNil() {\r\n\t\tb = b.Elem()\r\n\t\tbk = b.Kind()\r\n\t}\r\n\taf, aok := keyFloat(a)\r\n\tbf, bok := keyFloat(b)\r\n\tif aok && bok {\r\n\t\tif af != bf {\r\n\t\t\treturn af < bf\r\n\t\t}\r\n\t\tif ak != bk {\r\n\t\t\treturn ak < bk\r\n\t\t}\r\n\t\treturn numLess(a, b)\r\n\t}\r\n\tif ak != reflect.String || bk != reflect.String {\r\n\t\treturn ak < bk\r\n\t}\r\n\tar, br := a.String(), b.String()\r\n\treturn ar < br\r\n}\r\n```\r\n\r\nMy mine use case is that the output would be consistent.\r\nI don't really care about the order of map, as long as it is consitent",
+        "created_at": "2017-08-09T09:45:41Z",
+        "updated_at": "2017-08-09T09:47:06Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/195#discussion_r132137191",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/195",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/132137191"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/195#discussion_r132137191"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/195"
+            }
+        },
+        "in_reply_to_id": 128827709
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151347685",
+        "pull_request_review_id": 77039534,
+        "id": 151347685,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MTM0NzY4NQ==",
+        "diff_hunk": "@@ -625,7 +635,17 @@ func (d *decoder) mappingStruct(n *node, out reflect.Value) (good bool) {\n \t\tif !d.unmarshal(ni, name) {\n \t\t\tcontinue\n \t\t}\n-\t\tif info, ok := sinfo.FieldsMap[name.String()]; ok {\n+\t\tns := name.String()\n+\t\tif d.strict {\n+\t\t\tfor _, df := range doneFields {",
+        "path": "decode.go",
+        "position": null,
+        "original_position": 40,
+        "commit_id": "d66f1fdf98d2453cad2453fdcd0f64ffcdc42682",
+        "original_commit_id": "9f470fa8d1ac6e6f4dd3aa9059ef7037bdc3467f",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This linear search seems a little more heavyweight than it needs to be. If we keep a unique field index in each fieldInfo (the index into fieldsList could be used when building up the struct info in getStructInfo, perhaps), then doneFields could be a []bool, and checking whether a field has already been done would just require indexing into the slice.",
+        "created_at": "2017-11-16T08:38:01Z",
+        "updated_at": "2018-01-06T07:41:22Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/285#discussion_r151347685",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/285",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151347685"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/285#discussion_r151347685"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/285"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151347867",
+        "pull_request_review_id": 77039534,
+        "id": 151347867,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MTM0Nzg2Nw==",
+        "diff_hunk": "@@ -625,7 +635,17 @@ func (d *decoder) mappingStruct(n *node, out reflect.Value) (good bool) {\n \t\tif !d.unmarshal(ni, name) {\n \t\t\tcontinue\n \t\t}\n-\t\tif info, ok := sinfo.FieldsMap[name.String()]; ok {\n+\t\tns := name.String()\n+\t\tif d.strict {\n+\t\t\tfor _, df := range doneFields {\n+\t\t\t\tif ns == df {\n+\t\t\t\t\td.terrors = append(d.terrors, fmt.Sprintf(\"line %d: field %s already set in struct %s\", n.line+1, ns, out.Type()))",
+        "path": "decode.go",
+        "position": null,
+        "original_position": 42,
+        "commit_id": "d66f1fdf98d2453cad2453fdcd0f64ffcdc42682",
+        "original_commit_id": "9f470fa8d1ac6e6f4dd3aa9059ef7037bdc3467f",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "perhaps `set in type %s` so that we don't stutter when the type is an unnamed struct?",
+        "created_at": "2017-11-16T08:38:51Z",
+        "updated_at": "2018-01-06T07:41:22Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/285#discussion_r151347867",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/285",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151347867"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/285#discussion_r151347867"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/285"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151348167",
+        "pull_request_review_id": 77039534,
+        "id": 151348167,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MTM0ODE2Nw==",
+        "diff_hunk": "@@ -977,14 +978,21 @@ func (s *S) TestUnmarshalSliceOnPreset(c *C) {\n }\n \n func (s *S) TestUnmarshalStrict(c *C) {\n-\tv := struct{ A, B int }{}\n+\tv := struct {\n+\t\tA, B int\n+\t\tZ    map[string]string\n+\t}{}\n \n \terr := yaml.UnmarshalStrict([]byte(\"a: 1\\nb: 2\"), &v)\n \tc.Check(err, IsNil)\n \terr = yaml.Unmarshal([]byte(\"a: 1\\nb: 2\\nc: 3\"), &v)\n \tc.Check(err, IsNil)\n \terr = yaml.UnmarshalStrict([]byte(\"a: 1\\nb: 2\\nc: 3\"), &v)\n-\tc.Check(err, ErrorMatches, \"yaml: unmarshal errors:\\n  line 1: field c not found in struct struct { A int; B int }\")\n+\tc.Check(err, ErrorMatches, \"yaml: unmarshal errors:\\n  line 1: field c not found in struct struct { A int; B int; Z map\\\\[string\\\\]string }\")\n+\terr = yaml.UnmarshalStrict([]byte(\"a: 1\\na: 2\"), &v)\n+\tc.Check(err, ErrorMatches, \"yaml: unmarshal errors:\\n  line 1: field a already set in struct struct { A int; B int; Z map\\\\[string\\\\]string }\")\n+\terr = yaml.UnmarshalStrict([]byte(\"z:\\n  a: 1\\n  a: 1\"), &v)\n+\tc.Check(err, ErrorMatches, \"yaml: unmarshal errors:\\n  line 2: field a already set in map\")",
+        "path": "decode_test.go",
+        "position": null,
+        "original_position": 37,
+        "commit_id": "d66f1fdf98d2453cad2453fdcd0f64ffcdc42682",
+        "original_commit_id": "9f470fa8d1ac6e6f4dd3aa9059ef7037bdc3467f",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let's have a test for unmarshaling duplicate values into a struct with inline members too, please (including an inline struct and a map)",
+        "created_at": "2017-11-16T08:40:26Z",
+        "updated_at": "2018-01-06T07:41:22Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/285#discussion_r151348167",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/285",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151348167"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/285#discussion_r151348167"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/285"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151883752",
+        "pull_request_review_id": 77661309,
+        "id": 151883752,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MTg4Mzc1Mg==",
+        "diff_hunk": "@@ -625,7 +635,17 @@ func (d *decoder) mappingStruct(n *node, out reflect.Value) (good bool) {\n \t\tif !d.unmarshal(ni, name) {\n \t\t\tcontinue\n \t\t}\n-\t\tif info, ok := sinfo.FieldsMap[name.String()]; ok {\n+\t\tns := name.String()\n+\t\tif d.strict {\n+\t\t\tfor _, df := range doneFields {",
+        "path": "decode.go",
+        "position": null,
+        "original_position": 40,
+        "commit_id": "d66f1fdf98d2453cad2453fdcd0f64ffcdc42682",
+        "original_commit_id": "9f470fa8d1ac6e6f4dd3aa9059ef7037bdc3467f",
+        "user": {
+            "login": "aeijdenberg",
+            "id": 5984070,
+            "node_id": "MDQ6VXNlcjU5ODQwNzA=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/5984070?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aeijdenberg",
+            "html_url": "https://github.com/aeijdenberg",
+            "followers_url": "https://api.github.com/users/aeijdenberg/followers",
+            "following_url": "https://api.github.com/users/aeijdenberg/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aeijdenberg/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aeijdenberg/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aeijdenberg/subscriptions",
+            "organizations_url": "https://api.github.com/users/aeijdenberg/orgs",
+            "repos_url": "https://api.github.com/users/aeijdenberg/repos",
+            "events_url": "https://api.github.com/users/aeijdenberg/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aeijdenberg/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I nearly followed this, but got a bit lost trying to understand the `InlineMap` stuff...\r\n\r\nInstead I changed `doneFields` to a `map[string]bool` - which I think at minimum makes the code easier to read.",
+        "created_at": "2017-11-20T00:05:18Z",
+        "updated_at": "2018-01-06T07:41:22Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/285#discussion_r151883752",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/285",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151883752"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/285#discussion_r151883752"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/285"
+            }
+        },
+        "in_reply_to_id": 151347685
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151883763",
+        "pull_request_review_id": 77661324,
+        "id": 151883763,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MTg4Mzc2Mw==",
+        "diff_hunk": "@@ -625,7 +635,17 @@ func (d *decoder) mappingStruct(n *node, out reflect.Value) (good bool) {\n \t\tif !d.unmarshal(ni, name) {\n \t\t\tcontinue\n \t\t}\n-\t\tif info, ok := sinfo.FieldsMap[name.String()]; ok {\n+\t\tns := name.String()\n+\t\tif d.strict {\n+\t\t\tfor _, df := range doneFields {\n+\t\t\t\tif ns == df {\n+\t\t\t\t\td.terrors = append(d.terrors, fmt.Sprintf(\"line %d: field %s already set in struct %s\", n.line+1, ns, out.Type()))",
+        "path": "decode.go",
+        "position": null,
+        "original_position": 42,
+        "commit_id": "d66f1fdf98d2453cad2453fdcd0f64ffcdc42682",
+        "original_commit_id": "9f470fa8d1ac6e6f4dd3aa9059ef7037bdc3467f",
+        "user": {
+            "login": "aeijdenberg",
+            "id": 5984070,
+            "node_id": "MDQ6VXNlcjU5ODQwNzA=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/5984070?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aeijdenberg",
+            "html_url": "https://github.com/aeijdenberg",
+            "followers_url": "https://api.github.com/users/aeijdenberg/followers",
+            "following_url": "https://api.github.com/users/aeijdenberg/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aeijdenberg/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aeijdenberg/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aeijdenberg/subscriptions",
+            "organizations_url": "https://api.github.com/users/aeijdenberg/orgs",
+            "repos_url": "https://api.github.com/users/aeijdenberg/repos",
+            "events_url": "https://api.github.com/users/aeijdenberg/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aeijdenberg/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Fixed.",
+        "created_at": "2017-11-20T00:05:42Z",
+        "updated_at": "2018-01-06T07:41:22Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/285#discussion_r151883763",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/285",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151883763"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/285#discussion_r151883763"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/285"
+            }
+        },
+        "in_reply_to_id": 151347867
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151884285",
+        "pull_request_review_id": 77661848,
+        "id": 151884285,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MTg4NDI4NQ==",
+        "diff_hunk": "@@ -977,14 +978,21 @@ func (s *S) TestUnmarshalSliceOnPreset(c *C) {\n }\n \n func (s *S) TestUnmarshalStrict(c *C) {\n-\tv := struct{ A, B int }{}\n+\tv := struct {\n+\t\tA, B int\n+\t\tZ    map[string]string\n+\t}{}\n \n \terr := yaml.UnmarshalStrict([]byte(\"a: 1\\nb: 2\"), &v)\n \tc.Check(err, IsNil)\n \terr = yaml.Unmarshal([]byte(\"a: 1\\nb: 2\\nc: 3\"), &v)\n \tc.Check(err, IsNil)\n \terr = yaml.UnmarshalStrict([]byte(\"a: 1\\nb: 2\\nc: 3\"), &v)\n-\tc.Check(err, ErrorMatches, \"yaml: unmarshal errors:\\n  line 1: field c not found in struct struct { A int; B int }\")\n+\tc.Check(err, ErrorMatches, \"yaml: unmarshal errors:\\n  line 1: field c not found in struct struct { A int; B int; Z map\\\\[string\\\\]string }\")\n+\terr = yaml.UnmarshalStrict([]byte(\"a: 1\\na: 2\"), &v)\n+\tc.Check(err, ErrorMatches, \"yaml: unmarshal errors:\\n  line 1: field a already set in struct struct { A int; B int; Z map\\\\[string\\\\]string }\")\n+\terr = yaml.UnmarshalStrict([]byte(\"z:\\n  a: 1\\n  a: 1\"), &v)\n+\tc.Check(err, ErrorMatches, \"yaml: unmarshal errors:\\n  line 2: field a already set in map\")",
+        "path": "decode_test.go",
+        "position": null,
+        "original_position": 37,
+        "commit_id": "d66f1fdf98d2453cad2453fdcd0f64ffcdc42682",
+        "original_commit_id": "9f470fa8d1ac6e6f4dd3aa9059ef7037bdc3467f",
+        "user": {
+            "login": "aeijdenberg",
+            "id": 5984070,
+            "node_id": "MDQ6VXNlcjU5ODQwNzA=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/5984070?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aeijdenberg",
+            "html_url": "https://github.com/aeijdenberg",
+            "followers_url": "https://api.github.com/users/aeijdenberg/followers",
+            "following_url": "https://api.github.com/users/aeijdenberg/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aeijdenberg/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aeijdenberg/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aeijdenberg/subscriptions",
+            "organizations_url": "https://api.github.com/users/aeijdenberg/orgs",
+            "repos_url": "https://api.github.com/users/aeijdenberg/repos",
+            "events_url": "https://api.github.com/users/aeijdenberg/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aeijdenberg/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Added, I think - I hadn't seen this form before so not 100% confident.",
+        "created_at": "2017-11-20T00:19:40Z",
+        "updated_at": "2018-01-06T07:41:22Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/285#discussion_r151884285",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/285",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151884285"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/285#discussion_r151884285"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/285"
+            }
+        },
+        "in_reply_to_id": 151348167
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151350062",
+        "pull_request_review_id": 77039534,
+        "id": 151350062,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MTM1MDA2Mg==",
+        "diff_hunk": "@@ -507,6 +507,15 @@ func (d *decoder) sequence(n *node, out reflect.Value) (good bool) {\n \treturn true\n }\n \n+func (d *decoder) setMapIndex(n *node, out, k, v reflect.Value) {\n+\tif d.strict {\n+\t\tif out.MapIndex(k) != zeroValue {\n+\t\t\td.terrors = append(d.terrors, fmt.Sprintf(\"line %d: field %s already set in map\", n.line+1, k.String()))",
+        "path": "decode.go",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "d66f1fdf98d2453cad2453fdcd0f64ffcdc42682",
+        "original_commit_id": "9f470fa8d1ac6e6f4dd3aa9059ef7037bdc3467f",
+        "user": {
+            "login": "rogpeppe",
+            "id": 66491,
+            "node_id": "MDQ6VXNlcjY2NDkx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/66491?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rogpeppe",
+            "html_url": "https://github.com/rogpeppe",
+            "followers_url": "https://api.github.com/users/rogpeppe/followers",
+            "following_url": "https://api.github.com/users/rogpeppe/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rogpeppe/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rogpeppe/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rogpeppe/subscriptions",
+            "organizations_url": "https://api.github.com/users/rogpeppe/orgs",
+            "repos_url": "https://api.github.com/users/rogpeppe/repos",
+            "events_url": "https://api.github.com/users/rogpeppe/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rogpeppe/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Shouldn't this return without setting the value? (not that it matters that much I guess)",
+        "created_at": "2017-11-16T08:49:49Z",
+        "updated_at": "2018-01-06T07:42:25Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/285#discussion_r151350062",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/285",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151350062"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/285#discussion_r151350062"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/285"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151883505",
+        "pull_request_review_id": 77661066,
+        "id": 151883505,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1MTg4MzUwNQ==",
+        "diff_hunk": "@@ -507,6 +507,15 @@ func (d *decoder) sequence(n *node, out reflect.Value) (good bool) {\n \treturn true\n }\n \n+func (d *decoder) setMapIndex(n *node, out, k, v reflect.Value) {\n+\tif d.strict {\n+\t\tif out.MapIndex(k) != zeroValue {\n+\t\t\td.terrors = append(d.terrors, fmt.Sprintf(\"line %d: field %s already set in map\", n.line+1, k.String()))",
+        "path": "decode.go",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "d66f1fdf98d2453cad2453fdcd0f64ffcdc42682",
+        "original_commit_id": "9f470fa8d1ac6e6f4dd3aa9059ef7037bdc3467f",
+        "user": {
+            "login": "aeijdenberg",
+            "id": 5984070,
+            "node_id": "MDQ6VXNlcjU5ODQwNzA=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/5984070?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aeijdenberg",
+            "html_url": "https://github.com/aeijdenberg",
+            "followers_url": "https://api.github.com/users/aeijdenberg/followers",
+            "following_url": "https://api.github.com/users/aeijdenberg/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aeijdenberg/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aeijdenberg/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aeijdenberg/subscriptions",
+            "organizations_url": "https://api.github.com/users/aeijdenberg/orgs",
+            "repos_url": "https://api.github.com/users/aeijdenberg/repos",
+            "events_url": "https://api.github.com/users/aeijdenberg/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aeijdenberg/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "While it probably doesn't matter much, I agree it shouldn't set a value after it's decided that's an error. Fixing as suggested.",
+        "created_at": "2017-11-19T23:58:12Z",
+        "updated_at": "2018-01-06T07:42:25Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/285#discussion_r151883505",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/285",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/151883505"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/285#discussion_r151883505"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/285"
+            }
+        },
+        "in_reply_to_id": 151350062
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/195407204",
+        "pull_request_review_id": 128769900,
+        "id": 195407204,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NTQwNzIwNA==",
+        "diff_hunk": "@@ -1324,3 +1325,26 @@ func (s *S) TestFuzzCrashers(c *C) {\n //\t\tyaml.Marshal(&v)\n //\t}\n //}\n+\n+func (s *S) TestLimitRecursion(c *C) {\n+\tbombCase := `\n+version: \"3\"\n+services: &services [\"lol\",\"lol\",\"lol\",\"lol\",\"lol\",\"lol\",\"lol\",\"lol\",\"lol\"]\n+b: &b [*services,*services,*services,*services,*services,*services,*services,*services,*services]\n+c: &c [*b,*b,*b,*b,*b,*b,*b,*b,*b]\n+d: &d [*c,*c,*c,*c,*c,*c,*c,*c,*c]\n+e: &e [*d,*d,*d,*d,*d,*d,*d,*d,*d]\n+f: &f [*e,*e,*e,*e,*e,*e,*e,*e,*e]\n+g: &g [*f,*f,*f,*f,*f,*f,*f,*f,*f]\n+h: &h [*g,*g,*g,*g,*g,*g,*g,*g,*g]\n+i: &i [*h,*h,*h,*h,*h,*h,*h,*h,*h]`\n+\tvar v map[string]interface{}\n+\td := yaml.NewDecoder(bytes.NewBuffer([]byte(bombCase)), yaml.WithLimitDecodedValuesCount(100000))\n+\terr := d.Decode(&v)\n+\tc.Assert(err, ErrorMatches, `yaml: exceeded max number of decoded values \\(100000\\)`)\n+\tordinalCase := `hello: world`\n+\td = yaml.NewDecoder(bytes.NewBuffer([]byte(ordinalCase)), yaml.WithLimitDecodedValuesCount(3))\n+\t// decoded values are [Hello, World, [Hello:World pair]]\n+\terr = d.Decode(&v)\n+\tc.Assert(err, Equals, nil)",
+        "path": "decode_test.go",
+        "position": null,
+        "original_position": 33,
+        "commit_id": "69d7a9804db8b5ff0515d2689ad34b6e55065fa9",
+        "original_commit_id": "c86e64ed9581b7588e736f0c3e6ecc02cc22996e",
+        "user": {
+            "login": "silvin-lubecki",
+            "id": 31478878,
+            "node_id": "MDQ6VXNlcjMxNDc4ODc4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/31478878?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/silvin-lubecki",
+            "html_url": "https://github.com/silvin-lubecki",
+            "followers_url": "https://api.github.com/users/silvin-lubecki/followers",
+            "following_url": "https://api.github.com/users/silvin-lubecki/following{/other_user}",
+            "gists_url": "https://api.github.com/users/silvin-lubecki/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/silvin-lubecki/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/silvin-lubecki/subscriptions",
+            "organizations_url": "https://api.github.com/users/silvin-lubecki/orgs",
+            "repos_url": "https://api.github.com/users/silvin-lubecki/repos",
+            "events_url": "https://api.github.com/users/silvin-lubecki/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/silvin-lubecki/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "c.Assert(err, IsNil)",
+        "created_at": "2018-06-14T12:44:28Z",
+        "updated_at": "2018-06-14T16:15:36Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/375#discussion_r195407204",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/375",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/195407204"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/375#discussion_r195407204"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/375"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/195407362",
+        "pull_request_review_id": 128769900,
+        "id": 195407362,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NTQwNzM2Mg==",
+        "diff_hunk": "@@ -89,26 +89,45 @@ func UnmarshalStrict(in []byte, out interface{}) (err error) {\n \treturn unmarshal(in, out, true)\n }\n \n+// DecoderOption is an option to apply to modyfy a decoder's behavior",
+        "path": "yaml.go",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "69d7a9804db8b5ff0515d2689ad34b6e55065fa9",
+        "original_commit_id": "c86e64ed9581b7588e736f0c3e6ecc02cc22996e",
+        "user": {
+            "login": "silvin-lubecki",
+            "id": 31478878,
+            "node_id": "MDQ6VXNlcjMxNDc4ODc4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/31478878?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/silvin-lubecki",
+            "html_url": "https://github.com/silvin-lubecki",
+            "followers_url": "https://api.github.com/users/silvin-lubecki/followers",
+            "following_url": "https://api.github.com/users/silvin-lubecki/following{/other_user}",
+            "gists_url": "https://api.github.com/users/silvin-lubecki/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/silvin-lubecki/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/silvin-lubecki/subscriptions",
+            "organizations_url": "https://api.github.com/users/silvin-lubecki/orgs",
+            "repos_url": "https://api.github.com/users/silvin-lubecki/repos",
+            "events_url": "https://api.github.com/users/silvin-lubecki/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/silvin-lubecki/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "typo: s/modyfy/modify",
+        "created_at": "2018-06-14T12:44:59Z",
+        "updated_at": "2018-06-14T16:15:36Z",
+        "html_url": "https://github.com/go-yaml/yaml/pull/375#discussion_r195407362",
+        "pull_request_url": "https://api.github.com/repos/go-yaml/yaml/pulls/375",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/comments/195407362"
+            },
+            "html": {
+                "href": "https://github.com/go-yaml/yaml/pull/375#discussion_r195407362"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/go-yaml/yaml/pulls/375"
+            }
+        }
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "url": "https://api.github.com/repos/overtake/telegram/pulls/comments/45525037",
+        "pull_request_review_id": null,
+        "id": 45525037,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1NTI1MDM3",
+        "diff_hunk": "@@ -0,0 +1,50 @@\n+/* \n+  Localizable.strings\n+  Telegram\n+\n+  Created by keepcoder on 20.05.15.\n+  Copyright (c) 2015 keepcoder. All rights reserved.\n+*/\n+\"Search\" = \"S\u00f8k\";\n+\"Passcode.EnterPlaceholder\" = \"Tast inn passkoden\";\n+\"NoAuthDescription\" = \"Beklager. Du trenger innloggingsinformasjon fra hovedapplikasjonen for \u00e5 benytte deg av delingsmenyen.\";\n+\n+\"Time.at\" = \"klokken\";\n+\"Time.last_seen\" = \"sett sist\";\n+\"Time.today\" = \"i dag\";\n+\"Time.tomorrow\" = \"i morgen\";\n+\"Time.yesterday\" = \"i g\u00e5r\";\n+\"Time.agoHour\" = \"%d time siden\";\n+\"Time.agoHours\" = \"%d timer siden\";\n+\"Time.agoMinute\" = \"%d minutt siden\";\n+\"Time.agoMinutes\" = \"%d minutter siden\";\n+\"Time.justnow\" = \"akkurat n\u00e5\";\n+\n+\"Weekday.Friday\" = \"Fredag\";\n+\"Weekday.Monday\" = \"Mandag\";\n+\"Weekday.Saturday\" = \"S\u00f8ndag\";",
+        "path": "TGShare/no.lproj/Localizable.strings",
+        "position": 25,
+        "original_position": 25,
+        "commit_id": "3822fa6ace63a7dbf429a60a06895da33538aa65",
+        "original_commit_id": "3822fa6ace63a7dbf429a60a06895da33538aa65",
+        "user": {
+            "login": "ts95",
+            "id": 1880556,
+            "node_id": "MDQ6VXNlcjE4ODA1NTY=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1880556?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ts95",
+            "html_url": "https://github.com/ts95",
+            "followers_url": "https://api.github.com/users/ts95/followers",
+            "following_url": "https://api.github.com/users/ts95/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ts95/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ts95/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ts95/subscriptions",
+            "organizations_url": "https://api.github.com/users/ts95/orgs",
+            "repos_url": "https://api.github.com/users/ts95/repos",
+            "events_url": "https://api.github.com/users/ts95/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ts95/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Should be `+\"Weekday.Saturday\" = \"L\u00f8rdag\";`.\n",
+        "created_at": "2015-11-20T22:07:22Z",
+        "updated_at": "2015-11-20T22:11:18Z",
+        "html_url": "https://github.com/overtake/telegram/pull/202#discussion_r45525037",
+        "pull_request_url": "https://api.github.com/repos/overtake/telegram/pulls/202",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/overtake/telegram/pulls/comments/45525037"
+            },
+            "html": {
+                "href": "https://github.com/overtake/telegram/pull/202#discussion_r45525037"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/overtake/telegram/pulls/202"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/overtake/telegram/pulls/comments/96138268",
+        "pull_request_review_id": 16714719,
+        "id": 96138268,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk2MTM4MjY4",
+        "diff_hunk": "@@ -738,14 +741,7 @@ typedef NS_OPTIONS(NSUInteger, NSEventModifierFlags) {\n                 [TMViewController becomePasslock];\n             }\n         }\n-        \n-        if(result.keyCode == 48) {\n-          //  NSTextView *textView = responder;\n-            \n-            \n-            return [[NSEvent alloc]init];\n-        }\n-        \n+",
+        "path": "TelegramTest/AppDelegate.m",
+        "position": null,
+        "original_position": 24,
+        "commit_id": "35cecdeeb76e87f29bd9ce41708bee61a677d85c",
+        "original_commit_id": "4e0da3d7a22866a31b92620e5d823c1cfc873bde",
+        "user": {
+            "login": "yangshun",
+            "id": 1315101,
+            "node_id": "MDQ6VXNlcjEzMTUxMDE=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1315101?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/yangshun",
+            "html_url": "https://github.com/yangshun",
+            "followers_url": "https://api.github.com/users/yangshun/followers",
+            "following_url": "https://api.github.com/users/yangshun/following{/other_user}",
+            "gists_url": "https://api.github.com/users/yangshun/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/yangshun/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/yangshun/subscriptions",
+            "organizations_url": "https://api.github.com/users/yangshun/orgs",
+            "repos_url": "https://api.github.com/users/yangshun/repos",
+            "events_url": "https://api.github.com/users/yangshun/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/yangshun/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm not sure why this chunk is here but it blocks the tab events from propagating.",
+        "created_at": "2017-01-15T13:49:56Z",
+        "updated_at": "2017-01-15T14:10:46Z",
+        "html_url": "https://github.com/overtake/telegram/pull/381#discussion_r96138268",
+        "pull_request_url": "https://api.github.com/repos/overtake/telegram/pulls/381",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/overtake/telegram/pulls/comments/96138268"
+            },
+            "html": {
+                "href": "https://github.com/overtake/telegram/pull/381#discussion_r96138268"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/overtake/telegram/pulls/381"
+            }
+        }
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "url": "https://api.github.com/repos/stig/json-framework/pulls/comments/69535601",
+        "pull_request_review_id": null,
+        "id": 69535601,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NTM1NjAx",
+        "diff_hunk": "@@ -630,9 +708,11 @@\n \t\t\t\tDYLIB_COMPATIBILITY_VERSION = 1;\n \t\t\t\tDYLIB_CURRENT_VERSION = 39;\n \t\t\t\tFRAMEWORK_VERSION = A;\n+\t\t\t\tGCC_OPTIMIZATION_LEVEL = 0;",
+        "path": "SBJson.xcodeproj/project.pbxproj",
+        "position": 219,
+        "original_position": 247,
+        "commit_id": "207dfa39913644629407028b27386905e39c1698",
+        "original_commit_id": "191b0ad920e2f3e72d806b6dcbd32664c26ea5d3",
+        "user": {
+            "login": "stig",
+            "id": 45407,
+            "node_id": "MDQ6VXNlcjQ1NDA3",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/45407?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/stig",
+            "html_url": "https://github.com/stig",
+            "followers_url": "https://api.github.com/users/stig/followers",
+            "following_url": "https://api.github.com/users/stig/following{/other_user}",
+            "gists_url": "https://api.github.com/users/stig/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/stig/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/stig/subscriptions",
+            "organizations_url": "https://api.github.com/users/stig/orgs",
+            "repos_url": "https://api.github.com/users/stig/repos",
+            "events_url": "https://api.github.com/users/stig/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/stig/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I suspect this is not required? Could we leave this to the default please?\n",
+        "created_at": "2016-07-05T09:51:02Z",
+        "updated_at": "2016-07-05T11:25:21Z",
+        "html_url": "https://github.com/stig/json-framework/pull/216#discussion_r69535601",
+        "pull_request_url": "https://api.github.com/repos/stig/json-framework/pulls/216",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stig/json-framework/pulls/comments/69535601"
+            },
+            "html": {
+                "href": "https://github.com/stig/json-framework/pull/216#discussion_r69535601"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stig/json-framework/pulls/216"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/stig/json-framework/pulls/comments/69547387",
+        "pull_request_review_id": null,
+        "id": 69547387,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5NTQ3Mzg3",
+        "diff_hunk": "@@ -630,9 +708,11 @@\n \t\t\t\tDYLIB_COMPATIBILITY_VERSION = 1;\n \t\t\t\tDYLIB_CURRENT_VERSION = 39;\n \t\t\t\tFRAMEWORK_VERSION = A;\n+\t\t\t\tGCC_OPTIMIZATION_LEVEL = 0;",
+        "path": "SBJson.xcodeproj/project.pbxproj",
+        "position": 219,
+        "original_position": 247,
+        "commit_id": "207dfa39913644629407028b27386905e39c1698",
+        "original_commit_id": "191b0ad920e2f3e72d806b6dcbd32664c26ea5d3",
+        "user": {
+            "login": "hotbott",
+            "id": 6315122,
+            "node_id": "MDQ6VXNlcjYzMTUxMjI=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/6315122?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hotbott",
+            "html_url": "https://github.com/hotbott",
+            "followers_url": "https://api.github.com/users/hotbott/followers",
+            "following_url": "https://api.github.com/users/hotbott/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hotbott/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hotbott/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hotbott/subscriptions",
+            "organizations_url": "https://api.github.com/users/hotbott/orgs",
+            "repos_url": "https://api.github.com/users/hotbott/repos",
+            "events_url": "https://api.github.com/users/hotbott/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hotbott/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This setting is only in the Debug configuration. Otherwise it's hard to debug if you consume the framework via Carthage.\nRelease is still default `Fastest, Smallest [-Os]`.\n",
+        "created_at": "2016-07-05T11:30:29Z",
+        "updated_at": "2016-07-05T11:30:29Z",
+        "html_url": "https://github.com/stig/json-framework/pull/216#discussion_r69547387",
+        "pull_request_url": "https://api.github.com/repos/stig/json-framework/pulls/216",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/stig/json-framework/pulls/comments/69547387"
+            },
+            "html": {
+                "href": "https://github.com/stig/json-framework/pull/216#discussion_r69547387"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/stig/json-framework/pulls/216"
+            }
+        }
+    }
+]

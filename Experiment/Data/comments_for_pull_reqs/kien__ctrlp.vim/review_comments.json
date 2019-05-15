@@ -1,0 +1,100 @@
+[
+    {
+        "url": "https://api.github.com/repos/kien/ctrlp.vim/pulls/comments/1587345",
+        "pull_request_review_id": null,
+        "id": 1587345,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1ODczNDU=",
+        "diff_hunk": "@@ -529,6 +535,20 @@ fu! s:BuildPrompt(upd)\n \t\texe 'echoh' hibase '| echon \"_\" | echoh None'\n \ten\n endf\n+\n+fu! s:KeyLoop()\n+\twh exists('s:focus') && s:focus\n+\t\tredraw\n+\t\tlet n = getchar()\n+\t\tlet c = type(n) == 0 ? nr2char(n) : n\n+\t\tif n >=# 0x20\n+\t\t\tcal s:PrtFocusMap(c)\n+\t\tel\n+\t\t\texe \"keepj normal\" c",
+        "path": "autoload/ctrlp.vim",
+        "position": null,
+        "original_position": 33,
+        "commit_id": "f3f6c03c2660fc595b94e7f2e5abe1a4481cb8f4",
+        "original_commit_id": "f9d063190d6b1dd7530cb85244e824c902dadcab",
+        "user": {
+            "login": "kien",
+            "id": 540426,
+            "node_id": "MDQ6VXNlcjU0MDQyNg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/540426?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kien",
+            "html_url": "https://github.com/kien",
+            "followers_url": "https://api.github.com/users/kien/followers",
+            "following_url": "https://api.github.com/users/kien/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kien/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kien/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kien/subscriptions",
+            "organizations_url": "https://api.github.com/users/kien/orgs",
+            "repos_url": "https://api.github.com/users/kien/repos",
+            "events_url": "https://api.github.com/users/kien/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kien/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is this supposed to be `normal!` with an `!`?\n\nEdit: nvm, should have read it more carefully instead of reflexively asking where the `!` went.\n",
+        "created_at": "2012-09-12T14:30:37Z",
+        "updated_at": "2012-09-13T01:16:38Z",
+        "html_url": "https://github.com/kien/ctrlp.vim/pull/276#discussion_r1587345",
+        "pull_request_url": "https://api.github.com/repos/kien/ctrlp.vim/pulls/276",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/kien/ctrlp.vim/pulls/comments/1587345"
+            },
+            "html": {
+                "href": "https://github.com/kien/ctrlp.vim/pull/276#discussion_r1587345"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/kien/ctrlp.vim/pulls/276"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/kien/ctrlp.vim/pulls/comments/6995125",
+        "pull_request_review_id": null,
+        "id": 6995125,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY5OTUxMjU=",
+        "diff_hunk": "@@ -1084,8 +1084,11 @@ fu! s:AcceptSelection(action)\n \t\t\tlet type = exttype == 'dict' ? exttype : 'list'\n \t\ten\n \ten\n-\tlet actargs = type == 'dict' ? [{ 'action': md, 'line': line, 'icr': icr }]",
+        "path": "autoload/ctrlp.vim",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "bc44c3860e875acb8a2c9b0ec39c54e9196be388",
+        "original_commit_id": "bc44c3860e875acb8a2c9b0ec39c54e9196be388",
+        "user": {
+            "login": "davebv",
+            "id": 67429,
+            "node_id": "MDQ6VXNlcjY3NDI5",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/67429?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/davebv",
+            "html_url": "https://github.com/davebv",
+            "followers_url": "https://api.github.com/users/davebv/followers",
+            "following_url": "https://api.github.com/users/davebv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/davebv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/davebv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/davebv/subscriptions",
+            "organizations_url": "https://api.github.com/users/davebv/orgs",
+            "repos_url": "https://api.github.com/users/davebv/repos",
+            "events_url": "https://api.github.com/users/davebv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/davebv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Invalid expression error was triggered with this line.\n",
+        "created_at": "2013-10-16T08:43:45Z",
+        "updated_at": "2013-10-16T08:43:45Z",
+        "html_url": "https://github.com/kien/ctrlp.vim/pull/491#discussion_r6995125",
+        "pull_request_url": "https://api.github.com/repos/kien/ctrlp.vim/pulls/491",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/kien/ctrlp.vim/pulls/comments/6995125"
+            },
+            "html": {
+                "href": "https://github.com/kien/ctrlp.vim/pull/491#discussion_r6995125"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/kien/ctrlp.vim/pulls/491"
+            }
+        }
+    }
+]

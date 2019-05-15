@@ -1,0 +1,51 @@
+[
+    {
+        "url": "https://api.github.com/repos/millermedeiros/js-signals/pulls/comments/32120207",
+        "pull_request_review_id": null,
+        "id": 32120207,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyMTIwMjA3",
+        "diff_hunk": "@@ -205,9 +205,13 @@\n             if (! this.active) {\n                 return;\n             }\n+            \n+            var len = arguments.length, paramsArr = new Array(len);",
+        "path": "src/Signal.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "9749c33811066064461b71e42a6281699c53fcd5",
+        "original_commit_id": "691ae4b21732db92c125436b5860d2f1622b61d2",
+        "user": {
+            "login": "millermedeiros",
+            "id": 155633,
+            "node_id": "MDQ6VXNlcjE1NTYzMw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/155633?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/millermedeiros",
+            "html_url": "https://github.com/millermedeiros",
+            "followers_url": "https://api.github.com/users/millermedeiros/followers",
+            "following_url": "https://api.github.com/users/millermedeiros/following{/other_user}",
+            "gists_url": "https://api.github.com/users/millermedeiros/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/millermedeiros/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/millermedeiros/subscriptions",
+            "organizations_url": "https://api.github.com/users/millermedeiros/orgs",
+            "repos_url": "https://api.github.com/users/millermedeiros/repos",
+            "events_url": "https://api.github.com/users/millermedeiros/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/millermedeiros/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "can you add a comment explaining why we are not using `Array#slice.call` for future reference? (just so in +6mo we still know why it was implemented like this)\n",
+        "created_at": "2015-06-10T14:06:25Z",
+        "updated_at": "2015-06-10T14:20:33Z",
+        "html_url": "https://github.com/millermedeiros/js-signals/pull/68#discussion_r32120207",
+        "pull_request_url": "https://api.github.com/repos/millermedeiros/js-signals/pulls/68",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/millermedeiros/js-signals/pulls/comments/32120207"
+            },
+            "html": {
+                "href": "https://github.com/millermedeiros/js-signals/pull/68#discussion_r32120207"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/millermedeiros/js-signals/pulls/68"
+            }
+        }
+    }
+]

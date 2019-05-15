@@ -1,0 +1,247 @@
+[
+    {
+        "url": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/comments/638690",
+        "pull_request_review_id": null,
+        "id": 638690,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYzODY5MA==",
+        "diff_hunk": "@@ -68,6 +68,7 @@ if (!('CSSArrowPlease' in window)) window.CSSArrowPlease = {};\n       css += '\\theight: 0;\\n';\n       css += '\\twidth: 0;\\n';\n       css += '\\tposition: absolute;\\n';\n+      css += '\\tpointer-events: none;\\n';",
+        "path": "public/js/lib/models/arrow.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "c2d57d95b3b06e28161a62dc793414f230afebb1",
+        "original_commit_id": "54f6d8a44abd42d5abf68f151eaa6e973c4adcf4",
+        "user": {
+            "login": "mattyclarkson",
+            "id": 1081113,
+            "node_id": "MDQ6VXNlcjEwODExMTM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1081113?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mattyclarkson",
+            "html_url": "https://github.com/mattyclarkson",
+            "followers_url": "https://api.github.com/users/mattyclarkson/followers",
+            "following_url": "https://api.github.com/users/mattyclarkson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mattyclarkson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mattyclarkson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mattyclarkson/subscriptions",
+            "organizations_url": "https://api.github.com/users/mattyclarkson/orgs",
+            "repos_url": "https://api.github.com/users/mattyclarkson/repos",
+            "events_url": "https://api.github.com/users/mattyclarkson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mattyclarkson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This allows you to click through an element.  As the pseudo element has transparent boarders it blocks clicks through it.  However, it has been [pushed to CSS4](https://developer.mozilla.org/en/CSS/pointer-events).\n",
+        "created_at": "2012-04-03T13:10:53Z",
+        "updated_at": "2012-04-03T14:20:43Z",
+        "html_url": "https://github.com/hojberg/cssarrowplease/pull/13#discussion_r638690",
+        "pull_request_url": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/13",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/comments/638690"
+            },
+            "html": {
+                "href": "https://github.com/hojberg/cssarrowplease/pull/13#discussion_r638690"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/13"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/comments/638692",
+        "pull_request_review_id": null,
+        "id": 638692,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYzODY5Mg==",
+        "diff_hunk": "@@ -134,7 +135,7 @@ if (!('CSSArrowPlease' in window)) window.CSSArrowPlease = {};\n       if (borderWidth > 0) {\n         css = this._arrowCSS(\n           this.get('borderColor'),\n-          this.get('size') + (borderWidth * 2),\n+          this.get('size') + (borderWidth * 1.41421356), // cos(PI/4) * 2",
+        "path": "public/js/lib/models/arrow.js",
+        "position": 13,
+        "original_position": 13,
+        "commit_id": "c2d57d95b3b06e28161a62dc793414f230afebb1",
+        "original_commit_id": "54f6d8a44abd42d5abf68f151eaa6e973c4adcf4",
+        "user": {
+            "login": "mattyclarkson",
+            "id": 1081113,
+            "node_id": "MDQ6VXNlcjEwODExMTM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1081113?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mattyclarkson",
+            "html_url": "https://github.com/mattyclarkson",
+            "followers_url": "https://api.github.com/users/mattyclarkson/followers",
+            "following_url": "https://api.github.com/users/mattyclarkson/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mattyclarkson/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mattyclarkson/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mattyclarkson/subscriptions",
+            "organizations_url": "https://api.github.com/users/mattyclarkson/orgs",
+            "repos_url": "https://api.github.com/users/mattyclarkson/repos",
+            "events_url": "https://api.github.com/users/mattyclarkson/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mattyclarkson/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This corrects the 45 degree border on the arrow\n",
+        "created_at": "2012-04-03T13:11:13Z",
+        "updated_at": "2012-04-03T14:20:43Z",
+        "html_url": "https://github.com/hojberg/cssarrowplease/pull/13#discussion_r638692",
+        "pull_request_url": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/13",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/comments/638692"
+            },
+            "html": {
+                "href": "https://github.com/hojberg/cssarrowplease/pull/13#discussion_r638692"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/13"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/comments/675699",
+        "pull_request_review_id": null,
+        "id": 675699,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3NTY5OQ==",
+        "diff_hunk": "@@ -98,9 +98,12 @@ if (!('CSSArrowPlease' in window)) window.CSSArrowPlease = {};\n           val       = parseInt(target.val()),\n           increment = ev.keyCode == 38 ? 1 : -1,\n           multiply  = ev.shiftKey ? 10 : 1",
+        "path": "public/js/lib/views/arrow_configuration_view.js",
+        "position": null,
+        "original_position": 3,
+        "commit_id": "a76930ce50f405e217a243f4fce678e3cacc3baf",
+        "original_commit_id": "9d6f6dd952108739ff393d775ba3aa55038a6ea9",
+        "user": {
+            "login": "hojberg",
+            "id": 2371,
+            "node_id": "MDQ6VXNlcjIzNzE=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2371?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hojberg",
+            "html_url": "https://github.com/hojberg",
+            "followers_url": "https://api.github.com/users/hojberg/followers",
+            "following_url": "https://api.github.com/users/hojberg/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hojberg/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hojberg/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hojberg/subscriptions",
+            "organizations_url": "https://api.github.com/users/hojberg/orgs",
+            "repos_url": "https://api.github.com/users/hojberg/repos",
+            "events_url": "https://api.github.com/users/hojberg/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hojberg/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "a missing , :)\n",
+        "created_at": "2012-04-12T10:18:13Z",
+        "updated_at": "2012-04-12T14:27:11Z",
+        "html_url": "https://github.com/hojberg/cssarrowplease/pull/15#discussion_r675699",
+        "pull_request_url": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/15",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/comments/675699"
+            },
+            "html": {
+                "href": "https://github.com/hojberg/cssarrowplease/pull/15#discussion_r675699"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/15"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/comments/685432",
+        "pull_request_review_id": null,
+        "id": 685432,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY4NTQzMg==",
+        "diff_hunk": "@@ -1,6 +1,6 @@\n /* =BASE\n ====================================================== */\n-html, body                    { background: url(../img/noisebg.png); }\n+html, body                    { background: url(../img/noisebg.png); -one-image-postprocess: pngquant(), pngcrush(-rem alla), optipng; }",
+        "path": "public/css/app.css",
+        "position": null,
+        "original_position": 4,
+        "commit_id": "f28a8c4ba590b347ebec3740c780617963cc4be0",
+        "original_commit_id": "e85481cccdf4d2378eaa7a4b953f3ae9bbd72b33",
+        "user": {
+            "login": "hojberg",
+            "id": 2371,
+            "node_id": "MDQ6VXNlcjIzNzE=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2371?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hojberg",
+            "html_url": "https://github.com/hojberg",
+            "followers_url": "https://api.github.com/users/hojberg/followers",
+            "following_url": "https://api.github.com/users/hojberg/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hojberg/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hojberg/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hojberg/subscriptions",
+            "organizations_url": "https://api.github.com/users/hojberg/orgs",
+            "repos_url": "https://api.github.com/users/hojberg/repos",
+            "events_url": "https://api.github.com/users/hojberg/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hojberg/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Im not a fan of adding implementation code targeting build scripts im afraid :/\n",
+        "created_at": "2012-04-14T21:08:25Z",
+        "updated_at": "2012-04-18T09:58:56Z",
+        "html_url": "https://github.com/hojberg/cssarrowplease/pull/17#discussion_r685432",
+        "pull_request_url": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/17",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/comments/685432"
+            },
+            "html": {
+                "href": "https://github.com/hojberg/cssarrowplease/pull/17#discussion_r685432"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/17"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/comments/992052",
+        "pull_request_review_id": null,
+        "id": 992052,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDk5MjA1Mg==",
+        "diff_hunk": "@@ -59,13 +59,14 @@ input[type='radio']           { border: 0; }\n \n /* fork_me */\n .fork_me                          { position: absolute; top: 0; right: 0; display: block; width: 149px; height: 149px; background: url(../img/fork.png);\n+  -one-image-postprocess: pngquant(128);",
+        "path": "public/css/app.css",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "3ba9eb9721480ed53bb9593b89835185fe9fe9ba",
+        "original_commit_id": "3ba9eb9721480ed53bb9593b89835185fe9fe9ba",
+        "user": {
+            "login": "hojberg",
+            "id": 2371,
+            "node_id": "MDQ6VXNlcjIzNzE=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/2371?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hojberg",
+            "html_url": "https://github.com/hojberg",
+            "followers_url": "https://api.github.com/users/hojberg/followers",
+            "following_url": "https://api.github.com/users/hojberg/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hojberg/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hojberg/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hojberg/subscriptions",
+            "organizations_url": "https://api.github.com/users/hojberg/orgs",
+            "repos_url": "https://api.github.com/users/hojberg/repos",
+            "events_url": "https://api.github.com/users/hojberg/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hojberg/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Im really not a fan of this. Sorry :S\n",
+        "created_at": "2012-06-15T11:44:18Z",
+        "updated_at": "2012-06-15T11:44:18Z",
+        "html_url": "https://github.com/hojberg/cssarrowplease/pull/30#discussion_r992052",
+        "pull_request_url": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/comments/992052"
+            },
+            "html": {
+                "href": "https://github.com/hojberg/cssarrowplease/pull/30#discussion_r992052"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/hojberg/cssarrowplease/pulls/30"
+            }
+        }
+    }
+]

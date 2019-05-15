@@ -1,0 +1,1276 @@
+[
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1566951",
+        "pull_request_review_id": null,
+        "id": 1566951,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NjY5NTE=",
+        "diff_hunk": "@@ -122,4 +122,19 @@ def git_piston(path)\n     stdout = cmd(\"cd #{full_path.inspect} && git pull && git push 2>&1\")\n     @logger.info \"Fired git piston on #{full_path.inspect}.  STDOUT:\\n\\n#{stdout}\"\n   end\n+\n+  # [Rsync] Simple sync of two files/folders using rsync.\n+  # \n+  # If you set the delete variable to true, it will remove files from the 'to' location to keep the folders in sync.\n+  #\n+  #   sync('~/music', '/backup/music')\n+  def sync(from, to, delete=false)",
+        "path": "lib/maid/tools.rb",
+        "position": null,
+        "original_position": 10,
+        "commit_id": "db2e347693147814e439985b6b7cd7c007b9eb26",
+        "original_commit_id": "fda6a829d419649f1448a801995c5376ee586e9f",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "To make future expansion easier (and improve readability a bit), could we change the usage from:\n\n``` ruby\nsync('~/foo', '~/bar', true)\n```\n\nTo this instead?\n\n``` ruby\nsync('~/foo', '~/bar', delete: true) # or :delete => true in 1.8\n```\n",
+        "created_at": "2012-09-10T15:40:04Z",
+        "updated_at": "2012-09-12T12:22:08Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/17#discussion_r1566951",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/17",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1566951"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/17#discussion_r1566951"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/17"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1567088",
+        "pull_request_review_id": null,
+        "id": 1567088,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NjcwODg=",
+        "diff_hunk": "@@ -122,4 +122,19 @@ def git_piston(path)\n     stdout = cmd(\"cd #{full_path.inspect} && git pull && git push 2>&1\")\n     @logger.info \"Fired git piston on #{full_path.inspect}.  STDOUT:\\n\\n#{stdout}\"\n   end\n+\n+  # [Rsync] Simple sync of two files/folders using rsync.\n+  # \n+  # If you set the delete variable to true, it will remove files from the 'to' location to keep the folders in sync.\n+  #\n+  #   sync('~/music', '/backup/music')\n+  def sync(from, to, delete=false)\n+    # expand path removes trailing slash\n+    # cannot use str[-1] due to ruby 1.8.7 restriction\n+    from = File.expand_path(from) + (from.end_with?('/') ? '/' : '')\n+    to = File.expand_path(to) + (to.end_with?('/') ? '/' : '')\n+    delete_option = delete ? '--delete ' : ''\n+    stdout = cmd(\"rsync -au #{delete_option}#{from.inspect} #{to.inspect} 2>&1\")",
+        "path": "lib/maid/tools.rb",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "db2e347693147814e439985b6b7cd7c007b9eb26",
+        "original_commit_id": "fda6a829d419649f1448a801995c5376ee586e9f",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This will make changes to the file system even if `noop` is set.  (You'll notice that's an issue in `git_piston` as well, but that's being deprecated per #18.)\n\nIf `sync` is a feature that we intend to keep around, it should respect `@file_options[:noop]` and not actually run the command in that case.  It might make sense to take care of that check in `cmd`, actually.  Up to you.\n",
+        "created_at": "2012-09-10T15:47:22Z",
+        "updated_at": "2012-09-12T12:22:08Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/17#discussion_r1567088",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/17",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1567088"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/17#discussion_r1567088"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/17"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1573118",
+        "pull_request_review_id": null,
+        "id": 1573118,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NzMxMTg=",
+        "diff_hunk": "@@ -123,5 +123,37 @@ module Maid\n         @maid.git_piston('~/code/projectname')\n       end\n     end\n+\n+    describe '#sync' do\n+      before :each do\n+        @from    = '~/Downloads/'\n+        @to      = '~/Reference'\n+      end\n+\n+      it 'should sync the expanded paths, retaining backslash' do\n+        @maid.should_receive(:cmd).with(%Q{rsync -a -u \"#@home/Downloads/\" \"#@home/Reference\" 2>&1})\n+        @maid.sync(@from, @to)\n+      end\n+\n+      it 'should log the action' do\n+        @logger.should_receive(:info)\n+        @maid.sync(@from, @to)",
+        "path": "spec/lib/maid/tools_spec.rb",
+        "position": 34,
+        "original_position": 18,
+        "commit_id": "db2e347693147814e439985b6b7cd7c007b9eb26",
+        "original_commit_id": "024c17e635f9bfaf60409ac27fc8fda9e3d76773",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This started syncing my `~/Downloads` to `~/Reference` when running specs\n",
+        "created_at": "2012-09-11T03:45:18Z",
+        "updated_at": "2012-09-12T12:22:08Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/17#discussion_r1573118",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/17",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1573118"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/17#discussion_r1573118"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/17"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1573121",
+        "pull_request_review_id": null,
+        "id": 1573121,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1NzMxMjE=",
+        "diff_hunk": "@@ -123,5 +123,37 @@ module Maid\n         @maid.git_piston('~/code/projectname')\n       end\n     end\n+\n+    describe '#sync' do\n+      before :each do\n+        @from    = '~/Downloads/'\n+        @to      = '~/Reference'\n+      end",
+        "path": "spec/lib/maid/tools_spec.rb",
+        "position": 25,
+        "original_position": 9,
+        "commit_id": "db2e347693147814e439985b6b7cd7c007b9eb26",
+        "original_commit_id": "024c17e635f9bfaf60409ac27fc8fda9e3d76773",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "For safety, this should `@maid.stub(:cmd)`\n",
+        "created_at": "2012-09-11T03:45:30Z",
+        "updated_at": "2012-09-12T12:22:08Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/17#discussion_r1573121",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/17",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1573121"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/17#discussion_r1573121"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/17"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1587269",
+        "pull_request_review_id": null,
+        "id": 1587269,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1ODcyNjk=",
+        "diff_hunk": "@@ -44,6 +44,24 @@ def trash(path)\n     end\n   end\n \n+\n+\n+  # Remove directory/file\n+  #\n+  # Directory/file is removed securely (See FileUtils.remove_entry_secure for further details).\n+  # \n+  # Options:\n+  # - :force => boolean\n+  #\n+  # remove('~/Downloads/foo.zip')\n+  def remove(path, options = {})\n+    path = File.expand_path(path)\n+    options = {:secure => true}.merge(@file_options).merge(options)",
+        "path": "lib/maid/tools.rb",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "86c27032cb0f2e92619a2c97d8c9c388191ce54d",
+        "original_commit_id": "0ca6765291df49acaab67a9c0c48dd0cb6a0ecf6",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Just curious:  why is `:secure => true` the default?\n\nBeing able to do a secure delete is useful, but I would imagine for most people, it's the 20% case rather than the 80% case.  Could we change it to `false` and make it an option instead?\n",
+        "created_at": "2012-09-12T14:26:19Z",
+        "updated_at": "2012-09-15T11:06:17Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1587269",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1587269"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1587269"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1587294",
+        "pull_request_review_id": null,
+        "id": 1587294,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1ODcyOTQ=",
+        "diff_hunk": "@@ -58,6 +58,30 @@ module Maid\n       end\n     end\n \n+    describe '#remove' do\n+      before :each do\n+        FileUtils.stub!(:rm_r)",
+        "path": "spec/lib/maid/tools_spec.rb",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "86c27032cb0f2e92619a2c97d8c9c388191ce54d",
+        "original_commit_id": "0ca6765291df49acaab67a9c0c48dd0cb6a0ecf6",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This might be better in the outermost `before`, just to be safe.\n",
+        "created_at": "2012-09-12T14:27:37Z",
+        "updated_at": "2012-09-15T11:06:17Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1587294",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1587294"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1587294"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1594442",
+        "pull_request_review_id": null,
+        "id": 1594442,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1OTQ0NDI=",
+        "diff_hunk": "@@ -58,6 +58,30 @@ module Maid\n       end\n     end\n \n+    describe '#remove' do\n+      before :each do\n+        FileUtils.stub!(:rm_r)",
+        "path": "spec/lib/maid/tools_spec.rb",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "86c27032cb0f2e92619a2c97d8c9c388191ce54d",
+        "original_commit_id": "0ca6765291df49acaab67a9c0c48dd0cb6a0ecf6",
+        "user": {
+            "login": "phoolish",
+            "id": 160523,
+            "node_id": "MDQ6VXNlcjE2MDUyMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/160523?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phoolish",
+            "html_url": "https://github.com/phoolish",
+            "followers_url": "https://api.github.com/users/phoolish/followers",
+            "following_url": "https://api.github.com/users/phoolish/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phoolish/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phoolish/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phoolish/subscriptions",
+            "organizations_url": "https://api.github.com/users/phoolish/orgs",
+            "repos_url": "https://api.github.com/users/phoolish/repos",
+            "events_url": "https://api.github.com/users/phoolish/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phoolish/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I like to keep describe blocks as specific as possible, but if the tools is accepted I'll follow whatever standard you want to utilize. \n",
+        "created_at": "2012-09-13T05:27:33Z",
+        "updated_at": "2012-09-15T11:06:18Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1594442",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/30",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1594442"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1594442"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1594445",
+        "pull_request_review_id": null,
+        "id": 1594445,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1OTQ0NDU=",
+        "diff_hunk": "@@ -44,6 +44,24 @@ def trash(path)\n     end\n   end\n \n+\n+\n+  # Remove directory/file\n+  #\n+  # Directory/file is removed securely (See FileUtils.remove_entry_secure for further details).\n+  # \n+  # Options:\n+  # - :force => boolean\n+  #\n+  # remove('~/Downloads/foo.zip')\n+  def remove(path, options = {})\n+    path = File.expand_path(path)\n+    options = {:secure => true}.merge(@file_options).merge(options)",
+        "path": "lib/maid/tools.rb",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "86c27032cb0f2e92619a2c97d8c9c388191ce54d",
+        "original_commit_id": "0ca6765291df49acaab67a9c0c48dd0cb6a0ecf6",
+        "user": {
+            "login": "phoolish",
+            "id": 160523,
+            "node_id": "MDQ6VXNlcjE2MDUyMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/160523?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phoolish",
+            "html_url": "https://github.com/phoolish",
+            "followers_url": "https://api.github.com/users/phoolish/followers",
+            "following_url": "https://api.github.com/users/phoolish/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phoolish/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phoolish/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phoolish/subscriptions",
+            "organizations_url": "https://api.github.com/users/phoolish/orgs",
+            "repos_url": "https://api.github.com/users/phoolish/repos",
+            "events_url": "https://api.github.com/users/phoolish/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phoolish/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "works for me.\n",
+        "created_at": "2012-09-13T05:28:31Z",
+        "updated_at": "2012-09-15T11:06:18Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1594445",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/30",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1594445"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1594445"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1596709",
+        "pull_request_review_id": null,
+        "id": 1596709,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1OTY3MDk=",
+        "diff_hunk": "@@ -58,6 +58,30 @@ module Maid\n       end\n     end\n \n+    describe '#remove' do\n+      before :each do\n+        FileUtils.stub!(:rm_r)",
+        "path": "spec/lib/maid/tools_spec.rb",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "86c27032cb0f2e92619a2c97d8c9c388191ce54d",
+        "original_commit_id": "0ca6765291df49acaab67a9c0c48dd0cb6a0ecf6",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I can empathize with that.  But in this case I'm just thinking \"huh, a spec that does `rm -rf`... seems like it could be dangerous\".  :smile:\n\nReally, I'd like to start using [`FakeFS`](https://github.com/defunkt/fakefs) for testing and forget about stubbing all these specific methods.  That's a longer term goal, but if you'd ever like to take a look at doing that, by all means.  All your involvement is very appreciated.\n",
+        "created_at": "2012-09-13T11:56:47Z",
+        "updated_at": "2012-09-15T11:06:18Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1596709",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1596709"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1596709"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1597070",
+        "pull_request_review_id": null,
+        "id": 1597070,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1OTcwNzA=",
+        "diff_hunk": "@@ -58,6 +58,30 @@ module Maid\n       end\n     end\n \n+    describe '#remove' do\n+      before :each do\n+        FileUtils.stub!(:rm_r)",
+        "path": "spec/lib/maid/tools_spec.rb",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "86c27032cb0f2e92619a2c97d8c9c388191ce54d",
+        "original_commit_id": "0ca6765291df49acaab67a9c0c48dd0cb6a0ecf6",
+        "user": {
+            "login": "phoolish",
+            "id": 160523,
+            "node_id": "MDQ6VXNlcjE2MDUyMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/160523?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phoolish",
+            "html_url": "https://github.com/phoolish",
+            "followers_url": "https://api.github.com/users/phoolish/followers",
+            "following_url": "https://api.github.com/users/phoolish/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phoolish/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phoolish/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phoolish/subscriptions",
+            "organizations_url": "https://api.github.com/users/phoolish/orgs",
+            "repos_url": "https://api.github.com/users/phoolish/repos",
+            "events_url": "https://api.github.com/users/phoolish/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phoolish/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I've never used FakeFs.  I'll take a crack at it at some point, but for now I'd like to clear a couple of your other features first.\n",
+        "created_at": "2012-09-13T12:39:31Z",
+        "updated_at": "2012-09-15T11:06:18Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1597070",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/30",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1597070"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1597070"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1597329",
+        "pull_request_review_id": null,
+        "id": 1597329,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE1OTczMjk=",
+        "diff_hunk": "@@ -58,6 +58,30 @@ module Maid\n       end\n     end\n \n+    describe '#remove' do\n+      before :each do\n+        FileUtils.stub!(:rm_r)",
+        "path": "spec/lib/maid/tools_spec.rb",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "86c27032cb0f2e92619a2c97d8c9c388191ce54d",
+        "original_commit_id": "0ca6765291df49acaab67a9c0c48dd0cb6a0ecf6",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Either way sounds great.  :)\n",
+        "created_at": "2012-09-13T13:11:50Z",
+        "updated_at": "2012-09-15T11:06:18Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1597329",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/30",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1597329"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/30#discussion_r1597329"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/30"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1652524",
+        "pull_request_review_id": null,
+        "id": 1652524,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2NTI1MjQ=",
+        "diff_hunk": "@@ -175,12 +175,27 @@ def disk_usage(path)\n     end\n   end\n \n+  # In Unix speak, \"ctime\".\n+  #\n+  #   created_at('foo.zip') # => Sat Apr 09 10:50:01 -0400 2011\n+  def created_at(path)\n+    File.ctime(File.expand_path(path))\n+  end\n+\n   # In Unix speak, \"atime\".\n   #\n-  #   last_accessed('foo.zip') # => Sat Apr 09 10:50:01 -0400 2011\n-  def last_accessed(path)\n+  #   accessed_at('foo.zip') # => Sat Apr 09 10:50:01 -0400 2011\n+  def accessed_at(path)\n     File.atime(File.expand_path(path))\n   end\n+  alias :last_accessed :accessed_at # keep for legacy compatibility.",
+        "path": "lib/maid/tools.rb",
+        "position": null,
+        "original_position": 19,
+        "commit_id": "aac56397086dd0aef25987707630ef0d4583eab7",
+        "original_commit_id": "e822cf43b1afe6dfe51aa801818cbc190dcbfcb7",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I swear I've seen a library that lets you do something like this:\n\n``` ruby\ndeprecate :last_accessed, :accessed_at\n```\n\nThat makes it show a nice deprecation notice, aliases, etc.  Or maybe just part of that...  At any rate, let's try to give a notice so we can get rid of the older name later (version 0.2.0 or above).\n",
+        "created_at": "2012-09-20T16:22:33Z",
+        "updated_at": "2012-09-20T16:41:17Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/44#discussion_r1652524",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/44",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1652524"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/44#discussion_r1652524"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1652999",
+        "pull_request_review_id": null,
+        "id": 1652999,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2NTI5OTk=",
+        "diff_hunk": "@@ -175,13 +175,35 @@ def disk_usage(path)\n     end\n   end\n \n+  # In Unix speak, \"ctime\".\n+  #\n+  #   created_at('foo.zip') # => Sat Apr 09 10:50:01 -0400 2011\n+  def created_at(path)\n+    File.ctime(File.expand_path(path))\n+  end\n+\n   # In Unix speak, \"atime\".\n   #\n-  #   last_accessed('foo.zip') # => Sat Apr 09 10:50:01 -0400 2011\n-  def last_accessed(path)\n+  #   accessed_at('foo.zip') # => Sat Apr 09 10:50:01 -0400 2011\n+  def accessed_at(path)\n     File.atime(File.expand_path(path))\n   end\n \n+  # In Unix speak, \"atime\". kept for backwards compatibility.\n+  #\n+  #   accessed_at('foo.zip') # => Sat Apr 09 10:50:01 -0400 2011\n+  def last_accessed(path)\n+    @logger.warning \"last_accessed has been replaced by accessed_at.\"",
+        "path": "lib/maid/tools.rb",
+        "position": 24,
+        "original_position": 24,
+        "commit_id": "aac56397086dd0aef25987707630ef0d4583eab7",
+        "original_commit_id": "aac56397086dd0aef25987707630ef0d4583eab7",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@phoolish  I'm thinking the deprecation notice should go to STDERR instead, just so it's more noticeable to users.  (That way it would go to the cron mail or show up in front of the user if they're invoking `maid clean` directly.  People probably won't notice it as easily in the log.)\n\nI'm pretty sure that `warn` does that...\n\n``` ruby\nwarn '[DEPRECATION] last_accessed has been replaced by accessed_at.'\n```\n\nHow does that sound?\n\n**Edit:** The deprecation library I'm thinking of might be a part of Rails... or this one seems similar enough:  https://rubygems.org/gems/deprecated\n",
+        "created_at": "2012-09-20T17:07:18Z",
+        "updated_at": "2012-09-20T17:10:20Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/44#discussion_r1652999",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/44",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1652999"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/44#discussion_r1652999"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/44"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1663092",
+        "pull_request_review_id": null,
+        "id": 1663092,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2NjMwOTI=",
+        "diff_hunk": "@@ -104,6 +104,18 @@ def dir(glob)\n     Dir[File.expand_path(glob)]\n   end\n \n+  # Creates a directory and all its parent directories.\n+  #\n+  # Options:\n+  #\n+  # - :mode,  the symbolic and absolute mode both can be used.\n+  #           eg. 0700, 'u=wr,go=rr'\n+  #\n+  #   mkdir('~/Downloads/Music/Pink.Floyd/', :mode => 0644)\n+  def mkdir(path, options = {})\n+    FileUtils.mkdir_p(path, options)",
+        "path": "lib/maid/tools.rb",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "0a6184cfff93b3f6ece11bd8b579c34c81acb19e",
+        "original_commit_id": "ad2f30a40d1ebd435265328829aa81ad044768d5",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I might be missing something... but I think you need an `expand_path` here.\n\n(Aside: That's a common pattern that we might consider refactoring.)\n",
+        "created_at": "2012-09-21T16:24:36Z",
+        "updated_at": "2012-09-21T16:30:49Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/47#discussion_r1663092",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/47",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1663092"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/47#discussion_r1663092"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/47"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1683942",
+        "pull_request_review_id": null,
+        "id": 1683942,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2ODM5NDI=",
+        "diff_hunk": "@@ -23,10 +23,14 @@ class Maid::Maid\n   def initialize(options = {})\n     options = DEFAULTS.merge(options.reject { |k, v| v.nil? })\n \n-    @log_device = options[:log_device]\n-    FileUtils.mkdir_p(File.dirname(@log_device)) unless @log_device.kind_of?(IO)\n+    @logger = unless options[:logger]",
+        "path": "lib/maid/maid.rb",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "37eff48dd5e540dc676d7adb045567ffa802b8e0",
+        "original_commit_id": "37eff48dd5e540dc676d7adb045567ffa802b8e0",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "These 7 lines seem pretty complex... can they be refactored?\n\nIt may make sense to remove the use of `log_device` in this class entirely.  Then the logger creation/setup could be handled elsewhere... but I haven't entirely thought through that yet.  :smile:\n",
+        "created_at": "2012-09-25T13:44:16Z",
+        "updated_at": "2012-09-25T13:44:16Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/48#discussion_r1683942",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/48",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1683942"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/48#discussion_r1683942"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1686041",
+        "pull_request_review_id": null,
+        "id": 1686041,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2ODYwNDE=",
+        "diff_hunk": "@@ -23,10 +23,14 @@ class Maid::Maid\n   def initialize(options = {})\n     options = DEFAULTS.merge(options.reject { |k, v| v.nil? })\n \n-    @log_device = options[:log_device]\n-    FileUtils.mkdir_p(File.dirname(@log_device)) unless @log_device.kind_of?(IO)\n+    @logger = unless options[:logger]",
+        "path": "lib/maid/maid.rb",
+        "position": 15,
+        "original_position": 15,
+        "commit_id": "37eff48dd5e540dc676d7adb045567ffa802b8e0",
+        "original_commit_id": "37eff48dd5e540dc676d7adb045567ffa802b8e0",
+        "user": {
+            "login": "phoolish",
+            "id": 160523,
+            "node_id": "MDQ6VXNlcjE2MDUyMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/160523?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/phoolish",
+            "html_url": "https://github.com/phoolish",
+            "followers_url": "https://api.github.com/users/phoolish/followers",
+            "following_url": "https://api.github.com/users/phoolish/following{/other_user}",
+            "gists_url": "https://api.github.com/users/phoolish/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/phoolish/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/phoolish/subscriptions",
+            "organizations_url": "https://api.github.com/users/phoolish/orgs",
+            "repos_url": "https://api.github.com/users/phoolish/repos",
+            "events_url": "https://api.github.com/users/phoolish/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/phoolish/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I was thinking that as well, but if we did that we would want a separate class just for logger to handle any options passed by the user.  This way they have the best of both worlds.  Either they define a logger or we do.  Plus, it deals with all the testing issues.\n",
+        "created_at": "2012-09-25T16:24:20Z",
+        "updated_at": "2012-09-25T16:24:20Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/48#discussion_r1686041",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/48",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/1686041"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/48#discussion_r1686041"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/48"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/2492856",
+        "pull_request_review_id": null,
+        "id": 2492856,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0OTI4NTY=",
+        "diff_hunk": "@@ -419,4 +471,15 @@ def expand(path)\n   def expand_all(paths)\n     Array(paths).map { |path| expand(path) }\n   end\n+\n+  def mdls_to_array(path, attribute)\n+    return [] unless os_x?\n+    raw = cmd(\"mdls -raw -name #{attribute} #{ path }\")\n+    clean = raw[1, raw.length - 2]\n+    clean.split(/,\\s+/).map { |s| t = s.strip; t[1, t.length - 2] }\n+  end\n+\n+  def os_x?\n+    !cmd(\"which mdls\").empty?",
+        "path": "lib/maid/tools.rb",
+        "position": null,
+        "original_position": 85,
+        "commit_id": "c83b6400c41a5c4440a17e54b57387427cd8ac93",
+        "original_commit_id": "c71b8e3b4c33d59d97df014eadc3329c19ca9ce8",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Regarding:\n\n> To be able to make it \"just work\" maid is going to need to be aware if it's running on OS X. Any thoughts on how you would prefer to do that detection (or if you don't want to do that)?\n\nThis seems to be duplicating [`Maid::Platform.osx?`](https://github.com/benjaminoakes/maid/blob/master/lib/maid/platform.rb#L13).\n",
+        "created_at": "2012-12-21T21:09:20Z",
+        "updated_at": "2013-01-20T16:55:47Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/89#discussion_r2492856",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/89",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/2492856"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/89#discussion_r2492856"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/89"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/2492922",
+        "pull_request_review_id": null,
+        "id": 2492922,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0OTI5MjI=",
+        "diff_hunk": "@@ -419,4 +471,15 @@ def expand(path)\n   def expand_all(paths)\n     Array(paths).map { |path| expand(path) }\n   end\n+\n+  def mdls_to_array(path, attribute)\n+    return [] unless os_x?\n+    raw = cmd(\"mdls -raw -name #{attribute} #{ path }\")\n+    clean = raw[1, raw.length - 2]\n+    clean.split(/,\\s+/).map { |s| t = s.strip; t[1, t.length - 2] }\n+  end\n+\n+  def os_x?\n+    !cmd(\"which mdls\").empty?",
+        "path": "lib/maid/tools.rb",
+        "position": null,
+        "original_position": 85,
+        "commit_id": "c83b6400c41a5c4440a17e54b57387427cd8ac93",
+        "original_commit_id": "c71b8e3b4c33d59d97df014eadc3329c19ca9ce8",
+        "user": {
+            "login": "JohnColvin",
+            "id": 310707,
+            "node_id": "MDQ6VXNlcjMxMDcwNw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/310707?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/JohnColvin",
+            "html_url": "https://github.com/JohnColvin",
+            "followers_url": "https://api.github.com/users/JohnColvin/followers",
+            "following_url": "https://api.github.com/users/JohnColvin/following{/other_user}",
+            "gists_url": "https://api.github.com/users/JohnColvin/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/JohnColvin/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/JohnColvin/subscriptions",
+            "organizations_url": "https://api.github.com/users/JohnColvin/orgs",
+            "repos_url": "https://api.github.com/users/JohnColvin/repos",
+            "events_url": "https://api.github.com/users/JohnColvin/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/JohnColvin/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ah, yes. I didn't look far enough for an osx method. I'll switch it out.\n",
+        "created_at": "2012-12-21T21:17:09Z",
+        "updated_at": "2013-01-20T16:55:47Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/89#discussion_r2492922",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/89",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/2492922"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/89#discussion_r2492922"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/89"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/21446278",
+        "pull_request_review_id": null,
+        "id": 21446278,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxNDQ2Mjc4",
+        "diff_hunk": "@@ -1,6 +1,6 @@\n-class Maid::Rule < Struct.new(:description, :instructions)\n+class Maid::Rule < Struct.new(:description, :instructions, :maid)",
+        "path": "lib/maid/rule.rb",
+        "position": 2,
+        "original_position": 2,
+        "commit_id": "ce87f2b2961fcd14eb9a37bdbcb8a6135c745897",
+        "original_commit_id": "ce87f2b2961fcd14eb9a37bdbcb8a6135c745897",
+        "user": {
+            "login": "jurriaan",
+            "id": 345809,
+            "node_id": "MDQ6VXNlcjM0NTgwOQ==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/345809?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jurriaan",
+            "html_url": "https://github.com/jurriaan",
+            "followers_url": "https://api.github.com/users/jurriaan/followers",
+            "following_url": "https://api.github.com/users/jurriaan/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jurriaan/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jurriaan/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jurriaan/subscriptions",
+            "organizations_url": "https://api.github.com/users/jurriaan/orgs",
+            "repos_url": "https://api.github.com/users/jurriaan/repos",
+            "events_url": "https://api.github.com/users/jurriaan/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jurriaan/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@benjaminoakes Or should I remove this maid instance variable and add an additional parameter to the follow method?\n",
+        "created_at": "2014-12-08T11:03:25Z",
+        "updated_at": "2014-12-08T11:03:25Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/131#discussion_r21446278",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/131",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/21446278"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/131#discussion_r21446278"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/131"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/29053071",
+        "pull_request_review_id": null,
+        "id": 29053071,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI5MDUzMDcx",
+        "diff_hunk": "@@ -6,7 +6,14 @@ class Maid::Watch\n \n   def initialize(maid, path, options = {}, &rules)\n     @maid = maid\n-    @options = options\n+    if options.nil? \n+      @lazy = true\n+      @options = { wait_for_delay: 10, \n+                   ignore: [/\\.crdownload$/, /\\.download$/, /\\.aria2$/, /\\.td$/, /\\.td.cfg$/, /\\.part$/] }",
+        "path": "lib/maid/watch.rb",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "3183838333cde0ca27294015dfea32e983a732ef",
+        "original_commit_id": "a67742cf4f3d52fd3a25fa06c3a2d952eefbbb46",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This should probably share code with `downloading?` in some way.\n",
+        "created_at": "2015-04-24T14:32:17Z",
+        "updated_at": "2015-04-25T03:02:51Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/150#discussion_r29053071",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/150",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/29053071"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/150#discussion_r29053071"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/150"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/29053636",
+        "pull_request_review_id": null,
+        "id": 29053636,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI5MDUzNjM2",
+        "diff_hunk": "@@ -6,7 +6,14 @@ class Maid::Watch\n \n   def initialize(maid, path, options = {}, &rules)\n     @maid = maid\n-    @options = options\n+    if options.nil? \n+      @lazy = true\n+      @options = { wait_for_delay: 10, \n+                   ignore: [/\\.crdownload$/, /\\.download$/, /\\.aria2$/, /\\.td$/, /\\.td.cfg$/, /\\.part$/] }",
+        "path": "lib/maid/watch.rb",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "3183838333cde0ca27294015dfea32e983a732ef",
+        "original_commit_id": "a67742cf4f3d52fd3a25fa06c3a2d952eefbbb46",
+        "user": {
+            "login": "songchenwen",
+            "id": 6240753,
+            "node_id": "MDQ6VXNlcjYyNDA3NTM=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/6240753?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/songchenwen",
+            "html_url": "https://github.com/songchenwen",
+            "followers_url": "https://api.github.com/users/songchenwen/followers",
+            "following_url": "https://api.github.com/users/songchenwen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/songchenwen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/songchenwen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/songchenwen/subscriptions",
+            "organizations_url": "https://api.github.com/users/songchenwen/orgs",
+            "repos_url": "https://api.github.com/users/songchenwen/repos",
+            "events_url": "https://api.github.com/users/songchenwen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/songchenwen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@benjaminoakes Yes, it should. But I can't find a proper way to do so. The `ignore` option can only take paths or regular expressions while `downloading?` is more complexed. Any suggestions? \n",
+        "created_at": "2015-04-24T14:38:10Z",
+        "updated_at": "2015-04-25T03:02:51Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/150#discussion_r29053636",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/150",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/29053636"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/150#discussion_r29053636"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/150"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/29076478",
+        "pull_request_review_id": null,
+        "id": 29076478,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI5MDc2NDc4",
+        "diff_hunk": "@@ -6,7 +6,14 @@ class Maid::Watch\n \n   def initialize(maid, path, options = {}, &rules)\n     @maid = maid\n-    @options = options\n+    if options.nil? \n+      @lazy = true\n+      @options = { wait_for_delay: 10, \n+                   ignore: [/\\.crdownload$/, /\\.download$/, /\\.aria2$/, /\\.td$/, /\\.td.cfg$/, /\\.part$/] }",
+        "path": "lib/maid/watch.rb",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "3183838333cde0ca27294015dfea32e983a732ef",
+        "original_commit_id": "a67742cf4f3d52fd3a25fa06c3a2d952eefbbb46",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It seems like we need to refactor to enable this.  Moving the regexps to some kind of data structure would probably involved.\n\nFor example:\n\n``` ruby\ndef downloading?(path)\n  downloading_file_regexps.any? { |re| path.match(re) }\nend\n\nprivate\n\ndef downloading_file_regexps\n  [/\\.crdownload$/, /\\.download$/, /\\.aria2$/, /\\.td$/, /\\.td.cfg$/, /\\.part$/]\nend\n```\n\nThat doesn't quite capture all of it, but it's close.\n",
+        "created_at": "2015-04-24T19:04:39Z",
+        "updated_at": "2015-04-25T03:02:51Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/150#discussion_r29076478",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/150",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/29076478"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/150#discussion_r29076478"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/150"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/67412657",
+        "pull_request_review_id": null,
+        "id": 67412657,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3NDEyNjU3",
+        "diff_hunk": "@@ -155,6 +164,59 @@ def migrate_trash\n     end\n   end\n \n+  def install_launch_agent\n+    maid_executable = %x(which maid)\n+    plist_destination = File.expand_path(\"~/Library/LaunchAgents/benjaminoakes.maid.plist\")",
+        "path": "lib/maid/app.rb",
+        "position": 44,
+        "original_position": 44,
+        "commit_id": "8a2d3f88a54278bacf98afb43bf4994224cb4b13",
+        "original_commit_id": "8a2d3f88a54278bacf98afb43bf4994224cb4b13",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I own [benjaminoakes.com](http://benjaminoakes.com).  Should this be `com.benjaminoakes.maid` instead?\n",
+        "created_at": "2016-06-16T19:53:02Z",
+        "updated_at": "2016-06-16T19:53:02Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/158#discussion_r67412657",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/158",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/67412657"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/158#discussion_r67412657"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/158"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/67412684",
+        "pull_request_review_id": null,
+        "id": 67412684,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3NDEyNjg0",
+        "diff_hunk": "@@ -155,6 +164,59 @@ def migrate_trash\n     end\n   end\n \n+  def install_launch_agent\n+    maid_executable = %x(which maid)\n+    plist_destination = File.expand_path(\"~/Library/LaunchAgents/benjaminoakes.maid.plist\")\n+    plist_contents = <<-EOF\n+<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n+<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\"\n+          \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n+<plist version=\"1.0\">\n+  <dict>\n+    <key>Label</key>\n+    <string>benjaminoakes.maid</string>",
+        "path": "lib/maid/app.rb",
+        "position": 52,
+        "original_position": 52,
+        "commit_id": "8a2d3f88a54278bacf98afb43bf4994224cb4b13",
+        "original_commit_id": "8a2d3f88a54278bacf98afb43bf4994224cb4b13",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "> I own [benjaminoakes.com](http://benjaminoakes.com).  Should this be `com.benjaminoakes.maid` instead?\n\nSame here.\n",
+        "created_at": "2016-06-16T19:53:17Z",
+        "updated_at": "2016-06-16T19:53:17Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/158#discussion_r67412684",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/158",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/67412684"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/158#discussion_r67412684"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/158"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/67412851",
+        "pull_request_review_id": null,
+        "id": 67412851,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3NDEyODUx",
+        "diff_hunk": "@@ -155,6 +164,59 @@ def migrate_trash\n     end\n   end\n \n+  def install_launch_agent\n+    maid_executable = %x(which maid)\n+    plist_destination = File.expand_path(\"~/Library/LaunchAgents/benjaminoakes.maid.plist\")\n+    plist_contents = <<-EOF\n+<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n+<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\"\n+          \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n+<plist version=\"1.0\">\n+  <dict>\n+    <key>Label</key>\n+    <string>benjaminoakes.maid</string>\n+    <key>ProgramArguments</key>\n+    <array>\n+      <string>/bin/sh</string>\n+      <string>-c</string>\n+      <string>#{maid_executable} daemon</string>",
+        "path": "lib/maid/app.rb",
+        "position": 57,
+        "original_position": 57,
+        "commit_id": "8a2d3f88a54278bacf98afb43bf4994224cb4b13",
+        "original_commit_id": "8a2d3f88a54278bacf98afb43bf4994224cb4b13",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hrm... this could have problems if people are using `rvm` or something else that changes the executable path on occasion... (e.g. Ruby upgrades)\n\nThat said, I don't know a better approach off the top of my head.\n",
+        "created_at": "2016-06-16T19:54:37Z",
+        "updated_at": "2016-06-16T19:54:37Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/158#discussion_r67412851",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/158",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/67412851"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/158#discussion_r67412851"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/158"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/67413029",
+        "pull_request_review_id": null,
+        "id": 67413029,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3NDEzMDI5",
+        "diff_hunk": "@@ -155,6 +164,59 @@ def migrate_trash\n     end\n   end\n \n+  def install_launch_agent\n+    maid_executable = %x(which maid)\n+    plist_destination = File.expand_path(\"~/Library/LaunchAgents/benjaminoakes.maid.plist\")\n+    plist_contents = <<-EOF\n+<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n+<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\"\n+          \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n+<plist version=\"1.0\">\n+  <dict>\n+    <key>Label</key>\n+    <string>benjaminoakes.maid</string>\n+    <key>ProgramArguments</key>\n+    <array>\n+      <string>/bin/sh</string>\n+      <string>-c</string>\n+      <string>#{maid_executable} daemon</string>\n+    </array>\n+    <key>KeepAlive</key>\n+    <true/>\n+  </dict>\n+</plist>\n+    EOF\n+\n+    say('Installing launch agent for Maid...')\n+    if File.exists?(plist_destination)\n+      say 'Looks like you\u2019ve already got a launch agent configured for Maid. Aborting!', :red\n+    else\n+      File.open(plist_destination, 'w') { |f| f.write(plist_contents) }\n+      say 'Launch agent successfully configured for Maid.', :green\n+      say ''\n+      response = ask('Would you like to launch the Maid daemon now?', :limited_to => %w(Y N))\n+      case response\n+      when 'Y'\n+        say('')\n+        say('Starting Maid daemon...')\n+\n+        if load_agent = %x(launchctl load #{plist_destination})\n+          say 'Maid daemon is up and running. Enjoy!', :green\n+        else\n+          say 'Woops! Something went wrong, and the daemon didn\u2019t start.', :red\n+        end\n+      when 'N'\n+        say <<-EOF\n+\n+Cool beans, whenever you\u2019re ready to start the launch daemon, use the following command:\n+launchctl load #{plist_destination}\n+        EOF\n+      else\n+        raise \"Reached 'impossible' case (response: #{ response.inspect })\"",
+        "path": "lib/maid/app.rb",
+        "position": 90,
+        "original_position": 90,
+        "commit_id": "8a2d3f88a54278bacf98afb43bf4994224cb4b13",
+        "original_commit_id": "8a2d3f88a54278bacf98afb43bf4994224cb4b13",
+        "user": {
+            "login": "benjaminoakes",
+            "id": 5323,
+            "node_id": "MDQ6VXNlcjUzMjM=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5323?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/benjaminoakes",
+            "html_url": "https://github.com/benjaminoakes",
+            "followers_url": "https://api.github.com/users/benjaminoakes/followers",
+            "following_url": "https://api.github.com/users/benjaminoakes/following{/other_user}",
+            "gists_url": "https://api.github.com/users/benjaminoakes/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/benjaminoakes/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/benjaminoakes/subscriptions",
+            "organizations_url": "https://api.github.com/users/benjaminoakes/orgs",
+            "repos_url": "https://api.github.com/users/benjaminoakes/repos",
+            "events_url": "https://api.github.com/users/benjaminoakes/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/benjaminoakes/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Does `:limited_to => %w(Y N)` make it impossible to enter any other characters?\n",
+        "created_at": "2016-06-16T19:55:38Z",
+        "updated_at": "2016-06-16T19:55:39Z",
+        "html_url": "https://github.com/benjaminoakes/maid/pull/158#discussion_r67413029",
+        "pull_request_url": "https://api.github.com/repos/benjaminoakes/maid/pulls/158",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/comments/67413029"
+            },
+            "html": {
+                "href": "https://github.com/benjaminoakes/maid/pull/158#discussion_r67413029"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/benjaminoakes/maid/pulls/158"
+            }
+        }
+    }
+]

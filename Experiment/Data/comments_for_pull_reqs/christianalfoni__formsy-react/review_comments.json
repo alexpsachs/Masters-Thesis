@@ -1,0 +1,837 @@
+[
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34327796",
+        "pull_request_review_id": null,
+        "id": 34327796,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0MzI3Nzk2",
+        "diff_hunk": "@@ -365,17 +365,18 @@ Formsy.Form = React.createClass({\n   // Validate the form by going through all child input components\n   // and check their state\n   validateForm: function () {\n-    var allIsValid = true;\n+    var allIsValid;\n     var inputs = this.inputs;\n     var inputKeys = Object.keys(inputs);\n \n     // We need a callback as we are validating all inputs again. This will\n     // run when the last component has set its state\n     var onValidationComplete = function () {\n-      inputKeys.forEach(function (name) {\n+      allIsValid = inputKeys.every(function (name) {\n         if (!inputs[name].state._isValid) {\n-          allIsValid = false;\n+          return  false;\n         }\n+        return true;",
+        "path": "src/main.js",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "31e959017228f934548df14378aab8b3bee77fec",
+        "original_commit_id": "8691866c0dd3c8d956931e186f43c73e1aa8aafa",
+        "user": {
+            "login": "Semigradsky",
+            "id": 1198848,
+            "node_id": "MDQ6VXNlcjExOTg4NDg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1198848?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Semigradsky",
+            "html_url": "https://github.com/Semigradsky",
+            "followers_url": "https://api.github.com/users/Semigradsky/followers",
+            "following_url": "https://api.github.com/users/Semigradsky/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Semigradsky/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Semigradsky/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Semigradsky/subscriptions",
+            "organizations_url": "https://api.github.com/users/Semigradsky/orgs",
+            "repos_url": "https://api.github.com/users/Semigradsky/repos",
+            "events_url": "https://api.github.com/users/Semigradsky/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Semigradsky/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This code can be a bit easier:\n\n``` js\nvar allIsValid = inputKeys.every(function (name) {\n         return inputs[name].state._isValid;\n})\n```\n",
+        "created_at": "2015-07-10T05:01:17Z",
+        "updated_at": "2015-07-10T15:18:45Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/160#discussion_r34327796",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/160",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34327796"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/160#discussion_r34327796"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/160"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34354060",
+        "pull_request_review_id": null,
+        "id": 34354060,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0MzU0MDYw",
+        "diff_hunk": "@@ -365,17 +365,18 @@ Formsy.Form = React.createClass({\n   // Validate the form by going through all child input components\n   // and check their state\n   validateForm: function () {\n-    var allIsValid = true;\n+    var allIsValid;\n     var inputs = this.inputs;\n     var inputKeys = Object.keys(inputs);\n \n     // We need a callback as we are validating all inputs again. This will\n     // run when the last component has set its state\n     var onValidationComplete = function () {\n-      inputKeys.forEach(function (name) {\n+      allIsValid = inputKeys.every(function (name) {\n         if (!inputs[name].state._isValid) {\n-          allIsValid = false;\n+          return  false;\n         }\n+        return true;",
+        "path": "src/main.js",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "31e959017228f934548df14378aab8b3bee77fec",
+        "original_commit_id": "8691866c0dd3c8d956931e186f43c73e1aa8aafa",
+        "user": {
+            "login": "reiniergs",
+            "id": 3241179,
+            "node_id": "MDQ6VXNlcjMyNDExNzk=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3241179?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/reiniergs",
+            "html_url": "https://github.com/reiniergs",
+            "followers_url": "https://api.github.com/users/reiniergs/followers",
+            "following_url": "https://api.github.com/users/reiniergs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/reiniergs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/reiniergs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/reiniergs/subscriptions",
+            "organizations_url": "https://api.github.com/users/reiniergs/orgs",
+            "repos_url": "https://api.github.com/users/reiniergs/repos",
+            "events_url": "https://api.github.com/users/reiniergs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/reiniergs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes, that's correct.\n",
+        "created_at": "2015-07-10T13:25:28Z",
+        "updated_at": "2015-07-10T15:18:45Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/160#discussion_r34354060",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/160",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34354060"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/160#discussion_r34354060"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/160"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34356193",
+        "pull_request_review_id": null,
+        "id": 34356193,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0MzU2MTkz",
+        "diff_hunk": "@@ -365,17 +365,18 @@ Formsy.Form = React.createClass({\n   // Validate the form by going through all child input components\n   // and check their state\n   validateForm: function () {\n-    var allIsValid = true;\n+    var allIsValid;\n     var inputs = this.inputs;\n     var inputKeys = Object.keys(inputs);\n \n     // We need a callback as we are validating all inputs again. This will\n     // run when the last component has set its state\n     var onValidationComplete = function () {\n-      inputKeys.forEach(function (name) {\n+      allIsValid = inputKeys.every(function (name) {\n         if (!inputs[name].state._isValid) {\n-          allIsValid = false;\n+          return  false;\n         }\n+        return true;",
+        "path": "src/main.js",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "31e959017228f934548df14378aab8b3bee77fec",
+        "original_commit_id": "8691866c0dd3c8d956931e186f43c73e1aa8aafa",
+        "user": {
+            "login": "Semigradsky",
+            "id": 1198848,
+            "node_id": "MDQ6VXNlcjExOTg4NDg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1198848?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Semigradsky",
+            "html_url": "https://github.com/Semigradsky",
+            "followers_url": "https://api.github.com/users/Semigradsky/followers",
+            "following_url": "https://api.github.com/users/Semigradsky/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Semigradsky/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Semigradsky/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Semigradsky/subscriptions",
+            "organizations_url": "https://api.github.com/users/Semigradsky/orgs",
+            "repos_url": "https://api.github.com/users/Semigradsky/repos",
+            "events_url": "https://api.github.com/users/Semigradsky/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Semigradsky/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can you change? I will merge PR after this.\n",
+        "created_at": "2015-07-10T14:01:44Z",
+        "updated_at": "2015-07-10T15:18:45Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/160#discussion_r34356193",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/160",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34356193"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/160#discussion_r34356193"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/160"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34368737",
+        "pull_request_review_id": null,
+        "id": 34368737,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0MzY4NzM3",
+        "diff_hunk": "@@ -365,17 +365,18 @@ Formsy.Form = React.createClass({\n   // Validate the form by going through all child input components\n   // and check their state\n   validateForm: function () {\n-    var allIsValid = true;\n+    var allIsValid;\n     var inputs = this.inputs;\n     var inputKeys = Object.keys(inputs);\n \n     // We need a callback as we are validating all inputs again. This will\n     // run when the last component has set its state\n     var onValidationComplete = function () {\n-      inputKeys.forEach(function (name) {\n+      allIsValid = inputKeys.every(function (name) {\n         if (!inputs[name].state._isValid) {\n-          allIsValid = false;\n+          return  false;\n         }\n+        return true;",
+        "path": "src/main.js",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "31e959017228f934548df14378aab8b3bee77fec",
+        "original_commit_id": "8691866c0dd3c8d956931e186f43c73e1aa8aafa",
+        "user": {
+            "login": "reiniergs",
+            "id": 3241179,
+            "node_id": "MDQ6VXNlcjMyNDExNzk=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/3241179?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/reiniergs",
+            "html_url": "https://github.com/reiniergs",
+            "followers_url": "https://api.github.com/users/reiniergs/followers",
+            "following_url": "https://api.github.com/users/reiniergs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/reiniergs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/reiniergs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/reiniergs/subscriptions",
+            "organizations_url": "https://api.github.com/users/reiniergs/orgs",
+            "repos_url": "https://api.github.com/users/reiniergs/repos",
+            "events_url": "https://api.github.com/users/reiniergs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/reiniergs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Done :)\n",
+        "created_at": "2015-07-10T15:59:55Z",
+        "updated_at": "2015-07-10T15:59:55Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/160#discussion_r34368737",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/160",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34368737"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/160#discussion_r34368737"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/160"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34540716",
+        "pull_request_review_id": null,
+        "id": 34540716,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NTQwNzE2",
+        "diff_hunk": "@@ -435,7 +435,7 @@ Formsy.Form = React.createClass({\n   render: function () {\n \n     return (\n-      <form {...this.props} onSubmit={this.submit}>\n+      <form id={this.props.id} {...this.props} onSubmit={this.submit}>",
+        "path": "src/main.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "80cdac5a5857832abcb08d8e39443dadb5fc2626",
+        "original_commit_id": "80cdac5a5857832abcb08d8e39443dadb5fc2626",
+        "user": {
+            "login": "Semigradsky",
+            "id": 1198848,
+            "node_id": "MDQ6VXNlcjExOTg4NDg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1198848?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Semigradsky",
+            "html_url": "https://github.com/Semigradsky",
+            "followers_url": "https://api.github.com/users/Semigradsky/followers",
+            "following_url": "https://api.github.com/users/Semigradsky/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Semigradsky/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Semigradsky/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Semigradsky/subscriptions",
+            "organizations_url": "https://api.github.com/users/Semigradsky/orgs",
+            "repos_url": "https://api.github.com/users/Semigradsky/repos",
+            "events_url": "https://api.github.com/users/Semigradsky/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Semigradsky/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It is not necessary. `{...this.props}` does it\n",
+        "created_at": "2015-07-14T06:35:39Z",
+        "updated_at": "2015-07-14T06:35:39Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/162#discussion_r34540716",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/162",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34540716"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/162#discussion_r34540716"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/162"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34540828",
+        "pull_request_review_id": null,
+        "id": 34540828,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NTQwODI4",
+        "diff_hunk": "@@ -435,7 +435,7 @@ Formsy.Form = React.createClass({\n   render: function () {\n \n     return (\n-      <form {...this.props} onSubmit={this.submit}>\n+      <form id={this.props.id} {...this.props} onSubmit={this.submit}>",
+        "path": "src/main.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "80cdac5a5857832abcb08d8e39443dadb5fc2626",
+        "original_commit_id": "80cdac5a5857832abcb08d8e39443dadb5fc2626",
+        "user": {
+            "login": "rodryquintero",
+            "id": 1271370,
+            "node_id": "MDQ6VXNlcjEyNzEzNzA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1271370?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rodryquintero",
+            "html_url": "https://github.com/rodryquintero",
+            "followers_url": "https://api.github.com/users/rodryquintero/followers",
+            "following_url": "https://api.github.com/users/rodryquintero/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rodryquintero/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rodryquintero/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rodryquintero/subscriptions",
+            "organizations_url": "https://api.github.com/users/rodryquintero/orgs",
+            "repos_url": "https://api.github.com/users/rodryquintero/repos",
+            "events_url": "https://api.github.com/users/rodryquintero/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rodryquintero/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I thought so, however, the version I downloaded for use in one of my projects does not. Any ideas why?\n",
+        "created_at": "2015-07-14T06:37:53Z",
+        "updated_at": "2015-07-14T06:37:53Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/162#discussion_r34540828",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/162",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34540828"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/162#discussion_r34540828"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/162"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34540931",
+        "pull_request_review_id": null,
+        "id": 34540931,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NTQwOTMx",
+        "diff_hunk": "@@ -435,7 +435,7 @@ Formsy.Form = React.createClass({\n   render: function () {\n \n     return (\n-      <form {...this.props} onSubmit={this.submit}>\n+      <form id={this.props.id} {...this.props} onSubmit={this.submit}>",
+        "path": "src/main.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "80cdac5a5857832abcb08d8e39443dadb5fc2626",
+        "original_commit_id": "80cdac5a5857832abcb08d8e39443dadb5fc2626",
+        "user": {
+            "login": "rodryquintero",
+            "id": 1271370,
+            "node_id": "MDQ6VXNlcjEyNzEzNzA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1271370?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rodryquintero",
+            "html_url": "https://github.com/rodryquintero",
+            "followers_url": "https://api.github.com/users/rodryquintero/followers",
+            "following_url": "https://api.github.com/users/rodryquintero/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rodryquintero/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rodryquintero/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rodryquintero/subscriptions",
+            "organizations_url": "https://api.github.com/users/rodryquintero/orgs",
+            "repos_url": "https://api.github.com/users/rodryquintero/repos",
+            "events_url": "https://api.github.com/users/rodryquintero/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rodryquintero/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I just noticed that the npm version downloaded is different from the version in the repository. That version does not have {...props}. Just so you know.\n",
+        "created_at": "2015-07-14T06:40:32Z",
+        "updated_at": "2015-07-14T06:40:32Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/162#discussion_r34540931",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/162",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34540931"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/162#discussion_r34540931"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/162"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34541082",
+        "pull_request_review_id": null,
+        "id": 34541082,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NTQxMDgy",
+        "diff_hunk": "@@ -435,7 +435,7 @@ Formsy.Form = React.createClass({\n   render: function () {\n \n     return (\n-      <form {...this.props} onSubmit={this.submit}>\n+      <form id={this.props.id} {...this.props} onSubmit={this.submit}>",
+        "path": "src/main.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "80cdac5a5857832abcb08d8e39443dadb5fc2626",
+        "original_commit_id": "80cdac5a5857832abcb08d8e39443dadb5fc2626",
+        "user": {
+            "login": "Semigradsky",
+            "id": 1198848,
+            "node_id": "MDQ6VXNlcjExOTg4NDg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1198848?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Semigradsky",
+            "html_url": "https://github.com/Semigradsky",
+            "followers_url": "https://api.github.com/users/Semigradsky/followers",
+            "following_url": "https://api.github.com/users/Semigradsky/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Semigradsky/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Semigradsky/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Semigradsky/subscriptions",
+            "organizations_url": "https://api.github.com/users/Semigradsky/orgs",
+            "repos_url": "https://api.github.com/users/Semigradsky/repos",
+            "events_url": "https://api.github.com/users/Semigradsky/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Semigradsky/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It seems that it was not included in the release.\nYou can use the latest version in this way:\n\n```\nnpm install --save christianalfoni/formsy-react\n```\n\nor\n\n```\nbower install https://github.com/christianalfoni/formsy-react.git\n```\n\n@christianalfoni how about to create new 0.14.x version before 0.15.0 ?\n",
+        "created_at": "2015-07-14T06:43:41Z",
+        "updated_at": "2015-07-14T06:46:49Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/162#discussion_r34541082",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/162",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/34541082"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/162#discussion_r34541082"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/162"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/35492826",
+        "pull_request_review_id": null,
+        "id": 35492826,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1NDkyODI2",
+        "diff_hunk": "@@ -435,7 +435,7 @@ Formsy.Form = React.createClass({\n   render: function () {\n \n     return (\n-      <form {...this.props} onSubmit={this.submit}>\n+      <form id={this.props.id} {...this.props} onSubmit={this.submit}>",
+        "path": "src/main.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "80cdac5a5857832abcb08d8e39443dadb5fc2626",
+        "original_commit_id": "80cdac5a5857832abcb08d8e39443dadb5fc2626",
+        "user": {
+            "login": "christianalfoni",
+            "id": 3956929,
+            "node_id": "MDQ6VXNlcjM5NTY5Mjk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/3956929?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/christianalfoni",
+            "html_url": "https://github.com/christianalfoni",
+            "followers_url": "https://api.github.com/users/christianalfoni/followers",
+            "following_url": "https://api.github.com/users/christianalfoni/following{/other_user}",
+            "gists_url": "https://api.github.com/users/christianalfoni/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/christianalfoni/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/christianalfoni/subscriptions",
+            "organizations_url": "https://api.github.com/users/christianalfoni/orgs",
+            "repos_url": "https://api.github.com/users/christianalfoni/repos",
+            "events_url": "https://api.github.com/users/christianalfoni/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/christianalfoni/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If we just hold our breaths a little bit more I think React 0.14 is right around the corner :-) What we could do though is update the current readme encouraging people to use the new branch with React 0.14 Beta. That helps Facebook testing new React and us testing new Formsy.\n\nI think most issues now can be worked around until next release.\n",
+        "created_at": "2015-07-26T13:16:03Z",
+        "updated_at": "2015-07-26T13:16:03Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/162#discussion_r35492826",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/162",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/35492826"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/162#discussion_r35492826"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/162"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/132818747",
+        "pull_request_review_id": 55944514,
+        "id": 132818747,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjgxODc0Nw==",
+        "diff_hunk": "@@ -0,0 +1,3 @@\n+{\n+  \"extends\": \"airbnb\"",
+        "path": ".eslintrc",
+        "position": 2,
+        "original_position": 2,
+        "commit_id": "f5e25af36f52aa121916648113cc88b4cef44d07",
+        "original_commit_id": "818e7ded13741aec0b3ba9c4e0bdfba91490a115",
+        "user": {
+            "login": "track0x1",
+            "id": 5631509,
+            "node_id": "MDQ6VXNlcjU2MzE1MDk=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5631509?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/track0x1",
+            "html_url": "https://github.com/track0x1",
+            "followers_url": "https://api.github.com/users/track0x1/followers",
+            "following_url": "https://api.github.com/users/track0x1/following{/other_user}",
+            "gists_url": "https://api.github.com/users/track0x1/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/track0x1/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/track0x1/subscriptions",
+            "organizations_url": "https://api.github.com/users/track0x1/orgs",
+            "repos_url": "https://api.github.com/users/track0x1/repos",
+            "events_url": "https://api.github.com/users/track0x1/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/track0x1/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes!",
+        "created_at": "2017-08-12T14:08:20Z",
+        "updated_at": "2017-08-18T19:05:55Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r132818747",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/132818747"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r132818747"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/132818839",
+        "pull_request_review_id": 55944604,
+        "id": 132818839,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjgxODgzOQ==",
+        "diff_hunk": "@@ -1,124 +1,132 @@\n-formsy-react  [![GitHub release](https://img.shields.io/github/release/christianalfoni/formsy-react.svg)](https://github.com/christianalfoni/formsy-react/releases) [![Build Status](https://travis-ci.org/christianalfoni/formsy-react.svg?branch=master)](https://travis-ci.org/christianalfoni/formsy-react)\n-============\n+# formsy-react [![GitHub release](https://img.shields.io/github/release/christianalfoni/formsy-react.svg)](https://github.com/christianalfoni/formsy-react/releases) [![Build Status](https://travis-ci.org/christianalfoni/formsy-react.svg?branch=master)](https://travis-ci.org/christianalfoni/formsy-react)\n \n-A form input builder and validator for React JS\n+A form input builder and validator for React.\n \n-| [How to use](#how-to-use) | [API](/API.md) | [Examples](/examples) |\n-|---|---|---|\n+| [Quick Start](#quick-start) | [API](/API.md) | [Examples](/examples) |\n+| --------------------------- | -------------- | --------------------- |\n \n-## <a name=\"background\">Background</a>\n-I wrote an article on forms and validation with React JS, [Nailing that validation with React JS](http://christianalfoni.github.io/javascript/2014/10/22/nailing-that-validation-with-reactjs.html), the result of that was this extension.\n+## Background\n \n-The main concept is that forms, inputs and validation is done very differently across developers and projects. This extension to React JS aims to be that \"sweet spot\" between flexibility and reusability.\n+I wrote an article on forms and validation with React, [Nailing that validation with React JS](http://christianalfoni.github.io/javascript/2014/10/22/nailing-that-validation-with-reactjs.html), the result of that was this component.\n \n-## What you can do\n+The main concept is that forms, inputs, and validation are done very differently across developers and projects. This React component aims to be that \u201csweet spot\u201d between flexibility and reusability.\n \n-  1. Build any kind of form element components. Not just traditional inputs, but anything you want and get that validation for free\n+## What You Can Do\n \n-  2. Add validation rules and use them with simple syntax\n-\n-  3. Use handlers for different states of your form. Ex. \"onSubmit\", \"onError\", \"onValid\" etc.\n-\n-  4. Pass external errors to the form to invalidate elements\n-\n-  5. You can dynamically add form elements to your form and they will register/unregister to the form\n-\n-## Default elements\n-You can look at examples in this repo or use the [formsy-react-components](https://github.com/twisty/formsy-react-components) project to use bootstrap with formsy-react, or use [formsy-material-ui](https://github.com/mbrookes/formsy-material-ui) to use [Material-UI](http://material-ui.com/) with formsy-react.\n+1.  Build any kind of form element components. Not just traditional inputs, but anything you want, and get that validation for free\n+2.  Add validation rules and use them with simple syntax\n+3.  Use handlers for different states of your form. (`onError`, `onSubmit`, `onValid`, etc.)\n+4.  Pass external errors to the form to invalidate elements (E.g. a response from a server)\n+5.  Dynamically add form elements to your form and they will register/unregister to the form\n \n ## Install\n \n-  1. Download from this REPO and use globally (Formsy) or with requirejs\n-  2. Install with `npm install formsy-react` and use with browserify etc.\n+`yarn add formsy-react react react-dom` and use with webpack, browserify, etc.\n \n-## Changes\n+## Quick Start\n \n-[Check out releases](https://github.com/christianalfoni/formsy-react/releases)\n+### 1. Build a Formsy element\n \n-[Older changes](CHANGES.md)\n+```jsx\n+// MyInput.js\n+import { withFormsy } from 'formsy-react';\n+import React from 'react';\n \n-## How to use\n+class MyInput extends React.Component {\n+  constructor(props) {\n+    super(props);\n+    this.changeValue = this.changeValue.bind(this);\n+  }\n \n-See [`examples` folder](/examples) for examples. [Codepen demo](http://codepen.io/semigradsky/pen/dYYpwv?editors=001).\n+  changeValue(event) {\n+    // setValue() will set the value of the component, which in\n+    // turn will validate it and the rest of the form\n+    // Important: Don't skip this step. This pattern is required\n+    // for Formsy to work.\n+    this.props.setValue(event.currentTarget.value);\n+  }\n+\n+  render() {\n+    // An error message is returned only if the component is invalid\n+    const errorMessage = this.props.getErrorMessage();\n+\n+    return (\n+      <div>\n+        <input\n+          onChange={this.changeValue}\n+          type=\"text\"\n+          value={this.props.getValue() || ''}\n+        />\n+        <span>{errorMessage}</span>\n+      </div>\n+    );\n+  }\n+}\n+\n+export default withFormsy(MyInput);\n+```\n \n-Complete API reference is available [here](/API.md).\n+`withFormsy` is a [Higher-Order Component](https://facebook.github.io/react/docs/higher-order-components.html) that exposes additional props to `MyInput`. See the [API](/API.md#withFormsy) documentation to view a complete list of the props.\n \n-#### Formsy gives you a form straight out of the box\n+### 2. Use your Formsy element\n \n ```jsx\n-  import Formsy from 'formsy-react';\n-\n-  class MyAppForm extends React.Component {\n-    state = { canSubmit: false };\n-    enableButton = () => {\n-      this.setState({\n-        canSubmit: true\n-      });\n-    }\n-    disableButton = () => {\n-      this.setState({\n-        canSubmit: false\n-      });\n-    }\n-    submit(model) {\n-      someDep.saveEmail(model.email);\n-    }\n-    render() {\n-      return (\n-        <Formsy.Form onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>\n-          <MyOwnInput name=\"email\" validations=\"isEmail\" validationError=\"This is not a valid email\" required/>\n-          <button type=\"submit\" disabled={!this.state.canSubmit}>Submit</button>\n-        </Formsy.Form>\n-      );\n-    }\n-  });\n+import Formsy from 'formsy-react';\n+import React from 'react';\n+import MyInput from './MyInput';\n+\n+export default class App extends React.Component {\n+  constructor(props) {\n+    super(props);\n+    this.disableButton = this.disableButton.bind(this);\n+    this.enableButton = this.enableButton.bind(this);\n+    this.submit = this.submit.bind(this);\n+    this.state = { canSubmit: false };\n+  }\n+\n+  disableButton = () => {",
+        "path": "README.md",
+        "position": null,
+        "original_position": 142,
+        "commit_id": "f5e25af36f52aa121916648113cc88b4cef44d07",
+        "original_commit_id": "818e7ded13741aec0b3ba9c4e0bdfba91490a115",
+        "user": {
+            "login": "track0x1",
+            "id": 5631509,
+            "node_id": "MDQ6VXNlcjU2MzE1MDk=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5631509?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/track0x1",
+            "html_url": "https://github.com/track0x1",
+            "followers_url": "https://api.github.com/users/track0x1/followers",
+            "following_url": "https://api.github.com/users/track0x1/following{/other_user}",
+            "gists_url": "https://api.github.com/users/track0x1/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/track0x1/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/track0x1/subscriptions",
+            "organizations_url": "https://api.github.com/users/track0x1/orgs",
+            "repos_url": "https://api.github.com/users/track0x1/repos",
+            "events_url": "https://api.github.com/users/track0x1/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/track0x1/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Use ES7 class property + arrow function (as is here), or bind in the constructor (L81)... I've preferred arrow functions so you can easily see what functions are being bound when they are declared as opposed to having to look in the constructor. \ud83d\ude42",
+        "created_at": "2017-08-12T14:13:25Z",
+        "updated_at": "2017-08-18T19:05:55Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r132818839",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/132818839"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r132818839"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/132818847",
+        "pull_request_review_id": 55944604,
+        "id": 132818847,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjgxODg0Nw==",
+        "diff_hunk": "@@ -1,124 +1,132 @@\n-formsy-react  [![GitHub release](https://img.shields.io/github/release/christianalfoni/formsy-react.svg)](https://github.com/christianalfoni/formsy-react/releases) [![Build Status](https://travis-ci.org/christianalfoni/formsy-react.svg?branch=master)](https://travis-ci.org/christianalfoni/formsy-react)\n-============\n+# formsy-react [![GitHub release](https://img.shields.io/github/release/christianalfoni/formsy-react.svg)](https://github.com/christianalfoni/formsy-react/releases) [![Build Status](https://travis-ci.org/christianalfoni/formsy-react.svg?branch=master)](https://travis-ci.org/christianalfoni/formsy-react)\n \n-A form input builder and validator for React JS\n+A form input builder and validator for React.\n \n-| [How to use](#how-to-use) | [API](/API.md) | [Examples](/examples) |\n-|---|---|---|\n+| [Quick Start](#quick-start) | [API](/API.md) | [Examples](/examples) |\n+| --------------------------- | -------------- | --------------------- |\n \n-## <a name=\"background\">Background</a>\n-I wrote an article on forms and validation with React JS, [Nailing that validation with React JS](http://christianalfoni.github.io/javascript/2014/10/22/nailing-that-validation-with-reactjs.html), the result of that was this extension.\n+## Background\n \n-The main concept is that forms, inputs and validation is done very differently across developers and projects. This extension to React JS aims to be that \"sweet spot\" between flexibility and reusability.\n+I wrote an article on forms and validation with React, [Nailing that validation with React JS](http://christianalfoni.github.io/javascript/2014/10/22/nailing-that-validation-with-reactjs.html), the result of that was this component.\n \n-## What you can do\n+The main concept is that forms, inputs, and validation are done very differently across developers and projects. This React component aims to be that \u201csweet spot\u201d between flexibility and reusability.\n \n-  1. Build any kind of form element components. Not just traditional inputs, but anything you want and get that validation for free\n+## What You Can Do\n \n-  2. Add validation rules and use them with simple syntax\n-\n-  3. Use handlers for different states of your form. Ex. \"onSubmit\", \"onError\", \"onValid\" etc.\n-\n-  4. Pass external errors to the form to invalidate elements\n-\n-  5. You can dynamically add form elements to your form and they will register/unregister to the form\n-\n-## Default elements\n-You can look at examples in this repo or use the [formsy-react-components](https://github.com/twisty/formsy-react-components) project to use bootstrap with formsy-react, or use [formsy-material-ui](https://github.com/mbrookes/formsy-material-ui) to use [Material-UI](http://material-ui.com/) with formsy-react.\n+1.  Build any kind of form element components. Not just traditional inputs, but anything you want, and get that validation for free\n+2.  Add validation rules and use them with simple syntax\n+3.  Use handlers for different states of your form. (`onError`, `onSubmit`, `onValid`, etc.)\n+4.  Pass external errors to the form to invalidate elements (E.g. a response from a server)\n+5.  Dynamically add form elements to your form and they will register/unregister to the form\n \n ## Install\n \n-  1. Download from this REPO and use globally (Formsy) or with requirejs\n-  2. Install with `npm install formsy-react` and use with browserify etc.\n+`yarn add formsy-react react react-dom` and use with webpack, browserify, etc.\n \n-## Changes\n+## Quick Start\n \n-[Check out releases](https://github.com/christianalfoni/formsy-react/releases)\n+### 1. Build a Formsy element\n \n-[Older changes](CHANGES.md)\n+```jsx\n+// MyInput.js\n+import { withFormsy } from 'formsy-react';\n+import React from 'react';\n \n-## How to use\n+class MyInput extends React.Component {\n+  constructor(props) {\n+    super(props);\n+    this.changeValue = this.changeValue.bind(this);\n+  }\n \n-See [`examples` folder](/examples) for examples. [Codepen demo](http://codepen.io/semigradsky/pen/dYYpwv?editors=001).\n+  changeValue(event) {\n+    // setValue() will set the value of the component, which in\n+    // turn will validate it and the rest of the form\n+    // Important: Don't skip this step. This pattern is required\n+    // for Formsy to work.\n+    this.props.setValue(event.currentTarget.value);\n+  }\n+\n+  render() {\n+    // An error message is returned only if the component is invalid\n+    const errorMessage = this.props.getErrorMessage();\n+\n+    return (\n+      <div>\n+        <input\n+          onChange={this.changeValue}\n+          type=\"text\"\n+          value={this.props.getValue() || ''}\n+        />\n+        <span>{errorMessage}</span>\n+      </div>\n+    );\n+  }\n+}\n+\n+export default withFormsy(MyInput);\n+```\n \n-Complete API reference is available [here](/API.md).\n+`withFormsy` is a [Higher-Order Component](https://facebook.github.io/react/docs/higher-order-components.html) that exposes additional props to `MyInput`. See the [API](/API.md#withFormsy) documentation to view a complete list of the props.\n \n-#### Formsy gives you a form straight out of the box\n+### 2. Use your Formsy element\n \n ```jsx\n-  import Formsy from 'formsy-react';\n-\n-  class MyAppForm extends React.Component {\n-    state = { canSubmit: false };\n-    enableButton = () => {\n-      this.setState({\n-        canSubmit: true\n-      });\n-    }\n-    disableButton = () => {\n-      this.setState({\n-        canSubmit: false\n-      });\n-    }\n-    submit(model) {\n-      someDep.saveEmail(model.email);\n-    }\n-    render() {\n-      return (\n-        <Formsy.Form onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>\n-          <MyOwnInput name=\"email\" validations=\"isEmail\" validationError=\"This is not a valid email\" required/>\n-          <button type=\"submit\" disabled={!this.state.canSubmit}>Submit</button>\n-        </Formsy.Form>\n-      );\n-    }\n-  });\n+import Formsy from 'formsy-react';\n+import React from 'react';\n+import MyInput from './MyInput';\n+\n+export default class App extends React.Component {\n+  constructor(props) {\n+    super(props);\n+    this.disableButton = this.disableButton.bind(this);\n+    this.enableButton = this.enableButton.bind(this);\n+    this.submit = this.submit.bind(this);\n+    this.state = { canSubmit: false };\n+  }\n+\n+  disableButton = () => {\n+    this.setState({ canSubmit: false });\n+  }\n+\n+  enableButton = () => {",
+        "path": "README.md",
+        "position": null,
+        "original_position": 146,
+        "commit_id": "f5e25af36f52aa121916648113cc88b4cef44d07",
+        "original_commit_id": "818e7ded13741aec0b3ba9c4e0bdfba91490a115",
+        "user": {
+            "login": "track0x1",
+            "id": 5631509,
+            "node_id": "MDQ6VXNlcjU2MzE1MDk=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5631509?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/track0x1",
+            "html_url": "https://github.com/track0x1",
+            "followers_url": "https://api.github.com/users/track0x1/followers",
+            "following_url": "https://api.github.com/users/track0x1/following{/other_user}",
+            "gists_url": "https://api.github.com/users/track0x1/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/track0x1/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/track0x1/subscriptions",
+            "organizations_url": "https://api.github.com/users/track0x1/orgs",
+            "repos_url": "https://api.github.com/users/track0x1/repos",
+            "events_url": "https://api.github.com/users/track0x1/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/track0x1/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Same comment as above applies here.",
+        "created_at": "2017-08-12T14:14:03Z",
+        "updated_at": "2017-08-18T19:05:55Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r132818847",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/132818847"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r132818847"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/132818862",
+        "pull_request_review_id": 55944604,
+        "id": 132818862,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMjgxODg2Mg==",
+        "diff_hunk": "@@ -1,124 +1,132 @@\n-formsy-react  [![GitHub release](https://img.shields.io/github/release/christianalfoni/formsy-react.svg)](https://github.com/christianalfoni/formsy-react/releases) [![Build Status](https://travis-ci.org/christianalfoni/formsy-react.svg?branch=master)](https://travis-ci.org/christianalfoni/formsy-react)\n-============\n+# formsy-react [![GitHub release](https://img.shields.io/github/release/christianalfoni/formsy-react.svg)](https://github.com/christianalfoni/formsy-react/releases) [![Build Status](https://travis-ci.org/christianalfoni/formsy-react.svg?branch=master)](https://travis-ci.org/christianalfoni/formsy-react)\n \n-A form input builder and validator for React JS\n+A form input builder and validator for React.\n \n-| [How to use](#how-to-use) | [API](/API.md) | [Examples](/examples) |\n-|---|---|---|\n+| [Quick Start](#quick-start) | [API](/API.md) | [Examples](/examples) |\n+| --------------------------- | -------------- | --------------------- |\n \n-## <a name=\"background\">Background</a>\n-I wrote an article on forms and validation with React JS, [Nailing that validation with React JS](http://christianalfoni.github.io/javascript/2014/10/22/nailing-that-validation-with-reactjs.html), the result of that was this extension.\n+## Background\n \n-The main concept is that forms, inputs and validation is done very differently across developers and projects. This extension to React JS aims to be that \"sweet spot\" between flexibility and reusability.\n+I wrote an article on forms and validation with React, [Nailing that validation with React JS](http://christianalfoni.github.io/javascript/2014/10/22/nailing-that-validation-with-reactjs.html), the result of that was this component.\n \n-## What you can do\n+The main concept is that forms, inputs, and validation are done very differently across developers and projects. This React component aims to be that \u201csweet spot\u201d between flexibility and reusability.\n \n-  1. Build any kind of form element components. Not just traditional inputs, but anything you want and get that validation for free\n+## What You Can Do\n \n-  2. Add validation rules and use them with simple syntax\n-\n-  3. Use handlers for different states of your form. Ex. \"onSubmit\", \"onError\", \"onValid\" etc.\n-\n-  4. Pass external errors to the form to invalidate elements\n-\n-  5. You can dynamically add form elements to your form and they will register/unregister to the form\n-\n-## Default elements\n-You can look at examples in this repo or use the [formsy-react-components](https://github.com/twisty/formsy-react-components) project to use bootstrap with formsy-react, or use [formsy-material-ui](https://github.com/mbrookes/formsy-material-ui) to use [Material-UI](http://material-ui.com/) with formsy-react.\n+1.  Build any kind of form element components. Not just traditional inputs, but anything you want, and get that validation for free\n+2.  Add validation rules and use them with simple syntax\n+3.  Use handlers for different states of your form. (`onError`, `onSubmit`, `onValid`, etc.)\n+4.  Pass external errors to the form to invalidate elements (E.g. a response from a server)\n+5.  Dynamically add form elements to your form and they will register/unregister to the form\n \n ## Install\n \n-  1. Download from this REPO and use globally (Formsy) or with requirejs\n-  2. Install with `npm install formsy-react` and use with browserify etc.\n+`yarn add formsy-react react react-dom` and use with webpack, browserify, etc.\n \n-## Changes\n+## Quick Start\n \n-[Check out releases](https://github.com/christianalfoni/formsy-react/releases)\n+### 1. Build a Formsy element\n \n-[Older changes](CHANGES.md)\n+```jsx\n+// MyInput.js\n+import { withFormsy } from 'formsy-react';\n+import React from 'react';\n \n-## How to use\n+class MyInput extends React.Component {\n+  constructor(props) {\n+    super(props);\n+    this.changeValue = this.changeValue.bind(this);\n+  }\n \n-See [`examples` folder](/examples) for examples. [Codepen demo](http://codepen.io/semigradsky/pen/dYYpwv?editors=001).\n+  changeValue(event) {\n+    // setValue() will set the value of the component, which in\n+    // turn will validate it and the rest of the form\n+    // Important: Don't skip this step. This pattern is required\n+    // for Formsy to work.\n+    this.props.setValue(event.currentTarget.value);\n+  }\n+\n+  render() {\n+    // An error message is returned only if the component is invalid\n+    const errorMessage = this.props.getErrorMessage();\n+\n+    return (\n+      <div>\n+        <input\n+          onChange={this.changeValue}\n+          type=\"text\"\n+          value={this.props.getValue() || ''}\n+        />\n+        <span>{errorMessage}</span>\n+      </div>\n+    );\n+  }\n+}\n+\n+export default withFormsy(MyInput);\n+```\n \n-Complete API reference is available [here](/API.md).\n+`withFormsy` is a [Higher-Order Component](https://facebook.github.io/react/docs/higher-order-components.html) that exposes additional props to `MyInput`. See the [API](/API.md#withFormsy) documentation to view a complete list of the props.\n \n-#### Formsy gives you a form straight out of the box\n+### 2. Use your Formsy element\n \n ```jsx\n-  import Formsy from 'formsy-react';\n-\n-  class MyAppForm extends React.Component {\n-    state = { canSubmit: false };\n-    enableButton = () => {\n-      this.setState({\n-        canSubmit: true\n-      });\n-    }\n-    disableButton = () => {\n-      this.setState({\n-        canSubmit: false\n-      });\n-    }\n-    submit(model) {\n-      someDep.saveEmail(model.email);\n-    }\n-    render() {\n-      return (\n-        <Formsy.Form onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>\n-          <MyOwnInput name=\"email\" validations=\"isEmail\" validationError=\"This is not a valid email\" required/>\n-          <button type=\"submit\" disabled={!this.state.canSubmit}>Submit</button>\n-        </Formsy.Form>\n-      );\n-    }\n-  });\n+import Formsy from 'formsy-react';\n+import React from 'react';\n+import MyInput from './MyInput';\n+\n+export default class App extends React.Component {\n+  constructor(props) {\n+    super(props);\n+    this.disableButton = this.disableButton.bind(this);\n+    this.enableButton = this.enableButton.bind(this);\n+    this.submit = this.submit.bind(this);",
+        "path": "README.md",
+        "position": null,
+        "original_position": 138,
+        "commit_id": "f5e25af36f52aa121916648113cc88b4cef44d07",
+        "original_commit_id": "818e7ded13741aec0b3ba9c4e0bdfba91490a115",
+        "user": {
+            "login": "track0x1",
+            "id": 5631509,
+            "node_id": "MDQ6VXNlcjU2MzE1MDk=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5631509?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/track0x1",
+            "html_url": "https://github.com/track0x1",
+            "followers_url": "https://api.github.com/users/track0x1/followers",
+            "following_url": "https://api.github.com/users/track0x1/following{/other_user}",
+            "gists_url": "https://api.github.com/users/track0x1/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/track0x1/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/track0x1/subscriptions",
+            "organizations_url": "https://api.github.com/users/track0x1/orgs",
+            "repos_url": "https://api.github.com/users/track0x1/repos",
+            "events_url": "https://api.github.com/users/track0x1/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/track0x1/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Do you need to bind `submit`? It doesn't appear to be using `this` in it.",
+        "created_at": "2017-08-12T14:14:59Z",
+        "updated_at": "2017-08-18T19:05:56Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r132818862",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/132818862"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r132818862"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/133724615",
+        "pull_request_review_id": 56938689,
+        "id": 133724615,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMzcyNDYxNQ==",
+        "diff_hunk": "@@ -1,48 +1,61 @@\n {\n   \"name\": \"formsy-react\",\n   \"version\": \"1.0.0\",\n-  \"description\": \"A form input builder and validator for React JS\",\n+  \"description\": \"A form input builder and validator for React\",\n+  \"keywords\": [\n+    \"form\",\n+    \"forms\",\n+    \"formsy\",\n+    \"react\",\n+    \"react-component\",\n+    \"validation\"\n+  ],\n+  \"license\": \"MIT\",\n+  \"homepage\": \"https://github.com/christianalfoni/formsy-react\",\n+  \"bugs\": \"https://github.com/christianalfoni/formsy-react/issues\",\n   \"repository\": {\n     \"type\": \"git\",\n     \"url\": \"https://github.com/christianalfoni/formsy-react.git\"\n   },\n+  \"author\": \"Christian Alfoni\",\n+  \"files\": [\n+    \"lib\"\n+  ],\n   \"main\": \"lib/index.js\",\n   \"scripts\": {\n-    \"build\": \"NODE_ENV=production webpack -p --config webpack.production.config.js\",\n-    \"test\": \"babel-node testrunner\",\n+    \"build\": \"NODE_ENV=production webpack -p --config webpack.config.js && yarn run prepublish\",\n     \"examples\": \"webpack-dev-server --config examples/webpack.config.js --content-base examples\",\n-    \"prepublish\": \"rm -Rf ./lib && babel ./src/ -d ./lib/\"\n+    \"lint\": \"eslint src/**/*.js\",\n+    \"prepublish\": \"rm -Rf ./lib && babel ./src/ -d ./lib/\",\n+    \"test\": \"babel-node testrunner\"\n   },\n-  \"author\": \"Christian Alfoni\",\n-  \"license\": \"MIT\",\n-  \"keywords\": [\n-    \"react\",\n-    \"form\",\n-    \"forms\",\n-    \"validation\",\n-    \"react-component\"\n-  ],\n   \"dependencies\": {\n     \"form-data-to-object\": \"^0.2.0\",\n-    \"hoist-non-react-statics\": \"^2.2.1\",\n-    \"react\": \"^15.0.0\"\n+    \"prop-types\": \"^15.5.10\"\n   },\n   \"devDependencies\": {\n-    \"babel-cli\": \"^6.6.5\",\n-    \"babel-loader\": \"^6.2.4\",\n-    \"babel-preset-es2015\": \"^6.6.0\",\n-    \"babel-preset-react\": \"^6.5.0\",\n-    \"babel-preset-stage-2\": \"^6.5.0\",\n-    \"create-react-class\": \"^15.6.0\",\n-    \"jsdom\": \"^6.5.1\",\n-    \"nodeunit\": \"^0.9.1\",\n-    \"prop-types\": \"^15.5.10\",\n-    \"react\": \"^15.0.0\",\n-    \"react-addons-pure-render-mixin\": \"^15.0.0\",\n-    \"react-addons-test-utils\": \"^15.0.0\",\n-    \"react-dom\": \"^15.0.0\",\n-    \"sinon\": \"^1.17.3\",\n-    \"webpack\": \"^1.12.14\",\n-    \"webpack-dev-server\": \"^1.14.1\"\n+    \"babel-cli\": \"^6.24.1\",\n+    \"babel-loader\": \"^7.1.1\",\n+    \"babel-preset-es2015\": \"^6.24.1\",\n+    \"babel-preset-react\": \"^6.24.1\",\n+    \"babel-preset-stage-2\": \"^6.24.1\",\n+    \"eslint\": \"^3.19.0 || ^4.3.0\",\n+    \"eslint-config-airbnb\": \"^15.1.0\",\n+    \"eslint-plugin-import\": \"^2.7.0\",\n+    \"eslint-plugin-jsx-a11y\": \"^5.1.1\",\n+    \"eslint-plugin-react\": \"^7.1.0\",\n+    \"jsdom\": \"^11.1.0\",\n+    \"nodeunit\": \"^0.11.1\",\n+    \"react\": \"^15.6.1\",\n+    \"react-addons-pure-render-mixin\": \"^15.6.0\",\n+    \"react-addons-test-utils\": \"^15.6.0\",\n+    \"react-dom\": \"^15.6.1\",\n+    \"sinon\": \"^3.2.0\",\n+    \"webpack\": \"^3.5.4\",\n+    \"webpack-dev-server\": \"^2.7.1\"\n+  },\n+  \"peerDependencies\": {\n+    \"react\": \"^15.6.1\",\n+    \"react-dom\": \"^15.6.1\"",
+        "path": "package.json",
+        "position": 90,
+        "original_position": 90,
+        "commit_id": "f5e25af36f52aa121916648113cc88b4cef44d07",
+        "original_commit_id": "ea0cc0e3f3b633b0c87e01ac6303170afef9060f",
+        "user": {
+            "login": "track0x1",
+            "id": 5631509,
+            "node_id": "MDQ6VXNlcjU2MzE1MDk=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5631509?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/track0x1",
+            "html_url": "https://github.com/track0x1",
+            "followers_url": "https://api.github.com/users/track0x1/followers",
+            "following_url": "https://api.github.com/users/track0x1/following{/other_user}",
+            "gists_url": "https://api.github.com/users/track0x1/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/track0x1/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/track0x1/subscriptions",
+            "organizations_url": "https://api.github.com/users/track0x1/orgs",
+            "repos_url": "https://api.github.com/users/track0x1/repos",
+            "events_url": "https://api.github.com/users/track0x1/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/track0x1/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is listed on L52 as a dev dependency as well. (keep here, remove there)",
+        "created_at": "2017-08-17T14:13:29Z",
+        "updated_at": "2017-08-18T19:05:56Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r133724615",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/133724615"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r133724615"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/133860130",
+        "pull_request_review_id": 57089993,
+        "id": 133860130,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMzg2MDEzMA==",
+        "diff_hunk": "@@ -1,48 +1,61 @@\n {\n   \"name\": \"formsy-react\",\n   \"version\": \"1.0.0\",\n-  \"description\": \"A form input builder and validator for React JS\",\n+  \"description\": \"A form input builder and validator for React\",\n+  \"keywords\": [\n+    \"form\",\n+    \"forms\",\n+    \"formsy\",\n+    \"react\",\n+    \"react-component\",\n+    \"validation\"\n+  ],\n+  \"license\": \"MIT\",\n+  \"homepage\": \"https://github.com/christianalfoni/formsy-react\",\n+  \"bugs\": \"https://github.com/christianalfoni/formsy-react/issues\",\n   \"repository\": {\n     \"type\": \"git\",\n     \"url\": \"https://github.com/christianalfoni/formsy-react.git\"\n   },\n+  \"author\": \"Christian Alfoni\",\n+  \"files\": [\n+    \"lib\"\n+  ],\n   \"main\": \"lib/index.js\",\n   \"scripts\": {\n-    \"build\": \"NODE_ENV=production webpack -p --config webpack.production.config.js\",\n-    \"test\": \"babel-node testrunner\",\n+    \"build\": \"NODE_ENV=production webpack -p --config webpack.config.js && yarn run prepublish\",\n     \"examples\": \"webpack-dev-server --config examples/webpack.config.js --content-base examples\",\n-    \"prepublish\": \"rm -Rf ./lib && babel ./src/ -d ./lib/\"\n+    \"lint\": \"eslint src/**/*.js\",\n+    \"prepublish\": \"rm -Rf ./lib && babel ./src/ -d ./lib/\",\n+    \"test\": \"babel-node testrunner\"\n   },\n-  \"author\": \"Christian Alfoni\",\n-  \"license\": \"MIT\",\n-  \"keywords\": [\n-    \"react\",\n-    \"form\",\n-    \"forms\",\n-    \"validation\",\n-    \"react-component\"\n-  ],\n   \"dependencies\": {\n     \"form-data-to-object\": \"^0.2.0\",\n-    \"hoist-non-react-statics\": \"^2.2.1\",\n-    \"react\": \"^15.0.0\"\n+    \"prop-types\": \"^15.5.10\"\n   },\n   \"devDependencies\": {\n-    \"babel-cli\": \"^6.6.5\",\n-    \"babel-loader\": \"^6.2.4\",\n-    \"babel-preset-es2015\": \"^6.6.0\",\n-    \"babel-preset-react\": \"^6.5.0\",\n-    \"babel-preset-stage-2\": \"^6.5.0\",\n-    \"create-react-class\": \"^15.6.0\",\n-    \"jsdom\": \"^6.5.1\",\n-    \"nodeunit\": \"^0.9.1\",\n-    \"prop-types\": \"^15.5.10\",\n-    \"react\": \"^15.0.0\",\n-    \"react-addons-pure-render-mixin\": \"^15.0.0\",\n-    \"react-addons-test-utils\": \"^15.0.0\",\n-    \"react-dom\": \"^15.0.0\",\n-    \"sinon\": \"^1.17.3\",\n-    \"webpack\": \"^1.12.14\",\n-    \"webpack-dev-server\": \"^1.14.1\"\n+    \"babel-cli\": \"^6.24.1\",\n+    \"babel-loader\": \"^7.1.1\",\n+    \"babel-preset-es2015\": \"^6.24.1\",\n+    \"babel-preset-react\": \"^6.24.1\",\n+    \"babel-preset-stage-2\": \"^6.24.1\",\n+    \"eslint\": \"^3.19.0 || ^4.3.0\",\n+    \"eslint-config-airbnb\": \"^15.1.0\",\n+    \"eslint-plugin-import\": \"^2.7.0\",\n+    \"eslint-plugin-jsx-a11y\": \"^5.1.1\",\n+    \"eslint-plugin-react\": \"^7.1.0\",\n+    \"jsdom\": \"^11.1.0\",\n+    \"nodeunit\": \"^0.11.1\",\n+    \"react\": \"^15.6.1\",\n+    \"react-addons-pure-render-mixin\": \"^15.6.0\",\n+    \"react-addons-test-utils\": \"^15.6.0\",\n+    \"react-dom\": \"^15.6.1\",\n+    \"sinon\": \"^3.2.0\",\n+    \"webpack\": \"^3.5.4\",\n+    \"webpack-dev-server\": \"^2.7.1\"\n+  },\n+  \"peerDependencies\": {\n+    \"react\": \"^15.6.1\",\n+    \"react-dom\": \"^15.6.1\"",
+        "path": "package.json",
+        "position": 90,
+        "original_position": 90,
+        "commit_id": "f5e25af36f52aa121916648113cc88b4cef44d07",
+        "original_commit_id": "ea0cc0e3f3b633b0c87e01ac6303170afef9060f",
+        "user": {
+            "login": "aesopwolf",
+            "id": 6847633,
+            "node_id": "MDQ6VXNlcjY4NDc2MzM=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/6847633?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aesopwolf",
+            "html_url": "https://github.com/aesopwolf",
+            "followers_url": "https://api.github.com/users/aesopwolf/followers",
+            "following_url": "https://api.github.com/users/aesopwolf/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aesopwolf/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aesopwolf/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aesopwolf/subscriptions",
+            "organizations_url": "https://api.github.com/users/aesopwolf/orgs",
+            "repos_url": "https://api.github.com/users/aesopwolf/repos",
+            "events_url": "https://api.github.com/users/aesopwolf/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aesopwolf/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It needs to be kept as a dev dependency for running both the tests and examples, no?",
+        "created_at": "2017-08-18T00:36:18Z",
+        "updated_at": "2017-08-18T19:05:56Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r133860130",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/133860130"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r133860130"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473"
+            }
+        },
+        "in_reply_to_id": 133724615
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/133976424",
+        "pull_request_review_id": 57221632,
+        "id": 133976424,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzMzk3NjQyNA==",
+        "diff_hunk": "@@ -1,48 +1,61 @@\n {\n   \"name\": \"formsy-react\",\n   \"version\": \"1.0.0\",\n-  \"description\": \"A form input builder and validator for React JS\",\n+  \"description\": \"A form input builder and validator for React\",\n+  \"keywords\": [\n+    \"form\",\n+    \"forms\",\n+    \"formsy\",\n+    \"react\",\n+    \"react-component\",\n+    \"validation\"\n+  ],\n+  \"license\": \"MIT\",\n+  \"homepage\": \"https://github.com/christianalfoni/formsy-react\",\n+  \"bugs\": \"https://github.com/christianalfoni/formsy-react/issues\",\n   \"repository\": {\n     \"type\": \"git\",\n     \"url\": \"https://github.com/christianalfoni/formsy-react.git\"\n   },\n+  \"author\": \"Christian Alfoni\",\n+  \"files\": [\n+    \"lib\"\n+  ],\n   \"main\": \"lib/index.js\",\n   \"scripts\": {\n-    \"build\": \"NODE_ENV=production webpack -p --config webpack.production.config.js\",\n-    \"test\": \"babel-node testrunner\",\n+    \"build\": \"NODE_ENV=production webpack -p --config webpack.config.js && yarn run prepublish\",\n     \"examples\": \"webpack-dev-server --config examples/webpack.config.js --content-base examples\",\n-    \"prepublish\": \"rm -Rf ./lib && babel ./src/ -d ./lib/\"\n+    \"lint\": \"eslint src/**/*.js\",\n+    \"prepublish\": \"rm -Rf ./lib && babel ./src/ -d ./lib/\",\n+    \"test\": \"babel-node testrunner\"\n   },\n-  \"author\": \"Christian Alfoni\",\n-  \"license\": \"MIT\",\n-  \"keywords\": [\n-    \"react\",\n-    \"form\",\n-    \"forms\",\n-    \"validation\",\n-    \"react-component\"\n-  ],\n   \"dependencies\": {\n     \"form-data-to-object\": \"^0.2.0\",\n-    \"hoist-non-react-statics\": \"^2.2.1\",\n-    \"react\": \"^15.0.0\"\n+    \"prop-types\": \"^15.5.10\"\n   },\n   \"devDependencies\": {\n-    \"babel-cli\": \"^6.6.5\",\n-    \"babel-loader\": \"^6.2.4\",\n-    \"babel-preset-es2015\": \"^6.6.0\",\n-    \"babel-preset-react\": \"^6.5.0\",\n-    \"babel-preset-stage-2\": \"^6.5.0\",\n-    \"create-react-class\": \"^15.6.0\",\n-    \"jsdom\": \"^6.5.1\",\n-    \"nodeunit\": \"^0.9.1\",\n-    \"prop-types\": \"^15.5.10\",\n-    \"react\": \"^15.0.0\",\n-    \"react-addons-pure-render-mixin\": \"^15.0.0\",\n-    \"react-addons-test-utils\": \"^15.0.0\",\n-    \"react-dom\": \"^15.0.0\",\n-    \"sinon\": \"^1.17.3\",\n-    \"webpack\": \"^1.12.14\",\n-    \"webpack-dev-server\": \"^1.14.1\"\n+    \"babel-cli\": \"^6.24.1\",\n+    \"babel-loader\": \"^7.1.1\",\n+    \"babel-preset-es2015\": \"^6.24.1\",\n+    \"babel-preset-react\": \"^6.24.1\",\n+    \"babel-preset-stage-2\": \"^6.24.1\",\n+    \"eslint\": \"^3.19.0 || ^4.3.0\",\n+    \"eslint-config-airbnb\": \"^15.1.0\",\n+    \"eslint-plugin-import\": \"^2.7.0\",\n+    \"eslint-plugin-jsx-a11y\": \"^5.1.1\",\n+    \"eslint-plugin-react\": \"^7.1.0\",\n+    \"jsdom\": \"^11.1.0\",\n+    \"nodeunit\": \"^0.11.1\",\n+    \"react\": \"^15.6.1\",\n+    \"react-addons-pure-render-mixin\": \"^15.6.0\",\n+    \"react-addons-test-utils\": \"^15.6.0\",\n+    \"react-dom\": \"^15.6.1\",\n+    \"sinon\": \"^3.2.0\",\n+    \"webpack\": \"^3.5.4\",\n+    \"webpack-dev-server\": \"^2.7.1\"\n+  },\n+  \"peerDependencies\": {\n+    \"react\": \"^15.6.1\",\n+    \"react-dom\": \"^15.6.1\"",
+        "path": "package.json",
+        "position": 90,
+        "original_position": 90,
+        "commit_id": "f5e25af36f52aa121916648113cc88b4cef44d07",
+        "original_commit_id": "ea0cc0e3f3b633b0c87e01ac6303170afef9060f",
+        "user": {
+            "login": "track0x1",
+            "id": 5631509,
+            "node_id": "MDQ6VXNlcjU2MzE1MDk=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5631509?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/track0x1",
+            "html_url": "https://github.com/track0x1",
+            "followers_url": "https://api.github.com/users/track0x1/followers",
+            "following_url": "https://api.github.com/users/track0x1/following{/other_user}",
+            "gists_url": "https://api.github.com/users/track0x1/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/track0x1/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/track0x1/subscriptions",
+            "organizations_url": "https://api.github.com/users/track0x1/orgs",
+            "repos_url": "https://api.github.com/users/track0x1/repos",
+            "events_url": "https://api.github.com/users/track0x1/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/track0x1/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You're right! I've made a habit of using dependencies + devDependencies, ditching peer deps altogether \ud83d\ude43, but this is the better route.",
+        "created_at": "2017-08-18T14:45:50Z",
+        "updated_at": "2017-08-18T19:05:56Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r133976424",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/133976424"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/473#discussion_r133976424"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/473"
+            }
+        },
+        "in_reply_to_id": 133724615
+    },
+    {
+        "url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/137691035",
+        "pull_request_review_id": 61392237,
+        "id": 137691035,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNzY5MTAzNQ==",
+        "diff_hunk": "@@ -0,0 +1,467 @@\n+import formDataToObject from 'form-data-to-object';\n+import PropTypes from 'prop-types';\n+import React from 'react';\n+\n+import utils from './utils';\n+import validationRules from './validationRules';\n+import Wrapper, { propTypes } from './Wrapper';\n+\n+class Formsy extends React.Component {\n+  constructor(props) {\n+    super(props);\n+    this.state = {\n+      isValid: true,\n+      isSubmitting: false,\n+      canChange: false,\n+    };\n+    this.inputs = [];\n+    this.attachToForm = this.attachToForm.bind(this);\n+    this.detachFromForm = this.detachFromForm.bind(this);\n+    this.getCurrentValues = this.getCurrentValues.bind(this);\n+    this.getPristineValues = this.getPristineValues.bind(this);\n+    this.isChanged = this.isChanged.bind(this);\n+    this.isFormDisabled = this.isFormDisabled.bind(this);\n+    this.reset = this.reset.bind(this);\n+    this.resetInternal = this.resetInternal.bind(this);\n+    this.runValidation = this.runValidation.bind(this);\n+    this.submit = this.submit.bind(this);\n+    this.updateInputsWithError = this.updateInputsWithError.bind(this);\n+    this.validate = this.validate.bind(this);\n+    this.validateForm = this.validateForm.bind(this);\n+  }\n+\n+  getChildContext() {\n+    return {\n+      formsy: {\n+        attachToForm: this.attachToForm,\n+        detachFromForm: this.detachFromForm,\n+        validate: this.validate,\n+        isFormDisabled: this.isFormDisabled,\n+        isValidValue: (component, value) => this.runValidation(component, value).isValid,\n+      },\n+    };\n+  }\n+\n+  componentDidMount() {\n+    this.validateForm();\n+  }\n+\n+  componentWillUpdate() {\n+    // Keep a reference to input names before form updates,\n+    // to check if inputs has changed after render\n+    this.prevInputNames = this.inputs.map(component => component.props.name);\n+  }\n+\n+  componentDidUpdate() {\n+    if (this.props.validationErrors && typeof this.props.validationErrors === 'object' && Object.keys(this.props.validationErrors).length > 0) {\n+      this.setInputValidationErrors(this.props.validationErrors);\n+    }\n+\n+    const newInputNames = this.inputs.map(component => component.props.name);\n+    if (utils.arraysDiffer(this.prevInputNames, newInputNames)) {\n+      this.validateForm();\n+    }\n+  }\n+\n+  // Method put on each input component to register\n+  // itself to the form\n+  attachToForm(component) {\n+    if (this.inputs.indexOf(component) === -1) {\n+      this.inputs.push(component);\n+    }\n+\n+    this.validate(component);\n+  }\n+\n+  // Method put on each input component to unregister\n+  // itself from the form\n+  detachFromForm(component) {\n+    const componentPos = this.inputs.indexOf(component);\n+\n+    if (componentPos !== -1) {\n+      this.inputs = this.inputs.slice(0, componentPos).concat(this.inputs.slice(componentPos + 1));\n+    }\n+\n+    this.validateForm();\n+  }\n+\n+  getCurrentValues() {\n+    return this.inputs.reduce((data, component) => {\n+      const name = component.props.name;\n+      const dataCopy = Object.assign({}, data); // avoid param reassignment\n+      dataCopy[name] = component.state.value;\n+      return dataCopy;\n+    }, {});\n+  }\n+\n+  getModel() {\n+    const currentValues = this.getCurrentValues();\n+    return this.mapModel(currentValues);\n+  }\n+\n+  getPristineValues() {\n+    return this.inputs.reduce((data, component) => {\n+      const name = component.props.name;\n+      const dataCopy = Object.assign({}, data); // avoid param reassignment\n+      dataCopy[name] = component.props.value;\n+      return dataCopy;\n+    }, {});\n+  }\n+\n+  // Checks if the values have changed from their initial value\n+  isChanged() {\n+    return !utils.isSame(this.getPristineValues(), this.getCurrentValues());\n+  }\n+\n+  isFormDisabled() {\n+    return this.props.disabled;\n+  }\n+\n+  mapModel(model) {\n+    if (this.props.mapping) {\n+      return this.props.mapping(model);\n+    }\n+\n+    return formDataToObject.toObj(Object.keys(model).reduce((mappedModel, key) => {\n+      const keyArray = key.split('.');\n+      let base = mappedModel;\n+      while (keyArray.length) {\n+        const currentKey = keyArray.shift();\n+        base[currentKey] = (keyArray.length ? base[currentKey] || {} : model[key]);\n+        base = base[currentKey];\n+      }\n+      return mappedModel;\n+    }, {}));\n+  }\n+\n+  reset(data) {\n+    this.setFormPristine(true);\n+    this.resetModel(data);\n+  }\n+\n+  resetInternal(event) {\n+    event.preventDefault();\n+    this.reset();\n+    if (this.props.onReset) {\n+      this.props.onReset();\n+    }\n+  }\n+\n+  // Reset each key in the model to the original / initial / specified value\n+  resetModel(data) {\n+    this.inputs.forEach((component) => {\n+      const name = component.props.name;\n+      if (data && Object.prototype.hasOwnProperty.call(data, name)) {\n+        component.setValue(data[name]);\n+      } else {\n+        component.resetValue();\n+      }\n+    });\n+    this.validateForm();\n+  }\n+\n+  // Checks validation on current value or a passed value\n+  runValidation(component, value = component.state.value) {\n+    const currentValues = this.getCurrentValues();\n+    const validationErrors = component.props.validationErrors;\n+    const validationError = component.props.validationError;\n+\n+    const validationResults = utils.runRules(\n+      value, currentValues, component.validations, validationRules,\n+    );\n+    const requiredResults = utils.runRules(\n+      value, currentValues, component.requiredValidations, validationRules,\n+    );\n+\n+    const isRequired = Object.keys(component.requiredValidations).length ?\n+      !!requiredResults.success.length : false;\n+    const isValid = !validationResults.failed.length &&\n+      !(this.props.validationErrors && this.props.validationErrors[component.props.name]);\n+\n+    return {\n+      isRequired,\n+      isValid: isRequired ? false : isValid,\n+      error: (() => {\n+        if (isValid && !isRequired) {\n+          return [];\n+        }\n+\n+        if (validationResults.errors.length) {\n+          return validationResults.errors;\n+        }\n+\n+        if (this.props.validationErrors && this.props.validationErrors[component.props.name]) {\n+          return typeof this.props.validationErrors[component.props.name] === 'string' ? [this.props.validationErrors[component.props.name]] : this.props.validationErrors[component.props.name];\n+        }\n+\n+        if (isRequired) {\n+          const error = validationErrors[requiredResults.success[0]];\n+          return error ? [error] : null;\n+        }\n+\n+        if (validationResults.failed.length) {\n+          return validationResults.failed.map(failed =>\n+            (validationErrors[failed] ? validationErrors[failed] : validationError))\n+            .filter((x, pos, arr) => arr.indexOf(x) === pos); // remove duplicates\n+        }\n+\n+        return undefined;\n+      })(),\n+    };\n+  }\n+\n+  setInputValidationErrors(errors) {\n+    this.inputs.forEach((component) => {\n+      const name = component.props.name;\n+      const args = [{\n+        isValid: !(name in errors),\n+        validationError: typeof errors[name] === 'string' ? [errors[name]] : errors[name],\n+      }];\n+      component.setState(...args);\n+    });\n+  }\n+\n+  setFormPristine(isPristine) {\n+    this.setState({\n+      formSubmitted: !isPristine,\n+    });\n+\n+    // Iterate through each component and set it as pristine\n+    // or \"dirty\".\n+    this.inputs.forEach((component) => {\n+      component.setState({\n+        formSubmitted: !isPristine,\n+        isPristine,\n+      });\n+    });\n+  }\n+\n+  // Update model, submit to url prop and send the model\n+  submit(event) {\n+    if (event && event.preventDefault) {\n+      event.preventDefault();\n+    }\n+\n+    // Trigger form as not pristine.\n+    // If any inputs have not been touched yet this will make them dirty\n+    // so validation becomes visible (if based on isPristine)\n+    this.setFormPristine(false);\n+    const model = this.getModel();\n+    this.props.onSubmit(model, this.resetModel, this.updateInputsWithError);\n+    if (this.state.isValid) {\n+      this.props.onValidSubmit(model, this.resetModel, this.updateInputsWithError);\n+    } else {\n+      this.props.onInvalidSubmit(model, this.resetModel, this.updateInputsWithError);\n+    }\n+  }\n+\n+  // Go through errors from server and grab the components\n+  // stored in the inputs map. Change their state to invalid\n+  // and set the serverError message\n+  updateInputsWithError(errors) {\n+    Object.keys(errors).forEach((name) => {\n+      const component = utils.find(this.inputs, input => input.props.name === name);\n+      if (!component) {\n+        throw new Error(`You are trying to update an input that does not exist. Verify errors object with input names. ${JSON.stringify(errors)}`);\n+      }\n+      const args = [{\n+        isValid: this.props.preventExternalInvalidation,\n+        externalError: typeof errors[name] === 'string' ? [errors[name]] : errors[name],\n+      }];\n+      component.setState(...args);\n+    });\n+  }\n+\n+  // Use the binded values and the actual input value to\n+  // validate the input and set its state. Then check the\n+  // state of the form itself\n+  validate(component) {\n+    // Trigger onChange\n+    if (this.state.canChange) {\n+      this.props.onChange(this.getCurrentValues(), this.isChanged());\n+    }\n+\n+    const validation = this.runValidation(component);\n+    // Run through the validations, split them up and call\n+    // the validator IF there is a value or it is required\n+    component.setState({\n+      isValid: validation.isValid,\n+      isRequired: validation.isRequired,\n+      validationError: validation.error,\n+      externalError: null,\n+    }, this.validateForm);\n+  }\n+\n+  // Validate the form by going through all child input components\n+  // and check their state\n+  validateForm() {\n+    // We need a callback as we are validating all inputs again. This will\n+    // run when the last component has set its state\n+    const onValidationComplete = () => {\n+      const allIsValid = this.inputs.every(component => component.state.isValid);\n+\n+      this.setState({\n+        isValid: allIsValid,\n+      });\n+\n+      if (allIsValid) {\n+        this.props.onValid();\n+      } else {\n+        this.props.onInvalid();\n+      }\n+\n+      // Tell the form that it can start to trigger change events\n+      this.setState({\n+        canChange: true,\n+      });\n+    };\n+\n+    // Run validation again in case affected by other inputs. The\n+    // last component validated will run the onValidationComplete callback\n+    this.inputs.forEach((component, index) => {\n+      const validation = this.runValidation(component);\n+      if (validation.isValid && component.state.externalError) {\n+        validation.isValid = false;\n+      }\n+      component.setState({\n+        isValid: validation.isValid,\n+        isRequired: validation.isRequired,\n+        validationError: validation.error,\n+        externalError: !validation.isValid && component.state.externalError ?\n+          component.state.externalError : null,\n+      }, index === this.inputs.length - 1 ? onValidationComplete : null);\n+    });\n+\n+    // If there are no inputs, set state where form is ready to trigger\n+    // change event. New inputs might be added later\n+    if (!this.inputs.length) {\n+      this.setState({\n+        canChange: true,\n+      });\n+    }\n+  }\n+\n+  render() {\n+    const {\n+      getErrorMessage,\n+      getErrorMessages,\n+      getValue,\n+      hasValue,\n+      isFormDisabled,\n+      isFormSubmitted,\n+      isPristine,\n+      isRequired,\n+      isValid,\n+      isValidValue,\n+      mapping,\n+      onChange,\n+      // onError,\n+      onInvalidSubmit,\n+      onInvalid,\n+      onReset,\n+      onSubmit,\n+      onValid,\n+      onValidSubmit,\n+      preventExternalInvalidation,\n+      // reset,\n+      resetValue,\n+      setValidations,\n+      setValue,\n+      showError,\n+      showRequired,\n+      validationErrors,\n+      ...nonFormsyProps\n+    } = this.props;\n+\n+    return React.createElement(\n+      'form',\n+      {\n+        onReset: this.resetInternal,\n+        onSubmit: this.submit,\n+        ...nonFormsyProps,\n+      },\n+      this.props.children,\n+    );\n+  }\n+}\n+\n+Formsy.displayName = 'Formsy';\n+\n+Formsy.defaultProps = {\n+  children: null,\n+  disabled: false,\n+  getErrorMessage: () => {},\n+  getErrorMessages: () => {},\n+  getValue: () => {},\n+  hasValue: () => {},\n+  isFormDisabled: () => {},\n+  isFormSubmitted: () => {},\n+  isPristine: () => {},\n+  isRequired: () => {},\n+  isValid: () => {},\n+  isValidValue: () => {},\n+  mapping: null,\n+  onChange: () => {},\n+  onError: () => {},\n+  onInvalid: () => {},\n+  onInvalidSubmit: () => {},\n+  onReset: () => {},\n+  onSubmit: () => {},\n+  onValid: () => {},\n+  onValidSubmit: () => {},\n+  preventExternalInvalidation: false,\n+  resetValue: () => {},\n+  setValidations: () => {},\n+  setValue: () => {},\n+  showError: () => {},\n+  showRequired: () => {},\n+  validationErrors: null,\n+};\n+\n+Formsy.propTypes = {\n+  children: PropTypes.node,\n+  disabled: PropTypes.bool,\n+  getErrorMessage: PropTypes.func,\n+  getErrorMessages: PropTypes.func,\n+  getValue: PropTypes.func,\n+  hasValue: PropTypes.func,\n+  isFormDisabled: PropTypes.func,\n+  isFormSubmitted: PropTypes.func,\n+  isPristine: PropTypes.func,\n+  isRequired: PropTypes.func,\n+  isValid: PropTypes.func,\n+  isValidValue: PropTypes.func,\n+  mapping: PropTypes.object, // eslint-disable-line\n+  preventExternalInvalidation: PropTypes.bool,\n+  onChange: PropTypes.func,\n+  onInvalid: PropTypes.func,\n+  onInvalidSubmit: PropTypes.func,\n+  onReset: PropTypes.func,\n+  onSubmit: PropTypes.func,\n+  onValid: PropTypes.func,\n+  onValidSubmit: PropTypes.func,\n+  resetValue: PropTypes.func,\n+  setValidations: PropTypes.func,\n+  setValue: PropTypes.func,\n+  showError: PropTypes.func,\n+  showRequired: PropTypes.func,\n+  validationErrors: PropTypes.object, // eslint-disable-line\n+};\n+\n+Formsy.childContextTypes = {\n+  formsy: PropTypes.object,\n+};\n+\n+const addValidationRule = (name, func) => {\n+  validationRules[name] = func;",
+        "path": "src/index.js",
+        "position": 456,
+        "original_position": 456,
+        "commit_id": "42e39cbc8fa14333374c56b38b9b9bf389916991",
+        "original_commit_id": "42e39cbc8fa14333374c56b38b9b9bf389916991",
+        "user": {
+            "login": "maccuaa",
+            "id": 8158705,
+            "node_id": "MDQ6VXNlcjgxNTg3MDU=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/8158705?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/maccuaa",
+            "html_url": "https://github.com/maccuaa",
+            "followers_url": "https://api.github.com/users/maccuaa/followers",
+            "following_url": "https://api.github.com/users/maccuaa/following{/other_user}",
+            "gists_url": "https://api.github.com/users/maccuaa/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/maccuaa/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/maccuaa/subscriptions",
+            "organizations_url": "https://api.github.com/users/maccuaa/orgs",
+            "repos_url": "https://api.github.com/users/maccuaa/repos",
+            "events_url": "https://api.github.com/users/maccuaa/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/maccuaa/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This will overwrite any existing validation rule with the same name.  This can lead to unexpected behaviour, especially when working on large projects or projects with multiple developers.  The following snippet will warn the user if they attempt to add a validation rule with a name that already exists.  There's also an override parameter to allow the user to forcibly overwrite existing validation rules.\r\n\r\n```js\r\nFormsy.addValidationRule = function (name, func, force = false) {\r\n  if (!force && Object.keys(validationRules).indexOf(name) !== -1) {\r\n    console.error(`A Validation Rule with the name '${name}' already exists`);\r\n    return;\r\n  }\r\n  validationRules[name] = func;\r\n};\r\n```",
+        "created_at": "2017-09-08T01:11:31Z",
+        "updated_at": "2017-09-08T01:11:31Z",
+        "html_url": "https://github.com/christianalfoni/formsy-react/pull/477#discussion_r137691035",
+        "pull_request_url": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/477",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/comments/137691035"
+            },
+            "html": {
+                "href": "https://github.com/christianalfoni/formsy-react/pull/477#discussion_r137691035"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/christianalfoni/formsy-react/pulls/477"
+            }
+        }
+    }
+]

@@ -1,0 +1,149 @@
+[
+    {
+        "url": "https://api.github.com/repos/utahta/pythonbrew/pulls/comments/2181468",
+        "pull_request_review_id": null,
+        "id": 2181468,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxODE0Njg=",
+        "diff_hunk": "@@ -28,7 +36,7 @@ def run_command(self, options, args):\n         else:\n             pkgname = get_using_python_pkgname()\n         if not is_installed(pkgname):\n-            logger.error('`%s` is not installed.' % pkgname)\n+            logger.error('`%s` is not installed.' % pkgnam)",
+        "path": "pythonbrew/commands/buildout.py",
+        "position": 20,
+        "original_position": 20,
+        "commit_id": "c62cf8af6d7ee42d87977c0f07a9e9aec76dd0fc",
+        "original_commit_id": "c62cf8af6d7ee42d87977c0f07a9e9aec76dd0fc",
+        "user": {
+            "login": "berkerpeksag",
+            "id": 26338,
+            "node_id": "MDQ6VXNlcjI2MzM4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/26338?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/berkerpeksag",
+            "html_url": "https://github.com/berkerpeksag",
+            "followers_url": "https://api.github.com/users/berkerpeksag/followers",
+            "following_url": "https://api.github.com/users/berkerpeksag/following{/other_user}",
+            "gists_url": "https://api.github.com/users/berkerpeksag/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/berkerpeksag/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/berkerpeksag/subscriptions",
+            "organizations_url": "https://api.github.com/users/berkerpeksag/orgs",
+            "repos_url": "https://api.github.com/users/berkerpeksag/repos",
+            "events_url": "https://api.github.com/users/berkerpeksag/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/berkerpeksag/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "There is a typo here: s/pkgnam/pkgname/\n",
+        "created_at": "2012-11-20T14:59:49Z",
+        "updated_at": "2012-11-20T14:59:49Z",
+        "html_url": "https://github.com/utahta/pythonbrew/pull/97#discussion_r2181468",
+        "pull_request_url": "https://api.github.com/repos/utahta/pythonbrew/pulls/97",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/utahta/pythonbrew/pulls/comments/2181468"
+            },
+            "html": {
+                "href": "https://github.com/utahta/pythonbrew/pull/97#discussion_r2181468"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/utahta/pythonbrew/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/utahta/pythonbrew/pulls/comments/2181530",
+        "pull_request_review_id": null,
+        "id": 2181530,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIxODE1MzA=",
+        "diff_hunk": "@@ -53,6 +61,9 @@ def run_command(self, options, args):\n             sys.exit(1)\n \n         # call buildout\n-        subprocess.call(['./bin/buildout'])\n+        if options.config:\n+            subprocess.call(['./bin/buildout', '-c', option.config])\n+        else:\n+            subprocess.call(['./bin/buildout'])",
+        "path": "pythonbrew/commands/buildout.py",
+        "position": 32,
+        "original_position": 32,
+        "commit_id": "c62cf8af6d7ee42d87977c0f07a9e9aec76dd0fc",
+        "original_commit_id": "c62cf8af6d7ee42d87977c0f07a9e9aec76dd0fc",
+        "user": {
+            "login": "berkerpeksag",
+            "id": 26338,
+            "node_id": "MDQ6VXNlcjI2MzM4",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/26338?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/berkerpeksag",
+            "html_url": "https://github.com/berkerpeksag",
+            "followers_url": "https://api.github.com/users/berkerpeksag/followers",
+            "following_url": "https://api.github.com/users/berkerpeksag/following{/other_user}",
+            "gists_url": "https://api.github.com/users/berkerpeksag/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/berkerpeksag/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/berkerpeksag/subscriptions",
+            "organizations_url": "https://api.github.com/users/berkerpeksag/orgs",
+            "repos_url": "https://api.github.com/users/berkerpeksag/repos",
+            "events_url": "https://api.github.com/users/berkerpeksag/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/berkerpeksag/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "``` py\nbuildout_cmd = ['./bin/buildout']\nif options.config:\n    buildout_cmd.extend(['-c', option.config])\nsubprocess.call(buildout_cmd)\n```\n",
+        "created_at": "2012-11-20T15:04:26Z",
+        "updated_at": "2012-11-20T15:04:26Z",
+        "html_url": "https://github.com/utahta/pythonbrew/pull/97#discussion_r2181530",
+        "pull_request_url": "https://api.github.com/repos/utahta/pythonbrew/pulls/97",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/utahta/pythonbrew/pulls/comments/2181530"
+            },
+            "html": {
+                "href": "https://github.com/utahta/pythonbrew/pull/97#discussion_r2181530"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/utahta/pythonbrew/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/utahta/pythonbrew/pulls/comments/2228286",
+        "pull_request_review_id": null,
+        "id": 2228286,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDIyMjgyODY=",
+        "diff_hunk": "@@ -53,6 +61,9 @@ def run_command(self, options, args):\n             sys.exit(1)\n \n         # call buildout\n-        subprocess.call(['./bin/buildout'])\n+        if options.config:\n+            subprocess.call(['./bin/buildout', '-c', option.config])\n+        else:\n+            subprocess.call(['./bin/buildout'])",
+        "path": "pythonbrew/commands/buildout.py",
+        "position": 32,
+        "original_position": 32,
+        "commit_id": "c62cf8af6d7ee42d87977c0f07a9e9aec76dd0fc",
+        "original_commit_id": "c62cf8af6d7ee42d87977c0f07a9e9aec76dd0fc",
+        "user": {
+            "login": "motiteux",
+            "id": 358734,
+            "node_id": "MDQ6VXNlcjM1ODczNA==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/358734?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/motiteux",
+            "html_url": "https://github.com/motiteux",
+            "followers_url": "https://api.github.com/users/motiteux/followers",
+            "following_url": "https://api.github.com/users/motiteux/following{/other_user}",
+            "gists_url": "https://api.github.com/users/motiteux/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/motiteux/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/motiteux/subscriptions",
+            "organizations_url": "https://api.github.com/users/motiteux/orgs",
+            "repos_url": "https://api.github.com/users/motiteux/repos",
+            "events_url": "https://api.github.com/users/motiteux/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/motiteux/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks. That's actually what I did on my [fork](https://github.com/motiteux/pythonbrew/blob/master/pythonbrew/commands/buildout.py), plus adding handling of unicode for python ver < 3.*:\n\n```\n# call bootstrap.py\noption_boostrap = [python.encode('utf8'), bootstrap, '-d']\nif options.config:\n    option_boostrap.extend(['-c', options.config])\n\n\ncmd_bootstrap =' '.join(\"{0}\".format(iter_el) for\n                        iter_el in  option_boostrap)\n\nif subprocess.call(shlex.split(cmd_bootstrap.encode('utf8'))):\n    logger.error('Failed to bootstrap.')\n    sys.exit(1)\n\n# call buildout\nif options.config:\n    subprocess.call(['./bin/buildout', '-c', options.config])\nelse:\n    subprocess.call(['./bin/buildout'])\n```\n",
+        "created_at": "2012-11-26T22:15:22Z",
+        "updated_at": "2012-11-26T22:18:08Z",
+        "html_url": "https://github.com/utahta/pythonbrew/pull/97#discussion_r2228286",
+        "pull_request_url": "https://api.github.com/repos/utahta/pythonbrew/pulls/97",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/utahta/pythonbrew/pulls/comments/2228286"
+            },
+            "html": {
+                "href": "https://github.com/utahta/pythonbrew/pull/97#discussion_r2228286"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/utahta/pythonbrew/pulls/97"
+            }
+        }
+    }
+]

@@ -1,0 +1,541 @@
+[
+    {
+        "url": "https://api.github.com/repos/HubSpot/offline/pulls/comments/7292970",
+        "pull_request_review_id": null,
+        "id": 7292970,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyOTI5NzA=",
+        "diff_hunk": "@@ -98,7 +98,8 @@ Offline.off = (event, handler) ->\n     while i < handlers[event].length\n       [ctx, _handler] = handlers[event][i]\n       if _handler is handler\n-        handlers[event].splice i--, 1\n+        handlers[event].splice i, 1",
+        "path": "coffee/offline.coffee",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "4f72bbe7e04aab0148d67a4d79081df4ef4f0882",
+        "original_commit_id": "4f72bbe7e04aab0148d67a4d79081df4ef4f0882",
+        "user": {
+            "login": "zackbloom",
+            "id": 55347,
+            "node_id": "MDQ6VXNlcjU1MzQ3",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/55347?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zackbloom",
+            "html_url": "https://github.com/zackbloom",
+            "followers_url": "https://api.github.com/users/zackbloom/followers",
+            "following_url": "https://api.github.com/users/zackbloom/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zackbloom/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zackbloom/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zackbloom/subscriptions",
+            "organizations_url": "https://api.github.com/users/zackbloom/orgs",
+            "repos_url": "https://api.github.com/users/zackbloom/repos",
+            "events_url": "https://api.github.com/users/zackbloom/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zackbloom/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This fix would skip an item for every item removed.\n",
+        "created_at": "2013-10-29T20:14:50Z",
+        "updated_at": "2013-10-29T20:14:50Z",
+        "html_url": "https://github.com/HubSpot/offline/pull/10#discussion_r7292970",
+        "pull_request_url": "https://api.github.com/repos/HubSpot/offline/pulls/10",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/comments/7292970"
+            },
+            "html": {
+                "href": "https://github.com/HubSpot/offline/pull/10#discussion_r7292970"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/10"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/HubSpot/offline/pulls/comments/7781026",
+        "pull_request_review_id": null,
+        "id": 7781026,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3ODEwMjY=",
+        "diff_hunk": "@@ -0,0 +1,28 @@\n+@import compass/css3\n+\n+@import offline-theme-base-indicator\n+\n+$red: #d9534f\n+$darkRed: #d43f3a\n+$green: #5cb85c\n+$darkGreen: #398439\n+\n+.offline-ui\n+    +border-radius(4px)\n+    font-family: \"Helvetica Neue\", sans-serif\n+    white-space: nowrap\n+    padding: 1em\n+    width: 5em\n+    max-width: 100%\n+    bottom: 1em\n+    left: 1em\n+\n+    &.offline-ui-up\n+        background: $green\n+        color: white\n+        border-color: $darkGreen\n+\n+    &.offline-ui-down\n+        background: $red\n+        color: white",
+        "path": "sass/offline-theme-bootstrap-indicator.sass",
+        "position": 27,
+        "original_position": 27,
+        "commit_id": "17d3bdf954229c012ddbb4eb46b18af026eff1f5",
+        "original_commit_id": "17d3bdf954229c012ddbb4eb46b18af026eff1f5",
+        "user": {
+            "login": "adamschwartz",
+            "id": 154613,
+            "node_id": "MDQ6VXNlcjE1NDYxMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/154613?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adamschwartz",
+            "html_url": "https://github.com/adamschwartz",
+            "followers_url": "https://api.github.com/users/adamschwartz/followers",
+            "following_url": "https://api.github.com/users/adamschwartz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adamschwartz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adamschwartz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adamschwartz/subscriptions",
+            "organizations_url": "https://api.github.com/users/adamschwartz/orgs",
+            "repos_url": "https://api.github.com/users/adamschwartz/repos",
+            "events_url": "https://api.github.com/users/adamschwartz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adamschwartz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Same here.\n",
+        "created_at": "2013-11-20T02:32:57Z",
+        "updated_at": "2013-11-20T02:32:57Z",
+        "html_url": "https://github.com/HubSpot/offline/pull/24#discussion_r7781026",
+        "pull_request_url": "https://api.github.com/repos/HubSpot/offline/pulls/24",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/comments/7781026"
+            },
+            "html": {
+                "href": "https://github.com/HubSpot/offline/pull/24#discussion_r7781026"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/HubSpot/offline/pulls/comments/7781022",
+        "pull_request_review_id": null,
+        "id": 7781022,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3ODEwMjI=",
+        "diff_hunk": "@@ -0,0 +1,28 @@\n+@import compass/css3\n+\n+@import offline-theme-base-indicator\n+\n+$red: #d9534f\n+$darkRed: #d43f3a\n+$green: #5cb85c\n+$darkGreen: #398439\n+\n+.offline-ui\n+    +border-radius(4px)\n+    font-family: \"Helvetica Neue\", sans-serif\n+    white-space: nowrap\n+    padding: 1em\n+    width: 5em\n+    max-width: 100%\n+    bottom: 1em\n+    left: 1em\n+\n+    &.offline-ui-up\n+        background: $green\n+        color: white",
+        "path": "sass/offline-theme-bootstrap-indicator.sass",
+        "position": 22,
+        "original_position": 22,
+        "commit_id": "17d3bdf954229c012ddbb4eb46b18af026eff1f5",
+        "original_commit_id": "17d3bdf954229c012ddbb4eb46b18af026eff1f5",
+        "user": {
+            "login": "adamschwartz",
+            "id": 154613,
+            "node_id": "MDQ6VXNlcjE1NDYxMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/154613?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adamschwartz",
+            "html_url": "https://github.com/adamschwartz",
+            "followers_url": "https://api.github.com/users/adamschwartz/followers",
+            "following_url": "https://api.github.com/users/adamschwartz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adamschwartz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adamschwartz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adamschwartz/subscriptions",
+            "organizations_url": "https://api.github.com/users/adamschwartz/orgs",
+            "repos_url": "https://api.github.com/users/adamschwartz/repos",
+            "events_url": "https://api.github.com/users/adamschwartz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adamschwartz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@saadmalik  Are you sure you meant this to be `white` and not `$darkGreen`?\n",
+        "created_at": "2013-11-20T02:32:47Z",
+        "updated_at": "2013-11-20T02:33:04Z",
+        "html_url": "https://github.com/HubSpot/offline/pull/24#discussion_r7781022",
+        "pull_request_url": "https://api.github.com/repos/HubSpot/offline/pulls/24",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/comments/7781022"
+            },
+            "html": {
+                "href": "https://github.com/HubSpot/offline/pull/24#discussion_r7781022"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/HubSpot/offline/pulls/comments/7781185",
+        "pull_request_review_id": null,
+        "id": 7781185,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3ODExODU=",
+        "diff_hunk": "@@ -0,0 +1,85 @@\n+@import compass/css3\n+\n+@import mixins\n+@import keyframes\n+\n+@import offline-theme-base\n+\n+$red: #ebccd1\n+$green: #d6e9c6\n+$yellow: #faebcc\n+\n+$lightRed: #f2dede\n+$lightGreen: #dff0d8\n+$lightYellow: #fcf8e3\n+\n+$darkRed: #b94a48\n+$darkGreen: #468847\n+$darkYellow: #c09853\n+\n++keyframes-offline-fadein\n++keyframes-offline-fadeout-and-hide\n+\n++keyframes-offline-rotation\n+\n+.offline-ui\n+    +border-radius(4px)\n+    font-family: \"Helvetica Neue\", sans-serif\n+    white-space: nowrap\n+    padding: 1em\n+    top: 1em\n+    width: 34em\n+    max-width: 100%\n+\n+    @media (max-width: 34em)\n+        +border-radius(0)\n+        top: 0\n+\n+    .offline-ui-retry\n+        position: absolute\n+        right: 3em\n+        top: 0\n+        bottom: 0\n+        background: rgba(0, 0, 0, .1)\n+        text-decoration: none\n+        color: inherit\n+        line-height: 3em\n+        padding: 0 1em\n+\n+    &.offline-ui-up\n+        +offline-animation(offline-fadeout-and-hide forwards .5s 2s)\n+        background: $lightGreen\n+        color: $darkGreen\n+        border-color: $green",
+        "path": "sass/offline-theme-bootstrap.sass",
+        "position": 53,
+        "original_position": 53,
+        "commit_id": "17d3bdf954229c012ddbb4eb46b18af026eff1f5",
+        "original_commit_id": "17d3bdf954229c012ddbb4eb46b18af026eff1f5",
+        "user": {
+            "login": "adamschwartz",
+            "id": 154613,
+            "node_id": "MDQ6VXNlcjE1NDYxMw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/154613?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/adamschwartz",
+            "html_url": "https://github.com/adamschwartz",
+            "followers_url": "https://api.github.com/users/adamschwartz/followers",
+            "following_url": "https://api.github.com/users/adamschwartz/following{/other_user}",
+            "gists_url": "https://api.github.com/users/adamschwartz/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/adamschwartz/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/adamschwartz/subscriptions",
+            "organizations_url": "https://api.github.com/users/adamschwartz/orgs",
+            "repos_url": "https://api.github.com/users/adamschwartz/repos",
+            "events_url": "https://api.github.com/users/adamschwartz/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/adamschwartz/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@saadmalik Also, you set `border-color` here and in several other places, but I don't believe you set `border-style` or `border-width`. (And in your attached screenshot, I'm not seeing any borders.) Did you intend to add borders to match the [Bootstrap alert](http://getbootstrap.com/components/#alerts) style?\n",
+        "created_at": "2013-11-20T02:48:26Z",
+        "updated_at": "2013-11-20T02:49:45Z",
+        "html_url": "https://github.com/HubSpot/offline/pull/24#discussion_r7781185",
+        "pull_request_url": "https://api.github.com/repos/HubSpot/offline/pulls/24",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/comments/7781185"
+            },
+            "html": {
+                "href": "https://github.com/HubSpot/offline/pull/24#discussion_r7781185"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/HubSpot/offline/pulls/comments/34429440",
+        "pull_request_review_id": null,
+        "id": 34429440,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NDI5NDQw",
+        "diff_hunk": "@@ -250,3 +252,8 @@ init = ->\n setTimeout init, 0\n \n window.Offline = Offline\n+\n+if navigator.userAgent.indexOf(\"Firefox\") > 0",
+        "path": "coffee/offline.coffee",
+        "position": 14,
+        "original_position": 14,
+        "commit_id": "e1b10a18b391eac73ca5c9cc637fe8e9ba5c8372",
+        "original_commit_id": "e1b10a18b391eac73ca5c9cc637fe8e9ba5c8372",
+        "user": {
+            "login": "rawls238",
+            "id": 1596135,
+            "node_id": "MDQ6VXNlcjE1OTYxMzU=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1596135?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rawls238",
+            "html_url": "https://github.com/rawls238",
+            "followers_url": "https://api.github.com/users/rawls238/followers",
+            "following_url": "https://api.github.com/users/rawls238/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rawls238/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rawls238/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rawls238/subscriptions",
+            "organizations_url": "https://api.github.com/users/rawls238/orgs",
+            "repos_url": "https://api.github.com/users/rawls238/repos",
+            "events_url": "https://api.github.com/users/rawls238/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rawls238/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "perhaps write\n\n``` javascript\n navigator.userAgent.toLowerCase().indexOf(\"firefox\") is not -1\n```\n\ninstead?\n",
+        "created_at": "2015-07-13T02:03:44Z",
+        "updated_at": "2015-07-13T02:03:49Z",
+        "html_url": "https://github.com/HubSpot/offline/pull/128#discussion_r34429440",
+        "pull_request_url": "https://api.github.com/repos/HubSpot/offline/pulls/128",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/comments/34429440"
+            },
+            "html": {
+                "href": "https://github.com/HubSpot/offline/pull/128#discussion_r34429440"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/128"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/HubSpot/offline/pulls/comments/34529701",
+        "pull_request_review_id": null,
+        "id": 34529701,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NTI5NzAx",
+        "diff_hunk": "@@ -181,7 +186,7 @@ Offline.checks.image = ->\n   img = document.createElement 'img'\n   img.onerror = Offline.markDown\n   img.onload = Offline.markUp\n-  img.src = Offline.getOption('checks.image.url')\n+  img.src = Offline.getOption('checks.image.url') + cacheBust()",
+        "path": "coffee/offline.coffee",
+        "position": 35,
+        "original_position": 35,
+        "commit_id": "c1b72a9279ebab427aeaf0a28a435242c4097ec4",
+        "original_commit_id": "c1b72a9279ebab427aeaf0a28a435242c4097ec4",
+        "user": {
+            "login": "rawls238",
+            "id": 1596135,
+            "node_id": "MDQ6VXNlcjE1OTYxMzU=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1596135?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rawls238",
+            "html_url": "https://github.com/rawls238",
+            "followers_url": "https://api.github.com/users/rawls238/followers",
+            "following_url": "https://api.github.com/users/rawls238/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rawls238/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rawls238/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rawls238/subscriptions",
+            "organizations_url": "https://api.github.com/users/rawls238/orgs",
+            "repos_url": "https://api.github.com/users/rawls238/repos",
+            "events_url": "https://api.github.com/users/rawls238/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rawls238/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "what if this url already has query params?\n",
+        "created_at": "2015-07-14T01:14:45Z",
+        "updated_at": "2015-07-14T01:14:45Z",
+        "html_url": "https://github.com/HubSpot/offline/pull/139#discussion_r34529701",
+        "pull_request_url": "https://api.github.com/repos/HubSpot/offline/pulls/139",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/comments/34529701"
+            },
+            "html": {
+                "href": "https://github.com/HubSpot/offline/pull/139#discussion_r34529701"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/139"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/HubSpot/offline/pulls/comments/34628120",
+        "pull_request_review_id": null,
+        "id": 34628120,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NjI4MTIw",
+        "diff_hunk": "@@ -181,7 +186,7 @@ Offline.checks.image = ->\n   img = document.createElement 'img'\n   img.onerror = Offline.markDown\n   img.onload = Offline.markUp\n-  img.src = Offline.getOption('checks.image.url')\n+  img.src = Offline.getOption('checks.image.url') + cacheBust()",
+        "path": "coffee/offline.coffee",
+        "position": 35,
+        "original_position": 35,
+        "commit_id": "c1b72a9279ebab427aeaf0a28a435242c4097ec4",
+        "original_commit_id": "c1b72a9279ebab427aeaf0a28a435242c4097ec4",
+        "user": {
+            "login": "indolering",
+            "id": 44454,
+            "node_id": "MDQ6VXNlcjQ0NDU0",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/44454?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/indolering",
+            "html_url": "https://github.com/indolering",
+            "followers_url": "https://api.github.com/users/indolering/followers",
+            "following_url": "https://api.github.com/users/indolering/following{/other_user}",
+            "gists_url": "https://api.github.com/users/indolering/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/indolering/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/indolering/subscriptions",
+            "organizations_url": "https://api.github.com/users/indolering/orgs",
+            "repos_url": "https://api.github.com/users/indolering/repos",
+            "events_url": "https://api.github.com/users/indolering/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/indolering/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "> what if this url already has query params?\n\nGood question, I could add detection of the query parameters and just tack on a non-sense parameter.  Would that be good enough?\n",
+        "created_at": "2015-07-14T22:32:09Z",
+        "updated_at": "2015-07-14T22:32:09Z",
+        "html_url": "https://github.com/HubSpot/offline/pull/139#discussion_r34628120",
+        "pull_request_url": "https://api.github.com/repos/HubSpot/offline/pulls/139",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/comments/34628120"
+            },
+            "html": {
+                "href": "https://github.com/HubSpot/offline/pull/139#discussion_r34628120"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/139"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/HubSpot/offline/pulls/comments/34639486",
+        "pull_request_review_id": null,
+        "id": 34639486,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0NjM5NDg2",
+        "diff_hunk": "@@ -181,7 +186,7 @@ Offline.checks.image = ->\n   img = document.createElement 'img'\n   img.onerror = Offline.markDown\n   img.onload = Offline.markUp\n-  img.src = Offline.getOption('checks.image.url')\n+  img.src = Offline.getOption('checks.image.url') + cacheBust()",
+        "path": "coffee/offline.coffee",
+        "position": 35,
+        "original_position": 35,
+        "commit_id": "c1b72a9279ebab427aeaf0a28a435242c4097ec4",
+        "original_commit_id": "c1b72a9279ebab427aeaf0a28a435242c4097ec4",
+        "user": {
+            "login": "rawls238",
+            "id": 1596135,
+            "node_id": "MDQ6VXNlcjE1OTYxMzU=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1596135?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rawls238",
+            "html_url": "https://github.com/rawls238",
+            "followers_url": "https://api.github.com/users/rawls238/followers",
+            "following_url": "https://api.github.com/users/rawls238/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rawls238/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rawls238/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rawls238/subscriptions",
+            "organizations_url": "https://api.github.com/users/rawls238/orgs",
+            "repos_url": "https://api.github.com/users/rawls238/repos",
+            "events_url": "https://api.github.com/users/rawls238/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rawls238/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "yea I think that would work\n",
+        "created_at": "2015-07-15T01:43:49Z",
+        "updated_at": "2015-07-15T01:43:49Z",
+        "html_url": "https://github.com/HubSpot/offline/pull/139#discussion_r34639486",
+        "pull_request_url": "https://api.github.com/repos/HubSpot/offline/pulls/139",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/comments/34639486"
+            },
+            "html": {
+                "href": "https://github.com/HubSpot/offline/pull/139#discussion_r34639486"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/139"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/HubSpot/offline/pulls/comments/86125342",
+        "pull_request_review_id": 6798367,
+        "id": 86125342,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MTI1MzQy",
+        "diff_hunk": "@@ -0,0 +1,49 @@\n+$upComputer: \"Tw\u00f3j komputer jest pod\u0142\u0105czony do internetu.\"\n+$upDevice: \"Twoje urz\u0105dzenie jest pod\u0142\u0105czone do internetu.\"\n+$upDeviceSmall: \"Twoje urz\u0105dzenie jest pod\u0142\u0105czone.\"\n+\n+$downComputer: \"Tw\u00f3j komputer straci\u0142 po\u0142\u0105czenie z internetem.\"\n+$downDevice: \"Tw\u00f3je urz\u0105dzenie straci\u0142o po\u0142\u0105czenie z internetem.\"\n+$downDeviceSmall: \"Tw\u00f3je urz\u0105dzenie nie jest pod\u0142\u0105czone.\"",
+        "path": "sass/_polish.sass",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "f4e42e26c08e0c24d15c1f2e1dc9f8bea2b7cf29",
+        "original_commit_id": "8d0cc80392bdb491f42561be3578763fa600b463",
+        "user": {
+            "login": "citricacid-pl",
+            "id": 745572,
+            "node_id": "MDQ6VXNlcjc0NTU3Mg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/745572?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/citricacid-pl",
+            "html_url": "https://github.com/citricacid-pl",
+            "followers_url": "https://api.github.com/users/citricacid-pl/followers",
+            "following_url": "https://api.github.com/users/citricacid-pl/following{/other_user}",
+            "gists_url": "https://api.github.com/users/citricacid-pl/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/citricacid-pl/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/citricacid-pl/subscriptions",
+            "organizations_url": "https://api.github.com/users/citricacid-pl/orgs",
+            "repos_url": "https://api.github.com/users/citricacid-pl/repos",
+            "events_url": "https://api.github.com/users/citricacid-pl/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/citricacid-pl/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Should be `Twoje`\n",
+        "created_at": "2016-11-02T11:59:42Z",
+        "updated_at": "2016-11-02T12:24:55Z",
+        "html_url": "https://github.com/HubSpot/offline/pull/231#discussion_r86125342",
+        "pull_request_url": "https://api.github.com/repos/HubSpot/offline/pulls/231",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/comments/86125342"
+            },
+            "html": {
+                "href": "https://github.com/HubSpot/offline/pull/231#discussion_r86125342"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/231"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/HubSpot/offline/pulls/comments/86125510",
+        "pull_request_review_id": 6798536,
+        "id": 86125510,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MTI1NTEw",
+        "diff_hunk": "@@ -0,0 +1,109 @@\n+@charset \"UTF-8\";\n+/* line 6, ../sass/_content.sass */\n+.offline-ui .offline-ui-retry:before {\n+  content: \"Po\u0142\u0105cz teraz\";\n+}\n+/* line 11, ../sass/_content.sass */\n+.offline-ui.offline-ui-up .offline-ui-content:before {\n+  content: \"Tw\u00f3j komputer jest pod\u0142\u0105czony do internetu.\";\n+}\n+@media (max-width: 1024px) {\n+  /* line 11, ../sass/_content.sass */\n+  .offline-ui.offline-ui-up .offline-ui-content:before {\n+    content: \"Twoje urz\u0105dzenie jest pod\u0142\u0105czone do internetu.\";\n+  }\n+}\n+@media (max-width: 568px) {\n+  /* line 11, ../sass/_content.sass */\n+  .offline-ui.offline-ui-up .offline-ui-content:before {\n+    content: \"Twoje urz\u0105dzenie jest pod\u0142\u0105czone.\";\n+  }\n+}\n+/* line 22, ../sass/_content.sass */\n+.offline-ui.offline-ui-down .offline-ui-content:before {\n+  content: \"Tw\u00f3j komputer straci\u0142 po\u0142\u0105czenie z internetem.\";\n+}\n+@media (max-width: 1024px) {\n+  /* line 22, ../sass/_content.sass */\n+  .offline-ui.offline-ui-down .offline-ui-content:before {\n+    content: \"Tw\u00f3je urz\u0105dzenie straci\u0142o po\u0142\u0105czenie z internetem.\";",
+        "path": "themes/offline-language-polish.css",
+        "position": null,
+        "original_position": 29,
+        "commit_id": "f4e42e26c08e0c24d15c1f2e1dc9f8bea2b7cf29",
+        "original_commit_id": "8d0cc80392bdb491f42561be3578763fa600b463",
+        "user": {
+            "login": "citricacid-pl",
+            "id": 745572,
+            "node_id": "MDQ6VXNlcjc0NTU3Mg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/745572?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/citricacid-pl",
+            "html_url": "https://github.com/citricacid-pl",
+            "followers_url": "https://api.github.com/users/citricacid-pl/followers",
+            "following_url": "https://api.github.com/users/citricacid-pl/following{/other_user}",
+            "gists_url": "https://api.github.com/users/citricacid-pl/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/citricacid-pl/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/citricacid-pl/subscriptions",
+            "organizations_url": "https://api.github.com/users/citricacid-pl/orgs",
+            "repos_url": "https://api.github.com/users/citricacid-pl/repos",
+            "events_url": "https://api.github.com/users/citricacid-pl/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/citricacid-pl/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`Twoje` again\n",
+        "created_at": "2016-11-02T12:00:49Z",
+        "updated_at": "2016-11-02T12:24:55Z",
+        "html_url": "https://github.com/HubSpot/offline/pull/231#discussion_r86125510",
+        "pull_request_url": "https://api.github.com/repos/HubSpot/offline/pulls/231",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/comments/86125510"
+            },
+            "html": {
+                "href": "https://github.com/HubSpot/offline/pull/231#discussion_r86125510"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/231"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/HubSpot/offline/pulls/comments/86125568",
+        "pull_request_review_id": 6798598,
+        "id": 86125568,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg2MTI1NTY4",
+        "diff_hunk": "@@ -0,0 +1,109 @@\n+@charset \"UTF-8\";\n+/* line 6, ../sass/_content.sass */\n+.offline-ui .offline-ui-retry:before {\n+  content: \"Po\u0142\u0105cz teraz\";\n+}\n+/* line 11, ../sass/_content.sass */\n+.offline-ui.offline-ui-up .offline-ui-content:before {\n+  content: \"Tw\u00f3j komputer jest pod\u0142\u0105czony do internetu.\";\n+}\n+@media (max-width: 1024px) {\n+  /* line 11, ../sass/_content.sass */\n+  .offline-ui.offline-ui-up .offline-ui-content:before {\n+    content: \"Twoje urz\u0105dzenie jest pod\u0142\u0105czone do internetu.\";\n+  }\n+}\n+@media (max-width: 568px) {\n+  /* line 11, ../sass/_content.sass */\n+  .offline-ui.offline-ui-up .offline-ui-content:before {\n+    content: \"Twoje urz\u0105dzenie jest pod\u0142\u0105czone.\";\n+  }\n+}\n+/* line 22, ../sass/_content.sass */\n+.offline-ui.offline-ui-down .offline-ui-content:before {\n+  content: \"Tw\u00f3j komputer straci\u0142 po\u0142\u0105czenie z internetem.\";\n+}\n+@media (max-width: 1024px) {\n+  /* line 22, ../sass/_content.sass */\n+  .offline-ui.offline-ui-down .offline-ui-content:before {\n+    content: \"Tw\u00f3je urz\u0105dzenie straci\u0142o po\u0142\u0105czenie z internetem.\";\n+  }\n+}\n+@media (max-width: 568px) {\n+  /* line 22, ../sass/_content.sass */\n+  .offline-ui.offline-ui-down .offline-ui-content:before {\n+    content: \"Tw\u00f3je urz\u0105dzenie nie jest pod\u0142\u0105czone.\";",
+        "path": "themes/offline-language-polish.css",
+        "position": null,
+        "original_position": 35,
+        "commit_id": "f4e42e26c08e0c24d15c1f2e1dc9f8bea2b7cf29",
+        "original_commit_id": "8d0cc80392bdb491f42561be3578763fa600b463",
+        "user": {
+            "login": "citricacid-pl",
+            "id": 745572,
+            "node_id": "MDQ6VXNlcjc0NTU3Mg==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/745572?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/citricacid-pl",
+            "html_url": "https://github.com/citricacid-pl",
+            "followers_url": "https://api.github.com/users/citricacid-pl/followers",
+            "following_url": "https://api.github.com/users/citricacid-pl/following{/other_user}",
+            "gists_url": "https://api.github.com/users/citricacid-pl/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/citricacid-pl/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/citricacid-pl/subscriptions",
+            "organizations_url": "https://api.github.com/users/citricacid-pl/orgs",
+            "repos_url": "https://api.github.com/users/citricacid-pl/repos",
+            "events_url": "https://api.github.com/users/citricacid-pl/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/citricacid-pl/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`Twoje` again\n",
+        "created_at": "2016-11-02T12:01:09Z",
+        "updated_at": "2016-11-02T12:24:55Z",
+        "html_url": "https://github.com/HubSpot/offline/pull/231#discussion_r86125568",
+        "pull_request_url": "https://api.github.com/repos/HubSpot/offline/pulls/231",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/comments/86125568"
+            },
+            "html": {
+                "href": "https://github.com/HubSpot/offline/pull/231#discussion_r86125568"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/HubSpot/offline/pulls/231"
+            }
+        }
+    }
+]

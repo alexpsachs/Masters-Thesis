@@ -1,0 +1,890 @@
+[
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/33685236",
+        "pull_request_review_id": null,
+        "id": 33685236,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNjg1MjM2",
+        "diff_hunk": "@@ -124,18 +124,13 @@ public extension NSUserDefaults {\n             return self[key]\n         }\n         set {\n-            if let v = newValue as? Int {\n-                setInteger(v, forKey: key)\n-            } else if let v = newValue as? Double {\n-                setDouble(v, forKey: key)\n-            } else if let v = newValue as? Bool {\n-                setBool(v, forKey: key)\n-            } else if let v = newValue as? NSObject {\n-                setObject(v, forKey: key)\n-            } else if newValue == nil {\n-                removeObjectForKey(key)\n-            } else {\n-                assertionFailure(\"Invalid value type\")\n+            switch newValue {\n+            case let v as Int: setInteger(v, forKey: key)\n+            case let v as Double: setDouble(v, forKey: key)\n+            case let v as Bool: setBool(v, forKey: key)\n+            case let v as NSObject: setObject(v, forKey: key)\n+            case .None: removeObjectForKey(key)",
+        "path": "SwiftyUserDefaults/SwiftyUserDefaults.swift",
+        "position": null,
+        "original_position": 65,
+        "commit_id": "117ca0c927d51b9c57564b60a1fdbb815f9d6138",
+        "original_commit_id": "70f7936f009ec15ec9a2d4363a24a86a5f4bb79f",
+        "user": {
+            "login": "radex",
+            "id": 183747,
+            "node_id": "MDQ6VXNlcjE4Mzc0Nw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/183747?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/radex",
+            "html_url": "https://github.com/radex",
+            "followers_url": "https://api.github.com/users/radex/followers",
+            "following_url": "https://api.github.com/users/radex/following{/other_user}",
+            "gists_url": "https://api.github.com/users/radex/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/radex/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/radex/subscriptions",
+            "organizations_url": "https://api.github.com/users/radex/orgs",
+            "repos_url": "https://api.github.com/users/radex/repos",
+            "events_url": "https://api.github.com/users/radex/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/radex/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`nil`, not `.None`, please ;)\n",
+        "created_at": "2015-07-01T14:46:14Z",
+        "updated_at": "2015-07-01T15:08:30Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/24#discussion_r33685236",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/24",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/33685236"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/24#discussion_r33685236"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/33688165",
+        "pull_request_review_id": null,
+        "id": 33688165,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNjg4MTY1",
+        "diff_hunk": "@@ -124,18 +124,13 @@ public extension NSUserDefaults {\n             return self[key]\n         }\n         set {\n-            if let v = newValue as? Int {\n-                setInteger(v, forKey: key)\n-            } else if let v = newValue as? Double {\n-                setDouble(v, forKey: key)\n-            } else if let v = newValue as? Bool {\n-                setBool(v, forKey: key)\n-            } else if let v = newValue as? NSObject {\n-                setObject(v, forKey: key)\n-            } else if newValue == nil {\n-                removeObjectForKey(key)\n-            } else {\n-                assertionFailure(\"Invalid value type\")\n+            switch newValue {\n+            case let v as Int: setInteger(v, forKey: key)\n+            case let v as Double: setDouble(v, forKey: key)\n+            case let v as Bool: setBool(v, forKey: key)\n+            case let v as NSObject: setObject(v, forKey: key)\n+            case .None: removeObjectForKey(key)",
+        "path": "SwiftyUserDefaults/SwiftyUserDefaults.swift",
+        "position": null,
+        "original_position": 65,
+        "commit_id": "117ca0c927d51b9c57564b60a1fdbb815f9d6138",
+        "original_commit_id": "70f7936f009ec15ec9a2d4363a24a86a5f4bb79f",
+        "user": {
+            "login": "delba",
+            "id": 2891970,
+            "node_id": "MDQ6VXNlcjI4OTE5NzA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2891970?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/delba",
+            "html_url": "https://github.com/delba",
+            "followers_url": "https://api.github.com/users/delba/followers",
+            "following_url": "https://api.github.com/users/delba/following{/other_user}",
+            "gists_url": "https://api.github.com/users/delba/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/delba/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/delba/subscriptions",
+            "organizations_url": "https://api.github.com/users/delba/orgs",
+            "repos_url": "https://api.github.com/users/delba/repos",
+            "events_url": "https://api.github.com/users/delba/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/delba/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@radex Oh yes, it's clearer!\n",
+        "created_at": "2015-07-01T15:11:42Z",
+        "updated_at": "2015-07-01T15:11:42Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/24#discussion_r33688165",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/24",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/33688165"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/24#discussion_r33688165"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/33693287",
+        "pull_request_review_id": null,
+        "id": 33693287,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzNjkzMjg3",
+        "diff_hunk": "@@ -124,18 +124,13 @@ public extension NSUserDefaults {\n             return self[key]\n         }\n         set {\n-            if let v = newValue as? Int {\n-                setInteger(v, forKey: key)\n-            } else if let v = newValue as? Double {\n-                setDouble(v, forKey: key)\n-            } else if let v = newValue as? Bool {\n-                setBool(v, forKey: key)\n-            } else if let v = newValue as? NSObject {\n-                setObject(v, forKey: key)\n-            } else if newValue == nil {\n-                removeObjectForKey(key)\n-            } else {\n-                assertionFailure(\"Invalid value type\")\n+            switch newValue {\n+            case let v as Int: setInteger(v, forKey: key)\n+            case let v as Double: setDouble(v, forKey: key)\n+            case let v as Bool: setBool(v, forKey: key)\n+            case let v as NSObject: setObject(v, forKey: key)\n+            case .None: removeObjectForKey(key)",
+        "path": "SwiftyUserDefaults/SwiftyUserDefaults.swift",
+        "position": null,
+        "original_position": 65,
+        "commit_id": "117ca0c927d51b9c57564b60a1fdbb815f9d6138",
+        "original_commit_id": "70f7936f009ec15ec9a2d4363a24a86a5f4bb79f",
+        "user": {
+            "login": "radex",
+            "id": 183747,
+            "node_id": "MDQ6VXNlcjE4Mzc0Nw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/183747?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/radex",
+            "html_url": "https://github.com/radex",
+            "followers_url": "https://api.github.com/users/radex/followers",
+            "following_url": "https://api.github.com/users/radex/following{/other_user}",
+            "gists_url": "https://api.github.com/users/radex/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/radex/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/radex/subscriptions",
+            "organizations_url": "https://api.github.com/users/radex/orgs",
+            "repos_url": "https://api.github.com/users/radex/repos",
+            "events_url": "https://api.github.com/users/radex/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/radex/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Thanks ;)\n",
+        "created_at": "2015-07-01T15:56:32Z",
+        "updated_at": "2015-07-01T15:56:32Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/24#discussion_r33693287",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/24",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/33693287"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/24#discussion_r33693287"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/33853045",
+        "pull_request_review_id": null,
+        "id": 33853045,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzODUzMDQ1",
+        "diff_hunk": "@@ -124,18 +124,13 @@ public extension NSUserDefaults {\n             return self[key]\n         }\n         set {\n-            if let v = newValue as? Int {\n-                setInteger(v, forKey: key)\n-            } else if let v = newValue as? Double {\n-                setDouble(v, forKey: key)\n-            } else if let v = newValue as? Bool {\n-                setBool(v, forKey: key)\n-            } else if let v = newValue as? NSObject {\n-                setObject(v, forKey: key)\n-            } else if newValue == nil {\n-                removeObjectForKey(key)\n-            } else {\n-                assertionFailure(\"Invalid value type\")\n+            switch newValue {\n+            case let v as Int: setInteger(v, forKey: key)\n+            case let v as Double: setDouble(v, forKey: key)\n+            case let v as Bool: setBool(v, forKey: key)\n+            case let v as NSObject: setObject(v, forKey: key)\n+            case .None: removeObjectForKey(key)",
+        "path": "SwiftyUserDefaults/SwiftyUserDefaults.swift",
+        "position": null,
+        "original_position": 65,
+        "commit_id": "117ca0c927d51b9c57564b60a1fdbb815f9d6138",
+        "original_commit_id": "70f7936f009ec15ec9a2d4363a24a86a5f4bb79f",
+        "user": {
+            "login": "delba",
+            "id": 2891970,
+            "node_id": "MDQ6VXNlcjI4OTE5NzA=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2891970?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/delba",
+            "html_url": "https://github.com/delba",
+            "followers_url": "https://api.github.com/users/delba/followers",
+            "following_url": "https://api.github.com/users/delba/following{/other_user}",
+            "gists_url": "https://api.github.com/users/delba/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/delba/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/delba/subscriptions",
+            "organizations_url": "https://api.github.com/users/delba/orgs",
+            "repos_url": "https://api.github.com/users/delba/repos",
+            "events_url": "https://api.github.com/users/delba/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/delba/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@radex It has been changed. Let me know if you want anything else :)\n",
+        "created_at": "2015-07-03T10:02:58Z",
+        "updated_at": "2015-07-03T10:02:58Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/24#discussion_r33853045",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/24",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/33853045"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/24#discussion_r33853045"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/33853880",
+        "pull_request_review_id": null,
+        "id": 33853880,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMzODUzODgw",
+        "diff_hunk": "@@ -124,18 +124,13 @@ public extension NSUserDefaults {\n             return self[key]\n         }\n         set {\n-            if let v = newValue as? Int {\n-                setInteger(v, forKey: key)\n-            } else if let v = newValue as? Double {\n-                setDouble(v, forKey: key)\n-            } else if let v = newValue as? Bool {\n-                setBool(v, forKey: key)\n-            } else if let v = newValue as? NSObject {\n-                setObject(v, forKey: key)\n-            } else if newValue == nil {\n-                removeObjectForKey(key)\n-            } else {\n-                assertionFailure(\"Invalid value type\")\n+            switch newValue {\n+            case let v as Int: setInteger(v, forKey: key)\n+            case let v as Double: setDouble(v, forKey: key)\n+            case let v as Bool: setBool(v, forKey: key)\n+            case let v as NSObject: setObject(v, forKey: key)\n+            case .None: removeObjectForKey(key)",
+        "path": "SwiftyUserDefaults/SwiftyUserDefaults.swift",
+        "position": null,
+        "original_position": 65,
+        "commit_id": "117ca0c927d51b9c57564b60a1fdbb815f9d6138",
+        "original_commit_id": "70f7936f009ec15ec9a2d4363a24a86a5f4bb79f",
+        "user": {
+            "login": "radex",
+            "id": 183747,
+            "node_id": "MDQ6VXNlcjE4Mzc0Nw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/183747?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/radex",
+            "html_url": "https://github.com/radex",
+            "followers_url": "https://api.github.com/users/radex/followers",
+            "following_url": "https://api.github.com/users/radex/following{/other_user}",
+            "gists_url": "https://api.github.com/users/radex/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/radex/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/radex/subscriptions",
+            "organizations_url": "https://api.github.com/users/radex/orgs",
+            "repos_url": "https://api.github.com/users/radex/repos",
+            "events_url": "https://api.github.com/users/radex/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/radex/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "no, I don't think so. Just haven't gotten around to giving it a quick test :)\n",
+        "created_at": "2015-07-03T10:17:50Z",
+        "updated_at": "2015-07-03T10:17:50Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/24#discussion_r33853880",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/24",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/33853880"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/24#discussion_r33853880"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/24"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/75550748",
+        "pull_request_review_id": null,
+        "id": 75550748,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1NTUwNzQ4",
+        "diff_hunk": "@@ -353,39 +351,22 @@ class SwiftyUserDefaultsTests: XCTestCase {\n     \n     // --\n     \n-    func testStaticNSArrayOptional() {\n-        let key = DefaultsKey<NSArray?>(\"nsarray\")\n-        XCTAssert(Defaults[key] == nil)\n-        Defaults[key] = []\n-        XCTAssert(Defaults[key] == [])\n-        Defaults[key] = [1, \"foo\", Data()]\n-        XCTAssert(Defaults[key] == [1, \"foo\", Data()])\n-    }\n-    \n-    func testStaticNSArray() {\n-        let key = DefaultsKey<NSArray>(\"nsarray\")\n-        XCTAssert(Defaults[key] == [])\n-        Defaults[key] = [1, \"foo\", Data()]\n-        XCTAssert(Defaults[key] == [1, \"foo\", Data()])\n-    }\n-    \n     func testStaticArrayOptional() {\n-        let key = DefaultsKey<[AnyObject]?>(\"array\")\n+        let key = DefaultsKey<[Any]?>(\"nsarray\")\n         XCTAssert(Defaults[key] == nil)\n         Defaults[key] = []\n-        XCTAssert(Defaults[key]! as NSArray == [])\n+        XCTAssertEqual(Defaults[key]?.count, 0)\n         Defaults[key] = [1, \"foo\", Data()]\n-        XCTAssert(Defaults[key]! as NSArray == [1, \"foo\", Data()])\n+        XCTAssertEqual(Defaults[key]?.count, 3)\n     }\n     \n     func testStaticArray() {\n-        let key = DefaultsKey<[AnyObject]>(\"array\")\n-        XCTAssert(Defaults[key] as NSArray == [])\n-        Defaults[key].append(1)\n-        Defaults[key].append(\"foo\")\n-        Defaults[key].append(false)\n-        Defaults[key].append(Data())\n-        XCTAssert(Defaults[key] as NSArray == [1, \"foo\", false, Data()])\n+        let key = DefaultsKey<[Any]>(\"nsarray\")\n+        XCTAssertEqual(Defaults[key].count, 0)\n+        Defaults[key] = [1, \"foo\", Data()]",
+        "path": "Tests/SwiftyUserDefaultsTests.swift",
+        "position": null,
+        "original_position": 146,
+        "commit_id": "b1a427bd7a702c0d4121a98e318b10d837195c5e",
+        "original_commit_id": "7d40af12916f96d912adce81d0f54e4f07fa3c6f",
+        "user": {
+            "login": "radex",
+            "id": 183747,
+            "node_id": "MDQ6VXNlcjE4Mzc0Nw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/183747?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/radex",
+            "html_url": "https://github.com/radex",
+            "followers_url": "https://api.github.com/users/radex/followers",
+            "following_url": "https://api.github.com/users/radex/following{/other_user}",
+            "gists_url": "https://api.github.com/users/radex/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/radex/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/radex/subscriptions",
+            "organizations_url": "https://api.github.com/users/radex/orgs",
+            "repos_url": "https://api.github.com/users/radex/repos",
+            "events_url": "https://api.github.com/users/radex/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/radex/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think I wanted to test 'append' through the user defaults here...\n",
+        "created_at": "2016-08-19T21:01:11Z",
+        "updated_at": "2016-08-23T19:58:09Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r75550748",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/75550748"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r75550748"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/75550886",
+        "pull_request_review_id": null,
+        "id": 75550886,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1NTUwODg2",
+        "diff_hunk": "@@ -353,39 +351,22 @@ class SwiftyUserDefaultsTests: XCTestCase {\n     \n     // --\n     \n-    func testStaticNSArrayOptional() {\n-        let key = DefaultsKey<NSArray?>(\"nsarray\")\n-        XCTAssert(Defaults[key] == nil)\n-        Defaults[key] = []\n-        XCTAssert(Defaults[key] == [])\n-        Defaults[key] = [1, \"foo\", Data()]\n-        XCTAssert(Defaults[key] == [1, \"foo\", Data()])\n-    }\n-    \n-    func testStaticNSArray() {\n-        let key = DefaultsKey<NSArray>(\"nsarray\")\n-        XCTAssert(Defaults[key] == [])\n-        Defaults[key] = [1, \"foo\", Data()]\n-        XCTAssert(Defaults[key] == [1, \"foo\", Data()])\n-    }\n-    \n     func testStaticArrayOptional() {\n-        let key = DefaultsKey<[AnyObject]?>(\"array\")\n+        let key = DefaultsKey<[Any]?>(\"nsarray\")\n         XCTAssert(Defaults[key] == nil)\n         Defaults[key] = []\n-        XCTAssert(Defaults[key]! as NSArray == [])\n+        XCTAssertEqual(Defaults[key]?.count, 0)\n         Defaults[key] = [1, \"foo\", Data()]\n-        XCTAssert(Defaults[key]! as NSArray == [1, \"foo\", Data()])\n+        XCTAssertEqual(Defaults[key]?.count, 3)",
+        "path": "Tests/SwiftyUserDefaultsTests.swift",
+        "position": 133,
+        "original_position": 133,
+        "commit_id": "b1a427bd7a702c0d4121a98e318b10d837195c5e",
+        "original_commit_id": "7d40af12916f96d912adce81d0f54e4f07fa3c6f",
+        "user": {
+            "login": "radex",
+            "id": 183747,
+            "node_id": "MDQ6VXNlcjE4Mzc0Nw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/183747?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/radex",
+            "html_url": "https://github.com/radex",
+            "followers_url": "https://api.github.com/users/radex/followers",
+            "following_url": "https://api.github.com/users/radex/following{/other_user}",
+            "gists_url": "https://api.github.com/users/radex/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/radex/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/radex/subscriptions",
+            "organizations_url": "https://api.github.com/users/radex/orgs",
+            "repos_url": "https://api.github.com/users/radex/repos",
+            "events_url": "https://api.github.com/users/radex/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/radex/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is there a better way to deal with this?\n",
+        "created_at": "2016-08-19T21:02:04Z",
+        "updated_at": "2016-08-23T19:58:09Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r75550886",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/75550886"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r75550886"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/75551223",
+        "pull_request_review_id": null,
+        "id": 75551223,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1NTUxMjIz",
+        "diff_hunk": "@@ -467,33 +442,66 @@ extension UserDefaults {\n // MARK: NSCoding\n \n extension UserDefaults {\n-    // TODO: Can we simplify this and ensure that T is NSCoding compliant?\n     \n-    public func archive<T>(_ key: DefaultsKey<T>, _ value: T) {\n-        if let value: AnyObject = value as? AnyObject {\n-            set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n-        } else {\n-            assertionFailure(\"Invalid value type, needs to be a NSCoding-compliant type\")\n+    public func archive<T: NSCoding>(_ key: DefaultsKey<T>, _ value: T) {\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func archive<T: NSCoding>(_ key: DefaultsKey<T?>, _ value: T?) {\n+        guard let value = value else {\n+            remove(key)\n+            return\n         }\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[T]>, _ value: [T]) {\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n     }\n     \n-    public func archive<T>(_ key: DefaultsKey<T?>, _ value: T?) {\n-        if let value: AnyObject = value as? AnyObject {\n-            set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n-        } else if value == nil {\n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[T]?>, _ value: [T]?) {\n+        guard let value = value else {\n             remove(key)\n-        } else {\n-            assertionFailure(\"Invalid value type, needs to be a NSCoding-compliant type\")\n+            return\n         }\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[String: T]>, _ value: [String: T]) {\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n     }\n     \n-    public func unarchive<T>(_ key: DefaultsKey<T?>) -> T? {\n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[String: T]?>, _ value: [String: T]?) {\n+        guard let value = value else {\n+            remove(key)\n+            return\n+        }\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func unarchive<T: NSCoding>(_ key: DefaultsKey<T?>) -> T? {\n         return data(forKey: key._key).flatMap { NSKeyedUnarchiver.unarchiveObject(with: $0) } as? T\n     }\n     \n-    public func unarchive<T>(_ key: DefaultsKey<T>) -> T? {\n+    public func unarchive<T: NSCoding>(_ key: DefaultsKey<T>) -> T? {\n         return data(forKey: key._key).flatMap { NSKeyedUnarchiver.unarchiveObject(with: $0) } as? T\n     }\n+    \n+    public func unarchive<T: NSCoding>(_ key: DefaultsKey<[T]?>) -> [T]? {\n+        return data(forKey: key._key).flatMap { NSKeyedUnarchiver.unarchiveObject(with: $0) } as? [T]",
+        "path": "Sources/SwiftyUserDefaults.swift",
+        "position": 259,
+        "original_position": 259,
+        "commit_id": "b1a427bd7a702c0d4121a98e318b10d837195c5e",
+        "original_commit_id": "7d40af12916f96d912adce81d0f54e4f07fa3c6f",
+        "user": {
+            "login": "radex",
+            "id": 183747,
+            "node_id": "MDQ6VXNlcjE4Mzc0Nw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/183747?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/radex",
+            "html_url": "https://github.com/radex",
+            "followers_url": "https://api.github.com/users/radex/followers",
+            "following_url": "https://api.github.com/users/radex/following{/other_user}",
+            "gists_url": "https://api.github.com/users/radex/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/radex/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/radex/subscriptions",
+            "organizations_url": "https://api.github.com/users/radex/orgs",
+            "repos_url": "https://api.github.com/users/radex/repos",
+            "events_url": "https://api.github.com/users/radex/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/radex/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Good stuff! Though not sure we should mix this up with swift 3 changes.\n",
+        "created_at": "2016-08-19T21:04:25Z",
+        "updated_at": "2016-08-23T19:58:09Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r75551223",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/75551223"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r75551223"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/75937448",
+        "pull_request_review_id": null,
+        "id": 75937448,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTM3NDQ4",
+        "diff_hunk": "@@ -467,33 +442,66 @@ extension UserDefaults {\n // MARK: NSCoding\n \n extension UserDefaults {\n-    // TODO: Can we simplify this and ensure that T is NSCoding compliant?\n     \n-    public func archive<T>(_ key: DefaultsKey<T>, _ value: T) {\n-        if let value: AnyObject = value as? AnyObject {\n-            set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n-        } else {\n-            assertionFailure(\"Invalid value type, needs to be a NSCoding-compliant type\")\n+    public func archive<T: NSCoding>(_ key: DefaultsKey<T>, _ value: T) {\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func archive<T: NSCoding>(_ key: DefaultsKey<T?>, _ value: T?) {\n+        guard let value = value else {\n+            remove(key)\n+            return\n         }\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[T]>, _ value: [T]) {\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n     }\n     \n-    public func archive<T>(_ key: DefaultsKey<T?>, _ value: T?) {\n-        if let value: AnyObject = value as? AnyObject {\n-            set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n-        } else if value == nil {\n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[T]?>, _ value: [T]?) {\n+        guard let value = value else {\n             remove(key)\n-        } else {\n-            assertionFailure(\"Invalid value type, needs to be a NSCoding-compliant type\")\n+            return\n         }\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[String: T]>, _ value: [String: T]) {\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n     }\n     \n-    public func unarchive<T>(_ key: DefaultsKey<T?>) -> T? {\n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[String: T]?>, _ value: [String: T]?) {\n+        guard let value = value else {\n+            remove(key)\n+            return\n+        }\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func unarchive<T: NSCoding>(_ key: DefaultsKey<T?>) -> T? {\n         return data(forKey: key._key).flatMap { NSKeyedUnarchiver.unarchiveObject(with: $0) } as? T\n     }\n     \n-    public func unarchive<T>(_ key: DefaultsKey<T>) -> T? {\n+    public func unarchive<T: NSCoding>(_ key: DefaultsKey<T>) -> T? {\n         return data(forKey: key._key).flatMap { NSKeyedUnarchiver.unarchiveObject(with: $0) } as? T\n     }\n+    \n+    public func unarchive<T: NSCoding>(_ key: DefaultsKey<[T]?>) -> [T]? {\n+        return data(forKey: key._key).flatMap { NSKeyedUnarchiver.unarchiveObject(with: $0) } as? [T]",
+        "path": "Sources/SwiftyUserDefaults.swift",
+        "position": 259,
+        "original_position": 259,
+        "commit_id": "b1a427bd7a702c0d4121a98e318b10d837195c5e",
+        "original_commit_id": "7d40af12916f96d912adce81d0f54e4f07fa3c6f",
+        "user": {
+            "login": "ldiqual",
+            "id": 941453,
+            "node_id": "MDQ6VXNlcjk0MTQ1Mw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/941453?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ldiqual",
+            "html_url": "https://github.com/ldiqual",
+            "followers_url": "https://api.github.com/users/ldiqual/followers",
+            "following_url": "https://api.github.com/users/ldiqual/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ldiqual/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ldiqual/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ldiqual/subscriptions",
+            "organizations_url": "https://api.github.com/users/ldiqual/orgs",
+            "repos_url": "https://api.github.com/users/ldiqual/repos",
+            "events_url": "https://api.github.com/users/ldiqual/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ldiqual/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I had to add this because this test wouldn't even compile: https://github.com/radex/SwiftyUserDefaults/blob/swift3/Tests/SwiftyUserDefaultsTests.swift#L538-L545 and https://github.com/radex/SwiftyUserDefaults/blob/swift3/Tests/TestHelper.swift#L23\n\nI'm not exactly sure how it even compiled before, maybe `[NSColor]` was implicitly converted to `NSDictionary<NSColor>` and was handled here: https://github.com/radex/SwiftyUserDefaults/blob/swift3/Sources/SwiftyUserDefaults.swift#L472\n\nCan you think of a better way of handling it besides adding new methods?\n",
+        "created_at": "2016-08-23T19:48:10Z",
+        "updated_at": "2016-08-23T19:58:09Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r75937448",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/75937448"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r75937448"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106"
+            }
+        },
+        "in_reply_to_id": 75551223
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/76406268",
+        "pull_request_review_id": null,
+        "id": 76406268,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NDA2MjY4",
+        "diff_hunk": "@@ -133,14 +133,22 @@ public extension UserDefaults {\n             return proxy\n         }\n         set {\n+            \n+            guard let newValue = newValue else {\n+                removeObject(forKey: key)\n+                return\n+            }\n+            \n             switch newValue {\n-            case let v as Int: self.set(v, forKey: key)\n+                \n+            // @warning This should always be on top of Int because a cast\n+            // from Double to Int will always succeed.",
+        "path": "Sources/SwiftyUserDefaults.swift",
+        "position": 67,
+        "original_position": 67,
+        "commit_id": "b1a427bd7a702c0d4121a98e318b10d837195c5e",
+        "original_commit_id": "b1a427bd7a702c0d4121a98e318b10d837195c5e",
+        "user": {
+            "login": "radex",
+            "id": 183747,
+            "node_id": "MDQ6VXNlcjE4Mzc0Nw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/183747?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/radex",
+            "html_url": "https://github.com/radex",
+            "followers_url": "https://api.github.com/users/radex/followers",
+            "following_url": "https://api.github.com/users/radex/following{/other_user}",
+            "gists_url": "https://api.github.com/users/radex/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/radex/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/radex/subscriptions",
+            "organizations_url": "https://api.github.com/users/radex/orgs",
+            "repos_url": "https://api.github.com/users/radex/repos",
+            "events_url": "https://api.github.com/users/radex/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/radex/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "That's interesting\u2026 Has that changed in Xcode 3? Because I'm fairly confident the way it was before worked fine with Doubles...\n",
+        "created_at": "2016-08-26T11:55:26Z",
+        "updated_at": "2016-08-26T11:55:26Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r76406268",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/76406268"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r76406268"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/76407079",
+        "pull_request_review_id": null,
+        "id": 76407079,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NDA3MDc5",
+        "diff_hunk": "@@ -467,33 +442,66 @@ extension UserDefaults {\n // MARK: NSCoding\n \n extension UserDefaults {\n-    // TODO: Can we simplify this and ensure that T is NSCoding compliant?\n     \n-    public func archive<T>(_ key: DefaultsKey<T>, _ value: T) {\n-        if let value: AnyObject = value as? AnyObject {\n-            set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n-        } else {\n-            assertionFailure(\"Invalid value type, needs to be a NSCoding-compliant type\")\n+    public func archive<T: NSCoding>(_ key: DefaultsKey<T>, _ value: T) {\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func archive<T: NSCoding>(_ key: DefaultsKey<T?>, _ value: T?) {\n+        guard let value = value else {\n+            remove(key)\n+            return\n         }\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[T]>, _ value: [T]) {\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n     }\n     \n-    public func archive<T>(_ key: DefaultsKey<T?>, _ value: T?) {\n-        if let value: AnyObject = value as? AnyObject {\n-            set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n-        } else if value == nil {\n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[T]?>, _ value: [T]?) {\n+        guard let value = value else {\n             remove(key)\n-        } else {\n-            assertionFailure(\"Invalid value type, needs to be a NSCoding-compliant type\")\n+            return\n         }\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[String: T]>, _ value: [String: T]) {\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n     }\n     \n-    public func unarchive<T>(_ key: DefaultsKey<T?>) -> T? {\n+    public func archive<T: NSCoding>(_ key: DefaultsKey<[String: T]?>, _ value: [String: T]?) {\n+        guard let value = value else {\n+            remove(key)\n+            return\n+        }\n+        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n+    }\n+    \n+    public func unarchive<T: NSCoding>(_ key: DefaultsKey<T?>) -> T? {\n         return data(forKey: key._key).flatMap { NSKeyedUnarchiver.unarchiveObject(with: $0) } as? T\n     }\n     \n-    public func unarchive<T>(_ key: DefaultsKey<T>) -> T? {\n+    public func unarchive<T: NSCoding>(_ key: DefaultsKey<T>) -> T? {\n         return data(forKey: key._key).flatMap { NSKeyedUnarchiver.unarchiveObject(with: $0) } as? T\n     }\n+    \n+    public func unarchive<T: NSCoding>(_ key: DefaultsKey<[T]?>) -> [T]? {\n+        return data(forKey: key._key).flatMap { NSKeyedUnarchiver.unarchiveObject(with: $0) } as? [T]",
+        "path": "Sources/SwiftyUserDefaults.swift",
+        "position": 259,
+        "original_position": 259,
+        "commit_id": "b1a427bd7a702c0d4121a98e318b10d837195c5e",
+        "original_commit_id": "7d40af12916f96d912adce81d0f54e4f07fa3c6f",
+        "user": {
+            "login": "radex",
+            "id": 183747,
+            "node_id": "MDQ6VXNlcjE4Mzc0Nw==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/183747?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/radex",
+            "html_url": "https://github.com/radex",
+            "followers_url": "https://api.github.com/users/radex/followers",
+            "following_url": "https://api.github.com/users/radex/following{/other_user}",
+            "gists_url": "https://api.github.com/users/radex/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/radex/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/radex/subscriptions",
+            "organizations_url": "https://api.github.com/users/radex/orgs",
+            "repos_url": "https://api.github.com/users/radex/repos",
+            "events_url": "https://api.github.com/users/radex/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/radex/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The reason it worked is because I didn't make conformance to NSCoding a requirement on T \u2014 Swift Array and Dictionary structs aren't. And so in this case, the array would just automatically be bridged to NSArray which will archive fine.\n\nI know it's pretty terrible, and your solution is probably better long term, but I don't want to stack these changes together...\n\nThis code, slightly changed for Swift 3 seems to work fine:\n\n``` swift\n    // TODO: Can we simplify this and ensure that T is NSCoding compliant?\n\n    public func archive<T>(_ key: DefaultsKey<T>, _ value: T) {\n        set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n    }\n\n    public func archive<T>(_ key: DefaultsKey<T?>, _ value: T?) {\n        if let value = value {\n            set(key, NSKeyedArchiver.archivedData(withRootObject: value))\n        } else {\n            remove(key)\n        }\n    }\n```\n",
+        "created_at": "2016-08-26T12:02:15Z",
+        "updated_at": "2016-08-26T12:02:15Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r76407079",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/76407079"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/106#discussion_r76407079"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/106"
+            }
+        },
+        "in_reply_to_id": 75551223
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/89668634",
+        "pull_request_review_id": 10212618,
+        "id": 89668634,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5NjY4NjM0",
+        "diff_hunk": "@@ -430,6 +430,100 @@ extension NSUserDefaults {\n     }\n }\n \n+// MARK: Key-Value Observing\n+\n+public typealias EventHandler = NSUserDefaults.Proxy -> Void\n+typealias Token = Int64\n+private let SwiftyUserDefaultsKVOContext: UnsafeMutablePointer<Void> = nil\n+\n+private var kvoKeyAndHandlers = [String: [BlockDisposable]]()\n+private var nextToken: Token = 0\n+\n+/// Lock\n+internal class RecursiveLock: NSRecursiveLock {\n+    init(name: String) {\n+        super.init()\n+        self.name = name\n+    }\n+}\n+private let lock = RecursiveLock(name: \"radex.SwiftyUserDefaults\")\n+\n+/// Disposable\n+protocol Disposable {\n+    func dispose()\n+}\n+\n+public final class BlockDisposable: Disposable {\n+    let key: String\n+    private let token: Token\n+    var handler: EventHandler?\n+    init(key: String, handler: EventHandler) {\n+        self.token = nextToken\n+        lock.lock()\n+        nextToken += 1\n+        lock.unlock()\n+        self.key = key\n+        self.handler = handler\n+    }\n+\n+    public func dispose() {\n+        guard let _ = kvoKeyAndHandlers[key] else {\n+            return\n+        }\n+        var handlers = kvoKeyAndHandlers[key]!\n+        if let idx = handlers.indexOf({ e in\n+            return e.token == self.token\n+        }) {\n+            handlers.removeAtIndex(idx)\n+        }\n+        Defaults.removeObserver(Defaults, forKeyPath: key)\n+        handler = nil\n+    }\n+}\n+\n+/// Key-Value Observing\n+extension NSUserDefaults {\n+\n+    public func observe(key: String,\n+        options: NSKeyValueObservingOptions = [.New],\n+        handler: EventHandler) -> BlockDisposable\n+    {\n+        let key = DefaultsKey<String>(key)\n+        return observe(key, handler: handler)\n+    }\n+\n+    public func observe<T>(key: DefaultsKey<T>,\n+        options: NSKeyValueObservingOptions = [.New],\n+        handler: EventHandler) -> BlockDisposable\n+    {\n+        let block = BlockDisposable(key: key._key, handler: handler)\n+        if let _ = kvoKeyAndHandlers[key._key] {\n+            kvoKeyAndHandlers[key._key]!.append(block)\n+        } else {\n+            kvoKeyAndHandlers[key._key] = [block]\n+        }\n+        self.addObserver(self, forKeyPath: key._key,\n+            options: options, context: SwiftyUserDefaultsKVOContext)\n+        return block\n+    }\n+\n+    public override func observeValueForKeyPath(",
+        "path": "Sources/SwiftyUserDefaults.swift",
+        "position": 81,
+        "original_position": 81,
+        "commit_id": "0ab1568375ab9a969cd0e7401e244ccbe5c99f45",
+        "original_commit_id": "0ab1568375ab9a969cd0e7401e244ccbe5c99f45",
+        "user": {
+            "login": "DivineDominion",
+            "id": 59080,
+            "node_id": "MDQ6VXNlcjU5MDgw",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/59080?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/DivineDominion",
+            "html_url": "https://github.com/DivineDominion",
+            "followers_url": "https://api.github.com/users/DivineDominion/followers",
+            "following_url": "https://api.github.com/users/DivineDominion/following{/other_user}",
+            "gists_url": "https://api.github.com/users/DivineDominion/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/DivineDominion/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/DivineDominion/subscriptions",
+            "organizations_url": "https://api.github.com/users/DivineDominion/orgs",
+            "repos_url": "https://api.github.com/users/DivineDominion/repos",
+            "events_url": "https://api.github.com/users/DivineDominion/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/DivineDominion/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Shouldn't this delegate to `super` for any other context?",
+        "created_at": "2016-11-26T09:23:57Z",
+        "updated_at": "2016-11-26T09:23:57Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/67#discussion_r89668634",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/67",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/89668634"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/67#discussion_r89668634"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/67"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259597758",
+        "pull_request_review_id": 207129690,
+        "id": 259597758,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1OTU5Nzc1OA==",
+        "diff_hunk": "@@ -12,6 +12,22 @@ matrix:\n         - TVOS_SDK=appletvsimulator12.2\n         - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n         - WATCHOS_SDK=watchsimulator5.2\n+    - os: osx\n+      osx_image: xcode10.2\n+      env:\n+        - CACHE_NAME=SWIFT5_0\n+        - SWIFT_VERSION=5.0\n+        - IOS_SIMULATOR='name=iPhone 6s,OS=12.2'\n+        - IOS_SDK=iphonesimulator12.2\n+        - TVOS_SIMULATOR='name=Apple TV 4K (at 1080p)'\n+        - TVOS_SDK=appletvsimulator12.2\n+        - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n+        - WATCHOS_SDK=watchsimulator5.2    \n+      before_install:\n+        - rvm install \"ruby-2.5.1\"",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "6fa3e902b6a75d664c36b8eb117becc758949bd1",
+        "original_commit_id": "24fdf7ba6cbce5262457c333c8380ddb3fad5d39",
+        "user": {
+            "login": "f-meloni",
+            "id": 17830956,
+            "node_id": "MDQ6VXNlcjE3ODMwOTU2",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/17830956?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/f-meloni",
+            "html_url": "https://github.com/f-meloni",
+            "followers_url": "https://api.github.com/users/f-meloni/followers",
+            "following_url": "https://api.github.com/users/f-meloni/following{/other_user}",
+            "gists_url": "https://api.github.com/users/f-meloni/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/f-meloni/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/f-meloni/subscriptions",
+            "organizations_url": "https://api.github.com/users/f-meloni/orgs",
+            "repos_url": "https://api.github.com/users/f-meloni/repos",
+            "events_url": "https://api.github.com/users/f-meloni/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/f-meloni/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think this is the problem, but don't know why yet, it prints `Using /Users/travis/.rvm/gems/ruby-2.5.1` on the output, before print the swiftlint JSON, and this is why it fails to parse it",
+        "created_at": "2019-02-23T23:57:44Z",
+        "updated_at": "2019-02-25T08:28:25Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259597758",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259597758"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259597758"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259597775",
+        "pull_request_review_id": 207129705,
+        "id": 259597775,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1OTU5Nzc3NQ==",
+        "diff_hunk": "@@ -12,6 +12,22 @@ matrix:\n         - TVOS_SDK=appletvsimulator12.2\n         - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n         - WATCHOS_SDK=watchsimulator5.2\n+    - os: osx\n+      osx_image: xcode10.2\n+      env:\n+        - CACHE_NAME=SWIFT5_0\n+        - SWIFT_VERSION=5.0\n+        - IOS_SIMULATOR='name=iPhone 6s,OS=12.2'\n+        - IOS_SDK=iphonesimulator12.2\n+        - TVOS_SIMULATOR='name=Apple TV 4K (at 1080p)'\n+        - TVOS_SDK=appletvsimulator12.2\n+        - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n+        - WATCHOS_SDK=watchsimulator5.2    \n+      before_install:\n+        - rvm install \"ruby-2.5.1\"\n+        - npm install -g danger",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "6fa3e902b6a75d664c36b8eb117becc758949bd1",
+        "original_commit_id": "24fdf7ba6cbce5262457c333c8380ddb3fad5d39",
+        "user": {
+            "login": "f-meloni",
+            "id": 17830956,
+            "node_id": "MDQ6VXNlcjE3ODMwOTU2",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/17830956?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/f-meloni",
+            "html_url": "https://github.com/f-meloni",
+            "followers_url": "https://api.github.com/users/f-meloni/followers",
+            "following_url": "https://api.github.com/users/f-meloni/following{/other_user}",
+            "gists_url": "https://api.github.com/users/f-meloni/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/f-meloni/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/f-meloni/subscriptions",
+            "organizations_url": "https://api.github.com/users/f-meloni/orgs",
+            "repos_url": "https://api.github.com/users/f-meloni/repos",
+            "events_url": "https://api.github.com/users/f-meloni/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/f-meloni/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You can remove this I think (if you want), `danger/tap/danger-swift` has `danger-js` as dependency already :)",
+        "created_at": "2019-02-23T23:58:19Z",
+        "updated_at": "2019-02-25T08:28:25Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259597775",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259597775"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259597775"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259597874",
+        "pull_request_review_id": 207129861,
+        "id": 259597874,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1OTU5Nzg3NA==",
+        "diff_hunk": "@@ -12,6 +12,22 @@ matrix:\n         - TVOS_SDK=appletvsimulator12.2\n         - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n         - WATCHOS_SDK=watchsimulator5.2\n+    - os: osx\n+      osx_image: xcode10.2\n+      env:\n+        - CACHE_NAME=SWIFT5_0\n+        - SWIFT_VERSION=5.0\n+        - IOS_SIMULATOR='name=iPhone 6s,OS=12.2'\n+        - IOS_SDK=iphonesimulator12.2\n+        - TVOS_SIMULATOR='name=Apple TV 4K (at 1080p)'\n+        - TVOS_SDK=appletvsimulator12.2\n+        - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n+        - WATCHOS_SDK=watchsimulator5.2    \n+      before_install:\n+        - rvm install \"ruby-2.5.1\"",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "6fa3e902b6a75d664c36b8eb117becc758949bd1",
+        "original_commit_id": "24fdf7ba6cbce5262457c333c8380ddb3fad5d39",
+        "user": {
+            "login": "sunshinejr",
+            "id": 5232779,
+            "node_id": "MDQ6VXNlcjUyMzI3Nzk=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5232779?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sunshinejr",
+            "html_url": "https://github.com/sunshinejr",
+            "followers_url": "https://api.github.com/users/sunshinejr/followers",
+            "following_url": "https://api.github.com/users/sunshinejr/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sunshinejr/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sunshinejr/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sunshinejr/subscriptions",
+            "organizations_url": "https://api.github.com/users/sunshinejr/orgs",
+            "repos_url": "https://api.github.com/users/sunshinejr/repos",
+            "events_url": "https://api.github.com/users/sunshinejr/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sunshinejr/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Updated travis config, let's see \ud83d\ude04 ",
+        "created_at": "2019-02-24T00:03:17Z",
+        "updated_at": "2019-02-25T08:28:25Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259597874",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259597874"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259597874"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181"
+            }
+        },
+        "in_reply_to_id": 259597758
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259597963",
+        "pull_request_review_id": 207130007,
+        "id": 259597963,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1OTU5Nzk2Mw==",
+        "diff_hunk": "@@ -12,6 +12,22 @@ matrix:\n         - TVOS_SDK=appletvsimulator12.2\n         - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n         - WATCHOS_SDK=watchsimulator5.2\n+    - os: osx\n+      osx_image: xcode10.2\n+      env:\n+        - CACHE_NAME=SWIFT5_0\n+        - SWIFT_VERSION=5.0\n+        - IOS_SIMULATOR='name=iPhone 6s,OS=12.2'\n+        - IOS_SDK=iphonesimulator12.2\n+        - TVOS_SIMULATOR='name=Apple TV 4K (at 1080p)'\n+        - TVOS_SDK=appletvsimulator12.2\n+        - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n+        - WATCHOS_SDK=watchsimulator5.2    \n+      before_install:\n+        - rvm install \"ruby-2.5.1\"",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "6fa3e902b6a75d664c36b8eb117becc758949bd1",
+        "original_commit_id": "24fdf7ba6cbce5262457c333c8380ddb3fad5d39",
+        "user": {
+            "login": "f-meloni",
+            "id": 17830956,
+            "node_id": "MDQ6VXNlcjE3ODMwOTU2",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/17830956?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/f-meloni",
+            "html_url": "https://github.com/f-meloni",
+            "followers_url": "https://api.github.com/users/f-meloni/followers",
+            "following_url": "https://api.github.com/users/f-meloni/following{/other_user}",
+            "gists_url": "https://api.github.com/users/f-meloni/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/f-meloni/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/f-meloni/subscriptions",
+            "organizations_url": "https://api.github.com/users/f-meloni/orgs",
+            "repos_url": "https://api.github.com/users/f-meloni/repos",
+            "events_url": "https://api.github.com/users/f-meloni/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/f-meloni/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Now it says to install it, before running swiftlint :D \r\n`To install do: \\'rvm install \"ruby-2.5.1\"`",
+        "created_at": "2019-02-24T00:07:29Z",
+        "updated_at": "2019-02-25T08:28:25Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259597963",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259597963"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259597963"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181"
+            }
+        },
+        "in_reply_to_id": 259597758
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259597995",
+        "pull_request_review_id": 207130031,
+        "id": 259597995,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1OTU5Nzk5NQ==",
+        "diff_hunk": "@@ -12,6 +12,22 @@ matrix:\n         - TVOS_SDK=appletvsimulator12.2\n         - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n         - WATCHOS_SDK=watchsimulator5.2\n+    - os: osx\n+      osx_image: xcode10.2\n+      env:\n+        - CACHE_NAME=SWIFT5_0\n+        - SWIFT_VERSION=5.0\n+        - IOS_SIMULATOR='name=iPhone 6s,OS=12.2'\n+        - IOS_SDK=iphonesimulator12.2\n+        - TVOS_SIMULATOR='name=Apple TV 4K (at 1080p)'\n+        - TVOS_SDK=appletvsimulator12.2\n+        - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n+        - WATCHOS_SDK=watchsimulator5.2    \n+      before_install:\n+        - rvm install \"ruby-2.5.1\"",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "6fa3e902b6a75d664c36b8eb117becc758949bd1",
+        "original_commit_id": "24fdf7ba6cbce5262457c333c8380ddb3fad5d39",
+        "user": {
+            "login": "sunshinejr",
+            "id": 5232779,
+            "node_id": "MDQ6VXNlcjUyMzI3Nzk=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/5232779?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sunshinejr",
+            "html_url": "https://github.com/sunshinejr",
+            "followers_url": "https://api.github.com/users/sunshinejr/followers",
+            "following_url": "https://api.github.com/users/sunshinejr/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sunshinejr/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sunshinejr/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sunshinejr/subscriptions",
+            "organizations_url": "https://api.github.com/users/sunshinejr/orgs",
+            "repos_url": "https://api.github.com/users/sunshinejr/repos",
+            "events_url": "https://api.github.com/users/sunshinejr/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sunshinejr/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yeah, I think that the `.ruby-version` file might be a problem, let's see, just removed it.",
+        "created_at": "2019-02-24T00:08:20Z",
+        "updated_at": "2019-02-25T08:28:25Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259597995",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259597995"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259597995"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181"
+            }
+        },
+        "in_reply_to_id": 259597758
+    },
+    {
+        "url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259598027",
+        "pull_request_review_id": 207130074,
+        "id": 259598027,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1OTU5ODAyNw==",
+        "diff_hunk": "@@ -12,6 +12,22 @@ matrix:\n         - TVOS_SDK=appletvsimulator12.2\n         - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n         - WATCHOS_SDK=watchsimulator5.2\n+    - os: osx\n+      osx_image: xcode10.2\n+      env:\n+        - CACHE_NAME=SWIFT5_0\n+        - SWIFT_VERSION=5.0\n+        - IOS_SIMULATOR='name=iPhone 6s,OS=12.2'\n+        - IOS_SDK=iphonesimulator12.2\n+        - TVOS_SIMULATOR='name=Apple TV 4K (at 1080p)'\n+        - TVOS_SDK=appletvsimulator12.2\n+        - WATCHOS_SIMULATOR='name=Apple Watch Series 4 - 44mm'\n+        - WATCHOS_SDK=watchsimulator5.2    \n+      before_install:\n+        - rvm install \"ruby-2.5.1\"",
+        "path": ".travis.yml",
+        "position": null,
+        "original_position": 16,
+        "commit_id": "6fa3e902b6a75d664c36b8eb117becc758949bd1",
+        "original_commit_id": "24fdf7ba6cbce5262457c333c8380ddb3fad5d39",
+        "user": {
+            "login": "f-meloni",
+            "id": 17830956,
+            "node_id": "MDQ6VXNlcjE3ODMwOTU2",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/17830956?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/f-meloni",
+            "html_url": "https://github.com/f-meloni",
+            "followers_url": "https://api.github.com/users/f-meloni/followers",
+            "following_url": "https://api.github.com/users/f-meloni/following{/other_user}",
+            "gists_url": "https://api.github.com/users/f-meloni/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/f-meloni/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/f-meloni/subscriptions",
+            "organizations_url": "https://api.github.com/users/f-meloni/orgs",
+            "repos_url": "https://api.github.com/users/f-meloni/repos",
+            "events_url": "https://api.github.com/users/f-meloni/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/f-meloni/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Could be, I've tried it locally and works\r\n<img width=\"1002\" alt=\"schermata 2019-02-24 alle 00 09 22\" src=\"https://user-images.githubusercontent.com/17830956/53293255-76585c80-37c8-11e9-8d7a-6ea02c479143.png\">\r\n",
+        "created_at": "2019-02-24T00:13:40Z",
+        "updated_at": "2019-02-25T08:28:25Z",
+        "html_url": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259598027",
+        "pull_request_url": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/comments/259598027"
+            },
+            "html": {
+                "href": "https://github.com/radex/SwiftyUserDefaults/pull/181#discussion_r259598027"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/radex/SwiftyUserDefaults/pulls/181"
+            }
+        },
+        "in_reply_to_id": 259597758
+    }
+]

@@ -1,0 +1,51 @@
+[
+    {
+        "url": "https://api.github.com/repos/gilesbowkett/rewind/pulls/comments/36431304",
+        "pull_request_review_id": null,
+        "id": 36431304,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2NDMxMzA0",
+        "diff_hunk": "@@ -0,0 +1,127 @@\n+#!/bin/bash\n+CMD=`basename $0`;\n+\n+# prints the usage message\n+function usage() {\n+\techo -e \"$CMD is a script to extract the some info on GIT authors from",
+        "path": "basic_stats.sh",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "8c962d58719b33232421feb9daa7f3fb78d512bf",
+        "original_commit_id": "6fd56e5744a2b056d26226d9aa2e60d5759a4dd7",
+        "user": {
+            "login": "gilesbowkett",
+            "id": 974,
+            "node_id": "MDQ6VXNlcjk3NA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/974?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/gilesbowkett",
+            "html_url": "https://github.com/gilesbowkett",
+            "followers_url": "https://api.github.com/users/gilesbowkett/followers",
+            "following_url": "https://api.github.com/users/gilesbowkett/following{/other_user}",
+            "gists_url": "https://api.github.com/users/gilesbowkett/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/gilesbowkett/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/gilesbowkett/subscriptions",
+            "organizations_url": "https://api.github.com/users/gilesbowkett/orgs",
+            "repos_url": "https://api.github.com/users/gilesbowkett/repos",
+            "events_url": "https://api.github.com/users/gilesbowkett/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/gilesbowkett/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`s/GIT/git`\n\n[git isn't an acronym](https://en.wikipedia.org/wiki/Git_%28software%29#History).\n",
+        "created_at": "2015-08-06T15:55:55Z",
+        "updated_at": "2017-04-28T12:12:37Z",
+        "html_url": "https://github.com/gilesbowkett/rewind/pull/12#discussion_r36431304",
+        "pull_request_url": "https://api.github.com/repos/gilesbowkett/rewind/pulls/12",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/gilesbowkett/rewind/pulls/comments/36431304"
+            },
+            "html": {
+                "href": "https://github.com/gilesbowkett/rewind/pull/12#discussion_r36431304"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/gilesbowkett/rewind/pulls/12"
+            }
+        }
+    }
+]

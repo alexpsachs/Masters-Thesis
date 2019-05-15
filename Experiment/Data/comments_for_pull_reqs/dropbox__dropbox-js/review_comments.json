@@ -1,0 +1,492 @@
+[
+    {
+        "url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5514484",
+        "pull_request_review_id": null,
+        "id": 5514484,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1MTQ0ODQ=",
+        "diff_hunk": "@@ -19,10 +19,11 @@ class Dropbox.AuthDriver.NodeServer\n     else\n       @_tlsOptions = null\n     # Calling require in the constructor because this doesn't work in browsers.\n-    @_fs = require 'fs'\n-    @_http = require 'http'\n-    @_https = require 'https'\n-    @_open = require 'open'\n+    # Have to add an empty string to prevent Firefox Add-on issues\n+    @_fs = require 'fs' + ''",
+        "path": "src/auth_driver/node.coffee",
+        "position": 9,
+        "original_position": 9,
+        "commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "original_commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "user": {
+            "login": "pwnall",
+            "id": 11460,
+            "node_id": "MDQ6VXNlcjExNDYw",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/11460?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pwnall",
+            "html_url": "https://github.com/pwnall",
+            "followers_url": "https://api.github.com/users/pwnall/followers",
+            "following_url": "https://api.github.com/users/pwnall/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pwnall/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pwnall/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pwnall/subscriptions",
+            "organizations_url": "https://api.github.com/users/pwnall/orgs",
+            "repos_url": "https://api.github.com/users/pwnall/repos",
+            "events_url": "https://api.github.com/users/pwnall/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pwnall/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What is the root cause of this issue?\n\nThis line should never be run inside a Firefox Add-on, so I'm guessing the SDK does pre-processing?\n\nI'm worried about this issue because the workaround is brittle. It relies on devs always testing on Firefox or always remembering about the workaround, and it also relies on the CoffeeScript compiler not doing any constant folding.\n",
+        "created_at": "2013-07-31T20:19:41Z",
+        "updated_at": "2013-07-31T20:19:41Z",
+        "html_url": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5514484",
+        "pull_request_url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5514484"
+            },
+            "html": {
+                "href": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5514484"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5514554",
+        "pull_request_review_id": null,
+        "id": 5514554,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1MTQ1NTQ=",
+        "diff_hunk": "@@ -406,7 +406,10 @@ class Dropbox.Client\n     xhr = new Dropbox.Util.Xhr 'GET',\n                                \"#{@urls.getFile}/#{@urlEncodePath(path)}\"\n     xhr.setParams(params).signWithOauth @oauth, httpCache\n-    xhr.setResponseType responseType\n+    # Firefox Add-ons 1.14 does not support setResponseType, fixed in nightly versions\n+    # TODO: This should be updated when Firefox Add-on SDK 1.15 is out\n+    if (typeof Buffer is \"function\" || typeof window isnt 'undefined')",
+        "path": "src/client.coffee",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "original_commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "user": {
+            "login": "pwnall",
+            "id": 11460,
+            "node_id": "MDQ6VXNlcjExNDYw",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/11460?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pwnall",
+            "html_url": "https://github.com/pwnall",
+            "followers_url": "https://api.github.com/users/pwnall/followers",
+            "following_url": "https://api.github.com/users/pwnall/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pwnall/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pwnall/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pwnall/subscriptions",
+            "organizations_url": "https://api.github.com/users/pwnall/orgs",
+            "repos_url": "https://api.github.com/users/pwnall/repos",
+            "events_url": "https://api.github.com/users/pwnall/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pwnall/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can you do `if 'setResponseType' of xhr` here?\n",
+        "created_at": "2013-07-31T20:21:46Z",
+        "updated_at": "2013-07-31T20:22:07Z",
+        "html_url": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5514554",
+        "pull_request_url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5514554"
+            },
+            "html": {
+                "href": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5514554"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5514707",
+        "pull_request_review_id": null,
+        "id": 5514707,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1MTQ3MDc=",
+        "diff_hunk": "@@ -19,10 +19,11 @@ class Dropbox.AuthDriver.NodeServer\n     else\n       @_tlsOptions = null\n     # Calling require in the constructor because this doesn't work in browsers.\n-    @_fs = require 'fs'\n-    @_http = require 'http'\n-    @_https = require 'https'\n-    @_open = require 'open'\n+    # Have to add an empty string to prevent Firefox Add-on issues\n+    @_fs = require 'fs' + ''",
+        "path": "src/auth_driver/node.coffee",
+        "position": 9,
+        "original_position": 9,
+        "commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "original_commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "user": {
+            "login": "vladikoff",
+            "id": 128755,
+            "node_id": "MDQ6VXNlcjEyODc1NQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/128755?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/vladikoff",
+            "html_url": "https://github.com/vladikoff",
+            "followers_url": "https://api.github.com/users/vladikoff/followers",
+            "following_url": "https://api.github.com/users/vladikoff/following{/other_user}",
+            "gists_url": "https://api.github.com/users/vladikoff/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/vladikoff/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/vladikoff/subscriptions",
+            "organizations_url": "https://api.github.com/users/vladikoff/orgs",
+            "repos_url": "https://api.github.com/users/vladikoff/repos",
+            "events_url": "https://api.github.com/users/vladikoff/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/vladikoff/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yeap, the SDK runs pre-processing. What do you suggest we do about this? Maybe create a separate build for Firefox? (might work)\n",
+        "created_at": "2013-07-31T20:27:20Z",
+        "updated_at": "2013-07-31T20:27:20Z",
+        "html_url": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5514707",
+        "pull_request_url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5514707"
+            },
+            "html": {
+                "href": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5514707"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5514719",
+        "pull_request_review_id": null,
+        "id": 5514719,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1MTQ3MTk=",
+        "diff_hunk": "@@ -406,7 +406,10 @@ class Dropbox.Client\n     xhr = new Dropbox.Util.Xhr 'GET',\n                                \"#{@urls.getFile}/#{@urlEncodePath(path)}\"\n     xhr.setParams(params).signWithOauth @oauth, httpCache\n-    xhr.setResponseType responseType\n+    # Firefox Add-ons 1.14 does not support setResponseType, fixed in nightly versions\n+    # TODO: This should be updated when Firefox Add-on SDK 1.15 is out\n+    if (typeof Buffer is \"function\" || typeof window isnt 'undefined')",
+        "path": "src/client.coffee",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "original_commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "user": {
+            "login": "vladikoff",
+            "id": 128755,
+            "node_id": "MDQ6VXNlcjEyODc1NQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/128755?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/vladikoff",
+            "html_url": "https://github.com/vladikoff",
+            "followers_url": "https://api.github.com/users/vladikoff/followers",
+            "following_url": "https://api.github.com/users/vladikoff/following{/other_user}",
+            "gists_url": "https://api.github.com/users/vladikoff/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/vladikoff/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/vladikoff/subscriptions",
+            "organizations_url": "https://api.github.com/users/vladikoff/orgs",
+            "repos_url": "https://api.github.com/users/vladikoff/repos",
+            "events_url": "https://api.github.com/users/vladikoff/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/vladikoff/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let me check that one\n",
+        "created_at": "2013-07-31T20:27:51Z",
+        "updated_at": "2013-07-31T20:27:51Z",
+        "html_url": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5514719",
+        "pull_request_url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5514719"
+            },
+            "html": {
+                "href": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5514719"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5859652",
+        "pull_request_review_id": null,
+        "id": 5859652,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4NTk2NTI=",
+        "diff_hunk": "@@ -19,10 +19,11 @@ class Dropbox.AuthDriver.NodeServer\n     else\n       @_tlsOptions = null\n     # Calling require in the constructor because this doesn't work in browsers.\n-    @_fs = require 'fs'\n-    @_http = require 'http'\n-    @_https = require 'https'\n-    @_open = require 'open'\n+    # Have to add an empty string to prevent Firefox Add-on issues\n+    @_fs = require 'fs' + ''",
+        "path": "src/auth_driver/node.coffee",
+        "position": 9,
+        "original_position": 9,
+        "commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "original_commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "user": {
+            "login": "pwnall",
+            "id": 11460,
+            "node_id": "MDQ6VXNlcjExNDYw",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/11460?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pwnall",
+            "html_url": "https://github.com/pwnall",
+            "followers_url": "https://api.github.com/users/pwnall/followers",
+            "following_url": "https://api.github.com/users/pwnall/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pwnall/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pwnall/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pwnall/subscriptions",
+            "organizations_url": "https://api.github.com/users/pwnall/orgs",
+            "repos_url": "https://api.github.com/users/pwnall/repos",
+            "events_url": "https://api.github.com/users/pwnall/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pwnall/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I added a Dropbox.Env module, and dropbox.js does all its `require` calls via `Dropbox.Env.require`. Is this enough to trick the preprocessor? :)\n",
+        "created_at": "2013-08-20T02:52:37Z",
+        "updated_at": "2013-08-20T02:52:37Z",
+        "html_url": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5859652",
+        "pull_request_url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5859652"
+            },
+            "html": {
+                "href": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5859652"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5998404",
+        "pull_request_review_id": null,
+        "id": 5998404,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU5OTg0MDQ=",
+        "diff_hunk": "@@ -19,10 +19,11 @@ class Dropbox.AuthDriver.NodeServer\n     else\n       @_tlsOptions = null\n     # Calling require in the constructor because this doesn't work in browsers.\n-    @_fs = require 'fs'\n-    @_http = require 'http'\n-    @_https = require 'https'\n-    @_open = require 'open'\n+    # Have to add an empty string to prevent Firefox Add-on issues\n+    @_fs = require 'fs' + ''",
+        "path": "src/auth_driver/node.coffee",
+        "position": 9,
+        "original_position": 9,
+        "commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "original_commit_id": "64013e00e649d9b85fe40ca28b707978121f366e",
+        "user": {
+            "login": "vladikoff",
+            "id": 128755,
+            "node_id": "MDQ6VXNlcjEyODc1NQ==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/128755?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/vladikoff",
+            "html_url": "https://github.com/vladikoff",
+            "followers_url": "https://api.github.com/users/vladikoff/followers",
+            "following_url": "https://api.github.com/users/vladikoff/following{/other_user}",
+            "gists_url": "https://api.github.com/users/vladikoff/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/vladikoff/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/vladikoff/subscriptions",
+            "organizations_url": "https://api.github.com/users/vladikoff/orgs",
+            "repos_url": "https://api.github.com/users/vladikoff/repos",
+            "events_url": "https://api.github.com/users/vladikoff/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/vladikoff/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let me check this, thanks for adding this!\n",
+        "created_at": "2013-08-27T06:51:26Z",
+        "updated_at": "2013-08-27T06:51:26Z",
+        "html_url": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5998404",
+        "pull_request_url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/5998404"
+            },
+            "html": {
+                "href": "https://github.com/dropbox/dropbox-js/pull/79#discussion_r5998404"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/79"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/19130305",
+        "pull_request_review_id": null,
+        "id": 19130305,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5MTMwMzA1",
+        "diff_hunk": "@@ -1065,16 +1076,23 @@ class Dropbox.Client\n   #   obtained from a previous call to {Dropbox.Client#pullChanges}, the return\n   #   value of {Dropbox.Http.PulledChanges#cursor}, or null / omitted on the\n   #   first call to {Dropbox.Client#pullChanges}\n+  # @param {Object} options (optional) one or more of the options below\n+  # @option options {String} pathPrefix if present, this parameter filters the\n+  #   response to only include entires at or under the specified path\n+  # @option options {Boolean} includeMediaInfo only meaningful when stat-ing\n+  #   file and folders with photos and videos; if true and the metadata is\n+  #   available, a photo_info and/or video_info dictionary will be included.\n   # @param {function(Dropbox.ApiError, Dropbox.Http.PulledChanges)} callback\n   #   called with the result of the /delta HTTP request; if the call\n   #   succeeds, the second parameter is a {Dropbox.Http.PulledChanges}\n   #   describing the changes to the user's Dropbox since the pullChanges call\n   #   that produced the given cursor, and the first parameter is null\n   # @return {XMLHttpRequest} the XHR object used for this API call\n-  pullChanges: (cursor, callback) ->\n-    if (not callback) and (typeof cursor is 'function')\n+  pullChanges: (cursor, options, callback) ->",
+        "path": "src/client.coffee",
+        "position": 43,
+        "original_position": 43,
+        "commit_id": "c0f5852076d46b8afad973330557b01dba967d5e",
+        "original_commit_id": "72fb1fe7416e5b2703f04a382a89cb129b04521c",
+        "user": {
+            "login": "varenc",
+            "id": 167585,
+            "node_id": "MDQ6VXNlcjE2NzU4NQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/167585?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/varenc",
+            "html_url": "https://github.com/varenc",
+            "followers_url": "https://api.github.com/users/varenc/followers",
+            "following_url": "https://api.github.com/users/varenc/following{/other_user}",
+            "gists_url": "https://api.github.com/users/varenc/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/varenc/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/varenc/subscriptions",
+            "organizations_url": "https://api.github.com/users/varenc/orgs",
+            "repos_url": "https://api.github.com/users/varenc/repos",
+            "events_url": "https://api.github.com/users/varenc/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/varenc/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "doesn't this change the method signature in a way that'll make old code using this break?\n",
+        "created_at": "2014-10-21T05:48:08Z",
+        "updated_at": "2014-10-30T18:37:35Z",
+        "html_url": "https://github.com/dropbox/dropbox-js/pull/201#discussion_r19130305",
+        "pull_request_url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/201",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/19130305"
+            },
+            "html": {
+                "href": "https://github.com/dropbox/dropbox-js/pull/201#discussion_r19130305"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/201"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/19132784",
+        "pull_request_review_id": null,
+        "id": 19132784,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5MTMyNzg0",
+        "diff_hunk": "@@ -1065,16 +1076,23 @@ class Dropbox.Client\n   #   obtained from a previous call to {Dropbox.Client#pullChanges}, the return\n   #   value of {Dropbox.Http.PulledChanges#cursor}, or null / omitted on the\n   #   first call to {Dropbox.Client#pullChanges}\n+  # @param {Object} options (optional) one or more of the options below\n+  # @option options {String} pathPrefix if present, this parameter filters the\n+  #   response to only include entires at or under the specified path\n+  # @option options {Boolean} includeMediaInfo only meaningful when stat-ing\n+  #   file and folders with photos and videos; if true and the metadata is\n+  #   available, a photo_info and/or video_info dictionary will be included.\n   # @param {function(Dropbox.ApiError, Dropbox.Http.PulledChanges)} callback\n   #   called with the result of the /delta HTTP request; if the call\n   #   succeeds, the second parameter is a {Dropbox.Http.PulledChanges}\n   #   describing the changes to the user's Dropbox since the pullChanges call\n   #   that produced the given cursor, and the first parameter is null\n   # @return {XMLHttpRequest} the XHR object used for this API call\n-  pullChanges: (cursor, callback) ->\n-    if (not callback) and (typeof cursor is 'function')\n+  pullChanges: (cursor, options, callback) ->",
+        "path": "src/client.coffee",
+        "position": 43,
+        "original_position": 43,
+        "commit_id": "c0f5852076d46b8afad973330557b01dba967d5e",
+        "original_commit_id": "72fb1fe7416e5b2703f04a382a89cb129b04521c",
+        "user": {
+            "login": "ehfeng",
+            "id": 279398,
+            "node_id": "MDQ6VXNlcjI3OTM5OA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/279398?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ehfeng",
+            "html_url": "https://github.com/ehfeng",
+            "followers_url": "https://api.github.com/users/ehfeng/followers",
+            "following_url": "https://api.github.com/users/ehfeng/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ehfeng/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ehfeng/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ehfeng/subscriptions",
+            "organizations_url": "https://api.github.com/users/ehfeng/orgs",
+            "repos_url": "https://api.github.com/users/ehfeng/repos",
+            "events_url": "https://api.github.com/users/ehfeng/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ehfeng/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes. Was trying to be consistent with the metadata arguments. Should options be put as a 3rd argument?\n",
+        "created_at": "2014-10-21T07:26:27Z",
+        "updated_at": "2014-10-30T18:37:35Z",
+        "html_url": "https://github.com/dropbox/dropbox-js/pull/201#discussion_r19132784",
+        "pull_request_url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/201",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/19132784"
+            },
+            "html": {
+                "href": "https://github.com/dropbox/dropbox-js/pull/201#discussion_r19132784"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/201"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/19170446",
+        "pull_request_review_id": null,
+        "id": 19170446,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5MTcwNDQ2",
+        "diff_hunk": "@@ -1065,16 +1076,23 @@ class Dropbox.Client\n   #   obtained from a previous call to {Dropbox.Client#pullChanges}, the return\n   #   value of {Dropbox.Http.PulledChanges#cursor}, or null / omitted on the\n   #   first call to {Dropbox.Client#pullChanges}\n+  # @param {Object} options (optional) one or more of the options below\n+  # @option options {String} pathPrefix if present, this parameter filters the\n+  #   response to only include entires at or under the specified path\n+  # @option options {Boolean} includeMediaInfo only meaningful when stat-ing\n+  #   file and folders with photos and videos; if true and the metadata is\n+  #   available, a photo_info and/or video_info dictionary will be included.\n   # @param {function(Dropbox.ApiError, Dropbox.Http.PulledChanges)} callback\n   #   called with the result of the /delta HTTP request; if the call\n   #   succeeds, the second parameter is a {Dropbox.Http.PulledChanges}\n   #   describing the changes to the user's Dropbox since the pullChanges call\n   #   that produced the given cursor, and the first parameter is null\n   # @return {XMLHttpRequest} the XHR object used for this API call\n-  pullChanges: (cursor, callback) ->\n-    if (not callback) and (typeof cursor is 'function')\n+  pullChanges: (cursor, options, callback) ->",
+        "path": "src/client.coffee",
+        "position": 43,
+        "original_position": 43,
+        "commit_id": "c0f5852076d46b8afad973330557b01dba967d5e",
+        "original_commit_id": "72fb1fe7416e5b2703f04a382a89cb129b04521c",
+        "user": {
+            "login": "varenc",
+            "id": 167585,
+            "node_id": "MDQ6VXNlcjE2NzU4NQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/167585?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/varenc",
+            "html_url": "https://github.com/varenc",
+            "followers_url": "https://api.github.com/users/varenc/followers",
+            "following_url": "https://api.github.com/users/varenc/following{/other_user}",
+            "gists_url": "https://api.github.com/users/varenc/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/varenc/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/varenc/subscriptions",
+            "organizations_url": "https://api.github.com/users/varenc/orgs",
+            "repos_url": "https://api.github.com/users/varenc/repos",
+            "events_url": "https://api.github.com/users/varenc/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/varenc/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'd say thats the right pattern, but I'm worried this change would break compatibility with people using an older version.  Not sure what the standards around this are though so I'll defer to Victor.\n",
+        "created_at": "2014-10-21T18:55:06Z",
+        "updated_at": "2014-10-30T18:37:35Z",
+        "html_url": "https://github.com/dropbox/dropbox-js/pull/201#discussion_r19170446",
+        "pull_request_url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/201",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/19170446"
+            },
+            "html": {
+                "href": "https://github.com/dropbox/dropbox-js/pull/201#discussion_r19170446"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/201"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/74328827",
+        "pull_request_review_id": null,
+        "id": 74328827,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc0MzI4ODI3",
+        "diff_hunk": "@@ -1,11 +1,12 @@\n-\n-# Client Library for the Dropbox API\n-\n-## This repository is no longer maintained\n+# [DEPRECIATED] This repository is no longer maintained",
+        "path": "README.md",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "f2a7fc3e3c62e63d50b23bfe922be10bb68b4a9d",
+        "original_commit_id": "41e34a3fb198dd57a8872851a43e23ba0cfecf9a",
+        "user": {
+            "login": "braincore",
+            "id": 4674965,
+            "node_id": "MDQ6VXNlcjQ2NzQ5NjU=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/4674965?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/braincore",
+            "html_url": "https://github.com/braincore",
+            "followers_url": "https://api.github.com/users/braincore/followers",
+            "following_url": "https://api.github.com/users/braincore/following{/other_user}",
+            "gists_url": "https://api.github.com/users/braincore/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/braincore/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/braincore/subscriptions",
+            "organizations_url": "https://api.github.com/users/braincore/orgs",
+            "repos_url": "https://api.github.com/users/braincore/repos",
+            "events_url": "https://api.github.com/users/braincore/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/braincore/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Haha, I suppose this repo has significantly \"depreciated\" over the years :)\n",
+        "created_at": "2016-08-10T20:55:52Z",
+        "updated_at": "2016-08-10T21:02:26Z",
+        "html_url": "https://github.com/dropbox/dropbox-js/pull/254#discussion_r74328827",
+        "pull_request_url": "https://api.github.com/repos/dropbox/dropbox-js/pulls/254",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/comments/74328827"
+            },
+            "html": {
+                "href": "https://github.com/dropbox/dropbox-js/pull/254#discussion_r74328827"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/dropbox/dropbox-js/pulls/254"
+            }
+        }
+    }
+]

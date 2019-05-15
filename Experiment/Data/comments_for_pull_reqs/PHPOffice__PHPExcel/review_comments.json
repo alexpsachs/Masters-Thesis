@@ -1,0 +1,786 @@
+[
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1159705",
+        "pull_request_review_id": null,
+        "id": 1159705,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNTk3MDU=",
+        "diff_hunk": "@@ -953,14 +953,17 @@ private function _writePlotSeriesValues($plotSeriesValues, $objWriter, $groupTyp\n \t\t\t\t\t\t$objWriter->writeAttribute('val', $plotSeriesValues->getPointCount() );\n \t\t\t\t\t$objWriter->endElement();\n \n-\t\t\t\t\tforeach($plotSeriesValues->getDataValues() as $plotSeriesKey => $plotSeriesValue) {\n-\t\t\t\t\t\t$objWriter->startElement('c:pt');\n-\t\t\t\t\t\t\t$objWriter->writeAttribute('idx', $plotSeriesKey );\n-\n-\t\t\t\t\t\t\t$objWriter->startElement('c:v');\n-\t\t\t\t\t\t\t\t$objWriter->writeRawData( $plotSeriesValue );\n+\t\t\t\t\t$dataValues = $plotSeriesValues->getDataValues();\n+\t\t\t\t\tif (is_array($dataValues) && count($dataValues) > 0) {",
+        "path": "Classes/PHPExcel/Writer/Excel2007/Chart.php",
+        "position": 11,
+        "original_position": 11,
+        "commit_id": "ba76676c4e13e869d6a245bda7c0839a972a9b80",
+        "original_commit_id": "ba76676c4e13e869d6a245bda7c0839a972a9b80",
+        "user": {
+            "login": "Progi1984",
+            "id": 1533248,
+            "node_id": "MDQ6VXNlcjE1MzMyNDg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1533248?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Progi1984",
+            "html_url": "https://github.com/Progi1984",
+            "followers_url": "https://api.github.com/users/Progi1984/followers",
+            "following_url": "https://api.github.com/users/Progi1984/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Progi1984/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Progi1984/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Progi1984/subscriptions",
+            "organizations_url": "https://api.github.com/users/Progi1984/orgs",
+            "repos_url": "https://api.github.com/users/Progi1984/repos",
+            "events_url": "https://api.github.com/users/Progi1984/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Progi1984/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "if (is_array($dataValues) && count($dataValues) > 0) {\n=>\nif (!empty($dataValues)) {\n",
+        "created_at": "2012-07-13T15:45:15Z",
+        "updated_at": "2012-07-13T15:45:15Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/7#discussion_r1159705",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/7",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1159705"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/7#discussion_r1159705"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/7"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1160858",
+        "pull_request_review_id": null,
+        "id": 1160858,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDExNjA4NTg=",
+        "diff_hunk": "@@ -953,14 +953,17 @@ private function _writePlotSeriesValues($plotSeriesValues, $objWriter, $groupTyp\n \t\t\t\t\t\t$objWriter->writeAttribute('val', $plotSeriesValues->getPointCount() );\n \t\t\t\t\t$objWriter->endElement();\n \n-\t\t\t\t\tforeach($plotSeriesValues->getDataValues() as $plotSeriesKey => $plotSeriesValue) {\n-\t\t\t\t\t\t$objWriter->startElement('c:pt');\n-\t\t\t\t\t\t\t$objWriter->writeAttribute('idx', $plotSeriesKey );\n-\n-\t\t\t\t\t\t\t$objWriter->startElement('c:v');\n-\t\t\t\t\t\t\t\t$objWriter->writeRawData( $plotSeriesValue );\n+\t\t\t\t\t$dataValues = $plotSeriesValues->getDataValues();\n+\t\t\t\t\tif (is_array($dataValues) && count($dataValues) > 0) {",
+        "path": "Classes/PHPExcel/Writer/Excel2007/Chart.php",
+        "position": 11,
+        "original_position": 11,
+        "commit_id": "ba76676c4e13e869d6a245bda7c0839a972a9b80",
+        "original_commit_id": "ba76676c4e13e869d6a245bda7c0839a972a9b80",
+        "user": {
+            "login": "seltzlab",
+            "id": 818707,
+            "node_id": "MDQ6VXNlcjgxODcwNw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/818707?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/seltzlab",
+            "html_url": "https://github.com/seltzlab",
+            "followers_url": "https://api.github.com/users/seltzlab/followers",
+            "following_url": "https://api.github.com/users/seltzlab/following{/other_user}",
+            "gists_url": "https://api.github.com/users/seltzlab/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/seltzlab/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/seltzlab/subscriptions",
+            "organizations_url": "https://api.github.com/users/seltzlab/orgs",
+            "repos_url": "https://api.github.com/users/seltzlab/repos",
+            "events_url": "https://api.github.com/users/seltzlab/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/seltzlab/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "sure, it's better\n",
+        "created_at": "2012-07-13T18:11:07Z",
+        "updated_at": "2012-07-13T18:11:07Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/7#discussion_r1160858",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/7",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1160858"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/7#discussion_r1160858"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/7"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1376684",
+        "pull_request_review_id": null,
+        "id": 1376684,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNzY2ODQ=",
+        "diff_hunk": "@@ -600,6 +600,11 @@ public static function absoluteCoordinate($pCoordinateString = 'A1')\n \t */\n \tpublic static function splitRange($pRange = 'A1:A1')\n \t{\n+\t\t// Ensure $pRange is a valid range\t\t\n+\t\tif(empty($pRange)){\n+\t\t\t$pRange = 'A1:A1';",
+        "path": "Classes/PHPExcel/Cell.php",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "9838e04caf36f306cf8d53f187fba3e408ac0647",
+        "original_commit_id": "a8276f21f20c837517bd50445470f38b058253fd",
+        "user": {
+            "login": "kkamkou",
+            "id": 305739,
+            "node_id": "MDQ6VXNlcjMwNTczOQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/305739?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kkamkou",
+            "html_url": "https://github.com/kkamkou",
+            "followers_url": "https://api.github.com/users/kkamkou/followers",
+            "following_url": "https://api.github.com/users/kkamkou/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kkamkou/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kkamkou/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kkamkou/subscriptions",
+            "organizations_url": "https://api.github.com/users/kkamkou/orgs",
+            "repos_url": "https://api.github.com/users/kkamkou/repos",
+            "events_url": "https://api.github.com/users/kkamkou/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kkamkou/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is it good idea to rewrite this part as const DEFAULT_RANGE = 'A1:A1' / self::DEFAULT_RANGE. Mb. all things should be replaced? What do you think?\n",
+        "created_at": "2012-08-14T20:16:09Z",
+        "updated_at": "2012-08-15T14:49:24Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/29#discussion_r1376684",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/29",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1376684"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/29#discussion_r1376684"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/29"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1377050",
+        "pull_request_review_id": null,
+        "id": 1377050,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEzNzcwNTA=",
+        "diff_hunk": "@@ -600,6 +600,11 @@ public static function absoluteCoordinate($pCoordinateString = 'A1')\n \t */\n \tpublic static function splitRange($pRange = 'A1:A1')\n \t{\n+\t\t// Ensure $pRange is a valid range\t\t\n+\t\tif(empty($pRange)){\n+\t\t\t$pRange = 'A1:A1';",
+        "path": "Classes/PHPExcel/Cell.php",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "9838e04caf36f306cf8d53f187fba3e408ac0647",
+        "original_commit_id": "a8276f21f20c837517bd50445470f38b058253fd",
+        "user": {
+            "login": "lowfill",
+            "id": 141417,
+            "node_id": "MDQ6VXNlcjE0MTQxNw==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/141417?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/lowfill",
+            "html_url": "https://github.com/lowfill",
+            "followers_url": "https://api.github.com/users/lowfill/followers",
+            "following_url": "https://api.github.com/users/lowfill/following{/other_user}",
+            "gists_url": "https://api.github.com/users/lowfill/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/lowfill/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/lowfill/subscriptions",
+            "organizations_url": "https://api.github.com/users/lowfill/orgs",
+            "repos_url": "https://api.github.com/users/lowfill/repos",
+            "events_url": "https://api.github.com/users/lowfill/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/lowfill/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Could be.  I will give it a try ;) \n",
+        "created_at": "2012-08-14T20:53:41Z",
+        "updated_at": "2012-08-15T14:49:24Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/29#discussion_r1377050",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/29",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1377050"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/29#discussion_r1377050"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/29"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1940840",
+        "pull_request_review_id": null,
+        "id": 1940840,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDA4NDA=",
+        "diff_hunk": "@@ -119,20 +121,23 @@ public function insertNewBefore($pBefore = 'A1', $pNumCols = 0, $pNumRows = 0, P\n \n \n \t\t// Loop through cells, bottom-up, and change cell coordinates\n-\t\twhile (($cellID = ($pNumCols < 0 || $pNumRows < 0) ? array_shift($aCellCollection) : array_pop($aCellCollection))) {\n+\t\twhile (($cellID = $remove ? array_shift($aCellCollection) : array_pop($aCellCollection))) {\n \t\t\t$cell = $pSheet->getCell($cellID);\n+\t\t\t$cellIndex = PHPExcel_Cell::columnIndexFromString($cell->getColumn());\n+\t\t\tif ($cellIndex-1 + $pNumCols < 0) {",
+        "path": "Classes/PHPExcel/ReferenceHelper.php",
+        "position": 44,
+        "original_position": 44,
+        "commit_id": "f99fc61e0d667942aabd78e46a72348ef5c1f561",
+        "original_commit_id": "f99fc61e0d667942aabd78e46a72348ef5c1f561",
+        "user": {
+            "login": "techhead",
+            "id": 311112,
+            "node_id": "MDQ6VXNlcjMxMTExMg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/311112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/techhead",
+            "html_url": "https://github.com/techhead",
+            "followers_url": "https://api.github.com/users/techhead/followers",
+            "following_url": "https://api.github.com/users/techhead/following{/other_user}",
+            "gists_url": "https://api.github.com/users/techhead/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/techhead/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/techhead/subscriptions",
+            "organizations_url": "https://api.github.com/users/techhead/orgs",
+            "repos_url": "https://api.github.com/users/techhead/repos",
+            "events_url": "https://api.github.com/users/techhead/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/techhead/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Added this new check to stay in bounds.\n",
+        "created_at": "2012-10-25T13:59:35Z",
+        "updated_at": "2012-10-25T13:59:35Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/70#discussion_r1940840",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/70",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1940840"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/70#discussion_r1940840"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/70"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1940900",
+        "pull_request_review_id": null,
+        "id": 1940900,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDA5MDA=",
+        "diff_hunk": "@@ -145,7 +150,7 @@ public function insertNewBefore($pBefore = 'A1', $pNumCols = 0, $pNumRows = 0, P\n \t\t\t\t}\n \n \t\t\t\t// Clear the original cell\n-\t\t\t\t$pSheet->getCell($cell->getCoordinate())->setValue('');\n+\t\t\t\t$pSheet->getCellCacheController()->deleteCacheData($cellID);",
+        "path": "Classes/PHPExcel/ReferenceHelper.php",
+        "position": 71,
+        "original_position": 71,
+        "commit_id": "f99fc61e0d667942aabd78e46a72348ef5c1f561",
+        "original_commit_id": "f99fc61e0d667942aabd78e46a72348ef5c1f561",
+        "user": {
+            "login": "techhead",
+            "id": 311112,
+            "node_id": "MDQ6VXNlcjMxMTExMg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/311112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/techhead",
+            "html_url": "https://github.com/techhead",
+            "followers_url": "https://api.github.com/users/techhead/followers",
+            "following_url": "https://api.github.com/users/techhead/following{/other_user}",
+            "gists_url": "https://api.github.com/users/techhead/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/techhead/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/techhead/subscriptions",
+            "organizations_url": "https://api.github.com/users/techhead/orgs",
+            "repos_url": "https://api.github.com/users/techhead/repos",
+            "events_url": "https://api.github.com/users/techhead/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/techhead/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This prevents overwriting unspecified cells with specific \"empty\" ones.  This could have also been fixed in PHPExcel/Writer/Excel5/Worksheet.php :: _writeBlank() if it did not write empty cells with no format specified.\n",
+        "created_at": "2012-10-25T14:05:07Z",
+        "updated_at": "2012-10-25T14:05:07Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/70#discussion_r1940900",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/70",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1940900"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/70#discussion_r1940900"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/70"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1940920",
+        "pull_request_review_id": null,
+        "id": 1940920,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE5NDA5MjA=",
+        "diff_hunk": "@@ -528,8 +533,13 @@ public function updateFormulaReferences($pFormula = '', $pBefore = 'A1', $pNumCo\n \t\t\t\t\t}\n \t\t\t\t}\n \t\t\t\tif ($adjustCount > 0) {\n-\t\t\t\t\tkrsort($cellTokens);\n-\t\t\t\t\tkrsort($newCellTokens);\n+\t\t\t\t\tif ($pNumCols > 0) {",
+        "path": "Classes/PHPExcel/ReferenceHelper.php",
+        "position": 119,
+        "original_position": 119,
+        "commit_id": "f99fc61e0d667942aabd78e46a72348ef5c1f561",
+        "original_commit_id": "f99fc61e0d667942aabd78e46a72348ef5c1f561",
+        "user": {
+            "login": "techhead",
+            "id": 311112,
+            "node_id": "MDQ6VXNlcjMxMTExMg==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/311112?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/techhead",
+            "html_url": "https://github.com/techhead",
+            "followers_url": "https://api.github.com/users/techhead/followers",
+            "following_url": "https://api.github.com/users/techhead/following{/other_user}",
+            "gists_url": "https://api.github.com/users/techhead/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/techhead/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/techhead/subscriptions",
+            "organizations_url": "https://api.github.com/users/techhead/orgs",
+            "repos_url": "https://api.github.com/users/techhead/repos",
+            "events_url": "https://api.github.com/users/techhead/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/techhead/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Change order of operations depending on whether add/remove.\n",
+        "created_at": "2012-10-25T14:06:09Z",
+        "updated_at": "2012-10-25T14:06:09Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/70#discussion_r1940920",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/70",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/1940920"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/70#discussion_r1940920"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/70"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/8087258",
+        "pull_request_review_id": null,
+        "id": 8087258,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDgwODcyNTg=",
+        "diff_hunk": "@@ -355,6 +355,8 @@ public function save($pFilename = null)\n \t\t\t// Close file\n \t\t\tif ($objZip->close() === false) {\n \t\t\t\tthrow new PHPExcel_Writer_Exception(\"Could not close zip file $pFilename.\");\n+\t\t\t} else {\n+\t\t\t\treturn true;",
+        "path": "Classes/PHPExcel/Writer/Excel2007.php",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "e76a35dd259518fa71e174281466c394322654fd",
+        "original_commit_id": "e76a35dd259518fa71e174281466c394322654fd",
+        "user": {
+            "login": "Daniel15",
+            "id": 91933,
+            "node_id": "MDQ6VXNlcjkxOTMz",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/91933?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Daniel15",
+            "html_url": "https://github.com/Daniel15",
+            "followers_url": "https://api.github.com/users/Daniel15/followers",
+            "following_url": "https://api.github.com/users/Daniel15/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Daniel15/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Daniel15/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Daniel15/subscriptions",
+            "organizations_url": "https://api.github.com/users/Daniel15/orgs",
+            "repos_url": "https://api.github.com/users/Daniel15/repos",
+            "events_url": "https://api.github.com/users/Daniel15/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Daniel15/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You're returning too early; the return should be underneath the next `if` block.\n",
+        "created_at": "2013-12-04T06:59:48Z",
+        "updated_at": "2013-12-04T06:59:48Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/236#discussion_r8087258",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/236",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/8087258"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/236#discussion_r8087258"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/236"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/9259364",
+        "pull_request_review_id": null,
+        "id": 9259364,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDkyNTkzNjQ=",
+        "diff_hunk": "@@ -938,11 +938,8 @@ public function load($pFilename)\n \t\t\t\t\t\t\t\t\t\t$objConditional->setStyle(clone $dxfs[intval($cfRule[\"dxfId\"])]);\n \t\t\t\t\t\t\t\t\t\t$conditionalStyles[] = $objConditional;\n \t\t\t\t\t\t\t\t\t}\n-\n-\t\t\t\t\t\t\t\t\t// Extract all cell references in $ref\n-\t\t\t\t\t\t\t\t\t$aReferences = PHPExcel_Cell::extractAllCellReferencesInRange($ref);\n-\t\t\t\t\t\t\t\t\tforeach ($aReferences as $reference) {\n-\t\t\t\t\t\t\t\t\t\t$docSheet->getStyle($reference)->setConditionalStyles($conditionalStyles);\n+\t\t\t\t\t\t\t\t\tforeach(explode(' ', $ref) as $single_ref){\n+\t\t\t\t\t\t\t\t\t\tdocSheet->setConditionalStyles($single_ref, $conditionalStyles);",
+        "path": "Classes/PHPExcel/Reader/Excel2007.php",
+        "position": null,
+        "original_position": 10,
+        "commit_id": "d9a9c23fea84eb8403804cce94141d074d3984c1",
+        "original_commit_id": "85c601f5429168987e013b2acfb101a8bb6045fc",
+        "user": {
+            "login": "Progi1984",
+            "id": 1533248,
+            "node_id": "MDQ6VXNlcjE1MzMyNDg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1533248?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Progi1984",
+            "html_url": "https://github.com/Progi1984",
+            "followers_url": "https://api.github.com/users/Progi1984/followers",
+            "following_url": "https://api.github.com/users/Progi1984/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Progi1984/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Progi1984/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Progi1984/subscriptions",
+            "organizations_url": "https://api.github.com/users/Progi1984/orgs",
+            "repos_url": "https://api.github.com/users/Progi1984/repos",
+            "events_url": "https://api.github.com/users/Progi1984/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Progi1984/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "docSheet => $docSheet\n",
+        "created_at": "2014-01-29T08:51:59Z",
+        "updated_at": "2014-01-29T20:04:56Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/172#discussion_r9259364",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/172",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/9259364"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/172#discussion_r9259364"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/172"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/12664186",
+        "pull_request_review_id": null,
+        "id": 12664186,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNjY0MTg2",
+        "diff_hunk": "@@ -55,7 +55,7 @@ public static function Register() {\n             spl_autoload_register('__autoload');\n         }\n         //    Register ourselves with SPL\n-        return spl_autoload_register(array('PHPExcel_Autoloader', 'Load'));\n+        return spl_autoload_register(array('PHPExcel_Autoloader', 'Load'), true, true);",
+        "path": "Classes/PHPExcel/Autoloader.php",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "08c1f4b19a8c3e773c970f4cbba6f992fc330b98",
+        "original_commit_id": "08c1f4b19a8c3e773c970f4cbba6f992fc330b98",
+        "user": {
+            "login": "MarkBaker",
+            "id": 770298,
+            "node_id": "MDQ6VXNlcjc3MDI5OA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/770298?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/MarkBaker",
+            "html_url": "https://github.com/MarkBaker",
+            "followers_url": "https://api.github.com/users/MarkBaker/followers",
+            "following_url": "https://api.github.com/users/MarkBaker/following{/other_user}",
+            "gists_url": "https://api.github.com/users/MarkBaker/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/MarkBaker/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/MarkBaker/subscriptions",
+            "organizations_url": "https://api.github.com/users/MarkBaker/orgs",
+            "repos_url": "https://api.github.com/users/MarkBaker/repos",
+            "events_url": "https://api.github.com/users/MarkBaker/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/MarkBaker/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The prepend argument was only introduced with PHP version 5.3.0, though it shouldn't cause any problems with earlier versions simply being treated as a spurious argument \n",
+        "created_at": "2014-05-14T21:58:45Z",
+        "updated_at": "2014-05-14T21:58:45Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/368#discussion_r12664186",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/368",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/12664186"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/368#discussion_r12664186"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/368"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/16303337",
+        "pull_request_review_id": null,
+        "id": 16303337,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MzAzMzM3",
+        "diff_hunk": "@@ -935,15 +939,15 @@ public function load($pFilename)\n \t\t\t\t\t\t\t\t\t\t} else {\n \t\t\t\t\t\t\t\t\t\t\t$objConditional->addCondition((string)$cfRule->formula);\n \t\t\t\t\t\t\t\t\t\t}\n-\t\t\t\t\t\t\t\t\t\t$objConditional->setStyle(clone $dxfs[intval($cfRule[\"dxfId\"])]);\n+\n+\t\t\t\t\t\t\t\t\t\t// the rule may unset formatting in which case dxfId will not be present\n+\t\t\t\t\t\t\t\t\t\tif(isset($cfRule[\"dxfId\"]])){",
+        "path": "Classes/PHPExcel/Reader/Excel2007.php",
+        "position": 35,
+        "original_position": 35,
+        "commit_id": "d9a9c23fea84eb8403804cce94141d074d3984c1",
+        "original_commit_id": "d9a9c23fea84eb8403804cce94141d074d3984c1",
+        "user": {
+            "login": "rentalhost",
+            "id": 421851,
+            "node_id": "MDQ6VXNlcjQyMTg1MQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/421851?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rentalhost",
+            "html_url": "https://github.com/rentalhost",
+            "followers_url": "https://api.github.com/users/rentalhost/followers",
+            "following_url": "https://api.github.com/users/rentalhost/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rentalhost/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rentalhost/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rentalhost/subscriptions",
+            "organizations_url": "https://api.github.com/users/rentalhost/orgs",
+            "repos_url": "https://api.github.com/users/rentalhost/repos",
+            "events_url": "https://api.github.com/users/rentalhost/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rentalhost/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Parse error: syntax error, unexpected ']' in PHPExcel\\Reader\\Excel2007.php on line 944\n",
+        "created_at": "2014-08-15T17:13:23Z",
+        "updated_at": "2014-08-15T17:13:23Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/172#discussion_r16303337",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/172",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/16303337"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/172#discussion_r16303337"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/172"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/16303464",
+        "pull_request_review_id": null,
+        "id": 16303464,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MzAzNDY0",
+        "diff_hunk": "@@ -164,6 +175,55 @@ public function setText($value = null) {\n     }\n \n     /**\n+     * Get Stop If True\n+     *\n+     * Whether to stop processing conditional formatting rules for a given cell if this rule evaluates to true.\n+     *\n+     * @return string\n+     */\n+     public function getStopIfTrue() {\n+     \t return $this->_stopIfTrue;\n+     }\n+\n+    /**\n+     * Set Stop If True\n+     *\n+     * @param string $pValue\n+     * @return PHPExcel_Style_Conditional\n+     */\n+    public function setStopIfTrue($pValue = '') {\n+    \tif($pValue === PHPExcel_Style_Conditional::STOP_IF_TRUE){\n+    \t    $this->_stopIfTrue = $pValue;\n+        } else{\n+\t    // treat all unknown as \"unset\"\n+\t    $this->_stopIfTrue = '';\n+\t}\n+\treturn $this;\n+    }\n+\n+    /**\n+     * Get Priority\n+     *\n+     * Priority is the order in which conditional formatting rules will apply to the affected range(s). Lower priority values run first.\n+     *\n+     * @return int\n+     */\n+     public function getPriority() {\n+     \t return $this->_priority;\n+     }\n+\n+    /**\n+     * Set Priority\n+     *\n+     * @param int $pValue\n+     * @return PHPExcel_Style_Conditional\n+     */\n+    public function setStopIfTrue($pValue = 0) {",
+        "path": "Classes/PHPExcel/Style/Conditional.php",
+        "position": 79,
+        "original_position": 79,
+        "commit_id": "d9a9c23fea84eb8403804cce94141d074d3984c1",
+        "original_commit_id": "d9a9c23fea84eb8403804cce94141d074d3984c1",
+        "user": {
+            "login": "rentalhost",
+            "id": 421851,
+            "node_id": "MDQ6VXNlcjQyMTg1MQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/421851?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rentalhost",
+            "html_url": "https://github.com/rentalhost",
+            "followers_url": "https://api.github.com/users/rentalhost/followers",
+            "following_url": "https://api.github.com/users/rentalhost/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rentalhost/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rentalhost/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rentalhost/subscriptions",
+            "organizations_url": "https://api.github.com/users/rentalhost/orgs",
+            "repos_url": "https://api.github.com/users/rentalhost/repos",
+            "events_url": "https://api.github.com/users/rentalhost/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rentalhost/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Fatal error: Cannot redeclare PHPExcel_Style_Conditional::setStopIfTrue() in PHPExcel\\Style\\Conditional.php on line 221\n",
+        "created_at": "2014-08-15T17:15:57Z",
+        "updated_at": "2014-08-15T17:15:57Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/172#discussion_r16303464",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/172",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/16303464"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/172#discussion_r16303464"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/172"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/16303514",
+        "pull_request_review_id": null,
+        "id": 16303514,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MzAzNTE0",
+        "diff_hunk": "@@ -164,6 +175,55 @@ public function setText($value = null) {\n     }\n \n     /**\n+     * Get Stop If True\n+     *\n+     * Whether to stop processing conditional formatting rules for a given cell if this rule evaluates to true.\n+     *\n+     * @return string\n+     */\n+     public function getStopIfTrue() {\n+     \t return $this->_stopIfTrue;\n+     }\n+\n+    /**\n+     * Set Stop If True\n+     *\n+     * @param string $pValue\n+     * @return PHPExcel_Style_Conditional\n+     */\n+    public function setStopIfTrue($pValue = '') {\n+    \tif($pValue === PHPExcel_Style_Conditional::STOP_IF_TRUE){\n+    \t    $this->_stopIfTrue = $pValue;\n+        } else{\n+\t    // treat all unknown as \"unset\"\n+\t    $this->_stopIfTrue = '';\n+\t}\n+\treturn $this;\n+    }\n+\n+    /**\n+     * Get Priority\n+     *\n+     * Priority is the order in which conditional formatting rules will apply to the affected range(s). Lower priority values run first.\n+     *\n+     * @return int\n+     */\n+     public function getPriority() {\n+     \t return $this->_priority;\n+     }\n+\n+    /**\n+     * Set Priority\n+     *\n+     * @param int $pValue\n+     * @return PHPExcel_Style_Conditional\n+     */\n+    public function setStopIfTrue($pValue = 0) {",
+        "path": "Classes/PHPExcel/Style/Conditional.php",
+        "position": 79,
+        "original_position": 79,
+        "commit_id": "d9a9c23fea84eb8403804cce94141d074d3984c1",
+        "original_commit_id": "d9a9c23fea84eb8403804cce94141d074d3984c1",
+        "user": {
+            "login": "rentalhost",
+            "id": 421851,
+            "node_id": "MDQ6VXNlcjQyMTg1MQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/421851?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rentalhost",
+            "html_url": "https://github.com/rentalhost",
+            "followers_url": "https://api.github.com/users/rentalhost/followers",
+            "following_url": "https://api.github.com/users/rentalhost/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rentalhost/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rentalhost/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rentalhost/subscriptions",
+            "organizations_url": "https://api.github.com/users/rentalhost/orgs",
+            "repos_url": "https://api.github.com/users/rentalhost/repos",
+            "events_url": "https://api.github.com/users/rentalhost/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rentalhost/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think that you mean setPriority() instead of setStopIfTrue(), not?\n",
+        "created_at": "2014-08-15T17:17:00Z",
+        "updated_at": "2014-08-15T17:17:00Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/172#discussion_r16303514",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/172",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/16303514"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/172#discussion_r16303514"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/172"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/51110176",
+        "pull_request_review_id": null,
+        "id": 51110176,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUxMTEwMTc2",
+        "diff_hunk": "@@ -1,5 +1,5 @@\n {\n-    \"name\": \"phpoffice/phpexcel\",\n+    \"name\": \"fpasquet/phpexcel\",",
+        "path": "composer.json",
+        "position": 3,
+        "original_position": 3,
+        "commit_id": "49432ec34c827df0d72bf65ca3dcb3a2b39fd43f",
+        "original_commit_id": "49432ec34c827df0d72bf65ca3dcb3a2b39fd43f",
+        "user": {
+            "login": "Progi1984",
+            "id": 1533248,
+            "node_id": "MDQ6VXNlcjE1MzMyNDg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1533248?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Progi1984",
+            "html_url": "https://github.com/Progi1984",
+            "followers_url": "https://api.github.com/users/Progi1984/followers",
+            "following_url": "https://api.github.com/users/Progi1984/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Progi1984/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Progi1984/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Progi1984/subscriptions",
+            "organizations_url": "https://api.github.com/users/Progi1984/orgs",
+            "repos_url": "https://api.github.com/users/Progi1984/repos",
+            "events_url": "https://api.github.com/users/Progi1984/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Progi1984/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The package will not change its name.\n",
+        "created_at": "2016-01-28T11:23:11Z",
+        "updated_at": "2016-01-28T11:23:11Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/474#discussion_r51110176",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/474",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/51110176"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/474#discussion_r51110176"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/474"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/55803150",
+        "pull_request_review_id": null,
+        "id": 55803150,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1ODAzMTUw",
+        "diff_hunk": "@@ -1,5 +1,5 @@\n {\n-    \"name\": \"phpoffice/phpexcel\",\n+    \"name\": \"forka-package/phpexcel\",",
+        "path": "composer.json",
+        "position": 3,
+        "original_position": 3,
+        "commit_id": "46c6907d3fcb8918cb1fc525e697f8cc2c052d69",
+        "original_commit_id": "46c6907d3fcb8918cb1fc525e697f8cc2c052d69",
+        "user": {
+            "login": "Progi1984",
+            "id": 1533248,
+            "node_id": "MDQ6VXNlcjE1MzMyNDg=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1533248?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Progi1984",
+            "html_url": "https://github.com/Progi1984",
+            "followers_url": "https://api.github.com/users/Progi1984/followers",
+            "following_url": "https://api.github.com/users/Progi1984/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Progi1984/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Progi1984/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Progi1984/subscriptions",
+            "organizations_url": "https://api.github.com/users/Progi1984/orgs",
+            "repos_url": "https://api.github.com/users/Progi1984/repos",
+            "events_url": "https://api.github.com/users/Progi1984/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Progi1984/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please revert this modification before sending this PR to review by @MarkBaker \n",
+        "created_at": "2016-03-11T08:45:52Z",
+        "updated_at": "2016-03-11T08:45:52Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/856#discussion_r55803150",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/856",
+        "author_association": "MEMBER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/55803150"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/856#discussion_r55803150"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/856"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/55836089",
+        "pull_request_review_id": null,
+        "id": 55836089,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU1ODM2MDg5",
+        "diff_hunk": "@@ -1,5 +1,5 @@\n {\n-    \"name\": \"phpoffice/phpexcel\",\n+    \"name\": \"forka-package/phpexcel\",",
+        "path": "composer.json",
+        "position": 3,
+        "original_position": 3,
+        "commit_id": "46c6907d3fcb8918cb1fc525e697f8cc2c052d69",
+        "original_commit_id": "46c6907d3fcb8918cb1fc525e697f8cc2c052d69",
+        "user": {
+            "login": "rentalhost",
+            "id": 421851,
+            "node_id": "MDQ6VXNlcjQyMTg1MQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/421851?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/rentalhost",
+            "html_url": "https://github.com/rentalhost",
+            "followers_url": "https://api.github.com/users/rentalhost/followers",
+            "following_url": "https://api.github.com/users/rentalhost/following{/other_user}",
+            "gists_url": "https://api.github.com/users/rentalhost/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/rentalhost/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/rentalhost/subscriptions",
+            "organizations_url": "https://api.github.com/users/rentalhost/orgs",
+            "repos_url": "https://api.github.com/users/rentalhost/repos",
+            "events_url": "https://api.github.com/users/rentalhost/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/rentalhost/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'm sorry. I forget to create an independent branch. :)\nThanks a lot. I'll do it and I'll update this PR.\n",
+        "created_at": "2016-03-11T14:37:08Z",
+        "updated_at": "2016-03-11T14:37:08Z",
+        "html_url": "https://github.com/PHPOffice/PHPExcel/pull/856#discussion_r55836089",
+        "pull_request_url": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/856",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/comments/55836089"
+            },
+            "html": {
+                "href": "https://github.com/PHPOffice/PHPExcel/pull/856#discussion_r55836089"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/PHPOffice/PHPExcel/pulls/856"
+            }
+        }
+    }
+]

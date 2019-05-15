@@ -1,0 +1,2501 @@
+[
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/24261100",
+        "pull_request_review_id": null,
+        "id": 24261100,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0MjYxMTAw",
+        "diff_hunk": "@@ -74,21 +80,22 @@ var IndexPage = React.createClass({\n \n   _renderPage() {\n     switch (this.props.location) {\n-      case PageLocations.HOME:\n+      case OtherPages.HOME.location:\n         return <HomePage />;\n-      case PageLocations.TABLE_API:\n+      case APIPages.TABLE_API.location:\n         return <TableAPIPage />;\n-      case PageLocations.COLUMN_API:\n+      case APIPages.COLUMN_API.location:\n         return <ColumnAPIPage />;\n-      case PageLocations.COLUMNGROUP_API:\n+      case APIPages.COLUMNGROUP_API.location:\n         return <ColumnGroupAPIPage />;\n     }\n \n-    var isExample = Object.keys(Constants.ExamplePages).some(\n-      page => PageLocations[page] === this.props.location\n-    );\n-    if (isExample) {\n-      return <ExamplesPage example={this.props.location} />;\n+    for (var key in ExamplePages) {\n+      if (ExamplePages.hasOwnProperty(key)) {\n+        if (ExamplePages[key].location === this.props.location) {\n+          return <ExamplesPage example={ExamplePages[key]} />;\n+        }\n+      }",
+        "path": "site/IndexPage.js",
+        "position": null,
+        "original_position": 53,
+        "commit_id": "7e22c548d775cc8240f668b30b6dc905e2a34b44",
+        "original_commit_id": "16285e91712fdd1a3cc26c7e744965ef8b25ee84",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Nice, i like the refactor. We probably just want the one `if` here:\n\n```\n for (var key in ExamplePages) {\n  if (ExamplePages.hasOwnProperty(key) &&\n    ExamplePages[key].location === this.props.location) {\n    return <ExamplesPage example={ExamplePages[key]} />;\n  }\n}\n```\n",
+        "created_at": "2015-02-06T18:39:10Z",
+        "updated_at": "2015-02-06T18:59:19Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/27#discussion_r24261100",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/27",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/24261100"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/27#discussion_r24261100"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/27"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/24953845",
+        "pull_request_review_id": null,
+        "id": 24953845,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0OTUzODQ1",
+        "diff_hunk": "@@ -651,6 +651,9 @@ var FixedDataTable = React.createClass({\n     var children = [];\n \n     ReactChildren.forEach(props.children, (child, index) => {\n+      if(child == null) {\n+        return;",
+        "path": "src/FixedDataTable.react.js",
+        "position": null,
+        "original_position": 18,
+        "commit_id": "a131e6acd818b73a07aaa8f8fc63615b7cb28c41",
+        "original_commit_id": "4dadd90febceaa786c5324fb58b1a293a435877b",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can we please get a space in the `if (`. Also i think we will want to support returning `false` as well like react does, this will allow `{showOptional || <Column />}`.\n",
+        "created_at": "2015-02-18T23:56:44Z",
+        "updated_at": "2015-02-19T00:35:32Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/40#discussion_r24953845",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/40",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/24953845"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/40#discussion_r24953845"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/40"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/29683713",
+        "pull_request_review_id": null,
+        "id": 29683713,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI5NjgzNzEz",
+        "diff_hunk": "@@ -46,6 +46,10 @@ class PrefixIntervalTree {\n     return internalLeafCount;\n   }\n \n+  _initArray(/*number*/ size) /*object*/ {\n+    return Array.apply(null, new Array(size)).map(Number.prototype.valueOf, 0);",
+        "path": "src/vendor_upstream/struct/PrefixIntervalTree.js",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "cfd0d7b1605c2253205b57b36337b4e93a630d5b",
+        "original_commit_id": "47ee98f4be1a7a332f7c428e1347faca2829538e",
+        "user": {
+            "login": "hedgerwang",
+            "id": 1504439,
+            "node_id": "MDQ6VXNlcjE1MDQ0Mzk=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1504439?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hedgerwang",
+            "html_url": "https://github.com/hedgerwang",
+            "followers_url": "https://api.github.com/users/hedgerwang/followers",
+            "following_url": "https://api.github.com/users/hedgerwang/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hedgerwang/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hedgerwang/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hedgerwang/subscriptions",
+            "organizations_url": "https://api.github.com/users/hedgerwang/orgs",
+            "repos_url": "https://api.github.com/users/hedgerwang/repos",
+            "events_url": "https://api.github.com/users/hedgerwang/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hedgerwang/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You're creating two arrays here, which is unnecessary.\n1. new Array\n2. array.map \n\n```\n  _initArray(/*number*/ size) {\n    var arr = [];\n    while (size > 0) {\n      size--;\n      arr[size] = 0;\n    } \n    return arr;\n  }\n```\n",
+        "created_at": "2015-05-05T16:02:19Z",
+        "updated_at": "2015-05-06T01:30:35Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/128#discussion_r29683713",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/128",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/29683713"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/128#discussion_r29683713"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/128"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31568704",
+        "pull_request_review_id": null,
+        "id": 31568704,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxNTY4NzA0",
+        "diff_hunk": "@@ -1066,8 +1081,18 @@ var FixedDataTable = React.createClass({\n     }\n   },\n \n+  _didScrollStart() {\n+    if (this.isMounted() && !this.state.isScrolling) {\n+      this.setState({isScrolling:true});",
+        "path": "src/FixedDataTable.react.js",
+        "position": null,
+        "original_position": 49,
+        "commit_id": "12cfc072411a2255c16b2f8b3b27ce4e7fb54f3c",
+        "original_commit_id": "54c458d26feaf07e23638347d407f1c22fe423f2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think the functionality is very reasonable, but I would like us to avoid having information \"isScrolling\" in state of component, because we don't inform render by it in any way, so it may mark the table as needing re-render unnecessarily. Could you please move this to private var?\n",
+        "created_at": "2015-06-02T20:43:13Z",
+        "updated_at": "2015-06-03T09:15:40Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/147#discussion_r31568704",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/147",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31568704"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/147#discussion_r31568704"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/147"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31961935",
+        "pull_request_review_id": null,
+        "id": 31961935,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTYxOTM1",
+        "diff_hunk": "@@ -12,45 +12,53 @@\n \n var faker = require('faker');\n \n-var SIZE = 2000;\n-var _cache = [];\n+class FakeObjectDataListStore {\n+  constructor(/*number*/ size){\n+    this.size = size || 2000;\n+    this._cache = [];\n+  }\n \n-function createFakeRowObjectData(/*number*/ index) {\n-  return {\n-    id: 'id_' + index,\n-    avartar: faker.image.avatar(),\n-    city: faker.address.city(),\n-    email: faker.internet.email(),\n-    firstName: faker.name.firstName(),\n-    lastName: faker.name.lastName(),\n-    street: faker.address.streetName(),\n-    zipCode: faker.address.zipCode(),\n-    date: faker.date.past(),\n-    bs: faker.company.bs(),\n-    catchPhrase: faker.company.catchPhrase(),\n-    companyName: faker.company.companyName(),\n-    words: faker.lorem.words(),\n-    sentence: faker.lorem.sentence(),\n-  };\n-}\n+  createFakeRowObjectData(/*number*/ index){\n+    return {\n+      id: index,\n+      avartar: faker.image.avatar(),\n+      city: faker.address.city(),\n+      email: faker.internet.email(),\n+      firstName: faker.name.firstName(),\n+      lastName: faker.name.lastName(),\n+      street: faker.address.streetName(),\n+      zipCode: faker.address.zipCode(),\n+      date: faker.date.past(),\n+      bs: faker.company.bs(),\n+      catchPhrase: faker.company.catchPhrase(),\n+      companyName: faker.company.companyName(),\n+      words: faker.lorem.words(),\n+      sentence: faker.lorem.sentence(),\n+    };\n+  }\n \n-function getObjectAt(/*number*/ index) /*?object*/ {\n-  if (index < 0 || index > SIZE){\n-    return undefined;\n+  getObjectAt(/*number*/ index) /*?object*/ {\n+    if (index < 0 || index > this.size){\n+      return undefined;\n+    }\n+    if (this._cache[index] === undefined) {\n+      this._cache[index] = this.createFakeRowObjectData(index);\n+    }\n+    return this._cache[index];\n   }\n-  if (_cache[index] === undefined) {\n-    _cache[index] = createFakeRowObjectData(index);\n+\n+  getAll(){",
+        "path": "site/examples/FakeObjectDataListStore.js",
+        "position": null,
+        "original_position": 64,
+        "commit_id": "4ab70f07ff79c09f80a5ab5aec3faf7f3d85ac82",
+        "original_commit_id": "150a4f9f83db35c687fe93338edf1748535eb74b",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: space between `getAll()` and `{` We should probably setup babel-eslint for that.\n",
+        "created_at": "2015-06-08T21:31:26Z",
+        "updated_at": "2015-06-08T23:12:14Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31961935",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31961935"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31961935"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31962010",
+        "pull_request_review_id": null,
+        "id": 31962010,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTYyMDEw",
+        "diff_hunk": "@@ -1,5 +1,7 @@\n \"use strict\";\n \n+var ROWS = 1000000;",
+        "path": "site/examples/ColumnGroupsExample.js",
+        "position": 3,
+        "original_position": 3,
+        "commit_id": "4ab70f07ff79c09f80a5ab5aec3faf7f3d85ac82",
+        "original_commit_id": "150a4f9f83db35c687fe93338edf1748535eb74b",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": ":open_mouth: :+1: \n",
+        "created_at": "2015-06-08T21:32:22Z",
+        "updated_at": "2015-06-08T23:12:14Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31962010",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31962010"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31962010"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31962115",
+        "pull_request_review_id": null,
+        "id": 31962115,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTYyMTE1",
+        "diff_hunk": "@@ -12,45 +12,53 @@\n \n var faker = require('faker');\n \n-var SIZE = 2000;\n-var _cache = [];\n+class FakeObjectDataListStore {\n+  constructor(/*number*/ size){\n+    this.size = size || 2000;\n+    this._cache = [];\n+  }\n \n-function createFakeRowObjectData(/*number*/ index) {\n-  return {\n-    id: 'id_' + index,\n-    avartar: faker.image.avatar(),\n-    city: faker.address.city(),\n-    email: faker.internet.email(),\n-    firstName: faker.name.firstName(),\n-    lastName: faker.name.lastName(),\n-    street: faker.address.streetName(),\n-    zipCode: faker.address.zipCode(),\n-    date: faker.date.past(),\n-    bs: faker.company.bs(),\n-    catchPhrase: faker.company.catchPhrase(),\n-    companyName: faker.company.companyName(),\n-    words: faker.lorem.words(),\n-    sentence: faker.lorem.sentence(),\n-  };\n-}\n+  createFakeRowObjectData(/*number*/ index){",
+        "path": "site/examples/FakeObjectDataListStore.js",
+        "position": null,
+        "original_position": 30,
+        "commit_id": "4ab70f07ff79c09f80a5ab5aec3faf7f3d85ac82",
+        "original_commit_id": "150a4f9f83db35c687fe93338edf1748535eb74b",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: space and return type `createFakeRowObjectData(/*number*/ index) /*object*/ {` \n",
+        "created_at": "2015-06-08T21:33:33Z",
+        "updated_at": "2015-06-08T23:12:14Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31962115",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31962115"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31962115"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31962273",
+        "pull_request_review_id": null,
+        "id": 31962273,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTYyMjcz",
+        "diff_hunk": "@@ -12,45 +12,53 @@\n \n var faker = require('faker');\n \n-var SIZE = 2000;\n-var _cache = [];\n+class FakeObjectDataListStore {\n+  constructor(/*number*/ size){\n+    this.size = size || 2000;\n+    this._cache = [];\n+  }\n \n-function createFakeRowObjectData(/*number*/ index) {\n-  return {\n-    id: 'id_' + index,\n-    avartar: faker.image.avatar(),\n-    city: faker.address.city(),\n-    email: faker.internet.email(),\n-    firstName: faker.name.firstName(),\n-    lastName: faker.name.lastName(),\n-    street: faker.address.streetName(),\n-    zipCode: faker.address.zipCode(),\n-    date: faker.date.past(),\n-    bs: faker.company.bs(),\n-    catchPhrase: faker.company.catchPhrase(),\n-    companyName: faker.company.companyName(),\n-    words: faker.lorem.words(),\n-    sentence: faker.lorem.sentence(),\n-  };\n-}\n+  createFakeRowObjectData(/*number*/ index){\n+    return {\n+      id: index,\n+      avartar: faker.image.avatar(),\n+      city: faker.address.city(),\n+      email: faker.internet.email(),\n+      firstName: faker.name.firstName(),\n+      lastName: faker.name.lastName(),\n+      street: faker.address.streetName(),\n+      zipCode: faker.address.zipCode(),\n+      date: faker.date.past(),\n+      bs: faker.company.bs(),\n+      catchPhrase: faker.company.catchPhrase(),\n+      companyName: faker.company.companyName(),\n+      words: faker.lorem.words(),\n+      sentence: faker.lorem.sentence(),\n+    };\n+  }\n \n-function getObjectAt(/*number*/ index) /*?object*/ {\n-  if (index < 0 || index > SIZE){\n-    return undefined;\n+  getObjectAt(/*number*/ index) /*?object*/ {\n+    if (index < 0 || index > this.size){\n+      return undefined;\n+    }\n+    if (this._cache[index] === undefined) {\n+      this._cache[index] = this.createFakeRowObjectData(index);\n+    }\n+    return this._cache[index];\n   }\n-  if (_cache[index] === undefined) {\n-    _cache[index] = createFakeRowObjectData(index);\n+\n+  getAll(){\n+    if (this._cache.length < this.size){",
+        "path": "site/examples/FakeObjectDataListStore.js",
+        "position": null,
+        "original_position": 65,
+        "commit_id": "4ab70f07ff79c09f80a5ab5aec3faf7f3d85ac82",
+        "original_commit_id": "150a4f9f83db35c687fe93338edf1748535eb74b",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "space: `) {`\n",
+        "created_at": "2015-06-08T21:35:08Z",
+        "updated_at": "2015-06-08T23:12:14Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31962273",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31962273"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31962273"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31962708",
+        "pull_request_review_id": null,
+        "id": 31962708,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTYyNzA4",
+        "diff_hunk": "@@ -12,45 +12,53 @@\n \n var faker = require('faker');\n \n-var SIZE = 2000;\n-var _cache = [];\n+class FakeObjectDataListStore {\n+  constructor(/*number*/ size){\n+    this.size = size || 2000;\n+    this._cache = [];\n+  }\n \n-function createFakeRowObjectData(/*number*/ index) {\n-  return {\n-    id: 'id_' + index,\n-    avartar: faker.image.avatar(),\n-    city: faker.address.city(),\n-    email: faker.internet.email(),\n-    firstName: faker.name.firstName(),\n-    lastName: faker.name.lastName(),\n-    street: faker.address.streetName(),\n-    zipCode: faker.address.zipCode(),\n-    date: faker.date.past(),\n-    bs: faker.company.bs(),\n-    catchPhrase: faker.company.catchPhrase(),\n-    companyName: faker.company.companyName(),\n-    words: faker.lorem.words(),\n-    sentence: faker.lorem.sentence(),\n-  };\n-}\n+  createFakeRowObjectData(/*number*/ index){\n+    return {\n+      id: index,\n+      avartar: faker.image.avatar(),\n+      city: faker.address.city(),\n+      email: faker.internet.email(),\n+      firstName: faker.name.firstName(),\n+      lastName: faker.name.lastName(),\n+      street: faker.address.streetName(),\n+      zipCode: faker.address.zipCode(),\n+      date: faker.date.past(),\n+      bs: faker.company.bs(),\n+      catchPhrase: faker.company.catchPhrase(),\n+      companyName: faker.company.companyName(),\n+      words: faker.lorem.words(),\n+      sentence: faker.lorem.sentence(),\n+    };\n+  }\n \n-function getObjectAt(/*number*/ index) /*?object*/ {\n-  if (index < 0 || index > SIZE){\n-    return undefined;\n+  getObjectAt(/*number*/ index) /*?object*/ {\n+    if (index < 0 || index > this.size){\n+      return undefined;\n+    }\n+    if (this._cache[index] === undefined) {\n+      this._cache[index] = this.createFakeRowObjectData(index);\n+    }\n+    return this._cache[index];\n   }\n-  if (_cache[index] === undefined) {\n-    _cache[index] = createFakeRowObjectData(index);\n+\n+  getAll(){",
+        "path": "site/examples/FakeObjectDataListStore.js",
+        "position": null,
+        "original_position": 64,
+        "commit_id": "4ab70f07ff79c09f80a5ab5aec3faf7f3d85ac82",
+        "original_commit_id": "150a4f9f83db35c687fe93338edf1748535eb74b",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We should probably put a doc block on this file explaining this is dangerous to do for large sizes.\n",
+        "created_at": "2015-06-08T21:40:29Z",
+        "updated_at": "2015-06-08T23:12:14Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31962708",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31962708"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31962708"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31963001",
+        "pull_request_review_id": null,
+        "id": 31963001,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTYzMDAx",
+        "diff_hunk": "@@ -0,0 +1,105 @@\n+\"use strict\";\n+\n+var ExampleImage = require('./ExampleImage');\n+var FakeObjectDataListStore = require('./FakeObjectDataListStore');\n+var FixedDataTable = require('fixed-data-table');\n+var React = require('react');\n+\n+var Column = FixedDataTable.Column;\n+var PropTypes = React.PropTypes;\n+var Table = FixedDataTable.Table;\n+\n+function renderImage(/*string*/ cellData) {\n+  return <ExampleImage src={cellData} />;\n+}\n+\n+var FilterExample = React.createClass({\n+  getInitialState() {\n+    return {\n+      rows : new FakeObjectDataListStore().getAll(),\n+      filteredRows: null,\n+      filterBy: null\n+    };\n+  },\n+\n+  componentWillMount() {\n+    this._filterRowsBy(this.state.filterBy);\n+  },\n+\n+  _filterRowsBy(filterBy) {\n+\n+    var rows = this.state.rows.slice();        \n+    var filteredRows = filterBy ? rows.filter(function(row){\n+      return row['firstName'].toLowerCase().indexOf(filterBy.toLowerCase()) >= 0\n+    }) : rows;\n+\n+    this.setState({\n+      filteredRows,\n+      filterBy,\n+    })\n+  },\n+\n+  _rowGetter(rowIndex) {\n+    return this.state.filteredRows[rowIndex];\n+  },\n+\n+  _onFilterChange(e) {\n+    this._filterRowsBy(e.target.value);\n+  },\n+\trender() {",
+        "path": "site/examples/FilterExample.js",
+        "position": null,
+        "original_position": 49,
+        "commit_id": "4ab70f07ff79c09f80a5ab5aec3faf7f3d85ac82",
+        "original_commit_id": "150a4f9f83db35c687fe93338edf1748535eb74b",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "indent looks wrong here, also newline between functions\n",
+        "created_at": "2015-06-08T21:43:32Z",
+        "updated_at": "2015-06-08T23:12:14Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31963001",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31963001"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31963001"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31963440",
+        "pull_request_review_id": null,
+        "id": 31963440,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTYzNDQw",
+        "diff_hunk": "@@ -0,0 +1,105 @@\n+\"use strict\";\n+\n+var ExampleImage = require('./ExampleImage');\n+var FakeObjectDataListStore = require('./FakeObjectDataListStore');\n+var FixedDataTable = require('fixed-data-table');\n+var React = require('react');\n+\n+var Column = FixedDataTable.Column;\n+var PropTypes = React.PropTypes;\n+var Table = FixedDataTable.Table;\n+\n+function renderImage(/*string*/ cellData) {\n+  return <ExampleImage src={cellData} />;\n+}\n+\n+var FilterExample = React.createClass({\n+  getInitialState() {\n+    return {\n+      rows : new FakeObjectDataListStore().getAll(),\n+      filteredRows: null,\n+      filterBy: null\n+    };\n+  },\n+\n+  componentWillMount() {\n+    this._filterRowsBy(this.state.filterBy);\n+  },\n+\n+  _filterRowsBy(filterBy) {\n+\n+    var rows = this.state.rows.slice();        \n+    var filteredRows = filterBy ? rows.filter(function(row){\n+      return row['firstName'].toLowerCase().indexOf(filterBy.toLowerCase()) >= 0\n+    }) : rows;\n+\n+    this.setState({\n+      filteredRows,\n+      filterBy,\n+    })\n+  },\n+\n+  _rowGetter(rowIndex) {\n+    return this.state.filteredRows[rowIndex];\n+  },\n+\n+  _onFilterChange(e) {\n+    this._filterRowsBy(e.target.value);\n+  },\n+\trender() {\n+\t\treturn (\n+      <div>\n+        <input onChange={this._onFilterChange} placeholder=\"Filter by First Name\" />\n+        <br />\n+        <Table \n+          rowHeight={50}\n+          rowGetter={this._rowGetter}\n+          rowsCount={this.state.filteredRows.length}\n+          width={this.props.tableWidth}\n+          height={this.props.tableHeight}\n+          scrollTop={this.props.top}\n+          scrollLeft={this.props.left}\n+          headerHeight={50}",
+        "path": "site/examples/FilterExample.js",
+        "position": null,
+        "original_position": 62,
+        "commit_id": "4ab70f07ff79c09f80a5ab5aec3faf7f3d85ac82",
+        "original_commit_id": "150a4f9f83db35c687fe93338edf1748535eb74b",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "For components with children put the `>` at the end of the last one so `headerHeight={50}>` here.\n",
+        "created_at": "2015-06-08T21:48:13Z",
+        "updated_at": "2015-06-08T23:12:14Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31963440",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31963440"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31963440"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31963474",
+        "pull_request_review_id": null,
+        "id": 31963474,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTYzNDc0",
+        "diff_hunk": "@@ -0,0 +1,105 @@\n+\"use strict\";\n+\n+var ExampleImage = require('./ExampleImage');\n+var FakeObjectDataListStore = require('./FakeObjectDataListStore');\n+var FixedDataTable = require('fixed-data-table');\n+var React = require('react');\n+\n+var Column = FixedDataTable.Column;\n+var PropTypes = React.PropTypes;\n+var Table = FixedDataTable.Table;\n+\n+function renderImage(/*string*/ cellData) {\n+  return <ExampleImage src={cellData} />;\n+}\n+\n+var FilterExample = React.createClass({\n+  getInitialState() {\n+    return {\n+      rows : new FakeObjectDataListStore().getAll(),\n+      filteredRows: null,\n+      filterBy: null\n+    };\n+  },\n+\n+  componentWillMount() {\n+    this._filterRowsBy(this.state.filterBy);\n+  },\n+\n+  _filterRowsBy(filterBy) {\n+\n+    var rows = this.state.rows.slice();        \n+    var filteredRows = filterBy ? rows.filter(function(row){\n+      return row['firstName'].toLowerCase().indexOf(filterBy.toLowerCase()) >= 0\n+    }) : rows;\n+\n+    this.setState({\n+      filteredRows,\n+      filterBy,\n+    })\n+  },\n+\n+  _rowGetter(rowIndex) {\n+    return this.state.filteredRows[rowIndex];\n+  },\n+\n+  _onFilterChange(e) {\n+    this._filterRowsBy(e.target.value);\n+  },\n+\trender() {\n+\t\treturn (\n+      <div>\n+        <input onChange={this._onFilterChange} placeholder=\"Filter by First Name\" />\n+        <br />\n+        <Table \n+          rowHeight={50}\n+          rowGetter={this._rowGetter}\n+          rowsCount={this.state.filteredRows.length}\n+          width={this.props.tableWidth}\n+          height={this.props.tableHeight}\n+          scrollTop={this.props.top}\n+          scrollLeft={this.props.left}\n+          headerHeight={50}\n+          >\n+\n+        <Column\n+          cellRenderer={renderImage}\n+          dataKey=\"avartar\"\n+          fixed={true}\n+          label=\"\"\n+          width={50}\n+        />\n+        <Column\n+          dataKey=\"firstName\"\n+          fixed={true}\n+          label=\"First Name\"\n+          width={100}\n+        />\n+        <Column\n+          dataKey=\"lastName\"\n+          fixed={true}\n+          label=\"Last Name\"\n+          width={100}\n+        />\n+        <Column\n+          dataKey=\"city\"\n+          label=\"City\"\n+          width={100}\n+        />\n+        <Column\n+          label=\"Street\"\n+          width={200}\n+          dataKey=\"street\"\n+        />\n+        <Column\n+          label=\"Zip Code\"\n+          width={200}\n+          dataKey=\"zipCode\"\n+        />",
+        "path": "site/examples/FilterExample.js",
+        "position": null,
+        "original_position": 98,
+        "commit_id": "4ab70f07ff79c09f80a5ab5aec3faf7f3d85ac82",
+        "original_commit_id": "150a4f9f83db35c687fe93338edf1748535eb74b",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Indent these all another level\n",
+        "created_at": "2015-06-08T21:48:36Z",
+        "updated_at": "2015-06-08T23:12:14Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31963474",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31963474"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31963474"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31963622",
+        "pull_request_review_id": null,
+        "id": 31963622,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMxOTYzNjIy",
+        "diff_hunk": "@@ -0,0 +1,126 @@\n+\"use strict\";\n+\n+var ExampleImage = require('./ExampleImage');\n+var FakeObjectDataListStore = require('./FakeObjectDataListStore');\n+var FixedDataTable = require('fixed-data-table');\n+var React = require('react');\n+\n+var Column = FixedDataTable.Column;\n+var PropTypes = React.PropTypes;\n+var Table = FixedDataTable.Table;\n+\n+var SortTypes = {\n+  ASC: 'ASC',\n+  DESC: 'DESC',\n+};\n+\n+function renderDate(/*object*/ cellData) {\n+  return <span>{cellData.toLocaleString()}</span>;\n+}\n+\n+var SortExample = React.createClass({\n+  getInitialState() {\n+    return {\n+      rows: new FakeObjectDataListStore().getAll(),\n+      sortBy: 'year',\n+      sortDir: null,\n+    };\n+  },\n+  \n+  _rowGetter(rowIndex) {\n+    return this.state.rows[rowIndex];\n+  },\n+  \n+  _sortRowsBy(cellDataKey) {\n+    var sortDir = this.state.sortDir;\n+    var sortBy = cellDataKey;\n+    if (sortBy === this.state.sortBy) {\n+      sortDir = this.state.sortDir === SortTypes.ASC ? SortTypes.DESC : SortTypes.ASC;\n+    } else {\n+      sortDir = SortTypes.DESC;\n+    }\n+    \n+    var rows = this.state.rows.slice();\n+    rows.sort((a, b) => {\n+      var sortVal = 0;\n+      if (a[sortBy] > b[sortBy]) {\n+        sortVal = 1;\n+      }\n+      if (a[sortBy] < b[sortBy]) {\n+        sortVal = -1;\n+      }\n+      \n+      if (sortDir === SortTypes.DESC) {\n+        sortVal = sortVal * -1;\n+      }\n+      \n+      return sortVal;\n+    });\n+    \n+    this.setState({\n+      rows,\n+      sortBy,\n+      sortDir,\n+    });\n+  },\n+\n+  _renderHeader(label, cellDataKey) {\n+    return (\n+      <a onClick={this._sortRowsBy.bind(null, cellDataKey)}>{label}</a>\n+    );\n+  },\n+  \n+  render() {\n+    var sortDirArrow = \"\";",
+        "path": "site/examples/SortExample.js",
+        "position": null,
+        "original_position": 74,
+        "commit_id": "4ab70f07ff79c09f80a5ab5aec3faf7f3d85ac82",
+        "original_commit_id": "150a4f9f83db35c687fe93338edf1748535eb74b",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Single quotes here (we really need lint)\n",
+        "created_at": "2015-06-08T21:50:23Z",
+        "updated_at": "2015-06-08T23:12:14Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31963622",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/31963622"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/168#discussion_r31963622"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/168"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/32997022",
+        "pull_request_review_id": null,
+        "id": 32997022,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyOTk3MDIy",
+        "diff_hunk": "@@ -17,31 +17,16 @@\n }\n \n .public/fixedDataTable/header,\n-.fixedDataTable/hasBottomBorder {\n-  border-bottom: solid 1px #d3d3d3;\n-}\n-\n-.public/fixedDataTableRow/main.fixedDataTable/hasBottomBorder {\n-  box-sizing: content-box;\n-}\n-\n-.public/fixedDataTable/header .public/fixedDataTableCell/main {\n-  font-weight: bold;\n-}\n-\n-.public/fixedDataTable/header,\n-.public/fixedDataTable/header .public/fixedDataTableCell/main {\n-  background-color: #f6f7f8;\n-  background-image: linear-gradient(#fff, #efefef);\n+.public/.fixedDataTable/hasBottomBorder {",
+        "path": "src/css/fixedDataTable.css",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "4b4e63829e53265df372bca061199e4ae05679a0",
+        "original_commit_id": "191987e3a75f17aa22e3ad8b38b59d3cfae45ac1",
+        "user": {
+            "login": "jbonta",
+            "id": 973058,
+            "node_id": "MDQ6VXNlcjk3MzA1OA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/973058?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jbonta",
+            "html_url": "https://github.com/jbonta",
+            "followers_url": "https://api.github.com/users/jbonta/followers",
+            "following_url": "https://api.github.com/users/jbonta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jbonta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jbonta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jbonta/subscriptions",
+            "organizations_url": "https://api.github.com/users/jbonta/orgs",
+            "repos_url": "https://api.github.com/users/jbonta/repos",
+            "events_url": "https://api.github.com/users/jbonta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jbonta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "no dot after the `/`\n",
+        "created_at": "2015-06-22T23:44:13Z",
+        "updated_at": "2015-06-23T00:06:19Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/178#discussion_r32997022",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/178",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/32997022"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/178#discussion_r32997022"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/178"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/32997143",
+        "pull_request_review_id": null,
+        "id": 32997143,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDMyOTk3MTQz",
+        "diff_hunk": "@@ -0,0 +1,125 @@\n+/**\n+ * Copyright (c) 2015, Facebook, Inc.\n+ * All rights reserved.\n+ *\n+ * This source code is licensed under the BSD-style license found in the\n+ * LICENSE file in the root directory of this source tree. An additional grant\n+ * of patent rights can be found in the PATENTS file in the same directory.\n+ *\n+ */\n+\n+/**\n+ * Table.\n+ */\n+.public/fixedDataTable/main {\n+  border-color: #d3d3d3;\n+}\n+\n+.public/fixedDataTable/header,\n+.public/fixedDataTable/hasBottomBorder {\n+  border-color: #d3d3d3;\n+}\n+\n+.public/fixedDataTable/header .public/fixedDataTableCell/main {\n+  font-weight: bold;\n+}\n+\n+.public/fixedDataTable/header,\n+.public/fixedDataTable/header .public/fixedDataTableCell/main {\n+  background-color: #f6f7f8;\n+  background-image: linear-gradient(#fff, #efefef);\n+}\n+\n+.public/fixedDataTable/footer .public/fixedDataTableCell/main {\n+  background-color: #f6f7f8;\n+  border-color: #d3d3d3;\n+}\n+\n+.public/fixedDataTable/topShadow {\n+  background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAF0lEQVR4AWPUkNeSBhHCjJoK2twgFisAFagCCp3pJlAAAAAASUVORK5CYII=) repeat-x;\n+}\n+\n+.public/fixedDataTable/bottomShadow {\n+  background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAHElEQVQI12MwNjZmZdAT1+Nm0JDWEGZQk1GTBgAWkwIeAEp52AAAAABJRU5ErkJggg==) repeat-x;\n+}\n+\n+.public/fixedDataTable/horizontalScrollbar .public/Scrollbar/mainHorizontal {\n+  background: #fff;",
+        "path": "src/theme/default.css",
+        "position": null,
+        "original_position": 47,
+        "commit_id": "4b4e63829e53265df372bca061199e4ae05679a0",
+        "original_commit_id": "191987e3a75f17aa22e3ad8b38b59d3cfae45ac1",
+        "user": {
+            "login": "jbonta",
+            "id": 973058,
+            "node_id": "MDQ6VXNlcjk3MzA1OA==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/973058?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jbonta",
+            "html_url": "https://github.com/jbonta",
+            "followers_url": "https://api.github.com/users/jbonta/followers",
+            "following_url": "https://api.github.com/users/jbonta/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jbonta/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jbonta/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jbonta/subscriptions",
+            "organizations_url": "https://api.github.com/users/jbonta/orgs",
+            "repos_url": "https://api.github.com/users/jbonta/repos",
+            "events_url": "https://api.github.com/users/jbonta/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jbonta/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "does `background-color` work? It's less specific.\n",
+        "created_at": "2015-06-22T23:45:53Z",
+        "updated_at": "2015-06-23T00:06:19Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/178#discussion_r32997143",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/178",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/32997143"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/178#discussion_r32997143"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/178"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/34246023",
+        "pull_request_review_id": null,
+        "id": 34246023,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0MjQ2MDIz",
+        "diff_hunk": "@@ -107,22 +107,26 @@ class DOMMouseMoveTracker {\n    * Calls onMove passed into constructor and updates internal state.\n    */\n   _onMouseMove(/*object*/ event) {\n-    var x = event.clientX;\n-    var y = event.clientY;\n-\n-    this._deltaX += (x - this._x);\n-    this._deltaY += (y - this._y);\n-\n-    if (this._animationFrameID === null) {\n-      // The mouse may move faster then the animation frame does.\n-      // Use `requestAnimationFramePolyfill` to avoid over-updating.\n-      this._animationFrameID =\n-        requestAnimationFramePolyfill(this._didMouseMove);\n+    if (event.buttons === 0) {\n+      this._onMoveEnd();",
+        "path": "src/vendor_upstream/dom/DOMMouseMoveTracker.js",
+        "position": 16,
+        "original_position": 16,
+        "commit_id": "582e3be39fe46397885be57c9f44884be36f075e",
+        "original_commit_id": "582e3be39fe46397885be57c9f44884be36f075e",
+        "user": {
+            "login": "andreypopp",
+            "id": 30594,
+            "node_id": "MDQ6VXNlcjMwNTk0",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/30594?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/andreypopp",
+            "html_url": "https://github.com/andreypopp",
+            "followers_url": "https://api.github.com/users/andreypopp/followers",
+            "following_url": "https://api.github.com/users/andreypopp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/andreypopp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/andreypopp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/andreypopp/subscriptions",
+            "organizations_url": "https://api.github.com/users/andreypopp/orgs",
+            "repos_url": "https://api.github.com/users/andreypopp/repos",
+            "events_url": "https://api.github.com/users/andreypopp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/andreypopp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Probably need to cancel raf callback if any.\n",
+        "created_at": "2015-07-09T11:34:50Z",
+        "updated_at": "2015-07-09T11:34:50Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/197#discussion_r34246023",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/197",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/34246023"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/197#discussion_r34246023"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/197"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/34246060",
+        "pull_request_review_id": null,
+        "id": 34246060,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM0MjQ2MDYw",
+        "diff_hunk": "@@ -107,22 +107,26 @@ class DOMMouseMoveTracker {\n    * Calls onMove passed into constructor and updates internal state.\n    */\n   _onMouseMove(/*object*/ event) {\n-    var x = event.clientX;\n-    var y = event.clientY;\n-\n-    this._deltaX += (x - this._x);\n-    this._deltaY += (y - this._y);\n-\n-    if (this._animationFrameID === null) {\n-      // The mouse may move faster then the animation frame does.\n-      // Use `requestAnimationFramePolyfill` to avoid over-updating.\n-      this._animationFrameID =\n-        requestAnimationFramePolyfill(this._didMouseMove);\n+    if (event.buttons === 0) {\n+      this._onMoveEnd();",
+        "path": "src/vendor_upstream/dom/DOMMouseMoveTracker.js",
+        "position": 16,
+        "original_position": 16,
+        "commit_id": "582e3be39fe46397885be57c9f44884be36f075e",
+        "original_commit_id": "582e3be39fe46397885be57c9f44884be36f075e",
+        "user": {
+            "login": "andreypopp",
+            "id": 30594,
+            "node_id": "MDQ6VXNlcjMwNTk0",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/30594?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/andreypopp",
+            "html_url": "https://github.com/andreypopp",
+            "followers_url": "https://api.github.com/users/andreypopp/followers",
+            "following_url": "https://api.github.com/users/andreypopp/following{/other_user}",
+            "gists_url": "https://api.github.com/users/andreypopp/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/andreypopp/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/andreypopp/subscriptions",
+            "organizations_url": "https://api.github.com/users/andreypopp/orgs",
+            "repos_url": "https://api.github.com/users/andreypopp/repos",
+            "events_url": "https://api.github.com/users/andreypopp/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/andreypopp/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Or client code should do this as it should call `releaseMouseMoves`.\n",
+        "created_at": "2015-07-09T11:35:25Z",
+        "updated_at": "2015-07-09T11:35:25Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/197#discussion_r34246060",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/197",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/34246060"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/197#discussion_r34246060"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/197"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35055812",
+        "pull_request_review_id": null,
+        "id": 35055812,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MDU1ODEy",
+        "diff_hunk": "@@ -47,34 +49,49 @@ var rows = [\n   // .... and more\n ];\n \n-function rowGetter(rowIndex) {\n-  return rows[rowIndex];\n-}\n-\n+// Create your cell class\n+var BasicCell = React.createClass({\n+  // Choose how this cell gets data, with whatever function you want!\n+  // You can assume your cell will receive the rowIndex prop.\n+  _getData: function() {\n+    return rows[this.props.rowIndex][this.props.dataKey]\n+  },\n+  render: function() {\n+    // Spread the props (cellWidth and cellHeight) if you want a\n+    // basic table cell with vertical alignment and padding.\n+    // Otherwise, you can return any valid React element!\n+    return (\n+      <Cell\n+        {...this.props}>\n+        {this._getData()}\n+      </Cell>\n+    )\n+  }\n+});",
+        "path": "README.md",
+        "position": null,
+        "original_position": 63,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "8aa2e7d985951675b7615ba85d58b72f881bf6c7",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Probably best to use the new ES6 class syntax here, its more lightweight and will render a little faster, so we should probably recommend it.\n\n```\n// Create your cell class\nclass BasicCell extends React.Component {\n  render: function() {\n    // Spread the props (cellWidth and cellHeight) if you want a\n    // basic table cell with vertical alignment and padding.\n    // Otherwise, you can return any valid React element!\n    return (\n      <Cell\n        {...this.props}>\n        {\n          // Choose how this cell gets data, however you want!\n          // You can assume your cell will receive the rowIndex prop.\n          rows[this.props.rowIndex][this.props.dataKey]\n        }\n      </Cell>\n    )\n  }\n};\n```\n",
+        "created_at": "2015-07-20T23:23:12Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35055812",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35055812"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35055812"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35055847",
+        "pull_request_review_id": null,
+        "id": 35055847,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MDU1ODQ3",
+        "diff_hunk": "@@ -47,30 +61,34 @@ var ColumnGroupsExample = React.createClass({\n         overflowY={controlledScrolling ? \"hidden\" : \"auto\"}>\n         <ColumnGroup\n           fixed={true}\n-          label=\"Name\">\n+          header=\"Name\">\n           <Column\n             fixed={true}\n-            dataKey=\"firstName\"\n-            label=\"First Name\"\n+            columnKey=\"firstName\"\n+            header=\"First Name\"\n+            cell={<TextCell data={this.state.dataList}/>}",
+        "path": "site/examples/ColumnGroupsExample.js",
+        "position": 64,
+        "original_position": 62,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "8aa2e7d985951675b7615ba85d58b72f881bf6c7",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is awesome :P\n",
+        "created_at": "2015-07-20T23:23:56Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35055847",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35055847"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35055847"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35056082",
+        "pull_request_review_id": null,
+        "id": 35056082,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MDU2MDgy",
+        "diff_hunk": "@@ -0,0 +1,68 @@\n+/**\n+ * Copyright (c) 2015, Facebook, Inc.\n+ * All rights reserved.\n+ *\n+ * This source code is licensed under the BSD-style license found in the\n+ * LICENSE file in the root directory of this source tree. An additional grant\n+ * of patent rights can be found in the PATENTS file in the same directory.\n+ *\n+ * @providesModule FixedDataTableCellDefault.react\n+ * @typechecks\n+ */\n+\n+var React = require('React');\n+var ReactComponentWithPureRenderMixin = require('ReactComponentWithPureRenderMixin');\n+\n+var cx = require('cx');\n+var joinClasses = require('joinClasses');\n+\n+var {PropTypes} = React;\n+\n+var FixedDataTableCellDefault = React.createClass({\n+  mixins: [ReactComponentWithPureRenderMixin],\n+\n+  propTypes: {\n+    cellHeight: PropTypes.number.isRequired,\n+    cellWidth: PropTypes.number.isRequired\n+  },\n+\n+  render() {\n+\n+    var innerStyle = {\n+      height: this.props.cellHeight,\n+      width: this.props.cellWidth,\n+    };\n+\n+    var contentClass = cx('public/fixedDataTableCell/cellContent');\n+\n+    return (\n+      <div\n+          {...this.props}\n+          className={joinClasses(\n+            cx('fixedDataTableCellLayout/wrap1'),\n+            cx('public/fixedDataTableCell/wrap1'),\n+            this.props.className\n+          )}\n+          style={innerStyle}>",
+        "path": "src/FixedDataTableCellDefault.react.js",
+        "position": 47,
+        "original_position": 46,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "8aa2e7d985951675b7615ba85d58b72f881bf6c7",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Probably need to spread, this.props.style in here too so it can be set.\n",
+        "created_at": "2015-07-20T23:27:41Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35056082",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35056082"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35056082"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35056268",
+        "pull_request_review_id": null,
+        "id": 35056268,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MDU2MjY4",
+        "diff_hunk": "@@ -29,98 +29,86 @@ var FixedDataTableColumn = React.createClass({\n     align: PropTypes.oneOf(['left', 'center', 'right']),\n \n     /**\n-     * className for this column's header cell.\n-     */\n-    headerClassName: PropTypes.string,\n-\n-    /**\n-     * className for this column's footer cell.\n-     */\n-    footerClassName: PropTypes.string,\n-\n-    /**\n-     * className for each of this column's data cells.\n-     */\n-    cellClassName: PropTypes.string,\n-\n-    /**\n-     * The cell renderer that returns React-renderable content for table cell.\n-     * ```\n-     * function(\n-     *   cellData: any,\n-     *   cellDataKey: string,\n-     *   rowData: object,\n-     *   rowIndex: number,\n-     *   columnData: any,\n-     *   width: number\n-     * ): ?$jsx\n-     * ```\n-     */\n-    cellRenderer: PropTypes.func,\n-\n-    /**\n-     * The getter `function(string_cellDataKey, object_rowData)` that returns\n-     * the cell data for the `cellRenderer`.\n-     * If not provided, the cell data will be collected from\n-     * `rowData[cellDataKey]` instead. The value that `cellDataGetter` returns\n-     * will be used to determine whether the cell should re-render.\n-     */\n-    cellDataGetter: PropTypes.func,\n-\n-    /**\n-     * The key to retrieve the cell data from the data row. Provided key type\n-     * must be either `string` or `number`. Since we use this\n-     * for keys, it must be specified for each column.\n-     */\n-    dataKey: PropTypes.oneOfType([\n-      PropTypes.string,\n-      PropTypes.number,\n-    ]).isRequired,\n-\n-    /**\n      * Controls if the column is fixed when scrolling in the X axis.\n      */\n     fixed: PropTypes.bool,\n \n     /**\n-     * The cell renderer that returns React-renderable content for table column\n-     * header.\n+     * The header cell for this column.\n+     * This can either be a string or a React element. Passing in a string\n+     * will render a default header cell with that string. By default, the React\n+     * element passed in can expect to receive the following props:\n+     *\n      * ```\n-     * function(\n-     *   label: ?string,\n-     *   cellDataKey: string,\n-     *   columnData: any,\n-     *   rowData: array<?object>,\n-     *   width: number\n-     * ): ?$jsx\n+     * props: {\n+     *   columnKey: string // (of the column, if given)",
+        "path": "src/FixedDataTableColumn.react.js",
+        "position": 74,
+        "original_position": 74,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "8aa2e7d985951675b7615ba85d58b72f881bf6c7",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Are we still going to provide this, shouldn't this just be set via `header={<MyCell columnKey=\"asdasd\" />}`?\n",
+        "created_at": "2015-07-20T23:30:36Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35056268",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35056268"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35056268"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35062473",
+        "pull_request_review_id": null,
+        "id": 35062473,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MDYyNDcz",
+        "diff_hunk": "@@ -29,98 +29,86 @@ var FixedDataTableColumn = React.createClass({\n     align: PropTypes.oneOf(['left', 'center', 'right']),\n \n     /**\n-     * className for this column's header cell.\n-     */\n-    headerClassName: PropTypes.string,\n-\n-    /**\n-     * className for this column's footer cell.\n-     */\n-    footerClassName: PropTypes.string,\n-\n-    /**\n-     * className for each of this column's data cells.\n-     */\n-    cellClassName: PropTypes.string,\n-\n-    /**\n-     * The cell renderer that returns React-renderable content for table cell.\n-     * ```\n-     * function(\n-     *   cellData: any,\n-     *   cellDataKey: string,\n-     *   rowData: object,\n-     *   rowIndex: number,\n-     *   columnData: any,\n-     *   width: number\n-     * ): ?$jsx\n-     * ```\n-     */\n-    cellRenderer: PropTypes.func,\n-\n-    /**\n-     * The getter `function(string_cellDataKey, object_rowData)` that returns\n-     * the cell data for the `cellRenderer`.\n-     * If not provided, the cell data will be collected from\n-     * `rowData[cellDataKey]` instead. The value that `cellDataGetter` returns\n-     * will be used to determine whether the cell should re-render.\n-     */\n-    cellDataGetter: PropTypes.func,\n-\n-    /**\n-     * The key to retrieve the cell data from the data row. Provided key type\n-     * must be either `string` or `number`. Since we use this\n-     * for keys, it must be specified for each column.\n-     */\n-    dataKey: PropTypes.oneOfType([\n-      PropTypes.string,\n-      PropTypes.number,\n-    ]).isRequired,\n-\n-    /**\n      * Controls if the column is fixed when scrolling in the X axis.\n      */\n     fixed: PropTypes.bool,\n \n     /**\n-     * The cell renderer that returns React-renderable content for table column\n-     * header.\n+     * The header cell for this column.\n+     * This can either be a string or a React element. Passing in a string\n+     * will render a default header cell with that string. By default, the React\n+     * element passed in can expect to receive the following props:\n+     *\n      * ```\n-     * function(\n-     *   label: ?string,\n-     *   cellDataKey: string,\n-     *   columnData: any,\n-     *   rowData: array<?object>,\n-     *   width: number\n-     * ): ?$jsx\n+     * props: {\n+     *   columnKey: string // (of the column, if given)",
+        "path": "src/FixedDataTableColumn.react.js",
+        "position": 74,
+        "original_position": 74,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "8aa2e7d985951675b7615ba85d58b72f881bf6c7",
+        "user": {
+            "login": "ehzhang",
+            "id": 3484848,
+            "node_id": "MDQ6VXNlcjM0ODQ4NDg=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/3484848?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ehzhang",
+            "html_url": "https://github.com/ehzhang",
+            "followers_url": "https://api.github.com/users/ehzhang/followers",
+            "following_url": "https://api.github.com/users/ehzhang/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ehzhang/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ehzhang/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ehzhang/subscriptions",
+            "organizations_url": "https://api.github.com/users/ehzhang/orgs",
+            "repos_url": "https://api.github.com/users/ehzhang/repos",
+            "events_url": "https://api.github.com/users/ehzhang/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ehzhang/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "@pieterv I initially removed this, but added it back because it saves typing for the developer, if they're going to be using this as an identifier anyway.\n",
+        "created_at": "2015-07-21T01:22:57Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35062473",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35062473"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35062473"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35121203",
+        "pull_request_review_id": null,
+        "id": 35121203,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTIxMjAz",
+        "diff_hunk": "@@ -6,11 +6,30 @@ var FakeObjectDataListStore = require('./FakeObjectDataListStore');\n var FixedDataTable = require('fixed-data-table');\n var React = require('react');\n \n+var Cell = FixedDataTable.Cell;\n var Column = FixedDataTable.Column;\n var ColumnGroup = FixedDataTable.ColumnGroup;\n var PropTypes = React.PropTypes;\n var Table = FixedDataTable.Table;\n \n+var TextCell = React.createClass({",
+        "path": "site/examples/ColumnGroupsExample.js",
+        "position": 10,
+        "original_position": 10,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: add new lines before function declarations in this file.\n",
+        "created_at": "2015-07-21T16:12:43Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35121203",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35121203"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35121203"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35121433",
+        "pull_request_review_id": null,
+        "id": 35121433,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTIxNDMz",
+        "diff_hunk": "@@ -5,13 +5,45 @@ var FakeObjectDataListStore = require('./FakeObjectDataListStore');\n var FixedDataTable = require('fixed-data-table');\n var React = require('react');\n \n+var Cell = FixedDataTable.Cell;\n var Column = FixedDataTable.Column;\n var PropTypes = React.PropTypes;\n var Table = FixedDataTable.Table;\n \n-function renderImage(/*string*/ cellData) {\n-  return <ExampleImage src={cellData} />;\n-}\n+var ImageCell = React.createClass({",
+        "path": "site/examples/FilterExample.js",
+        "position": 12,
+        "original_position": 12,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: add empty lines before function declarations.\n",
+        "created_at": "2015-07-21T16:14:50Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35121433",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35121433"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35121433"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35121702",
+        "pull_request_review_id": null,
+        "id": 35121702,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTIxNzAy",
+        "diff_hunk": "@@ -731,7 +694,7 @@ var FixedDataTable = React.createClass({\n         oldState.groupHeaderScrollableColumns;\n     } else {\n       if (columnGroups) {\n-        columnInfo.groupHeaderData = this._getGroupHeaderData(columnGroups);\n+        // columnInfo.groupHeaderData = this._getGroupHeaderData(columnGroups);",
+        "path": "src/FixedDataTable.react.js",
+        "position": null,
+        "original_position": 115,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "why not removing this totally?\n",
+        "created_at": "2015-07-21T16:17:21Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35121702",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35121702"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35121702"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35122510",
+        "pull_request_review_id": null,
+        "id": 35122510,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTIyNTEw",
+        "diff_hunk": "@@ -954,42 +915,17 @@ var FixedDataTable = React.createClass({\n       useGroupHeader,\n     };\n \n-    // Both `headData` and `groupHeaderData` are generated by\n-    // `FixedDataTable` will be passed to each header cell to render.\n-    // In order to prevent over-rendering the cells, we do not pass the\n-    // new `headData` or `groupHeaderData`\n-    // if they haven't changed.\n-    if (oldState) {\n-      if (\n-        oldState.headData &&\n-        newState.headData &&\n-        shallowEqual(oldState.headData, newState.headData)\n-      ) {\n-        newState.headData = oldState.headData;\n-      }\n-      if (\n-        oldState.groupHeaderData &&\n-        newState.groupHeaderData &&\n-        shallowEqual(oldState.groupHeaderData, newState.groupHeaderData)\n-      ) {\n-        newState.groupHeaderData = oldState.groupHeaderData;\n-      }\n-    }\n-\n     return newState;\n   },\n \n   _createGroupHeaderColumns(/*array*/ columnGroups) /*array*/  {\n     var newColumnGroups = [];\n     for (var i = 0; i < columnGroups.length; ++i) {\n-      newColumnGroups[i] = cloneWithProps(\n+      newColumnGroups[i] = React.cloneElement(\n         columnGroups[i],\n         {\n           dataKey: i,",
+        "path": "src/FixedDataTable.react.js",
+        "position": null,
+        "original_position": 164,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Do we even need dataKey for column groups? If so, maybe it should be added by user to ColumnGroup instead of us putting just an index there.\n",
+        "created_at": "2015-07-21T16:24:17Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35122510",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35122510"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35122510"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35123226",
+        "pull_request_review_id": null,
+        "id": 35123226,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTIzMjI2",
+        "diff_hunk": "@@ -1001,14 +937,10 @@ var FixedDataTable = React.createClass({\n     var headColumns = [];\n     for (var i = 0; i < columns.length; ++i) {\n       var columnProps = columns[i].props;\n-      headColumns.push(cloneWithProps(\n+      headColumns.push(React.cloneElement(\n         columns[i],\n         {\n-          cellRenderer: columnProps.headerRenderer || renderToString,\n-          columnData: columnProps.columnData,\n-          dataKey: columnProps.dataKey,\n           isHeaderCell: true,",
+        "path": "src/FixedDataTable.react.js",
+        "position": null,
+        "original_position": 183,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We currently use isHeaderCell to\n- figure out what data should be passed to cell renderer (shouldn't be problem of the table any more)\n- add or not add footer/header css class. (If we wan't people to style the table themselves, maybe adding classes to cells rendered by their components)\n  If we were able to remove both these dependencies on \"isHeaderCell\" we could remove this clone altogether and simplify more :).\n",
+        "created_at": "2015-07-21T16:30:28Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35123226",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35123226"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35123226"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35123273",
+        "pull_request_review_id": null,
+        "id": 35123273,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTIzMjcz",
+        "diff_hunk": "@@ -1019,12 +951,9 @@ var FixedDataTable = React.createClass({\n     var footColumns = [];\n     for (var i = 0; i < columns.length; ++i) {\n       var columnProps = columns[i].props;\n-      footColumns.push(cloneWithProps(\n+      footColumns.push(React.cloneElement(\n         columns[i],\n         {\n-          cellRenderer: columnProps.footerRenderer || renderToString,\n-          columnData: columnProps.columnData,\n-          dataKey: columnProps.dataKey,\n           isFooterCell: true,",
+        "path": "src/FixedDataTable.react.js",
+        "position": null,
+        "original_position": 199,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The same as \"isHeaderCell\" comment.\n",
+        "created_at": "2015-07-21T16:30:53Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35123273",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35123273"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35123273"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35123462",
+        "pull_request_review_id": null,
+        "id": 35123462,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTIzNDYy",
+        "diff_hunk": "@@ -1032,20 +961,6 @@ var FixedDataTable = React.createClass({\n     return footColumns;\n   },\n \n-  _getHeadData(/*array*/ columns) /*?object*/ {\n-    if (!this.props.headerDataGetter) {\n-      return null;\n-    }\n-\n-    var headData = {};\n-    for (var i = 0; i < columns.length; ++i) {\n-      var columnProps = columns[i].props;\n-      headData[columnProps.dataKey] =\n-        this.props.headerDataGetter(columnProps.dataKey);\n-    }\n-    return headData;\n-   },\n-\n   _getGroupHeaderData(/*array*/ columnGroups) /*array*/ {",
+        "path": "src/FixedDataTable.react.js",
+        "position": null,
+        "original_position": 220,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Can we replace ColumnGroup data handling as well and make the api use react components?\n",
+        "created_at": "2015-07-21T16:32:45Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35123462",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35123462"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35123462"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35124522",
+        "pull_request_review_id": null,
+        "id": 35124522,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTI0NTIy",
+        "diff_hunk": "@@ -36,42 +34,19 @@ var FixedDataTableCell = React.createClass({\n     align: PropTypes.oneOf(['left', 'center', 'right']),\n     className: PropTypes.string,\n     highlighted: PropTypes.bool,\n-    isFooterCell: PropTypes.bool,\n-    isHeaderCell: PropTypes.bool,\n     width: PropTypes.number.isRequired,\n     minWidth: PropTypes.number,\n     maxWidth: PropTypes.number,\n     height: PropTypes.number.isRequired,\n \n-    /**\n-     * The cell data that will be passed to `cellRenderer` to render.\n-     */\n-    cellData: PropTypes.any,\n-\n-    /**\n-     * The key to retrieve the cell data from the `rowData`.\n-     */\n-    cellDataKey: PropTypes.oneOfType([\n-      PropTypes.string.isRequired,\n-      PropTypes.number.isRequired,\n+    cell: PropTypes.oneOfType([\n+      PropTypes.string,\n+      PropTypes.node",
+        "path": "src/FixedDataTableCell.react.js",
+        "position": null,
+        "original_position": 46,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: trailing coma here and in next prop\n",
+        "created_at": "2015-07-21T16:42:07Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35124522",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35124522"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35124522"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35125025",
+        "pull_request_review_id": null,
+        "id": 35125025,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTI1MDI1",
+        "diff_hunk": "@@ -142,25 +114,29 @@ var FixedDataTableCellGroupImpl = React.createClass({\n       className = columnProps.cellClassName;\n     }\n \n+    var cell = columnProps.cell;\n+\n+    if (isHeaderCell){",
+        "path": "src/FixedDataTableCellGroup.react.js",
+        "position": null,
+        "original_position": 63,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If this is only place where we would use \"isHeaderCell\"/\"isFooterCell\" now, I'd consider changing the React.cloneElement if FDT.react.js that adds these props to clone headerCell/footerCell into cell prop, so we don't have to specialise this code for header/footer versions at all.\n",
+        "created_at": "2015-07-21T16:46:58Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35125025",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35125025"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35125025"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35125374",
+        "pull_request_review_id": null,
+        "id": 35125374,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTI1Mzc0",
+        "diff_hunk": "@@ -1032,20 +961,6 @@ var FixedDataTable = React.createClass({\n     return footColumns;\n   },\n \n-  _getHeadData(/*array*/ columns) /*?object*/ {\n-    if (!this.props.headerDataGetter) {\n-      return null;\n-    }\n-\n-    var headData = {};\n-    for (var i = 0; i < columns.length; ++i) {\n-      var columnProps = columns[i].props;\n-      headData[columnProps.dataKey] =\n-        this.props.headerDataGetter(columnProps.dataKey);\n-    }\n-    return headData;\n-   },\n-\n   _getGroupHeaderData(/*array*/ columnGroups) /*array*/ {",
+        "path": "src/FixedDataTable.react.js",
+        "position": null,
+        "original_position": 220,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I see that we actually are replacing that as well already. Just didn't see it in description of pull request.\nStill- will we need _getGroupHeaderData in this case?\n",
+        "created_at": "2015-07-21T16:49:58Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35125374",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35125374"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35125374"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35125836",
+        "pull_request_review_id": null,
+        "id": 35125836,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTI1ODM2",
+        "diff_hunk": "@@ -0,0 +1,68 @@\n+/**\n+ * Copyright (c) 2015, Facebook, Inc.\n+ * All rights reserved.\n+ *\n+ * This source code is licensed under the BSD-style license found in the\n+ * LICENSE file in the root directory of this source tree. An additional grant\n+ * of patent rights can be found in the PATENTS file in the same directory.\n+ *\n+ * @providesModule FixedDataTableCellDefault.react\n+ * @typechecks\n+ */\n+\n+var React = require('React');\n+var ReactComponentWithPureRenderMixin = require('ReactComponentWithPureRenderMixin');\n+\n+var cx = require('cx');\n+var joinClasses = require('joinClasses');\n+\n+var {PropTypes} = React;\n+\n+var FixedDataTableCellDefault = React.createClass({\n+  mixins: [ReactComponentWithPureRenderMixin],\n+\n+  propTypes: {\n+    cellHeight: PropTypes.number.isRequired,\n+    cellWidth: PropTypes.number.isRequired\n+  },\n+\n+  render() {\n+\n+    var innerStyle = {\n+      height: this.props.cellHeight,\n+      width: this.props.cellWidth,\n+    };\n+\n+    var contentClass = cx('public/fixedDataTableCell/cellContent');\n+\n+    return (\n+      <div\n+          {...this.props}\n+          className={joinClasses(\n+            cx('fixedDataTableCellLayout/wrap1'),\n+            cx('public/fixedDataTableCell/wrap1'),\n+            this.props.className\n+          )}\n+          style={innerStyle}>",
+        "path": "src/FixedDataTableCellDefault.react.js",
+        "position": 47,
+        "original_position": 46,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "8aa2e7d985951675b7615ba85d58b72f881bf6c7",
+        "user": {
+            "login": "ehzhang",
+            "id": 3484848,
+            "node_id": "MDQ6VXNlcjM0ODQ4NDg=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/3484848?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ehzhang",
+            "html_url": "https://github.com/ehzhang",
+            "followers_url": "https://api.github.com/users/ehzhang/followers",
+            "following_url": "https://api.github.com/users/ehzhang/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ehzhang/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ehzhang/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ehzhang/subscriptions",
+            "organizations_url": "https://api.github.com/users/ehzhang/orgs",
+            "repos_url": "https://api.github.com/users/ehzhang/repos",
+            "events_url": "https://api.github.com/users/ehzhang/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ehzhang/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Fixed at line 34!\n",
+        "created_at": "2015-07-21T16:53:43Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35125836",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35125836"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35125836"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35136832",
+        "pull_request_review_id": null,
+        "id": 35136832,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTM2ODMy",
+        "diff_hunk": "@@ -36,42 +34,19 @@ var FixedDataTableCell = React.createClass({\n     align: PropTypes.oneOf(['left', 'center', 'right']),\n     className: PropTypes.string,\n     highlighted: PropTypes.bool,\n-    isFooterCell: PropTypes.bool,\n-    isHeaderCell: PropTypes.bool,\n     width: PropTypes.number.isRequired,\n     minWidth: PropTypes.number,\n     maxWidth: PropTypes.number,\n     height: PropTypes.number.isRequired,\n \n-    /**\n-     * The cell data that will be passed to `cellRenderer` to render.\n-     */\n-    cellData: PropTypes.any,\n-\n-    /**\n-     * The key to retrieve the cell data from the `rowData`.\n-     */\n-    cellDataKey: PropTypes.oneOfType([\n-      PropTypes.string.isRequired,\n-      PropTypes.number.isRequired,\n+    cell: PropTypes.oneOfType([\n+      PropTypes.string,\n+      PropTypes.node\n     ]),\n \n-    /**\n-     * The function to render the `cellData`.\n-     */\n-    cellRenderer: PropTypes.func.isRequired,\n-\n-    /**\n-     * The column data that will be passed to `cellRenderer` to render.\n-     */\n-    columnData: PropTypes.any,\n-\n-    /**\n-     * The row data that will be passed to `cellRenderer` to render.\n-     */\n-    rowData: PropTypes.oneOfType([",
+        "path": "src/FixedDataTableCell.react.js",
+        "position": 62,
+        "original_position": 62,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I believe that we need to remove ReactComponentWithPureRenderMixin mixin from cell and the rest of hierarchy, because the only thing that we were informing decision about re-rendering is gone now.\nWe can do one of two things-\n- Assume that people will know when to update their renderers, but this will probably be not true for most cases, since not everyone uses flux. We could keep ReactComponentWithPureRenderMixin, or even use static containers in some places...\n- Not assume that people want to build stores and dispatching mechanisms for each piece of data and propagate react events properly through the table and never kill them. This will be nicer to people, can be dangerous for perf but we will be able to flatten the react components hierarchy quite a bit and reduce number of dom elements created. Should be able to remove these Impl versions of FixedDataTableRow and CellGroup\n\nI prefer the second solution if we are able to make it fast enough, because it makes the table behave like proper react component that doesn't kill events that should get to its children.\n",
+        "created_at": "2015-07-21T18:29:42Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35136832",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35136832"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35136832"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35137636",
+        "pull_request_review_id": null,
+        "id": 35137636,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTM3NjM2",
+        "diff_hunk": "@@ -1001,14 +937,10 @@ var FixedDataTable = React.createClass({\n     var headColumns = [];\n     for (var i = 0; i < columns.length; ++i) {\n       var columnProps = columns[i].props;\n-      headColumns.push(cloneWithProps(\n+      headColumns.push(React.cloneElement(\n         columns[i],\n         {\n-          cellRenderer: columnProps.headerRenderer || renderToString,\n-          columnData: columnProps.columnData,\n-          dataKey: columnProps.dataKey,\n           isHeaderCell: true,",
+        "path": "src/FixedDataTable.react.js",
+        "position": null,
+        "original_position": 183,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "ehzhang",
+            "id": 3484848,
+            "node_id": "MDQ6VXNlcjM0ODQ4NDg=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/3484848?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ehzhang",
+            "html_url": "https://github.com/ehzhang",
+            "followers_url": "https://api.github.com/users/ehzhang/followers",
+            "following_url": "https://api.github.com/users/ehzhang/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ehzhang/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ehzhang/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ehzhang/subscriptions",
+            "organizations_url": "https://api.github.com/users/ehzhang/orgs",
+            "repos_url": "https://api.github.com/users/ehzhang/repos",
+            "events_url": "https://api.github.com/users/ehzhang/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ehzhang/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Good idea!\n",
+        "created_at": "2015-07-21T18:36:01Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35137636",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35137636"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35137636"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35137751",
+        "pull_request_review_id": null,
+        "id": 35137751,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM1MTM3NzUx",
+        "diff_hunk": "@@ -1032,20 +961,6 @@ var FixedDataTable = React.createClass({\n     return footColumns;\n   },\n \n-  _getHeadData(/*array*/ columns) /*?object*/ {\n-    if (!this.props.headerDataGetter) {\n-      return null;\n-    }\n-\n-    var headData = {};\n-    for (var i = 0; i < columns.length; ++i) {\n-      var columnProps = columns[i].props;\n-      headData[columnProps.dataKey] =\n-        this.props.headerDataGetter(columnProps.dataKey);\n-    }\n-    return headData;\n-   },\n-\n   _getGroupHeaderData(/*array*/ columnGroups) /*array*/ {",
+        "path": "src/FixedDataTable.react.js",
+        "position": null,
+        "original_position": 220,
+        "commit_id": "4d1e7ea3b4b8515c66dcf114c0c0a1123e6db7f9",
+        "original_commit_id": "c9a6a264da4d138e4f8516bfc1c8a5fc3805e1e2",
+        "user": {
+            "login": "ehzhang",
+            "id": 3484848,
+            "node_id": "MDQ6VXNlcjM0ODQ4NDg=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/3484848?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ehzhang",
+            "html_url": "https://github.com/ehzhang",
+            "followers_url": "https://api.github.com/users/ehzhang/followers",
+            "following_url": "https://api.github.com/users/ehzhang/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ehzhang/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ehzhang/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ehzhang/subscriptions",
+            "organizations_url": "https://api.github.com/users/ehzhang/orgs",
+            "repos_url": "https://api.github.com/users/ehzhang/repos",
+            "events_url": "https://api.github.com/users/ehzhang/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ehzhang/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Nope - I forgot that I left that in. I'll remove it!\n",
+        "created_at": "2015-07-21T18:36:48Z",
+        "updated_at": "2015-07-27T20:18:33Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35137751",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/35137751"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/207#discussion_r35137751"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/207"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/36902348",
+        "pull_request_review_id": null,
+        "id": 36902348,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM2OTAyMzQ4",
+        "diff_hunk": "@@ -12,7 +12,7 @@\n var React;\n \n // Check for Atom!\n-if (typeof window === 'undefined' && typeof global === 'object' && global.atom){\n+if (typeof global === 'object' && global.atom){",
+        "path": "src/stubs/react/React.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "f73d79a115053f947f238d17a7fbabc6ac3295c5",
+        "original_commit_id": "85e849f4f9caddd446a500b72a57d6f1cfa05d33",
+        "user": {
+            "login": "bolinfest",
+            "id": 655869,
+            "node_id": "MDQ6VXNlcjY1NTg2OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/655869?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/bolinfest",
+            "html_url": "https://github.com/bolinfest",
+            "followers_url": "https://api.github.com/users/bolinfest/followers",
+            "following_url": "https://api.github.com/users/bolinfest/following{/other_user}",
+            "gists_url": "https://api.github.com/users/bolinfest/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/bolinfest/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/bolinfest/subscriptions",
+            "organizations_url": "https://api.github.com/users/bolinfest/orgs",
+            "repos_url": "https://api.github.com/users/bolinfest/repos",
+            "events_url": "https://api.github.com/users/bolinfest/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/bolinfest/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: space before `{`\n",
+        "created_at": "2015-08-12T19:24:33Z",
+        "updated_at": "2015-08-12T23:43:54Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/238#discussion_r36902348",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/238",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/36902348"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/238#discussion_r36902348"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/238"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44601590",
+        "pull_request_review_id": null,
+        "id": 44601590,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NjAxNTkw",
+        "diff_hunk": "@@ -36,16 +36,27 @@ if (process.env.NODE_ENV === 'production') {\n   });\n }\n \n-var locations = [\n-  Constants.APIPages,\n-  Constants.ExamplePages,\n-  Constants.OtherPages\n-].reduce(function(paths, pages) {\n-  return paths.concat(\n-    Object.keys(pages).map(function(key) {\n-      return pages[key].location;\n-    })\n-  );\n+function getAllLocations(pages) {\n+  var locations = [];\n+  for (var key in pages) {\n+    if (!pages.hasOwnProperty(key) || typeof pages[key] !== 'object') {\n+      continue;\n+    }\n+\n+    if (pages[key].groupTitle) {\n+      locations = [].concat(locations, getAllLocations(pages[key]));\n+    }\n+\n+    if (pages[key].location) {\n+      locations.push(pages[key].location);\n+    }\n+  }\n+\n+  return locations;\n+}\n+\n+var locations = Constants.ALL_PAGES.reduce(function(allPage, pages) {",
+        "path": "build_helpers/buildSiteIndexPages.sh",
+        "position": null,
+        "original_position": 33,
+        "commit_id": "a285a6f3d3053c647ef8fd4c4bb5f648c0f08981",
+        "original_commit_id": "606396db28b8cf77021133e9f5e14fe87b377b21",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "nit: allPage probably make more sense to be allPages\n",
+        "created_at": "2015-11-11T23:17:51Z",
+        "updated_at": "2015-11-11T23:31:36Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44601590",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44601590"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44601590"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44602068",
+        "pull_request_review_id": null,
+        "id": 44602068,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NjAyMDY4",
+        "diff_hunk": "@@ -0,0 +1,195 @@\n+Getting Started\n+===============\n+\n+The easiest way to start using on FixedDataTable is to install it via npm:\n+\n+```shell\n+npm install react --save\n+npm install fixed-data-table --save\n+```\n+\n+If your using a standard build system such as [`browserify`](http://browserify.org/) or [`webpack`](https://webpack.github.io/) it can then be required directly:\n+```\n+const React = require('react');\n+const {Table, Column, Cell} = require('fixed-data-table');\n+```\n+\n+For layout and styling the default stylesheet will need to be added: `fixed-data-table/dist/fixed-data-table.min.css`.\n+\n+## Create your `Table`\n+Setting up your table can be done via the `Table` component. To be able to handle large amounts of data the table only renders the parts that are visible to the user, in order to calculate this a static `width`, `height`, `rowsCount` and `rowHeight` are required:\n+\n+```javascript\n+const React = require('react');\n+const {Table} = require('fixed-data-table');\n+\n+class MyTable extends React.Component {\n+  render() {\n+    return (\n+      <Table\n+        rowsCount={100}\n+        rowHeight={50}\n+        width={1000}\n+        height={500}>\n+        // TODO: Add columns\n+      </Table>\n+    );\n+  }\n+}\n+```\n+\n+## Create your `Column`s\n+For each column that needs to be displayed a `Column` config with 2 important props are required. The `width` of the column and the `cell` content to render. The `Cell` component can wrap any content to provide default table styles and centering.\n+\n+```javascript\n+const React = require('react');\n+const {Table, Column, Cell} = require('fixed-data-table');\n+\n+class MyTable extends React.Component {\n+  render() {\n+    return (\n+      <Table\n+        rowsCount={100}\n+        rowHeight={50}\n+        width={1000}\n+        height={500}>\n+        <Column\n+          cell={<Cell>Basic content</Cell>}\n+          width={200}\n+        />\n+      </Table>\n+    );\n+  }\n+}\n+```\n+\n+## Provide Custom Data\n+Typically you will want to render custom data per row, let's add some data to our table and add a header to the column.\n+\n+```javascript\n+const React = require('react');\n+const {Table, Column, Cell} = require('fixed-data-table');\n+\n+class MyTable extends React.Component {\n+  constructor(props) {\n+    super(props);\n+\n+    this.state = {\n+      myTableData: [\n+        {name: 'Rylan'},\n+        {name: 'Amelia'},\n+        {name: 'Estevan'},\n+        {name: 'Florence'},\n+        {name: 'Tressa'},\n+      ],\n+    };\n+  }\n+\n+  render() {\n+    return (\n+      <Table\n+        rowsCount={this.state.myTableData.length}\n+        rowHeight={50}\n+        headerHeight={50}\n+        width={1000}\n+        height={500}>\n+        <Column\n+          header={<Cell>Name</Cell>}\n+          cell={props => (\n+            <Cell {...props}>\n+              {this.state.myTableData[props.rowIndex].name}\n+            </Cell>\n+          )}\n+          width={200}\n+        />\n+      </Table>\n+    );\n+  }\n+}\n+```\n+\n+Instead of providing a static `cell` we can use a function for our `cell`, this function will be passed the `rowIndex` plus the `width` and `height` of the cell. By using the `rowIndex` and we can get different data from `this.state.myTableData` for each cell.\n+\n+## Create Reusable Cells\n+\n+With larger table setups you will want to reuse the `cell` render functions. To do this you can create your own React Component for each unique `Cell`. Let's add another column that displays emails with links.",
+        "path": "docs/README.md",
+        "position": 115,
+        "original_position": 115,
+        "commit_id": "a285a6f3d3053c647ef8fd4c4bb5f648c0f08981",
+        "original_commit_id": "606396db28b8cf77021133e9f5e14fe87b377b21",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "You could add here that cell will get some additional props from table on top of props you provide. e.g. rowIndex\n",
+        "created_at": "2015-11-11T23:22:23Z",
+        "updated_at": "2015-11-11T23:31:36Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44602068",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44602068"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44602068"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44602267",
+        "pull_request_review_id": null,
+        "id": 44602267,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NjAyMjY3",
+        "diff_hunk": "@@ -0,0 +1,189 @@\n+<!-- File generated from \"src/FixedDataTableColumn.react.js\" -->",
+        "path": "docs/api-v0.5/ColumnAPI.md",
+        "position": 1,
+        "original_position": 1,
+        "commit_id": "a285a6f3d3053c647ef8fd4c4bb5f648c0f08981",
+        "original_commit_id": "606396db28b8cf77021133e9f5e14fe87b377b21",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This documentation is missing the cell property, which is pretty important prop and it would be good to have a bit about how it works.\n",
+        "created_at": "2015-11-11T23:24:46Z",
+        "updated_at": "2015-11-11T23:31:36Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44602267",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44602267"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44602267"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44602601",
+        "pull_request_review_id": null,
+        "id": 44602601,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NjAyNjAx",
+        "diff_hunk": "@@ -0,0 +1,189 @@\n+<!-- File generated from \"src/FixedDataTableColumn.react.js\" -->",
+        "path": "docs/api-v0.5/ColumnAPI.md",
+        "position": 1,
+        "original_position": 1,
+        "commit_id": "a285a6f3d3053c647ef8fd4c4bb5f648c0f08981",
+        "original_commit_id": "606396db28b8cf77021133e9f5e14fe87b377b21",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is the old API file, it has been added to the new API (but we dont check those files in)\n",
+        "created_at": "2015-11-11T23:27:42Z",
+        "updated_at": "2015-11-11T23:31:36Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44602601",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44602601"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44602601"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44602703",
+        "pull_request_review_id": null,
+        "id": 44602703,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NjAyNzAz",
+        "diff_hunk": "@@ -0,0 +1,195 @@\n+Getting Started\n+===============\n+\n+The easiest way to start using on FixedDataTable is to install it via npm:\n+\n+```shell\n+npm install react --save\n+npm install fixed-data-table --save\n+```\n+\n+If your using a standard build system such as [`browserify`](http://browserify.org/) or [`webpack`](https://webpack.github.io/) it can then be required directly:\n+```\n+const React = require('react');\n+const {Table, Column, Cell} = require('fixed-data-table');\n+```\n+\n+For layout and styling the default stylesheet will need to be added: `fixed-data-table/dist/fixed-data-table.min.css`.\n+\n+## Create your `Table`\n+Setting up your table can be done via the `Table` component. To be able to handle large amounts of data the table only renders the parts that are visible to the user, in order to calculate this a static `width`, `height`, `rowsCount` and `rowHeight` are required:\n+\n+```javascript\n+const React = require('react');\n+const {Table} = require('fixed-data-table');\n+\n+class MyTable extends React.Component {\n+  render() {\n+    return (\n+      <Table\n+        rowsCount={100}\n+        rowHeight={50}\n+        width={1000}\n+        height={500}>\n+        // TODO: Add columns\n+      </Table>\n+    );\n+  }\n+}\n+```\n+\n+## Create your `Column`s\n+For each column that needs to be displayed a `Column` config with 2 important props are required. The `width` of the column and the `cell` content to render. The `Cell` component can wrap any content to provide default table styles and centering.\n+\n+```javascript\n+const React = require('react');\n+const {Table, Column, Cell} = require('fixed-data-table');\n+\n+class MyTable extends React.Component {\n+  render() {\n+    return (\n+      <Table\n+        rowsCount={100}\n+        rowHeight={50}\n+        width={1000}\n+        height={500}>\n+        <Column\n+          cell={<Cell>Basic content</Cell>}\n+          width={200}\n+        />\n+      </Table>\n+    );\n+  }\n+}\n+```\n+\n+## Provide Custom Data\n+Typically you will want to render custom data per row, let's add some data to our table and add a header to the column.\n+\n+```javascript\n+const React = require('react');\n+const {Table, Column, Cell} = require('fixed-data-table');\n+\n+class MyTable extends React.Component {\n+  constructor(props) {\n+    super(props);\n+\n+    this.state = {\n+      myTableData: [\n+        {name: 'Rylan'},\n+        {name: 'Amelia'},\n+        {name: 'Estevan'},\n+        {name: 'Florence'},\n+        {name: 'Tressa'},\n+      ],\n+    };\n+  }\n+\n+  render() {\n+    return (\n+      <Table\n+        rowsCount={this.state.myTableData.length}\n+        rowHeight={50}\n+        headerHeight={50}\n+        width={1000}\n+        height={500}>\n+        <Column\n+          header={<Cell>Name</Cell>}\n+          cell={props => (\n+            <Cell {...props}>\n+              {this.state.myTableData[props.rowIndex].name}\n+            </Cell>\n+          )}\n+          width={200}\n+        />\n+      </Table>\n+    );\n+  }\n+}\n+```\n+\n+Instead of providing a static `cell` we can use a function for our `cell`, this function will be passed the `rowIndex` plus the `width` and `height` of the cell. By using the `rowIndex` and we can get different data from `this.state.myTableData` for each cell.\n+\n+## Create Reusable Cells\n+\n+With larger table setups you will want to reuse the `cell` render functions. To do this you can create your own React Component for each unique `Cell`. Let's add another column that displays emails with links.",
+        "path": "docs/README.md",
+        "position": 115,
+        "original_position": 115,
+        "commit_id": "a285a6f3d3053c647ef8fd4c4bb5f648c0f08981",
+        "original_commit_id": "606396db28b8cf77021133e9f5e14fe87b377b21",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I have the paragraph above this, do you think we need to repeat it again here?\n",
+        "created_at": "2015-11-11T23:28:30Z",
+        "updated_at": "2015-11-11T23:31:36Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44602703",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44602703"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44602703"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44602906",
+        "pull_request_review_id": null,
+        "id": 44602906,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NjAyOTA2",
+        "diff_hunk": "@@ -0,0 +1,187 @@\n+v0.6 API Migration\n+==========================\n+\n+The FixedDataTable v0.6 release deprecated a large number of APIs in an effort to simplify its use and increase  flexibility. The changes come under two major areas, **customizable cell rendering** and **flexible data sources**.\n+\n+Quick Overview\n+---------------\n+Here is a quick list of what has been removed and how to upgrade:\n+\n+### Table\n+* `rowGetter` - Provide data directly via the `cell` on each Column.\n+* `headerDataGetter` - Provide data directly via the `header` on each Column.\n+* `footerData` - Provide data directly via the `footer` on each Column.\n+* `footerDataGetter` - Provide data directly via the `header` on each Column.\n+\n+### Column\n+* `dataKey` - The FixedDataTable no longer needs this but it can be provided on the cell if required for user code.\n+* `cellRenderer` - Replaced with the `cell` API, it supports either a React Element or a function.\n+* `cellClassName` - This can be set directly on the `cell` element.\n+* `label` - Replaced with the `header` API, it supports either a React Element or a function.\n+* `headerRenderer` - Replaced with the `header` API, it supports either a React Element or a function.\n+* `headerClassName` - This can be set directly on the `header` element.\n+* `footerRenderer` - Replaced with the `footer` API, it supports either a React Element or a function.\n+* `footerClassName` - This can be set directly on the `footer` element.\n+* `cellDataGetter` - Provide data directly via the `cell`.\n+* `columnData` - Provide data directly via the `cell`.\n+\n+### ColumnGroup\n+* `label` - Replaced with the `header` API, it supports either a React Element or a function.\n+* `groupHeaderRenderer` - Replaced with the `header` API, it supports either a React Element or a function.\n+* `columnGroupData` - Provide data directly via the `cell`.\n+\n+Customizable Cell Rendering\n+---------------------------\n+In previous versions of FixedDataTable, it was possible to customize what was rendered into a cell via the `cellRenderer` prop but it was very limited at what could changed as the `cellRenderer` would always wrap the content with a default cell and this default cell could only be customizable in limited ways via column props like `cellClassName`. A typical `Column` config would look like:\n+\n+```javascript\n+const {Column} = require('fixed-data-table');\n+\n+function renderLink(cellData) {\n+  return <a href=\"#\">{cellData}</a>;\n+}\n+\n+const MyColumn = (\n+  <Column\n+    label=\"Email\"\n+    dataKey=\"email\"\n+    cellRenderer={renderLink}\n+    cellClassName=\"my-class\"\n+    width={200}\n+  />\n+);\n+```\n+\n+The current FixedDataTable version provides the new API's `cell`, `header` and `footer` for `Column`s to render data. These API's will no longer wrap the content in a default cell, if the FixedDataTable default styles are needed you can use the new `Cell` component or your own optimized `Cell`.\n+\n+To render static content provide a React Element. FixedDataTable will pass through any positional props needed to render the cell:\n+```javascript\n+const {Column, Cell} = require('fixed-data-table');\n+\n+const MyColumn = (\n+  <Column\n+    header={<Cell>Email</Cell>}\n+    cell={<Cell className=\"my-class\">Static content</Cell>}\n+    width={200}\n+  />\n+);\n+```\n+\n+More likely you will want to provide different content per row in a column, this is possible via creating a React Component and handling any necessary logic to get data based on the `rowIndex`. When rendered the `Cell` will receive the props `rowIndex`, `width`, `height` plus any other props provided when initializing the `Cell` component in the `Column` config:\n+```javascript\n+const {Column, Cell} = require('fixed-data-table');\n+\n+class MyDataFetchingCell extends React.Component {\n+  render() {\n+    var {rowIndex, field, ...props} = this.props;\n+    return (\n+      <Cell {...props}>\n+        content: {this._getMyDataForIndex(rowIndex, field)}\n+      </Cell>\n+    );\n+  }\n+\n+  _getMyDataForIndex(index, field) {\n+    ...\n+  }\n+}\n+\n+const MyColumn = (\n+  <Column\n+    header={<Cell>Email</Cell>}\n+    cell={<MyDataFetchingCell field=\"email\" />}\n+    width={200}\n+  />\n+);\n+```\n+\n+The `cell` prop can also accept render functions. This works well a simple `Cell` that renders based on the parents `state` or `props` is needed:\n+```javascript\n+const {Column, Cell} = require('fixed-data-table');\n+\n+const MyColumn = (\n+  <Column\n+    header={<Cell>Email</Cell>}\n+    cell={({rowIndex, ...props}) => (\n+      <Cell {...props}>\n+        content: {getMyDataForIndex(rowIndex)}\n+      </Cell>\n+    )}\n+    width={200}\n+  />\n+);\n+```\n+\n+Flexible Data Sources\n+---------------------\n+Previously FixedDataTable needed to own the data required to render the table, this data was provided via the `rowGetter` prop. `Cell`s would then be given the relevant data based on the `dataKey` and would render the cell only if the data changed. A typical setup would look like this:\n+```javascript\n+const {Table, Column} = require('fixed-data-table');\n+\n+const rows = [\n+  {name: 'Sally', email: 'sally@gmail.com'},\n+  // .... and more\n+];\n+\n+function rowGetter(index) {\n+  return rows[index];\n+},\n+\n+const MyTable = (\n+  <Table\n+    rowGetter={rowGetter}\n+    rowsCount={rows.length}\n+    rowHeight={50}\n+    width={1000}\n+    height={500}>\n+    <Column\n+      label=\"Email\"\n+      dataKey=\"email\"\n+      width={200}\n+    />\n+  </Table>\n+);\n+```\n+\n+This API was very inflexible for different data setups since all data needed to provided to the top level `rowGetter`. With the current FixedDataTable version we have removed the need to provide any data, instead the user is responsible for passing any required data around.\n+\n+There are a number of options to consume data depending on the application. For simple use cases the required data can be passed to the cell directly via props and for more complex use cases the `Cell`s themselves can request any required data from a data layer and update over time via subscriptions.\n+\n+Example basic usage:\n+```javascript\n+const {Table, Column, Cell} = require('fixed-data-table');\n+\n+const rows = [\n+  {name: 'Sally', email: 'sally@gmail.com'},\n+  // .... and more\n+];\n+\n+class MyCell extends React.Component {\n+  render() {\n+    var {rowIndex, data, field, ...props} = this.props;\n+    return (\n+      <Cell {...props}>\n+        {data[rowIndex][field]}\n+      </Cell>\n+    );\n+  }\n+}\n+\n+const MyTable = (\n+  <Table\n+    rowsCount={rows.length}\n+    rowHeight={50}\n+    width={1000}\n+    height={500}>\n+    <Column\n+      header={<Cell>Email</Cell>}\n+      cell={<MyCell data={rows} field=\"email\" />}\n+      width={200}\n+    />\n+  </Table>\n+);\n+```\n+\n+More Information\n+---------\n+For more information see the updated [examples](http://facebook.github.io/fixed-data-table/example-object-data.html) or [API docs](http://facebook.github.io/fixed-data-table/api-table.html).",
+        "path": "docs/v6-migration.md",
+        "position": 187,
+        "original_position": 187,
+        "commit_id": "a285a6f3d3053c647ef8fd4c4bb5f648c0f08981",
+        "original_commit_id": "606396db28b8cf77021133e9f5e14fe87b377b21",
+        "user": {
+            "login": "wlis",
+            "id": 10697151,
+            "node_id": "MDQ6VXNlcjEwNjk3MTUx",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/10697151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/wlis",
+            "html_url": "https://github.com/wlis",
+            "followers_url": "https://api.github.com/users/wlis/followers",
+            "following_url": "https://api.github.com/users/wlis/following{/other_user}",
+            "gists_url": "https://api.github.com/users/wlis/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/wlis/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/wlis/subscriptions",
+            "organizations_url": "https://api.github.com/users/wlis/orgs",
+            "repos_url": "https://api.github.com/users/wlis/repos",
+            "events_url": "https://api.github.com/users/wlis/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/wlis/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Would be nice of us to provide an example that shows how to use full flux with table and cells subscribing directly to stores. We should create issue for that.\n",
+        "created_at": "2015-11-11T23:30:18Z",
+        "updated_at": "2015-11-11T23:31:36Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44602906",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44602906"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44602906"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44603092",
+        "pull_request_review_id": null,
+        "id": 44603092,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NjAzMDky",
+        "diff_hunk": "@@ -0,0 +1,187 @@\n+v0.6 API Migration\n+==========================\n+\n+The FixedDataTable v0.6 release deprecated a large number of APIs in an effort to simplify its use and increase  flexibility. The changes come under two major areas, **customizable cell rendering** and **flexible data sources**.\n+\n+Quick Overview\n+---------------\n+Here is a quick list of what has been removed and how to upgrade:\n+\n+### Table\n+* `rowGetter` - Provide data directly via the `cell` on each Column.\n+* `headerDataGetter` - Provide data directly via the `header` on each Column.\n+* `footerData` - Provide data directly via the `footer` on each Column.\n+* `footerDataGetter` - Provide data directly via the `header` on each Column.\n+\n+### Column\n+* `dataKey` - The FixedDataTable no longer needs this but it can be provided on the cell if required for user code.\n+* `cellRenderer` - Replaced with the `cell` API, it supports either a React Element or a function.\n+* `cellClassName` - This can be set directly on the `cell` element.\n+* `label` - Replaced with the `header` API, it supports either a React Element or a function.\n+* `headerRenderer` - Replaced with the `header` API, it supports either a React Element or a function.\n+* `headerClassName` - This can be set directly on the `header` element.\n+* `footerRenderer` - Replaced with the `footer` API, it supports either a React Element or a function.\n+* `footerClassName` - This can be set directly on the `footer` element.\n+* `cellDataGetter` - Provide data directly via the `cell`.\n+* `columnData` - Provide data directly via the `cell`.\n+\n+### ColumnGroup\n+* `label` - Replaced with the `header` API, it supports either a React Element or a function.\n+* `groupHeaderRenderer` - Replaced with the `header` API, it supports either a React Element or a function.\n+* `columnGroupData` - Provide data directly via the `cell`.\n+\n+Customizable Cell Rendering\n+---------------------------\n+In previous versions of FixedDataTable, it was possible to customize what was rendered into a cell via the `cellRenderer` prop but it was very limited at what could changed as the `cellRenderer` would always wrap the content with a default cell and this default cell could only be customizable in limited ways via column props like `cellClassName`. A typical `Column` config would look like:\n+\n+```javascript\n+const {Column} = require('fixed-data-table');\n+\n+function renderLink(cellData) {\n+  return <a href=\"#\">{cellData}</a>;\n+}\n+\n+const MyColumn = (\n+  <Column\n+    label=\"Email\"\n+    dataKey=\"email\"\n+    cellRenderer={renderLink}\n+    cellClassName=\"my-class\"\n+    width={200}\n+  />\n+);\n+```\n+\n+The current FixedDataTable version provides the new API's `cell`, `header` and `footer` for `Column`s to render data. These API's will no longer wrap the content in a default cell, if the FixedDataTable default styles are needed you can use the new `Cell` component or your own optimized `Cell`.\n+\n+To render static content provide a React Element. FixedDataTable will pass through any positional props needed to render the cell:\n+```javascript\n+const {Column, Cell} = require('fixed-data-table');\n+\n+const MyColumn = (\n+  <Column\n+    header={<Cell>Email</Cell>}\n+    cell={<Cell className=\"my-class\">Static content</Cell>}\n+    width={200}\n+  />\n+);\n+```\n+\n+More likely you will want to provide different content per row in a column, this is possible via creating a React Component and handling any necessary logic to get data based on the `rowIndex`. When rendered the `Cell` will receive the props `rowIndex`, `width`, `height` plus any other props provided when initializing the `Cell` component in the `Column` config:\n+```javascript\n+const {Column, Cell} = require('fixed-data-table');\n+\n+class MyDataFetchingCell extends React.Component {\n+  render() {\n+    var {rowIndex, field, ...props} = this.props;\n+    return (\n+      <Cell {...props}>\n+        content: {this._getMyDataForIndex(rowIndex, field)}\n+      </Cell>\n+    );\n+  }\n+\n+  _getMyDataForIndex(index, field) {\n+    ...\n+  }\n+}\n+\n+const MyColumn = (\n+  <Column\n+    header={<Cell>Email</Cell>}\n+    cell={<MyDataFetchingCell field=\"email\" />}\n+    width={200}\n+  />\n+);\n+```\n+\n+The `cell` prop can also accept render functions. This works well a simple `Cell` that renders based on the parents `state` or `props` is needed:\n+```javascript\n+const {Column, Cell} = require('fixed-data-table');\n+\n+const MyColumn = (\n+  <Column\n+    header={<Cell>Email</Cell>}\n+    cell={({rowIndex, ...props}) => (\n+      <Cell {...props}>\n+        content: {getMyDataForIndex(rowIndex)}\n+      </Cell>\n+    )}\n+    width={200}\n+  />\n+);\n+```\n+\n+Flexible Data Sources\n+---------------------\n+Previously FixedDataTable needed to own the data required to render the table, this data was provided via the `rowGetter` prop. `Cell`s would then be given the relevant data based on the `dataKey` and would render the cell only if the data changed. A typical setup would look like this:\n+```javascript\n+const {Table, Column} = require('fixed-data-table');\n+\n+const rows = [\n+  {name: 'Sally', email: 'sally@gmail.com'},\n+  // .... and more\n+];\n+\n+function rowGetter(index) {\n+  return rows[index];\n+},\n+\n+const MyTable = (\n+  <Table\n+    rowGetter={rowGetter}\n+    rowsCount={rows.length}\n+    rowHeight={50}\n+    width={1000}\n+    height={500}>\n+    <Column\n+      label=\"Email\"\n+      dataKey=\"email\"\n+      width={200}\n+    />\n+  </Table>\n+);\n+```\n+\n+This API was very inflexible for different data setups since all data needed to provided to the top level `rowGetter`. With the current FixedDataTable version we have removed the need to provide any data, instead the user is responsible for passing any required data around.\n+\n+There are a number of options to consume data depending on the application. For simple use cases the required data can be passed to the cell directly via props and for more complex use cases the `Cell`s themselves can request any required data from a data layer and update over time via subscriptions.\n+\n+Example basic usage:\n+```javascript\n+const {Table, Column, Cell} = require('fixed-data-table');\n+\n+const rows = [\n+  {name: 'Sally', email: 'sally@gmail.com'},\n+  // .... and more\n+];\n+\n+class MyCell extends React.Component {\n+  render() {\n+    var {rowIndex, data, field, ...props} = this.props;\n+    return (\n+      <Cell {...props}>\n+        {data[rowIndex][field]}\n+      </Cell>\n+    );\n+  }\n+}\n+\n+const MyTable = (\n+  <Table\n+    rowsCount={rows.length}\n+    rowHeight={50}\n+    width={1000}\n+    height={500}>\n+    <Column\n+      header={<Cell>Email</Cell>}\n+      cell={<MyCell data={rows} field=\"email\" />}\n+      width={200}\n+    />\n+  </Table>\n+);\n+```\n+\n+More Information\n+---------\n+For more information see the updated [examples](http://facebook.github.io/fixed-data-table/example-object-data.html) or [API docs](http://facebook.github.io/fixed-data-table/api-table.html).",
+        "path": "docs/v6-migration.md",
+        "position": 187,
+        "original_position": 187,
+        "commit_id": "a285a6f3d3053c647ef8fd4c4bb5f648c0f08981",
+        "original_commit_id": "606396db28b8cf77021133e9f5e14fe87b377b21",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yeah that would be nice. I think that would be best as an example rather than part of this page.\n",
+        "created_at": "2015-11-11T23:32:31Z",
+        "updated_at": "2015-11-11T23:32:31Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44603092",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44603092"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/305#discussion_r44603092"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/305"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44994157",
+        "pull_request_review_id": null,
+        "id": 44994157,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0OTk0MTU3",
+        "diff_hunk": "@@ -94,6 +100,17 @@ var FixedDataTableBufferedRows = React.createClass({\n     }\n   },\n \n+  _updateDOMPosition() {",
+        "path": "src/FixedDataTableBufferedRows.react.js",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "be359d09dc5a695e34b58b95617f645de5e3699e",
+        "original_commit_id": "66bbaf88c3b6ff657b17463cfd655490cbf39683",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Couple of thoughts on this approach:\n- Mutating any object is generally bad but in this case we are mutating the DOM node after render which will result in us touching the DOM twice rather than once.\n- The other thing is that it wont set any styles for the HTML that gets to the client so before the JS loads the rows will be out of place.\n",
+        "created_at": "2015-11-16T22:27:16Z",
+        "updated_at": "2016-01-22T16:36:45Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/308#discussion_r44994157",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/308",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/44994157"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/308#discussion_r44994157"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/308"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/63657621",
+        "pull_request_review_id": null,
+        "id": 63657621,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYzNjU3NjIx",
+        "diff_hunk": "@@ -151,7 +151,7 @@ var FixedDataTableColumn = React.createClass({\n      * has a flex grow, once you resize the column this will be set to 0.\n      *\n      * This property only provides the UI for the column resizing. If this\n-     * is set to true, you will need to set the onColumnResizeEndCallback table\n+     * is set to true, you will need ot se the onColumnResizeEndCallback table",
+        "path": "src/FixedDataTableColumnNew.react.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "823c04b432f79b7db431f05d8825a0a4d03a0fd5",
+        "original_commit_id": "fd13704c9786209b3f641257f18df455a131dd51",
+        "user": {
+            "login": "Daniel15",
+            "id": 91933,
+            "node_id": "MDQ6VXNlcjkxOTMz",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/91933?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Daniel15",
+            "html_url": "https://github.com/Daniel15",
+            "followers_url": "https://api.github.com/users/Daniel15/followers",
+            "following_url": "https://api.github.com/users/Daniel15/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Daniel15/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Daniel15/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Daniel15/subscriptions",
+            "organizations_url": "https://api.github.com/users/Daniel15/orgs",
+            "repos_url": "https://api.github.com/users/Daniel15/repos",
+            "events_url": "https://api.github.com/users/Daniel15/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Daniel15/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": ":confused: \n",
+        "created_at": "2016-05-18T07:32:12Z",
+        "updated_at": "2016-07-20T19:35:44Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r63657621",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/63657621"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r63657621"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/63747359",
+        "pull_request_review_id": null,
+        "id": 63747359,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYzNzQ3MzU5",
+        "diff_hunk": "@@ -151,7 +151,7 @@ var FixedDataTableColumn = React.createClass({\n      * has a flex grow, once you resize the column this will be set to 0.\n      *\n      * This property only provides the UI for the column resizing. If this\n-     * is set to true, you will need to set the onColumnResizeEndCallback table\n+     * is set to true, you will need ot se the onColumnResizeEndCallback table",
+        "path": "src/FixedDataTableColumnNew.react.js",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "823c04b432f79b7db431f05d8825a0a4d03a0fd5",
+        "original_commit_id": "fd13704c9786209b3f641257f18df455a131dd51",
+        "user": {
+            "login": "zpao",
+            "id": 8445,
+            "node_id": "MDQ6VXNlcjg0NDU=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/8445?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zpao",
+            "html_url": "https://github.com/zpao",
+            "followers_url": "https://api.github.com/users/zpao/followers",
+            "following_url": "https://api.github.com/users/zpao/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zpao/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zpao/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zpao/subscriptions",
+            "organizations_url": "https://api.github.com/users/zpao/orgs",
+            "repos_url": "https://api.github.com/users/zpao/repos",
+            "events_url": "https://api.github.com/users/zpao/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zpao/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yea, downside of not immediately syncing back in. #267 fixed it but never made it internally. We should probably do a quick pass over commits here to make sure nothing else was missed.\n",
+        "created_at": "2016-05-18T17:34:31Z",
+        "updated_at": "2016-07-20T19:35:44Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r63747359",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/63747359"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r63747359"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/64154177",
+        "pull_request_review_id": null,
+        "id": 64154177,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0MTU0MTc3",
+        "diff_hunk": "@@ -4,33 +4,49 @@\n   \"description\": \"A React table component designed to allow presenting thousands of rows of data.\",\n   \"main\": \"main.js\",\n   \"peerDependencies\": {\n-    \"react\": \">=0.13.0 <0.15.0 || ^0.14.0-beta3\",\n-    \"react-dom\": \">=0.14.0 <0.15.0 || ^0.14.0-beta3\"\n+    \"react\": \"^0.15.0\",\n+    \"react-dom\": \"^0.15.0\"",
+        "path": "package.json",
+        "position": null,
+        "original_position": 7,
+        "commit_id": "823c04b432f79b7db431f05d8825a0a4d03a0fd5",
+        "original_commit_id": "fd13704c9786209b3f641257f18df455a131dd51",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "These should be `^15.0.0` no?\n",
+        "created_at": "2016-05-22T18:30:11Z",
+        "updated_at": "2016-07-20T19:35:44Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r64154177",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/64154177"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r64154177"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/64154206",
+        "pull_request_review_id": null,
+        "id": 64154206,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0MTU0MjA2",
+        "diff_hunk": "@@ -0,0 +1,32 @@\n+const postcss = require('postcss');\n+\n+const colors = {\n+  'fbui-desktop-background-light': '#f6f7f8',\n+  'fbui-white': '#fff',\n+  'scrollbar-face-active-color': '#7d7d7d',\n+  'scrollbar-face-color': '#c2c2c2',\n+  'scrollbar-face-margin': '4px',\n+  'scrollbar-face-radius': '6px',\n+  'scrollbar-size-large': '17px',\n+  'scrollbar-size': '15px',\n+  'scrollbar-track-color': 'rgba(255, 255, 255, 0.8)',\n+};\n+\n+module.exports = postcss.plugin('fbcss', (options) => {\n+  return css => {\n+    css.walkRules(rule => {\n+      // TODO: use - instead of _ to match forked cx in fbjs\n+      rule.selector = rule.selector.replace(/\\//g, '_');\n+    });\n+    css.walkDecls(decl => {\n+      const matches = decl.value.match(/var\\((.+)\\)/);\n+      if (matches) {\n+        if (matches[1] in colors) {\n+          decl.value = colors[matches[1]];\n+        } else {\n+          throw new Error(`Missing ${matches[1]} from color mapping.`);\n+        }\n+      }\n+    });",
+        "path": "scripts/postcss/fbcss.js",
+        "position": null,
+        "original_position": 30,
+        "commit_id": "823c04b432f79b7db431f05d8825a0a4d03a0fd5",
+        "original_commit_id": "fd13704c9786209b3f641257f18df455a131dd51",
+        "user": {
+            "login": "pieterv",
+            "id": 438482,
+            "node_id": "MDQ6VXNlcjQzODQ4Mg==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/438482?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pieterv",
+            "html_url": "https://github.com/pieterv",
+            "followers_url": "https://api.github.com/users/pieterv/followers",
+            "following_url": "https://api.github.com/users/pieterv/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pieterv/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pieterv/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pieterv/subscriptions",
+            "organizations_url": "https://api.github.com/users/pieterv/orgs",
+            "repos_url": "https://api.github.com/users/pieterv/repos",
+            "events_url": "https://api.github.com/users/pieterv/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pieterv/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is awesome, we can delete the runtime hack i added to cx :D\n",
+        "created_at": "2016-05-22T18:31:59Z",
+        "updated_at": "2016-07-20T19:35:44Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r64154206",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/64154206"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r64154206"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/70857773",
+        "pull_request_review_id": null,
+        "id": 70857773,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcwODU3Nzcz",
+        "diff_hunk": "@@ -24,24 +24,25 @@ var {PropTypes} = React;\n var FixedDataTableBufferedRows = React.createClass({\n \n   propTypes: {\n-    isScrolling: PropTypes.bool,\n+    bufferRowCount: PropTypes.number,",
+        "path": "src/FixedDataTableBufferedRows.react.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "823c04b432f79b7db431f05d8825a0a4d03a0fd5",
+        "original_commit_id": "1ee5a67778999de86a8ca6a9ee82166173bb0fce",
+        "user": {
+            "login": "KamranAsif",
+            "id": 2875524,
+            "node_id": "MDQ6VXNlcjI4NzU1MjQ=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/2875524?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/KamranAsif",
+            "html_url": "https://github.com/KamranAsif",
+            "followers_url": "https://api.github.com/users/KamranAsif/followers",
+            "following_url": "https://api.github.com/users/KamranAsif/following{/other_user}",
+            "gists_url": "https://api.github.com/users/KamranAsif/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/KamranAsif/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/KamranAsif/subscriptions",
+            "organizations_url": "https://api.github.com/users/KamranAsif/orgs",
+            "repos_url": "https://api.github.com/users/KamranAsif/repos",
+            "events_url": "https://api.github.com/users/KamranAsif/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/KamranAsif/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Was this changed somewhere before?\n",
+        "created_at": "2016-07-14T18:26:34Z",
+        "updated_at": "2016-07-20T19:35:44Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r70857773",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/70857773"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r70857773"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/70858695",
+        "pull_request_review_id": null,
+        "id": 70858695,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcwODU4Njk1",
+        "diff_hunk": "@@ -24,24 +24,25 @@ var {PropTypes} = React;\n var FixedDataTableBufferedRows = React.createClass({\n \n   propTypes: {\n-    isScrolling: PropTypes.bool,\n+    bufferRowCount: PropTypes.number,",
+        "path": "src/FixedDataTableBufferedRows.react.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "823c04b432f79b7db431f05d8825a0a4d03a0fd5",
+        "original_commit_id": "1ee5a67778999de86a8ca6a9ee82166173bb0fce",
+        "user": {
+            "login": "zpao",
+            "id": 8445,
+            "node_id": "MDQ6VXNlcjg0NDU=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/8445?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/zpao",
+            "html_url": "https://github.com/zpao",
+            "followers_url": "https://api.github.com/users/zpao/followers",
+            "following_url": "https://api.github.com/users/zpao/following{/other_user}",
+            "gists_url": "https://api.github.com/users/zpao/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/zpao/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/zpao/subscriptions",
+            "organizations_url": "https://api.github.com/users/zpao/orgs",
+            "repos_url": "https://api.github.com/users/zpao/repos",
+            "events_url": "https://api.github.com/users/zpao/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/zpao/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Internally. This is just a blind sync of the files as they exist today.\n\nHuge motivation for this is to move to tooling that will sync every internal change out within minutes and make it painless for us to bring pull requests in.\n",
+        "created_at": "2016-07-14T18:30:54Z",
+        "updated_at": "2016-07-20T19:35:44Z",
+        "html_url": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r70858695",
+        "pull_request_url": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/comments/70858695"
+            },
+            "html": {
+                "href": "https://github.com/facebookarchive/fixed-data-table/pull/402#discussion_r70858695"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/facebookarchive/fixed-data-table/pulls/402"
+            }
+        }
+    }
+]

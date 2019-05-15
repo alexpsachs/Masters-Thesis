@@ -1,0 +1,1423 @@
+[
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/1724964",
+        "pull_request_review_id": null,
+        "id": 1724964,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MjQ5NjQ=",
+        "diff_hunk": "@@ -79,7 +80,7 @@ var IRCLink = function(hostname, port, ssl, selfSigned, nick, realName, password\n       for (var i = 0; i < instance.sockets.length; i++) {\n           instance.sockets[i].emit(event, args);\n       }\n-      ",
+        "path": "lib/irclink.js",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "80c335b5c47ce7465aa64e69f61a56cca1680769",
+        "original_commit_id": "599b623185b08112105855e173e381284bd9c9c2",
+        "user": {
+            "login": "utatti",
+            "id": 1013641,
+            "node_id": "MDQ6VXNlcjEwMTM2NDE=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1013641?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/utatti",
+            "html_url": "https://github.com/utatti",
+            "followers_url": "https://api.github.com/users/utatti/followers",
+            "following_url": "https://api.github.com/users/utatti/following{/other_user}",
+            "gists_url": "https://api.github.com/users/utatti/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/utatti/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/utatti/subscriptions",
+            "organizations_url": "https://api.github.com/users/utatti/orgs",
+            "repos_url": "https://api.github.com/users/utatti/repos",
+            "events_url": "https://api.github.com/users/utatti/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/utatti/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think this line doesn't have to be changed.\nTrailing spaces are not good, but a patch must only include the things concerned with the patch itself.\nPlease remove this change.\n",
+        "created_at": "2012-09-30T19:37:45Z",
+        "updated_at": "2012-09-30T19:45:38Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/170#discussion_r1724964",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/170",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/1724964"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/170#discussion_r1724964"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/170"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/1724968",
+        "pull_request_review_id": null,
+        "id": 1724968,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MjQ5Njg=",
+        "diff_hunk": "@@ -32,4 +32,4 @@ Subway.prototype.start = function () {\n   if (this.app.address()) console.log('Subway started on port %s', this.app.address().port);\n }\n \n-module.exports = Subway;\n\\ No newline at end of file\n+module.exports = Subway;",
+        "path": "lib/subway.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "80c335b5c47ce7465aa64e69f61a56cca1680769",
+        "original_commit_id": "599b623185b08112105855e173e381284bd9c9c2",
+        "user": {
+            "login": "utatti",
+            "id": 1013641,
+            "node_id": "MDQ6VXNlcjEwMTM2NDE=",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/1013641?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/utatti",
+            "html_url": "https://github.com/utatti",
+            "followers_url": "https://api.github.com/users/utatti/followers",
+            "following_url": "https://api.github.com/users/utatti/following{/other_user}",
+            "gists_url": "https://api.github.com/users/utatti/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/utatti/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/utatti/subscriptions",
+            "organizations_url": "https://api.github.com/users/utatti/orgs",
+            "repos_url": "https://api.github.com/users/utatti/repos",
+            "events_url": "https://api.github.com/users/utatti/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/utatti/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This line too.\nlib/Subway.js doesn't need to be changed.\nPlease exclude 'lib/subway.js' in the commit.\n",
+        "created_at": "2012-09-30T19:38:56Z",
+        "updated_at": "2012-09-30T19:45:38Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/170#discussion_r1724968",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/170",
+        "author_association": "COLLABORATOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/1724968"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/170#discussion_r1724968"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/170"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/1724994",
+        "pull_request_review_id": null,
+        "id": 1724994,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3MjQ5OTQ=",
+        "diff_hunk": "@@ -79,7 +80,7 @@ var IRCLink = function(hostname, port, ssl, selfSigned, nick, realName, password\n       for (var i = 0; i < instance.sockets.length; i++) {\n           instance.sockets[i].emit(event, args);\n       }\n-      ",
+        "path": "lib/irclink.js",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "80c335b5c47ce7465aa64e69f61a56cca1680769",
+        "original_commit_id": "599b623185b08112105855e173e381284bd9c9c2",
+        "user": {
+            "login": "crodjer",
+            "id": 343499,
+            "node_id": "MDQ6VXNlcjM0MzQ5OQ==",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/343499?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/crodjer",
+            "html_url": "https://github.com/crodjer",
+            "followers_url": "https://api.github.com/users/crodjer/followers",
+            "following_url": "https://api.github.com/users/crodjer/following{/other_user}",
+            "gists_url": "https://api.github.com/users/crodjer/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/crodjer/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/crodjer/subscriptions",
+            "organizations_url": "https://api.github.com/users/crodjer/orgs",
+            "repos_url": "https://api.github.com/users/crodjer/repos",
+            "events_url": "https://api.github.com/users/crodjer/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/crodjer/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Hi, thanks for the prompt replies. I have updated my commits as per\nyour suggestions. To keep the history clean, the commit ids are\nchanged, so they will look like fresh commits.\n\nOn 12:37 -0700 / 30 Sep, HyeonJe, Jun wrote:\n\n> > @@ -79,7 +80,7 @@ var IRCLink = function(hostname, port, ssl, selfSigned, nick, realName, password\n> >        for (var i = 0; i < instance.sockets.length; i++) {\n> >            instance.sockets[i].emit(event, args);\n> > \n> > ##        }\n> \n> I think this line doesn't have to be changed.\n> Trailing spaces are not good, but a patch must only include the things concerned with the patch itself.\n> Please remove this change.\n> \n> ---\n> \n> Reply to this email directly or view it on GitHub:\n> https://github.com/thedjpetersen/subway/pull/170/files#r1724964\n",
+        "created_at": "2012-09-30T20:05:09Z",
+        "updated_at": "2012-09-30T20:05:09Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/170#discussion_r1724994",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/170",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/1724994"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/170#discussion_r1724994"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/170"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2496562",
+        "pull_request_review_id": null,
+        "id": 2496562,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0OTY1NjI=",
+        "diff_hunk": "@@ -66,24 +82,35 @@ var ChatView = Backbone.View.extend({\n           event.preventDefault();\n         }\n         keydownEnter = (event.keyCode === 13);\n+        var activeChat = irc.chatWindows.getActive();\n+        if (typeof activeChat !== 'undefined' && (event.keyCode == 38 || event.keyCode == 40)) {\n+          var direction = (event.keyCode == 38) ? -1 : 1,\n+              input_scrollback = activeChat.get('input_scrollback'),\n+              new_position = input_scrollback.index + direction;",
+        "path": "assets/js/views/chat.js",
+        "position": null,
+        "original_position": 51,
+        "commit_id": "5ba9c9d9e928c58fb99d65cec5cc4a7c6b896706",
+        "original_commit_id": "8a8e7fbb89d2e7688829e3ae51e2e175107658b8",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Please declare `new_position` first i.e. `var new_position`\n",
+        "created_at": "2012-12-23T22:10:50Z",
+        "updated_at": "2012-12-24T19:55:52Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2496562",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/189",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2496562"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2496562"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/189"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2496564",
+        "pull_request_review_id": null,
+        "id": 2496564,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0OTY1NjQ=",
+        "diff_hunk": "@@ -66,24 +82,35 @@ var ChatView = Backbone.View.extend({\n           event.preventDefault();\n         }\n         keydownEnter = (event.keyCode === 13);\n+        var activeChat = irc.chatWindows.getActive();\n+        if (typeof activeChat !== 'undefined' && (event.keyCode == 38 || event.keyCode == 40)) {\n+          var direction = (event.keyCode == 38) ? -1 : 1,\n+              input_scrollback = activeChat.get('input_scrollback'),\n+              new_position = input_scrollback.index + direction;\n+          if (input_scrollback.index == null) { // Are we at the end of the list?\n+            if (direction == 1) return; // We can't scroll past the end of the list",
+        "path": "assets/js/views/chat.js",
+        "position": null,
+        "original_position": 53,
+        "commit_id": "5ba9c9d9e928c58fb99d65cec5cc4a7c6b896706",
+        "original_commit_id": "8a8e7fbb89d2e7688829e3ae51e2e175107658b8",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "please use `===` and on the line above\n",
+        "created_at": "2012-12-23T22:12:33Z",
+        "updated_at": "2012-12-24T19:55:52Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2496564",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/189",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2496564"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2496564"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/189"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2496569",
+        "pull_request_review_id": null,
+        "id": 2496569,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0OTY1Njk=",
+        "diff_hunk": "@@ -66,24 +82,35 @@ var ChatView = Backbone.View.extend({\n           event.preventDefault();\n         }\n         keydownEnter = (event.keyCode === 13);\n+        var activeChat = irc.chatWindows.getActive();\n+        if (typeof activeChat !== 'undefined' && (event.keyCode == 38 || event.keyCode == 40)) {\n+          var direction = (event.keyCode == 38) ? -1 : 1,\n+              input_scrollback = activeChat.get('input_scrollback'),\n+              new_position = input_scrollback.index + direction;",
+        "path": "assets/js/views/chat.js",
+        "position": null,
+        "original_position": 51,
+        "commit_id": "5ba9c9d9e928c58fb99d65cec5cc4a7c6b896706",
+        "original_commit_id": "8a8e7fbb89d2e7688829e3ae51e2e175107658b8",
+        "user": {
+            "login": "SpenserJ",
+            "id": 90011,
+            "node_id": "MDQ6VXNlcjkwMDEx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/90011?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/SpenserJ",
+            "html_url": "https://github.com/SpenserJ",
+            "followers_url": "https://api.github.com/users/SpenserJ/followers",
+            "following_url": "https://api.github.com/users/SpenserJ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/SpenserJ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/SpenserJ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/SpenserJ/subscriptions",
+            "organizations_url": "https://api.github.com/users/SpenserJ/orgs",
+            "repos_url": "https://api.github.com/users/SpenserJ/repos",
+            "events_url": "https://api.github.com/users/SpenserJ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/SpenserJ/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "That is actually a multi-line var declaration, hence the indentation level. It would be equivalent to\n\n``` javascripnt\nvar direction = (event.keyCode == 38) ? -1 : 1;\nvar input_scrollback = activeChat.get('input_scrollback'),\nvar new_position = input_scrollback.index + direction;\n```\n",
+        "created_at": "2012-12-23T22:14:34Z",
+        "updated_at": "2012-12-24T19:55:52Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2496569",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/189",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2496569"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2496569"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/189"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2496683",
+        "pull_request_review_id": null,
+        "id": 2496683,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0OTY2ODM=",
+        "diff_hunk": "@@ -66,24 +82,35 @@ var ChatView = Backbone.View.extend({\n           event.preventDefault();\n         }\n         keydownEnter = (event.keyCode === 13);\n+        var activeChat = irc.chatWindows.getActive();\n+        if (typeof activeChat !== 'undefined' && (event.keyCode == 38 || event.keyCode == 40)) {\n+          var direction = (event.keyCode == 38) ? -1 : 1,\n+              input_scrollback = activeChat.get('input_scrollback'),\n+              new_position = input_scrollback.index + direction;",
+        "path": "assets/js/views/chat.js",
+        "position": null,
+        "original_position": 51,
+        "commit_id": "5ba9c9d9e928c58fb99d65cec5cc4a7c6b896706",
+        "original_commit_id": "8a8e7fbb89d2e7688829e3ae51e2e175107658b8",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "good point I didn't noticed the `,`\n",
+        "created_at": "2012-12-23T23:29:24Z",
+        "updated_at": "2012-12-24T19:55:52Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2496683",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/189",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2496683"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2496683"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/189"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2499011",
+        "pull_request_review_id": null,
+        "id": 2499011,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0OTkwMTE=",
+        "diff_hunk": "@@ -36,16 +38,30 @@ var ChatView = Backbone.View.extend({\n   },\n \n   handleInput: function() {\n-    $('#chat-button').click( function(){\n-      var message = $('#chat-input').val();\n+    function sendMessage() {\n+      var message = $('#chat-input').val(),\n+          activeChat = irc.chatWindows.getActive();\n+      if (message.length == 0) return;\n+      // Save the message to our input_scrollback\n+      if (typeof activeChat !== 'undefined') {\n+        var input_scrollback = activeChat.get('input_scrollback');\n+        input_scrollback.items.push(message);\n+        input_scrollback.index = null;\n+        activeChat.set('input_scrollback', input_scrollback);\n+      }\n+      // Handle IRC commands\n       if (message.substr(0, 1) === '/') {\n         var commandText = message.substr(1).split(' ');\n         irc.commands.handle(commandText);\n       } else {\n+        // Send the message\n+        console.log(irc.chatWindows.getActive().get('name'));\n         irc.socket.emit('say', {target: irc.chatWindows.getActive().get('name'), message:message});\n       }\n       $('#chat-input').val('');\n-    });\n+      $('#chat-button').addClass('disabled');",
+        "path": "assets/js/views/chat.js",
+        "position": null,
+        "original_position": 37,
+        "commit_id": "5ba9c9d9e928c58fb99d65cec5cc4a7c6b896706",
+        "original_commit_id": "600123bcdf5b5e8914a0c02fbf7611a15891dedb",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is there a place that you remove this class?\n",
+        "created_at": "2012-12-24T19:45:01Z",
+        "updated_at": "2012-12-24T19:55:52Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2499011",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/189",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2499011"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2499011"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/189"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2499017",
+        "pull_request_review_id": null,
+        "id": 2499017,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0OTkwMTc=",
+        "diff_hunk": "@@ -36,16 +38,30 @@ var ChatView = Backbone.View.extend({\n   },\n \n   handleInput: function() {\n-    $('#chat-button').click( function(){\n-      var message = $('#chat-input').val();\n+    function sendMessage() {\n+      var message = $('#chat-input').val(),\n+          activeChat = irc.chatWindows.getActive();\n+      if (message.length == 0) return;\n+      // Save the message to our input_scrollback\n+      if (typeof activeChat !== 'undefined') {\n+        var input_scrollback = activeChat.get('input_scrollback');\n+        input_scrollback.items.push(message);\n+        input_scrollback.index = null;\n+        activeChat.set('input_scrollback', input_scrollback);\n+      }\n+      // Handle IRC commands\n       if (message.substr(0, 1) === '/') {\n         var commandText = message.substr(1).split(' ');\n         irc.commands.handle(commandText);\n       } else {\n+        // Send the message\n+        console.log(irc.chatWindows.getActive().get('name'));\n         irc.socket.emit('say', {target: irc.chatWindows.getActive().get('name'), message:message});\n       }\n       $('#chat-input').val('');\n-    });\n+      $('#chat-button').addClass('disabled');",
+        "path": "assets/js/views/chat.js",
+        "position": null,
+        "original_position": 37,
+        "commit_id": "5ba9c9d9e928c58fb99d65cec5cc4a7c6b896706",
+        "original_commit_id": "600123bcdf5b5e8914a0c02fbf7611a15891dedb",
+        "user": {
+            "login": "SpenserJ",
+            "id": 90011,
+            "node_id": "MDQ6VXNlcjkwMDEx",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/90011?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/SpenserJ",
+            "html_url": "https://github.com/SpenserJ",
+            "followers_url": "https://api.github.com/users/SpenserJ/followers",
+            "following_url": "https://api.github.com/users/SpenserJ/following{/other_user}",
+            "gists_url": "https://api.github.com/users/SpenserJ/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/SpenserJ/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/SpenserJ/subscriptions",
+            "organizations_url": "https://api.github.com/users/SpenserJ/orgs",
+            "repos_url": "https://api.github.com/users/SpenserJ/repos",
+            "events_url": "https://api.github.com/users/SpenserJ/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/SpenserJ/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "At the end of every [keyUp](https://github.com/SpenserJ/subway/blob/600123bcdf5b5e8914a0c02fbf7611a15891dedb/assets/js/views/chat.js#L165) we trigger [$('#chat-input').change(), ](https://github.com/SpenserJ/subway/blob/600123bcdf5b5e8914a0c02fbf7611a15891dedb/assets/js/views/chat.js#L71) which enables or disables the input based on whether there is actually content. Although I just noticed that this should call $('#chat-input').change() as well, so that so that all of the enable/disable code is in a single location.\n",
+        "created_at": "2012-12-24T19:49:54Z",
+        "updated_at": "2012-12-24T19:55:52Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2499017",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/189",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2499017"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/189#discussion_r2499017"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/189"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2498757",
+        "pull_request_review_id": null,
+        "id": 2498757,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI0OTg3NTc=",
+        "diff_hunk": "@@ -425,11 +425,11 @@ $(function() {\n   });\n \n   irc.commands.add('topic', function(args){\n-    if (args[1]) {\n-      irc.socket.emit('topic', {name: args[0], topic: args[1]});\n+    if (args[0].indexOf('#') == 0 || args[0].indexOf('&') == 0) {",
+        "path": "assets/js/client.js",
+        "position": null,
+        "original_position": 6,
+        "commit_id": "cd7ea223e10fcc5648f6224de4c25d29eaaa7dd4",
+        "original_commit_id": "51eaec4be1200bc726a90bc706e771cf6bb70bd0",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Just the same style comment: `===`, and maybe a comment on what this comparison is doing then it looks good\n",
+        "created_at": "2012-12-24T17:48:26Z",
+        "updated_at": "2012-12-24T19:59:18Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/194#discussion_r2498757",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/194",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2498757"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/194#discussion_r2498757"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/194"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2519599",
+        "pull_request_review_id": null,
+        "id": 2519599,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MTk1OTk=",
+        "diff_hunk": "@@ -62,7 +62,7 @@ var OverviewView = Backbone.View.extend({\n     \n     if (!server) {\n       $('#connect-server').closest('.control-group').addClass('error');\n-    }\n+    } ",
+        "path": "assets/js/views/overview.js",
+        "position": null,
+        "original_position": 14,
+        "commit_id": "5c2e492b878ee0761aa4bd1ae158b4d914ce09b0",
+        "original_commit_id": "37ee0500e3ffb6c9a116766d7e7c97d513971b3f",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Don't add whitespace here.\n",
+        "created_at": "2012-12-29T08:07:32Z",
+        "updated_at": "2012-12-29T13:27:05Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/195#discussion_r2519599",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/195",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2519599"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/195#discussion_r2519599"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/195"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2519600",
+        "pull_request_review_id": null,
+        "id": 2519600,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MTk2MDA=",
+        "diff_hunk": "@@ -48,7 +48,7 @@ var OverviewView = Backbone.View.extend({\n     event.preventDefault();\n     $('.error').removeClass('error');\n \n-    var server = $('#connect-server').val(),\n+    var server = $('#connect-server').val() || \"default\",",
+        "path": "assets/js/views/overview.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "5c2e492b878ee0761aa4bd1ae158b4d914ce09b0",
+        "original_commit_id": "37ee0500e3ffb6c9a116766d7e7c97d513971b3f",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We should stil require a server here, if there is a default specified maybe use a checkbox or something to indicate it.\n",
+        "created_at": "2012-12-29T08:08:38Z",
+        "updated_at": "2012-12-29T13:27:05Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/195#discussion_r2519600",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/195",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2519600"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/195#discussion_r2519600"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/195"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2519601",
+        "pull_request_review_id": null,
+        "id": 2519601,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MTk2MDE=",
+        "diff_hunk": "@@ -56,6 +57,9 @@ module.exports = function(socket, connections) {\n     if(current_user){\n       connection = connections[current_user.username];\n     }\n+    if ( data.server === undefined || data.server == 'default' ) {\n+\tdata.server = app.set('default_ircserver');",
+        "path": "lib/socket.js",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "5c2e492b878ee0761aa4bd1ae158b4d914ce09b0",
+        "original_commit_id": "37ee0500e3ffb6c9a116766d7e7c97d513971b3f",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Indentation here and on the next line.\n",
+        "created_at": "2012-12-29T08:09:25Z",
+        "updated_at": "2012-12-29T13:27:05Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/195#discussion_r2519601",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/195",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2519601"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/195#discussion_r2519601"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/195"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2519602",
+        "pull_request_review_id": null,
+        "id": 2519602,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MTk2MDI=",
+        "diff_hunk": "@@ -56,6 +57,9 @@ module.exports = function(socket, connections) {\n     if(current_user){\n       connection = connections[current_user.username];\n     }\n+    if ( data.server === undefined || data.server == 'default' ) {\n+\tdata.server = app.set('default_ircserver');",
+        "path": "lib/socket.js",
+        "position": null,
+        "original_position": 11,
+        "commit_id": "5c2e492b878ee0761aa4bd1ae158b4d914ce09b0",
+        "original_commit_id": "37ee0500e3ffb6c9a116766d7e7c97d513971b3f",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "`===` coding style\n",
+        "created_at": "2012-12-29T08:09:43Z",
+        "updated_at": "2012-12-29T13:27:06Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/195#discussion_r2519602",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/195",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2519602"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/195#discussion_r2519602"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/195"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2519930",
+        "pull_request_review_id": null,
+        "id": 2519930,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MTk5MzA=",
+        "diff_hunk": "@@ -48,7 +48,7 @@ var OverviewView = Backbone.View.extend({\n     event.preventDefault();\n     $('.error').removeClass('error');\n \n-    var server = $('#connect-server').val(),\n+    var server = $('#connect-server').val() || \"default\",",
+        "path": "assets/js/views/overview.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "5c2e492b878ee0761aa4bd1ae158b4d914ce09b0",
+        "original_commit_id": "37ee0500e3ffb6c9a116766d7e7c97d513971b3f",
+        "user": {
+            "login": "hoxca",
+            "id": 1823660,
+            "node_id": "MDQ6VXNlcjE4MjM2NjA=",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/1823660?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/hoxca",
+            "html_url": "https://github.com/hoxca",
+            "followers_url": "https://api.github.com/users/hoxca/followers",
+            "following_url": "https://api.github.com/users/hoxca/following{/other_user}",
+            "gists_url": "https://api.github.com/users/hoxca/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/hoxca/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/hoxca/subscriptions",
+            "organizations_url": "https://api.github.com/users/hoxca/orgs",
+            "repos_url": "https://api.github.com/users/hoxca/repos",
+            "events_url": "https://api.github.com/users/hoxca/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/hoxca/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "In fact, \"default\" is the trick i use to overcome the form validation, but we can make overloading of server with a different server value.\nThis will work until we have a mandatory default_ircserver in config.js.\n",
+        "created_at": "2012-12-29T13:16:18Z",
+        "updated_at": "2012-12-29T13:27:06Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/195#discussion_r2519930",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/195",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2519930"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/195#discussion_r2519930"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/195"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2872851",
+        "pull_request_review_id": null,
+        "id": 2872851,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NzI4NTE=",
+        "diff_hunk": "@@ -61,7 +61,10 @@ window.utils = {\n   },\n \n   mentions: function(text) {\n-    var re = new RegExp('\\\\b' + irc.me.get('nick') + '\\\\b', 'g');\n+    var escape = function(text) {",
+        "path": "assets/js/utils.js",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "f168b7e3730f3693f51614441834e13a27e350ff",
+        "original_commit_id": "f168b7e3730f3693f51614441834e13a27e350ff",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Do you need this function or could the underscore escape function work? http://underscorejs.org/#escape\n",
+        "created_at": "2013-02-04T05:07:08Z",
+        "updated_at": "2013-02-04T05:07:08Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/209#discussion_r2872851",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/209",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/2872851"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/209#discussion_r2872851"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/209"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4717867",
+        "pull_request_review_id": null,
+        "id": 4717867,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3MTc4Njc=",
+        "diff_hunk": "@@ -68,7 +68,46 @@ var ChatWindow = Backbone.Model.extend({\n       signal = true;\n     }\n     // All PMs & mentions\n-    if (signal) this.trigger('forMe', 'message');\n+    if (signal) {\n+      this.trigger('forMe', 'message');\n+\n+      // Chrome Desktop Notfication support.\n+      // Written by Maikel Wever (GitHub @maikelwever)\n+      // Only send notification if Chrome supports it,\n+      // and the page is hidden (to prevent annoyingness)\n+      if (window.webkitNotifications && ",
+        "path": "assets/js/models.js",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "6d49ee9ad91322c3e4175dafdc13c92cadf34143",
+        "original_commit_id": "da7af0d8cd159a0bb417917020339e3024c70385",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Could this be bound in a method that gets bound to the 'forMe' event?\n",
+        "created_at": "2013-06-17T04:09:05Z",
+        "updated_at": "2013-06-19T15:40:45Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4717867",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/249",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4717867"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4717867"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/249"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4717870",
+        "pull_request_review_id": null,
+        "id": 4717870,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3MTc4NzA=",
+        "diff_hunk": "@@ -68,7 +68,46 @@ var ChatWindow = Backbone.Model.extend({\n       signal = true;\n     }\n     // All PMs & mentions\n-    if (signal) this.trigger('forMe', 'message');\n+    if (signal) {\n+      this.trigger('forMe', 'message');\n+\n+      // Chrome Desktop Notfication support.\n+      // Written by Maikel Wever (GitHub @maikelwever)\n+      // Only send notification if Chrome supports it,\n+      // and the page is hidden (to prevent annoyingness)\n+      if (window.webkitNotifications && ",
+        "path": "assets/js/models.js",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "6d49ee9ad91322c3e4175dafdc13c92cadf34143",
+        "original_commit_id": "da7af0d8cd159a0bb417917020339e3024c70385",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Feels a little janky inside a huge if statement\n",
+        "created_at": "2013-06-17T04:09:18Z",
+        "updated_at": "2013-06-19T15:40:45Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4717870",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/249",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4717870"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4717870"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/249"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4717881",
+        "pull_request_review_id": null,
+        "id": 4717881,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3MTc4ODE=",
+        "diff_hunk": "@@ -68,7 +68,46 @@ var ChatWindow = Backbone.Model.extend({\n       signal = true;\n     }\n     // All PMs & mentions\n-    if (signal) this.trigger('forMe', 'message');\n+    if (signal) {\n+      this.trigger('forMe', 'message');\n+\n+      // Chrome Desktop Notfication support.\n+      // Written by Maikel Wever (GitHub @maikelwever)\n+      // Only send notification if Chrome supports it,\n+      // and the page is hidden (to prevent annoyingness)\n+      if (window.webkitNotifications && \n+            (document.webkitHidden == true || document.webkitHidden == undefined)",
+        "path": "assets/js/models.js",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "6d49ee9ad91322c3e4175dafdc13c92cadf34143",
+        "original_commit_id": "da7af0d8cd159a0bb417917020339e3024c70385",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "please use `===` - also I am not quite sure why you check `undefined`?  \n",
+        "created_at": "2013-06-17T04:11:23Z",
+        "updated_at": "2013-06-19T15:40:45Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4717881",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/249",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4717881"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4717881"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/249"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4717890",
+        "pull_request_review_id": null,
+        "id": 4717890,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3MTc4OTA=",
+        "diff_hunk": "@@ -68,7 +68,46 @@ var ChatWindow = Backbone.Model.extend({\n       signal = true;\n     }\n     // All PMs & mentions\n-    if (signal) this.trigger('forMe', 'message');\n+    if (signal) {\n+      this.trigger('forMe', 'message');\n+\n+      // Chrome Desktop Notfication support.\n+      // Written by Maikel Wever (GitHub @maikelwever)\n+      // Only send notification if Chrome supports it,\n+      // and the page is hidden (to prevent annoyingness)\n+      if (window.webkitNotifications && \n+            (document.webkitHidden == true || document.webkitHidden == undefined)\n+          ) {\n+        // Permissions should be granted in the settings window @ home\n+        // This should be done only once per domain\n+        if (window.webkitNotifications.checkPermission() == 0) {\n+\n+          // This builds the message title, according to the type of message.\n+          var messageTitle = \"Mention in \";",
+        "path": "assets/js/models.js",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "6d49ee9ad91322c3e4175dafdc13c92cadf34143",
+        "original_commit_id": "da7af0d8cd159a0bb417917020339e3024c70385",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "```\nvar messageTitle = _.isEqual(msg.attributes.type, \"pm\") ? \"PM from \" : \"Mention in \";\n```\n",
+        "created_at": "2013-06-17T04:13:29Z",
+        "updated_at": "2013-06-19T15:40:45Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4717890",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/249",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4717890"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4717890"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/249"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4717897",
+        "pull_request_review_id": null,
+        "id": 4717897,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3MTc4OTc=",
+        "diff_hunk": "@@ -68,7 +68,46 @@ var ChatWindow = Backbone.Model.extend({\n       signal = true;\n     }\n     // All PMs & mentions\n-    if (signal) this.trigger('forMe', 'message');\n+    if (signal) {\n+      this.trigger('forMe', 'message');\n+\n+      // Chrome Desktop Notfication support.\n+      // Written by Maikel Wever (GitHub @maikelwever)\n+      // Only send notification if Chrome supports it,\n+      // and the page is hidden (to prevent annoyingness)\n+      if (window.webkitNotifications && \n+            (document.webkitHidden == true || document.webkitHidden == undefined)\n+          ) {\n+        // Permissions should be granted in the settings window @ home\n+        // This should be done only once per domain\n+        if (window.webkitNotifications.checkPermission() == 0) {\n+\n+          // This builds the message title, according to the type of message.\n+          var messageTitle = \"Mention in \";\n+          if (msg.attributes.type == \"pm\") {\n+            messageTitle = \"PM from \";\n+          } \n+          messageTitle += msg.collection.channel.attributes.name;",
+        "path": "assets/js/models.js",
+        "position": null,
+        "original_position": 24,
+        "commit_id": "6d49ee9ad91322c3e4175dafdc13c92cadf34143",
+        "original_commit_id": "da7af0d8cd159a0bb417917020339e3024c70385",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "just use the backbone getter - its more idiomatic\n\n```\nmsg.collection.channel.get(\"name\")\n```\n",
+        "created_at": "2013-06-17T04:14:59Z",
+        "updated_at": "2013-06-19T15:40:45Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4717897",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/249",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4717897"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4717897"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/249"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4774835",
+        "pull_request_review_id": null,
+        "id": 4774835,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3NzQ4MzU=",
+        "diff_hunk": "@@ -68,7 +68,46 @@ var ChatWindow = Backbone.Model.extend({\n       signal = true;\n     }\n     // All PMs & mentions\n-    if (signal) this.trigger('forMe', 'message');\n+    if (signal) {\n+      this.trigger('forMe', 'message');\n+\n+      // Chrome Desktop Notfication support.\n+      // Written by Maikel Wever (GitHub @maikelwever)\n+      // Only send notification if Chrome supports it,\n+      // and the page is hidden (to prevent annoyingness)\n+      if (window.webkitNotifications && ",
+        "path": "assets/js/models.js",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "6d49ee9ad91322c3e4175dafdc13c92cadf34143",
+        "original_commit_id": "da7af0d8cd159a0bb417917020339e3024c70385",
+        "user": {
+            "login": "maikelwever",
+            "id": 1009019,
+            "node_id": "MDQ6VXNlcjEwMDkwMTk=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1009019?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/maikelwever",
+            "html_url": "https://github.com/maikelwever",
+            "followers_url": "https://api.github.com/users/maikelwever/followers",
+            "following_url": "https://api.github.com/users/maikelwever/following{/other_user}",
+            "gists_url": "https://api.github.com/users/maikelwever/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/maikelwever/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/maikelwever/subscriptions",
+            "organizations_url": "https://api.github.com/users/maikelwever/orgs",
+            "repos_url": "https://api.github.com/users/maikelwever/repos",
+            "events_url": "https://api.github.com/users/maikelwever/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/maikelwever/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "What would be the best place to do so? I started doing this in ChatApplicationView, because more is bound there, but how do I access the message there? Should I create a new event for this, and send the message with it?\n",
+        "created_at": "2013-06-19T15:19:58Z",
+        "updated_at": "2013-06-19T15:40:45Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4774835",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/249",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4774835"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4774835"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/249"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4774857",
+        "pull_request_review_id": null,
+        "id": 4774857,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3NzQ4NTc=",
+        "diff_hunk": "@@ -68,7 +68,46 @@ var ChatWindow = Backbone.Model.extend({\n       signal = true;\n     }\n     // All PMs & mentions\n-    if (signal) this.trigger('forMe', 'message');\n+    if (signal) {\n+      this.trigger('forMe', 'message');\n+\n+      // Chrome Desktop Notfication support.\n+      // Written by Maikel Wever (GitHub @maikelwever)\n+      // Only send notification if Chrome supports it,\n+      // and the page is hidden (to prevent annoyingness)\n+      if (window.webkitNotifications && \n+            (document.webkitHidden == true || document.webkitHidden == undefined)",
+        "path": "assets/js/models.js",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "6d49ee9ad91322c3e4175dafdc13c92cadf34143",
+        "original_commit_id": "da7af0d8cd159a0bb417917020339e3024c70385",
+        "user": {
+            "login": "maikelwever",
+            "id": 1009019,
+            "node_id": "MDQ6VXNlcjEwMDkwMTk=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1009019?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/maikelwever",
+            "html_url": "https://github.com/maikelwever",
+            "followers_url": "https://api.github.com/users/maikelwever/followers",
+            "following_url": "https://api.github.com/users/maikelwever/following{/other_user}",
+            "gists_url": "https://api.github.com/users/maikelwever/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/maikelwever/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/maikelwever/subscriptions",
+            "organizations_url": "https://api.github.com/users/maikelwever/orgs",
+            "repos_url": "https://api.github.com/users/maikelwever/repos",
+            "events_url": "https://api.github.com/users/maikelwever/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/maikelwever/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Undefined check is to make sure if there is no webkitHidden support, the message always shows instead of never.\n",
+        "created_at": "2013-06-19T15:20:43Z",
+        "updated_at": "2013-06-19T15:40:45Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4774857",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/249",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4774857"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4774857"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/249"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4775392",
+        "pull_request_review_id": null,
+        "id": 4775392,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3NzUzOTI=",
+        "diff_hunk": "@@ -68,7 +68,46 @@ var ChatWindow = Backbone.Model.extend({\n       signal = true;\n     }\n     // All PMs & mentions\n-    if (signal) this.trigger('forMe', 'message');\n+    if (signal) {\n+      this.trigger('forMe', 'message');\n+\n+      // Chrome Desktop Notfication support.\n+      // Written by Maikel Wever (GitHub @maikelwever)\n+      // Only send notification if Chrome supports it,\n+      // and the page is hidden (to prevent annoyingness)\n+      if (window.webkitNotifications && \n+            (document.webkitHidden == true || document.webkitHidden == undefined)\n+          ) {\n+        // Permissions should be granted in the settings window @ home\n+        // This should be done only once per domain\n+        if (window.webkitNotifications.checkPermission() == 0) {\n+\n+          // This builds the message title, according to the type of message.\n+          var messageTitle = \"Mention in \";\n+          if (msg.attributes.type == \"pm\") {\n+            messageTitle = \"PM from \";\n+          } \n+          messageTitle += msg.collection.channel.attributes.name;",
+        "path": "assets/js/models.js",
+        "position": null,
+        "original_position": 24,
+        "commit_id": "6d49ee9ad91322c3e4175dafdc13c92cadf34143",
+        "original_commit_id": "da7af0d8cd159a0bb417917020339e3024c70385",
+        "user": {
+            "login": "maikelwever",
+            "id": 1009019,
+            "node_id": "MDQ6VXNlcjEwMDkwMTk=",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/1009019?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/maikelwever",
+            "html_url": "https://github.com/maikelwever",
+            "followers_url": "https://api.github.com/users/maikelwever/followers",
+            "following_url": "https://api.github.com/users/maikelwever/following{/other_user}",
+            "gists_url": "https://api.github.com/users/maikelwever/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/maikelwever/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/maikelwever/subscriptions",
+            "organizations_url": "https://api.github.com/users/maikelwever/orgs",
+            "repos_url": "https://api.github.com/users/maikelwever/repos",
+            "events_url": "https://api.github.com/users/maikelwever/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/maikelwever/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Never used backbone before, thanks for the tip.\n",
+        "created_at": "2013-06-19T15:39:12Z",
+        "updated_at": "2013-06-19T15:40:45Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4775392",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/249",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/4775392"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/249#discussion_r4775392"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/249"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/8988589",
+        "pull_request_review_id": null,
+        "id": 8988589,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5ODg1ODk=",
+        "diff_hunk": "@@ -10,7 +10,7 @@ html\n \n     script\n       var ENV = '#{env}',\n-          PORT = #{port};\n+          PORT = document.location.port;",
+        "path": "views/layout.jade",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "945f05f28e8e55ba1592bc60b0721822b90675ca",
+        "original_commit_id": "26bff47554e3a4e37c56b9bd2447f56e5219c26d",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I would rather this be:\n\n```\nPORT = #{port} || document.location.port\n```\n\nThat way you can just set the `client_port` to null and it will fallback to use the port of the document\n",
+        "created_at": "2014-01-18T18:13:05Z",
+        "updated_at": "2014-01-18T20:49:50Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/286#discussion_r8988589",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/286",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/8988589"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/286#discussion_r8988589"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/286"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/8989073",
+        "pull_request_review_id": null,
+        "id": 8989073,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5ODkwNzM=",
+        "diff_hunk": "@@ -10,7 +10,7 @@ html\n \n     script\n       var ENV = '#{env}',\n-          PORT = #{port};\n+          PORT = document.location.port;",
+        "path": "views/layout.jade",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "945f05f28e8e55ba1592bc60b0721822b90675ca",
+        "original_commit_id": "26bff47554e3a4e37c56b9bd2447f56e5219c26d",
+        "user": {
+            "login": "BYK",
+            "id": 126780,
+            "node_id": "MDQ6VXNlcjEyNjc4MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/126780?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/BYK",
+            "html_url": "https://github.com/BYK",
+            "followers_url": "https://api.github.com/users/BYK/followers",
+            "following_url": "https://api.github.com/users/BYK/following{/other_user}",
+            "gists_url": "https://api.github.com/users/BYK/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/BYK/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/BYK/subscriptions",
+            "organizations_url": "https://api.github.com/users/BYK/orgs",
+            "repos_url": "https://api.github.com/users/BYK/repos",
+            "events_url": "https://api.github.com/users/BYK/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/BYK/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I disagree since we always bind the socket.io server to the port where we serve the files, thus `client_ports` is actually redundant after this change.\n\nWhat do you think?\n",
+        "created_at": "2014-01-18T20:12:06Z",
+        "updated_at": "2014-01-18T20:49:50Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/286#discussion_r8989073",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/286",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/8989073"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/286#discussion_r8989073"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/286"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/8989163",
+        "pull_request_review_id": null,
+        "id": 8989163,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5ODkxNjM=",
+        "diff_hunk": "@@ -10,7 +10,7 @@ html\n \n     script\n       var ENV = '#{env}',\n-          PORT = #{port};\n+          PORT = document.location.port;",
+        "path": "views/layout.jade",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "945f05f28e8e55ba1592bc60b0721822b90675ca",
+        "original_commit_id": "26bff47554e3a4e37c56b9bd2447f56e5219c26d",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "If this is the case then the pull request should remove `client_port` as well from `webserver.js`\n",
+        "created_at": "2014-01-18T20:28:37Z",
+        "updated_at": "2014-01-18T20:49:50Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/286#discussion_r8989163",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/286",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/8989163"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/286#discussion_r8989163"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/286"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/8989177",
+        "pull_request_review_id": null,
+        "id": 8989177,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDg5ODkxNzc=",
+        "diff_hunk": "@@ -10,7 +10,7 @@ html\n \n     script\n       var ENV = '#{env}',\n-          PORT = #{port};\n+          PORT = document.location.port;",
+        "path": "views/layout.jade",
+        "position": null,
+        "original_position": 5,
+        "commit_id": "945f05f28e8e55ba1592bc60b0721822b90675ca",
+        "original_commit_id": "26bff47554e3a4e37c56b9bd2447f56e5219c26d",
+        "user": {
+            "login": "BYK",
+            "id": 126780,
+            "node_id": "MDQ6VXNlcjEyNjc4MA==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/126780?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/BYK",
+            "html_url": "https://github.com/BYK",
+            "followers_url": "https://api.github.com/users/BYK/followers",
+            "following_url": "https://api.github.com/users/BYK/following{/other_user}",
+            "gists_url": "https://api.github.com/users/BYK/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/BYK/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/BYK/subscriptions",
+            "organizations_url": "https://api.github.com/users/BYK/orgs",
+            "repos_url": "https://api.github.com/users/BYK/repos",
+            "events_url": "https://api.github.com/users/BYK/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/BYK/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Agreed. Let me look out for more clean-up opportunities and the nupdate the PR.\n",
+        "created_at": "2014-01-18T20:30:32Z",
+        "updated_at": "2014-01-18T20:49:50Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/286#discussion_r8989177",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/286",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/8989177"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/286#discussion_r8989177"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/286"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/16367507",
+        "pull_request_review_id": null,
+        "id": 16367507,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MzY3NTA3",
+        "diff_hunk": "@@ -64,9 +29,9 @@ app.components.message_input = function() {\n \n         // Filter our channels users to the ones that start with our\n         // partial match\n-        var _this = this;",
+        "path": "src/components/app/messageInput.jsx",
+        "position": null,
+        "original_position": 64,
+        "commit_id": "62662352374dabbe9f0b8c0d5e6f73c80a905413",
+        "original_commit_id": "086548aac2d4ff834acf98f6a36b7bb4f6fd6623",
+        "user": {
+            "login": "thedjpetersen",
+            "id": 237899,
+            "node_id": "MDQ6VXNlcjIzNzg5OQ==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/237899?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/thedjpetersen",
+            "html_url": "https://github.com/thedjpetersen",
+            "followers_url": "https://api.github.com/users/thedjpetersen/followers",
+            "following_url": "https://api.github.com/users/thedjpetersen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/thedjpetersen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/thedjpetersen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/thedjpetersen/subscriptions",
+            "organizations_url": "https://api.github.com/users/thedjpetersen/orgs",
+            "repos_url": "https://api.github.com/users/thedjpetersen/repos",
+            "events_url": "https://api.github.com/users/thedjpetersen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/thedjpetersen/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Let's keep this convention - it's used other places in the project and I would like to keep the consistency.\n",
+        "created_at": "2014-08-18T17:17:01Z",
+        "updated_at": "2014-08-20T08:59:29Z",
+        "html_url": "https://github.com/thedjpetersen/subway/pull/358#discussion_r16367507",
+        "pull_request_url": "https://api.github.com/repos/thedjpetersen/subway/pulls/358",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/comments/16367507"
+            },
+            "html": {
+                "href": "https://github.com/thedjpetersen/subway/pull/358#discussion_r16367507"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/thedjpetersen/subway/pulls/358"
+            }
+        }
+    }
+]

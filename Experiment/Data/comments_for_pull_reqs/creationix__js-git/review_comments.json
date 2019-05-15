@@ -1,0 +1,1178 @@
+[
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347495",
+        "pull_request_review_id": null,
+        "id": 12347495,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzQ3NDk1",
+        "diff_hunk": "@@ -0,0 +1,71 @@\n+\"use strict\";\n+var nodeFs = require(\"fs\");\n+var nodePath = require(\"path\");\n+var mkdirp = require(\"mkdirp\");\n+var FsDb = require(\"./fs-db\");\n+\n+module.exports = function (repo) {\n+  FsDb(repo, fs);\n+};\n+\n+var fs = {};\n+fs.readFile = readFile;\n+fs.readChunk = readChunk;\n+fs.writeFile = writeFile;\n+fs.readDir = readDir;\n+\n+function readFile(path, callback) {\n+  nodeFs.readFile(path, callback);",
+        "path": "mixins/node-db.js",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "original_commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This alone isn't enough.  The abstract readFile function must `callback()` when the file doesn't exist.  Node will emit an ENOENT error and confuse js-git.\n\nSee how I implemented this in https://gist.github.com/creationix/cf498033db3d6f8c4949\n",
+        "created_at": "2014-05-06T20:42:06Z",
+        "updated_at": "2014-05-06T20:42:06Z",
+        "html_url": "https://github.com/creationix/js-git/pull/97#discussion_r12347495",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/97",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347495"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/97#discussion_r12347495"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347511",
+        "pull_request_review_id": null,
+        "id": 12347511,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzQ3NTEx",
+        "diff_hunk": "@@ -0,0 +1,71 @@\n+\"use strict\";\n+var nodeFs = require(\"fs\");\n+var nodePath = require(\"path\");\n+var mkdirp = require(\"mkdirp\");\n+var FsDb = require(\"./fs-db\");\n+\n+module.exports = function (repo) {\n+  FsDb(repo, fs);\n+};\n+\n+var fs = {};\n+fs.readFile = readFile;\n+fs.readChunk = readChunk;\n+fs.writeFile = writeFile;\n+fs.readDir = readDir;\n+\n+function readFile(path, callback) {\n+  nodeFs.readFile(path, callback);\n+}\n+\n+function readChunk(path, start, end, callback) {\n+  var stream = nodeFs.createReadStream(path, {\n+    start: start,\n+    end: end - 1\n+  });\n+  var chunks = [];\n+  stream.on(\"readable\", function () {\n+    var chunk = stream.read();\n+    if (chunk === null) {\n+      callback(null, join(chunks));\n+    } else {\n+      chunks.push(chunk);\n+    }\n+  });\n+  stream.on(\"error\", function (err) {\n+    callback(err);",
+        "path": "mixins/node-db.js",
+        "position": 36,
+        "original_position": 36,
+        "commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "original_commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Same here, check for ENOENT errors and `callback()` in that case.\n",
+        "created_at": "2014-05-06T20:42:27Z",
+        "updated_at": "2014-05-06T20:42:27Z",
+        "html_url": "https://github.com/creationix/js-git/pull/97#discussion_r12347511",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/97",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347511"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/97#discussion_r12347511"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347536",
+        "pull_request_review_id": null,
+        "id": 12347536,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzQ3NTM2",
+        "diff_hunk": "@@ -0,0 +1,71 @@\n+\"use strict\";\n+var nodeFs = require(\"fs\");\n+var nodePath = require(\"path\");\n+var mkdirp = require(\"mkdirp\");\n+var FsDb = require(\"./fs-db\");\n+\n+module.exports = function (repo) {\n+  FsDb(repo, fs);\n+};\n+\n+var fs = {};\n+fs.readFile = readFile;\n+fs.readChunk = readChunk;\n+fs.writeFile = writeFile;\n+fs.readDir = readDir;\n+\n+function readFile(path, callback) {\n+  nodeFs.readFile(path, callback);\n+}\n+\n+function readChunk(path, start, end, callback) {\n+  var stream = nodeFs.createReadStream(path, {\n+    start: start,\n+    end: end - 1\n+  });\n+  var chunks = [];\n+  stream.on(\"readable\", function () {\n+    var chunk = stream.read();\n+    if (chunk === null) {\n+      callback(null, join(chunks));\n+    } else {\n+      chunks.push(chunk);\n+    }\n+  });\n+  stream.on(\"error\", function (err) {\n+    callback(err);\n+  });\n+}\n+\n+function writeFile(path, binary, callback) {\n+  mkdirp(nodePath.dirname(path), function (err) {\n+    if (err) callback(err);\n+    nodeFs.writeFile(path, binary, callback);\n+  });\n+}\n+\n+function readDir(path, callback) {\n+  nodeFs.readdir(path, callback);\n+}\n+\n+function join(buffers) {",
+        "path": "mixins/node-db.js",
+        "position": 51,
+        "original_position": 51,
+        "commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "original_commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is built-in to node as `Buffer.concat`.\n",
+        "created_at": "2014-05-06T20:43:02Z",
+        "updated_at": "2014-05-06T20:43:02Z",
+        "html_url": "https://github.com/creationix/js-git/pull/97#discussion_r12347536",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/97",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347536"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/97#discussion_r12347536"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347560",
+        "pull_request_review_id": null,
+        "id": 12347560,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzQ3NTYw",
+        "diff_hunk": "@@ -0,0 +1,71 @@\n+\"use strict\";\n+var nodeFs = require(\"fs\");\n+var nodePath = require(\"path\");\n+var mkdirp = require(\"mkdirp\");\n+var FsDb = require(\"./fs-db\");\n+\n+module.exports = function (repo) {\n+  FsDb(repo, fs);\n+};\n+\n+var fs = {};\n+fs.readFile = readFile;\n+fs.readChunk = readChunk;\n+fs.writeFile = writeFile;\n+fs.readDir = readDir;\n+\n+function readFile(path, callback) {\n+  nodeFs.readFile(path, callback);\n+}\n+\n+function readChunk(path, start, end, callback) {\n+  var stream = nodeFs.createReadStream(path, {\n+    start: start,\n+    end: end - 1\n+  });\n+  var chunks = [];\n+  stream.on(\"readable\", function () {\n+    var chunk = stream.read();\n+    if (chunk === null) {\n+      callback(null, join(chunks));\n+    } else {\n+      chunks.push(chunk);\n+    }\n+  });\n+  stream.on(\"error\", function (err) {\n+    callback(err);\n+  });\n+}\n+\n+function writeFile(path, binary, callback) {\n+  mkdirp(nodePath.dirname(path), function (err) {\n+    if (err) callback(err);\n+    nodeFs.writeFile(path, binary, callback);\n+  });\n+}\n+\n+function readDir(path, callback) {\n+  nodeFs.readdir(path, callback);",
+        "path": "mixins/node-db.js",
+        "position": 48,
+        "original_position": 48,
+        "commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "original_commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Need to check for ENOENT and `callback()`.\n",
+        "created_at": "2014-05-06T20:43:33Z",
+        "updated_at": "2014-05-06T20:43:33Z",
+        "html_url": "https://github.com/creationix/js-git/pull/97#discussion_r12347560",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/97",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347560"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/97#discussion_r12347560"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347597",
+        "pull_request_review_id": null,
+        "id": 12347597,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzQ3NTk3",
+        "diff_hunk": "@@ -12,6 +12,7 @@ var pathJoin = require('pathjoin');\n // - readFile(path) => binary\n // - readChunk(path, start, end) => binary\n // - writeFile(path, binary) =>\n+//   Must also make every directory up to parent of path.",
+        "path": "mixins/fs-db.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "original_commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is great, we should also add a note that the read functions should all `callback()` in case the file doesn't exist instead of emit an error as is default in node.js.\n",
+        "created_at": "2014-05-06T20:44:28Z",
+        "updated_at": "2014-05-06T20:44:28Z",
+        "html_url": "https://github.com/creationix/js-git/pull/97#discussion_r12347597",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/97",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347597"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/97#discussion_r12347597"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347657",
+        "pull_request_review_id": null,
+        "id": 12347657,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzQ3NjU3",
+        "diff_hunk": "@@ -19,6 +22,8 @@\n     \"bodec\": \"git://github.com/creationix/bodec.git\",\n     \"pathjoin\": \"git://github.com/creationix/pathjoin.git\",\n     \"git-sha1\": \"git://github.com/creationix/git-sha1.git\",\n-    \"pako\": \"git://github.com/nodeca/pako.git\"\n+    \"pako\": \"git://github.com/nodeca/pako.git\",\n+    \"pathjoin\": \"0.0.1\",",
+        "path": "package.json",
+        "position": 18,
+        "original_position": 18,
+        "commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "original_commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I already added pathjoin a few lines up.  Deps need to stay as git urls here for compat. reasons for now.\n",
+        "created_at": "2014-05-06T20:45:29Z",
+        "updated_at": "2014-05-06T20:45:29Z",
+        "html_url": "https://github.com/creationix/js-git/pull/97#discussion_r12347657",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/97",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12347657"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/97#discussion_r12347657"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12350593",
+        "pull_request_review_id": null,
+        "id": 12350593,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzUwNTkz",
+        "diff_hunk": "@@ -0,0 +1,71 @@\n+\"use strict\";\n+var nodeFs = require(\"fs\");\n+var nodePath = require(\"path\");\n+var mkdirp = require(\"mkdirp\");\n+var FsDb = require(\"./fs-db\");\n+\n+module.exports = function (repo) {\n+  FsDb(repo, fs);\n+};\n+\n+var fs = {};\n+fs.readFile = readFile;\n+fs.readChunk = readChunk;\n+fs.writeFile = writeFile;\n+fs.readDir = readDir;\n+\n+function readFile(path, callback) {\n+  nodeFs.readFile(path, callback);\n+}\n+\n+function readChunk(path, start, end, callback) {\n+  var stream = nodeFs.createReadStream(path, {\n+    start: start,\n+    end: end - 1\n+  });\n+  var chunks = [];\n+  stream.on(\"readable\", function () {\n+    var chunk = stream.read();\n+    if (chunk === null) {\n+      callback(null, join(chunks));\n+    } else {\n+      chunks.push(chunk);\n+    }\n+  });\n+  stream.on(\"error\", function (err) {\n+    callback(err);\n+  });\n+}\n+\n+function writeFile(path, binary, callback) {\n+  mkdirp(nodePath.dirname(path), function (err) {\n+    if (err) callback(err);\n+    nodeFs.writeFile(path, binary, callback);\n+  });\n+}\n+\n+function readDir(path, callback) {\n+  nodeFs.readdir(path, callback);",
+        "path": "mixins/node-db.js",
+        "position": 48,
+        "original_position": 48,
+        "commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "original_commit_id": "92a94b28cf963e8318fde84a61b9912e15ac4eaa",
+        "user": {
+            "login": "kriskowal",
+            "id": 60294,
+            "node_id": "MDQ6VXNlcjYwMjk0",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/60294?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kriskowal",
+            "html_url": "https://github.com/kriskowal",
+            "followers_url": "https://api.github.com/users/kriskowal/followers",
+            "following_url": "https://api.github.com/users/kriskowal/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kriskowal/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kriskowal/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kriskowal/subscriptions",
+            "organizations_url": "https://api.github.com/users/kriskowal/orgs",
+            "repos_url": "https://api.github.com/users/kriskowal/repos",
+            "events_url": "https://api.github.com/users/kriskowal/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kriskowal/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "To be clear, you want no error and no value for readDir, readFile, and readChunk, right?\n",
+        "created_at": "2014-05-06T21:35:00Z",
+        "updated_at": "2014-05-06T21:35:00Z",
+        "html_url": "https://github.com/creationix/js-git/pull/97#discussion_r12350593",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/97",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12350593"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/97#discussion_r12350593"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/97"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12357129",
+        "pull_request_review_id": null,
+        "id": 12357129,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzU3MTI5",
+        "diff_hunk": "@@ -0,0 +1,46 @@\n+\n+# Filesystem Git Database\n+\n+The `js-git/mixins/fs-db` mixin provides the `loadAs`, `saveAs`, `loadRaw`,\n+`saveRaw`, `readRef`, and `updateRef` functions and consumes a file system\n+interface.\n+The file system interface must implement `readFile`, `readChunk`, `writeFile`,\n+and `readDir`.\n+There are already several implementations of the file system adapter but there\n+are potentially many others.\n+\n+-   `js-git/mixins/mem-db`",
+        "path": "doc/mixins/fs-db.md",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "fecb23dce5ed0ccab18cb95d141e2694dc8b2763",
+        "original_commit_id": "54325b0ab746d0049584b03223a9a14175904577",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "To me this reads like these three mixins implement the fs adapter.\n\nWhat they have in common is they implement more-or-less the same set of mixins which has nothing to do with the abstract fs interface.\n",
+        "created_at": "2014-05-07T00:29:11Z",
+        "updated_at": "2014-05-07T04:24:11Z",
+        "html_url": "https://github.com/creationix/js-git/pull/98#discussion_r12357129",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/98",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12357129"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/98#discussion_r12357129"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12357133",
+        "pull_request_review_id": null,
+        "id": 12357133,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzU3MTMz",
+        "diff_hunk": "@@ -0,0 +1,46 @@\n+\n+# Filesystem Git Database\n+\n+The `js-git/mixins/fs-db` mixin provides the `loadAs`, `saveAs`, `loadRaw`,\n+`saveRaw`, `readRef`, and `updateRef` functions and consumes a file system\n+interface.\n+The file system interface must implement `readFile`, `readChunk`, `writeFile`,\n+and `readDir`.\n+There are already several implementations of the file system adapter but there\n+are potentially many others.\n+\n+-   `js-git/mixins/mem-db`\n+-   `git-fs-db/mixins/bare-db`\n+-   `git-chrome-db/mixins/bare-db`\n+\n+All of these implement the same interface.\n+By convention `=>` indicates the type of the value argument to the implied\n+nodeback argument and `binary` stands for whatever binary representation is\n+appropriate for the underlying platform.\n+For Node.js, binary is a Buffer.",
+        "path": "doc/mixins/fs-db.md",
+        "position": null,
+        "original_position": 20,
+        "commit_id": "fecb23dce5ed0ccab18cb95d141e2694dc8b2763",
+        "original_commit_id": "54325b0ab746d0049584b03223a9a14175904577",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Maybe add a note that for Browser it's `Uint8Array`\n",
+        "created_at": "2014-05-07T00:29:40Z",
+        "updated_at": "2014-05-07T04:24:11Z",
+        "html_url": "https://github.com/creationix/js-git/pull/98#discussion_r12357133",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/98",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12357133"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/98#discussion_r12357133"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12357187",
+        "pull_request_review_id": null,
+        "id": 12357187,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzU3MTg3",
+        "diff_hunk": "@@ -0,0 +1,46 @@\n+\n+# Filesystem Git Database\n+\n+The `js-git/mixins/fs-db` mixin provides the `loadAs`, `saveAs`, `loadRaw`,\n+`saveRaw`, `readRef`, and `updateRef` functions and consumes a file system\n+interface.\n+The file system interface must implement `readFile`, `readChunk`, `writeFile`,\n+and `readDir`.\n+There are already several implementations of the file system adapter but there\n+are potentially many others.\n+\n+-   `js-git/mixins/mem-db`\n+-   `git-fs-db/mixins/bare-db`\n+-   `git-chrome-db/mixins/bare-db`\n+\n+All of these implement the same interface.\n+By convention `=>` indicates the type of the value argument to the implied\n+nodeback argument and `binary` stands for whatever binary representation is\n+appropriate for the underlying platform.\n+For Node.js, binary is a Buffer.\n+\n+## readFile(path) => binary\n+\n+Reads the entirety of the file at the given path and produces the binary.\n+If the file does not exist, readFile provides `undefined` instead.\n+\n+## readChunk(path, start, end) => binary\n+\n+Reads a byte range of the file at the given path.\n+The byte range is a half open interval, including the byte at the initial index,\n+and excluding the byte at the terminal index, such that the end minus the start\n+is the length of the resulting binary data.\n+If the file does not exist, readChunk provides `undefined` instead.\n+\n+## writeFile(path, binary)",
+        "path": "doc/mixins/fs-db.md",
+        "position": null,
+        "original_position": 35,
+        "commit_id": "fecb23dce5ed0ccab18cb95d141e2694dc8b2763",
+        "original_commit_id": "54325b0ab746d0049584b03223a9a14175904577",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "My convention is to put a trailing `=>` after this to signify this is a non-blocking function.\n\nThough technically none of these are expected to return continuables and can make the callback required.\n\nSo in the case of the fs interface (not for general js-git functions), we can document as node-style callbacks.\n",
+        "created_at": "2014-05-07T00:31:51Z",
+        "updated_at": "2014-05-07T04:24:11Z",
+        "html_url": "https://github.com/creationix/js-git/pull/98#discussion_r12357187",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/98",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12357187"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/98#discussion_r12357187"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12357266",
+        "pull_request_review_id": null,
+        "id": 12357266,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzU3MjY2",
+        "diff_hunk": "@@ -10,9 +10,13 @@ var pathJoin = require('pathjoin');\n \n // The fs object has the following interface:\n // - readFile(path) => binary\n+//   Must also call callback() with no arguments if the file does not exist.",
+        "path": "mixins/fs-db.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "fecb23dce5ed0ccab18cb95d141e2694dc8b2763",
+        "original_commit_id": "54325b0ab746d0049584b03223a9a14175904577",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "especially since we're talking about `callback` here, we should document in `(path, callback)` form instead of `(path) =>` form?\n\nAs mentioned above, this fs interface isn't required to return continuables when the callback is omitted like all public js-git APIs are.\n",
+        "created_at": "2014-05-07T00:34:54Z",
+        "updated_at": "2014-05-07T04:24:11Z",
+        "html_url": "https://github.com/creationix/js-git/pull/98#discussion_r12357266",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/98",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12357266"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/98#discussion_r12357266"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12357293",
+        "pull_request_review_id": null,
+        "id": 12357293,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzU3Mjkz",
+        "diff_hunk": "@@ -0,0 +1 @@\n+/node_modules",
+        "path": ".gitignore",
+        "position": null,
+        "original_position": 1,
+        "commit_id": "fecb23dce5ed0ccab18cb95d141e2694dc8b2763",
+        "original_commit_id": "54325b0ab746d0049584b03223a9a14175904577",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I'd rather not have this in this repo since I do all js-git development in tedit where .gitignore makes no sense.  But if you think it's worthwhile for other contributors, I'll let it stay.\n",
+        "created_at": "2014-05-07T00:35:56Z",
+        "updated_at": "2014-05-07T04:24:11Z",
+        "html_url": "https://github.com/creationix/js-git/pull/98#discussion_r12357293",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/98",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12357293"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/98#discussion_r12357293"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12360517",
+        "pull_request_review_id": null,
+        "id": 12360517,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzYwNTE3",
+        "diff_hunk": "@@ -0,0 +1,46 @@\n+\n+# Filesystem Git Database\n+\n+The `js-git/mixins/fs-db` mixin provides the `loadAs`, `saveAs`, `loadRaw`,\n+`saveRaw`, `readRef`, and `updateRef` functions and consumes a file system\n+interface.\n+The file system interface must implement `readFile`, `readChunk`, `writeFile`,\n+and `readDir`.\n+There are already several implementations of the file system adapter but there\n+are potentially many others.\n+\n+-   `js-git/mixins/mem-db`",
+        "path": "doc/mixins/fs-db.md",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "fecb23dce5ed0ccab18cb95d141e2694dc8b2763",
+        "original_commit_id": "54325b0ab746d0049584b03223a9a14175904577",
+        "user": {
+            "login": "kriskowal",
+            "id": 60294,
+            "node_id": "MDQ6VXNlcjYwMjk0",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/60294?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kriskowal",
+            "html_url": "https://github.com/kriskowal",
+            "followers_url": "https://api.github.com/users/kriskowal/followers",
+            "following_url": "https://api.github.com/users/kriskowal/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kriskowal/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kriskowal/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kriskowal/subscriptions",
+            "organizations_url": "https://api.github.com/users/kriskowal/orgs",
+            "repos_url": "https://api.github.com/users/kriskowal/repos",
+            "events_url": "https://api.github.com/users/kriskowal/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kriskowal/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Proposing:\n\n> There are already several implementations of the file system interface that the\n> file system adapter uses, but there are potentially many others.\n",
+        "created_at": "2014-05-07T03:39:29Z",
+        "updated_at": "2014-05-07T04:24:11Z",
+        "html_url": "https://github.com/creationix/js-git/pull/98#discussion_r12360517",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/98",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12360517"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/98#discussion_r12360517"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12360613",
+        "pull_request_review_id": null,
+        "id": 12360613,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzYwNjEz",
+        "diff_hunk": "@@ -10,9 +10,13 @@ var pathJoin = require('pathjoin');\n \n // The fs object has the following interface:\n // - readFile(path) => binary\n+//   Must also call callback() with no arguments if the file does not exist.",
+        "path": "mixins/fs-db.js",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "fecb23dce5ed0ccab18cb95d141e2694dc8b2763",
+        "original_commit_id": "54325b0ab746d0049584b03223a9a14175904577",
+        "user": {
+            "login": "kriskowal",
+            "id": 60294,
+            "node_id": "MDQ6VXNlcjYwMjk0",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/60294?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kriskowal",
+            "html_url": "https://github.com/kriskowal",
+            "followers_url": "https://api.github.com/users/kriskowal/followers",
+            "following_url": "https://api.github.com/users/kriskowal/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kriskowal/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kriskowal/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kriskowal/subscriptions",
+            "organizations_url": "https://api.github.com/users/kriskowal/orgs",
+            "repos_url": "https://api.github.com/users/kriskowal/repos",
+            "events_url": "https://api.github.com/users/kriskowal/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kriskowal/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think the abbreviation is still sensible. The alternative is:\n\n```\n// - readFile(path, callback(error, binary))\n```\n\nAnd you might consider using JSDoc / Google Closure Compiler compatible type annotations like `Array.<Binary>`.\n",
+        "created_at": "2014-05-07T03:47:45Z",
+        "updated_at": "2014-05-07T04:24:11Z",
+        "html_url": "https://github.com/creationix/js-git/pull/98#discussion_r12360613",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/98",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12360613"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/98#discussion_r12360613"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12360670",
+        "pull_request_review_id": null,
+        "id": 12360670,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyMzYwNjcw",
+        "diff_hunk": "@@ -0,0 +1,46 @@\n+\n+# Filesystem Git Database\n+\n+The `js-git/mixins/fs-db` mixin provides the `loadAs`, `saveAs`, `loadRaw`,\n+`saveRaw`, `readRef`, and `updateRef` functions and consumes a file system\n+interface.\n+The file system interface must implement `readFile`, `readChunk`, `writeFile`,\n+and `readDir`.\n+There are already several implementations of the file system adapter but there\n+are potentially many others.\n+\n+-   `js-git/mixins/mem-db`",
+        "path": "doc/mixins/fs-db.md",
+        "position": null,
+        "original_position": 12,
+        "commit_id": "fecb23dce5ed0ccab18cb95d141e2694dc8b2763",
+        "original_commit_id": "54325b0ab746d0049584b03223a9a14175904577",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sorry, I was unclear.  There are two things getting confused here.\n\n1 - the  abstract fs interface that js-git's `fs-db` needs to perform it's fs operations (readFile, writeFile, readdir, readChunk).  The two existing modules, `git-chrome-db` and `git-node-db` provide this interface to form a complete mixin.  The `mem-db` mixin has nothing to do with this.\n\n2 - the set of js-git mixins that forms the base of a full-featured js-git repo (loadAs, loadRaw, saveAs, saveRaw, readRef, updateRef, etc...)  This is basically a js-git storage backend.  Some backends implement more of this interface than others.  `mem-db`, `fs-db` (using either the chrome or node fs), `js-github/mixins/github-db`, `indexed-db`, etc are examples of this. \n",
+        "created_at": "2014-05-07T03:53:04Z",
+        "updated_at": "2014-05-07T04:24:11Z",
+        "html_url": "https://github.com/creationix/js-git/pull/98#discussion_r12360670",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/98",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12360670"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/98#discussion_r12360670"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/98"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12652345",
+        "pull_request_review_id": null,
+        "id": 12652345,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNjUyMzQ1",
+        "diff_hunk": "@@ -179,7 +179,11 @@ module.exports = function (repo, fs) {\n \n       function loadChunk(packFile, start, callback) {\n         var index = offsets.indexOf(start);\n-        var end = index >= 0 ? offsets[index + 1] : -20;\n+        if (index < 0) {\n+          var error = new Error(\"Can't find chunk starting at \" + start);\n+          return callback(error);\n+        }\n+        var end = index + 1 === offsets.length - 1 ? offsets[index + 1] : -20;",
+        "path": "mixins/fs-db.js",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "4b7fa6d4f384017f64d47f0aaf68a02fb29fe58c",
+        "original_commit_id": "3b7592841bb22fe6805617deb541fec677c0ab2e",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Off by one error? Why `+ 1` on index _and_ `- 1` on offsets.length?\n",
+        "created_at": "2014-05-14T18:24:55Z",
+        "updated_at": "2014-05-14T19:05:33Z",
+        "html_url": "https://github.com/creationix/js-git/pull/99#discussion_r12652345",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/99",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12652345"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/99#discussion_r12652345"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/99"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12652428",
+        "pull_request_review_id": null,
+        "id": 12652428,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNjUyNDI4",
+        "diff_hunk": "@@ -179,7 +179,11 @@ module.exports = function (repo, fs) {\n \n       function loadChunk(packFile, start, callback) {\n         var index = offsets.indexOf(start);\n-        var end = index >= 0 ? offsets[index + 1] : -20;\n+        if (index < 0) {\n+          var error = new Error(\"Can't find chunk starting at \" + start);\n+          return callback(error);\n+        }\n+        var end = index + 1 === offsets.length - 1 ? offsets[index + 1] : -20;",
+        "path": "mixins/fs-db.js",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "4b7fa6d4f384017f64d47f0aaf68a02fb29fe58c",
+        "original_commit_id": "3b7592841bb22fe6805617deb541fec677c0ab2e",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Shouldn't this be `index + 1 < offsets.length`?\n",
+        "created_at": "2014-05-14T18:26:40Z",
+        "updated_at": "2014-05-14T19:05:33Z",
+        "html_url": "https://github.com/creationix/js-git/pull/99#discussion_r12652428",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/99",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12652428"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/99#discussion_r12652428"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/99"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12652590",
+        "pull_request_review_id": null,
+        "id": 12652590,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNjUyNTkw",
+        "diff_hunk": "@@ -179,7 +179,11 @@ module.exports = function (repo, fs) {\n \n       function loadChunk(packFile, start, callback) {\n         var index = offsets.indexOf(start);\n-        var end = index >= 0 ? offsets[index + 1] : -20;\n+        if (index < 0) {\n+          var error = new Error(\"Can't find chunk starting at \" + start);\n+          return callback(error);\n+        }\n+        var end = index + 1 === offsets.length - 1 ? offsets[index + 1] : -20;",
+        "path": "mixins/fs-db.js",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "4b7fa6d4f384017f64d47f0aaf68a02fb29fe58c",
+        "original_commit_id": "3b7592841bb22fe6805617deb541fec677c0ab2e",
+        "user": {
+            "login": "kriskowal",
+            "id": 60294,
+            "node_id": "MDQ6VXNlcjYwMjk0",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/60294?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kriskowal",
+            "html_url": "https://github.com/kriskowal",
+            "followers_url": "https://api.github.com/users/kriskowal/followers",
+            "following_url": "https://api.github.com/users/kriskowal/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kriskowal/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kriskowal/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kriskowal/subscriptions",
+            "organizations_url": "https://api.github.com/users/kriskowal/orgs",
+            "repos_url": "https://api.github.com/users/kriskowal/repos",
+            "events_url": "https://api.github.com/users/kriskowal/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kriskowal/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "It\u2019s correct, though I could make it less clear with algebra, making +2 or -2 on one side or the other. The index of interest is index + 1, to check whether the index of interest is in the last position is offsets.length - 1, but < offsets.length would do the job.\n",
+        "created_at": "2014-05-14T18:29:15Z",
+        "updated_at": "2014-05-14T19:05:33Z",
+        "html_url": "https://github.com/creationix/js-git/pull/99#discussion_r12652590",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/99",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12652590"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/99#discussion_r12652590"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/99"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12652808",
+        "pull_request_review_id": null,
+        "id": 12652808,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNjUyODA4",
+        "diff_hunk": "@@ -179,7 +179,11 @@ module.exports = function (repo, fs) {\n \n       function loadChunk(packFile, start, callback) {\n         var index = offsets.indexOf(start);\n-        var end = index >= 0 ? offsets[index + 1] : -20;\n+        if (index < 0) {\n+          var error = new Error(\"Can't find chunk starting at \" + start);\n+          return callback(error);\n+        }\n+        var end = index + 1 === offsets.length - 1 ? offsets[index + 1] : -20;",
+        "path": "mixins/fs-db.js",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "4b7fa6d4f384017f64d47f0aaf68a02fb29fe58c",
+        "original_commit_id": "3b7592841bb22fe6805617deb541fec677c0ab2e",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Are you sure this is correct?  It _only_ uses the offsets map if index is exactly two less than length.\nSo, assuming 5 objects, the first one would be `0 + 1 === 5 - 1 ? lookup : -20` resolving to  `-20` when it should resolve to `offsets[0 + 1]`.\n",
+        "created_at": "2014-05-14T18:32:36Z",
+        "updated_at": "2014-05-14T19:05:33Z",
+        "html_url": "https://github.com/creationix/js-git/pull/99#discussion_r12652808",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/99",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12652808"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/99#discussion_r12652808"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/99"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/12654361",
+        "pull_request_review_id": null,
+        "id": 12654361,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEyNjU0MzYx",
+        "diff_hunk": "@@ -179,7 +179,11 @@ module.exports = function (repo, fs) {\n \n       function loadChunk(packFile, start, callback) {\n         var index = offsets.indexOf(start);\n-        var end = index >= 0 ? offsets[index + 1] : -20;\n+        if (index < 0) {\n+          var error = new Error(\"Can't find chunk starting at \" + start);\n+          return callback(error);\n+        }\n+        var end = index + 1 === offsets.length - 1 ? offsets[index + 1] : -20;",
+        "path": "mixins/fs-db.js",
+        "position": null,
+        "original_position": 9,
+        "commit_id": "4b7fa6d4f384017f64d47f0aaf68a02fb29fe58c",
+        "original_commit_id": "3b7592841bb22fe6805617deb541fec677c0ab2e",
+        "user": {
+            "login": "kriskowal",
+            "id": 60294,
+            "node_id": "MDQ6VXNlcjYwMjk0",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/60294?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kriskowal",
+            "html_url": "https://github.com/kriskowal",
+            "followers_url": "https://api.github.com/users/kriskowal/followers",
+            "following_url": "https://api.github.com/users/kriskowal/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kriskowal/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kriskowal/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kriskowal/subscriptions",
+            "organizations_url": "https://api.github.com/users/kriskowal/orgs",
+            "repos_url": "https://api.github.com/users/kriskowal/repos",
+            "events_url": "https://api.github.com/users/kriskowal/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kriskowal/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Suppose that there are no chunks. In this case, there would be no start positions or end positions, and the offsets array would be empty. This case terminates early because index < 0.\n\nSuppose there is one chunk, [a, b). In this case, start positions would be [a], and the implied end positions would be [b], but b is unknown, and `offsets` would simply be [a], index would be 0, offsets.length would be 1. The expected end positions would be -20. `index + 1` would be 1, `offsets.length - 1` would be 0. `index + 1 === offsets.length - 1` would be false. Aggregate expression is `-20`.\n\nSuppose there are two chunks. [a, b) and [b, c). Offsets would be [a, b] and c is unknown and presumed -20. `index + 1 === offsets.length - 1` for the first chunk is `0 + 1 === 2 - 1`, which is true, so we get `b`, which is correct. For the second chunk, `0 + 2 === 2 - 1` is false, so we get `-20`, also correct. This is the last case that works. Oops.\n\nSuppose there are three chunks, [a, b), [b, c), [c, d), offsets would be [a, b, c], implied end positions are [b, c, d] and d is unknown and presumed -20. For the first index, the expected output is b. `0 + 1 === 3 - 1` is false, so it comes out to -20. Contradiction. However, `0 + 1 < 3` comes out correct. `0 + 2 < 3` comes out correct. `0 + 3 < 3` is false and produces the expected -20.\n\nI\u2019ll follow up with a patch.\n",
+        "created_at": "2014-05-14T18:59:11Z",
+        "updated_at": "2014-05-14T19:05:33Z",
+        "html_url": "https://github.com/creationix/js-git/pull/99#discussion_r12654361",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/99",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/12654361"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/99#discussion_r12654361"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/99"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/16051008",
+        "pull_request_review_id": null,
+        "id": 16051008,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDUxMDA4",
+        "diff_hunk": "@@ -49,7 +49,12 @@ module.exports = function (repo, fs) {\n   function updateRef(ref, hash, callback) {\n     if (!callback) return updateRef.bind(repo, ref, hash);\n     var path = pathJoin(repo.rootPath, ref);\n-    fs.writeFile(path, bodec.fromRaw(hash + \"\\n\"), callback);\n+    var lock = path + \".lock\";\n+    fs.writeFile(lock, bodec.fromRaw(hash + \"\\n\"), function(err) {\n+      if(err)\n+        callback(err);",
+        "path": "mixins/fs-db.js",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "ab50767ab50c83d2af65be8e6f72baff6ce68d9f",
+        "original_commit_id": "da36c4e7444ced011973637844d1d004893a8b9b",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This is the wrong style and is missing the return.  My style is either on one line or with braces.\n\n``` js\nif (err) return callback(err);\n```\n\nor \n\n``` js\nif (err) {\n  return callback(err);\n}\n```\n\nBut the missing return is a serious bug regardless of style issues.\n",
+        "created_at": "2014-08-11T13:01:58Z",
+        "updated_at": "2014-08-20T15:35:40Z",
+        "html_url": "https://github.com/creationix/js-git/pull/104#discussion_r16051008",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/104",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/16051008"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/104#discussion_r16051008"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/104"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/16051056",
+        "pull_request_review_id": null,
+        "id": 16051056,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE2MDUxMDU2",
+        "diff_hunk": "@@ -119,7 +124,12 @@ module.exports = function (repo, fs) {\n       // If it already exists, we're done\n       if (data) return callback();\n       // Otherwise write a new file\n-      fs.writeFile(path, buffer, callback);\n+      var tmp = path.replace(/[0-9a-f]+$/, 'tmp_obj_' + Math.random().toString(36).substr(2))\n+      fs.writeFile(tmp, buffer, function(err) {\n+        if(err)\n+          callback(err);",
+        "path": "mixins/fs-db.js",
+        "position": null,
+        "original_position": 22,
+        "commit_id": "ab50767ab50c83d2af65be8e6f72baff6ce68d9f",
+        "original_commit_id": "da36c4e7444ced011973637844d1d004893a8b9b",
+        "user": {
+            "login": "creationix",
+            "id": 89353,
+            "node_id": "MDQ6VXNlcjg5MzUz",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/89353?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/creationix",
+            "html_url": "https://github.com/creationix",
+            "followers_url": "https://api.github.com/users/creationix/followers",
+            "following_url": "https://api.github.com/users/creationix/following{/other_user}",
+            "gists_url": "https://api.github.com/users/creationix/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/creationix/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/creationix/subscriptions",
+            "organizations_url": "https://api.github.com/users/creationix/orgs",
+            "repos_url": "https://api.github.com/users/creationix/repos",
+            "events_url": "https://api.github.com/users/creationix/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/creationix/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Same issue here with the callback style and missing return.\n",
+        "created_at": "2014-08-11T13:02:53Z",
+        "updated_at": "2014-08-20T15:35:40Z",
+        "html_url": "https://github.com/creationix/js-git/pull/104#discussion_r16051056",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/104",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/16051056"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/104#discussion_r16051056"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/104"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/58494508",
+        "pull_request_review_id": null,
+        "id": 58494508,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4NDk0NTA4",
+        "diff_hunk": "@@ -16,7 +16,7 @@ function deframer(emit) {\n   var more = true;\n \n   return function (item) {\n-\n+    var doUndefined = false;\n     // Forward the EOS marker\n     if (item === undefined) return emit();",
+        "path": "lib/pkt-line.js",
+        "position": 7,
+        "original_position": 7,
+        "commit_id": "df5688681bcfb1d25f1735b7ded03a2275f5c7fb",
+        "original_commit_id": "df5688681bcfb1d25f1735b7ded03a2275f5c7fb",
+        "user": {
+            "login": "jauco",
+            "id": 68318,
+            "node_id": "MDQ6VXNlcjY4MzE4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/68318?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jauco",
+            "html_url": "https://github.com/jauco",
+            "followers_url": "https://api.github.com/users/jauco/followers",
+            "following_url": "https://api.github.com/users/jauco/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jauco/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jauco/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jauco/subscriptions",
+            "organizations_url": "https://api.github.com/users/jauco/orgs",
+            "repos_url": "https://api.github.com/users/jauco/repos",
+            "events_url": "https://api.github.com/users/jauco/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jauco/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This line is probably called in the tcp transport, but never in the HTTP transport.\n",
+        "created_at": "2016-04-05T07:02:18Z",
+        "updated_at": "2016-04-05T07:02:18Z",
+        "html_url": "https://github.com/creationix/js-git/pull/129#discussion_r58494508",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/129",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/58494508"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/129#discussion_r58494508"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/129"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/creationix/js-git/pulls/comments/58494635",
+        "pull_request_review_id": null,
+        "id": 58494635,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4NDk0NjM1",
+        "diff_hunk": "@@ -90,7 +91,7 @@ function deframer(emit) {\n         throw new Error(\"pkt-line decoder in invalid state\");\n       }\n     }\n-\n+    if (doUndefined) emit();",
+        "path": "lib/pkt-line.js",
+        "position": 22,
+        "original_position": 22,
+        "commit_id": "df5688681bcfb1d25f1735b7ded03a2275f5c7fb",
+        "original_commit_id": "df5688681bcfb1d25f1735b7ded03a2275f5c7fb",
+        "user": {
+            "login": "jauco",
+            "id": 68318,
+            "node_id": "MDQ6VXNlcjY4MzE4",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/68318?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jauco",
+            "html_url": "https://github.com/jauco",
+            "followers_url": "https://api.github.com/users/jauco/followers",
+            "following_url": "https://api.github.com/users/jauco/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jauco/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jauco/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jauco/subscriptions",
+            "organizations_url": "https://api.github.com/users/jauco/orgs",
+            "repos_url": "https://api.github.com/users/jauco/repos",
+            "events_url": "https://api.github.com/users/jauco/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jauco/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "We want to emit undefined, but only after the http request that pulled in the delta's. the above two lines achieve this for a clean clone. I'm not sure this will also work for a fetch. I haven't read the documentation on the smart http protocol yet.\n",
+        "created_at": "2016-04-05T07:04:10Z",
+        "updated_at": "2016-04-05T07:04:10Z",
+        "html_url": "https://github.com/creationix/js-git/pull/129#discussion_r58494635",
+        "pull_request_url": "https://api.github.com/repos/creationix/js-git/pulls/129",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/comments/58494635"
+            },
+            "html": {
+                "href": "https://github.com/creationix/js-git/pull/129#discussion_r58494635"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/creationix/js-git/pulls/129"
+            }
+        }
+    }
+]

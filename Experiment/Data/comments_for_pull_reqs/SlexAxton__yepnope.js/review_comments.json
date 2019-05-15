@@ -1,0 +1,198 @@
+[
+    {
+        "url": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/comments/678680",
+        "pull_request_review_id": null,
+        "id": 678680,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3ODY4MA==",
+        "diff_hunk": "@@ -0,0 +1,41 @@\n+/**\r\n+ * YepNope Path Filter\r\n+ * \r\n+ * Usage:\r\n+ *   yepnope.paths = {\r\n+ *\t   'google': '//ajax.googleapis.com/ajax',\r\n+ *\t   'my-cdn': '//cdn.myawesomesite.com'\r\n+ *   };\r\n+ *   yepnope({\r\n+ *\t   load: ['google/jquery/1.7.2/jquery.min.js', 'google/jqueryui/1.8.18/jquery-ui.min.js', 'my-cdn/style.css', '/non/path/directory/file.js']\r\n+ *   });\r\n+ *\r\n+ * Requirements:\r\n+ *   The browser must implement Array.indexOf(...). If you have to support browsers which don't implement this method please make sure you define it.\r\n+ *   See: http://soledadpenades.com/2007/05/17/arrayindexof-in-internet-explorer/\r\n+ *\r\n+ * Official Yepnope Plugin\r\n+ *\r\n+ * WTFPL License\r\n+ *\r\n+ * by Kenneth Powers | mail@kenpowers.net\r\n+ */\r\n+(function () {\r\n+  var addPathFilter = function (yn) {\r\n+      // add each prefix\r\n+      yn.addFilter(function (resource) {\r\n+        // check each url for path\r\n+        for (path in yn.paths) {\r\n+          if (resource.url.indexOf(path) === 0) {\r\n+            resource.url = resource.url.replace(path, yn.paths[path]);\r",
+        "path": "filters/yepnope.pathfilter.js",
+        "position": null,
+        "original_position": 30,
+        "commit_id": "7b019d9148715c206c00dfc02bc70dcdc0d35d19",
+        "original_commit_id": "80b9c604d4d8c3c9d28871c1beb1f7428c68be6a",
+        "user": {
+            "login": "SlexAxton",
+            "id": 96554,
+            "node_id": "MDQ6VXNlcjk2NTU0",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/96554?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/SlexAxton",
+            "html_url": "https://github.com/SlexAxton",
+            "followers_url": "https://api.github.com/users/SlexAxton/followers",
+            "following_url": "https://api.github.com/users/SlexAxton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/SlexAxton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/SlexAxton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/SlexAxton/subscriptions",
+            "organizations_url": "https://api.github.com/users/SlexAxton/orgs",
+            "repos_url": "https://api.github.com/users/SlexAxton/repos",
+            "events_url": "https://api.github.com/users/SlexAxton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/SlexAxton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "shouldn't that path need to be at the beginning?\n",
+        "created_at": "2012-04-12T20:33:03Z",
+        "updated_at": "2012-04-12T20:51:19Z",
+        "html_url": "https://github.com/SlexAxton/yepnope.js/pull/110#discussion_r678680",
+        "pull_request_url": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/110",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/comments/678680"
+            },
+            "html": {
+                "href": "https://github.com/SlexAxton/yepnope.js/pull/110#discussion_r678680"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/110"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/comments/678693",
+        "pull_request_review_id": null,
+        "id": 678693,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3ODY5Mw==",
+        "diff_hunk": "@@ -0,0 +1,41 @@\n+/**\r\n+ * YepNope Path Filter\r\n+ * \r\n+ * Usage:\r\n+ *   yepnope.paths = {\r\n+ *\t   'google': '//ajax.googleapis.com/ajax',\r\n+ *\t   'my-cdn': '//cdn.myawesomesite.com'\r\n+ *   };\r\n+ *   yepnope({\r\n+ *\t   load: ['google/jquery/1.7.2/jquery.min.js', 'google/jqueryui/1.8.18/jquery-ui.min.js', 'my-cdn/style.css', '/non/path/directory/file.js']\r\n+ *   });\r\n+ *\r\n+ * Requirements:\r\n+ *   The browser must implement Array.indexOf(...). If you have to support browsers which don't implement this method please make sure you define it.\r\n+ *   See: http://soledadpenades.com/2007/05/17/arrayindexof-in-internet-explorer/\r\n+ *\r\n+ * Official Yepnope Plugin\r\n+ *\r\n+ * WTFPL License\r\n+ *\r\n+ * by Kenneth Powers | mail@kenpowers.net\r\n+ */\r\n+(function () {\r\n+  var addPathFilter = function (yn) {\r\n+      // add each prefix\r\n+      yn.addFilter(function (resource) {\r\n+        // check each url for path\r\n+        for (path in yn.paths) {\r\n+          if (resource.url.indexOf(path) === 0) {\r\n+            resource.url = resource.url.replace(path, yn.paths[path]);\r",
+        "path": "filters/yepnope.pathfilter.js",
+        "position": null,
+        "original_position": 30,
+        "commit_id": "7b019d9148715c206c00dfc02bc70dcdc0d35d19",
+        "original_commit_id": "80b9c604d4d8c3c9d28871c1beb1f7428c68be6a",
+        "user": {
+            "login": "knpwrs",
+            "id": 174864,
+            "node_id": "MDQ6VXNlcjE3NDg2NA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/174864?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/knpwrs",
+            "html_url": "https://github.com/knpwrs",
+            "followers_url": "https://api.github.com/users/knpwrs/followers",
+            "following_url": "https://api.github.com/users/knpwrs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/knpwrs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/knpwrs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/knpwrs/subscriptions",
+            "organizations_url": "https://api.github.com/users/knpwrs/orgs",
+            "repos_url": "https://api.github.com/users/knpwrs/repos",
+            "events_url": "https://api.github.com/users/knpwrs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/knpwrs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "That's what `indexOf(path) === 0` is for. `replace(...)` will only replace the first occurrence and we only reach that point if there is a match at the beginning.\n",
+        "created_at": "2012-04-12T20:35:19Z",
+        "updated_at": "2012-04-12T20:51:19Z",
+        "html_url": "https://github.com/SlexAxton/yepnope.js/pull/110#discussion_r678693",
+        "pull_request_url": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/110",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/comments/678693"
+            },
+            "html": {
+                "href": "https://github.com/SlexAxton/yepnope.js/pull/110#discussion_r678693"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/110"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/comments/678715",
+        "pull_request_review_id": null,
+        "id": 678715,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3ODcxNQ==",
+        "diff_hunk": "@@ -0,0 +1,41 @@\n+/**\r\n+ * YepNope Path Filter\r\n+ * \r\n+ * Usage:\r\n+ *   yepnope.paths = {\r\n+ *\t   'google': '//ajax.googleapis.com/ajax',\r\n+ *\t   'my-cdn': '//cdn.myawesomesite.com'\r\n+ *   };\r\n+ *   yepnope({\r\n+ *\t   load: ['google/jquery/1.7.2/jquery.min.js', 'google/jqueryui/1.8.18/jquery-ui.min.js', 'my-cdn/style.css', '/non/path/directory/file.js']\r\n+ *   });\r\n+ *\r\n+ * Requirements:\r\n+ *   The browser must implement Array.indexOf(...). If you have to support browsers which don't implement this method please make sure you define it.\r\n+ *   See: http://soledadpenades.com/2007/05/17/arrayindexof-in-internet-explorer/\r\n+ *\r\n+ * Official Yepnope Plugin\r\n+ *\r\n+ * WTFPL License\r\n+ *\r\n+ * by Kenneth Powers | mail@kenpowers.net\r\n+ */\r\n+(function () {\r\n+  var addPathFilter = function (yn) {\r\n+      // add each prefix\r\n+      yn.addFilter(function (resource) {\r\n+        // check each url for path\r\n+        for (path in yn.paths) {\r\n+          if (resource.url.indexOf(path) === 0) {\r\n+            resource.url = resource.url.replace(path, yn.paths[path]);\r",
+        "path": "filters/yepnope.pathfilter.js",
+        "position": null,
+        "original_position": 30,
+        "commit_id": "7b019d9148715c206c00dfc02bc70dcdc0d35d19",
+        "original_commit_id": "80b9c604d4d8c3c9d28871c1beb1f7428c68be6a",
+        "user": {
+            "login": "SlexAxton",
+            "id": 96554,
+            "node_id": "MDQ6VXNlcjk2NTU0",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/96554?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/SlexAxton",
+            "html_url": "https://github.com/SlexAxton",
+            "followers_url": "https://api.github.com/users/SlexAxton/followers",
+            "following_url": "https://api.github.com/users/SlexAxton/following{/other_user}",
+            "gists_url": "https://api.github.com/users/SlexAxton/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/SlexAxton/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/SlexAxton/subscriptions",
+            "organizations_url": "https://api.github.com/users/SlexAxton/orgs",
+            "repos_url": "https://api.github.com/users/SlexAxton/repos",
+            "events_url": "https://api.github.com/users/SlexAxton/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/SlexAxton/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Ah, yea, I forgot, I normally do RegExp with `ig` so it replaces everything. Got it.\n\nCouldn't we remove the dependency on indexOf with just\n\n``` javascript\nresource.url.replace(new RegExp( '^' + path), yn.paths[path]);\n```\n\nor something?\n",
+        "created_at": "2012-04-12T20:38:38Z",
+        "updated_at": "2012-04-12T20:51:19Z",
+        "html_url": "https://github.com/SlexAxton/yepnope.js/pull/110#discussion_r678715",
+        "pull_request_url": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/110",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/comments/678715"
+            },
+            "html": {
+                "href": "https://github.com/SlexAxton/yepnope.js/pull/110#discussion_r678715"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/110"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/comments/678730",
+        "pull_request_review_id": null,
+        "id": 678730,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY3ODczMA==",
+        "diff_hunk": "@@ -0,0 +1,41 @@\n+/**\r\n+ * YepNope Path Filter\r\n+ * \r\n+ * Usage:\r\n+ *   yepnope.paths = {\r\n+ *\t   'google': '//ajax.googleapis.com/ajax',\r\n+ *\t   'my-cdn': '//cdn.myawesomesite.com'\r\n+ *   };\r\n+ *   yepnope({\r\n+ *\t   load: ['google/jquery/1.7.2/jquery.min.js', 'google/jqueryui/1.8.18/jquery-ui.min.js', 'my-cdn/style.css', '/non/path/directory/file.js']\r\n+ *   });\r\n+ *\r\n+ * Requirements:\r\n+ *   The browser must implement Array.indexOf(...). If you have to support browsers which don't implement this method please make sure you define it.\r\n+ *   See: http://soledadpenades.com/2007/05/17/arrayindexof-in-internet-explorer/\r\n+ *\r\n+ * Official Yepnope Plugin\r\n+ *\r\n+ * WTFPL License\r\n+ *\r\n+ * by Kenneth Powers | mail@kenpowers.net\r\n+ */\r\n+(function () {\r\n+  var addPathFilter = function (yn) {\r\n+      // add each prefix\r\n+      yn.addFilter(function (resource) {\r\n+        // check each url for path\r\n+        for (path in yn.paths) {\r\n+          if (resource.url.indexOf(path) === 0) {\r\n+            resource.url = resource.url.replace(path, yn.paths[path]);\r",
+        "path": "filters/yepnope.pathfilter.js",
+        "position": null,
+        "original_position": 30,
+        "commit_id": "7b019d9148715c206c00dfc02bc70dcdc0d35d19",
+        "original_commit_id": "80b9c604d4d8c3c9d28871c1beb1f7428c68be6a",
+        "user": {
+            "login": "knpwrs",
+            "id": 174864,
+            "node_id": "MDQ6VXNlcjE3NDg2NA==",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/174864?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/knpwrs",
+            "html_url": "https://github.com/knpwrs",
+            "followers_url": "https://api.github.com/users/knpwrs/followers",
+            "following_url": "https://api.github.com/users/knpwrs/following{/other_user}",
+            "gists_url": "https://api.github.com/users/knpwrs/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/knpwrs/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/knpwrs/subscriptions",
+            "organizations_url": "https://api.github.com/users/knpwrs/orgs",
+            "repos_url": "https://api.github.com/users/knpwrs/repos",
+            "events_url": "https://api.github.com/users/knpwrs/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/knpwrs/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Sure. I'll get right on that.\n",
+        "created_at": "2012-04-12T20:41:23Z",
+        "updated_at": "2012-04-12T20:51:19Z",
+        "html_url": "https://github.com/SlexAxton/yepnope.js/pull/110#discussion_r678730",
+        "pull_request_url": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/110",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/comments/678730"
+            },
+            "html": {
+                "href": "https://github.com/SlexAxton/yepnope.js/pull/110#discussion_r678730"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/SlexAxton/yepnope.js/pulls/110"
+            }
+        }
+    }
+]

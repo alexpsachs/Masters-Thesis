@@ -1,0 +1,149 @@
+[
+    {
+        "url": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/comments/1787988",
+        "pull_request_review_id": null,
+        "id": 1787988,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3ODc5ODg=",
+        "diff_hunk": "@@ -581,6 +581,58 @@ - (id)newValueForRelationship:(NSRelationshipDescription *)relationship\n                         if (relationshipObjectID == nil) {\n                             [childContext insertObject:managedRelationshipObject];\n                         }\n+                        ",
+        "path": "AFIncrementalStore/AFIncrementalStore.m",
+        "position": 4,
+        "original_position": 4,
+        "commit_id": "3c3bf617d3fa2fd620f73fc411a0a28d16ddb116",
+        "original_commit_id": "a06a6283833bd1bd1c600144ff169c7ac698f260",
+        "user": {
+            "login": "xslim",
+            "id": 47062,
+            "node_id": "MDQ6VXNlcjQ3MDYy",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/47062?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/xslim",
+            "html_url": "https://github.com/xslim",
+            "followers_url": "https://api.github.com/users/xslim/followers",
+            "following_url": "https://api.github.com/users/xslim/following{/other_user}",
+            "gists_url": "https://api.github.com/users/xslim/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/xslim/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/xslim/subscriptions",
+            "organizations_url": "https://api.github.com/users/xslim/orgs",
+            "repos_url": "https://api.github.com/users/xslim/repos",
+            "events_url": "https://api.github.com/users/xslim/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/xslim/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I think this method is already too long. Making it longer will make it more heavy, harder to read and to test.\n",
+        "created_at": "2012-10-08T19:20:06Z",
+        "updated_at": "2012-10-09T15:24:35Z",
+        "html_url": "https://github.com/AFNetworking/AFIncrementalStore/pull/60#discussion_r1787988",
+        "pull_request_url": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/60",
+        "author_association": "NONE",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/comments/1787988"
+            },
+            "html": {
+                "href": "https://github.com/AFNetworking/AFIncrementalStore/pull/60#discussion_r1787988"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/60"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/comments/1835806",
+        "pull_request_review_id": null,
+        "id": 1835806,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4MzU4MDY=",
+        "diff_hunk": "@@ -524,10 +524,6 @@ - (id)newValueForRelationship:(NSRelationshipDescription *)relationship\n             NSManagedObjectContext *childContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];\n             childContext.parentContext = context;\n             childContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;\n-                        \n-            [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification object:childContext queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {",
+        "path": "AFIncrementalStore/AFIncrementalStore.m",
+        "position": 5,
+        "original_position": 5,
+        "commit_id": "7e3c54582617a794b27828b4e044817982c2ff77",
+        "original_commit_id": "7e3c54582617a794b27828b4e044817982c2ff77",
+        "user": {
+            "login": "pitiphong-p",
+            "id": 426153,
+            "node_id": "MDQ6VXNlcjQyNjE1Mw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/426153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pitiphong-p",
+            "html_url": "https://github.com/pitiphong-p",
+            "followers_url": "https://api.github.com/users/pitiphong-p/followers",
+            "following_url": "https://api.github.com/users/pitiphong-p/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pitiphong-p/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pitiphong-p/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pitiphong-p/subscriptions",
+            "organizations_url": "https://api.github.com/users/pitiphong-p/orgs",
+            "repos_url": "https://api.github.com/users/pitiphong-p/repos",
+            "events_url": "https://api.github.com/users/pitiphong-p/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pitiphong-p/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "The addObserverForName:object:queue:usingBlock: will return the observer object. We must use it to remove it from observing later.\n",
+        "created_at": "2012-10-13T11:29:04Z",
+        "updated_at": "2012-10-13T11:29:04Z",
+        "html_url": "https://github.com/AFNetworking/AFIncrementalStore/pull/71#discussion_r1835806",
+        "pull_request_url": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/71",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/comments/1835806"
+            },
+            "html": {
+                "href": "https://github.com/AFNetworking/AFIncrementalStore/pull/71#discussion_r1835806"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/71"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/comments/1835808",
+        "pull_request_review_id": null,
+        "id": 1835808,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE4MzU4MDg=",
+        "diff_hunk": "@@ -524,10 +524,6 @@ - (id)newValueForRelationship:(NSRelationshipDescription *)relationship\n             NSManagedObjectContext *childContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];\n             childContext.parentContext = context;\n             childContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy;\n-                        \n-            [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification object:childContext queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {\n-                [context mergeChangesFromContextDidSaveNotification:note];",
+        "path": "AFIncrementalStore/AFIncrementalStore.m",
+        "position": 6,
+        "original_position": 6,
+        "commit_id": "7e3c54582617a794b27828b4e044817982c2ff77",
+        "original_commit_id": "7e3c54582617a794b27828b4e044817982c2ff77",
+        "user": {
+            "login": "pitiphong-p",
+            "id": 426153,
+            "node_id": "MDQ6VXNlcjQyNjE1Mw==",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/426153?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/pitiphong-p",
+            "html_url": "https://github.com/pitiphong-p",
+            "followers_url": "https://api.github.com/users/pitiphong-p/followers",
+            "following_url": "https://api.github.com/users/pitiphong-p/following{/other_user}",
+            "gists_url": "https://api.github.com/users/pitiphong-p/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/pitiphong-p/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/pitiphong-p/subscriptions",
+            "organizations_url": "https://api.github.com/users/pitiphong-p/orgs",
+            "repos_url": "https://api.github.com/users/pitiphong-p/repos",
+            "events_url": "https://api.github.com/users/pitiphong-p/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/pitiphong-p/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Child context will push the changes to the parent context when save. So we don't need to merge changes from child context again.\n",
+        "created_at": "2012-10-13T11:30:01Z",
+        "updated_at": "2012-10-13T11:30:01Z",
+        "html_url": "https://github.com/AFNetworking/AFIncrementalStore/pull/71#discussion_r1835808",
+        "pull_request_url": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/71",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/comments/1835808"
+            },
+            "html": {
+                "href": "https://github.com/AFNetworking/AFIncrementalStore/pull/71#discussion_r1835808"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/AFNetworking/AFIncrementalStore/pulls/71"
+            }
+        }
+    }
+]

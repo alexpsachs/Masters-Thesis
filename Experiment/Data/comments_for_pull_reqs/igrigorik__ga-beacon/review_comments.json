@@ -1,0 +1,345 @@
+[
+    {
+        "url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/54335872",
+        "pull_request_review_id": null,
+        "id": 54335872,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU0MzM1ODcy",
+        "diff_hunk": "@@ -103,16 +103,23 @@ func handler(w http.ResponseWriter, r *http.Request) {\n \n \t// /account -> account template\n \tif len(params) == 1 {",
+        "path": "ga-beacon/ga-beacon.go",
+        "position": null,
+        "original_position": 3,
+        "commit_id": "3f69cf0be29e6ff30f8aefa945c1ef41dbb052d2",
+        "original_commit_id": "df8ebf9dcb746fc1aad7c82319a5f12064d2490f",
+        "user": {
+            "login": "igrigorik",
+            "id": 10652,
+            "node_id": "MDQ6VXNlcjEwNjUy",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/10652?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/igrigorik",
+            "html_url": "https://github.com/igrigorik",
+            "followers_url": "https://api.github.com/users/igrigorik/followers",
+            "following_url": "https://api.github.com/users/igrigorik/following{/other_user}",
+            "gists_url": "https://api.github.com/users/igrigorik/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/igrigorik/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/igrigorik/subscriptions",
+            "organizations_url": "https://api.github.com/users/igrigorik/orgs",
+            "repos_url": "https://api.github.com/users/igrigorik/repos",
+            "events_url": "https://api.github.com/users/igrigorik/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/igrigorik/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This code is only invoked if you don't pass in the account name + path.. I'm not sure that's what you're after?\n",
+        "created_at": "2016-02-27T17:09:52Z",
+        "updated_at": "2016-04-09T08:37:37Z",
+        "html_url": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r54335872",
+        "pull_request_url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/54335872"
+            },
+            "html": {
+                "href": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r54335872"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/54335875",
+        "pull_request_review_id": null,
+        "id": 54335875,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU0MzM1ODc1",
+        "diff_hunk": "@@ -103,16 +103,23 @@ func handler(w http.ResponseWriter, r *http.Request) {\n \n \t// /account -> account template\n \tif len(params) == 1 {\n-\t\ttemplateParams := struct {\n-\t\t\tAccount string\n-\t\t}{\n-\t\t\tAccount: params[0],\n-\t\t}\n-\t\tif err := pageTemplate.ExecuteTemplate(w, \"page.html\", templateParams); err != nil {\n-\t\t\thttp.Error(w, \"could not show account page\", 500)\n-\t\t\tc.Errorf(\"Cannot execute template: %v\", err)\n+\t\treferer := strings.Replace(strings.Replace(r.Header.Get(\"Referer\"), \"http://\", \"\", 1), \"https://\", \"\", 1);\n+\t\tif len(referer) != 0 {\n+\t\t\tparams = strings.SplitN(strings.Trim(r.URL.Path, \"/\") + \"/\" + referer, \"/\", 2)\n+\t\t} else {\n+\t\t\ttemplateParams := struct {\n+\t\t\t\tAccount string\n+\t\t\t\tReferer string\n+\t\t\t}{\n+\t\t\t\tAccount: params[0],\n+\t\t\t\tReferer: r.Header.Get(\"Referer\"),\n+\t\t\t}\n+\t\t\tif err := pageTemplate.ExecuteTemplate(w, \"page.html\", templateParams); err != nil {\n+\t\t\t\thttp.Error(w, \"could not show account page\", 500)\n+\t\t\t\tc.Errorf(\"Cannot execute template: %v\", err)\n+\t\t\t}\n+\t\t\treturn",
+        "path": "ga-beacon/ga-beacon.go",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "3f69cf0be29e6ff30f8aefa945c1ef41dbb052d2",
+        "original_commit_id": "df8ebf9dcb746fc1aad7c82319a5f12064d2490f",
+        "user": {
+            "login": "igrigorik",
+            "id": 10652,
+            "node_id": "MDQ6VXNlcjEwNjUy",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/10652?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/igrigorik",
+            "html_url": "https://github.com/igrigorik",
+            "followers_url": "https://api.github.com/users/igrigorik/followers",
+            "following_url": "https://api.github.com/users/igrigorik/following{/other_user}",
+            "gists_url": "https://api.github.com/users/igrigorik/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/igrigorik/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/igrigorik/subscriptions",
+            "organizations_url": "https://api.github.com/users/igrigorik/orgs",
+            "repos_url": "https://api.github.com/users/igrigorik/repos",
+            "events_url": "https://api.github.com/users/igrigorik/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/igrigorik/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "This return is in the wrong place.\n",
+        "created_at": "2016-02-27T17:10:06Z",
+        "updated_at": "2016-04-09T08:37:37Z",
+        "html_url": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r54335875",
+        "pull_request_url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/54335875"
+            },
+            "html": {
+                "href": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r54335875"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/54341445",
+        "pull_request_review_id": null,
+        "id": 54341445,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU0MzQxNDQ1",
+        "diff_hunk": "@@ -103,16 +103,23 @@ func handler(w http.ResponseWriter, r *http.Request) {\n \n \t// /account -> account template\n \tif len(params) == 1 {",
+        "path": "ga-beacon/ga-beacon.go",
+        "position": null,
+        "original_position": 3,
+        "commit_id": "3f69cf0be29e6ff30f8aefa945c1ef41dbb052d2",
+        "original_commit_id": "df8ebf9dcb746fc1aad7c82319a5f12064d2490f",
+        "user": {
+            "login": "Guisardo",
+            "id": 11792675,
+            "node_id": "MDQ6VXNlcjExNzkyNjc1",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/11792675?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Guisardo",
+            "html_url": "https://github.com/Guisardo",
+            "followers_url": "https://api.github.com/users/Guisardo/followers",
+            "following_url": "https://api.github.com/users/Guisardo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Guisardo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Guisardo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Guisardo/subscriptions",
+            "organizations_url": "https://api.github.com/users/Guisardo/orgs",
+            "repos_url": "https://api.github.com/users/Guisardo/repos",
+            "events_url": "https://api.github.com/users/Guisardo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Guisardo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Yes, when len(params) == 1 is because the path only contains the account. The account is still required, although we can probably set a default one in some configuration file if non is passed.\n",
+        "created_at": "2016-02-27T23:34:28Z",
+        "updated_at": "2016-04-09T08:37:37Z",
+        "html_url": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r54341445",
+        "pull_request_url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/54341445"
+            },
+            "html": {
+                "href": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r54341445"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/54341519",
+        "pull_request_review_id": null,
+        "id": 54341519,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU0MzQxNTE5",
+        "diff_hunk": "@@ -103,16 +103,23 @@ func handler(w http.ResponseWriter, r *http.Request) {\n \n \t// /account -> account template\n \tif len(params) == 1 {\n-\t\ttemplateParams := struct {\n-\t\t\tAccount string\n-\t\t}{\n-\t\t\tAccount: params[0],\n-\t\t}\n-\t\tif err := pageTemplate.ExecuteTemplate(w, \"page.html\", templateParams); err != nil {\n-\t\t\thttp.Error(w, \"could not show account page\", 500)\n-\t\t\tc.Errorf(\"Cannot execute template: %v\", err)\n+\t\treferer := strings.Replace(strings.Replace(r.Header.Get(\"Referer\"), \"http://\", \"\", 1), \"https://\", \"\", 1);\n+\t\tif len(referer) != 0 {\n+\t\t\tparams = strings.SplitN(strings.Trim(r.URL.Path, \"/\") + \"/\" + referer, \"/\", 2)\n+\t\t} else {\n+\t\t\ttemplateParams := struct {\n+\t\t\t\tAccount string\n+\t\t\t\tReferer string\n+\t\t\t}{\n+\t\t\t\tAccount: params[0],\n+\t\t\t\tReferer: r.Header.Get(\"Referer\"),\n+\t\t\t}\n+\t\t\tif err := pageTemplate.ExecuteTemplate(w, \"page.html\", templateParams); err != nil {\n+\t\t\t\thttp.Error(w, \"could not show account page\", 500)\n+\t\t\t\tc.Errorf(\"Cannot execute template: %v\", err)\n+\t\t\t}\n+\t\t\treturn",
+        "path": "ga-beacon/ga-beacon.go",
+        "position": null,
+        "original_position": 27,
+        "commit_id": "3f69cf0be29e6ff30f8aefa945c1ef41dbb052d2",
+        "original_commit_id": "df8ebf9dcb746fc1aad7c82319a5f12064d2490f",
+        "user": {
+            "login": "Guisardo",
+            "id": 11792675,
+            "node_id": "MDQ6VXNlcjExNzkyNjc1",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/11792675?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Guisardo",
+            "html_url": "https://github.com/Guisardo",
+            "followers_url": "https://api.github.com/users/Guisardo/followers",
+            "following_url": "https://api.github.com/users/Guisardo/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Guisardo/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Guisardo/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Guisardo/subscriptions",
+            "organizations_url": "https://api.github.com/users/Guisardo/orgs",
+            "repos_url": "https://api.github.com/users/Guisardo/repos",
+            "events_url": "https://api.github.com/users/Guisardo/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Guisardo/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "is in the same place that was before, where should it be? -_(\u00b4-\u00b4)_-\nI personally try avoid the fast returns, but I understand that this one just stops the code because data is missing.\n",
+        "created_at": "2016-02-27T23:41:19Z",
+        "updated_at": "2016-04-09T08:37:37Z",
+        "html_url": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r54341519",
+        "pull_request_url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41",
+        "author_association": "CONTRIBUTOR",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/54341519"
+            },
+            "html": {
+                "href": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r54341519"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/58457797",
+        "pull_request_review_id": null,
+        "id": 58457797,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4NDU3Nzk3",
+        "diff_hunk": "@@ -101,12 +102,23 @@ func handler(w http.ResponseWriter, r *http.Request) {\n \t\treturn\n \t}\n \n+\t// activate referrer path if ?useReferrer is used and if referer exists\n+\tif _, ok := query[\"useReferrer\"]; ok {",
+        "path": "ga-beacon/ga-beacon.go",
+        "position": null,
+        "original_position": 13,
+        "commit_id": "3f69cf0be29e6ff30f8aefa945c1ef41dbb052d2",
+        "original_commit_id": "8021a4e5963208aee624a0fc36bc4735c5af5dd5",
+        "user": {
+            "login": "igrigorik",
+            "id": 10652,
+            "node_id": "MDQ6VXNlcjEwNjUy",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/10652?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/igrigorik",
+            "html_url": "https://github.com/igrigorik",
+            "followers_url": "https://api.github.com/users/igrigorik/followers",
+            "following_url": "https://api.github.com/users/igrigorik/following{/other_user}",
+            "gists_url": "https://api.github.com/users/igrigorik/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/igrigorik/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/igrigorik/subscriptions",
+            "organizations_url": "https://api.github.com/users/igrigorik/orgs",
+            "repos_url": "https://api.github.com/users/igrigorik/repos",
+            "events_url": "https://api.github.com/users/igrigorik/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/igrigorik/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "I know it's a spelling mistake, but for sake of consistency let's use useReferer (one \"r\") to align with the actual header?\n",
+        "created_at": "2016-04-04T22:09:06Z",
+        "updated_at": "2016-04-09T08:37:37Z",
+        "html_url": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r58457797",
+        "pull_request_url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/58457797"
+            },
+            "html": {
+                "href": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r58457797"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/58457943",
+        "pull_request_review_id": null,
+        "id": 58457943,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4NDU3OTQz",
+        "diff_hunk": "@@ -101,12 +102,23 @@ func handler(w http.ResponseWriter, r *http.Request) {\n \t\treturn\n \t}\n \n+\t// activate referrer path if ?useReferrer is used and if referer exists\n+\tif _, ok := query[\"useReferrer\"]; ok {\n+\t\tif len(refOrg) != 0 {\n+\t\t\treferer := strings.Replace(strings.Replace(refOrg, \"http://\", \"\", 1), \"https://\", \"\", 1);\n+\t\t\tif len(referer) != 0 {\n+\t\t\t\tparams = strings.SplitN(strings.Trim(r.URL.Path, \"/\") + \"/\" + referer, \"/\", 2)",
+        "path": "ga-beacon/ga-beacon.go",
+        "position": null,
+        "original_position": 17,
+        "commit_id": "3f69cf0be29e6ff30f8aefa945c1ef41dbb052d2",
+        "original_commit_id": "8021a4e5963208aee624a0fc36bc4735c5af5dd5",
+        "user": {
+            "login": "igrigorik",
+            "id": 10652,
+            "node_id": "MDQ6VXNlcjEwNjUy",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/10652?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/igrigorik",
+            "html_url": "https://github.com/igrigorik",
+            "followers_url": "https://api.github.com/users/igrigorik/followers",
+            "following_url": "https://api.github.com/users/igrigorik/following{/other_user}",
+            "gists_url": "https://api.github.com/users/igrigorik/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/igrigorik/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/igrigorik/subscriptions",
+            "organizations_url": "https://api.github.com/users/igrigorik/orgs",
+            "repos_url": "https://api.github.com/users/igrigorik/repos",
+            "events_url": "https://api.github.com/users/igrigorik/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/igrigorik/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Is it worth documenting what will happen when you specify both.. a path and enable useReferer?\n",
+        "created_at": "2016-04-04T22:10:13Z",
+        "updated_at": "2016-04-09T08:37:37Z",
+        "html_url": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r58457943",
+        "pull_request_url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/58457943"
+            },
+            "html": {
+                "href": "https://github.com/igrigorik/ga-beacon/pull/41#discussion_r58457943"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/41"
+            }
+        }
+    },
+    {
+        "url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/175333084",
+        "pull_request_review_id": 104842745,
+        "id": 175333084,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDE3NTMzMzA4NA==",
+        "diff_hunk": "@@ -144,7 +145,9 @@ func handler(w http.ResponseWriter, r *http.Request) {\n \t}\n \n \tif len(cid) != 0 {\n-\t\tw.Header().Set(\"Cache-Control\", \"private, no-store\")\n+\t\tvar cacheUntil = time.Now().Format(http.TimeFormat)\n+\t\tw.Header().Set(\"Cache-Control\", \"no-cache, no-store, must-revalidate\")",
+        "path": "ga-beacon.go",
+        "position": null,
+        "original_position": 28,
+        "commit_id": "64a39b0c1b6ac315111329fc3b5a214996454da6",
+        "original_commit_id": "9df00f872aeb87257465db0ad38438a933f5cffd",
+        "user": {
+            "login": "igrigorik",
+            "id": 10652,
+            "node_id": "MDQ6VXNlcjEwNjUy",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/10652?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/igrigorik",
+            "html_url": "https://github.com/igrigorik",
+            "followers_url": "https://api.github.com/users/igrigorik/followers",
+            "following_url": "https://api.github.com/users/igrigorik/following{/other_user}",
+            "gists_url": "https://api.github.com/users/igrigorik/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/igrigorik/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/igrigorik/subscriptions",
+            "organizations_url": "https://api.github.com/users/igrigorik/orgs",
+            "repos_url": "https://api.github.com/users/igrigorik/repos",
+            "events_url": "https://api.github.com/users/igrigorik/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/igrigorik/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "See https://github.com/igrigorik/ga-beacon/pull/54, should probably keep \"private\" as well?",
+        "created_at": "2018-03-19T05:13:31Z",
+        "updated_at": "2018-03-19T09:08:09Z",
+        "html_url": "https://github.com/igrigorik/ga-beacon/pull/61#discussion_r175333084",
+        "pull_request_url": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/61",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/comments/175333084"
+            },
+            "html": {
+                "href": "https://github.com/igrigorik/ga-beacon/pull/61#discussion_r175333084"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/igrigorik/ga-beacon/pulls/61"
+            }
+        }
+    }
+]
