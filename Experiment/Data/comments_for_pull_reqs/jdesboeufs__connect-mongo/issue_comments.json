@@ -35276,5 +35276,36 @@
         "updated_at": "2019-05-13T04:49:28Z",
         "author_association": "NONE",
         "body": "astigmatism - thanks for your comment.  Hopefully we can get a push for an update."
+    },
+    {
+        "url": "https://api.github.com/repos/jdesboeufs/connect-mongo/issues/comments/493147578",
+        "html_url": "https://github.com/jdesboeufs/connect-mongo/issues/320#issuecomment-493147578",
+        "issue_url": "https://api.github.com/repos/jdesboeufs/connect-mongo/issues/320",
+        "id": 493147578,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDQ5MzE0NzU3OA==",
+        "user": {
+            "login": "Samuel-Montoya",
+            "id": 34517166,
+            "node_id": "MDQ6VXNlcjM0NTE3MTY2",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/34517166?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Samuel-Montoya",
+            "html_url": "https://github.com/Samuel-Montoya",
+            "followers_url": "https://api.github.com/users/Samuel-Montoya/followers",
+            "following_url": "https://api.github.com/users/Samuel-Montoya/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Samuel-Montoya/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Samuel-Montoya/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Samuel-Montoya/subscriptions",
+            "organizations_url": "https://api.github.com/users/Samuel-Montoya/orgs",
+            "repos_url": "https://api.github.com/users/Samuel-Montoya/repos",
+            "events_url": "https://api.github.com/users/Samuel-Montoya/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Samuel-Montoya/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2019-05-16T16:53:11Z",
+        "updated_at": "2019-05-16T16:53:11Z",
+        "author_association": "NONE",
+        "body": "Found a fix for this.\r\n\r\nApparently collections that have already been made with the default property ```autoRemove```\r\nkeep this setting for as long as until the collection is deleted or renamed.\r\n\r\nI renamed the collection to something different and it started keeping sessions as intended."
     }
 ]

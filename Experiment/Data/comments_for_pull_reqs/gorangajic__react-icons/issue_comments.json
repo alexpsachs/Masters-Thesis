@@ -22194,5 +22194,36 @@
         "updated_at": "2019-05-15T17:07:00Z",
         "author_association": "CONTRIBUTOR",
         "body": "@spider58 Could you please clarify what you mean? Normally, if I want the bold border I just put it in another `span` tag. Do you mean `stroke`?\r\n\r\nFor example\r\n```\r\n<span style={border: '3px solid'}>\r\n     <FaAngleDown />\r\n</span>\r\n```"
+    },
+    {
+        "url": "https://api.github.com/repos/react-icons/react-icons/issues/comments/492852938",
+        "html_url": "https://github.com/react-icons/react-icons/issues/154#issuecomment-492852938",
+        "issue_url": "https://api.github.com/repos/react-icons/react-icons/issues/154",
+        "id": 492852938,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDQ5Mjg1MjkzOA==",
+        "user": {
+            "login": "Slapbox",
+            "id": 6835891,
+            "node_id": "MDQ6VXNlcjY4MzU4OTE=",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/6835891?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Slapbox",
+            "html_url": "https://github.com/Slapbox",
+            "followers_url": "https://api.github.com/users/Slapbox/followers",
+            "following_url": "https://api.github.com/users/Slapbox/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Slapbox/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Slapbox/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Slapbox/subscriptions",
+            "organizations_url": "https://api.github.com/users/Slapbox/orgs",
+            "repos_url": "https://api.github.com/users/Slapbox/repos",
+            "events_url": "https://api.github.com/users/Slapbox/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Slapbox/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2019-05-15T22:50:32Z",
+        "updated_at": "2019-05-16T01:01:11Z",
+        "author_association": "NONE",
+        "body": "**Edit:** I seem to have gotten it working, but I have no idea how. Bundle Analyzer shows the wrong size still, but it appears the extraneous icons are no longer actually in the bundle.\r\n\r\n----\r\n\r\nThe things that worked for me in `React-Icons@3.5` no longer work for me in newer versions, nor does anything else in this thread or that I've found anywhere on the web. If I import a single FontAwesome icon, I get them all. Resolving `.esm.js`, `sideEffects: false` and everything else be damned.\r\n\r\nHere's what I get in my Bundle Analyzer if I import a single icon, no matter what I do:\r\n\r\n![image](https://user-images.githubusercontent.com/6835891/57816855-e385e900-774a-11e9-8ab2-3f33d7c61672.png)\r\n\r\nThe Bundle Analyzer warns that showing the contents of concatenated modules may be inaccurate, but I have confirmed that all the icons are imported by searching for fragments of the path data for various unused icons, such as, `M482.1 32H28.7C5.8 32 0 37.9 0 60.9v390.` from the icon `FaAdversal`."
     }
 ]

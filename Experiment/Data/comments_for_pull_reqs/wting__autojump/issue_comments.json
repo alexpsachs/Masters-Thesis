@@ -56077,5 +56077,36 @@
         "updated_at": "2019-05-12T10:07:03Z",
         "author_association": "NONE",
         "body": "I would love to have something like this :)\r\n\r\nHowever, while trying this script out, I noticed that the chosen completion looks far from clean: `<What I entered>__<int>__<actual completion>`. Since I use the autocompletion for zsh and the history extensively, this is not ideal.\r\nDo you have an idea how to fix it so the final completion is just `<actual completion>`?"
+    },
+    {
+        "url": "https://api.github.com/repos/wting/autojump/issues/comments/493093178",
+        "html_url": "https://github.com/wting/autojump/issues/498#issuecomment-493093178",
+        "issue_url": "https://api.github.com/repos/wting/autojump/issues/498",
+        "id": 493093178,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDQ5MzA5MzE3OA==",
+        "user": {
+            "login": "kniost",
+            "id": 13374454,
+            "node_id": "MDQ6VXNlcjEzMzc0NDU0",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/13374454?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/kniost",
+            "html_url": "https://github.com/kniost",
+            "followers_url": "https://api.github.com/users/kniost/followers",
+            "following_url": "https://api.github.com/users/kniost/following{/other_user}",
+            "gists_url": "https://api.github.com/users/kniost/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/kniost/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/kniost/subscriptions",
+            "organizations_url": "https://api.github.com/users/kniost/orgs",
+            "repos_url": "https://api.github.com/users/kniost/repos",
+            "events_url": "https://api.github.com/users/kniost/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/kniost/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2019-05-16T14:33:14Z",
+        "updated_at": "2019-05-16T14:33:14Z",
+        "author_association": "NONE",
+        "body": "> I had the same issue - fixed it either by `touch ~/Library/autojump/autojump.txt` or what I think fixed it was me actually **removing** my `alias j='autojump'` from my `~/.zshrc` file after looking at `man autojump` and noticing it actually had the j \"convenience\" shortcut, doh!\r\n> \r\n> Running with\r\n> zsh 5.7.1 (x86_64-apple-darwin18.2.0)\r\n> autojump v22.5.1\r\n> Homebrew 2.0.2\r\n> \r\n> Edit: Writing `j --version` still kills the terminal, `autojump --version` does not\r\n\r\nJust like you and can't fix it with all solutions, both `j --version` and `autojump --version` kill the terminal"
     }
 ]

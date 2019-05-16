@@ -16901,5 +16901,54 @@
                 "href": "https://api.github.com/repos/lra/mackup/pulls/1356"
             }
         }
+    },
+    {
+        "url": "https://api.github.com/repos/lra/mackup/pulls/comments/284412376",
+        "pull_request_review_id": 238021599,
+        "id": 284412376,
+        "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI4NDQxMjM3Ng==",
+        "diff_hunk": "@@ -0,0 +1,9 @@\n+[application]\n+name = Secure Pipes\n+\n+[configuration_files]\n+Library/Preferences/net.edgeservices.connections.plist\n+Library/Preferences/net.edgeservices.Secure-Pipes.plist\n+Library/Preferences/net.edgeservices.sp-config.plist\n+Library/Application Support/Secure Pipes/*.known_hosts",
+        "path": "mackup/applications/secure-pipes.cfg",
+        "position": null,
+        "original_position": 8,
+        "commit_id": "86c94b392de0c065c64468a1c20ff4d17d7fa486",
+        "original_commit_id": "c9e922730d311e1222becf727e11be96651e2935",
+        "user": {
+            "login": "lra",
+            "id": 122286,
+            "node_id": "MDQ6VXNlcjEyMjI4Ng==",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/122286?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/lra",
+            "html_url": "https://github.com/lra",
+            "followers_url": "https://api.github.com/users/lra/followers",
+            "following_url": "https://api.github.com/users/lra/following{/other_user}",
+            "gists_url": "https://api.github.com/users/lra/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/lra/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/lra/subscriptions",
+            "organizations_url": "https://api.github.com/users/lra/orgs",
+            "repos_url": "https://api.github.com/users/lra/repos",
+            "events_url": "https://api.github.com/users/lra/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/lra/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "body": "Wildcards are not supported, Mackup link files and directories, and you can't link a wildcard. The only way to link multiple files is to explicitly list them all, or to link the parent folder.",
+        "created_at": "2019-05-15T19:20:38Z",
+        "updated_at": "2019-05-15T19:51:24Z",
+        "html_url": "https://github.com/lra/mackup/pull/1376#discussion_r284412376",
+        "pull_request_url": "https://api.github.com/repos/lra/mackup/pulls/1376",
+        "author_association": "OWNER",
+        "_links": {
+            "self": {
+                "href": "https://api.github.com/repos/lra/mackup/pulls/comments/284412376"
+            },
+            "html": {
+                "href": "https://github.com/lra/mackup/pull/1376#discussion_r284412376"
+            },
+            "pull_request": {
+                "href": "https://api.github.com/repos/lra/mackup/pulls/1376"
+            }
+        }
     }
 ]

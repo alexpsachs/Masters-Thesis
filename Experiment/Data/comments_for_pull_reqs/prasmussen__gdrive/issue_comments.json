@@ -32145,5 +32145,36 @@
         "updated_at": "2019-05-14T10:42:06Z",
         "author_association": "NONE",
         "body": "#garrytre could do with that work around if you have it available...\r\n\r\nTerry Mud"
+    },
+    {
+        "url": "https://api.github.com/repos/gdrive-org/gdrive/issues/comments/493111643",
+        "html_url": "https://github.com/gdrive-org/gdrive/issues/460#issuecomment-493111643",
+        "issue_url": "https://api.github.com/repos/gdrive-org/gdrive/issues/460",
+        "id": 493111643,
+        "node_id": "MDEyOklzc3VlQ29tbWVudDQ5MzExMTY0Mw==",
+        "user": {
+            "login": "mbenlioglu",
+            "id": 18167175,
+            "node_id": "MDQ6VXNlcjE4MTY3MTc1",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/18167175?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/mbenlioglu",
+            "html_url": "https://github.com/mbenlioglu",
+            "followers_url": "https://api.github.com/users/mbenlioglu/followers",
+            "following_url": "https://api.github.com/users/mbenlioglu/following{/other_user}",
+            "gists_url": "https://api.github.com/users/mbenlioglu/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/mbenlioglu/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/mbenlioglu/subscriptions",
+            "organizations_url": "https://api.github.com/users/mbenlioglu/orgs",
+            "repos_url": "https://api.github.com/users/mbenlioglu/repos",
+            "events_url": "https://api.github.com/users/mbenlioglu/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/mbenlioglu/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "created_at": "2019-05-16T15:18:09Z",
+        "updated_at": "2019-05-16T15:18:09Z",
+        "author_association": "MEMBER",
+        "body": "Hi, I see you want your filename (`chromebook drive    Disk: /dev/mmcblk0.pdf`) to contain `/`, but that's not possible on **any** file systems. Google drive allows you to name your files that way because they use file ID's for the actual file names. Similarly you can have 2 different files with **same** names on Google Drive, but you can't have them in any OS.\r\n\r\nI don't think there is a clear solution for this. Let's say there's a file `a/b.pdf` and say we converted `/` into `_` and downloaded the file as `a_b.pdf`. What if there's also a file in the drive  called `a_b.pdf`? They're going to conflict and overwrite each other. So the best solution is to keep OS and file system limitations in mind when naming your files.\r\n\r\nOutputting to pipe/stdout already exists with `download` command, I'll look into implementing it in export as well"
     }
 ]

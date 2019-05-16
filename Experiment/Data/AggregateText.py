@@ -1,6 +1,6 @@
 """
-The purpose of this script is to crawl github for all of those comments on all the pull
-requests for the repos listed in AggregateText_repo_list.txt
+The purpose of this script is to crawl github comments folder for all of those comments on all the pull
+requests for the repos listed in repo_list.txt
 """
 import os
 HOME = os.path.abspath(os.path.join(__file__,'../../../'))
@@ -10,43 +10,46 @@ sys.path.append(LIB)
 import json
 from pyexcel_ods3 import get_data
 import code
-import gitHubAPI
 import logger
+import pandas as pd
+
 def log(*args):
     logger.log(args,pre='AggregateText.py')
 def logJSON(*args):
     logger.logJSON(args,pre='AggregateText.py.json')
 def main():
+    print('AggregateText running')
     # 0. set up the paths and direcory
-    REPO_LST = os.path.join(HOME,'Experiment','Data','AggregateText_repo_list.txt')
+    REPO_LST = os.path.join(HOME,'Experiment','Data','repo_list.txt')
     OUTDIR = os.path.join(HOME,'Experiment','Data','AggregateText')
+    cutoff_date = (2017,12) # yr,mth: so we want anything before Dec 2017
     if not os.path.exists(OUTDIR):
         os.mkdir(OUTDIR)
-    #HERE
-    DATA = '/home/a2sachs/Documents/Library/Data/GitHub/comments_for_pull_reqs'
+    DATA = os.path.join(HOME,'Experiment','Data','comments_for_pull_reqs')
     if not os.path.exists(OUTDIR):
         os.mkdir(OUTDIR)
     # 1. Import the data
     # Create the mapping
-    sample = get_data(REPO_LST)
-    logJSON(sample)
-    activeSheet, inactiveSheet = [sample[x] for x in ['active','inactive']]
-    header = inactiveSheet[0]
-    repoI = header.index('Repository')
-    statusI = header.index('Status')
-    repo_lst = []
+
+    sample_df = pd.read_csv(REPO_LST)
+    # logJSON(sample)
+    # activeSheet, inactiveSheet = [sample[x] for x in ['active','inactive']]
+    # header = inactiveSheet[0]
+    # repoI = header.index('Repository')
+    # statusI = header.index('Status')
+    # repo_lst = []
     """
     {<repo_name>:{'status':active/inactive,
         'core contributors':{<name>:<all_text>,...}
         }
     }
     """
-    for sheet in [activeSheet,inactiveSheet]:
-        rows = sheet[1:]
-        for row in rows:
-            repo = row[repoI]
-            repo_lst.append(repo)
-
+    # for sheet in [activeSheet,inactiveSheet]:
+    #     rows = sheet[1:]
+    #     for row in rows:
+    #         repo = row[repoI]
+    #         repo_lst.append(repo)
+    repo_lst = sample_df['Repository'].to_list()
 
     # 2. Get the core contributors for each repo
     # for repo in repos:
@@ -96,7 +99,7 @@ def main():
             try:
                 if entry not in ['documentation_url','message']:
                     user = entry['user']
-                    if user == None: #some reivews don't have a user apparently
+                    if user == None: #some reviews don't have a user apparently
                         continue
                     name = user['login']
 
@@ -124,6 +127,9 @@ def main():
                 log(entry)
         issues_lst.sort(key=lambda x: (x['issue_num'],x['time']))
         reviews_lst.sort(key=lambda x: (x['pr_num'],x['time']))
+        # filter out up to the same date that the ESEM ppl did
+        issues_lst = [e for e in issues_lst if e['time'] < cutoff_date]
+        reviews_lst = [e for e in issues_lst if e['time'] < cutoff_date]
         
         allText = {} #{name:text}
         for entry in [*issues_lst,*reviews_lst]:
@@ -134,6 +140,7 @@ def main():
             allText[name] += text + '. '
         # code.interact(local=locals())
         json.dump(allText,open(out_path,'w'),indent=4)
+    print('AggregateText complete')
 
 
 if __name__ == '__main__':

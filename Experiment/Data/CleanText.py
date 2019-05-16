@@ -1,11 +1,12 @@
 """
 This script is intended to strip the aggregated text from 
-'/home/a2sachs/Documents/Experiment2.1/Data/AggregateText'
+'Experiment/Data/AggregateText'
 of all code and place the content into
-'/home/alex/a2sachs/Documents/Experiment2.2/Data/CleanText'
+'Experiment/Data/CleanText'
 """
 import os,sys,json,time
-LIB = '/home/a2sachs/Documents/Library'
+HOME = os.path.abspath(os.path.join(__file__,'../../../'))
+LIB = os.path.join(HOME,'Library')
 sys.path.append(LIB)
 import markdown_to_text
 import logger
@@ -14,8 +15,9 @@ def log(*args):
 logger.deleteLogs()
 
 # 0. create the paths
-INDIR = '/home/a2sachs/Documents/Experiment2.1/Data/AggregateText'
-OUTDIR = '/home/a2sachs/Documents/Experiment2.2/Data/CleanText'
+INDIR = os.path.join(HOME,'Experiment','Data','AggregateText')
+# OUTDIR = '/home/a2sachs/Documents/Experiment2.2/Data/CleanText'
+OUTDIR = os.path.join(HOME,'Experiment','Data','CleanText')
 print('path exists',os.path.exists(OUTDIR))
 if not os.path.exists(OUTDIR):
     os.mkdir(OUTDIR)

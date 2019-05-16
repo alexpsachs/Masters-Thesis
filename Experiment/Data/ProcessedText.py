@@ -3,7 +3,9 @@ The purpose of this script is to process the text in ./CleanText to obtain the
 big 5 and SYMLOG values
 """
 import os,sys,json,code,time
-LIB = '/home/a2sachs/Documents/Library'
+HOME = os.path.abspath(os.path.join(__file__,'../../../'))
+LIB = os.path.join(HOME,'Library')
+DATA = os.path.join(HOME,'Experiment','Data')
 sys.path.append(LIB)
 import IBM
 import SYMLOG
@@ -12,9 +14,13 @@ def log(*args,pre=None):
     logger.log(*args,pre=('ProcessedText.py' if pre == None else 'ProcessedText.py.'+pre))
 
 # 0. setup the paths
-INDIR = '/home/a2sachs/Documents/Experiment2.2/Data/CleanText'
-OUTDIR = '/home/a2sachs/Documents/Experiment2.2/Data/ProcessedText_Big5'
-SYMDIR = '/home/a2sachs/Documents/Experiment2.2/Data/ProcessedText_Sym'
+# INDIR = '/home/a2sachs/Documents/Experiment2.2/Data/CleanText'
+INDIR = os.path.join(DATA,'CleanText')
+# OUTDIR = '/home/a2sachs/Documents/Experiment2.2/Data/ProcessedText_Big5'
+OUTDIR = os.path.join(DATA,'ProcessedText_Big5')
+# SYMDIR = '/home/a2sachs/Documents/Experiment2.2/Data/ProcessedText_Sym'
+SYMDIR = os.path.join(DATA,'ProcessedText_Sym')
+
 #FUNCTIONS
 def processBig5(filenames):
     """

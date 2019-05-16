@@ -11,6 +11,7 @@ import multiprocessing as mp
 import os
 import code
 import sys
+import pandas as pd
 HOME = os.path.abspath(os.path.join(__file__,'../../../'))
 LIB = os.path.join(HOME,'Library')
 sys.path.append(LIB)
@@ -277,10 +278,13 @@ def crawl_comments_for_id(inputs):
 
 def main():
     start = time.time()
+    print('comments_for_pull_reqs running')
 
     #0. setup the parameters
     repo_txt_file = os.path.join(HOME,'Experiment','Data','repo_list.txt')
-    repo_lst = [line.strip() for line in open(repo_txt_file,'r')]
+    repo_df = pd.read_csv(repo_txt_file)
+    # repo_lst = [line.strip() for line in open(repo_txt_file,'r')]
+    repo_lst = repo_df['Repository'].to_list()
     done_repo_txt_file = os.path.join(HOME,'Experiment','Data','DoneRepos.txt')
     done_repo_lst = [] if not os.path.exists(done_repo_txt_file) else {line.strip() for line in open(done_repo_txt_file,'r')}
     print('type done',type(done_repo_lst))
@@ -325,7 +329,6 @@ def main():
     # repo_lst = [['symfony/symfony'],0]
     # print('repo_lst',repo_lst)
     # crawl_comments_2(repo_lst)
-
     end = time.time()
     print('It took',end-start,'seconds to crawl the repos')
 

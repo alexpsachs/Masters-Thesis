@@ -7,3 +7,8 @@ experiments:
         end up with everyone in the Opposite circle
     reorient: this is done with the inversion of the compass if the proportions are such that this makes sense
         (more greatest number of people in the ref circle instead of the opp circle)
+
+ESEM - Final.ods	Is the aggregation of all the ESEM data into one spreadsheet
+
+NOTE: altered /home/alex/Thesis/Experiment/Analysis/ESEM - Dataset.ods
+	> changed the value for nicklockwood/iRate to TP (as per the email thread with Jailton)
