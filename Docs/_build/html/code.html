@@ -36,6 +36,18 @@
 <p>The purpose of this module is to centralze of the the stats and plotting
 functionality for reusability</p>
 <dl class="class">
+<dt id="analyzer.Linear_wrapper">
+<em class="property">class </em><code class="descclassname">analyzer.</code><code class="descname">Linear_wrapper</code><a class="headerlink" href="#analyzer.Linear_wrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for the linear regression</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="analyzer.Logistic_wrapper">
+<em class="property">class </em><code class="descclassname">analyzer.</code><code class="descname">Logistic_wrapper</code><a class="headerlink" href="#analyzer.Logistic_wrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for the linear regression</p>
+</dd></dl>
+
+<dl class="class">
 <dt id="analyzer.Neural_wrapper">
 <em class="property">class </em><code class="descclassname">analyzer.</code><code class="descname">Neural_wrapper</code><a class="headerlink" href="#analyzer.Neural_wrapper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrapper for the neural network model</p>
@@ -57,6 +69,12 @@ functionality for reusability</p>
 </dd></dl>
 
 <dl class="class">
+<dt id="analyzer.SVM_wrapper">
+<em class="property">class </em><code class="descclassname">analyzer.</code><code class="descname">SVM_wrapper</code><a class="headerlink" href="#analyzer.SVM_wrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for the linear regression</p>
+</dd></dl>
+
+<dl class="class">
 <dt id="analyzer.Xgboost_wrapper">
 <em class="property">class </em><code class="descclassname">analyzer.</code><code class="descname">Xgboost_wrapper</code><a class="headerlink" href="#analyzer.Xgboost_wrapper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrapper for the xgboost model</p>
@@ -67,7 +85,7 @@ functionality for reusability</p>
 
 <dl class="method">
 <dt id="analyzer.Xgboost_wrapper.predict">
-<code class="descname">predict</code><span class="sig-paren">(</span><em>X_test</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.Xgboost_wrapper.predict" title="Permalink to this definition">¶</a></dt>
+<code class="descname">predict</code><span class="sig-paren">(</span><em>X_test</em>, <em>threshold=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.Xgboost_wrapper.predict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -102,6 +120,11 @@ y_label and returns the stats (dict) and the predictions (list)</p>
 <dd><p>(bestThreshold x y thresholds opt) The purpose of this function is to determine the best thresold based on a set of values for the x-axis, the y-axis, and the thresholds used for each as well as an optimal point (opt) to evaluate the distance to (shortest distanct to the optimal is the ‘best’)</p>
 <p>bestThreshold: (listof num) (listof num) (listof num) (point) -&gt; num &lt;- the ‘best’ threshold
 ex.</p>
+<p>x = [1.5,2,3,4]
+y = [1.2,3,4,5]
+thresholds = [0.1,0.2,0.3]
+opt = (1.0,1.0)
+bestThreshold(np.array([x]),np.array([y]),np.array([thresholds]),opt) -&gt; 0.1 # because this is the threshold that produces the coordinates that are cloest to opt</p>
 </dd></dl>
 
 <dl class="function">
@@ -130,7 +153,7 @@ filename: Saves the fig to this file</p>
 
 <dl class="function">
 <dt id="analyzer.plotPRC">
-<code class="descclassname">analyzer.</code><code class="descname">plotPRC</code><span class="sig-paren">(</span><em>prec</em>, <em>rec</em>, <em>labels</em>, <em>filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.plotPRC" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">analyzer.</code><code class="descname">plotPRC</code><span class="sig-paren">(</span><em>prec</em>, <em>rec</em>, <em>thresholds</em>, <em>labels</em>, <em>filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.plotPRC" title="Permalink to this definition">¶</a></dt>
 <dd><p>(plotROC fpr tpr filepath) The purpose of this function is to create a plot depicting the ROC curve given the false positive rates (fpr), the true positive rates (tpr), and saving it to the filepath provided.
 &gt;&gt;&gt; import numpy as np
 &gt;&gt;&gt; from sklearn import metrics
@@ -147,7 +170,7 @@ array([1.8 , 0.8 , 0.4 , 0.35, 0.1 ])</p>
 
 <dl class="function">
 <dt id="analyzer.plotPRC_helper">
-<code class="descclassname">analyzer.</code><code class="descname">plotPRC_helper</code><span class="sig-paren">(</span><em>prec</em>, <em>rec</em>, <em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.plotPRC_helper" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">analyzer.</code><code class="descname">plotPRC_helper</code><span class="sig-paren">(</span><em>prec</em>, <em>rec</em>, <em>thresholds</em>, <em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.plotPRC_helper" title="Permalink to this definition">¶</a></dt>
 <dd><p>(plotROC prec rec label) The purpose of this function is to create a plot depicting the ROC curve given the false positive rates (fpr), the true positive rates (tpr), and saving it to the filepath provided.
 &gt;&gt;&gt; import numpy as np
 &gt;&gt;&gt; from sklearn import metrics
@@ -181,6 +204,32 @@ recall(data) -&gt; 0.5714285714285714</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-IBM">
+<span id="ibm"></span><h1>IBM<a class="headerlink" href="#module-IBM" title="Permalink to this headline">¶</a></h1>
+<p>The purpose of this library is to provide an API for accessing
+information in the IBM json files</p>
+<dl class="function">
+<dt id="IBM.getBig5">
+<code class="descclassname">IBM.</code><code class="descname">getBig5</code><span class="sig-paren">(</span><em>filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#IBM.getBig5" title="Permalink to this definition">¶</a></dt>
+<dd><p>(str) -&gt; (dictof str:number)</p>
+<p>This function returns a dictionary of the big 5 attributes for a particular
+json file (filepath).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="IBM.getBig5FromText">
+<code class="descclassname">IBM.</code><code class="descname">getBig5FromText</code><span class="sig-paren">(</span><em>text</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#IBM.getBig5FromText" title="Permalink to this definition">¶</a></dt>
+<dd><p>(getBig5FromText text) -&gt; {&lt;big 5 trait&gt;:&lt;raw_score&gt;} This function takes in text and turns it into a dict of
+the Big5 variables.</p>
+<div class="line-block">
+<div class="line">kargs:</div>
+<div class="line">filename  An optional argument that will save the raw IBM output as a json to the designated file</div>
+</div>
+<p>ex.
+getBig5FromText(‘This is some text’ x 100) -&gt; {‘openness’:0.72,’conscientiousness’:0.43, blah…}</p>
+</dd></dl>
+
+</div>
 
 
           </div>
@@ -202,6 +251,7 @@ recall(data) -&gt; 0.5714285714285714</p>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#module-IBM">IBM</a></li>
 </ul>
 
 <div class="relations">

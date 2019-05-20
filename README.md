@@ -13,4 +13,12 @@ Experiment/Data/comments_for_pull_reqs.py
 # aggregate the text from the produced jsons into a repo-level json for each repository
 Experiment/Data/AggregateText.py
 # clean the text from markup, etc.
-Data/CleanText.py
+Experiment/Data/CleanText.py
+# process the text for the big 5 and symlog values
+Experiment/Data/ProcessedText.py
+# aggregate the symlog metrics for analysis
+Experiment/Analysis/SYMLOG_metrics.py
+# aggregate all of the disparate metrics into a single directory (experiment_data) for analysis 
+Experiment/Analysis/experiment_data.py
+# finally, run the analysis
+Experiment/Analysis/analysis.py

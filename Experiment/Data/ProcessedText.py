@@ -18,6 +18,7 @@ def log(*args,pre=None):
 INDIR = os.path.join(DATA,'CleanText')
 # OUTDIR = '/home/a2sachs/Documents/Experiment2.2/Data/ProcessedText_Big5'
 OUTDIR = os.path.join(DATA,'ProcessedText_Big5')
+IBMDIR = os.path.join(DATA,'ProcessedText_IBM_raw')
 # SYMDIR = '/home/a2sachs/Documents/Experiment2.2/Data/ProcessedText_Sym'
 SYMDIR = os.path.join(DATA,'ProcessedText_Sym')
 
@@ -32,7 +33,8 @@ def processBig5(filenames):
         outpath = os.path.join(OUTDIR,filename)
         outdata = {}
         for name,text in indata.items():
-            big5 = IBM.getBig5FromText(text)
+            raw_json_path = os.path.join(IBMDIR,filename[:-5]+'.'+name+'.json')
+            big5 = IBM.getBig5FromText(text,filename=raw_json_path)
             if big5 != None:
                 outdata[name] = big5
         json.dump(outdata,open(outpath,'w'),indent=4)
@@ -72,22 +74,24 @@ def processSYMLOG(filenames):
         log('finished SYMLOG for',filename,pre=pre)
 
 if __name__ == '__main__':
+    print('made it')
     logger.deleteLogs()
     start = time.time()
     if not os.path.exists(OUTDIR):
         os.mkdir(OUTDIR)
     if not os.path.exists(SYMDIR):
         os.mkdir(SYMDIR)
+    if not os.path.exists(IBMDIR):
+        os.mkdir(IBMDIR)
     # 1. Setup the filepaths
     all_filenames = os.listdir(INDIR)
     print('all_filenames',len(all_filenames))
     # 1.a. exclude repos already done
     filenames = all_filenames
     print('filenames',len(filenames))
-    # code.interact(local=locals())
 
     # 2. process the text
-    # processBig5(filenames)
+    processBig5(filenames)
     processSYMLOG(filenames)
     end = time.time()
     print('completed in',end-start,'seconds')

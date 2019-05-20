@@ -100,7 +100,7 @@ def run(exp_name,reorient=False,num_threads=4):
     key = list(all_data.keys())[0]
     for filepath in filepaths[1:]:
         new_data = get_data(filepath)
-        all_data[key].extend(new_data[key])
+        all_data[key].extend(new_data[key][1:]) # need to make sure to exclude the header of each file
     out_path = os.path.join(ods_dir,'SYMLOG_metrics.ods')
     save_data(out_path,all_data)
     log('done the run',pre=pre)
