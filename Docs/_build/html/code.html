@@ -137,6 +137,13 @@ f1(data) -&gt; 0.6153846153846153</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="analyzer.get_model">
+<code class="descclassname">analyzer.</code><code class="descname">get_model</code><span class="sig-paren">(</span><em>model_type</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.get_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>(get_model str) This function creates and returns the model to be used for analysis.</p>
+<p>get_modeL: str -&gt; &lt;a model that fits the sklearn.linear_model.LogisticRegression archetype&gt;</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="analyzer.plotBestFit">
 <code class="descclassname">analyzer.</code><code class="descname">plotBestFit</code><span class="sig-paren">(</span><em>actual</em>, <em>predictions</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.plotBestFit" title="Permalink to this definition">¶</a></dt>
 <dd><p>(plotBestFit list list) Takes in the acutal datapoints and the predicted datapoints and then
@@ -203,6 +210,14 @@ data = [[1,2],[3,4]] # C_{i,j} where i is the true value and j is the predicted 
 recall(data) -&gt; 0.5714285714285714</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="analyzer.test">
+<code class="descclassname">analyzer.</code><code class="descname">test</code><span class="sig-paren">(</span><em>train_df</em>, <em>test_df</em>, <em>y_label</em>, <em>model_type</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>(test DataFrame DataFrame str str) This function trains the model defined by model_type with the set 
+contained by train_df and tests this trained model on test_df utilizing the y_label to identify the 
+dependent variable to predict and test and returns the stats and predicions.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="module-IBM">
 <span id="ibm"></span><h1>IBM<a class="headerlink" href="#module-IBM" title="Permalink to this headline">¶</a></h1>
@@ -223,7 +238,7 @@ json file (filepath).</p>
 the Big5 variables.</p>
 <div class="line-block">
 <div class="line">kargs:</div>
-<div class="line">filename  An optional argument that will save the raw IBM output as a json to the designated file</div>
+<div class="line">filename - An optional argument that will save the raw IBM output as a json to the designated file</div>
 </div>
 <p>ex.
 getBig5FromText(‘This is some text’ x 100) -&gt; {‘openness’:0.72,’conscientiousness’:0.43, blah…}</p>

@@ -48,6 +48,10 @@ def aggregateData(exp_name,pre=''):
     esem_model = esem_data['Model']
     esem_prec = esem_data['Precision']
     esem_rec = esem_data['Recall']
+    # remove empty lines
+    esem_model = [x for x in esem_model if len(x) != 0]
+    esem_prec = [x for x in esem_prec if len(x) != 0]
+    esem_rec = [x for x in esem_rec if len(x) != 0]
 
     folds_dict = {}
     testing_dict = {}
@@ -71,7 +75,7 @@ def aggregateData(exp_name,pre=''):
             result = row[headers.index('Result')]
             if result not in ['TP','FP']:
                 print('unknown result',result)
-            status = 'inactive' if result in ['TP','FP'] else 'active'
+            status = 'inactive' if result == 'TP' else 'active' if result == 'FP' else 'ERROR unknown'
             prec_dict[name] = {'status':status}
     headers = esem_rec[0]
     for row in esem_rec[1:]:
@@ -80,7 +84,7 @@ def aggregateData(exp_name,pre=''):
             classification = row[headers.index('Classification')]
             if classification not in ['TP','FN']:
                 print('unknown classification',classification)
-            status = 'inactive' if classification == 'TP' else 'active' if classification == 'FN' else 'unknown?'
+            status = 'inactive' if classification in ['TP','FN'] else 'ERROR unknown'
             rec_dict[name] = {'status':status}
     testing_dict.update(prec_dict)
     testing_dict.update(rec_dict)
@@ -108,9 +112,7 @@ def aggregateData(exp_name,pre=''):
             symlog_scores = [symlog_dict[reponame][metric] for metric in symlog_metrics]
             lst = [reponame,esem_status]+symlog_scores
             data.append(lst)
-
         out_data.update({label:[header,*data]})
-    # code.interact(local=dict(globals(),**locals()))
     save_data(out_path, out_data)
 
     print('done',exp_name)

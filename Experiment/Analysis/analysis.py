@@ -42,7 +42,8 @@ def analyzeExperiment(exp_name,pre=''):
         os.mkdir(base)
         log('made directory',base,pre=pre)
     in_path = os.path.join(base,'experiment_data.ods')
-    ods_data = read_data(in_path)['Data']
+
+    ods_data = read_data(in_path)['Folds']
     headers = ods_data[0]
     data_dict = {label:[] for label in headers}
     for row in ods_data[1:]:
@@ -50,9 +51,29 @@ def analyzeExperiment(exp_name,pre=''):
             data_dict[label].append(row[i])
     df = pandas.DataFrame(data=data_dict)
 
+    ods_data = read_data(in_path)['Precision']
+    headers = ods_data[0]
+    data_dict = {label:[] for label in headers}
+    for row in ods_data[1:]:
+        for i,label in enumerate(headers):
+            data_dict[label].append(row[i])
+    prec_df = pandas.DataFrame(data=data_dict)
+    prec_df = pandas.DataFrame(data=data_dict)
+
+    ods_data = read_data(in_path)['Recall']
+    headers = ods_data[0]
+    data_dict = {label:[] for label in headers}
+    for row in ods_data[1:]:
+        for i,label in enumerate(headers):
+            data_dict[label].append(row[i])
+    rec_df = pandas.DataFrame(data=data_dict)
+
     # transform the data by normalizing and binarizing esem_status
-    df.loc[df['esem_status'] == 'active', 'esem_status'] = 1
-    df.loc[df['esem_status'] == 'inactive', 'esem_status'] = 0
+    # PARADIGN SHIFT HERE
+    active_num = 0 #1
+    inactive_num = 1 #0
+    df.loc[df['esem_status'] == 'active', 'esem_status'] = active_num
+    df.loc[df['esem_status'] == 'inactive', 'esem_status'] = inactive_num
     df = df.drop(columns=['reponame'])
     columns = df.columns.values
     x = df.values #returns a numpy array
@@ -60,6 +81,26 @@ def analyzeExperiment(exp_name,pre=''):
     x_scaled = min_max_scaler.fit_transform(x)
     df = pandas.DataFrame(x_scaled)
     df.columns = columns
+
+    prec_df.loc[prec_df['esem_status'] == 'active', 'esem_status'] = active_num
+    prec_df.loc[prec_df['esem_status'] == 'inactive', 'esem_status'] = inactive_num
+    prec_df = prec_df.drop(columns=['reponame'])
+    columns = prec_df.columns.values
+    x = prec_df.values #returns a numpy array
+    min_max_scaler = preprocessing.MinMaxScaler()
+    x_scaled = min_max_scaler.fit_transform(x)
+    prec_df = pandas.DataFrame(x_scaled)
+    prec_df.columns = columns
+
+    rec_df.loc[rec_df['esem_status'] == 'active', 'esem_status'] = active_num
+    rec_df.loc[rec_df['esem_status'] == 'inactive', 'esem_status'] = inactive_num
+    rec_df = rec_df.drop(columns=['reponame'])
+    columns = rec_df.columns.values
+    x = rec_df.values #returns a numpy array
+    min_max_scaler = preprocessing.MinMaxScaler()
+    x_scaled = min_max_scaler.fit_transform(x)
+    rec_df = pandas.DataFrame(x_scaled)
+    rec_df.columns = columns
 
     # plot the raw data
     def p(name,pre=''):
@@ -93,56 +134,28 @@ def analyzeExperiment(exp_name,pre=''):
 
     # do the anlaysis
     all_precision,all_recall,all_thresholds,all_labels = [],[],[],[]
-    # linear regression
-    log('doing linear regression for',exp_name,pre=pre)
-    out_dict,data = analyzer.assess(df,'esem_status',model_type='Linear')
-    out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_linear_regression.json')
-    with open(out_txt_path,'w') as f:
-        json.dump(out_dict,f,indent=4)
-    all_precision.append(data['precision'])
-    all_recall.append(data['recall'])
-    all_thresholds.append(data['thresholds'])
-    all_labels.append('linear')
-    # logistic regression
-    log('doing logistic regression for',exp_name,pre=pre)
-    out_dict,data = analyzer.assess(df,'esem_status',model_type='Logistic')
-    out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_logistic_regression.json')
-    with open(out_txt_path,'w') as f:
-        json.dump(out_dict,f,indent=4)
-    all_precision.append(data['precision'])
-    all_recall.append(data['recall'])
-    all_thresholds.append(data['thresholds'])
-    all_labels.append('logistic')
-    # xgboost stuff
-    log('doing xgboost for',exp_name,pre=pre)
-    out_dict,data = analyzer.assess(df,'esem_status',model_type='Xgboost')
-    out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_xgboost.json')
-    with open(out_txt_path,'w') as f:
-        json.dump(out_dict,f,indent=4)
-    all_precision.append(data['precision'])
-    all_recall.append(data['recall'])
-    all_thresholds.append(data['thresholds'])
-    all_labels.append('xgboost')
-    # svm stuff
-    log('doing svm for',exp_name,pre=pre)
-    out_dict,data = analyzer.assess(df,'esem_status',model_type='SVM')
-    out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_SVM.json')
-    with open(out_txt_path,'w') as f:
-        json.dump(out_dict,f,indent=4)
-    all_precision.append(data['precision'])
-    all_recall.append(data['recall'])
-    all_thresholds.append(data['thresholds'])
-    all_labels.append('SVM')
-    # neural stuff
-    log('doing neural for',exp_name,pre=pre)
-    out_dict,data = analyzer.assess(df,'esem_status',model_type='Neural')
-    out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_Neural.json')
-    with open(out_txt_path,'w') as f:
-        json.dump(out_dict,f,indent=4)
-    all_precision.append(data['precision'])
-    all_recall.append(data['recall'])
-    all_thresholds.append(data['thresholds'])
-    all_labels.append('Neural')
+    def run_model(model_type):
+        # linear regression
+        log('doing {0} regression for'.format(model_type),exp_name,pre=pre)
+        out_dict,data = analyzer.assess(df,'esem_status',model_type=model_type)
+        best_threshold = out_dict['test']['best threshold']
+        prec_stats = analyzer.test(df,prec_df,'esem_status',model_type,include_only=['stats','precision'],threshold=best_threshold) # TODO add threshold
+        rec_stats = analyzer.test(df,rec_df,'esem_status',model_type,include_only=['stats','recall'])
+        out_dict['empirical precision'] = prec_stats
+        out_dict['empirical recall'] = rec_stats
+        out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_{0}_model.json'.format(model_type))
+        with open(out_txt_path,'w') as f:
+            json.dump(out_dict,f,indent=4)
+        all_precision.append(data['precision'])
+        all_recall.append(data['recall'])
+        all_thresholds.append(data['thresholds'])
+        all_labels.append(model_type)
+
+    run_model('Linear')
+    run_model('Logistic')
+    run_model('Xgboost')
+    run_model('SVM')
+    run_model('Neural')
     
     # draw the roc curves
     precision_recall_path = os.path.join(OUTDIR,exp_name,'analysis_prc.png')
@@ -159,4 +172,3 @@ if __name__ == '__main__':
             debug = True
         analyzeExperiment(experiment)
     print('analysis complete')
-    code.interact(local=dict(globals(),**locals()))

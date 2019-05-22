@@ -47,7 +47,7 @@ class Linear_wrapper:
         self.model = linear_model.LinearRegression()
 
     def fit(self,X,Y):
-        self.model.fit(X,Y)
+        self.model.fit(X.values,Y.values)
 
     def predict(self,X_test,threshold=0.5):
         probs = self.predict_proba(X_test)
@@ -55,7 +55,7 @@ class Linear_wrapper:
         return ans
 
     def predict_proba(self,X_test):
-        pred = self.model.predict(X_test)
+        pred = self.model.predict(X_test.values)
         ans = [p if p <= 1 else 1 for p in pred]
         return ans
 
@@ -70,7 +70,7 @@ class Logistic_wrapper:
         self.model = linear_model.LogisticRegression(solver='liblinear',multi_class='ovr')
 
     def fit(self,X,Y):
-        self.model.fit(X,Y)
+        self.model.fit(X.values,Y.values)
 
     def predict(self,X_test,threshold=0.5):
         probas = self.predict_proba(X_test)
@@ -78,7 +78,7 @@ class Logistic_wrapper:
         return ans
 
     def predict_proba(self,X_test):
-        return [e[1] for e in self.model.predict_proba(X_test)]
+        return [e[1] for e in self.model.predict_proba(X_test.values)]
 
 class Neural_wrapper:
     """
@@ -124,7 +124,7 @@ class Neural_wrapper:
             optimizer.step()
         log('model is now trained',pre=pre)
 
-    def predict(self,X_test):
+    def predict(self,X_test,threshold=0.5):
         """
         """
         pre = self.pre + '.predict'
@@ -136,7 +136,7 @@ class Neural_wrapper:
         log('new x',x,pre=pre)
         preds = self.model(x)
         log('preds',preds,pre=pre)
-        ans = [1 if y >= 0.5 else 0 for y in preds]
+        ans = [1 if y >= threshold else 0 for y in preds]
         log('returned',ans,pre=pre)
         return ans
 
@@ -165,10 +165,10 @@ class SVM_wrapper:
         """
         """
         self.pre = '.SVM_wrapper'
-        self.model = sklearn.svm.SVC(kernel='rbf',gamma='scale',probability=True)
+        self.model = sklearn.svm.SVC(kernel='rbf',gamma='scale',probability=True,random_state=RANDOM_SEED)
 
     def fit(self,X,Y):
-        self.model.fit(X,Y)
+        self.model.fit(X.values,Y.values)
 
     def predict(self,X_test,threshold=0.5):
         probas = self.predict_proba(X_test)
@@ -233,9 +233,29 @@ def f1(confusion_matrix):
     data = [[1,2],[3,4]] # C_{i,j} where i is the true value and j is the predicted value
     f1(data) -> 0.6153846153846153
     """
+    ans = None
+    prec = precision(confusion_matrix)
+    rec = recall(confusion_matrix)
+    if type(prec) == str or type(rec) == str:
+        return 'There are zeroes here'
     ans = 2 * (precision(confusion_matrix) * recall(confusion_matrix))/(precision(confusion_matrix) + recall(confusion_matrix))
     return ans
 
+def get_model(model_type):
+    """
+    (get_model str) This function creates and returns the model to be used for analysis.
+
+    get_modeL: str -> <a model that fits the sklearn.linear_model.LogisticRegression archetype>
+    """
+    # documentation:
+    # logistic: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
+    regr = Linear_wrapper() if model_type == 'Linear' else\
+            Logistic_wrapper() if model_type == 'Logistic' else\
+            SVM_wrapper() if model_type == 'SVM' else\
+            Xgboost_wrapper() if model_type == 'Xgboost' else\
+            Neural_wrapper() if model_type == 'Neural' else\
+            None
+    return regr
     
 def assess(df,y_label,model_type='Linear',ranges=None):
     """
@@ -297,43 +317,13 @@ def assess(df,y_label,model_type='Linear',ranges=None):
                     Y_train = Y_train.append(Ys[j])
         # train the model
         # svm: radial basis function (i.e. gaussian)
-        regr = Linear_wrapper() if model_type == 'Linear' else\
-                Logistic_wrapper() if model_type == 'Logistic' else\
-                SVM_wrapper() if model_type == 'SVM' else\
-                Xgboost_wrapper() if model_type == 'Xgboost' else\
-                Neural_wrapper() if model_type == 'Neural' else\
-                None
-        # documentation:
-        # logistic: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
+        regr = get_model(model_type)
         if regr == None:
             print('ERROR unknown model_type',model_type)
             return
-        regr.fit(X_train,Y_train)
-        if model_type == 'Xgboost':
-            regr.output_tree()
-        # test the model
-        log('X_test',X_test,pre=pre)
-        predY = regr.predict(X_test)
-        pred_proba = regr.predict_proba(X_test)
-        # pred_proba = predY.copy().tolist() if model_type in ['Linear','Xgboost'] else [e[1] for e in regr.predict_proba(X_test)] # the predict_proba gives a 2d numpy array of the probability of each classifcation
-        log('predY original',predY,pre=pre)
-        log('pred_proba',pred_proba,pre=pre)
-        # compare the prediction to the expected values
-        log('Y_test',Y_test,pre=pre)
-        log('predY',predY,pre=pre)
-        stats = {
-                'confusion':metrics.confusion_matrix(Y_test.values,predY).tolist()
-                }
-        # prepare the output
-        pred = [[*entry[0],entry[1]] for entry in zip(X_test.values,predY)]
-        entry = {
-                'stats':stats,
-                'pred':predY,
-                'pred_proba':pred_proba,
-                'y_test':Y_test
-                }
+
+        entry = test_basic(X_train, Y_train, X_test, Y_test, regr)
         fold_results.append(entry)
-        # fold_results.append((stats,pred,pred_proba))
     # aggregate the output data
     stats_lst = [e['stats'] for e in fold_results] # aggregate the stats
     final_matrix = [[0,0],[0,0]]
@@ -342,6 +332,7 @@ def assess(df,y_label,model_type='Linear',ranges=None):
         for i,row in enumerate(matrix):
             for j,col in enumerate(row):
                 final_matrix[i][j] += col
+    log('final_matrix',final_matrix,pre=pre)
     final_matrix_prop = [[0,0],[0,0]]
     tot = sum([n for row in final_matrix for n in row])
     log('final_matrix tot',tot,pre=pre)
@@ -550,6 +541,8 @@ def precision(confusion_matrix):
     """
     true_pos = confusion_matrix[1][1]
     false_pos = confusion_matrix[0][1]
+    if true_pos + false_pos == 0:
+        return 'Zeroes here'
     return true_pos/(true_pos + false_pos)
 
 def recall(confusion_matrix):
@@ -562,7 +555,73 @@ def recall(confusion_matrix):
     """
     true_pos = confusion_matrix[1][1]
     false_neg = confusion_matrix[1][0]
+    if true_pos + false_neg == 0:
+        return 'Zeroes here'
     return true_pos/(true_pos + false_neg)
+
+def test(train_df, test_df, y_label, model_type, include_only=None, threshold=0.5):
+    """
+    (test DataFrame DataFrame str str) This function trains the model defined by model_type with the set 
+    contained by train_df and tests this trained model on test_df utilizing the y_label to identify the 
+    dependent variable to predict and test and returns the stats and predicions.
+
+    | kwargs:
+    | include_only - If this is given, this test will return only the metrics provided in the list
+    | threshold - below the threshold a 0 is selected, above the threshold a 1 is selected
+    """
+    pre = '.test'
+    log('start',pre=pre)
+
+    # create the model
+    regr = get_model(model_type)
+    # train the model
+    X_train = train_df.drop(columns=[y_label])
+    Y_train = train_df[y_label]
+    X_test = test_df.drop(columns=[y_label])
+    Y_test = test_df[y_label]
+    vals = test_basic(X_train, Y_train, X_test, Y_test, regr,threshold)
+    ans = vals if include_only == None else {label:vals[label] for label in include_only}
+    log('returned',ans,pre=pre)
+    return ans
+
+
+def test_basic(X_train, Y_train, X_test, Y_test, model, threshold=0.5):
+    # this function just tests the dataframes with the given model and returns the stats for them
+    pre = '.test_basic'
+    log('start',pre=pre)
+    log('X_train, first 10',X_train[:10],pre=pre)
+    log('X_test, first 10',X_test[:10],pre=pre)
+    log('Y_train, first 10',Y_train[:10],pre=pre)
+    log('Y_test, first 10',Y_test[:10],pre=pre)
+    model.fit(X_train,Y_train)
+    if type(model) == Xgboost_wrapper:
+        model.output_tree()
+    # test the model
+    log('X_test',X_test,pre=pre)
+    predY = model.predict(X_test,threshold=threshold)
+    pred_proba = model.predict_proba(X_test)
+    # pred_proba = predY.copy().tolist() if model_type in ['Linear','Xgboost'] else [e[1] for e in regr.predict_proba(X_test)] # the predict_proba gives a 2d numpy array of the probability of each classifcation
+    log('predY original',predY,pre=pre)
+    log('pred_proba',pred_proba,pre=pre)
+    # compare the prediction to the expected values
+    log('Y_test',Y_test,pre=pre)
+    log('predY',predY,pre=pre)
+    stats = {
+            'confusion':metrics.confusion_matrix(Y_test,predY).tolist()
+            }
+    # prepare the output
+    pred = [[*entry[0],entry[1]] for entry in zip(X_test,predY)]
+    entry = {
+            'stats':stats,
+            'pred':predY,
+            'pred_proba':pred_proba, # this is a dataframe, therefore cannot JSON this
+            'y_test':Y_test,
+            'precision':metrics.precision_score(Y_test,predY),
+            'recall':metrics.recall_score(Y_test,predY)
+            }
+    log('returned',entry,pre=pre)
+    log('end',pre=pre)
+    return entry
 
 if __name__ == '__main__':
     # testing
