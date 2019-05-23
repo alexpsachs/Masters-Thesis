@@ -18,6 +18,8 @@ Experiment/Data/CleanText.py
 Experiment/Data/ProcessedText.py
 # aggregate the symlog metrics for analysis
 Experiment/Analysis/SYMLOG_metrics.py
+# aggregate the big5 metrics for analysis
+Experiment/Analysis/Big5_metrics.py
 # aggregate all of the disparate metrics into a single directory (experiment_data) for analysis 
 Experiment/Analysis/experiment_data.py
 # finally, run the analysis

@@ -1,6 +1,7 @@
 """
 The purpose of this script is to combine the relevant data in tables:
     ./SYMLOG_metrics/<experiment>/SYMLOG_metrics.ods
+    ./Big5_metrics/<experiment>/Big5_metrics.ods
     ./ESEM - Final.ods
 so that there can be one datasource for the analysis into
     ./experiment_data/<experiment>/experiment_data_folds.ods
@@ -21,6 +22,7 @@ def log(*args,pre=None):
 
 # constants
 SYMLOG_METRICS_DIR = os.path.join(TOP,'Experiment','Analysis','SYMLOG_metrics')
+BIG5_METRICS_DIR = os.path.join(TOP,'Experiment','Analysis','Big5_metrics')
 ESEM_path = os.path.join(TOP,'Experiment','Analysis','ESEM - Final.ods')
 OUT_DIR = os.path.join(TOP,'Experiment','Analysis','experiment_data')
 if not os.path.exists(OUT_DIR):
@@ -41,6 +43,18 @@ def aggregateData(exp_name,pre=''):
         reponame = row[repo_index].replace('__','/')
         value = {metric:row[headers.index(metric)] for metric in metrics}
         symlog_dict[reponame] = value
+    # congregate the big5 metrics
+    Big5_metrics_path = os.path.join(BIG5_METRICS_DIR,exp_name,'Big5_metrics.ods')
+    code.interact(local=dict(globals(),**locals()))
+    big5_data = read_data(Big5_metrics_path)['Big5']
+    headers = big5_data[0]
+    metrics = big5_data[0][1:]
+    repo_index = big5_data[0].index('repository')
+    big5_dict = {}
+    for row in big5_data[1:]: #exclude the header
+        reponame = row[repo_index].replace('__','/')
+        value = {metric:row[headers.index(metric)] for metric in metrics}
+        big5_dict[reponame] = value
 
     # congregate the ESEM labels
     # folds data
@@ -105,12 +119,14 @@ def aggregateData(exp_name,pre=''):
         if not os.path.exists(os.path.join(OUT_DIR,exp_name)):
             os.mkdir(os.path.join(OUT_DIR,exp_name))
         symlog_metrics = list(list(symlog_dict.values())[0].keys())
-        header = ['reponame','esem_status',*symlog_metrics]
+        big5_metrics = list(list(big5_dict.values())[0].keys())
+        header = ['reponame','esem_status',*symlog_metrics,*big5_metrics]
         data = []
         for reponame in common_repos:
             esem_status = d[reponame]['status']
             symlog_scores = [symlog_dict[reponame][metric] for metric in symlog_metrics]
-            lst = [reponame,esem_status]+symlog_scores
+            big5_scores = [big5_dict[reponame][metric] for metric in big5_metrics]
+            lst = [reponame,esem_status]+symlog_scores+big5_scores
             data.append(lst)
         out_data.update({label:[header,*data]})
     save_data(out_path, out_data)
