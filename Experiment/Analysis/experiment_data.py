@@ -10,6 +10,7 @@ so that there can be one datasource for the analysis into
 import code
 import sys
 import os
+import json
 TOP = os.path.abspath(os.path.join(__file__,'../../../'))
 LIB = os.path.join(TOP,'Library')
 sys.path.append(LIB)
@@ -45,7 +46,6 @@ def aggregateData(exp_name,pre=''):
         symlog_dict[reponame] = value
     # congregate the big5 metrics
     Big5_metrics_path = os.path.join(BIG5_METRICS_DIR,exp_name,'Big5_metrics.ods')
-    code.interact(local=dict(globals(),**locals()))
     big5_data = read_data(Big5_metrics_path)['Big5']
     headers = big5_data[0]
     metrics = big5_data[0][1:]
@@ -106,6 +106,8 @@ def aggregateData(exp_name,pre=''):
     # output the data
     out_data = OrderedDict()
     out_path = os.path.join(OUT_DIR,exp_name,'experiment_data.ods')
+    symlog_metrics = list(list(symlog_dict.values())[0].keys())
+    big5_metrics = list(list(big5_dict.values())[0].keys())
     for label,d in zip(['Folds','Testing','Precision','Recall'],[folds_dict,testing_dict,prec_dict,rec_dict]):
         # get the common repos between this and symlog
         common_repos = []
@@ -118,8 +120,6 @@ def aggregateData(exp_name,pre=''):
         print(len(symlog_only),'repos not in symlog_dict for d',label)
         if not os.path.exists(os.path.join(OUT_DIR,exp_name)):
             os.mkdir(os.path.join(OUT_DIR,exp_name))
-        symlog_metrics = list(list(symlog_dict.values())[0].keys())
-        big5_metrics = list(list(big5_dict.values())[0].keys())
         header = ['reponame','esem_status',*symlog_metrics,*big5_metrics]
         data = []
         for reponame in common_repos:
@@ -130,7 +130,9 @@ def aggregateData(exp_name,pre=''):
             data.append(lst)
         out_data.update({label:[header,*data]})
     save_data(out_path, out_data)
-
+    # output the metrics for each category of features used
+    json.dump(symlog_metrics, open(os.path.join(OUT_DIR,exp_name,'symlog_metrics.json'),'w'),indent=4)
+    json.dump(big5_metrics, open(os.path.join(OUT_DIR,exp_name,'big5_metrics.json'),'w'),indent=4)
     print('done',exp_name)
 
 if __name__ == '__main__':

@@ -257,7 +257,7 @@ def get_model(model_type):
             None
     return regr
     
-def assess(df,y_label,model_type='Linear',ranges=None):
+def assess(df,y_label,model_type='Linear',x_labels=None):
     """
     (assess DataFrame str) This function takes in a dataframe of all the data, takes out
     the column addressed as y_label and then does a linear regression to use the x values to predict
@@ -265,7 +265,8 @@ def assess(df,y_label,model_type='Linear',ranges=None):
 
     | kargs:
     | model_type:   (anyof 'Linear' 'Logistic' 'Xgboost' 'SVM' 'Neural') this determines which model will be used to assess the datapoints
-    | ranges: (dictof col_name: (lstof min max)): This determines the full range of values that each column to take (used to normalize the data)
+    | x_labels: (listof str) None will assume all labels except y_label are the independent variables, if list given, will use those variables only
+
 
     | ex.
     | df_test = pd.DataFrame(data={'x':[1,2,3,4],'y':[2,4,6,7]})
@@ -280,7 +281,10 @@ def assess(df,y_label,model_type='Linear',ranges=None):
     # shuffle the DataFrame rows
     df = df.sample(frac=1,random_state=RANDOM_SEED).reset_index(drop=True)
     log('df sampled head',df.head(),pre=pre)
-    X = df.drop(columns=[y_label])
+    drop_lbls = [y_label] if x_labels == None else\
+            [lbl for lbl in df.columns.values if lbl not in x_labels]
+    log('drop_lbls',drop_lbls,pre=pre)
+    X = df.drop(columns=drop_lbls)
     Y = df[y_label]
     # separate into 11 sets (10 for fold validation and 1 for testing the best threshold)
     Xs = []
@@ -559,7 +563,7 @@ def recall(confusion_matrix):
         return 'Zeroes here'
     return true_pos/(true_pos + false_neg)
 
-def test(train_df, test_df, y_label, model_type, include_only=None, threshold=0.5):
+def test(train_df, test_df, y_label, model_type, include_only=None, x_labels=None, threshold=0.5):
     """
     (test DataFrame DataFrame str str) This function trains the model defined by model_type with the set 
     contained by train_df and tests this trained model on test_df utilizing the y_label to identify the 
@@ -575,9 +579,10 @@ def test(train_df, test_df, y_label, model_type, include_only=None, threshold=0.
     # create the model
     regr = get_model(model_type)
     # train the model
-    X_train = train_df.drop(columns=[y_label])
+    drop_lbls = [y_label] if x_labels == None else [x for x in train_df.columns.values if x not in x_labels]
+    X_train = train_df.drop(columns=drop_lbls)
     Y_train = train_df[y_label]
-    X_test = test_df.drop(columns=[y_label])
+    X_test = test_df.drop(columns=drop_lbls)
     Y_test = test_df[y_label]
     vals = test_basic(X_train, Y_train, X_test, Y_test, regr,threshold)
     ans = vals if include_only == None else {label:vals[label] for label in include_only}

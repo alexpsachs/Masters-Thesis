@@ -28,7 +28,8 @@ INDIR = os.path.join(TOP,'Experiment','Analysis','experiment_data')
 OUTDIR = os.path.join(TOP,'Experiment','Analysis','analysis')
 
 # functions
-def analyzeExperiment(exp_name,pre=''):
+def analyzeExperiment(exp_config,pre=''):
+    exp_name = exp_config['name']
     # make sure the folder is there, if not create it
     directory = os.path.join(OUTDIR,exp_name)
     if not os.path.exists(directory):
@@ -37,7 +38,7 @@ def analyzeExperiment(exp_name,pre=''):
     pre = pre + '.analyzeExperiment'
     # read in the data
     log('analyzing',exp_name,pre=pre)
-    base = os.path.join(INDIR,exp_name)
+    base = os.path.join(INDIR,exp_config['indir'])
     if not os.path.exists(base):
         os.mkdir(base)
         log('made directory',base,pre=pre)
@@ -134,13 +135,15 @@ def analyzeExperiment(exp_name,pre=''):
 
     # do the anlaysis
     all_precision,all_recall,all_thresholds,all_labels = [],[],[],[]
-    def run_model(model_type):
-        # linear regression
+    def run_model(model_type,x_labels=None,prc_label=None):
+        # if x_labels None, then use all, else use only x_labels as features
         log('doing {0} regression for'.format(model_type),exp_name,pre=pre)
-        out_dict,data = analyzer.assess(df,'esem_status',model_type=model_type)
+        out_dict,data = analyzer.assess(df,'esem_status',model_type=model_type,x_labels=x_labels)
         best_threshold = out_dict['test']['best threshold']
-        prec_stats = analyzer.test(df,prec_df,'esem_status',model_type,include_only=['stats','precision'],threshold=best_threshold) # TODO add threshold
-        rec_stats = analyzer.test(df,rec_df,'esem_status',model_type,include_only=['stats','recall'])
+        prec_stats = analyzer.test(df,prec_df,'esem_status',model_type,include_only=['stats','precision'],
+                threshold=best_threshold,x_labels=x_labels) # TODO add threshold
+        rec_stats = analyzer.test(df,rec_df,'esem_status',model_type,include_only=['stats','recall'],
+                x_labels=x_labels)
         out_dict['empirical precision'] = prec_stats
         out_dict['empirical recall'] = rec_stats
         out_txt_path = os.path.join(OUTDIR,exp_name,'analysis_{0}_model.json'.format(model_type))
@@ -149,13 +152,17 @@ def analyzeExperiment(exp_name,pre=''):
         all_precision.append(data['precision'])
         all_recall.append(data['recall'])
         all_thresholds.append(data['thresholds'])
-        all_labels.append(model_type)
-
-    run_model('Linear')
-    run_model('Logistic')
-    run_model('Xgboost')
+        all_labels.append(model_type if prc_label == None else prc_label)
+    
+    symlog_metrics = json.load(open(os.path.join(INDIR,exp_config['indir'],'symlog_metrics.json'),'r'))
+    big5_metrics = json.load(open(os.path.join(INDIR,exp_config['indir'],'big5_metrics.json'),'r'))
+    # run_model('Linear')
+    # run_model('Logistic')
+    # run_model('Xgboost')
     run_model('SVM')
-    run_model('Neural')
+    run_model('SVM',x_labels=symlog_metrics,prc_label='SVM: sym only')
+    run_model('SVM',x_labels=big5_metrics,prc_label='SVM: big5 only')
+    # run_model('Neural')
     
     # draw the roc curves
     precision_recall_path = os.path.join(OUTDIR,exp_name,'analysis_prc.png')
@@ -166,9 +173,15 @@ if __name__ == '__main__':
     log('starting')
     if not os.path.exists(OUTDIR):
         os.mkdir(OUTDIR)
-    experiments = ['old','reorient']
+    old_config = {
+            'name':'old',
+            'indir':'old',
+            }
+    reorient_config = {
+            'name':'reorient',
+            'indir':'reorient',
+            }
+    experiments = [old_config, reorient_config]
     for experiment in experiments:
-        if experiment == 'reorient':
-            debug = True
         analyzeExperiment(experiment)
     print('analysis complete')

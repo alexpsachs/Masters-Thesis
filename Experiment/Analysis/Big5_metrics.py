@@ -45,6 +45,23 @@ class Big5Group:
             ans[attribute] = avg
         return ans
 
+    def get_percentiles(self):
+        # returns a 5 attribute dict of 5 percentiles in each category
+        pre = 'get_percentiles'
+        log('start',pre=pre)
+        n = 5
+        ans = {}
+        for attribute in self.big5_attributes:
+            all_vals = [d[attribute] for d in self.data.values()]
+            all_vals.sort()
+            interval = len(all_vals)//(n-1)
+            percentiles = [all_vals[i*interval] for i in range(n-1)]
+            percentiles.append(all_vals[-1])
+            log('percentiles are',percentiles,'for',all_vals,pre=pre)
+            ans[attribute] = percentiles
+        log('returned',ans,pre=pre)
+        return ans
+
 
 # Functions
 def calcMetrics(filename,reorient=False):
@@ -63,15 +80,20 @@ def calcMetrics(filename,reorient=False):
     """
     pre='calcMetrics'
     log('start',pre=pre)
-    data = json.load(open(filename,'r'))
+    try:
+        data = json.load(open(filename,'r'))
+    except:
+        print('error at filename',filename)
     log('num of people',len(list(data.keys())),pre=pre)
     if len(list(data.keys())) in [0,1]:
         log('zero group contingency triggered',pre=pre)
         return None
     group = Big5Group(data)
     avg_metric = {'average_'+key:val for key,val in group.get_average().items()}
+    perc_metric = {key+str(i):p for key,val in group.get_percentiles().items() for i,p in enumerate(val)}
     metrics = {}
-    metrics.update(avg_metric)
+    # metrics.update(avg_metric)
+    metrics.update(perc_metric)
     return metrics
 
 def run(exp_name,reorient=False,num_threads=4):
