@@ -7,3 +7,8 @@ IBM
 ===================
 ..  automodule:: IBM
     :members:
+
+SYMLOG
+===================
+..  automodule:: SYMLOG
+    :members:

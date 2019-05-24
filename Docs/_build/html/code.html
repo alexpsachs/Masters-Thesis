@@ -58,7 +58,7 @@ functionality for reusability</p>
 
 <dl class="method">
 <dt id="analyzer.Neural_wrapper.predict">
-<code class="descname">predict</code><span class="sig-paren">(</span><em>X_test</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.Neural_wrapper.predict" title="Permalink to this definition">¶</a></dt>
+<code class="descname">predict</code><span class="sig-paren">(</span><em>X_test</em>, <em>threshold=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.Neural_wrapper.predict" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -97,14 +97,14 @@ functionality for reusability</p>
 
 <dl class="function">
 <dt id="analyzer.assess">
-<code class="descclassname">analyzer.</code><code class="descname">assess</code><span class="sig-paren">(</span><em>df</em>, <em>y_label</em>, <em>model_type='Linear'</em>, <em>ranges=None</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.assess" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">analyzer.</code><code class="descname">assess</code><span class="sig-paren">(</span><em>df</em>, <em>y_label</em>, <em>model_type='Linear'</em>, <em>x_labels=None</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.assess" title="Permalink to this definition">¶</a></dt>
 <dd><p>(assess DataFrame str) This function takes in a dataframe of all the data, takes out
 the column addressed as y_label and then does a linear regression to use the x values to predict
 y_label and returns the stats (dict) and the predictions (list)</p>
 <div class="line-block">
 <div class="line">kargs:</div>
 <div class="line">model_type:   (anyof ‘Linear’ ‘Logistic’ ‘Xgboost’ ‘SVM’ ‘Neural’) this determines which model will be used to assess the datapoints</div>
-<div class="line">ranges: (dictof col_name: (lstof min max)): This determines the full range of values that each column to take (used to normalize the data)</div>
+<div class="line">x_labels: (listof str) None will assume all labels except y_label are the independent variables, if list given, will use those variables only</div>
 </div>
 <div class="line-block">
 <div class="line">ex.</div>
@@ -212,10 +212,15 @@ recall(data) -&gt; 0.5714285714285714</p>
 
 <dl class="function">
 <dt id="analyzer.test">
-<code class="descclassname">analyzer.</code><code class="descname">test</code><span class="sig-paren">(</span><em>train_df</em>, <em>test_df</em>, <em>y_label</em>, <em>model_type</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.test" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">analyzer.</code><code class="descname">test</code><span class="sig-paren">(</span><em>train_df</em>, <em>test_df</em>, <em>y_label</em>, <em>model_type</em>, <em>include_only=None</em>, <em>x_labels=None</em>, <em>threshold=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#analyzer.test" title="Permalink to this definition">¶</a></dt>
 <dd><p>(test DataFrame DataFrame str str) This function trains the model defined by model_type with the set 
 contained by train_df and tests this trained model on test_df utilizing the y_label to identify the 
 dependent variable to predict and test and returns the stats and predicions.</p>
+<div class="line-block">
+<div class="line">kwargs:</div>
+<div class="line">include_only - If this is given, this test will return only the metrics provided in the list</div>
+<div class="line">threshold - below the threshold a 0 is selected, above the threshold a 1 is selected</div>
+</div>
 </dd></dl>
 
 </div>
@@ -245,6 +250,116 @@ getBig5FromText(‘This is some text’ x 100) -&gt; {‘openness’:0.72,’con
 </dd></dl>
 
 </div>
+<div class="section" id="module-SYMLOG">
+<span id="symlog"></span><h1>SYMLOG<a class="headerlink" href="#module-SYMLOG" title="Permalink to this headline">¶</a></h1>
+<p>This module is respnsible for all of the SYMLOG calculations.</p>
+<dl class="class">
+<dt id="SYMLOG.SYMLOGPlot">
+<em class="property">class </em><code class="descclassname">SYMLOG.</code><code class="descname">SYMLOGPlot</code><span class="sig-paren">(</span><em>personalities</em>, <em>compassMethod='regression'</em><span class="sig-paren">)</span><a class="headerlink" href="#SYMLOG.SYMLOGPlot" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class contains the plot, personalities, compass, and analysis methods for
+a single repository</p>
+<dl class="method">
+<dt id="SYMLOG.SYMLOGPlot.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><em>filename=None</em>, <em>names=False</em><span class="sig-paren">)</span><a class="headerlink" href="#SYMLOG.SYMLOGPlot.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>(draw) -&gt; None: This function is intended to draw out what the current state of the plot is</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="SYMLOG.SYMLOGPlot.getMembersByRegion">
+<code class="descname">getMembersByRegion</code><span class="sig-paren">(</span><em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#SYMLOG.SYMLOGPlot.getMembersByRegion" title="Permalink to this definition">¶</a></dt>
+<dd><p>(getMembersByRegion region) -&gt; {person;{SYMLOGAxis;score_from_-18_to_+18, SYMLOGPoles:score_from_0_to_18}}</p>
+<p>This function obtains all of the members that are contained within the region specified. The regions are (numbers defined
+by Fig 2.9 in Bale’s book):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>‘ref’: the reference circle</p></li>
+<li><p>‘inner’: the inner core group (the small circle enclosed by the reference circle</p></li>
+<li><p>‘opp’: the opposition circle</p></li>
+<li><p>‘opp core’: the inner core of the opposition circle</p></li>
+<li><p>1: Most Effective Teamwork Core</p></li>
+<li><p>2: Liberal Teamwork Side</p></li>
+<li><p>3: Conservative Teamwork Side</p></li>
+<li><p>4: Group-centered Wing</p></li>
+<li><p>5: Authority-centered Wing</p></li>
+<li><p>6: Swing Area</p></li>
+<li><p>7: Libertarian Fringe</p></li>
+<li><p>8: Individualistic Fringe</p></li>
+<li><p>9: Anti-Group Opposition</p></li>
+<li><p>10: Anti-Authority Opposition</p></li>
+<li><p>11: Radical Opposition Core</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="SYMLOG.SYMLOGPlot.getSCGDeviation">
+<code class="descname">getSCGDeviation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SYMLOG.SYMLOGPlot.getSCGDeviation" title="Permalink to this definition">¶</a></dt>
+<dd><p>(getSCGDeviation) -&gt; float</p>
+<p>This function is intended to calculate the variance of this group’s members from the SYMLOG_SCG_OPT 
+(the SCG optimum bar graph for an ideal member) and then return the total mean squared error 
+(or None if there is only one person in the group) where
+error is considered the deviation from this optimum</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="SYMLOG.SYMLOGPlot.getUPFCorrelation">
+<code class="descname">getUPFCorrelation</code><span class="sig-paren">(</span><em>filename_prefix=None</em><span class="sig-paren">)</span><a class="headerlink" href="#SYMLOG.SYMLOGPlot.getUPFCorrelation" title="Permalink to this definition">¶</a></dt>
+<dd><p>(getUPFCorrelation) -&gt; Float</p>
+<p>This function calculates the correlation between U,P, and F dimensions and returns the average of the
+pearson r correlations between UP, UF, and PF</p>
+<dl class="simple">
+<dt>kargs:</dt><dd><p>filename_prefix: str    If this is provided then plots for each correlation will be saved to this prefix</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="SYMLOG.SYMLOGPlot.reorientCompass">
+<code class="descname">reorientCompass</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SYMLOG.SYMLOGPlot.reorientCompass" title="Permalink to this definition">¶</a></dt>
+<dd><p>(reorientCompass) This function checks which interpretation of the compass provides the greater
+number of participants in the ref circle and then reorients the compass to this interpretation</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="SYMLOG.convertBig5ToSYMLOG">
+<code class="descclassname">SYMLOG.</code><code class="descname">convertBig5ToSYMLOG</code><span class="sig-paren">(</span><em>big5Personas</em><span class="sig-paren">)</span><a class="headerlink" href="#SYMLOG.convertBig5ToSYMLOG" title="Permalink to this definition">¶</a></dt>
+<dd><p>{person;{big5Attribute;score_from_0_to_1}} -&gt; {person;{SYMLOGAxis;score_from_-18_to_+18, SYMLOGPoles:score_from_0_to_18}}</p>
+<p>This function is responsible for utilizing SYMLOG consulting group’s mapping to convert
+a dict of big5 score into SYMLOG scores which are:</p>
+<p>p: Positive/Friendly
+n: Negative/Unfriendly
+f: Forward/Accepting of authority
+b: Backward/Rejects authority
+u: Up/Dominance
+d: Down/Submissiveness
+p_n: The final location on the positive-negative plane
+f_b: The final location on the forward-backward plane
+u_d: The final location on the up-down plane</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="SYMLOG.getSYMLOGVector">
+<code class="descclassname">SYMLOG.</code><code class="descname">getSYMLOGVector</code><span class="sig-paren">(</span><em>vectorCounts</em>, <em>conversationCount</em><span class="sig-paren">)</span><a class="headerlink" href="#SYMLOG.getSYMLOGVector" title="Permalink to this definition">¶</a></dt>
+<dd><p>(dictof str:int) -&gt; (dictof str:number)</p>
+<p>This function is responsible for converting data on a person into their SYMLOG vectors</p>
+<p>This function takes in a dict (vectorCounts) of the form {SYMLOG_label:raw_count_of_label}
+and a int (conversationCount) representing the conversations that was annotated
+for them and returns a dict of the form {(anyof ‘u_d’,’f_b’,’p_n’):that_pole’s_score}.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="SYMLOG.getSYMLOGVectors">
+<code class="descclassname">SYMLOG.</code><code class="descname">getSYMLOGVectors</code><span class="sig-paren">(</span><em>rawVectorCounts</em>, <em>conversationCounts</em><span class="sig-paren">)</span><a class="headerlink" href="#SYMLOG.getSYMLOGVectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>((dictof str:(dictof str:int)),(dictof str:int)) -&gt; (dictof str:(dictof str:number))</p>
+<p>This function is responsible for converting data on people into their SYMLOG vectors</p>
+<p>This function takes in a dict (rawVectorCounts) of the form {person_name:{SYMLOG_label:raw_count_of_label}}
+and a dict (conversationCounts) of the form {person_name:number_of_conversations} and returns a
+dict of the form {person_name:{(anyof ‘u_d’,’f_b’,’p_n’):that_pole’s_score}}.</p>
+</dd></dl>
+
+</div>
 
 
           </div>
@@ -267,6 +382,7 @@ getBig5FromText(‘This is some text’ x 100) -&gt; {‘openness’:0.72,’con
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#module-IBM">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#module-SYMLOG">SYMLOG</a></li>
 </ul>
 
 <div class="relations">

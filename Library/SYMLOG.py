@@ -163,17 +163,36 @@ class SYMLOGPlot:
         """
         (getMembersByRegion region) -> {person;{SYMLOGAxis;score_from_-18_to_+18, SYMLOGPoles:score_from_0_to_18}}
 
-        This function obtains all of the members that are contained within the region specified. The regions are:
+        This function obtains all of the members that are contained within the region specified. The regions are (numbers defined
+        by Fig 2.9 in Bale's book):
             * 'ref': the reference circle
             * 'inner': the inner core group (the small circle enclosed by the reference circle
             * 'opp': the opposition circle
             * 'opp core': the inner core of the opposition circle
+            * 1: Most Effective Teamwork Core
+            * 2: Liberal Teamwork Side
+            * 3: Conservative Teamwork Side
+            * 4: Group-centered Wing
+            * 5: Authority-centered Wing
+            * 6: Swing Area
+            * 7: Libertarian Fringe
+            * 8: Individualistic Fringe
+            * 9: Anti-Group Opposition
+            * 10: Anti-Authority Opposition
+            * 11: Radical Opposition Core
         """
         pre = 'getMembersByRegion'
         log('start',pre=pre)
         def dist(posn0,posn1):
             return math.sqrt((posn1[0]-posn0[0])**2 + (posn1[1]-posn0[1])**2)
-        if region == 'inner':
+        def side(start,end,pt):
+            x,y = pt
+            x1,y1 = start
+            x2,y2 = end
+            d = (x-x1)*(y2-y1) - (y-y1)*(x2-x1) #ref: https://math.stackexchange.com/questions/274712/calculate-on-which-side-of-a-straight-line-is-a-given-point-located
+            ans = 1 if d > 0 else 0 if d == 0 else -1
+            return ans
+        if region in ['inner',1]:
             center = self.ref
             ans = {key:val for key,val in self.personalitiesDict.items() 
                     if dist((val['p_n'],val['f_b']),center) <= 4.5}
@@ -188,10 +207,44 @@ class SYMLOGPlot:
             ans = {key:val for key,val in self.personalitiesDict.items() 
                     if 4.5 < dist((val['p_n'],val['f_b']),center) <= 9}
             return ans
-        elif region == 'opp core':
+        elif region in ['opp core',11]:
             center = self.opp
             ans = {key:val for key,val in self.personalitiesDict.items() 
                     if dist((val['p_n'],val['f_b']),center) <= 4.5}
+            return ans
+        elif region == 6:
+            center = (0,0)
+            ans = {key:val for key,val in self.personalitiesDict.items() 
+                    if dist((val['p_n'],val['f_b']),center) <= 4.5}
+            return ans
+        elif region == 2:
+            log('region 2 selected',pre=pre)
+            center = self.ref
+            ans = {key:val for key,val in self.personalitiesDict.items() 
+                    if 4.5 <= dist((val['p_n'],val['f_b']),center) <= 9 and
+                    side((0,0),center,(val['p_n'],val['f_b'])) > 0 and
+                    dist((val['p_n'],val['f_b']),(0,0)) > 4.5}
+            return ans
+        elif region == 3:
+            center = self.ref
+            ans = {key:val for key,val in self.personalitiesDict.items() 
+                    if 4.5 <= dist((val['p_n'],val['f_b']),center) <= 9 and
+                    side((0,0),center,(val['p_n'],val['f_b'])) < 0 and
+                    dist((val['p_n'],val['f_b']),(0,0)) > 4.5}
+            return ans
+        elif region == 10:
+            center = self.opp
+            ans = {key:val for key,val in self.personalitiesDict.items() 
+                    if 4.5 <= dist((val['p_n'],val['f_b']),center) <= 9 and
+                    side((0,0),center,(val['p_n'],val['f_b'])) < 0 and
+                    dist((val['p_n'],val['f_b']),(0,0)) > 4.5}
+            return ans
+        elif region == 9:
+            center = self.opp
+            ans = {key:val for key,val in self.personalitiesDict.items() 
+                    if 4.5 <= dist((val['p_n'],val['f_b']),center) <= 9 and
+                    side((0,0),center,(val['p_n'],val['f_b'])) > 0 and
+                    dist((val['p_n'],val['f_b']),(0,0)) > 4.5}
             return ans
         else:
             log('error unknown region',region,pre=pre)
@@ -496,7 +549,73 @@ if __name__ == '__main__':
             'b': 3, 
             'u': 2, 
             'd': 5
-            }
+            },
+        'Mina': {
+            'p_n': 9,
+            'f_b': 0, 
+            'u_d': 3,
+            'p': 2, 
+            'n': 4,
+            'f': 2, 
+            'b': 3, 
+            'u': 2, 
+            'd': 5
+            },
+        'Rahul': {
+            'p_n': -8,
+            'f_b': -12, 
+            'u_d': -10,
+            'p': 2, 
+            'n': 4,
+            'f': 2, 
+            'b': 3, 
+            'u': 2, 
+            'd': 5
+            },
+        'Jess': {
+            'p_n': -12,
+            'f_b': -5, 
+            'u_d': -1,
+            'p': 2, 
+            'n': 4,
+            'f': 2, 
+            'b': 3, 
+            'u': 2, 
+            'd': 5
+            },
+        'A': {
+            'p_n': 1,
+            'f_b': 2, 
+            'u_d': -1,
+            'p': 2, 
+            'n': 4,
+            'f': 2, 
+            'b': 3, 
+            'u': 2, 
+            'd': 5
+            },
+        'B': {
+            'p_n': 2,
+            'f_b': 0, 
+            'u_d': -1,
+            'p': 2, 
+            'n': 4,
+            'f': 2, 
+            'b': 3, 
+            'u': 2, 
+            'd': 5
+            },
+        'C': {
+            'p_n': -2,
+            'f_b': -4, 
+            'u_d': -1,
+            'p': 2, 
+            'n': 4,
+            'f': 2, 
+            'b': 3, 
+            'u': 2, 
+            'd': 5
+            },
         }
     expectedResult1 = {
         'Bob': {
@@ -578,12 +697,12 @@ if __name__ == '__main__':
 
     print('\ntesting SYMLOGPlot.getMembersByRegion')
     sym = SYMLOGPlot(expectedResult1)
-    sym.draw(filename=LIB+'/test_SYMLOG_4.png')
+    sym.draw(filename=LIB+'/test_SYMLOG_4.png',names=True)
     ans = sym.getMembersByRegion('ref')
     expKeys = ['Bob','Nancy']
     print('Passed 4' if list(ans.keys()) == expKeys else 'Failed 4')
     sym = SYMLOGPlot(symPersona2)
-    sym.draw(filename=LIB+'/test_SYMLOG_symPersona2.png')
+    sym.draw(filename=LIB+'/test_SYMLOG_symPersona2.png',names=True)
     ans = sym.getMembersByRegion('inner')
     expKeys = ['Fred','Tom']
     print('Passed 5' if list(ans.keys()) == expKeys else 'Failed 5')
@@ -592,10 +711,25 @@ if __name__ == '__main__':
     print('Passed 6' if list(ans.keys()) == expKeys else 'Failed 6')
     ans = sym.getMembersByRegion('opp')
     expKeys = ['Febbie']
-    print('Passed 7' if list(ans.keys()) == expKeys else 'Failed 7')
+    print('Passed 7' if list(ans.keys()) == expKeys else 'Failed 7 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
     ans = sym.getMembersByRegion('opp core')
     expKeys = ['Veronica']
-    print('Passed 8' if list(ans.keys()) == expKeys else 'Failed 8')
+    print('Passed 8' if list(ans.keys()) == expKeys else 'Failed 8 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
+    ans = sym.getMembersByRegion(2)
+    expKeys = ['Mina']
+    print('Passed 8.1' if list(ans.keys()) == expKeys else 'Failed 8.1 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
+    ans = sym.getMembersByRegion(6)
+    expKeys = ['Febbie','A','B','C']
+    print('Passed 8.2' if list(ans.keys()) == expKeys else 'Failed 8.2 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
+    ans = sym.getMembersByRegion(3)
+    expKeys = ['James']
+    print('Passed 8.3' if list(ans.keys()) == expKeys else 'Failed 8.3 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
+    ans = sym.getMembersByRegion(10)
+    expKeys = ['Rahul']
+    print('Passed 8.4' if list(ans.keys()) == expKeys else 'Failed 8.4 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
+    ans = sym.getMembersByRegion(9)
+    expKeys = ['Jess']
+    print('Passed 8.5' if list(ans.keys()) == expKeys else 'Failed 8.5 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
 
     print('\ntesting SYMLOGPlot.getUPFCorrelation')
     sym = SYMLOGPlot(symPersona2)
@@ -604,6 +738,6 @@ if __name__ == '__main__':
     print('Passed 9' if ans == exp else 'Failed 9')
 
     print('\nDone testing')
-    code.interact(local=dict(globals(),**locals()))
+    # code.interact(local=dict(globals(),**locals()))
 
 
