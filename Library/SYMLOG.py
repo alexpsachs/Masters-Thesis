@@ -101,17 +101,20 @@ class SYMLOGPlot:
             # path = '/home/a2sachs/test.json'
             # json.dump([list(X.values),list(Y.values),list(predictions)],open(path,'w'),indent=4)
 
+        # calculate the reference points
         radius = 9
         x = math.cos(self.angle) * radius
         y = math.sin(self.angle) * radius
         self.ref = (x,y)
+        self.R4 = (x,-y)
         self.opp = (-x,-y)
+        self.R5 = (-x,y)
         # record the calculated variables
         log('angle',self.angle/math.pi,pre=pre)
         log('ref',self.ref,pre=pre)
         log('opp',self.opp,pre=pre)
         
-    def draw(self,filename=None,names=False):
+    def draw(self,filename=None,names=False,ref_points=False):
         """
         (draw) -> None: This function is intended to draw out what the current state of the plot is
         """
@@ -149,6 +152,24 @@ class SYMLOGPlot:
         plt.gca().add_patch(oppCircle)
         oppInnerCircle = plt.Circle(self.opp,radius=4.5,edgecolor='black',fill=False)
         plt.gca().add_patch(oppInnerCircle)
+        # draw the reference points
+        if ref_points:
+            pt = self.ref
+            obj = plt.Circle(pt,radius=0.5,fill=True,facecolor='red')
+            plt.gca().add_patch(obj)
+            plt.annotate(s='ref', xy=pt,xytext=pt)
+            pt = self.R4
+            obj = plt.Circle(pt,radius=0.5,fill=True,facecolor='red')
+            plt.gca().add_patch(obj)
+            plt.annotate(s='R4', xy=pt,xytext=pt)
+            pt = self.R5
+            obj = plt.Circle(pt,radius=0.5,fill=True,facecolor='red')
+            plt.gca().add_patch(obj)
+            plt.annotate(s='R5', xy=pt,xytext=pt)
+            pt = self.opp
+            obj = plt.Circle(pt,radius=0.5,fill=True,facecolor='red')
+            plt.gca().add_patch(obj)
+            plt.annotate(s='opp', xy=pt,xytext=pt)
         # label the circles
         plt.annotate('Inner Circle',self.ref)
         # plt.gca().add_patch(polLine)
@@ -192,32 +213,13 @@ class SYMLOGPlot:
             d = (x-x1)*(y2-y1) - (y-y1)*(x2-x1) #ref: https://math.stackexchange.com/questions/274712/calculate-on-which-side-of-a-straight-line-is-a-given-point-located
             ans = 1 if d > 0 else 0 if d == 0 else -1
             return ans
-        if region in ['inner',1]:
+        if region in ['inner','1']:
             center = self.ref
+            log('inner region call','center is',center,pre=pre)
             ans = {key:val for key,val in self.personalitiesDict.items() 
                     if dist((val['p_n'],val['f_b']),center) <= 4.5}
             return ans
-        elif region == 'ref':
-            center = self.ref
-            ans = {key:val for key,val in self.personalitiesDict.items() 
-                    if 4.5 < dist((val['p_n'],val['f_b']),center) <= 9}
-            return ans
-        elif region == 'opp':
-            center = self.opp
-            ans = {key:val for key,val in self.personalitiesDict.items() 
-                    if 4.5 < dist((val['p_n'],val['f_b']),center) <= 9}
-            return ans
-        elif region in ['opp core',11]:
-            center = self.opp
-            ans = {key:val for key,val in self.personalitiesDict.items() 
-                    if dist((val['p_n'],val['f_b']),center) <= 4.5}
-            return ans
-        elif region == 6:
-            center = (0,0)
-            ans = {key:val for key,val in self.personalitiesDict.items() 
-                    if dist((val['p_n'],val['f_b']),center) <= 4.5}
-            return ans
-        elif region == 2:
+        elif region == '2':
             log('region 2 selected',pre=pre)
             center = self.ref
             ans = {key:val for key,val in self.personalitiesDict.items() 
@@ -225,26 +227,78 @@ class SYMLOGPlot:
                     side((0,0),center,(val['p_n'],val['f_b'])) > 0 and
                     dist((val['p_n'],val['f_b']),(0,0)) > 4.5}
             return ans
-        elif region == 3:
+        elif region == '3':
             center = self.ref
             ans = {key:val for key,val in self.personalitiesDict.items() 
                     if 4.5 <= dist((val['p_n'],val['f_b']),center) <= 9 and
                     side((0,0),center,(val['p_n'],val['f_b'])) < 0 and
                     dist((val['p_n'],val['f_b']),(0,0)) > 4.5}
             return ans
-        elif region == 10:
+        elif region == '4':
+            center = (0,0)
+            ans = {key:val for key,val in self.personalitiesDict.items() 
+                    if 4.5 <= dist((val['p_n'],val['f_b']),center) <= 18 and # within the outter boundary but outside region 6
+                    side((0,0),self.ref,(val['p_n'],val['f_b'])) >= 0  and # on the correct side of the line of polarization
+                    side((0,0),self.R4,(val['p_n'],val['f_b'])) <= 0  and # on the correct side of the line of balance
+                    dist((val['p_n'],val['f_b']),self.ref) >= 9} # outside of the reference circle
+            return ans
+        elif region == '5':
+            center = (0,0)
+            ans = {key:val for key,val in self.personalitiesDict.items() 
+                    if 4.5 <= dist((val['p_n'],val['f_b']),center) <= 18 and # within the outter boundary but outside region 6
+                    side((0,0),self.ref,(val['p_n'],val['f_b'])) <= 0  and # on the correct side of the line of polarization
+                    side((0,0),self.R4,(val['p_n'],val['f_b'])) <= 0  and # on the correct side of the line of balance
+                    dist((val['p_n'],val['f_b']),self.ref) >= 9} # outside of the reference circle
+            return ans
+        elif region == '6':
+            center = (0,0)
+            ans = {key:val for key,val in self.personalitiesDict.items() 
+                    if dist((val['p_n'],val['f_b']),center) <= 4.5}
+            return ans
+        elif region == '7':
+            center = (0,0)
+            ans = {key:val for key,val in self.personalitiesDict.items()
+                    if side((0,0),self.ref,(val['p_n'],val['f_b'])) >= 0  and # on the correct side of the line of polarization
+                    side((0,0),self.R4,(val['p_n'],val['f_b'])) >= 0  and # on the correct side of the line of balance
+                    dist((val['p_n'],val['f_b']),self.opp) >= 9 and # outside of the opposite circle
+                    dist((val['p_n'],val['f_b']),(0,0)) >= 4.5} # outside of region 6
+            return ans
+        elif region == '8':
+            center = (0,0)
+            ans = {key:val for key,val in self.personalitiesDict.items()
+                    if side((0,0),self.ref,(val['p_n'],val['f_b'])) <= 0  and # on the correct side of the line of polarization
+                    side((0,0),self.R4,(val['p_n'],val['f_b'])) >= 0  and # on the correct side of the line of balance
+                    dist((val['p_n'],val['f_b']),self.opp) >= 9 and # outside of the opposite circle
+                    dist((val['p_n'],val['f_b']),(0,0)) >= 4.5} # outside of region 6
+            return ans
+        elif region == '9':
+            center = self.opp
+            ans = {key:val for key,val in self.personalitiesDict.items() 
+                    if 4.5 <= dist((val['p_n'],val['f_b']),center) <= 9 and
+                    side((0,0),center,(val['p_n'],val['f_b'])) > 0 and
+                    dist((val['p_n'],val['f_b']),(0,0)) > 4.5}
+            return ans
+        elif region == '10':
             center = self.opp
             ans = {key:val for key,val in self.personalitiesDict.items() 
                     if 4.5 <= dist((val['p_n'],val['f_b']),center) <= 9 and
                     side((0,0),center,(val['p_n'],val['f_b'])) < 0 and
                     dist((val['p_n'],val['f_b']),(0,0)) > 4.5}
             return ans
-        elif region == 9:
+        elif region in ['opp core','11']:
             center = self.opp
             ans = {key:val for key,val in self.personalitiesDict.items() 
-                    if 4.5 <= dist((val['p_n'],val['f_b']),center) <= 9 and
-                    side((0,0),center,(val['p_n'],val['f_b'])) > 0 and
-                    dist((val['p_n'],val['f_b']),(0,0)) > 4.5}
+                    if dist((val['p_n'],val['f_b']),center) <= 4.5}
+            return ans
+        elif region == 'opp':
+            center = self.opp
+            ans = {key:val for key,val in self.personalitiesDict.items() 
+                    if dist((val['p_n'],val['f_b']),center) <= 9}
+            return ans
+        elif region == 'ref':
+            center = self.ref
+            ans = {key:val for key,val in self.personalitiesDict.items() 
+                    if dist((val['p_n'],val['f_b']),center) <= 9}
             return ans
         else:
             log('error unknown region',region,pre=pre)
@@ -616,7 +670,67 @@ if __name__ == '__main__':
             'u': 2, 
             'd': 5
             },
+        'R5': {
+            'p_n': 0,
+            'f_b': 13, 
+            'u_d': -1,
+            'p': 2, 
+            'n': 4,
+            'f': 2, 
+            'b': 3, 
+            'u': 2, 
+            'd': 5
+            },
+        'R4': {
+            'p_n': 10,
+            'f_b': -5, 
+            'u_d': -1,
+            'p': 2, 
+            'n': 4,
+            'f': 2, 
+            'b': 3, 
+            'u': 2, 
+            'd': 5
+            },
+        'R8': {
+            'p_n': -10,
+            'f_b': 5, 
+            'u_d': -1,
+            'p': 2, 
+            'n': 4,
+            'f': 2, 
+            'b': 3, 
+            'u': 2, 
+            'd': 5
+            },
+        'R7': {
+            'p_n': 10,
+            'f_b': -15, 
+            'u_d': -1,
+            'p': 2, 
+            'n': 4,
+            'f': 2, 
+            'b': 3, 
+            'u': 2, 
+            'd': 5
+            },
         }
+    # add in an overwhelming number of points to manipultate the regression to the orientation we want
+    extraNum = 50
+    extra = {
+                'Tom'+str(i):{
+                'p_n': 7,
+                'f_b': 9,
+                'u_d': 3,
+                'p': 1,
+                'n': 0,
+                'f': 2,
+                'b': 1,
+                'u': 6,
+                'd': 3
+                } for i in range(extraNum)
+            }
+    symPersona2.update(extra)
     expectedResult1 = {
         'Bob': {
             'p_n': -1.2727922061357853, 
@@ -702,37 +816,51 @@ if __name__ == '__main__':
     expKeys = ['Bob','Nancy']
     print('Passed 4' if list(ans.keys()) == expKeys else 'Failed 4')
     sym = SYMLOGPlot(symPersona2)
-    sym.draw(filename=LIB+'/test_SYMLOG_symPersona2.png',names=True)
+    sym.draw(filename=LIB+'/test_SYMLOG_symPersona2.png',names=True,ref_points=True)
     ans = sym.getMembersByRegion('inner')
-    expKeys = ['Fred','Tom']
-    print('Passed 5' if list(ans.keys()) == expKeys else 'Failed 5')
+    Toms = ['Tom'+str(i) for i in range(extraNum)]
+    expKeys = {'Fred','Tom',*Toms}
+    print('Passed 5' if set(ans.keys()) == expKeys else 'Failed 5 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
     ans = sym.getMembersByRegion('ref')
-    expKeys = {'James','Tom','Fred','Mina','A','B'}
-    print('ans keys',list(ans.keys()))
+    expKeys = {'James','Tom','Fred','Mina','A','B',*Toms}
     print('Passed 6' if set(ans.keys()) == expKeys else 'Failed 6 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
     ans = sym.getMembersByRegion('opp')
-    expKeys = ['Febbie']
-    print('Passed 7' if list(ans.keys()) == expKeys else 'Failed 7 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
+    expKeys = {'Febbie','Veronica','C','Jess','Rahul'}
+    print('Passed 7' if set(ans.keys()) == expKeys else 'Failed 7 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
     ans = sym.getMembersByRegion('opp core')
     expKeys = ['Veronica']
     print('Passed 8' if list(ans.keys()) == expKeys else 'Failed 8 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
-    ans = sym.getMembersByRegion(2)
+    ans = sym.getMembersByRegion('2')
     expKeys = ['Mina']
     print('Passed 8.1' if list(ans.keys()) == expKeys else 'Failed 8.1 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
-    ans = sym.getMembersByRegion(6)
+    ans = sym.getMembersByRegion('6')
     expKeys = ['Febbie','A','B','C']
     print('Passed 8.2' if list(ans.keys()) == expKeys else 'Failed 8.2 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
-    ans = sym.getMembersByRegion(3)
+    ans = sym.getMembersByRegion('3')
     expKeys = ['James']
     print('Passed 8.3' if list(ans.keys()) == expKeys else 'Failed 8.3 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
-    ans = sym.getMembersByRegion(10)
+    ans = sym.getMembersByRegion('10')
     expKeys = ['Rahul']
     print('Passed 8.4' if list(ans.keys()) == expKeys else 'Failed 8.4 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
-    ans = sym.getMembersByRegion(9)
+    ans = sym.getMembersByRegion('9')
     expKeys = ['Jess']
     print('Passed 8.5' if list(ans.keys()) == expKeys else 'Failed 8.5 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
+    ans = sym.getMembersByRegion('4')
+    expKeys = {'R4'}
+    print('Passed 8.6' if set(ans.keys()) == expKeys else 'Failed 8.6 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
+    ans = sym.getMembersByRegion('5')
+    expKeys = {'R5'}
+    print('Passed 8.7' if set(ans.keys()) == expKeys else 'Failed 8.7 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
+    ans = sym.getMembersByRegion('7')
+    expKeys = {'R7'}
+    print('Passed 8.8' if set(ans.keys()) == expKeys else 'Failed 8.8 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
+    ans = sym.getMembersByRegion('8')
+    expKeys = {'R8'}
+    print('Passed 8.9' if set(ans.keys()) == expKeys else 'Failed 8.9 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
+
 
     print('\ntesting SYMLOGPlot.getUPFCorrelation')
+    # this is just kinda hard to calculate :-S
     sym = SYMLOGPlot(symPersona2)
     ans = sym.getUPFCorrelation(filename_prefix=LIB+'/test_SYMLOG_corr')
     exp = 0.4278666689281236

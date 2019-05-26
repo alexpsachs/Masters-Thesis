@@ -1,5 +1,5 @@
 """
-The purpose of this script is to convert the data in ../Data/ProcessedText_sym into the final metrics
+The purpose of this script is to convert the data in ../Data/ProcessedText_Big5 into the final metrics
 that will be used in the final analysis
 """
 import os

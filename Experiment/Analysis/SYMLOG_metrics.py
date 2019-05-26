@@ -22,6 +22,8 @@ import multiprocessing as mp
 ANALYSIS = os.path.join(TOP,'Experiment','Analysis')
 OUTDIR = os.path.join(ANALYSIS,'SYMLOG_metrics')
 INDIR = os.path.join(TOP,'Experiment','Data','ProcessedText_Sym')
+path = os.path.join(TOP,'Library','SYMLOG_POLES.json')
+SYMLOG_POLES = json.load(open(path,'r'))
 def log(*args,pre=None):
     logger.log(*args,pre='SYMLOG_metrics.py' if pre==None else 'SYMLOG_metrics.py.'+pre)
 
@@ -44,6 +46,7 @@ def calcSymMetrics(filename,reorient=False):
     """
     pre='calcSymMetrics'
     log('start',pre=pre)
+    num_percentiles = 5
     personalities = json.load(open(filename,'r'))
     log('personality length',len(list(personalities.keys())),pre=pre)
     if len(list(personalities.keys())) in [0,1]:
@@ -53,15 +56,34 @@ def calcSymMetrics(filename,reorient=False):
     if reorient:
         symPlot.reorientCompass()
     # symBest = SYMLOG.SYMLOGPlot(personalities,compassMethod='PF') # turns out this actually isn't used for anything
+    # Do the Bales metrics
     num_people = symPlot.personalities.shape[0]
     metrics = {
             'dissidence':symPlot.getSCGDeviation(),
             'upf_corr':symPlot.getUPFCorrelation(),
             'pf_prop':len([attributes for attributes in symPlot.personalities[['p_n','f_b']].values
                 if attributes[0] > 0 and attributes[1] > 0])/num_people,
-            'opp_prop':len(list(symPlot.getMembersByRegion('opp')))/num_people,
+            # 'opp_prop':len(list(symPlot.getMembersByRegion('opp')))/num_people, #depreciated
             'rot_regret':abs(symPlot.angle - math.pi/4)/math.pi
             }
+    # Do the regional metrics to be thorough
+    regions = ['ref','opp',*[str(i) for i in range(1,12)]]
+    region_metrics = {region:len(list(symPlot.getMembersByRegion(region)))/num_people
+            for region in regions}
+    metrics.update(region_metrics)
+    # Do the percentiles to match the Big 5 distribution metrics
+    pole_percentiles = {}
+    for pole in SYMLOG_POLES:
+        all_vals = [person[pole] for person in symPlot.personalitiesDict.keys()]
+        all_vals.sort()
+        interval = len(all_vals)//(num_percentiles-1)
+        percentiles = [all_vals[i*interval] for i in range(num_percentiles-1)]
+        percentiles.append(all_vals[-1])
+        pole_percentiles[pole] = percentiles
+        log('percentiles',percentiles,pre=pre)
+        pole_percentiles.update({pole+str(i):val for i,val in enumerate(percentiles)})
+    metrics.update(pole_percentiles)
+
     return metrics
 
 def plotPersonas(filename,outpath,reorient=False):
@@ -117,7 +139,7 @@ def run_helper(args):
         reponame = filename[:-5]
         inpath = os.path.join(INDIR,filename)
         png_outpath = os.path.join(plots_dir,reponame+'.png')
-        metrics = calcSymMetrics(inpath,reorient)
+        metrics = calcSymMetrics(inpath,reorient=reorient)
         if metrics != None: # None indicates an empty group (or a group with ony 1 person)
             data[reponame] = metrics
             plotPersonas(inpath,png_outpath,reorient=reorient)
