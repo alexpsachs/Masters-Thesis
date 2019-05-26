@@ -707,8 +707,9 @@ if __name__ == '__main__':
     expKeys = ['Fred','Tom']
     print('Passed 5' if list(ans.keys()) == expKeys else 'Failed 5')
     ans = sym.getMembersByRegion('ref')
-    expKeys = ['James']
-    print('Passed 6' if list(ans.keys()) == expKeys else 'Failed 6')
+    expKeys = {'James','Tom','Fred','Mina','A','B'}
+    print('ans keys',list(ans.keys()))
+    print('Passed 6' if set(ans.keys()) == expKeys else 'Failed 6 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
     ans = sym.getMembersByRegion('opp')
     expKeys = ['Febbie']
     print('Passed 7' if list(ans.keys()) == expKeys else 'Failed 7 got '+ans.__repr__()+' instead of '+expKeys.__repr__())
