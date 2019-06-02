@@ -74,7 +74,7 @@ def calcSymMetrics(filename,reorient=False):
     # Do the percentiles to match the Big 5 distribution metrics
     pole_percentiles = {}
     for pole in SYMLOG_POLES:
-        all_vals = [person[pole] for person in symPlot.personalitiesDict.keys()]
+        all_vals = [values[pole] for person,values in symPlot.personalitiesDict.items()]
         all_vals.sort()
         interval = len(all_vals)//(num_percentiles-1)
         percentiles = [all_vals[i*interval] for i in range(num_percentiles-1)]
@@ -82,8 +82,11 @@ def calcSymMetrics(filename,reorient=False):
         pole_percentiles[pole] = percentiles
         log('percentiles',percentiles,pre=pre)
         pole_percentiles.update({pole+str(i):val for i,val in enumerate(percentiles)})
-    metrics.update(pole_percentiles)
+    log('pole_percentiles',pole_percentiles,pre=pre)
+    disc_pole_percentiles = {pole+str(i):pole_percentiles[pole][i] for pole in SYMLOG_POLES for i in range(num_percentiles)}
+    metrics.update(disc_pole_percentiles)
 
+    log('returned',metrics,pre=pre)
     return metrics
 
 def plotPersonas(filename,outpath,reorient=False):
