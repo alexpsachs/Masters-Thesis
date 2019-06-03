@@ -15,6 +15,7 @@ import code
 import xgboost as xgb
 import json
 
+HOME = os.path.abspath(os.path.join(__file__,'../../../../'))
 TOP = os.path.abspath(os.path.join(__file__,'../../../'))
 LIB = os.path.join(TOP,'Library')
 sys.path.append(LIB)
@@ -27,6 +28,8 @@ debug = False
 # constants
 INDIR = os.path.join(TOP,'Experiment','Analysis','experiment_data')
 OUTDIR = os.path.join(TOP,'Experiment','Analysis','analysis')
+FIGDIR = os.path.join(HOME,'Dropbox','Apps','Overleaf','University of Waterloo Thesis','Figs')
+TBLDIR = os.path.join(HOME,'Dropbox','Apps','Overleaf','University of Waterloo Thesis','Tables')
 
 # config
 config_include_test_set = False # whether of not to include the repositories in ESEM's "empirical validation" set (i.e. the ones NOT used to train the model)
@@ -142,12 +145,15 @@ def analyzeExperiment(exp_config,pre=''):
     p('opp',pre=pre)
 
     # do the anlaysis
-    all_precision,all_recall,all_thresholds,all_labels = [],[],[],[]
+    all_precision,all_recall,all_thresholds,all_labels = [],[],[],[] # all the stats for the prc 
+    all_results = [] # all the stats to compare models
     def run_model(model_type,x_labels=None,prc_label=None):
         # if x_labels None, then use all, else use only x_labels as features
         log('doing {0} regression for'.format(model_type),exp_name,pre=pre)
         out_dict,data = analyzer.assess(df,'esem_status',model_type=model_type,x_labels=x_labels)
-        best_threshold = out_dict['test']['best threshold']
+        test_result = out_dict['test']
+        best_threshold = test_result['best threshold']
+        all_results.append({'model':model if prc_label == None else prc_label,'final test':out_dict['test']})
         if config_include_test_set:
             prec_stats = analyzer.test(df,prec_df,'esem_status',model_type,include_only=['stats','precision'],
                     threshold=best_threshold,x_labels=x_labels)
@@ -180,8 +186,14 @@ def analyzeExperiment(exp_config,pre=''):
     # draw the roc curves
     precision_recall_path = os.path.join(OUTDIR,exp_name,'analysis_prc.png')
     precision_recall_analysis = os.path.join(OUTDIR,exp_name+'_analysis_prc.png')
+    report_path = os.path.join(OUTDIR,exp_name+'_report.json')
+    with open(report_path,'w') as f:
+        json.dump(all_results,f,indent=4)
     analyzer.plotPRC(all_precision,all_recall,all_thresholds,all_labels,precision_recall_path)
     analyzer.plotPRC(all_precision,all_recall,all_thresholds,all_labels,precision_recall_analysis)
+    if 'prc_dir' in exp_config:
+        prc_outpath = os.path.join(exp_config['prc_dir'],exp_name+'_analysis_prc.png')
+        analyzer.plotPRC(all_precision,all_recall,all_thresholds,all_labels,prc_outpath)
 
 if __name__ == '__main__':
     logger.deleteLogs()
@@ -194,63 +206,126 @@ if __name__ == '__main__':
     all_metrics = symlog_metrics + big5_metrics + esem_train_metrics
     all_models = ['Linear','Logistic','Xgboost','SVM','Neural']
 
-    old_config = {
-            'name':'old',
-            'indir':'old',
-            'models':{m:{'x_labels':all_metrics,'model':m} for m in all_models},
-            }
-    log('old_config',old_config)
-    reorient_config = {
-            'name':'reorient',
+    # old_config = {
+    #         'name':'old',
+    #         'indir':'old',
+    #         'models':{m:{'x_labels':all_metrics,'model':m} for m in all_models},
+    #         'prc_dir':FIGDIR,
+    #         }
+    # log('old_config',old_config)
+    # reorient_config = {
+    #         'name':'all',
+    #         'indir':'reorient',
+    #         'models':{m:{'x_labels':all_metrics,'model':m} for m in all_models},
+    #         'prc_dir':FIGDIR,
+    #         }
+    # log('reorient_config',reorient_config)
+    # sym_vs_big5_config = {
+    #         'name':'sym_vs_big5',
+    #         'indir':'reorient',
+    #         'models':{
+    #             'SVM':{'x_labels':all_metrics,'model':'SVM'},
+    #             'SVM: sym only':{'x_labels':symlog_metrics,'model':'SVM'},
+    #             'SVM: sym bales measures only':{'x_labels':[m for m in symlog_metrics if len(m) > 2],'model':'SVM'},
+    #             'SVM: big5 only':{'x_labels':big5_metrics,'model':'SVM'},
+    #             },
+    #         'prc_dir':FIGDIR,
+    #         }
+    # log('sym_vs_big5_config',sym_vs_big5_config)
+    # big5_config = {
+    #         'name':'big5',
+    #         'indir':'reorient',
+    #         'models':{
+    #             'SVM':{'x_labels':all_metrics,'model':'SVM'},
+    #             'SVM: median only':{'x_labels':[m for m in big5_metrics if m[-1] == '2'],'model':'SVM'},
+    #             'SVM: percentiles only':{'x_labels':big5_metrics,'model':'SVM'},
+    #             },
+    #         'prc_dir':FIGDIR,
+    #         }
+    # log('big5_config',big5_config)
+    # sym_config = {
+    #         'name':'sym',
+    #         'indir':'reorient',
+    #         'models':{
+    #             'SVM':{'x_labels':all_metrics,'model':'SVM'},
+    #             'SVM: Bales measures only':{'x_labels':[m for m in symlog_metrics if len(m) > 2],'model':'SVM'}, # as percentiles and regions are 2 or less chars
+    #             'SVM: Bales regions only':{'x_labels':[m for m in symlog_metrics if m.isnumeric()],'model':'SVM'}, # as percentiles and regions are 2 or less chars
+    #             'SVM: percentiles only':{'x_labels':[m for m in symlog_metrics if not m.isnumeric() and m[-1].isnumeric()],'model':'SVM'}, # as percentiles are letter + num
+    #             },
+    #         'prc_dir':FIGDIR,
+    #         }
+    # log('sym_config',sym_config)
+    # personality_config = {
+    #         'name':'personality',
+    #         'indir':'reorient',
+    #         'models':{
+    #             'SVM':{'x_labels':all_metrics,'model':'SVM'},
+    #             'SVM: esem metrics only':{'x_labels':esem_train_metrics,'model':'SVM'},
+    #             'SVM: esem + big5 metrics':{'x_labels':esem_train_metrics + big5_metrics,'model':'SVM'},
+    #             'SVM: esem + sym metrics':{'x_labels':esem_train_metrics + symlog_metrics,'model':'SVM'},
+    #             },
+    #         'prc_dir':FIGDIR,
+    #         }
+    # log('personality_config',personality_config)
+
+    # thesis prcs
+    sym_only_config = {
+            'name':'sym_only',
             'indir':'reorient',
-            'models':{m:{'x_labels':all_metrics,'model':m} for m in all_models},
+            'models':{m:{'x_labels':symlog_metrics,'model':m} for m in all_models},
+            'prc_dir':FIGDIR,
             }
-    log('reorient_config',reorient_config)
-    sym_vs_big5_config = {
-            'name':'sym_vs_big5',
+    log('sym_only_config',sym_only_config)
+    bales_config = {
+            'name':'bales_only',
             'indir':'reorient',
             'models':{
-                'SVM':{'x_labels':all_metrics,'model':'SVM'},
-                'SVM: sym only':{'x_labels':symlog_metrics,'model':'SVM'},
-                'SVM: sym bales measures only':{'x_labels':[m for m in symlog_metrics if len(m) > 2],'model':'SVM'},
-                'SVM: big5 only':{'x_labels':big5_metrics,'model':'SVM'},
-                }
+                'Xgboost: SYMLOG':{'x_labels':symlog_metrics,'model':'Xgboost'},
+                'Xgboost: SYMLOG excluding Bales Measures':{'x_labels':[m for m in symlog_metrics if not len(m) > 2],'model':'Xgboost'}, # as percentiles and regions are 2 or less chars
+                },
+            'prc_dir':FIGDIR,
             }
-    log('sym_vs_big5_config',sym_vs_big5_config)
+    log('bales_config',bales_config)
     big5_config = {
-            'name':'big5',
+            'name':'big5_only',
             'indir':'reorient',
             'models':{
-                'SVM':{'x_labels':all_metrics,'model':'SVM'},
-                'SVM: median only':{'x_labels':[m for m in big5_metrics if m[-1] == '2'],'model':'SVM'},
-                'SVM: percentiles only':{'x_labels':big5_metrics,'model':'SVM'},
-                }
+                'Xgboost: SYMLOG + Big5':{'x_labels':symlog_metrics + big5_metrics,'model':'Xgboost'},
+                'Xgboost: Big5 group medians':{'x_labels':[m for m in big5_metrics if '2' in m],'model':'Xgboost'},
+                'Xgboost: Big5 percentiles':{'x_labels':big5_metrics,'model':'Xgboost'},
+                },
+            'prc_dir':FIGDIR,
             }
     log('big5_config',big5_config)
-    sym_config = {
-            'name':'sym',
+    esem_config = {
+            'name':'esem_only',
+            'indir':'reorient',
+            'models':{m:{'x_labels':esem_train_metrics,'model':m} for m in all_models},
+            'prc_dir':FIGDIR,
+            }
+    log('esem_config',esem_config)
+    esem_config = {
+            'name':'esem',
+            'indir':'reorient',
+            'models':{m:{'x_labels':esem_train_metrics,'model':m} for m in all_models},
+            'prc_dir':FIGDIR,
+            }
+    log('esem_config',esem_config)
+    esem_and_sym_config = {
+            'name':'esem_and_sym',
             'indir':'reorient',
             'models':{
-                'SVM':{'x_labels':all_metrics,'model':'SVM'},
-                'SVM: Bales measures only':{'x_labels':[m for m in symlog_metrics if len(m) > 2],'model':'SVM'}, # as percentiles and regions are 2 or less chars
-                'SVM: Bales regions only':{'x_labels':[m for m in symlog_metrics if m.isnumeric()],'model':'SVM'}, # as percentiles and regions are 2 or less chars
-                'SVM: percentiles only':{'x_labels':[m for m in symlog_metrics if not m.isnumeric() and m[-1].isnumeric()],'model':'SVM'}, # as percentiles are letter + num
-                }
+                'SVM: Coelho':{'x_labels':esem_train_metrics,'model':'SVM'},
+                'Xgboost: Coelho':{'x_labels':esem_train_metrics,'model':'Xgboost'},
+                'SVM: Coelho + SYMLOG': {'x_labels':esem_train_metrics + symlog_metrics,'model':'SVM'},
+                'Xgboost: Coelho + SYMLOG': {'x_labels':esem_train_metrics + symlog_metrics,'model':'Xgboost'},
+                },
+            'prc_dir':FIGDIR,
             }
-    log('sym_config',sym_config)
-    personality_config = {
-            'name':'personality',
-            'indir':'reorient',
-            'models':{
-                'SVM':{'x_labels':all_metrics,'model':'SVM'},
-                'SVM: esem metrics only':{'x_labels':esem_train_metrics,'model':'SVM'},
-                'SVM: esem + big5 metrics':{'x_labels':esem_train_metrics + big5_metrics,'model':'SVM'},
-                'SVM: esem + sym metrics':{'x_labels':esem_train_metrics + symlog_metrics,'model':'SVM'},
-                }
-            }
-    log('personality_config',personality_config)
+    log('esem_and_sym_config',esem_and_sym_config)
 
-    experiments = [old_config, reorient_config, sym_vs_big5_config, big5_config, sym_config, personality_config]
+    # experiments = [old_config, reorient_config, sym_vs_big5_config, big5_config, sym_config, personality_config]
+    experiments = [sym_only_config, bales_config, big5_config, esem_config, esem_and_sym_config]
     for experiment in experiments:
         analyzeExperiment(experiment)
     print('analysis complete')

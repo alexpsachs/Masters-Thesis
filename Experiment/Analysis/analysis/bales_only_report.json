@@ -1,0 +1,40 @@
+[
+    {
+        "model": "Xgboost: SYMLOG",
+        "final test": {
+            "best threshold": 0.13889002799987793,
+            "confusion": [
+                [
+                    65,
+                    4
+                ],
+                [
+                    10,
+                    7
+                ]
+            ],
+            "f1": 0.5,
+            "precision": 0.6363636363636364,
+            "recall": 0.4117647058823529
+        }
+    },
+    {
+        "model": "Xgboost: SYMLOG excluding Bales Measures",
+        "final test": {
+            "best threshold": 0.05658480525016785,
+            "confusion": [
+                [
+                    65,
+                    4
+                ],
+                [
+                    14,
+                    3
+                ]
+            ],
+            "f1": 0.25,
+            "precision": 0.42857142857142855,
+            "recall": 0.17647058823529413
+        }
+    }
+]

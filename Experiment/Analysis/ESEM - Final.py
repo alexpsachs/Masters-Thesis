@@ -42,7 +42,16 @@ df = pd.DataFrame(data=overlaps)
 print(df)
 
 print()
-print('recall stats')
+print('Model stats')
+recall_df = dataframes['Model']
+uniques = {x for x in recall_df['Archived']}
+print('vals',uniques)
+for val in uniques:
+    c = recall_df.loc[recall_df['Archived'] == val].count()
+    print(val,c['Archived'])
+
+print()
+print('Recall stats')
 recall_df = dataframes['Recall']
 uniques = {x for x in recall_df['Classification']}
 print('vals',uniques)
@@ -51,7 +60,7 @@ for val in uniques:
     print(val,c['Classification'])
 
 print()
-print('precision stats')
+print('Precision stats')
 recall_df = dataframes['Precision']
 uniques = {x for x in recall_df['Result']}
 print('vals',uniques)

@@ -92,7 +92,7 @@ def aggregateData(exp_name,pre=''):
         if len(row) != 0:
             name = row[headers.index('Repository')]
             status = row[headers.index('Archived')]
-            active = 'active' if status=='Active' else 'inactive' #False is if it is 'Archived' or 'FSE' (which in the paper the say is inactive)
+            active = 'active' if status=='Active' else 'inactive' #False is if it is 'Archived' or 'FSE' (which in the paper they say is inactive)
             folds_dict[name] = {'status':active}
             log('processed',name,pre=pre)
         else:
