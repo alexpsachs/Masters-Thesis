@@ -6,6 +6,12 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ANALYSIS	Experiment/Analysis/Big5_metrics.py	/^ANALYSIS = os.path.join(TOP,'Experiment','Analysis')$/;"	v
 ANALYSIS	Experiment/Analysis/SYMLOG_metrics.py	/^ANALYSIS = os.path.join(TOP,'Experiment','Analysis')$/;"	v
+Alex_F_B	Pilot/Data/Oni_SYMLOGs.py	/^    Alex_F_B = row[index]$/;"	v
+Alex_P_N	Pilot/Data/Oni_SYMLOGs.py	/^    Alex_P_N = row[index]$/;"	v
+Alex_U_D	Pilot/Data/Oni_SYMLOGs.py	/^    Alex_U_D = row[index]$/;"	v
+Andrew_F_B	Pilot/Data/Oni_SYMLOGs.py	/^    Andrew_F_B = row[index]$/;"	v
+Andrew_P_N	Pilot/Data/Oni_SYMLOGs.py	/^    Andrew_P_N = row[index]$/;"	v
+Andrew_U_D	Pilot/Data/Oni_SYMLOGs.py	/^    Andrew_U_D = row[index]$/;"	v
 ArrayProto	Docs/_build/html/_static/underscore-1.3.1.js	/^  var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype;$/;"	v
 BIG5_METRICS_DIR	Experiment/Analysis/experiment_data.py	/^BIG5_METRICS_DIR = os.path.join(TOP,'Experiment','Analysis','Big5_metrics')$/;"	v
 BUILDDIR	Docs/Makefile	/^BUILDDIR      = _build$/;"	m
@@ -13,10 +19,14 @@ BUILDDIR	Docs/make.bat	/^set BUILDDIR=_build$/;"	v
 Big5Group	Experiment/Analysis/Big5_metrics.py	/^class Big5Group:$/;"	c
 DATA	Experiment/Data/ProcessedText.py	/^DATA = os.path.join(HOME,'Experiment','Data')$/;"	v
 DATA	Experiment/Data/comments_for_pull_reqs.py	/^DATA = os.path.join(HOME,'Experiment','Data','comments_for_pull_reqs')$/;"	v
+DATA	Pilot/trim.py	/^DATA = '\/home\/a2sachs\/Documents\/Library\/Data\/GitHub\/mysql-2019-02-01'$/;"	v
 Debug	Library/SYMLOG.py	/^Debug = False$/;"	v
 Debug	Library/VotingPoll.py	/^Debug = True$/;"	v
+ESEM_TRAIN_path	Experiment/Analysis/experiment_data.py	/^ESEM_TRAIN_path = os.path.join(TOP,'Experiment','Data','trainingset.csv')$/;"	v
 ESEM_path	Experiment/Analysis/experiment_data.py	/^ESEM_path = os.path.join(TOP,'Experiment','Analysis','ESEM - Final.ods')$/;"	v
 F	Docs/_build/html/_static/underscore.js	/^var F=function(){};b.bind=function(a,c){var d,e;if(a.bind===s&&s)return s.apply(a,i.call(arguments,1));if(!b.isFunction(a))throw new TypeError;e=i.call(arguments,2);return d=function(){if(!(this instanceof d))return a.apply(c,e.concat(i.call(arguments)));F.prototype=a.prototype;var b=new F,g=a.apply(b,e.concat(i.call(arguments)));return Object(g)===g?g:b}};b.bindAll=function(a){var c=i.call(arguments,1);c.length==0&&(c=b.functions(a));j(c,function(c){a[c]=b.bind(a[c],a)});return a};b.memoize=function(a,$/;"	f	function:b.last
+FIGDIR	Experiment/Analysis/analysis.py	/^FIGDIR = os.path.join(HOME,'Dropbox','Apps','Overleaf','University of Waterloo Thesis','Figs')$/;"	v
+HOME	Experiment/Analysis/analysis.py	/^HOME = os.path.abspath(os.path.join(__file__,'..\/..\/..\/..\/'))$/;"	v
 HOME	Experiment/Analysis/tmp_SYMLOG_metrics.py	/^HOME = os.path.abspath(os.path.join(__file__,'..\/..\/..\/'))$/;"	v
 HOME	Experiment/Data/AggregateText.py	/^HOME = os.path.abspath(os.path.join(__file__,'..\/..\/..\/'))$/;"	v
 HOME	Experiment/Data/CleanText.py	/^HOME = os.path.abspath(os.path.join(__file__,'..\/..\/..\/'))$/;"	v
@@ -25,12 +35,20 @@ HOME	Experiment/Data/comments_for_pull_reqs.py	/^HOME = os.path.abspath(os.path.
 HOME	Library/IBM.py	/^HOME = os.path.abspath(os.path.join(__file__,'..\/..\/'))$/;"	v
 HOME	Library/VotingPoll.py	/^HOME = os.sep.join(parent.split(os.sep)[:-2])$/;"	v
 IBMDIR	Experiment/Data/ProcessedText.py	/^IBMDIR = os.path.join(DATA,'ProcessedText_IBM_raw')$/;"	v
-ICC	Library/ICC.py	/^def ICC(data, colHeaders=None, rowHeaders=None):$/;"	f
+IBMSYMDict	Pilot/Data/Oni_SYMLOGs.py	/^IBMSYMDict = {}$/;"	v
+IBMSYMLOG_filepath	Pilot/Data/Oni_SYMLOGs.py	/^IBMSYMLOG_filepath = '\/home\/a2sachs\/Documents\/Experiment1\/Data\/IBMWatson\/personalities.ods'$/;"	v
+IBMSYMLOGs	Pilot/Data/Oni_SYMLOGs.py	/^IBMSYMLOGs = get_data(IBMSYMLOG_filepath)['OniData']$/;"	v
+IBM_F_B	Pilot/Data/Oni_SYMLOGs.py	/^            IBM_F_B = entry['F_B']$/;"	v
+IBM_P_N	Pilot/Data/Oni_SYMLOGs.py	/^            IBM_P_N = entry['P_N']$/;"	v
+IBM_U_D	Pilot/Data/Oni_SYMLOGs.py	/^            IBM_U_D = entry['U_D']$/;"	v
+ICC	Library/InterRaterAgreement.py	/^def ICC(data, min_val, max_val, normalize = True):$/;"	f
+ICC0	Library/InterRaterAgreement.py	/^def ICC0(data, colHeaders=None, rowHeaders=None):$/;"	f
 INDIR	Experiment/Analysis/Big5_metrics.py	/^INDIR = os.path.join(TOP,'Experiment','Data','ProcessedText_Big5')$/;"	v
 INDIR	Experiment/Analysis/SYMLOG_metrics.py	/^INDIR = os.path.join(TOP,'Experiment','Data','ProcessedText_Sym')$/;"	v
 INDIR	Experiment/Analysis/analysis.py	/^INDIR = os.path.join(TOP,'Experiment','Analysis','experiment_data')$/;"	v
 INDIR	Experiment/Data/CleanText.py	/^INDIR = os.path.join(HOME,'Experiment','Data','AggregateText')$/;"	v
 INDIR	Experiment/Data/ProcessedText.py	/^INDIR = os.path.join(DATA,'CleanText')$/;"	v
+Kappa	Library/InterRaterAgreement.py	/^def Kappa(data):$/;"	f
 LIB	Docs/conf.py	/^LIB = os.path.join(TOP,'Library')$/;"	v
 LIB	Experiment/Analysis/Big5_metrics.py	/^LIB = os.path.join(TOP,'Library')$/;"	v
 LIB	Experiment/Analysis/SYMLOG_metrics.py	/^LIB = os.path.join(TOP,'Library')$/;"	v
@@ -40,20 +58,29 @@ LIB	Experiment/Data/AggregateText.py	/^LIB = os.path.join(HOME,'Library')$/;"	v
 LIB	Experiment/Data/CleanText.py	/^LIB = os.path.join(HOME,'Library')$/;"	v
 LIB	Experiment/Data/ProcessedText.py	/^LIB = os.path.join(HOME,'Library')$/;"	v
 LIB	Experiment/Data/comments_for_pull_reqs.py	/^LIB = os.path.join(HOME,'Library')$/;"	v
+LIB	Library/InterRaterAgreement.py	/^LIB = os.path.join(TOP,'Library')$/;"	v
 LIB	Library/SYMLOG.py	/^LIB = os.path.join(TOP,'Library')$/;"	v
 LIB	Library/analyzer.py	/^LIB = os.path.join(TOP,'Library')$/;"	v
+LIB	Pilot/Analysis/IRA_measures.py	/^LIB = os.path.join(TOP,'Library')$/;"	v
+LIB	Pilot/Data/IBMWatson/allText.py	/^LIB = '\/home\/a2sachs\/Documents\/Library'$/;"	v
+LIB	Pilot/Data/IBMWatson/personalities.py	/^LIB = '\/home\/a2sachs\/Documents\/Library'$/;"	v
+LIB	Pilot/trim.py	/^LIB = '\/home\/a2sachs\/Documents\/Library'$/;"	v
 LOG	Library/IBM.py	/^    LOG = os.path.join(HOME,'Library','Logs')$/;"	v
 Linear_wrapper	Library/analyzer.py	/^class Linear_wrapper:$/;"	c
 Logistic_wrapper	Library/analyzer.py	/^class Logistic_wrapper:$/;"	c
 Neural_wrapper	Library/analyzer.py	/^class Neural_wrapper:$/;"	c
+OUT	Pilot/trim.py	/^OUT = '\/home\/a2sachs\/Documents\/Experiment2.1\/Data\/Selection'$/;"	v
 OUTDIR	Experiment/Analysis/Big5_metrics.py	/^OUTDIR = os.path.join(ANALYSIS,'Big5_metrics')$/;"	v
 OUTDIR	Experiment/Analysis/SYMLOG_metrics.py	/^OUTDIR = os.path.join(ANALYSIS,'SYMLOG_metrics')$/;"	v
 OUTDIR	Experiment/Analysis/analysis.py	/^OUTDIR = os.path.join(TOP,'Experiment','Analysis','analysis')$/;"	v
 OUTDIR	Experiment/Data/CleanText.py	/^OUTDIR = os.path.join(HOME,'Experiment','Data','CleanText')$/;"	v
 OUTDIR	Experiment/Data/ProcessedText.py	/^OUTDIR = os.path.join(DATA,'ProcessedText_Big5')$/;"	v
 OUT_DIR	Experiment/Analysis/experiment_data.py	/^OUT_DIR = os.path.join(TOP,'Experiment','Analysis','experiment_data')$/;"	v
+OniSYMLOGs	Pilot/Data/Oni_SYMLOGs.py	/^OniSYMLOGs = get_data(Oni_SYMLOG_filepath)$/;"	v
+Oni_SYMLOG_filepath	Pilot/Data/Oni_SYMLOGs.py	/^Oni_SYMLOG_filepath = '\/home\/a2sachs\/Dropbox\/Masters\/Thesis\/Scripts\/ThesisSiteDev\/VotingBank\/Oni_SYMLOG.ods'$/;"	v
 PLURAL_EXPR	Docs/_build/html/_static/doctools.js	/^    this.PLURAL_EXPR = new Function('n', 'return +(' + catalog.plural_expr + ')');$/;"	f
 RANDOM_SEED	Library/analyzer.py	/^RANDOM_SEED = 1 # set to an int for consitency or None for random$/;"	v
+SAMPLE	Pilot/trim.py	/^SAMPLE = '\/home\/a2sachs\/Documents\/Experiment2.1\/Data\/SampleSelection.ods'$/;"	v
 SOURCEDIR	Docs/Makefile	/^SOURCEDIR     = .$/;"	m
 SOURCEDIR	Docs/make.bat	/^set SOURCEDIR=.$/;"	v
 SPHINXBUILD	Docs/Makefile	/^SPHINXBUILD   = sphinx-build$/;"	m
@@ -62,6 +89,7 @@ SPHINXOPTS	Docs/Makefile	/^SPHINXOPTS    =$/;"	m
 SVM_wrapper	Library/analyzer.py	/^class SVM_wrapper:$/;"	c
 SYM	Experiment/Analysis/tmp_SYMLOG_metrics.py	/^SYM = os.path.join(HOME,'Experiment','Analysis','SYMLOG_metrics')$/;"	v
 SYMDIR	Experiment/Data/ProcessedText.py	/^SYMDIR = os.path.join(DATA,'ProcessedText_Sym')$/;"	v
+SYMLOGPersonas	Pilot/Data/IBMWatson/personalities.py	/^SYMLOGPersonas = SYMLOG.convertBig5ToSYMLOG(big5Personas) # {person:{SYMLOGAxis:score_from_-18_to_+18}}$/;"	v
 SYMLOGPlot	Library/SYMLOG.py	/^class SYMLOGPlot:$/;"	c
 SYMLOG_AXES	Library/SYMLOG.py	/^SYMLOG_AXES = json.load(open(os.path.join(parent,'SYMLOG_AXES.json'),'r'))$/;"	v
 SYMLOG_LABELS	Library/SYMLOG.py	/^SYMLOG_LABELS = json.load(open(os.path.join(parent,'SYMLOG_LABELS.json'),'r'))$/;"	v
@@ -73,14 +101,17 @@ SYMLOG_SCG_OPT	Library/SYMLOG.py	/^SYMLOG_SCG_OPT = json.load(open(os.path.join(
 SYMLOG_SCG_OPT	Library/SYMLOG.py	/^SYMLOG_SCG_OPT = {key:val\/33 for key,val in SYMLOG_SCG_OPT.items()} # normalize from 0 to 1 from original 0 to 33$/;"	v
 SYMLOG_SCG_OPT_posn	Library/SYMLOG.py	/^SYMLOG_SCG_OPT_posn = {$/;"	v
 Stemmer	Docs/_build/html/_static/language_data.js	/^var Stemmer = function() {$/;"	c
+TBLDIR	Experiment/Analysis/analysis.py	/^TBLDIR = os.path.join(HOME,'Dropbox','Apps','Overleaf','University of Waterloo Thesis','Tables')$/;"	v
 TESTING	Library/IBM.py	/^    TESTING = os.path.join(HOME,'Library','Testing')$/;"	v
 TOP	Docs/conf.py	/^TOP = os.path.abspath(os.path.join(__file__,'..\/..\/'))$/;"	v
 TOP	Experiment/Analysis/Big5_metrics.py	/^TOP = os.path.abspath(os.path.join(__file__,'..\/..\/..\/'))$/;"	v
 TOP	Experiment/Analysis/SYMLOG_metrics.py	/^TOP = os.path.abspath(os.path.join(__file__,'..\/..\/..\/'))$/;"	v
 TOP	Experiment/Analysis/analysis.py	/^TOP = os.path.abspath(os.path.join(__file__,'..\/..\/..\/'))$/;"	v
 TOP	Experiment/Analysis/experiment_data.py	/^TOP = os.path.abspath(os.path.join(__file__,'..\/..\/..\/'))$/;"	v
+TOP	Library/InterRaterAgreement.py	/^TOP = os.path.abspath(os.path.join(__file__,'..\/..'))$/;"	v
 TOP	Library/SYMLOG.py	/^TOP = os.path.abspath(os.path.join(__file__,'..\/..'))$/;"	v
 TOP	Library/analyzer.py	/^TOP = os.path.abspath(os.path.join(__file__,'..\/..\/'))$/;"	v
+TOP	Pilot/Analysis/IRA_measures.py	/^TOP = os.path.abspath(os.path.join(__file__,'..\/..\/..'))$/;"	v
 TRANSLATIONS	Docs/_build/html/_static/doctools.js	/^  },$/;"	p	class:Documentation
 Toms	Library/SYMLOG.py	/^    Toms = ['Tom'+str(i) for i in range(extraNum)]$/;"	v
 URL_ROOT	Docs/_build/html/_static/documentation_options.js	/^var DOCUMENTATION_OPTIONS = {$/;"	p	class:DOCUMENTATION_OPTIONS
@@ -163,7 +194,11 @@ all_filenames	Experiment/Data/ProcessedText.py	/^    all_filenames = os.listdir(
 alli	Docs/_build/html/_static/language_data.js	/^    bli: 'ble',$/;"	p	class:Stemmer.step2list
 analyzeExperiment	Experiment/Analysis/analysis.py	/^def analyzeExperiment(exp_config,pre=''):$/;"	f
 anci	Docs/_build/html/_static/language_data.js	/^    enci: 'ence',$/;"	p	class:Stemmer.step2list
+annotations	Pilot/Data/IBMWatson/allText.py	/^annotations = data['Annotations']$/;"	v
 ans	Library/IBM.py	/^    ans = getBig5FromText('hi how are you '*100,filename=filepath)$/;"	v
+ans	Library/InterRaterAgreement.py	/^    ans = ICC(oni_fb,-18,18)[0]$/;"	v
+ans	Library/InterRaterAgreement.py	/^    ans = Kappa(data)$/;"	v
+ans	Library/InterRaterAgreement.py	/^    ans = translate(ranks)$/;"	v
 ans	Library/SYMLOG.py	/^    ans = convertBig5ToSYMLOG(big5Persona1)$/;"	v
 ans	Library/SYMLOG.py	/^    ans = sym.getMembersByRegion('10')$/;"	v
 ans	Library/SYMLOG.py	/^    ans = sym.getMembersByRegion('2')$/;"	v
@@ -240,21 +275,27 @@ b.wrap	Docs/_build/html/_static/underscore.js	/^a.apply(d,e);i();g=true}};b.debo
 b.zip	Docs/_build/html/_static/underscore.js	/^return e};b.union=function(){return b.uniq(b.flatten(arguments,true))};b.intersection=b.intersect=function(a){var c=i.call(arguments,1);return b.filter(b.uniq(a),function(a){return b.every(c,function(c){return b.indexOf(c,a)>=0})})};b.difference=function(a){var c=b.flatten(i.call(arguments,1));return b.filter(a,function(a){return!b.include(c,a)})};b.zip=function(){for(var a=i.call(arguments),c=b.max(b.pluck(a,"length")),d=Array(c),e=0;e<c;e++)d[e]=b.pluck(a,""+e);return d};b.indexOf=function(a,c,$/;"	f
 bestThreshold	Library/analyzer.py	/^def bestThreshold(x,y,thresholds,opt):$/;"	f
 big5Persona1	Library/SYMLOG.py	/^    big5Persona1 = {$/;"	v
+big5Personas	Pilot/Data/IBMWatson/personalities.py	/^big5Personas = {} # {person:{big5Attribute:score_from_0_to_1}}$/;"	v
 biliti	Docs/_build/html/_static/language_data.js	/^    iviti: 'ive',$/;"	p	class:Stemmer.step2list
 bind	Docs/_build/html/_static/underscore-1.3.1.js	/^  _.bind = function bind(func, context) {$/;"	f
 bli	Docs/_build/html/_static/language_data.js	/^    izer: 'ize',$/;"	p	class:Stemmer.step2list
 breaker	Docs/_build/html/_static/underscore-1.3.1.js	/^  var breaker = {};$/;"	v
 calc	Library/SYMLOG.py	/^def calc(s,d):$/;"	f
 calcDist	Library/SYMLOG.py	/^        def calcDist(posn0,posn1):$/;"	f	function:SYMLOGPlot.getSCGDeviation
-calcICC	Library/ICC.py	/^def calcICC(judges, data):$/;"	f
+calcICC	Library/InterRaterAgreement.py	/^def calcICC(judges, data):$/;"	f
 calcMetrics	Experiment/Analysis/Big5_metrics.py	/^def calcMetrics(filename,reorient=False):$/;"	f
 calcSymMetrics	Experiment/Analysis/SYMLOG_metrics.py	/^def calcSymMetrics(filename,reorient=False):$/;"	f
+col_margins	Library/InterRaterAgreement.py	/^    col_margins = [sum([row[j] for row in ranks])\/tot for j in range(len(ranks[0]))]$/;"	v
 column_data	Experiment/Analysis/ESEM - Dataset.py	/^        column_data = [row[index] for row in sheet_data]$/;"	v
 column_data	Experiment/Analysis/ESEM - Final.py	/^        column_data = [row[index] for row in sheet_data]$/;"	v
+comment	Pilot/Data/IBMWatson/allText.py	/^        comment = row['comment']$/;"	v
+common_urls	Pilot/Data/IBMWatson/allText.py	/^common_urls = [row[url_i] for row in annotations[1:]]$/;"	v
 computed	Docs/_build/html/_static/underscore-1.3.1.js	/^    var result = {computed : -Infinity};$/;"	p	class:_.max.result
 computed	Docs/_build/html/_static/underscore-1.3.1.js	/^    var result = {computed : Infinity};$/;"	p	class:_.min.result
 computed	Docs/_build/html/_static/underscore.js	/^function(a,c){return b.map(a,function(a){return a[c]})};b.max=function(a,c,d){if(!c&&b.isArray(a))return Math.max.apply(Math,a);if(!c&&b.isEmpty(a))return-Infinity;var e={computed:-Infinity};j(a,function(a,b,h){b=c?c.call(d,a,b,h):a;b>=e.computed&&(e={value:a,computed:b})});return e.value};b.min=function(a,c,d){if(!c&&b.isArray(a))return Math.min.apply(Math,a);if(!c&&b.isEmpty(a))return Infinity;var e={computed:Infinity};j(a,function(a,b,h){b=c?c.call(d,a,b,h):a;b<e.computed&&(e={value:a,computed:b})});$/;"	p	class:b.max.e
 computed	Docs/_build/html/_static/underscore.js	/^function(a,c){return b.map(a,function(a){return a[c]})};b.max=function(a,c,d){if(!c&&b.isArray(a))return Math.max.apply(Math,a);if(!c&&b.isEmpty(a))return-Infinity;var e={computed:-Infinity};j(a,function(a,b,h){b=c?c.call(d,a,b,h):a;b>=e.computed&&(e={value:a,computed:b})});return e.value};b.min=function(a,c,d){if(!c&&b.isArray(a))return Math.min.apply(Math,a);if(!c&&b.isEmpty(a))return Infinity;var e={computed:Infinity};j(a,function(a,b,h){b=c?c.call(d,a,b,h):a;b<e.computed&&(e={value:a,computed:b})});$/;"	p	class:b.min.e
+config_include_test_set	Experiment/Analysis/analysis.py	/^config_include_test_set = False # whether of not to include the repositories in ESEM's "empirical validation" set (i.e. the ones NOT used to train the model)$/;"	v
+config_include_test_set	Experiment/Analysis/experiment_data.py	/^config_include_test_set = False # whether of not to include the repositories in ESEM's "empirical validation" set (i.e. the ones NOT used to train the model)$/;"	v
 contributors	Experiment/Data/comments_for_pull_reqs.py	/^def contributors(full_repo_name,i,num_pages=100000):$/;"	f
 convert	Library/SYMLOG.py	/^            def convert(att1,att2):$/;"	f	function:convertBig5ToSYMLOG
 convertBig5ToSYMLOG	Library/SYMLOG.py	/^def convertBig5ToSYMLOG(big5Personas):$/;"	f
@@ -267,18 +308,25 @@ ctor	Docs/_build/html/_static/underscore-1.3.1.js	/^  var ctor = function(){};$/
 curr_filepath	Library/VotingPoll.py	/^curr_filepath = os.path.abspath(__file__)$/;"	v
 d	Experiment/Analysis/ESEM - Dataset.py	/^    d = {}$/;"	v
 d	Experiment/Analysis/ESEM - Final.py	/^    d = {}$/;"	v
-d	Library/ICC.py	/^    d = [$/;"	v
+d	Library/InterRaterAgreement.py	/^    d = [$/;"	v
 d	Library/SYMLOG.py	/^    d = SYMLOG_SCG_OPT$/;"	v
 d	Library/gitHubAPI.py	/^    d = getClosedPullRequestUrls('onivim\/oni','2019-02-25')$/;"	v
 data	Experiment/Analysis/ESEM - Dataset.py	/^data = get_data(ods_filepath)$/;"	v
 data	Experiment/Analysis/ESEM - Final.py	/^data = get_data(ods_filepath)$/;"	v
+data	Library/InterRaterAgreement.py	/^    data = [[Xs[i],Ys[i]] for i in range(len(Xs))]$/;"	v
 data	Library/VotingPoll.py	/^data = None$/;"	v
 data	Library/analyzer.py	/^    data = [[1,2],[3,4]] # C_{i,j} where i is the true value and j is the predicted value$/;"	v
+data	Pilot/Data/IBMWatson/allText.py	/^data = get_data(oni_SYMLOG_filepath)$/;"	v
+data	Pilot/Data/IBMWatson/personalities.py	/^data = OrderedDict()$/;"	v
+data	Pilot/Data/Oni_SYMLOGs.py	/^data = OrderedDict()$/;"	v
 dataframes	Experiment/Analysis/ESEM - Dataset.py	/^dataframes = {}$/;"	v
 dataframes	Experiment/Analysis/ESEM - Final.py	/^dataframes = {}$/;"	v
 debug	Experiment/Analysis/analysis.py	/^debug = False$/;"	v
 debug	Library/analyzer.py	/^debug = False$/;"	v
 deleteLogs	Library/logger.py	/^def deleteLogs():$/;"	f
+dest_filepath	Pilot/Data/IBMWatson/allText.py	/^dest_filepath = '\/home\/a2sachs\/Documents\/Experiment1\/Data\/IBMWatson\/allText.json'$/;"	v
+dest_filepath	Pilot/Data/IBMWatson/personalities.py	/^dest_filepath = '\/home\/a2sachs\/Documents\/Experiment1\/Data\/IBMWatson\/personalities.ods'$/;"	v
+dest_filepath	Pilot/Data/Oni_SYMLOGs.py	/^dest_filepath = '\/home\/a2sachs\/Documents\/Experiment1\/Data\/Oni_SYMLOGs.ods'$/;"	v
 df	Experiment/Analysis/ESEM - Dataset.py	/^    df = pd.DataFrame(data=d)$/;"	v
 df	Experiment/Analysis/ESEM - Dataset.py	/^df = pd.DataFrame(data=overlaps)$/;"	v
 df	Experiment/Analysis/ESEM - Final.py	/^    df = pd.DataFrame(data=d)$/;"	v
@@ -297,6 +345,7 @@ end	Docs/make.bat	/^:end$/;"	l
 end	Experiment/Data/CleanText.py	/^end = time.time()$/;"	v
 end	Experiment/Data/ProcessedText.py	/^    end = time.time()$/;"	v
 entli	Docs/_build/html/_static/language_data.js	/^    alli: 'al',$/;"	p	class:Stemmer.step2list
+entry	Pilot/Data/Oni_SYMLOGs.py	/^            entry = IBMSYMDict[person]$/;"	v
 eq	Docs/_build/html/_static/underscore-1.3.1.js	/^  function eq(a, b, stack) {$/;"	f
 exclude_patterns	Docs/conf.py	/^exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']$/;"	v
 excluded	Docs/_build/html/_static/searchtools.js	/^    var excluded = [];$/;"	v
@@ -317,6 +366,12 @@ expKeys	Library/SYMLOG.py	/^    expKeys = {'R5'}$/;"	v
 expKeys	Library/SYMLOG.py	/^    expKeys = {'R7'}$/;"	v
 expKeys	Library/SYMLOG.py	/^    expKeys = {'R8'}$/;"	v
 exp_ans	Library/IBM.py	/^    exp_ans = {'openness': 0.7648753447240669, 'conscientiousness': 0.5955417708434109, 'extraversion': 0.5398801872266267, 'agreeableness': 0.7218578735880791, 'neuroticism': 0.4782258167889502}$/;"	v
+exp_ans	Library/InterRaterAgreement.py	/^    exp_ans = (0.9093155423770697, {'BMS':11.241666666666669,'EMS':1.019444444444442,'JMS':32.486111111111114})$/;"	v
+exp_ans	Library/InterRaterAgreement.py	/^    exp_ans = 0.445236219967768$/;"	v
+exp_ans	Library/InterRaterAgreement.py	/^    exp_ans = 0.909315542377069$/;"	v
+exp_ans	Library/InterRaterAgreement.py	/^    exp_ans = 0.956980565511847$/;"	v
+exp_ans	Library/InterRaterAgreement.py	/^    exp_ans = k$/;"	v
+exp_ans	Library/InterRaterAgreement.py	/^    exp_ans = ranksX0, ranksY0$/;"	v
 exp_ans	Library/analyzer.py	/^    exp_ans = 0.1$/;"	v
 exp_ans	Library/analyzer.py	/^    exp_ans = metrics.f1_score(y_true,y_pred)$/;"	v
 exp_ans	Library/analyzer.py	/^    exp_ans = metrics.precision_score(y_true,y_pred)$/;"	v
@@ -325,12 +380,12 @@ exp_ans	Library/analyzer.py	/^    exp_ans = y_test$/;"	v
 exp_file	Library/IBM.py	/^    exp_file = os.path.join(TESTING,'test1.json')$/;"	v
 exp_file_ans	Library/IBM.py	/^    exp_file_ans = json.load(open(exp_file,'r'))$/;"	v
 expectedResult1	Library/SYMLOG.py	/^    expectedResult1 = {$/;"	v
-experiments	Experiment/Analysis/analysis.py	/^    experiments = [old_config, reorient_config]$/;"	v
 extensions	Docs/conf.py	/^extensions = [$/;"	v
 extra	Library/SYMLOG.py	/^    extra = {$/;"	v
 extraNum	Library/SYMLOG.py	/^    extraNum = 50$/;"	v
 f	Docs/_build/html/_static/underscore.js	/^c.source&&a.global==c.global&&a.multiline==c.multiline&&a.ignoreCase==c.ignoreCase}if(typeof a!="object"||typeof c!="object")return false;for(var f=d.length;f--;)if(d[f]==a)return true;d.push(a);var f=0,g=true;if(e=="[object Array]"){if(f=a.length,g=f==c.length)for(;f--;)if(!(g=f in a==f in c&&q(a[f],c[f],d)))break}else{if("constructor"in a!="constructor"in c||a.constructor!=c.constructor)return false;for(var h in a)if(b.has(a,h)&&(f++,!(g=b.has(c,h)&&q(a[h],c[h],d))))break;if(g){for(h in c)if(b.has(c,$/;"	v
 f1	Library/analyzer.py	/^def f1(confusion_matrix):$/;"	f
+f_b	Pilot/Data/Oni_SYMLOGs.py	/^    f_b = row[index]$/;"	v
 fileMap	Docs/_build/html/_static/searchtools.js	/^    var fileMap = {};$/;"	v
 file_ans	Library/IBM.py	/^    def file_ans(s):$/;"	f	function:getResult
 file_ans	Library/IBM.py	/^    file_ans = json.load(open(filepath,'r'))$/;"	v
@@ -362,15 +417,19 @@ getMembersByRegion	Library/SYMLOG.py	/^    def getMembersByRegion(self,region):$
 getMessages	Library/gitterAPI.py	/^def getMessages(roomName):$/;"	f
 getPullComments	Library/gitHubAPI.py	/^def getPullComments(url):$/;"	f
 getPullDescComment	Library/gitHubAPI.py	/^def getPullDescComment(url):$/;"	f
+getPullRequestIds	Pilot/trim.py	/^def getPullRequestIds():$/;"	f
 getPullReviews	Library/gitHubAPI.py	/^def getPullReviews(url):$/;"	f
+getRepoIds	Pilot/trim.py	/^def getRepoIds():$/;"	f
 getRepoJSON	Library/gitHubAPI.py	/^def getRepoJSON(fullRepoName):$/;"	f
 getRepoName	Library/VotingPoll.py	/^def getRepoName(record):$/;"	f
+getRepos	Pilot/trim.py	/^def getRepos():$/;"	f
 getResult	Library/IBM.py	/^def getResult(text,filename=None):$/;"	f
 getRoomNameUri	Library/gitterAPI.py	/^def getRoomNameUri(repo):$/;"	f
 getSCGDeviation	Library/SYMLOG.py	/^    def getSCGDeviation(self):$/;"	m	class:SYMLOGPlot
 getSYMLOGVector	Library/SYMLOG.py	/^def getSYMLOGVector(vectorCounts,conversationCount):$/;"	f
 getSYMLOGVectors	Library/SYMLOG.py	/^def getSYMLOGVectors(rawVectorCounts,conversationCounts):$/;"	f
 getStars	Library/gitHubAPI.py	/^def getStars(fullRepoName):$/;"	f
+getTableFields	Pilot/trim.py	/^def getTableFields(tbl):$/;"	f
 getUPFCorrelation	Library/SYMLOG.py	/^    def getUPFCorrelation(self,filename_prefix=None):$/;"	m	class:SYMLOGPlot
 getVotingBankData	Library/VotingPoll.py	/^def getVotingBankData():$/;"	f
 get_average	Experiment/Analysis/Big5_metrics.py	/^    def get_average(self):$/;"	m	class:Big5Group
@@ -378,8 +437,10 @@ get_model	Library/analyzer.py	/^def get_model(model_type):$/;"	f
 get_percentiles	Experiment/Analysis/Big5_metrics.py	/^    def get_percentiles(self):$/;"	m	class:Big5Group
 gitter	Library/gitterAPI.py	/^gitter = GitterClient(token)$/;"	v
 gitters	Library/gitterAPI.py	/^gitters = []$/;"	v
+header	Pilot/Data/IBMWatson/personalities.py	/^header = ['Person','Openness','Conscientiousness','Extraversion','Agreeableness','Neuroticism','P_N','F_B','U_D']$/;"	v
 headers	Experiment/Analysis/ESEM - Dataset.py	/^    headers = sheet[0]$/;"	v
 headers	Experiment/Analysis/ESEM - Final.py	/^    headers = sheet[0]$/;"	v
+headers	Pilot/Data/Oni_SYMLOGs.py	/^headers = ['Person','IBM_P_N','IBM_F_B','IBM_U_D','Alex_P_N','Alex_F_B','Alex_U_D','Andrew_P_N','Andrew_F_B','Andrew_U_D']$/;"	v
 help	Docs/make.bat	/^:help$/;"	l
 helper	Experiment/Analysis/tmp_SYMLOG_metrics.py	/^def helper(exp_name):$/;"	f
 highlight	Docs/_build/html/_static/doctools.js	/^  function highlight(node, addItems) {$/;"	f	function:jQuery.fn.highlightText
@@ -392,6 +453,17 @@ i	Docs/_build/html/_static/searchtools.js	/^    var i;$/;"	v
 ical	Docs/_build/html/_static/language_data.js	/^    iciti: 'ic',$/;"	p	class:Stemmer.step3list
 icate	Docs/_build/html/_static/language_data.js	/^  var step3list = {$/;"	p	class:Stemmer.step3list
 iciti	Docs/_build/html/_static/language_data.js	/^    alize: 'al',$/;"	p	class:Stemmer.step3list
+index	Pilot/Data/Oni_SYMLOGs.py	/^    index = IBMSYMLOGs[0].index('F_B')$/;"	v
+index	Pilot/Data/Oni_SYMLOGs.py	/^    index = IBMSYMLOGs[0].index('P_N')$/;"	v
+index	Pilot/Data/Oni_SYMLOGs.py	/^    index = IBMSYMLOGs[0].index('Person')$/;"	v
+index	Pilot/Data/Oni_SYMLOGs.py	/^    index = IBMSYMLOGs[0].index('U_D')$/;"	v
+index	Pilot/Data/Oni_SYMLOGs.py	/^    index = OniSYMLOGs['SYMLOG'][0].index('Alex_F_B')$/;"	v
+index	Pilot/Data/Oni_SYMLOGs.py	/^    index = OniSYMLOGs['SYMLOG'][0].index('Alex_P_N')$/;"	v
+index	Pilot/Data/Oni_SYMLOGs.py	/^    index = OniSYMLOGs['SYMLOG'][0].index('Alex_U_D')$/;"	v
+index	Pilot/Data/Oni_SYMLOGs.py	/^    index = OniSYMLOGs['SYMLOG'][0].index('Andrew_F_B')$/;"	v
+index	Pilot/Data/Oni_SYMLOGs.py	/^    index = OniSYMLOGs['SYMLOG'][0].index('Andrew_P_N')$/;"	v
+index	Pilot/Data/Oni_SYMLOGs.py	/^    index = OniSYMLOGs['SYMLOG'][0].index('Andrew_U_D')$/;"	v
+index	Pilot/Data/Oni_SYMLOGs.py	/^    index = OniSYMLOGs['SYMLOG'][0].index('Person')$/;"	v
 init	Docs/_build/html/_static/doctools.js	/^var Documentation = {$/;"	m	class:Documentation
 intercept	Experiment/Analysis/ESEM - Dataset.py	/^        intercept = s0.intersection(s1)$/;"	v
 intercept	Experiment/Analysis/ESEM - Final.py	/^        intercept = s0.intersection(s1)$/;"	v
@@ -405,6 +477,7 @@ jQuery.getQueryParameters	Docs/_build/html/_static/doctools.js	/^jQuery.urlencod
 jQuery.uaMatch	Docs/_build/html/_static/doctools.js	/^if (!jQuery.browser) {$/;"	f
 jQuery.urldecode	Docs/_build/html/_static/doctools.js	/^$u = _.noConflict();$/;"	f
 joinRooms	Library/gitterAPI.py	/^def joinRooms(lst):$/;"	f
+k	Library/InterRaterAgreement.py	/^    k = (p0-pe)\/(1-pe)$/;"	v
 later	Docs/_build/html/_static/underscore-1.3.1.js	/^      var later = function() {$/;"	f	function:_.debounce
 later	Docs/_build/html/_static/underscore-1.3.1.js	/^      var later = function() {$/;"	f	function:_.throttle
 leaveAllRooms	Library/gitterAPI.py	/^def leaveAllRooms():$/;"	f
@@ -417,10 +490,14 @@ log	Experiment/Data/CleanText.py	/^def log(*args):$/;"	f
 log	Experiment/Data/ProcessedText.py	/^def log(*args,pre=None):$/;"	f
 log	Experiment/Data/comments_for_pull_reqs.py	/^def log(*args,pre=None):$/;"	f
 log	Library/IBM.py	/^def log(*args,pre=None):$/;"	f
+log	Library/InterRaterAgreement.py	/^def log(*args,pre=None):$/;"	f
 log	Library/SYMLOG.py	/^def log(*args,pre=None):$/;"	f
 log	Library/analyzer.py	/^def log(*args,pre=None):$/;"	f
 log	Library/gitHubAPI.py	/^def log(*args,pre='gitHubAPI.py',fn=None):$/;"	f
 log	Library/logger.py	/^def log(*args,pre='default'):$/;"	f
+log	Pilot/Analysis/IRA_measures.py	/^def log(*args,pre=None):$/;"	f
+log	Pilot/Data/IBMWatson/allText.py	/^log = logger.log$/;"	v
+log	Pilot/trim.py	/^def log(*args,pre=None):$/;"	f
 logFolderPath	Library/logger.py	/^logFolderPath = os.path.join(parent,'Logs')$/;"	v
 logJSON	Experiment/Data/AggregateText.py	/^def logJSON(*args):$/;"	f
 logJSON	Library/gitHubAPI.py	/^def logJSON(*args,pre='gitHubAPI.py',fn=None):$/;"	f
@@ -428,23 +505,28 @@ logJSON	Library/logger.py	/^def logJSON(*args,pre='default'):$/;"	f
 logi	Docs/_build/html/_static/language_data.js	/^    biliti: 'ble',$/;"	p	class:Stemmer.step2list
 lst	Library/SYMLOG.py	/^    lst = [val for key,val in d.items() if 'p' in key.lower()]$/;"	v
 lst	Library/gitterAPI.py	/^    lst = f.readlines()$/;"	v
+lst	Pilot/Data/IBMWatson/allText.py	/^    lst = gitHubAPI.pullUrlToList(url) # -> [{'name':'Akin909', 'comment': 'Reverts onivim\/oni...'}, ...]$/;"	v
 main	Experiment/Data/AggregateText.py	/^def main():$/;"	f
 main	Experiment/Data/comments_for_pull_reqs.py	/^def main():$/;"	f
 main	Experiment/Data/repo_list.py	/^def main():$/;"	f
 markdown_to_text	Library/markdown_to_text.py	/^def markdown_to_text(markdown_string):$/;"	f
 nativeForEach	Docs/_build/html/_static/underscore-1.3.1.js	/^  var$/;"	v
 ness	Docs/_build/html/_static/language_data.js	/^    ful: '',$/;"	p	class:Stemmer.step3list
+newRow	Pilot/Data/Oni_SYMLOGs.py	/^    newRow = [person,IBM_P_N,IBM_F_B,IBM_U_D,Alex_P_N,Alex_F_B,Alex_U_D,Andrew_P_N,Andrew_F_B,Andrew_U_D]$/;"	v
 objNameMatch	Docs/_build/html/_static/searchtools.js	/^  var Scorer = {$/;"	p	class:var.Scorer
 objPartialMatch	Docs/_build/html/_static/searchtools.js	/^    objNameMatch: 11,$/;"	p	class:var.Scorer
 objPrio	Docs/_build/html/_static/searchtools.js	/^    objPartialMatch: 6,$/;"	p	class:var.Scorer
 objectterms	Docs/_build/html/_static/searchtools.js	/^    var objectterms = [];$/;"	v
 ods_filepath	Experiment/Analysis/ESEM - Dataset.py	/^ods_filepath = os.path.abspath(os.path.join(__file__,'..\/','ESEM - Dataset.ods'))$/;"	v
 ods_filepath	Experiment/Analysis/ESEM - Final.py	/^ods_filepath = os.path.abspath(os.path.join(__file__,'..\/','ESEM - Final.ods'))$/;"	v
-old_config	Experiment/Analysis/analysis.py	/^    old_config = {$/;"	v
+oni_SYMLOG_filepath	Pilot/Data/IBMWatson/allText.py	/^oni_SYMLOG_filepath = '\/home\/a2sachs\/Dropbox\/Masters\/Thesis\/Scripts\/ThesisSiteDev\/VotingBank\/Oni_SYMLOG.ods'$/;"	v
+oni_fb	Library/InterRaterAgreement.py	/^    oni_fb = [$/;"	v
+oni_pn	Library/InterRaterAgreement.py	/^    oni_pn = [$/;"	v
 opt	Library/analyzer.py	/^    opt = (1.0,1.0)$/;"	v
 others	Library/SYMLOG.py	/^    others = ['p','n','f','b','u','d']$/;"	v
 ousli	Docs/_build/html/_static/language_data.js	/^    eli: 'e',$/;"	p	class:Stemmer.step2list
 ousness	Docs/_build/html/_static/language_data.js	/^    fulness: 'ful',$/;"	p	class:Stemmer.step2list
+out	Pilot/Data/IBMWatson/allText.py	/^out = {} # {person:text}$/;"	v
 outputTempJson	Library/gitHubAPI.py	/^def outputTempJson(jsonObj):$/;"	f
 output_tree	Library/analyzer.py	/^    def output_tree(self):$/;"	m	class:Xgboost_wrapper
 overlaps	Experiment/Analysis/ESEM - Dataset.py	/^overlaps = {}$/;"	v
@@ -453,17 +535,27 @@ p	Docs/_build/html/_static/jquery.js	/^!function(a,b){"use strict";"object"==typ
 p	Experiment/Analysis/analysis.py	/^    def p(name,pre=''):$/;"	f	function:analyzeExperiment
 p	Library/SYMLOG.py	/^def p(*args):$/;"	f
 p	Library/VotingPoll.py	/^def p(*args,level=0):$/;"	f
+p0	Library/InterRaterAgreement.py	/^    p0 = sum([ranks[i][j]\/tot*(1-abs(i-j)\/(3-1)) for i,row in enumerate(ranks) for j,val in enumerate(row)])$/;"	v
+p_n	Pilot/Data/Oni_SYMLOGs.py	/^    p_n = row[index]$/;"	v
 parent	Library/SYMLOG.py	/^parent = os.path.dirname(file_path)$/;"	v
 parent	Library/VotingPoll.py	/^parent = os.path.dirname(os.path.abspath(__file__))$/;"	v
 parent	Library/gitHubAPI.py	/^parent = os.path.dirname(os.path.realpath(__file__))$/;"	v
 parent	Library/logger.py	/^parent = os.path.dirname(os.path.realpath(__file__))$/;"	v
 password	Library/IBM.py	/^   password='wxZ7kmHzampN',$/;"	v
 path	Experiment/Analysis/SYMLOG_metrics.py	/^path = os.path.join(TOP,'Library','SYMLOG_POLES.json')$/;"	v
+pe	Library/InterRaterAgreement.py	/^    pe = sum([row_margins[i]*col_margins[j]*(1-abs(i-j)\/(3-1))for i,row in enumerate(ranks) for j,val in enumerate(row)])$/;"	v
+person	Pilot/Data/IBMWatson/allText.py	/^        person = row['name']$/;"	v
+person	Pilot/Data/Oni_SYMLOGs.py	/^    person = row[index]$/;"	v
+persona	Pilot/Data/IBMWatson/personalities.py	/^        persona = 'N\/A'$/;"	v
+persona	Pilot/Data/IBMWatson/personalities.py	/^        persona = IBM.getBig5FromText(txt)$/;"	v
+persona	Pilot/Data/IBMWatson/personalities.py	/^    persona = None$/;"	v
 personality_insights	Library/IBM.py	/^personality_insights = PersonalityInsightsV3($/;"	v
 plotBestFit	Library/analyzer.py	/^def plotBestFit(actual, predictions, filename=None):$/;"	f
 plotPRC	Library/analyzer.py	/^def plotPRC(prec,rec,thresholds,labels,filepath):$/;"	f
 plotPRC_helper	Library/analyzer.py	/^def plotPRC_helper(prec,rec,thresholds,label):$/;"	f
 plotPersonas	Experiment/Analysis/SYMLOG_metrics.py	/^def plotPersonas(filename,outpath,reorient=False):$/;"	f
+prIdStrs	Pilot/trim.py	/^    prIdStrs = {str(x) for x in prIds}$/;"	v
+prIds	Pilot/trim.py	/^    prIds = getPullRequestIds()$/;"	v
 pre	Experiment/Analysis/experiment_data.py	/^    pre='experiment_data.py'$/;"	v
 precision	Library/analyzer.py	/^def precision(confusion_matrix):$/;"	f
 predict	Library/analyzer.py	/^    def predict(self,X_test,threshold=0.5):$/;"	m	class:Linear_wrapper
@@ -480,21 +572,29 @@ previousUnderscore	Docs/_build/html/_static/underscore-1.3.1.js	/^  var previous
 processBig5	Experiment/Data/ProcessedText.py	/^def processBig5(filenames):$/;"	f
 processSYMLOG	Experiment/Data/ProcessedText.py	/^def processSYMLOG(filenames):$/;"	f
 project	Docs/conf.py	/^project = 'Thesis'$/;"	v
+projects_csv	Pilot/trim.py	/^projects_csv = '\/home\/a2sachs\/Documents\/Experiment2.1\/Data\/Selection\/projects.csv'$/;"	v
 pullListToDict	Library/gitHubAPI.py	/^def pullListToDict(urlLst):$/;"	f
 pullUrlToList	Library/gitHubAPI.py	/^def pullUrlToList(url):$/;"	f
+pull_requests_csv	Pilot/trim.py	/^pull_requests_csv = '\/home\/a2sachs\/Documents\/Experiment2.1\/Data\/Selection\/pull_requests.csv'$/;"	v
 pulse	Docs/_build/html/_static/searchtools.js	/^    function pulse() {$/;"	f
+ranks	Library/InterRaterAgreement.py	/^    ranks = [[8, 2, 1, 0, 0],$/;"	v
+ranks	Library/InterRaterAgreement.py	/^    ranks = [[8, 2, 1],$/;"	v
+ranksX0	Library/InterRaterAgreement.py	/^    ranksX0 = [1]*8+[1]*2+[1]+[2]*3+[2]*11+[2]*5+[3]*7+[3]*55+[3]*11+[4]*1+[4]*11+[5]*2$/;"	v
+ranksY0	Library/InterRaterAgreement.py	/^    ranksY0 = [1]*8+[2]*2+[3]+[1]*3+[2]*11+[3]*5+[2]*7+[3]*55+[4]*11+[3]*1+[4]*11+[5]*2$/;"	v
 rate_reset_wait	Experiment/Data/comments_for_pull_reqs.py	/^def rate_reset_wait(headers,token):$/;"	f
+readAndParseCSVLine	Pilot/trim.py	/^def readAndParseCSVLine(f,delimiter=',',eol='\\n',quotes='"'):$/;"	f
 recall	Library/analyzer.py	/^def recall(confusion_matrix):$/;"	f
 recall_df	Experiment/Analysis/ESEM - Dataset.py	/^recall_df = dataframes['Recall']$/;"	v
+recall_df	Experiment/Analysis/ESEM - Final.py	/^recall_df = dataframes['Model']$/;"	v
 recall_df	Experiment/Analysis/ESEM - Final.py	/^recall_df = dataframes['Precision']$/;"	v
 recall_df	Experiment/Analysis/ESEM - Final.py	/^recall_df = dataframes['Recall']$/;"	v
+refine	Pilot/Analysis/IRA_measures.py	/^    def refine(judgeLst,axis):$/;"	f	function:log
 regr	Library/analyzer.py	/^    regr = Linear_wrapper()$/;"	v
 regr	Library/analyzer.py	/^    regr = Logistic_wrapper()$/;"	v
 regr	Library/analyzer.py	/^    regr = SVM_wrapper()$/;"	v
 regr	Library/analyzer.py	/^    regr = Xgboost_wrapper()$/;"	v
 release	Docs/conf.py	/^release = '1.0'$/;"	v
 reorientCompass	Library/SYMLOG.py	/^    def reorientCompass(self):$/;"	m	class:SYMLOGPlot
-reorient_config	Experiment/Analysis/analysis.py	/^    reorient_config = {$/;"	v
 repo_tabs	Experiment/Analysis/ESEM - Dataset.py	/^repo_tabs = [tab for tab in data.keys() if tab != 'Regular expressions']$/;"	v
 repo_tabs	Experiment/Analysis/ESEM - Final.py	/^repo_tabs = [tab for tab in data.keys() if tab != 'Regular expressions']$/;"	v
 report_error	Library/IBM.py	/^    def report_error(s):$/;"	f	function:getResult
@@ -503,6 +603,8 @@ results	Docs/_build/html/_static/searchtools.js	/^    var results = [];$/;"	v
 return	Docs/_build/html/_static/underscore-1.3.1.js	/^    args = slice.call(arguments, 2);$/;"	f
 return	Docs/_build/html/_static/underscore.js	/^var F=function(){};b.bind=function(a,c){var d,e;if(a.bind===s&&s)return s.apply(a,i.call(arguments,1));if(!b.isFunction(a))throw new TypeError;e=i.call(arguments,2);return d=function(){if(!(this instanceof d))return a.apply(c,e.concat(i.call(arguments)));F.prototype=a.prototype;var b=new F,g=a.apply(b,e.concat(i.call(arguments)));return Object(g)===g?g:b}};b.bindAll=function(a){var c=i.call(arguments,1);c.length==0&&(c=b.functions(a));j(c,function(c){a[c]=b.bind(a[c],a)});return a};b.memoize=function(a,$/;"	f
 review_comments	Experiment/Data/comments_for_pull_reqs.py	/^def review_comments(full_repo_name,i, num_pages=100000, pr_number=None):$/;"	f
+row	Pilot/Data/IBMWatson/personalities.py	/^    row = [person]$/;"	v
+row_margins	Library/InterRaterAgreement.py	/^    row_margins = [sum(row)\/tot for row in ranks]$/;"	v
 run	Experiment/Analysis/Big5_metrics.py	/^def run(exp_name,reorient=False,num_threads=4):$/;"	f
 run	Experiment/Analysis/SYMLOG_metrics.py	/^def run(exp_name,reorient=False,num_threads=4):$/;"	f
 run_helper	Experiment/Analysis/Big5_metrics.py	/^def run_helper(args):$/;"	f
@@ -518,6 +620,8 @@ scoreMap	Docs/_build/html/_static/searchtools.js	/^    var scoreMap = {};$/;"	v
 searchRepositories	Library/gitHubAPI.py	/^def searchRepositories(searchWords, sortBy='stars', order='desc'):$/;"	f
 searchterms	Docs/_build/html/_static/searchtools.js	/^    var searchterms = [];$/;"	v
 secondSum	Library/SYMLOG.py	/^    secondSum = sum([val for key,val in d.items() if 'n' in key.lower()])$/;"	v
+sheet	Pilot/Data/IBMWatson/personalities.py	/^sheet = []$/;"	v
+sheet	Pilot/Data/Oni_SYMLOGs.py	/^sheet = []$/;"	v
 sheet_data	Experiment/Analysis/ESEM - Dataset.py	/^    sheet_data = [row for row in sheet[1:] if len(row) != 0]$/;"	v
 sheet_data	Experiment/Analysis/ESEM - Final.py	/^    sheet_data = [row for row in sheet[1:] if len(row) != 0]$/;"	v
 side	Library/SYMLOG.py	/^        def side(start,end,pt):$/;"	f	function:SYMLOGPlot.getMembersByRegion
@@ -534,6 +638,7 @@ sumKey	Library/SYMLOG.py	/^    def sumKey(c,d):$/;"	f	function:calc
 sym	Library/SYMLOG.py	/^    sym = SYMLOGPlot(expectedResult1)$/;"	v
 sym	Library/SYMLOG.py	/^    sym = SYMLOGPlot(symPersona2)$/;"	v
 sym	Library/SYMLOG.py	/^    sym = SYMLOGPlot(testPersona)$/;"	v
+sym	Pilot/Data/IBMWatson/personalities.py	/^    sym = SYMLOGPersonas[person]$/;"	v
 sym1	Library/SYMLOG.py	/^    sym1 = SYMLOGPlot(symPersona1)$/;"	v
 symPersona1	Library/SYMLOG.py	/^    symPersona1 = {$/;"	v
 symPersona2	Library/SYMLOG.py	/^    symPersona2 = {$/;"	v
@@ -541,7 +646,10 @@ templates_path	Docs/conf.py	/^templates_path = ['_templates']$/;"	v
 test	Library/analyzer.py	/^def test(train_df, test_df, y_label, model_type, include_only=None, x_labels=None, threshold=0.5):$/;"	f
 testPersona	Library/SYMLOG.py	/^    testPersona = {$/;"	v
 test_basic	Library/analyzer.py	/^def test_basic(X_train, Y_train, X_test, Y_test, model, threshold=0.5):$/;"	f
+text	Pilot/Data/IBMWatson/personalities.py	/^    text = json.load(f)$/;"	v
+text	Pilot/Data/IBMWatson/personalities.py	/^text = None$/;"	v
 textLower	Docs/_build/html/_static/searchtools.js	/^    var textLower = text.toLowerCase();$/;"	v
+text_filepath	Pilot/Data/IBMWatson/personalities.py	/^text_filepath = '\/home\/a2sachs\/Documents\/Experiment1\/Data\/IBMWatson\/allText.json'  $/;"	v
 thresholds	Library/analyzer.py	/^    thresholds = np.array([0.1,0.2,0.3])$/;"	v
 tional	Docs/_build/html/_static/language_data.js	/^    ational: 'ate',$/;"	p	class:Stemmer.step2list
 tmp	Docs/_build/html/_static/searchtools.js	/^    var tmp = splitQuery(query);$/;"	v
@@ -555,10 +663,20 @@ tokens	Library/gitHubAPI.py	/^    tokens = [token.rstrip() for token in f.readli
 tokens	Library/gitterAPI.py	/^    tokens = [x.strip() for x in lst]$/;"	v
 tokens	Library/gitterAPI.py	/^tokens = None$/;"	v
 tokens_path	Experiment/Data/comments_for_pull_reqs.py	/^tokens_path = os.path.join(HOME,'Experiment','Data','gitHubAPITokens.txt')$/;"	v
+tolerance	Library/InterRaterAgreement.py	/^    tolerance = 0.0000001$/;"	v
+tot	Library/InterRaterAgreement.py	/^    tot = sum([val for row in ranks for val in row])$/;"	v
+translate	Library/InterRaterAgreement.py	/^    def translate(matrix):$/;"	f
+trimCSV	Pilot/trim.py	/^def trimCSV(filename, col_label, match_citeria):$/;"	f
+trim_projects	Pilot/trim.py	/^def trim_projects(repos):$/;"	f
+trim_pull_request_comments	Pilot/trim.py	/^def trim_pull_request_comments():$/;"	f
+trim_pull_requests	Pilot/trim.py	/^def trim_pull_requests():$/;"	f
+u_d	Pilot/Data/Oni_SYMLOGs.py	/^    u_d = row[index]$/;"	v
 uniques	Experiment/Analysis/ESEM - Dataset.py	/^uniques = {x for x in recall_df['Classification']}$/;"	v
+uniques	Experiment/Analysis/ESEM - Final.py	/^uniques = {x for x in recall_df['Archived']}$/;"	v
 uniques	Experiment/Analysis/ESEM - Final.py	/^uniques = {x for x in recall_df['Classification']}$/;"	v
 uniques	Experiment/Analysis/ESEM - Final.py	/^uniques = {x for x in recall_df['Result']}$/;"	v
 url	Library/IBM.py	/^   url='https:\/\/gateway.watsonplatform.net\/personality-insights\/api'$/;"	v
+url_i	Pilot/Data/IBMWatson/allText.py	/^url_i = annotations[0].index('Thread URL')$/;"	v
 username	Library/IBM.py	/^   username='7d494188-7567-4bbd-aa26-94b5b1b3825f',$/;"	v
 version	Library/IBM.py	/^   version='2018-08-22',$/;"	v
 x	Library/analyzer.py	/^    x = np.array([1.5,2,3,4])$/;"	v

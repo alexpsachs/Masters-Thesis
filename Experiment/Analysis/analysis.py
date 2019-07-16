@@ -323,9 +323,16 @@ if __name__ == '__main__':
             'prc_dir':FIGDIR,
             }
     log('esem_and_sym_config',esem_and_sym_config)
+    big5_models_config = {
+            'name':'big5_models_config',
+            'indir':'reorient',
+            'models':{m:{'x_labels':big5_metrics,'model':m} for m in all_models},
+            'prc_dir':FIGDIR,
+            }
+    log('big5_models_config',big5_models_config)
 
     # experiments = [old_config, reorient_config, sym_vs_big5_config, big5_config, sym_config, personality_config]
-    experiments = [sym_only_config, bales_config, big5_config, esem_config, esem_and_sym_config]
+    experiments = [sym_only_config, bales_config, big5_config, esem_config, esem_and_sym_config,big5_models_config]
     for experiment in experiments:
         analyzeExperiment(experiment)
     print('analysis complete')

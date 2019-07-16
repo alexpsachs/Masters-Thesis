@@ -12,3 +12,9 @@ SYMLOG
 ===================
 ..  automodule:: SYMLOG
     :members:
+
+
+InterRaterAgreement
+===================
+..  automodule:: InterRaterAgreement
+    :members:

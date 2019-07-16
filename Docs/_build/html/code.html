@@ -270,8 +270,7 @@ a single repository</p>
 <dd><p>(getMembersByRegion region) -&gt; {person;{SYMLOGAxis;score_from_-18_to_+18, SYMLOGPoles:score_from_0_to_18}}</p>
 <p>This function obtains all of the members that are contained within the region specified. The regions are (numbers defined
 by Fig 2.9 in Bale’s book):</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>‘ref’: the reference circle</p></li>
 <li><p>‘inner’: the inner core group (the small circle enclosed by the reference circle</p></li>
 <li><p>‘opp’: the opposition circle</p></li>
@@ -288,7 +287,6 @@ by Fig 2.9 in Bale’s book):</p>
 <li><p>10: Anti-Authority Opposition</p></li>
 <li><p>11: Radical Opposition Core</p></li>
 </ul>
-</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -360,6 +358,72 @@ dict of the form {person_name:{(anyof ‘u_d’,’f_b’,’p_n’):that_pole�
 </dd></dl>
 
 </div>
+<div class="section" id="module-InterRaterAgreement">
+<span id="interrateragreement"></span><h1>InterRaterAgreement<a class="headerlink" href="#module-InterRaterAgreement" title="Permalink to this headline">¶</a></h1>
+<p>This module is intended to used to calculate various inter-rater agreement measures</p>
+<dl class="function">
+<dt id="InterRaterAgreement.ICC">
+<code class="descclassname">InterRaterAgreement.</code><code class="descname">ICC</code><span class="sig-paren">(</span><em>data</em>, <em>min_val</em>, <em>max_val</em>, <em>normalize=True</em><span class="sig-paren">)</span><a class="headerlink" href="#InterRaterAgreement.ICC" title="Permalink to this definition">¶</a></dt>
+<dd><p>(ICC data, min_val, max_val) is responsible for calculating and returning
+summarizing statistics on the dataset provided data with respect the ICC(3,k) 
+where k is the number of judges and min_val and max_val are used to determine
+the range of possible ranks (used for normalization).</p>
+<p>ICC: (listof (listof (anyof float int))), float, float -&gt; float, (dictof str: float)</p>
+<dl>
+<dt>example:</dt><dd><dl class="simple">
+<dt>data = [</dt><dd><p>[9, 2, 5, 8],
+[6, 1, 3, 2],
+[8, 4, 6, 8],
+[7, 1, 2, 6],
+[10, 5, 6, 9],
+[6, 2, 4, 7]</p>
+</dd>
+</dl>
+<p>]</p>
+<p># where 9,2,5,8 are the votes from judge 0,1,2,3 for target 0</p>
+<p>ICC(data, 1, 10) -&gt; 0.91, {‘BMS’: 11.241, ‘EMS’: 1.019, ‘JMS’:32.486}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="InterRaterAgreement.ICC0">
+<code class="descclassname">InterRaterAgreement.</code><code class="descname">ICC0</code><span class="sig-paren">(</span><em>data</em>, <em>colHeaders=None</em>, <em>rowHeaders=None</em><span class="sig-paren">)</span><a class="headerlink" href="#InterRaterAgreement.ICC0" title="Permalink to this definition">¶</a></dt>
+<dd><p>(ICC data, [colHeaders, rowHeaders]) is responsible for calculating and returning
+summarizing statistics on the dataset provided data with respect to the headers
+provided.</p>
+<p>ICC: (listof (listof (anyof float int))) -&gt; float, (dictof str: float)</p>
+<dl>
+<dt>example:</dt><dd><dl class="simple">
+<dt>data = [</dt><dd><p>[9, 2, 5, 8],
+[6, 1, 3, 2],
+[8, 4, 6, 8],
+[7, 1, 2, 6],
+[10, 5, 6, 9],
+[6, 2, 4, 7]</p>
+</dd>
+</dl>
+<p>]</p>
+<p># where 9,2,5,8 are the votes from judge 0,1,2,3 for target 0</p>
+<p>ICC(data) -&gt; 0.91, {‘BMS’: 11.241, ‘WMS’: 6.2638’, ‘EMS’: 1.019}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="InterRaterAgreement.Kappa">
+<code class="descclassname">InterRaterAgreement.</code><code class="descname">Kappa</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#InterRaterAgreement.Kappa" title="Permalink to this definition">¶</a></dt>
+<dd><p>(Kappa data) This function does a linear weighted kappa based on the evaluations of two judges (ranksX and ranksY)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="InterRaterAgreement.calcICC">
+<code class="descclassname">InterRaterAgreement.</code><code class="descname">calcICC</code><span class="sig-paren">(</span><em>judges</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#InterRaterAgreement.calcICC" title="Permalink to this definition">¶</a></dt>
+<dd><p>judges: list of judge names
+data: list of rows of data, each row is a different target</p>
+</dd></dl>
+
+</div>
 
 
           </div>
@@ -383,6 +447,7 @@ dict of the form {person_name:{(anyof ‘u_d’,’f_b’,’p_n’):that_pole�
 <li class="toctree-l1 current"><a class="current reference internal" href="#">analyzer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#module-IBM">IBM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#module-SYMLOG">SYMLOG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#module-InterRaterAgreement">InterRaterAgreement</a></li>
 </ul>
 
 <div class="relations">

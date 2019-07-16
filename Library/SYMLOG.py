@@ -186,21 +186,22 @@ class SYMLOGPlot:
 
         This function obtains all of the members that are contained within the region specified. The regions are (numbers defined
         by Fig 2.9 in Bale's book):
-            * 'ref': the reference circle
-            * 'inner': the inner core group (the small circle enclosed by the reference circle
-            * 'opp': the opposition circle
-            * 'opp core': the inner core of the opposition circle
-            * 1: Most Effective Teamwork Core
-            * 2: Liberal Teamwork Side
-            * 3: Conservative Teamwork Side
-            * 4: Group-centered Wing
-            * 5: Authority-centered Wing
-            * 6: Swing Area
-            * 7: Libertarian Fringe
-            * 8: Individualistic Fringe
-            * 9: Anti-Group Opposition
-            * 10: Anti-Authority Opposition
-            * 11: Radical Opposition Core
+
+        * 'ref': the reference circle
+        * 'inner': the inner core group (the small circle enclosed by the reference circle
+        * 'opp': the opposition circle
+        * 'opp core': the inner core of the opposition circle
+        * 1: Most Effective Teamwork Core
+        * 2: Liberal Teamwork Side
+        * 3: Conservative Teamwork Side
+        * 4: Group-centered Wing
+        * 5: Authority-centered Wing
+        * 6: Swing Area
+        * 7: Libertarian Fringe
+        * 8: Individualistic Fringe
+        * 9: Anti-Group Opposition
+        * 10: Anti-Authority Opposition
+        * 11: Radical Opposition Core
         """
         pre = 'getMembersByRegion'
         log('start',pre=pre)
